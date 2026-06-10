@@ -73,11 +73,13 @@ Open the web URL and translate something. Done.
 
 ## How it works
 
-- `apps/api/api/index.ts` is the serverless function. It mounts the shared Hono
-  `app` under `/api`, so production routes are `/api/health` and
-  `/api/v1/translate`. It uses `@hono/node-server/vercel`'s `handle()` (the
-  **Node.js** runtime adapter — `hono/vercel` is Edge-only and the cache uses
-  `node:crypto`).
+- `apps/api/api/index.ts` is the serverless function (**Edge runtime**). It
+  mounts the shared Hono `app` under `/api`, so production routes are
+  `/api/health` and `/api/v1/translate`, and uses `hono/vercel`'s `handle()`.
+  Edge is used so `c.req.json()` reads the request body from a native Web
+  `Request`; the Node runtime buffers the body before the handler runs (and the
+  Next.js-only `config.api.bodyParser` flag is ignored by `@vercel/node`), which
+  deadlocked POST requests. `cache.ts` therefore avoids `node:crypto`.
 - `apps/api/vercel.json` rewrites `/api/(.*)` to `/api` so every `/api/*` path
   (any depth) reaches the function. (A `[[...route]]` catch-all filename was
   tried first but Vercel matched only a single path segment with it.)

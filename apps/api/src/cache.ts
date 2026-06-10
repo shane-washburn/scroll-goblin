@@ -1,18 +1,18 @@
-import { createHash } from "node:crypto";
 import type { TranslateRequest, TranslateResponse } from "@emoji/shared";
 
 /**
  * Minimal in-memory LRU-ish cache for identical requests.
  * Identical (input + direction + targetLanguage) costs zero tokens on repeat.
  * Swap this module for Upstash Redis in production without touching callers.
+ *
+ * The key is the composite request string itself — collision-free and with no
+ * node:crypto dependency, so this module runs on the Edge runtime too.
  */
 const MAX_ENTRIES = 500;
 const store = new Map<string, TranslateResponse>();
 
 export function cacheKey(req: TranslateRequest): string {
-  return createHash("sha256")
-    .update(`${req.direction}|${req.targetLanguage}|${req.input}`)
-    .digest("hex");
+  return `${req.direction}|${req.targetLanguage}|${req.input}`;
 }
 
 export function getCached(key: string): TranslateResponse | undefined {

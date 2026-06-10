@@ -1,29 +1,26 @@
 import { Hono } from "hono";
-import { handle } from "@hono/node-server/vercel";
+import { handle } from "hono/vercel";
 import { app } from "../src/app.js";
 
 /**
- * Vercel serverless function entry (Node.js runtime).
+ * Vercel serverless function entry (Edge runtime).
  *
  * Reached via the vercel.json rewrite `/api/(.*) -> /api`, which maps every
- * /api/* request to this function (a plain filename, not a fragile
- * `[[...route]]` catch-all that Vercel treated as a single segment).
+ * /api/* request to this function. The app is mounted under /api, so production
+ * routes are /api/health and /api/v1/translate. Local dev (src/index.ts) is
+ * unchanged and serves /health and /v1/translate directly.
  *
- * The app is mounted under /api, so production routes are /api/health and
- * /api/v1/translate. Local dev (src/index.ts) is unchanged and serves /health
- * and /v1/translate directly.
- *
- * We use @hono/node-server/vercel (NOT hono/vercel, which is Edge-only) because
- * the cache uses node:crypto. bodyParser is disabled so the raw request stream
- * reaches Hono untouched.
+ * We use the Edge runtime + hono/vercel so the request is a native Web Request
+ * and `c.req.json()` reads the body directly. The Node runtime buffers/consumes
+ * the request body before the handler runs (and the Next.js-only
+ * `config.api.bodyParser` flag is ignored by @vercel/node), which deadlocked
+ * POST bodies. Edge has no node:crypto, which is why cache.ts no longer uses it.
  */
+export const config = {
+  runtime: "edge",
+};
+
 const vercelApp = new Hono();
 vercelApp.route("/api", app);
-
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
 
 export default handle(vercelApp);
