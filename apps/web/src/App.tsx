@@ -176,18 +176,20 @@ export default function App() {
           </div>
 
           {/* Action */}
-          <button
-            onClick={onTranslate}
-            disabled={loading || !input.trim()}
-            className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-3 font-semibold text-white shadow-lg shadow-indigo-300 transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            {loading ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <Sparkles className="h-4 w-4" />
-            )}
-            Translate
-          </button>
+          <div className="mt-5 flex justify-end">
+            <button
+              onClick={onTranslate}
+              disabled={loading || !input.trim()}
+              className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-3 font-semibold text-white shadow-lg shadow-indigo-300 transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50 sm:static sm:rounded-xl sm:px-5 sm:py-2.5 sm:shadow-indigo-200"
+            >
+              {loading ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                <Sparkles className="h-4 w-4" />
+              )}
+              Translate
+            </button>
+          </div>
 
           {/* Error */}
           {error && (
