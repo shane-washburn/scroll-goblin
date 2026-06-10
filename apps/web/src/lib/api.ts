@@ -1,0 +1,36 @@
+import {
+  TranslateResponseSchema,
+  type TranslateRequest,
+  type TranslateResponse,
+} from "@emoji/shared";
+
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8787";
+
+/**
+ * The ONLY place the frontend knows about the backend: a single typed client
+ * that speaks the shared contract. Swap the backend by changing VITE_API_BASE_URL.
+ */
+export async function translate(
+  req: TranslateRequest,
+  signal?: AbortSignal
+): Promise<TranslateResponse> {
+  const res = await fetch(`${API_BASE_URL}/v1/translate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(req),
+    signal,
+  });
+
+  const data = await res.json().catch(() => null);
+
+  if (!res.ok) {
+    const message =
+      (data && typeof data.error === "string" && data.error) ||
+      `Request failed (${res.status})`;
+    throw new Error(message);
+  }
+
+  // Validate the response against the shared contract too — defensive decoupling.
+  return TranslateResponseSchema.parse(data);
+}

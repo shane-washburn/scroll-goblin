@@ -1,0 +1,19 @@
+{
+  "name": "emoji-translator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered human language <-> emoji translator (decoupled monorepo)",
+  "packageManager": "pnpm@9.12.0",
+  "scripts": {
+    "build:shared": "pnpm --filter @emoji/shared build",
+    "dev:shared": "pnpm --filter @emoji/shared dev",
+    "dev:api": "pnpm --filter @emoji/api dev",
+    "dev:web": "pnpm --filter @emoji/web dev",
+    "dev": "pnpm build:shared && concurrently -n shared,api,web -c blue,green,magenta \"pnpm dev:shared\" \"pnpm dev:api\" \"pnpm dev:web\"",
+    "build": "pnpm build:shared && pnpm --filter @emoji/api build && pnpm --filter @emoji/web build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "typescript": "^5.6.3"
+  }
+}
