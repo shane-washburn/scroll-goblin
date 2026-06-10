@@ -5,6 +5,7 @@ import {
   TranslateRequestSchema,
   TranslationResultSchema,
   type TranslateResponse,
+  type TranslationResult,
 } from "@emoji/shared";
 import { getModel, getModelId } from "./ai.js";
 import { buildPrompt } from "./prompt.js";
@@ -56,7 +57,10 @@ app.post("/v1/translate", async (c) => {
     });
 
     const response: TranslateResponse = {
-      result: object,
+      // generateObject validates against TranslationResultSchema at runtime, so
+      // this is the correct shape; the cast restores the static type that the
+      // ai SDK's generic inference loses against the prebuilt shared schema.
+      result: object as TranslationResult,
       model: getModelId(),
       cached: false,
     };
