@@ -73,7 +73,7 @@ export default function App() {
             AI Emoji Translator
           </div>
           <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Translate language <span className="text-indigo-600">↔</span> emoji
+            Translate language <span>↔️</span> emoji
           </h1>
           <p className="mt-2 text-slate-500">
             Powered by an LLM. Pick a direction, choose a language, and go.
@@ -129,10 +129,8 @@ export default function App() {
           <div className="grid items-stretch gap-3 sm:grid-cols-[1fr_auto_1fr]">
             <textarea
               value={input}
+              maxLength={1024}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if ((e.metaKey || e.ctrlKey) && e.key === "Enter") onTranslate();
-              }}
               placeholder={
                 isTextToEmoji
                   ? "Type a sentence to turn into emoji..."
@@ -154,12 +152,12 @@ export default function App() {
             <div className="relative min-h-[160px] w-full rounded-xl border border-slate-200 bg-slate-50 p-4">
               {result ? (
                 <>
-                  <p className="text-lg leading-relaxed text-slate-800 break-words">
+                  <p className="pr-12 text-lg leading-relaxed text-slate-800 break-words">
                     {result.translation}
                   </p>
                   <button
                     onClick={copyOutput}
-                    className="absolute right-3 top-3 rounded-md p-1.5 text-slate-400 transition hover:bg-white hover:text-indigo-600"
+                    className="absolute right-3 top-3 rounded-md bg-white p-1.5 text-slate-400 shadow-sm ring-1 ring-slate-100 transition hover:text-indigo-600"
                     title="Copy"
                   >
                     {copied ? (
@@ -178,24 +176,18 @@ export default function App() {
           </div>
 
           {/* Action */}
-          <div className="mt-5 flex items-center justify-between">
-            <p className="text-xs text-slate-400">
-              Tip: press <kbd className="rounded bg-slate-100 px-1">⌘/Ctrl</kbd>{" "}
-              + <kbd className="rounded bg-slate-100 px-1">Enter</kbd>
-            </p>
-            <button
-              onClick={onTranslate}
-              disabled={loading || !input.trim()}
-              className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white shadow-lg shadow-indigo-200 transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              {loading ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                <Sparkles className="h-4 w-4" />
-              )}
-              Translate
-            </button>
-          </div>
+          <button
+            onClick={onTranslate}
+            disabled={loading || !input.trim()}
+            className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-3 font-semibold text-white shadow-lg shadow-indigo-300 transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {loading ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Sparkles className="h-4 w-4" />
+            )}
+            Translate
+          </button>
 
           {/* Error */}
           {error && (

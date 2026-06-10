@@ -29,6 +29,7 @@ export const LANGUAGES = [
   { code: "zh", label: "Chinese (Simplified)" },
   { code: "hi", label: "Hindi" },
   { code: "ar", label: "Arabic" },
+  { code: "uk", label: "Ukrainian" },
 ] as const;
 
 export const LanguageCodeSchema = z.enum(
