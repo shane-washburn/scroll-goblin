@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@scroll-goblin/module-commune-with-god": "workspace:*",
     "@scroll-goblin/module-emoji-translator": "workspace:*",
     "@scroll-goblin/module-screaming-chicken": "workspace:*",
     "@scroll-goblin/module-touch-grass": "workspace:*",
