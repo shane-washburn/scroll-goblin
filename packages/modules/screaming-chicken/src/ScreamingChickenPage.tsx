@@ -1,6 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import { Card } from "@scroll-goblin/ui";
+import { Card, ShareButton, consumeShareSnapshot } from "@scroll-goblin/ui";
 import { playPop, playScream, startWheeze, type Wheeze } from "./scream";
+
+/** State captured in a shareable link. Bump SHARE_VERSION on shape changes. */
+interface ShareState {
+  squeezes: number;
+  screams: number;
+  eggs: number;
+  record: number;
+}
+
+const MODULE_ID = "screaming-chicken";
+const SHARE_VERSION = 1;
 
 /** SVG viewBox dimensions. */
 const VW = 320;
@@ -54,11 +65,21 @@ export default function ScreamingChickenPage() {
   });
   const wheeze = useRef<Wheeze | null>(null);
 
-  const [squeezes, setSqueezes] = useState(0);
-  const [screams, setScreams] = useState(0);
-  const [eggs, setEggs] = useState(0);
-  const [record, setRecord] = useState(0);
-  const [message, setMessage] = useState(MESSAGES.idle);
+  // Consume a share snapshot exactly once; the URL param is stripped so a
+  // refresh or fresh navigation starts the module blank.
+  const [snapshot] = useState(() =>
+    consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
+  );
+
+  const [squeezes, setSqueezes] = useState(snapshot?.squeezes ?? 0);
+  const [screams, setScreams] = useState(snapshot?.screams ?? 0);
+  const [eggs, setEggs] = useState(snapshot?.eggs ?? 0);
+  const [record, setRecord] = useState(snapshot?.record ?? 0);
+  const [message, setMessage] = useState(
+    snapshot
+      ? "Someone shared their chicken stats with you. Think you can do better?"
+      : MESSAGES.idle
+  );
 
   // Animation loop: pressure eases toward 1 while held, springs back with
   // overshoot on release. All deformation derives from that one value.
@@ -408,6 +429,13 @@ export default function ScreamingChickenPage() {
             <span>
               Deepest: <span className="bg-brand-secondary px-1">{record}%</span>
             </span>
+            <ShareButton
+              moduleId={MODULE_ID}
+              version={SHARE_VERSION}
+              disabled={squeezes === 0}
+              getState={(): ShareState => ({ squeezes, screams, eggs, record })}
+              className="!px-3 !py-1.5 !shadow-neo-sm"
+            />
           </div>
         </div>
       </Card>
