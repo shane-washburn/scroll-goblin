@@ -1,10 +1,16 @@
-import { Link } from "react-router-dom";
-import { Sparkles } from "lucide-react";
-import { Card } from "@scroll-goblin/ui";
+import { Link, useNavigate } from "react-router-dom";
+import { Dices, Sparkles } from "lucide-react";
+import { Button, Card } from "@scroll-goblin/ui";
 import { MODULES } from "../modules/registry";
 
 export default function Landing() {
+  const navigate = useNavigate();
   const visible = MODULES.filter((m) => m.status !== "hidden");
+
+  const goToRandomModule = () => {
+    const pick = visible[Math.floor(Math.random() * visible.length)];
+    if (pick) navigate(pick.path);
+  };
   const tileColors = [
     "bg-brand-primary",
     "bg-brand-secondary",
@@ -22,6 +28,13 @@ export default function Landing() {
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
             Choose your brainrot spell
           </h1>
+          <Button
+            onClick={goToRandomModule}
+            className="mt-5 bg-brand-background uppercase"
+          >
+            <Dices className="h-5 w-5" />
+            Surprise me
+          </Button>
         </div>
         <div className="mascot-boil rounded-neobrutal border-thick border-brand-border bg-brand-background p-3 shadow-neo-lg">
           <img
