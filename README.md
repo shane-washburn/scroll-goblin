@@ -1,6 +1,7 @@
-# App Suite
+# Scroll Goblin
 
-A growing collection of mini apps, games, and activities ("**modules**") served
+**Scroll Goblin** (`scroll-goblin`) is a growing collection of mini apps, games,
+and activities ("**modules**") served
 from a single landing page. Current modules: **Emoji Translator** 😀 and
 **Touch Grass** 🌱.
 
@@ -9,7 +10,7 @@ provider are each independently swappable — and so the suite scales
 horizontally: adding a module never touches another module's code.
 
 ```
-touch-grass/
+scroll-goblin/
 ├── apps/
 │   ├── web/                  # The SHELL: landing page, router, global chrome
 │   └── api/                  # Hono backend: per-module routers + shared infra

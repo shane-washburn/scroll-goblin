@@ -1,8 +1,8 @@
 {
-  "name": "touch-grass",
+  "name": "scroll-goblin",
   "version": "0.1.0",
   "private": true,
-  "description": "App suite of mini apps, games, and activities (decoupled modular monorepo)",
+  "description": "Scroll Goblin: a suite of mini apps, games, and activities (decoupled modular monorepo)",
   "packageManager": "pnpm@9.12.0",
   "scripts": {
     "build:shared": "pnpm --filter @emoji/shared build",

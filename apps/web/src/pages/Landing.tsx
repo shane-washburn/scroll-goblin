@@ -13,7 +13,7 @@ export default function Landing() {
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-primary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
           <Sparkles className="h-4 w-4" />
-          App Suite
+          Scroll Goblin
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
           Pick an app to launch
