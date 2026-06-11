@@ -16,18 +16,18 @@ const moduleRoutes = MODULES.map((m) => ({
 
 export default function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-br from-brand-50 via-white to-pink-50 text-slate-800">
-      <nav className="sticky top-0 z-40 border-b border-slate-100 bg-white/70 backdrop-blur">
+    <div className="flex min-h-screen flex-col bg-brand-background font-body text-brand-text">
+      <nav className="sticky top-0 z-40 border-b-thick border-brand-border bg-brand-background">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3">
           <Link
             to="/"
-            className="text-sm font-bold tracking-tight text-slate-900 transition hover:text-brand-600"
+            className="font-heading text-sm uppercase text-brand-text transition hover:bg-brand-warning"
           >
             🧩 App Suite
           </Link>
           <Link
             to="/"
-            className="text-xs font-medium text-slate-500 transition hover:text-brand-600"
+            className="rounded-neobrutal border-thin border-brand-border bg-brand-secondary px-3 py-1 text-xs font-bold text-brand-text shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
           >
             All apps
           </Link>
@@ -37,7 +37,9 @@ export default function App() {
       <main className="flex-1">
         <Suspense
           fallback={
-            <div className="py-24 text-center text-slate-400">Loading…</div>
+            <div className="py-24 text-center font-bold text-brand-text">
+              Loading...
+            </div>
           }
         >
           <Routes>
@@ -49,8 +51,8 @@ export default function App() {
         </Suspense>
       </main>
 
-      <footer className="py-8 text-center text-xs text-slate-400">
-        Decoupled monorepo · React + TS shell · Hono API · Vercel AI SDK
+      <footer className="border-t-thick border-brand-border bg-brand-surface px-4 py-6 text-center text-xs font-bold text-brand-text">
+        Decoupled monorepo / React + TS shell / Hono API / Vercel AI SDK
         (Gemini)
       </footer>
       <Analytics />

@@ -296,46 +296,48 @@ export default function TouchGrassPage() {
   };
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:py-16">
-      <header className="mb-8 text-center">
-        <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-1.5 text-sm font-medium text-brand-600 shadow-sm ring-1 ring-brand-100">
+    <div className="mx-auto max-w-4xl px-4 py-8 sm:py-12">
+      <header className="mb-bento grid gap-bento sm:grid-cols-[1fr_1fr]">
+        <div className="rounded-neobrutal border-thick border-brand-border bg-brand-primary p-5 shadow-neo-lg">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
           🌱 Touch Grass
-        </div>
-        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+          </div>
+          <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
           Go ahead. Touch the grass.
-        </h1>
-        <p className="mt-2 text-slate-500">
+          </h1>
+        </div>
+        <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
           Brush it, press to flatten it, double-click to pluck a blade — or
           grab the watering can and help it grow.
         </p>
       </header>
 
-      <Card className="overflow-hidden">
+      <Card className="overflow-hidden bg-brand-background">
         {/* Mode toggle */}
-        <div className="flex items-center justify-between border-b border-slate-100 p-3">
-          <div className="flex items-center gap-2 rounded-xl bg-slate-100 p-1 text-sm font-medium">
+        <div className="flex flex-col gap-3 border-b-thick border-brand-border bg-brand-warning p-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-2 text-sm font-bold">
             <button
               onClick={() => setMode("touch")}
-              className={`rounded-lg px-3 py-1.5 transition ${
+              className={`rounded-neobrutal border-thin border-brand-border px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow,background-color] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed ${
                 mode === "touch"
-                  ? "bg-white text-brand-600 shadow"
-                  : "text-slate-500 hover:text-slate-700"
+                  ? "bg-brand-background text-brand-text"
+                  : "bg-brand-surface text-brand-text"
               }`}
             >
               ✋ Touch
             </button>
             <button
               onClick={() => setMode("water")}
-              className={`rounded-lg px-3 py-1.5 transition ${
+              className={`rounded-neobrutal border-thin border-brand-border px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow,background-color] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed ${
                 mode === "water"
-                  ? "bg-white text-brand-600 shadow"
-                  : "text-slate-500 hover:text-slate-700"
+                  ? "bg-brand-background text-brand-text"
+                  : "bg-brand-surface text-brand-text"
               }`}
             >
               🚿 Water
             </button>
           </div>
-          <p className="hidden text-xs text-slate-400 sm:block">
+          <p className="text-xs font-bold text-brand-text">
             {mode === "water"
               ? "Press and hold to pour"
               : "Brush, press, or double-click"}
@@ -350,13 +352,13 @@ export default function TouchGrassPage() {
           onPointerCancel={onPointerLeave}
           onPointerLeave={onPointerLeave}
           onDoubleClick={onDoubleClick}
-          className="relative h-80 w-full cursor-pointer touch-none select-none overflow-hidden bg-gradient-to-b from-sky-200 via-sky-100 to-emerald-100"
+          className="relative h-80 w-full cursor-pointer touch-none select-none overflow-hidden bg-gradient-to-b from-brand-secondary via-white to-brand-primary"
         >
           {/* Sun */}
-          <div className="absolute right-8 top-6 h-14 w-14 rounded-full bg-amber-200 shadow-[0_0_40px_12px_rgba(252,211,77,0.55)]" />
+          <div className="absolute right-8 top-6 h-14 w-14 rounded-full border-thick border-brand-border bg-brand-warning shadow-neo-md" />
 
           {/* Ground */}
-          <div className="absolute bottom-0 h-10 w-full bg-gradient-to-b from-emerald-200 to-emerald-300" />
+          <div className="absolute bottom-0 h-10 w-full border-t-thick border-brand-border bg-brand-primary" />
 
           {/* Grass blades */}
           {blades.current.map((b, i) => (
@@ -374,17 +376,17 @@ export default function TouchGrassPage() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-2 border-t border-slate-100 p-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-slate-500">{message}</p>
-          <div className="flex gap-4 text-xs font-medium text-slate-400">
+        <div className="flex flex-col gap-3 border-t-thick border-brand-border bg-brand-surface p-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm font-bold text-brand-text">{message}</p>
+          <div className="flex flex-wrap gap-2 text-xs font-bold text-brand-text">
             <span>
-              Touches: <span className="text-brand-600">{touches}</span>
+              Touches: <span className="bg-brand-primary px-1">{touches}</span>
             </span>
             <span>
-              Plucked: <span className="text-brand-600">{plucks}</span>
+              Plucked: <span className="bg-brand-secondary px-1">{plucks}</span>
             </span>
             <span>
-              Waterings: <span className="text-brand-600">{waters}</span>
+              Waterings: <span className="bg-brand-warning px-1">{waters}</span>
             </span>
           </div>
         </div>
