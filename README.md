@@ -1,37 +1,64 @@
-# Emoji Translator
+# App Suite
 
-AI-powered translator that converts **human language → emoji** and **emoji → a selected human language**.
+A growing collection of mini apps, games, and activities ("**modules**") served
+from a single landing page. Current modules: **Emoji Translator** 😀 and
+**Touch Grass** 🌱.
 
-Built as a **decoupled monorepo** so the frontend, backend, and LLM provider are each independently swappable.
+Built as a **decoupled monorepo** so the shell, backend, modules, and LLM
+provider are each independently swappable — and so the suite scales
+horizontally: adding a module never touches another module's code.
 
 ```
 emoji-translator/
 ├── apps/
-│   ├── web/        # Vite + React + TypeScript SPA (talks ONLY to the API)
-│   └── api/        # Hono backend (holds the API key, calls the LLM)
+│   ├── web/                  # The SHELL: landing page, router, global chrome
+│   └── api/                  # Hono backend: per-module routers + shared infra
 └── packages/
-    └── shared/     # Zod schemas + TS types = the contract both apps depend on
+    ├── shared/               # Zod schemas + TS types (API contracts)
+    ├── ui/                   # Design system: Tailwind preset, Card/Button, ModuleManifest type
+    └── modules/
+        ├── emoji-translator/ # One package per module (UI + manifest + API client)
+        └── touch-grass/
 ```
 
 ## Architecture
 
 ```
-Browser (React + TS)  --HTTP/JSON-->  API (Hono + Vercel AI SDK)  -->  LLM (Gemini)
-        |                                      |
-        +------------ @emoji/shared (Zod contract) -----------+
+                    ┌─ Shell (apps/web) ────────────┐
+  Landing page ──▶  │  module registry → lazy routes  │
+                    └─────┬────────────────────────┘
+                          │ loads @emoji/module-* chunks on demand
+                          ▼
+  Module UI  --HTTP/JSON-->  API (Hono)  /api/<module-id>/...  -->  LLM (Gemini)
+        |                          |
+        +---- @emoji/shared (Zod contract) ----+
 ```
 
-- **Decoupled:** the web app only knows a base URL (`VITE_API_BASE_URL`) and the shared contract. Swap either side freely.
-- **Provider-agnostic:** the backend uses the **Vercel AI SDK**. Default provider is **Google Gemini**; switch via `AI_PROVIDER` env + the matching SDK (see `apps/api/src/ai.ts`).
-- **Secure:** the LLM API key lives only in the backend, never in the browser.
-- **Structured output:** the model returns `{ translation, alternatives[], notes }` validated by Zod.
-- **Cached:** identical requests are served from an in-memory cache (swap for Redis in prod).
+- **Registry-driven:** the shell discovers modules only through
+  `apps/web/src/modules/registry.ts`. The landing page cards and routes are
+  generated from each module's `ModuleManifest` — no shell changes per module.
+- **Code-split:** every module is lazy-loaded into its own chunk, so the
+  landing page bundle stays small no matter how many modules exist.
+- **Namespaced API:** each module's backend routes mount at
+  `/api/<module-id>/...` via the router registry in `apps/api/src/app.ts`.
+  Modules can't collide, and per-module usage is easy to trace.
+- **Unified styling:** `@emoji/ui` owns the design tokens (Tailwind preset with
+  the `brand-*` palette) and common components. Modules never hardcode one-off
+  colors — restyle the suite in one place.
+- **Decoupled:** module UIs only know `VITE_API_BASE_URL` plus the shared
+  contract. Frontend-only modules (like Touch Grass) need no backend at all.
+- **Provider-agnostic:** the backend uses the **Vercel AI SDK**. Default is
+  **Google Gemini**; switch via `AI_PROVIDER` env (see `apps/api/src/ai.ts`).
+- **Secure:** LLM API keys live only in the backend, never in the browser.
+- **Cached:** identical LLM requests are served from an in-memory cache.
 
 ## Tech Stack
 
 | Layer    | Choice |
 |----------|--------|
-| Frontend | React, TypeScript, Vite, Tailwind CSS, Lucide |
+| Shell    | React, TypeScript, Vite, React Router, Tailwind CSS, Lucide |
+| Modules  | One pnpm package each (`@emoji/module-*`), lazy-loaded source packages |
+| Design   | `@emoji/ui` — Tailwind preset (brand tokens) + shared components |
 | Backend  | Node, Hono, Vercel AI SDK (`ai`), Zod |
 | LLM      | Google Gemini (default, provider-agnostic) |
 | Contract | `@emoji/shared` (Zod) |
@@ -74,9 +101,68 @@ pnpm dev:api
 pnpm dev:web
 ```
 
+## Creating a new module
+
+A module is a pnpm package that exports a `ModuleManifest`. The shell's landing
+page and router pick it up automatically.
+
+**1. Create the package** — copy the smallest existing module as a skeleton:
+
+```
+packages/modules/my-game/
+├── package.json        # name: "@emoji/module-my-game", main: "./src/index.ts"
+├── tsconfig.json       # extends ../../../tsconfig.base.json, jsx: react-jsx
+└── src/
+    ├── index.ts        # export { manifest } from "./manifest";
+    ├── manifest.ts     # metadata + lazy entry point
+    └── MyGamePage.tsx  # default-export React component (the module's UI)
+```
+
+**2. Fill in the manifest:**
+
+```ts
+// src/manifest.ts
+import type { ModuleManifest } from "@emoji/ui";
+
+export const manifest: ModuleManifest = {
+  id: "my-game",                  // also the API namespace, /api/my-game/...
+  title: "My Game",
+  description: "Shown on the landing page card.",
+  emoji: "🎮",
+  path: "/apps/my-game",
+  status: "active",               // "beta" shows a badge, "hidden" unlists it
+  load: () => import("./MyGamePage"),
+};
+```
+
+**3. Register it (two one-line changes):**
+
+- `apps/web/package.json` → add `"@emoji/module-my-game": "workspace:*"` to dependencies
+- `apps/web/src/modules/registry.ts` → import the manifest and append it to `MODULES`
+
+Then `pnpm install`. Done — the landing page card and route exist.
+
+**4. (Optional) Add a backend.** If the module needs server routes:
+
+- Create a Hono router in `apps/api/src/modules/my-game.ts`
+- Register it in the `moduleRouters` map in `apps/api/src/app.ts`
+- Define request/response Zod schemas in `packages/shared` and call the API
+  from the module via a small typed client (see
+  `packages/modules/emoji-translator/src/api.ts` for the pattern)
+
+**Rules of the road**
+
+- Use `@emoji/ui` components and `brand-*` Tailwind tokens; don't invent
+  one-off colors.
+- Keep module state inside the module — no globals.
+- Frontend-only modules (no backend) are perfectly fine: Touch Grass is one.
+
 ## API
 
-`POST /v1/translate`
+Module routes are namespaced by module id. The emoji translator:
+
+`POST /api/emoji-translator/v1/translate` (in production; locally
+`POST http://localhost:8787/emoji-translator/v1/translate`)
 
 ```jsonc
 // request
@@ -92,6 +178,9 @@ pnpm dev:web
   "cached": false
 }
 ```
+
+The legacy unprefixed mount (`/api/v1/translate`) still works during migration
+and can be removed once no clients use it (see `apps/api/src/app.ts`).
 
 ## Swapping the LLM provider
 
