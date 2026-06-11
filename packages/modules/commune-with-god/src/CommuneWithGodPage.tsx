@@ -1,8 +1,17 @@
 import { useState } from "react";
 import { Loader2, Send, Sparkles, Heart } from "lucide-react";
 import { type DivineAnswer } from "@scroll-goblin/shared";
-import { Card } from "@scroll-goblin/ui";
+import { Card, ShareButton, consumeShareSnapshot } from "@scroll-goblin/ui";
 import { askTheDivine } from "./api";
+
+/** State captured in a shareable link. Bump SHARE_VERSION on shape changes. */
+interface ShareState {
+  asked: string | null;
+  answer: DivineAnswer | null;
+}
+
+const MODULE_ID = "commune-with-god";
+const SHARE_VERSION = 1;
 
 const PLACEHOLDER_QUESTIONS = [
   "Will things work out for me?",
@@ -12,9 +21,17 @@ const PLACEHOLDER_QUESTIONS = [
 ];
 
 export default function CommuneWithGodPage() {
+  // Consume a share snapshot exactly once; the URL param is stripped so a
+  // refresh or fresh navigation starts the module blank.
+  const [snapshot] = useState(() =>
+    consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
+  );
+
   const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState<DivineAnswer | null>(null);
-  const [asked, setAsked] = useState<string | null>(null);
+  const [answer, setAnswer] = useState<DivineAnswer | null>(
+    snapshot?.answer ?? null
+  );
+  const [asked, setAsked] = useState<string | null>(snapshot?.asked ?? null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -147,7 +164,7 @@ export default function CommuneWithGodPage() {
               </p>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex flex-wrap justify-center gap-3">
               <button
                 onClick={askAgain}
                 className="inline-flex items-center gap-2 rounded-neobrutal border-thick border-brand-border bg-brand-warning px-5 py-2.5 font-bold text-brand-text shadow-neo-lg transition-[transform,box-shadow] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed"
@@ -155,6 +172,11 @@ export default function CommuneWithGodPage() {
                 <Sparkles className="h-4 w-4" />
                 Ask another question
               </button>
+              <ShareButton
+                moduleId={MODULE_ID}
+                version={SHARE_VERSION}
+                getState={(): ShareState => ({ asked, answer })}
+              />
             </div>
           </div>
         )}

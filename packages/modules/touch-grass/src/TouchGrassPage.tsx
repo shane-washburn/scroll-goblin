@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Card } from "@scroll-goblin/ui";
+import { Card, ShareButton, consumeShareSnapshot } from "@scroll-goblin/ui";
 
 /** Number of grass blades in the field. */
 const BLADE_COUNT = 110;
@@ -59,6 +59,61 @@ function makeBlades(): Blade[] {
   }));
 }
 
+/**
+ * Compact per-blade tuple for share links: [x, h, w, hue, rest, growth, wet].
+ * Live physics values (angle, squash, ...) are transient and regenerate.
+ */
+type BladeTuple = [number, number, number, number, number, number, number];
+
+/** State captured in a shareable link. Bump SHARE_VERSION on shape changes. */
+interface ShareState {
+  touches: number;
+  plucks: number;
+  waters: number;
+  blades: BladeTuple[];
+}
+
+const MODULE_ID = "touch-grass";
+const SHARE_VERSION = 1;
+
+const round = (n: number, places: number) => {
+  const f = 10 ** places;
+  return Math.round(n * f) / f;
+};
+
+function toTuples(blades: Blade[]): BladeTuple[] {
+  return blades.map((b) => [
+    round(b.x, 3),
+    round(b.h, 1),
+    round(b.w, 2),
+    round(b.hue, 1),
+    round(b.rest, 1),
+    round(b.growth, 3),
+    round(b.wet, 2),
+  ]);
+}
+
+function fromTuples(tuples: BladeTuple[]): Blade[] {
+  return tuples.map(([x, h, w, hue, rest, growth, wet]) => ({
+    x,
+    h,
+    w,
+    hue,
+    rest,
+    phase: Math.random() * Math.PI * 2,
+    angle: 0,
+    vel: 0,
+    squash: 1,
+    squashVel: 0,
+    plucked: false,
+    regrowAt: 0,
+    growth,
+    wet,
+    // Force a first-frame restyle so growth/wetness render immediately.
+    dirty: true,
+  }));
+}
+
 const MESSAGES: Record<string, string> = {
   idle: "The grass awaits your touch.",
   brush: "The grass sways gently under your hand. 🍃",
@@ -73,10 +128,20 @@ const MESSAGES: Record<string, string> = {
 type Mode = "touch" | "water";
 
 export default function TouchGrassPage() {
+  // Consume a share snapshot exactly once; the URL param is stripped so a
+  // refresh or fresh navigation starts the module blank.
+  const [snapshot] = useState(() =>
+    consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
+  );
+
   const fieldRef = useRef<HTMLDivElement>(null);
   const bladeEls = useRef<(HTMLDivElement | null)[]>([]);
   const blades = useRef<Blade[]>([]);
-  if (blades.current.length === 0) blades.current = makeBlades();
+  if (blades.current.length === 0) {
+    blades.current = snapshot?.blades?.length
+      ? fromTuples(snapshot.blades)
+      : makeBlades();
+  }
 
   // Pointer state lives in a ref: it changes every frame and must not re-render.
   const pointer = useRef({ x: -9999, y: -9999, vx: 0, down: false, active: false });
@@ -87,10 +152,14 @@ export default function TouchGrassPage() {
   const modeRef = useRef<Mode>("touch");
 
   const [mode, setModeState] = useState<Mode>("touch");
-  const [touches, setTouches] = useState(0);
-  const [plucks, setPlucks] = useState(0);
-  const [waters, setWaters] = useState(0);
-  const [message, setMessage] = useState(MESSAGES.idle);
+  const [touches, setTouches] = useState(snapshot?.touches ?? 0);
+  const [plucks, setPlucks] = useState(snapshot?.plucks ?? 0);
+  const [waters, setWaters] = useState(snapshot?.waters ?? 0);
+  const [message, setMessage] = useState(
+    snapshot
+      ? "Someone shared their patch of grass with you. Treat it well."
+      : MESSAGES.idle
+  );
 
   const setMode = (m: Mode) => {
     modeRef.current = m;
@@ -378,7 +447,7 @@ export default function TouchGrassPage() {
 
         <div className="flex flex-col gap-3 border-t-thick border-brand-border bg-brand-surface p-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm font-bold text-brand-text">{message}</p>
-          <div className="flex flex-wrap gap-2 text-xs font-bold text-brand-text">
+          <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-brand-text">
             <span>
               Touches: <span className="bg-brand-primary px-1">{touches}</span>
             </span>
@@ -388,6 +457,18 @@ export default function TouchGrassPage() {
             <span>
               Waterings: <span className="bg-brand-warning px-1">{waters}</span>
             </span>
+            <ShareButton
+              moduleId={MODULE_ID}
+              version={SHARE_VERSION}
+              disabled={touches === 0 && plucks === 0 && waters === 0}
+              getState={(): ShareState => ({
+                touches,
+                plucks,
+                waters,
+                blades: toTuples(blades.current),
+              })}
+              className="!px-3 !py-1.5 !shadow-neo-sm"
+            />
           </div>
         </div>
       </Card>

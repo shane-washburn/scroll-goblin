@@ -13,14 +13,37 @@ import {
   type LanguageCode,
   type TranslationResult,
 } from "@scroll-goblin/shared";
-import { Card } from "@scroll-goblin/ui";
+import { Card, ShareButton, consumeShareSnapshot } from "@scroll-goblin/ui";
 import { translate } from "./api";
 
+/** State captured in a shareable link. Bump SHARE_VERSION on shape changes. */
+interface ShareState {
+  direction: Direction;
+  language: LanguageCode;
+  input: string;
+  result: TranslationResult | null;
+}
+
+const MODULE_ID = "emoji-translator";
+const SHARE_VERSION = 1;
+
 export default function EmojiTranslatorPage() {
-  const [direction, setDirection] = useState<Direction>("text-to-emoji");
-  const [language, setLanguage] = useState<LanguageCode>("en");
-  const [input, setInput] = useState("");
-  const [result, setResult] = useState<TranslationResult | null>(null);
+  // Consume a share snapshot exactly once; the URL param is stripped so a
+  // refresh or fresh navigation starts the module blank.
+  const [snapshot] = useState(() =>
+    consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
+  );
+
+  const [direction, setDirection] = useState<Direction>(
+    snapshot?.direction ?? "text-to-emoji"
+  );
+  const [language, setLanguage] = useState<LanguageCode>(
+    snapshot?.language ?? "en"
+  );
+  const [input, setInput] = useState(snapshot?.input ?? "");
+  const [result, setResult] = useState<TranslationResult | null>(
+    snapshot?.result ?? null
+  );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -177,7 +200,18 @@ export default function EmojiTranslatorPage() {
         </div>
 
         {/* Action */}
-        <div className="mt-5 flex justify-end">
+        <div className="mt-5 flex items-center justify-end gap-3">
+          <ShareButton
+            moduleId={MODULE_ID}
+            version={SHARE_VERSION}
+            disabled={!result}
+            getState={(): ShareState => ({
+              direction,
+              language,
+              input,
+              result,
+            })}
+          />
           <button
             onClick={onTranslate}
             disabled={loading || !input.trim()}

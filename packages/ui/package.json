@@ -8,6 +8,9 @@
   "exports": {
     ".": "./src/index.ts"
   },
+  "dependencies": {
+    "lucide-react": "^0.451.0"
+  },
   "peerDependencies": {
     "react": "^18.3.1"
   },

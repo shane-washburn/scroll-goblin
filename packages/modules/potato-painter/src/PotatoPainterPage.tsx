@@ -1,11 +1,45 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Card } from "@scroll-goblin/ui";
+import { Card, ShareButton, consumeShareSnapshot } from "@scroll-goblin/ui";
 import {
   VARIETIES,
   makePotato,
   stampPotato,
   type Potato,
 } from "./potato";
+
+/** One stamped potato: the live record kept while painting. */
+interface StampRecord {
+  potato: Potato;
+  /** Drop point as fractions of canvas size, so replays scale to any screen. */
+  nx: number;
+  ny: number;
+}
+
+/**
+ * Wire format for one stamp: [varietyIndex, seed, nx, ny]. Potatoes are
+ * fully determined by (varietyIndex, seed), so ~25 chars reproduce an
+ * entire potato print exactly — hundreds of stamps fit in one link.
+ */
+type StampTuple = [number, number, number, number];
+
+/** State captured in a shareable link. Bump SHARE_VERSION on shape changes. */
+interface ShareState {
+  used: number;
+  stamps: StampTuple[];
+}
+
+const MODULE_ID = "potato-painter";
+const SHARE_VERSION = 2;
+
+const round4 = (n: number) => Math.round(n * 10000) / 10000;
+
+function toTuple({ potato, nx, ny }: StampRecord): StampTuple {
+  return [potato.varietyIndex, potato.seed, round4(nx), round4(ny)];
+}
+
+function fromTuple([varietyIndex, seed, nx, ny]: StampTuple): StampRecord {
+  return { potato: makePotato(varietyIndex, seed), nx, ny };
+}
 
 const MESSAGES = {
   idle: "Pick up a potato and drop it on the canvas.",
@@ -60,18 +94,33 @@ function PotatoSvg({ potato }: { potato: Potato }) {
 }
 
 export default function PotatoPainterPage() {
+  // Consume a share snapshot exactly once; the URL param is stripped so a
+  // refresh or fresh navigation starts the module blank.
+  const [snapshot] = useState(() =>
+    consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
+  );
+
   const [tray, setTray] = useState<Potato[]>(() =>
     VARIETIES.map((_, i) => makePotato(i))
   );
-  const [used, setUsed] = useState(0);
-  const [stampCount, setStampCount] = useState(0);
-  const [message, setMessage] = useState(MESSAGES.idle);
+  const [used, setUsed] = useState(snapshot?.used ?? 0);
+  const [stampCount, setStampCount] = useState(snapshot?.stamps.length ?? 0);
+  const [message, setMessage] = useState(
+    snapshot
+      ? "Someone shared their potato art with you. Add your own spuds!"
+      : MESSAGES.idle
+  );
   const [drag, setDrag] = useState<DragState | null>(null);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasWrapRef = useRef<HTMLDivElement>(null);
   // Drag state mirror for window-level listeners (avoids stale closures).
   const dragRef = useRef<DragState | null>(null);
+  // Every stamp on the canvas, in order — the replayable source of truth
+  // behind shareable links.
+  const stampsRef = useRef<StampRecord[]>(
+    snapshot?.stamps.map(fromTuple) ?? []
+  );
 
   // Size the canvas to its container, preserving the drawing on resize.
   useEffect(() => {
@@ -96,6 +145,25 @@ export default function PotatoPainterPage() {
     return () => ro.disconnect();
   }, []);
 
+  // Replay a shared painting once the canvas is sized (the resize effect
+  // above runs first on mount).
+  useEffect(() => {
+    if (stampsRef.current.length === 0 || !snapshot) return;
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+    if (!canvas || !ctx) return;
+    for (const s of stampsRef.current) {
+      stampPotato(
+        ctx,
+        s.potato,
+        s.nx * canvas.width,
+        s.ny * canvas.height,
+        s.potato.rotation
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   /** Stamp the potato at the drop point if it lands on the canvas. */
   const tryStamp = useCallback(
     (d: DragState, clientX: number, clientY: number): boolean => {
@@ -111,6 +179,11 @@ export default function PotatoPainterPage() {
       // Use the potato's resting rotation so the print lands exactly as
       // previewed while dragging.
       stampPotato(ctx, d.potato, x, y, d.potato.rotation);
+      stampsRef.current.push({
+        potato: d.potato,
+        nx: x / rect.width,
+        ny: y / rect.height,
+      });
       setStampCount((n) => n + 1);
       return true;
     },
@@ -175,6 +248,7 @@ export default function PotatoPainterPage() {
   const clearCanvas = () => {
     const canvas = canvasRef.current;
     canvas?.getContext("2d")?.clearRect(0, 0, canvas.width, canvas.height);
+    stampsRef.current = [];
     setStampCount(0);
     setMessage(MESSAGES.cleared);
   };
@@ -249,6 +323,16 @@ export default function PotatoPainterPage() {
             <span>
               Potatoes used: <span className="bg-brand-primary px-1">{used}</span>
             </span>
+            <ShareButton
+              moduleId={MODULE_ID}
+              version={SHARE_VERSION}
+              disabled={stampCount === 0}
+              getState={(): ShareState => ({
+                used,
+                stamps: stampsRef.current.map(toTuple),
+              })}
+              className="!px-3 !py-1.5 !shadow-neo-sm"
+            />
             <button
               onClick={clearCanvas}
               className="rounded-neobrutal border-thin border-brand-border bg-brand-secondary px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
