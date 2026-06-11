@@ -9,7 +9,7 @@ provider are each independently swappable — and so the suite scales
 horizontally: adding a module never touches another module's code.
 
 ```
-emoji-translator/
+touch-grass/
 ├── apps/
 │   ├── web/                  # The SHELL: landing page, router, global chrome
 │   └── api/                  # Hono backend: per-module routers + shared infra

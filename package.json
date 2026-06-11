@@ -1,8 +1,8 @@
 {
-  "name": "emoji-translator",
+  "name": "touch-grass",
   "version": "0.1.0",
   "private": true,
-  "description": "AI-powered human language <-> emoji translator (decoupled monorepo)",
+  "description": "App suite of mini apps, games, and activities (decoupled modular monorepo)",
   "packageManager": "pnpm@9.12.0",
   "scripts": {
     "build:shared": "pnpm --filter @emoji/shared build",
