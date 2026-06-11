@@ -77,6 +77,9 @@ export const VARIETIES: PotatoVariety[] = [
 export interface Potato {
   id: string;
   varietyIndex: number;
+  /** PRNG seed this potato was grown from — with varietyIndex, it fully
+   * determines the potato, which keeps share links tiny. */
+  seed: number;
   /** Closed SVG path in a normalized -1..1 coordinate space. */
   path: string;
   /** Rendered footprint in px. */
@@ -91,7 +94,27 @@ export interface Potato {
   spots: { x: number; y: number; r: number }[];
 }
 
-const rand = (min: number, max: number) => min + Math.random() * (max - min);
+/** Deterministic PRNG (mulberry32): same seed, same potato, every time. */
+function mulberry32(seed: number): () => number {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+export function randomSeed(): number {
+  return Math.floor(Math.random() * 4294967296);
+}
+
+type Rng = () => number;
+
+const randWith =
+  (rng: Rng) =>
+  (min: number, max: number) =>
+    min + rng() * (max - min);
 
 let potatoCounter = 0;
 
@@ -100,10 +123,11 @@ let potatoCounter = 0;
  * bulges plus per-point jitter, then smoothed with quadratic curves through
  * segment midpoints so the result is organic rather than polygonal.
  */
-function blobPath(): string {
+function blobPath(rng: Rng): string {
+  const rand = randWith(rng);
   const N = 12;
-  const freq = Math.random() < 0.5 ? 2 : 3;
-  const phase = Math.random() * Math.PI * 2;
+  const freq = rng() < 0.5 ? 2 : 3;
+  const phase = rng() * Math.PI * 2;
   const bulge = rand(0.1, 0.2);
 
   const pts: { x: number; y: number }[] = [];
@@ -111,7 +135,7 @@ function blobPath(): string {
   for (let i = 0; i < N; i++) {
     const ang = (i / N) * Math.PI * 2;
     const r =
-      1 + Math.sin(ang * freq + phase) * bulge + (Math.random() - 0.5) * 0.14;
+      1 + Math.sin(ang * freq + phase) * bulge + (rng() - 0.5) * 0.14;
     maxR = Math.max(maxR, r);
     pts.push({ x: Math.cos(ang) * r, y: Math.sin(ang) * r });
   }
@@ -137,7 +161,12 @@ function blobPath(): string {
   return d + " Z";
 }
 
-export function makePotato(varietyIndex: number): Potato {
+export function makePotato(
+  varietyIndex: number,
+  seed: number = randomSeed()
+): Potato {
+  const rng = mulberry32(seed);
+  const rand = randWith(rng);
   const v = VARIETIES[varietyIndex];
   const w = rand(v.size[0], v.size[1]);
   const h = w / rand(v.aspect[0], v.aspect[1]);
@@ -147,10 +176,10 @@ export function makePotato(varietyIndex: number): Potato {
   const sat = v.sat + rand(-5, 5);
   const light = v.light + rand(-4, 4);
 
-  const spotCount = 4 + Math.floor(Math.random() * 5);
+  const spotCount = 4 + Math.floor(rng() * 5);
   const spots = Array.from({ length: spotCount }, () => {
-    const ang = Math.random() * Math.PI * 2;
-    const dist = Math.random() * 0.62;
+    const ang = rng() * Math.PI * 2;
+    const dist = rng() * 0.62;
     return {
       x: Math.cos(ang) * dist,
       y: Math.sin(ang) * dist,
@@ -161,7 +190,8 @@ export function makePotato(varietyIndex: number): Potato {
   return {
     id: `potato-${++potatoCounter}`,
     varietyIndex,
-    path: blobPath(),
+    seed,
+    path: blobPath(rng),
     w,
     h,
     rotation: rand(-14, 14),
@@ -180,6 +210,9 @@ export function stampPotato(
   y: number,
   rotation: number
 ) {
+  // Seed the spot jitter from the potato itself so replaying a shared
+  // stamp reproduces the print exactly.
+  const rand = randWith(mulberry32(potato.seed ^ 0x9e3779b9));
   const shape = new Path2D(potato.path);
   ctx.save();
   ctx.translate(x, y);
