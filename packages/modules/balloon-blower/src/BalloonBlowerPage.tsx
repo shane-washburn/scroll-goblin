@@ -85,6 +85,9 @@ export default function BalloonBlowerPage() {
   const meterFill = useRef<HTMLDivElement>(null);
   const pctLabel = useRef<HTMLSpanElement>(null);
   const burst = useRef<SVGGElement>(null);
+  // Live mic-input meter — shows raw detected blow strength so users (and we)
+  // can confirm the browser is actually receiving audio on their device.
+  const inputBar = useRef<HTMLDivElement>(null);
 
   /** Begin a brand-new balloon after a tie-off or pop. */
   const resetBalloon = () => {
@@ -218,6 +221,11 @@ export default function BalloonBlowerPage() {
 
     if (balloonBody.current) balloonBody.current.setAttribute("fill", col);
     if (knot.current) knot.current.setAttribute("fill", col);
+
+    // Live mic-input level (raw blow strength, independent of fill).
+    if (inputBar.current) {
+      inputBar.current.style.width = `${clamp(blow, 0, 1) * 100}%`;
+    }
   }
 
   /* --- Mic control --- */
@@ -387,8 +395,19 @@ export default function BalloonBlowerPage() {
               </button>
             )}
             {micOn && (
-              <span className="rounded-neobrutal border-thin border-brand-border bg-brand-primary px-3 py-1.5">
-                🎤 Mic live — blow!
+              <span className="inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-primary px-3 py-1.5">
+                🎤 Mic live
+                <span
+                  className="h-2 w-16 overflow-hidden rounded-neobrutal border-thin border-brand-border bg-brand-background"
+                  title="Live mic input"
+                  aria-label="Live mic input level"
+                >
+                  <span
+                    ref={inputBar}
+                    className="block h-full bg-brand-text"
+                    style={{ width: "0%" }}
+                  />
+                </span>
               </span>
             )}
             <button

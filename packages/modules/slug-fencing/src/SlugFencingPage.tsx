@@ -15,14 +15,17 @@ interface ShareState {
 
 const MODULE_ID = "slug-fencing";
 const SHARE_VERSION = 1;
+/** localStorage key for the player's preferred side (handedness). */
+const SIDE_KEY = "slug-fencing:side";
 
 /* --- Arena geometry (SVG viewBox units) --- */
 const VW = 640;
 const VH = 380;
 const TOP_Y = 72;
 const BOTTOM_Y = 312;
-const PLAYER_X = 150;
-const RIVAL_X = 490;
+const LEFT_X = 150;
+const RIGHT_X = 490;
+const MID_X = (LEFT_X + RIGHT_X) / 2;
 /** How far a lunge thrusts the head toward the rival, in viewBox units. */
 const LUNGE_REACH = 260;
 /** Vertical alignment window for a lunge to count as a hit. */
@@ -111,6 +114,27 @@ export default function SlugFencingPage() {
       ? "A challenger shared their duel. Can you out-slime them?"
       : MESSAGES.idle
   );
+  // Which side the player's slug sits on. Defaults to the right so a
+  // right-handed thumb doesn't cross (and block) the arena; lefties can swap.
+  const [side, setSide] = useState<"left" | "right">(() => {
+    try {
+      return localStorage.getItem(SIDE_KEY) === "left" ? "left" : "right";
+    } catch {
+      return "right";
+    }
+  });
+  const sideRef = useRef(side);
+  sideRef.current = side;
+  const toggleSide = () =>
+    setSide((s) => {
+      const next = s === "right" ? "left" : "right";
+      try {
+        localStorage.setItem(SIDE_KEY, next);
+      } catch {
+        /* private mode — preference just won't persist */
+      }
+      return next;
+    });
   // Mirror scores into refs so the rAF loop reads fresh values without
   // re-subscribing the effect.
   const scoreRef = useRef({ player: playerScore, rival: rivalScore });
@@ -122,13 +146,24 @@ export default function SlugFencingPage() {
     if (!g) return;
     g.setAttribute("transform", `translate(${x} ${y})`);
     g.style.opacity = "1";
-    g.animate(
-      [
-        { transform: "scale(0.3)", opacity: 1 },
-        { transform: "scale(1.4)", opacity: 0 },
-      ],
-      { duration: 320, easing: "ease-out", fill: "forwards" }
-    );
+    // No `fill: "forwards"`: a persisted CSS transform would permanently
+    // override the SVG transform attribute used to position the burst.
+    // try/catch because this runs inside the rAF tick — a WAAPI quirk on
+    // older Safari must never kill the game loop.
+    try {
+      const anim = g.animate(
+        [
+          { transform: "scale(0.3)", opacity: 1 },
+          { transform: "scale(1.4)", opacity: 0 },
+        ],
+        { duration: 320, easing: "ease-out" }
+      );
+      anim.onfinish = () => {
+        g.style.opacity = "0";
+      };
+    } catch {
+      g.style.opacity = "0";
+    }
   };
 
   /** Attempt to start a lunge for the given fencer; returns true if launched. */
@@ -258,6 +293,9 @@ export default function SlugFencingPage() {
       !f.hitResolved &&
       (now - f.lungeStart) / LUNGE_MS >= HIT_AT;
 
+    // Player thrusts toward the rival: -x when on the right, +x on the left.
+    const dir = sideRef.current === "right" ? -1 : 1;
+
     if (apex(p)) {
       p.hitResolved = true;
       if (Math.abs(p.y - r.y) <= HIT_Y_TOL) {
@@ -265,7 +303,7 @@ export default function SlugFencingPage() {
         setPlayerScore(next);
         trackStat(MODULE_ID, "hits");
         setMessage(next > 1 ? MESSAGES.hitStreak : MESSAGES.hit);
-        flashImpact((PLAYER_X + RIVAL_X) / 2 + 60, r.y);
+        flashImpact(MID_X + 60 * dir, r.y);
       } else {
         setMessage(MESSAGES.miss);
       }
@@ -276,7 +314,7 @@ export default function SlugFencingPage() {
       if (Math.abs(r.y - p.y) <= HIT_Y_TOL) {
         setRivalScore((n) => n + 1);
         setMessage(MESSAGES.gotHit);
-        flashImpact((PLAYER_X + RIVAL_X) / 2 - 60, p.y);
+        flashImpact(MID_X - 60 * dir, p.y);
       }
     }
   }
@@ -285,17 +323,27 @@ export default function SlugFencingPage() {
     const p = player.current;
     const r = rival.current;
 
+    // Sides depend on handedness; both slugs face the centre line, so the
+    // right-side slug is flipped horizontally and thrusts toward -x.
+    const rightHanded = sideRef.current === "right";
+    const playerX = rightHanded ? RIGHT_X : LEFT_X;
+    const rivalX = rightHanded ? LEFT_X : RIGHT_X;
+    const dir = rightHanded ? -1 : 1; // player's thrust direction
+
     const pOff = lungeOffset(now, p.lungeStart);
     playerGRef.current?.setAttribute(
       "transform",
-      `translate(${PLAYER_X + pOff} ${p.y})`
+      `translate(${playerX + dir * pOff} ${p.y})${
+        rightHanded ? " scale(-1 1)" : ""
+      }`
     );
 
     const rOff = lungeOffset(now, r.lungeStart);
-    // Rival faces left: flip horizontally around its own origin.
     rivalGRef.current?.setAttribute(
       "transform",
-      `translate(${RIVAL_X - rOff} ${r.y}) scale(-1 1)`
+      `translate(${rivalX - dir * rOff} ${r.y})${
+        rightHanded ? "" : " scale(-1 1)"
+      }`
     );
 
     if (playerEnergyRef.current) {
@@ -308,18 +356,23 @@ export default function SlugFencingPage() {
 
   /* --- Input handling --- */
   const toSvgY = (clientY: number) => {
+    // The SVG uses the default preserveAspectRatio ("meet"), so on narrow
+    // screens the drawing is letterboxed inside the element. Map through the
+    // actual rendered scale/offset, otherwise the slug lags the finger badly
+    // on phones.
     const rect = svgRef.current!.getBoundingClientRect();
-    return clamp(
-      ((clientY - rect.top) / rect.height) * VH,
-      TOP_Y,
-      BOTTOM_Y
-    );
+    const scale = Math.min(rect.width / VW, rect.height / VH);
+    const offsetY = (rect.height - VH * scale) / 2;
+    return clamp((clientY - rect.top - offsetY) / scale, TOP_Y, BOTTOM_Y);
   };
 
-  /** Movement threshold (client px) past which a press counts as a drag. */
-  const DRAG_SLOP = 8;
+  /**
+   * Movement threshold (client px) past which a press counts as a drag.
+   * Generous because thumbs on phones jitter well past a mouse's precision.
+   */
+  const DRAG_SLOP = 14;
   /** Max press duration (ms) that can still register as a lunge tap. */
-  const TAP_MS = 350;
+  const TAP_MS = 500;
 
   const onPointerMove = (e: React.PointerEvent<SVGSVGElement>) => {
     player.current.targetY = toSvgY(e.clientY);
@@ -332,9 +385,17 @@ export default function SlugFencingPage() {
     }
   };
   const onPointerDown = (e: React.PointerEvent<SVGSVGElement>) => {
-    // Capture the pointer so drag-to-move keeps tracking on touch even if the
-    // finger strays outside the SVG bounds.
-    e.currentTarget.setPointerCapture(e.pointerId);
+    // Capture the pointer so drag-to-move keeps tracking even if it strays
+    // outside the SVG bounds. Touch pointers already get implicit capture per
+    // the spec, and explicitly re-capturing them is a known iOS Safari bug
+    // source (dropped pointermove/pointerup) — so only capture mouse/pen.
+    if (e.pointerType !== "touch") {
+      try {
+        e.currentTarget.setPointerCapture(e.pointerId);
+      } catch {
+        /* capture is an optimisation — never fatal */
+      }
+    }
     player.current.targetY = toSvgY(e.clientY);
     gesture.current = {
       x: e.clientX,
@@ -350,6 +411,11 @@ export default function SlugFencingPage() {
     if (!g.moved && performance.now() - g.t < TAP_MS) {
       playerLunge();
     }
+  };
+  // iOS fires pointercancel liberally (system gestures, notification pulls).
+  // A cancelled press must never count as a tap, so just void the gesture.
+  const onPointerCancel = () => {
+    gesture.current.moved = true;
   };
 
   useEffect(() => {
@@ -409,38 +475,43 @@ export default function SlugFencingPage() {
           Move your slug up and down — drag on touch, or use the mouse / W / S.
           Tap (or click, or Space) to lunge. Line up with your rival and strike
           to score. Every move and lunge burns energy, so watch your meter.
+          Left-handed? Tap the hand button to swap sides.
         </p>
       </header>
 
       <Card className="overflow-hidden bg-brand-background">
-        {/* Scoreboard */}
+        {/* Scoreboard — panels mirror the arena so "You" sits over your slug. */}
         <div className="grid grid-cols-2 border-b-thick border-brand-border">
-          <div className="border-r-thick border-brand-border bg-brand-primary p-3">
-            <p className="text-xs font-bold uppercase text-brand-text">You</p>
-            <p className="font-heading text-3xl leading-none text-brand-text">
-              {playerScore}
-            </p>
-            <div className="mt-2 h-3 w-full overflow-hidden rounded-neobrutal border-thin border-brand-border bg-brand-background">
+          {(side === "right"
+            ? ["rival", "you"]
+            : ["you", "rival"]
+          ).map((who, i) => {
+            const isYou = who === "you";
+            return (
               <div
-                ref={playerEnergyRef}
-                className="h-full bg-brand-warning"
-                style={{ width: "100%" }}
-              />
-            </div>
-          </div>
-          <div className="bg-brand-pink p-3 text-right">
-            <p className="text-xs font-bold uppercase text-brand-text">Rival</p>
-            <p className="font-heading text-3xl leading-none text-brand-text">
-              {rivalScore}
-            </p>
-            <div className="mt-2 h-3 w-full overflow-hidden rounded-neobrutal border-thin border-brand-border bg-brand-background">
-              <div
-                ref={rivalEnergyRef}
-                className="ml-auto h-full bg-brand-warning"
-                style={{ width: "100%" }}
-              />
-            </div>
-          </div>
+                key={who}
+                className={`p-3 ${isYou ? "bg-brand-primary" : "bg-brand-pink"} ${
+                  i === 0 ? "border-r-thick border-brand-border" : "text-right"
+                }`}
+              >
+                <p className="text-xs font-bold uppercase text-brand-text">
+                  {isYou ? "You" : "Rival"}
+                </p>
+                <p className="font-heading text-3xl leading-none text-brand-text">
+                  {isYou ? playerScore : rivalScore}
+                </p>
+                <div className="mt-2 h-3 w-full overflow-hidden rounded-neobrutal border-thin border-brand-border bg-brand-background">
+                  <div
+                    ref={isYou ? playerEnergyRef : rivalEnergyRef}
+                    className={`h-full bg-brand-warning ${
+                      i === 1 ? "ml-auto" : ""
+                    }`}
+                    style={{ width: "100%" }}
+                  />
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div className="bg-gradient-to-b from-brand-secondary via-white to-brand-surface">
@@ -450,7 +521,7 @@ export default function SlugFencingPage() {
             onPointerMove={onPointerMove}
             onPointerDown={onPointerDown}
             onPointerUp={onPointerUp}
-            onPointerCancel={onPointerUp}
+            onPointerCancel={onPointerCancel}
             className="h-[360px] w-full cursor-crosshair touch-none select-none"
           >
             {/* Centre line */}
@@ -487,6 +558,13 @@ export default function SlugFencingPage() {
             <span>
               Lunges: <span className="bg-brand-secondary px-1">{lunges}</span>
             </span>
+            <button
+              onClick={toggleSide}
+              title="Swap which side your slug fights on"
+              className="rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
+            >
+              {side === "right" ? "🫱 Righty" : "🫲 Lefty"}
+            </button>
             <button
               onClick={resetMatch}
               className="rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
