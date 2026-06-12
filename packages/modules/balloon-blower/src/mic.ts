@@ -48,8 +48,16 @@ export async function startBlowMic(): Promise<BlowMic> {
   const analyser = ac.createAnalyser();
   analyser.fftSize = 1024;
   analyser.smoothingTimeConstant = 0.5;
+
+  // iOS Safari only processes an AnalyserNode if the graph reaches the
+  // destination. Route the analyser through a muted (gain 0) node so the
+  // graph actually runs — without this the analyser reads pure silence on
+  // mobile and the balloon never inflates. Gain 0 means no audible feedback.
+  const sink = ac.createGain();
+  sink.gain.value = 0;
   source.connect(analyser);
-  // Note: we deliberately do NOT connect to ac.destination — no feedback.
+  analyser.connect(sink);
+  sink.connect(ac.destination);
 
   const timeData = new Float32Array(analyser.fftSize);
   const freqData = new Uint8Array(analyser.frequencyBinCount);
@@ -60,6 +68,10 @@ export async function startBlowMic(): Promise<BlowMic> {
 
   return {
     level() {
+      // Mobile browsers can re-suspend the context (e.g. after the permission
+      // prompt or a tab switch); keep nudging it back to life.
+      if (ac.state === "suspended") void ac.resume();
+
       analyser.getFloatTimeDomainData(timeData);
       let sumSq = 0;
       for (let i = 0; i < timeData.length; i++) {
@@ -87,6 +99,8 @@ export async function startBlowMic(): Promise<BlowMic> {
     stop() {
       for (const track of stream.getTracks()) track.stop();
       source.disconnect();
+      analyser.disconnect();
+      sink.disconnect();
       void ac.close();
     },
   };
