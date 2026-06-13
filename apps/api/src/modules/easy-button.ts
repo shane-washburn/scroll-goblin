@@ -1,4 +1,3 @@
-import { randomBytes } from "node:crypto";
 import { Hono } from "hono";
 import { EasyButtonClipIdSchema } from "@scroll-goblin/shared";
 import { getRedis } from "../redis.js";
@@ -39,7 +38,30 @@ function contentMime(contentType: string | undefined): string {
 }
 
 function newClipId(): string {
-  return randomBytes(16).toString("hex");
+  const bytes = new Uint8Array(16);
+  globalThis.crypto.getRandomValues(bytes);
+  return Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join(
+    ""
+  );
+}
+
+function arrayBufferToBase64(buffer: ArrayBuffer): string {
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  const chunkSize = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+  }
+  return btoa(binary);
+}
+
+function base64ToBytes(base64: string): Uint8Array {
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return bytes;
 }
 
 async function enforceRateLimit(ip: string): Promise<
@@ -111,7 +133,7 @@ easyButtonRouter.post("/v1/clips", async (c) => {
   const clipId = newClipId();
   const stored: StoredClip = {
     mime,
-    base64: Buffer.from(bytes).toString("base64"),
+    base64: arrayBufferToBase64(bytes),
     createdAt: now,
     expiresAt,
   };
@@ -154,7 +176,7 @@ easyButtonRouter.get("/v1/clips/:id", async (c) => {
     0,
     Math.min(3600, Math.floor((clip.expiresAt - Date.now()) / 1000))
   );
-  const audio = Buffer.from(clip.base64, "base64");
+  const audio = base64ToBytes(clip.base64);
 
   return new Response(audio, {
     headers: {
