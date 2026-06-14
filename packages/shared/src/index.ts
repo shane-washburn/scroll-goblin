@@ -106,27 +106,29 @@ export const CommuneResponseSchema = z.object({
 export type CommuneResponse = z.infer<typeof CommuneResponseSchema>;
 
 /* ------------------------------------------------------------------ */
-/* Easy Button — custom audio clip sharing contract                    */
+/* Brainrot Button — custom audio clip sharing contract                */
 /* ------------------------------------------------------------------ */
 
-export const EasyButtonClipIdSchema = z
+export const BrainrotButtonClipIdSchema = z
   .string()
   .regex(/^[a-f0-9]{32}$/, "Invalid clip id");
-export type EasyButtonClipId = z.infer<typeof EasyButtonClipIdSchema>;
+export type BrainrotButtonClipId = z.infer<typeof BrainrotButtonClipIdSchema>;
 
-export const EasyButtonClipUploadResponseSchema = z.object({
-  clipId: EasyButtonClipIdSchema,
+export const BrainrotButtonClipUploadResponseSchema = z.object({
+  clipId: BrainrotButtonClipIdSchema,
   /** ISO timestamp; Redis TTL is the source of truth server-side. */
   expiresAt: z.string().datetime(),
 });
-export type EasyButtonClipUploadResponse = z.infer<
-  typeof EasyButtonClipUploadResponseSchema
+export type BrainrotButtonClipUploadResponse = z.infer<
+  typeof BrainrotButtonClipUploadResponseSchema
 >;
 
-export const EasyButtonShareStateSchema = z.object({
-  clipId: EasyButtonClipIdSchema,
+export const BrainrotButtonShareStateSchema = z.object({
+  clipId: BrainrotButtonClipIdSchema,
 });
-export type EasyButtonShareState = z.infer<typeof EasyButtonShareStateSchema>;
+export type BrainrotButtonShareState = z.infer<
+  typeof BrainrotButtonShareStateSchema
+>;
 
 /* ------------------------------------------------------------------ */
 /* Stats — suite-wide interaction counters & leaderboard contract       */
@@ -167,8 +169,8 @@ export const STAT_METRICS: Record<string, Record<string, string>> = {
     filled: "Balloons filled",
     popped: "Balloons popped",
   },
-  "easy-button": {
-    presses: "Easy Button presses",
+  "brainrot-button": {
+    presses: "Brainrot Button presses",
     recordings: "Unique custom recordings played",
   },
   "pushy-paws": {

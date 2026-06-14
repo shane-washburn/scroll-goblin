@@ -431,7 +431,7 @@ export default function TouchGrassPage() {
           🌱 Touch Grass
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-          Go ahead. Touch the grass.
+          Go ahead. Touch the grass
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">

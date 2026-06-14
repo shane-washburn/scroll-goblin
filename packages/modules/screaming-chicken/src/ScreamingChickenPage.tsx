@@ -318,7 +318,7 @@ export default function ScreamingChickenPage() {
             🐔 Screaming Chicken
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            Squeeze the chicken.
+            Squeeze the chicken
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">

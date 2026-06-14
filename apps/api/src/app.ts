@@ -3,7 +3,7 @@ import { cors } from "hono/cors";
 import { getModelId } from "./ai.js";
 import { emojiTranslatorRouter } from "./modules/emoji-translator.js";
 import { communeWithGodRouter } from "./modules/commune-with-god.js";
-import { easyButtonRouter } from "./modules/easy-button.js";
+import { brainrotButtonRouter } from "./modules/brainrot-button.js";
 import { statsRouter } from "./modules/stats.js";
 
 /**
@@ -33,7 +33,7 @@ app.get("/health", (c) => c.json({ ok: true, model: getModelId() }));
 const moduleRouters: Record<string, Hono> = {
   "emoji-translator": emojiTranslatorRouter,
   "commune-with-god": communeWithGodRouter,
-  "easy-button": easyButtonRouter,
+  "brainrot-button": brainrotButtonRouter,
   stats: statsRouter,
 };
 

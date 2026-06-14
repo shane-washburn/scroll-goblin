@@ -504,24 +504,31 @@ export default function PushyPawsPage() {
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-3 px-3 py-3 sm:gap-5 sm:px-4 sm:py-6">
-      <header className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-3">
-        <div>
-          <p className="text-xs font-bold uppercase tracking-normal text-brand-muted">
-            Shelf destruction simulator
-          </p>
-          <h1 className="font-heading text-3xl uppercase leading-none sm:text-5xl">
-            Pushy Paws
+      <header className="grid gap-bento sm:grid-cols-[1fr_1fr]">
+        <div className="rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-5 shadow-neo-lg">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
+            🐾 Pushy Paws
+          </div>
+          <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
+            Knock it off
           </h1>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <MuteButton />
-          <ShareButton moduleId={MODULE_ID} version={SHARE_VERSION} getState={shareState} disabled={pushed === 0} />
+        <div className="flex flex-col justify-between gap-4 rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 shadow-neo-lg">
+          <p className="text-sm font-bold leading-relaxed">
+            Tap the object once for each cat swat. Heavier targets need more
+            paws — shove them off the shelf to rack up chaos and level up your
+            increasingly buff cat.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <MuteButton />
+            <ShareButton moduleId={MODULE_ID} version={SHARE_VERSION} getState={shareState} disabled={pushed === 0} />
+          </div>
         </div>
       </header>
 
       <section
         ref={gameCardRef}
-        className={`relative min-h-[430px] overflow-hidden rounded-neobrutal border-thick border-brand-border bg-[#dff3ff] shadow-neo-lg sm:min-h-[520px] ${shake ? "easy-expired-alert" : ""}`}
+        className={`relative min-h-[430px] overflow-hidden rounded-neobrutal border-thick border-brand-border bg-[#dff3ff] shadow-neo-lg sm:min-h-[520px] ${shake ? "brainrot-expired-alert" : ""}`}
       >
         <div className="absolute inset-0 bg-[linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)] bg-[size:42px_42px] opacity-35" />
         <div className="absolute left-0 right-0 top-6 h-20 bg-[#fef3c7] shadow-[0_6px_0_#111827] sm:top-10 sm:h-24" />

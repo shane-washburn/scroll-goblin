@@ -313,7 +313,7 @@ export default function BalloonBlowerPage() {
             🎈 Balloon Blower
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            Blow it up.
+            Blow it up
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">

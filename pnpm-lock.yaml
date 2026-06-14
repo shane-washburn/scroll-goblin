@@ -60,12 +60,12 @@ importers:
       '@scroll-goblin/module-balloon-blower':
         specifier: workspace:*
         version: link:../../packages/modules/balloon-blower
+      '@scroll-goblin/module-brainrot-button':
+        specifier: workspace:*
+        version: link:../../packages/modules/brainrot-button
       '@scroll-goblin/module-commune-with-god':
         specifier: workspace:*
         version: link:../../packages/modules/commune-with-god
-      '@scroll-goblin/module-easy-button':
-        specifier: workspace:*
-        version: link:../../packages/modules/easy-button
       '@scroll-goblin/module-emoji-translator':
         specifier: workspace:*
         version: link:../../packages/modules/emoji-translator
@@ -153,7 +153,7 @@ importers:
         specifier: ^5.6.3
         version: 5.9.3
 
-  packages/modules/commune-with-god:
+  packages/modules/brainrot-button:
     dependencies:
       '@scroll-goblin/shared':
         specifier: workspace:*
@@ -178,7 +178,7 @@ importers:
         specifier: ^5.4.8
         version: 5.4.21(@types/node@22.19.21)
 
-  packages/modules/easy-button:
+  packages/modules/commune-with-god:
     dependencies:
       '@scroll-goblin/shared':
         specifier: workspace:*
