@@ -5,6 +5,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useMobileGameFit,
 } from "@scroll-goblin/ui";
 import {
   playPluck,
@@ -147,6 +148,7 @@ export default function TouchGrassPage() {
     consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
   );
 
+  const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
   const fieldRef = useRef<HTMLDivElement>(null);
   const bladeEls = useRef<(HTMLDivElement | null)[]>([]);
   const blades = useRef<Blade[]>([]);
@@ -438,7 +440,7 @@ export default function TouchGrassPage() {
         </p>
       </header>
 
-      <Card className="overflow-hidden bg-brand-background">
+      <Card ref={gameCardRef} className="overflow-hidden bg-brand-background">
         {/* Mode toggle */}
         <div className="flex flex-col gap-3 border-b-thick border-brand-border bg-brand-warning p-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2 text-sm font-bold">

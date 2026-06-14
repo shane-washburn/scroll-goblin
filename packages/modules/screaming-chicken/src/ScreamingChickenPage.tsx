@@ -4,6 +4,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useMobileGameFit,
 } from "@scroll-goblin/ui";
 import { playPop, playScream, startWheeze, type Wheeze } from "./scream";
 
@@ -45,6 +46,7 @@ const MESSAGES = {
 };
 
 export default function ScreamingChickenPage() {
+  const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
   const svgRef = useRef<SVGSVGElement>(null);
   const bodyRef = useRef<SVGGElement>(null);
   const headRef = useRef<SVGGElement>(null);
@@ -325,7 +327,7 @@ export default function ScreamingChickenPage() {
         </p>
       </header>
 
-      <Card className="overflow-hidden bg-brand-background">
+      <Card ref={gameCardRef} className="overflow-hidden bg-brand-background">
         <div className="border-b-thick border-brand-border bg-brand-secondary p-3">
           <p className="text-xs font-bold uppercase text-brand-text">
             Press and hold anywhere on the chicken — release to scream

@@ -6,6 +6,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useMobileGameFit,
 } from "@scroll-goblin/ui";
 import { askTheDivine } from "./api";
 
@@ -31,6 +32,8 @@ export default function CommuneWithGodPage() {
   const [snapshot] = useState(() =>
     consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
   );
+
+  const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
 
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState<DivineAnswer | null>(
@@ -88,7 +91,7 @@ export default function CommuneWithGodPage() {
         </p>
       </header>
 
-      <Card className="bg-brand-background p-4 sm:p-6">
+      <Card ref={gameCardRef} className="bg-brand-background p-4 sm:p-6">
         {/* The orb */}
         <div className="mb-6 flex justify-center">
           <div
