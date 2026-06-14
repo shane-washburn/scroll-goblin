@@ -11,6 +11,7 @@ import {
 import {
   AMINO_ACIDS,
   AMINO_INFO,
+  EXTENDED_AMINO_ACIDS,
   GENRE_IDS,
   GENRES,
   MAX_NOTES,
@@ -114,6 +115,33 @@ export default function MusicalDnaPage() {
     setSequence((s) => (s.length >= MAX_NOTES ? s : s + aa));
   const backspace = () => setSequence((s) => s.slice(0, -1));
   const clear = () => setSequence("");
+
+  // One palette button. Extended IUPAC codes get a dashed border so they read
+  // as "not one of the standard 20" even though they reuse the property colors.
+  const residueButton = (aa: string) => {
+    const info = AMINO_INFO[aa];
+    return (
+      <button
+        key={aa}
+        onClick={() => append(aa)}
+        disabled={sequence.length >= MAX_NOTES}
+        title={`${aa} — ${info.name} · ${PROPERTY_LABEL[info.property]}${
+          info.extended ? " · extended code" : ""
+        }`}
+        className={`flex flex-col items-center rounded-neobrutal border-thin border-brand-border py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed disabled:cursor-not-allowed disabled:opacity-40 ${
+          info.extended ? "border-dashed" : ""
+        }`}
+        style={{ backgroundColor: info.color }}
+      >
+        <span className="font-heading text-lg leading-none text-brand-text">
+          {aa}
+        </span>
+        <span className="text-[9px] font-bold leading-tight text-brand-text/70">
+          {info.name.slice(0, 3)}
+        </span>
+      </button>
+    );
+  };
 
   const onPaste = (e: React.ClipboardEvent) => {
     e.preventDefault();
@@ -256,27 +284,21 @@ export default function MusicalDnaPage() {
 
         {/* Amino acid palette */}
         <div className="border-t-thick border-brand-border bg-brand-background p-4">
+          {/* Standard 20 — the residues your DNA actually codes for. */}
+          <p className="mb-1.5 text-[11px] font-bold uppercase text-brand-muted">
+            Standard 20 — the amino acids your DNA codes for
+          </p>
           <div className="grid grid-cols-5 gap-1.5 sm:grid-cols-10">
-            {AMINO_ACIDS.split("").map((aa) => {
-              const info = AMINO_INFO[aa];
-              return (
-                <button
-                  key={aa}
-                  onClick={() => append(aa)}
-                  disabled={sequence.length >= MAX_NOTES}
-                  title={`${info.name} · ${PROPERTY_LABEL[info.property]}`}
-                  className="flex flex-col items-center rounded-neobrutal border-thin border-brand-border py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed disabled:cursor-not-allowed disabled:opacity-40"
-                  style={{ backgroundColor: info.color }}
-                >
-                  <span className="font-heading text-lg leading-none text-brand-text">
-                    {aa}
-                  </span>
-                  <span className="text-[9px] font-bold leading-tight text-brand-text/70">
-                    {info.name.slice(0, 3)}
-                  </span>
-                </button>
-              );
-            })}
+            {AMINO_ACIDS.split("").map(residueButton)}
+          </div>
+
+          {/* Extended codes — fill out the rest of the alphabet (A–Z). */}
+          <p className="mt-3 text-[11px] font-bold uppercase text-brand-muted">
+            Extended codes — rare &amp; ambiguous residues that complete the
+            alphabet
+          </p>
+          <div className="mt-1.5 grid grid-cols-6 gap-1.5 sm:grid-cols-10">
+            {EXTENDED_AMINO_ACIDS.split("").map(residueButton)}
           </div>
 
           {/* Property legend */}
@@ -290,6 +312,10 @@ export default function MusicalDnaPage() {
                 {PROPERTY_LABEL[p]}
               </span>
             ))}
+            <span className="inline-flex items-center gap-1.5">
+              <span className="inline-block h-3 w-3 rounded border border-dashed border-brand-border" />
+              Extended (dashed)
+            </span>
           </div>
         </div>
 
