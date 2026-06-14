@@ -176,6 +176,10 @@ export const STAT_METRICS: Record<string, Record<string, string>> = {
   "pushy-paws": {
     pushed: "Items pushed",
   },
+  "musical-dna": {
+    plays: "Songs played",
+    notes: "Notes sequenced",
+  },
 };
 
 /** Reserved metric name for page visits; valid for every module. */

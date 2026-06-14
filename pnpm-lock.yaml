@@ -69,6 +69,9 @@ importers:
       '@scroll-goblin/module-emoji-translator':
         specifier: workspace:*
         version: link:../../packages/modules/emoji-translator
+      '@scroll-goblin/module-musical-dna':
+        specifier: workspace:*
+        version: link:../../packages/modules/musical-dna
       '@scroll-goblin/module-potato-painter':
         specifier: workspace:*
         version: link:../../packages/modules/potato-painter
@@ -227,6 +230,25 @@ importers:
       vite:
         specifier: ^5.4.8
         version: 5.4.21(@types/node@22.19.21)
+
+  packages/modules/musical-dna:
+    dependencies:
+      '@scroll-goblin/ui':
+        specifier: workspace:*
+        version: link:../../ui
+      lucide-react:
+        specifier: ^0.451.0
+        version: 0.451.0(react@18.3.1)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.11
+        version: 18.3.31
+      typescript:
+        specifier: ^5.6.3
+        version: 5.9.3
 
   packages/modules/potato-painter:
     dependencies:
