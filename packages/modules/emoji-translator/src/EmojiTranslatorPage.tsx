@@ -18,6 +18,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useMobileGameFit,
 } from "@scroll-goblin/ui";
 import { translate } from "./api";
 
@@ -38,6 +39,8 @@ export default function EmojiTranslatorPage() {
   const [snapshot] = useState(() =>
     consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
   );
+
+  const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
 
   const [direction, setDirection] = useState<Direction>(
     snapshot?.direction ?? "text-to-emoji"
@@ -125,7 +128,7 @@ export default function EmojiTranslatorPage() {
         </p>
       </header>
 
-      <Card className="bg-brand-background p-4 sm:p-6">
+      <Card ref={gameCardRef} className="bg-brand-background p-4 sm:p-6">
         {/* Controls */}
         <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center gap-2 text-sm font-bold">

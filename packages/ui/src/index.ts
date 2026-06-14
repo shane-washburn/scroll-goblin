@@ -13,6 +13,7 @@ export {
 } from "./audio";
 export type { AudioBus } from "./audio";
 export { buildShareUrl, consumeShareSnapshot } from "./share";
+export { useMobileGameFit } from "./useMobileGameFit";
 export { trackStat, trackVisit } from "./stats";
 export {
   initGoogleAnalytics,

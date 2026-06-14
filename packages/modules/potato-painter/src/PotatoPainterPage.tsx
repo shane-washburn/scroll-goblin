@@ -5,6 +5,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useMobileGameFit,
 } from "@scroll-goblin/ui";
 import { playPickup, playReturn, playStamp, playWipe } from "./sounds";
 import {
@@ -119,6 +120,7 @@ export default function PotatoPainterPage() {
   );
   const [drag, setDrag] = useState<DragState | null>(null);
 
+  const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasWrapRef = useRef<HTMLDivElement>(null);
   // Drag state mirror for window-level listeners (avoids stale closures).
@@ -283,7 +285,7 @@ export default function PotatoPainterPage() {
         </p>
       </header>
 
-      <Card className="overflow-hidden bg-brand-background">
+      <Card ref={gameCardRef} className="overflow-hidden bg-brand-background">
         {/* Potato tray */}
         <div className="border-b-thick border-brand-border bg-brand-primary p-4">
           <p className="mb-3 text-xs font-bold uppercase text-brand-text">

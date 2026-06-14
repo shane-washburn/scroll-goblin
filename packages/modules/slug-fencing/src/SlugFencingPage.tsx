@@ -5,6 +5,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useMobileGameFit,
 } from "@scroll-goblin/ui";
 import {
   playGotHit,
@@ -95,6 +96,7 @@ const MESSAGES = {
 };
 
 export default function SlugFencingPage() {
+  const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
   const svgRef = useRef<SVGSVGElement>(null);
   const playerGRef = useRef<SVGGElement>(null);
   const rivalGRef = useRef<SVGGElement>(null);
@@ -500,7 +502,7 @@ export default function SlugFencingPage() {
         </p>
       </header>
 
-      <Card className="overflow-hidden bg-brand-background">
+      <Card ref={gameCardRef} className="overflow-hidden bg-brand-background">
         {/* Scoreboard — panels mirror the arena so "You" sits over your slug. */}
         <div className="grid grid-cols-2 border-b-thick border-brand-border">
           {(side === "right"

@@ -15,6 +15,7 @@ import {
   consumeShareSnapshot,
   isMuted,
   trackStat,
+  useMobileGameFit,
 } from "@scroll-goblin/ui";
 import type { EasyButtonShareState } from "@scroll-goblin/shared";
 import { ClipNotFoundError, fetchClip, uploadClip } from "./api";
@@ -57,6 +58,8 @@ export default function EasyButtonPage() {
   const snapshot = useRef(
     consumeShareSnapshot<EasyButtonShareState>(MODULE_ID, SHARE_VERSION)
   ).current;
+
+  const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
 
   const [activeClip, setActiveClip] = useState<ActiveClip>({
     url: defaultClipUrl,
@@ -325,7 +328,7 @@ export default function EasyButtonPage() {
         </div>
       )}
 
-      <Card className="grid gap-bento bg-brand-background p-4 sm:p-6">
+      <Card ref={gameCardRef} className="grid gap-bento bg-brand-background p-4 sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="rounded-neobrutal border-thin border-brand-border bg-brand-surface px-3 py-2 text-xs font-bold shadow-neo-sm">
             {activeClip.custom ? "CUSTOM VOICE ACTIVE" : "DEFAULT VOICE ACTIVE"}

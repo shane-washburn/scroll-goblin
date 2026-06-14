@@ -5,6 +5,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useMobileGameFit,
 } from "@scroll-goblin/ui";
 import { startBlowMic, type BlowMic } from "./mic";
 import {
@@ -78,6 +79,8 @@ export default function BalloonBlowerPage() {
       ? "A challenger shared their balloon run. Can you beat it?"
       : MESSAGES.idle
   );
+
+  const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
 
   // --- Simulation state lives in refs; the rAF loop is the only writer. ---
   const fill = useRef(0);
@@ -320,7 +323,7 @@ export default function BalloonBlowerPage() {
         </p>
       </header>
 
-      <Card className="overflow-hidden bg-brand-background">
+      <Card ref={gameCardRef} className="overflow-hidden bg-brand-background">
         {/* Scoreboard */}
         <div className="grid grid-cols-2 border-b-thick border-brand-border">
           <div className="border-r-thick border-brand-border bg-brand-primary p-3">

@@ -5,6 +5,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useMobileGameFit,
 } from "@scroll-goblin/ui";
 import {
   FALL_SOUND_MS,
@@ -440,6 +441,7 @@ export default function PushyPawsPage() {
   const [snapshot] = useState(() =>
     consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
   );
+  const gameCardRef = useMobileGameFit<HTMLElement>({ align: "top" });
   const [pushed, setPushed] = useState(snapshot?.pushed ?? 0);
   const [score, setScore] = useState(snapshot?.score ?? 0);
   const [item, setItem] = useState<ActiveItem>(() => makeActive());
@@ -518,6 +520,7 @@ export default function PushyPawsPage() {
       </header>
 
       <section
+        ref={gameCardRef}
         className={`relative min-h-[430px] overflow-hidden rounded-neobrutal border-thick border-brand-border bg-[#dff3ff] shadow-neo-lg sm:min-h-[520px] ${shake ? "easy-expired-alert" : ""}`}
       >
         <div className="absolute inset-0 bg-[linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)] bg-[size:42px_42px] opacity-35" />
