@@ -332,7 +332,6 @@ export default function MusicalDnaPage() {
             <ShareButton
               moduleId={MODULE_ID}
               version={SHARE_VERSION}
-              disabled={!song}
               getState={(): ShareState => ({ seq: sequence, genre: genreId })}
               className="!px-3 !py-1.5 !shadow-neo-sm"
             />
