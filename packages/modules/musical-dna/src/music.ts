@@ -14,6 +14,17 @@
 /** The 20 standard amino acids, single-letter codes. */
 export const AMINO_ACIDS = "ACDEFGHIKLMNPQRSTVWY";
 
+/**
+ * Extended IUPAC single-letter codes that fill out the rest of the alphabet:
+ * the two extra genetically-encoded residues (O, U) plus the ambiguity /
+ * unknown codes (B, J, X, Z). Together with the 20 standard codes these cover
+ * every letter A–Z, so any typed word (a name, say) maps to something real.
+ */
+export const EXTENDED_AMINO_ACIDS = "BJOUXZ";
+
+/** Full A–Z set: the 20 standard codes plus the 6 extended ones. */
+export const ALL_AMINO_ACIDS = AMINO_ACIDS + EXTENDED_AMINO_ACIDS;
+
 export type Property = "nonpolar" | "polar" | "positive" | "negative";
 
 export interface AminoInfo {
@@ -30,6 +41,8 @@ export interface AminoInfo {
   accent: boolean;
   /** Display colour, by chemical property. */
   color: string;
+  /** True for the extended IUPAC codes (not one of the standard 20). */
+  extended: boolean;
 }
 
 export const PROPERTY_COLOR: Record<Property, string> = {
@@ -57,7 +70,8 @@ const PROPERTY_MUSIC: Record<
   negative: { octave: -1, duration: 1.5, accent: true },
 };
 
-const AA_TABLE: Array<[string, string, Property, number]> = [
+/** [letter, name, property, degree, extended?]. */
+const AA_TABLE: Array<[string, string, Property, number, boolean?]> = [
   ["A", "Alanine", "nonpolar", 0],
   ["R", "Arginine", "positive", 1],
   ["N", "Asparagine", "polar", 3],
@@ -78,10 +92,18 @@ const AA_TABLE: Array<[string, string, Property, number]> = [
   ["V", "Valine", "nonpolar", 7],
   ["W", "Tryptophan", "nonpolar", 6],
   ["Y", "Tyrosine", "polar", 3],
+  // Extended IUPAC codes — properties inherited from the residue(s) they stand
+  // for, degrees chosen to sit in the same musical range as the standard 20.
+  ["O", "Pyrrolysine (Pyl)", "positive", 1, true],
+  ["U", "Selenocysteine (Sec)", "polar", 4, true],
+  ["B", "Asx — Asn or Asp", "negative", 2, true],
+  ["Z", "Glx — Glu or Gln", "negative", 6, true],
+  ["J", "Xle — Leu or Ile", "nonpolar", 6, true],
+  ["X", "Xaa — any residue", "nonpolar", 0, true],
 ];
 
 export const AMINO_INFO: Record<string, AminoInfo> = Object.fromEntries(
-  AA_TABLE.map(([letter, name, property, degree]) => {
+  AA_TABLE.map(([letter, name, property, degree, extended]) => {
     const m = PROPERTY_MUSIC[property];
     return [
       letter,
@@ -94,6 +116,7 @@ export const AMINO_INFO: Record<string, AminoInfo> = Object.fromEntries(
         duration: m.duration,
         accent: m.accent,
         color: PROPERTY_COLOR[property],
+        extended: extended ?? false,
       } satisfies AminoInfo,
     ];
   })
@@ -300,7 +323,7 @@ export function sanitizeSequence(input: string): string {
   return input
     .toUpperCase()
     .split("")
-    .filter((ch) => AMINO_ACIDS.includes(ch))
+    .filter((ch) => ALL_AMINO_ACIDS.includes(ch))
     .join("");
 }
 
