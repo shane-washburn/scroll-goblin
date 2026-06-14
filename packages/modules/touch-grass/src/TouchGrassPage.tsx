@@ -519,7 +519,6 @@ export default function TouchGrassPage() {
             <ShareButton
               moduleId={MODULE_ID}
               version={SHARE_VERSION}
-              disabled={touches === 0 && plucks === 0 && waters === 0}
               getState={(): ShareState => ({
                 touches,
                 plucks,

@@ -229,7 +229,6 @@ export default function EmojiTranslatorPage() {
           <ShareButton
             moduleId={MODULE_ID}
             version={SHARE_VERSION}
-            disabled={!result}
             getState={(): ShareState => ({
               direction,
               language,

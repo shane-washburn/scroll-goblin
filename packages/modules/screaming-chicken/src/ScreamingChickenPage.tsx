@@ -439,7 +439,6 @@ export default function ScreamingChickenPage() {
             <ShareButton
               moduleId={MODULE_ID}
               version={SHARE_VERSION}
-              disabled={squeezes === 0}
               getState={(): ShareState => ({ squeezes, screams, eggs, record })}
               className="!px-3 !py-1.5 !shadow-neo-sm"
             />

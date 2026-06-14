@@ -598,7 +598,6 @@ export default function SlugFencingPage() {
             <ShareButton
               moduleId={MODULE_ID}
               version={SHARE_VERSION}
-              disabled={playerScore === 0 && rivalScore === 0}
               getState={(): ShareState => ({ playerScore, rivalScore, lunges })}
               className="!px-3 !py-1.5 !shadow-neo-sm"
             />
