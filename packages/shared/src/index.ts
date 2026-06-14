@@ -144,7 +144,7 @@ export type BrainrotButtonShareState = z.infer<
 export const STAT_METRICS: Record<string, Record<string, string>> = {
   "touch-grass": {
     touches: "Grass touches",
-    plucks: "Blades of grass plucked",
+    plucks: "Grass plucked",
     waters: "Waterings poured",
   },
   "screaming-chicken": {
@@ -162,7 +162,7 @@ export const STAT_METRICS: Record<string, Record<string, string>> = {
     translations: "Emoji translations",
   },
   "slug-fencing": {
-    hits: "Slug hits landed",
+    hits: "Hits landed",
     lunges: "Lunges thrown",
   },
   "balloon-blower": {
@@ -170,11 +170,11 @@ export const STAT_METRICS: Record<string, Record<string, string>> = {
     popped: "Balloons popped",
   },
   "brainrot-button": {
-    presses: "Brainrot Button presses",
-    recordings: "Unique custom recordings played",
+    presses: "Button pushes",
+    recordings: "Custom recordings",
   },
   "pushy-paws": {
-    pushed: "Items pushed off shelves",
+    pushed: "Items pushed",
   },
 };
 
