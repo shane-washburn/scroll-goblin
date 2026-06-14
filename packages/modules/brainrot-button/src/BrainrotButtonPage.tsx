@@ -442,13 +442,11 @@ export default function BrainrotButtonPage() {
           <p className="mt-2 text-xs font-bold">
             {recording
               ? `${recordingSeconds}s / 10s`
-              : uploadedClipId
-                ? `Clip ${uploadedClipId.slice(0, 8)} is ready to share.`
-                : localClip
-                  ? `${formatBytes(localClip.size)} captured`
-                  : canRecord
-                    ? "10 seconds max. 500KB max."
-                    : "Recording is not supported in this browser."}
+              : localClip
+                ? `${formatBytes(localClip.size)} captured`
+                : canRecord
+                  ? "10 seconds max."
+                  : "Recording is not supported in this browser."}
           </p>
         </div>
       </Card>
