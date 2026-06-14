@@ -36,7 +36,7 @@ export const STATIC_PAGES = [
   { path: "/", title: SITE_NAME, description: SITE_DESCRIPTION },
   {
     path: "/leaderboard",
-    title: `Leaderboard — ${SITE_NAME}`,
+    title: "Leaderboard",
     description:
       "Global leaderboard of the most-visited and most-poked Scroll Goblin mini-apps.",
   },

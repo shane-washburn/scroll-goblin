@@ -124,11 +124,11 @@ textarea {
   }
 }
 
-.easy-expired-alert {
-  animation: easy-expired-shake 420ms steps(2, end) 2;
+.brainrot-expired-alert {
+  animation: brainrot-expired-shake 420ms steps(2, end) 2;
 }
 
-@keyframes easy-expired-shake {
+@keyframes brainrot-expired-shake {
   0%,
   100% {
     transform: translate(0, 0) rotate(0deg);

@@ -1,14 +1,14 @@
 /// <reference types="vite/client" />
 import {
-  EasyButtonClipUploadResponseSchema,
-  type EasyButtonClipUploadResponse,
+  BrainrotButtonClipUploadResponseSchema,
+  type BrainrotButtonClipUploadResponse,
 } from "@scroll-goblin/shared";
 
 const API_BASE_URL = (
   import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8787"
 ).replace(/\/+$/, "");
 
-const MODULE_API = `${API_BASE_URL}/easy-button`;
+const MODULE_API = `${API_BASE_URL}/brainrot-button`;
 
 export class ClipNotFoundError extends Error {
   constructor() {
@@ -20,7 +20,7 @@ export class ClipNotFoundError extends Error {
 export async function uploadClip(
   clip: Blob,
   signal?: AbortSignal
-): Promise<EasyButtonClipUploadResponse> {
+): Promise<BrainrotButtonClipUploadResponse> {
   const res = await fetch(`${MODULE_API}/v1/clips`, {
     method: "POST",
     headers: { "Content-Type": clip.type || "application/octet-stream" },
@@ -36,7 +36,7 @@ export async function uploadClip(
     throw new Error(message);
   }
 
-  return EasyButtonClipUploadResponseSchema.parse(data);
+  return BrainrotButtonClipUploadResponseSchema.parse(data);
 }
 
 export async function fetchClip(clipId: string): Promise<Blob> {

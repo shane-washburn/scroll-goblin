@@ -1,8 +1,8 @@
 import { Hono } from "hono";
-import { EasyButtonClipIdSchema } from "@scroll-goblin/shared";
+import { BrainrotButtonClipIdSchema } from "@scroll-goblin/shared";
 import { getRedis } from "../redis.js";
 
-export const easyButtonRouter = new Hono();
+export const brainrotButtonRouter = new Hono();
 
 const MAX_BYTES = 500 * 1024;
 const CLIP_TTL_SECONDS = 7 * 24 * 60 * 60;
@@ -24,9 +24,9 @@ interface StoredClip {
   expiresAt: number;
 }
 
-const clipKey = (id: string) => `easy-button:clip:${id}`;
+const clipKey = (id: string) => `brainrot-button:clip:${id}`;
 const rateKey = (ip: string, bucket: number) =>
-  `easy-button:rate:${ip}:${bucket}`;
+  `brainrot-button:rate:${ip}:${bucket}`;
 
 function clientIp(headers: Headers): string {
   const forwarded = headers.get("x-forwarded-for")?.split(",")[0]?.trim();
@@ -99,7 +99,7 @@ async function enforceRateLimit(ip: string): Promise<
   return { ok: true };
 }
 
-easyButtonRouter.post("/v1/clips", async (c) => {
+brainrotButtonRouter.post("/v1/clips", async (c) => {
   const redis = getRedis();
   if (!redis) return c.json({ error: "Clip storage is not configured." }, 503);
 
@@ -141,7 +141,7 @@ easyButtonRouter.post("/v1/clips", async (c) => {
   try {
     await redis.set(clipKey(clipId), stored, { ex: CLIP_TTL_SECONDS });
   } catch (err) {
-    console.error("Easy Button clip write failed:", err);
+    console.error("Brainrot Button clip write failed:", err);
     return c.json({ error: "Could not save recording." }, 502);
   }
 
@@ -151,9 +151,9 @@ easyButtonRouter.post("/v1/clips", async (c) => {
   });
 });
 
-easyButtonRouter.get("/v1/clips/:id", async (c) => {
+brainrotButtonRouter.get("/v1/clips/:id", async (c) => {
   const id = c.req.param("id");
-  if (!EasyButtonClipIdSchema.safeParse(id).success) {
+  if (!BrainrotButtonClipIdSchema.safeParse(id).success) {
     return c.json({ error: "Clip not found." }, 404);
   }
 
@@ -164,7 +164,7 @@ easyButtonRouter.get("/v1/clips/:id", async (c) => {
   try {
     clip = await redis.get<StoredClip>(clipKey(id));
   } catch (err) {
-    console.error("Easy Button clip read failed:", err);
+    console.error("Brainrot Button clip read failed:", err);
     return c.json({ error: "Could not load recording." }, 502);
   }
 

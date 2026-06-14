@@ -17,11 +17,28 @@ import {
   trackStat,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
-import type { EasyButtonShareState } from "@scroll-goblin/shared";
+import type { BrainrotButtonShareState } from "@scroll-goblin/shared";
 import { ClipNotFoundError, fetchClip, uploadClip } from "./api";
-import defaultClipUrl from "./assets/that-was-easy.m4a?url";
 
-const MODULE_ID = "easy-button";
+/**
+ * Every audio file dropped into ./assets is a default "brainrot" clip. Add
+ * more files and they get picked up automatically — each press plays a random
+ * one (unless a custom recording is active).
+ */
+const DEFAULT_CLIP_URLS = Object.values(
+  import.meta.glob("./assets/*", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  })
+) as string[];
+
+function pickDefaultClipUrl(): string {
+  if (DEFAULT_CLIP_URLS.length === 0) return "";
+  return DEFAULT_CLIP_URLS[Math.floor(Math.random() * DEFAULT_CLIP_URLS.length)];
+}
+
+const MODULE_ID = "brainrot-button";
 const SHARE_VERSION = 1;
 const MAX_RECORDING_MS = 10_000;
 const MAX_BYTES = 500 * 1024;
@@ -54,18 +71,18 @@ function formatBytes(bytes: number): string {
   return `${Math.round(bytes / 1024)}KB`;
 }
 
-export default function EasyButtonPage() {
+export default function BrainrotButtonPage() {
   const snapshot = useRef(
-    consumeShareSnapshot<EasyButtonShareState>(MODULE_ID, SHARE_VERSION)
+    consumeShareSnapshot<BrainrotButtonShareState>(MODULE_ID, SHARE_VERSION)
   ).current;
 
   const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
 
-  const [activeClip, setActiveClip] = useState<ActiveClip>({
-    url: defaultClipUrl,
+  const [activeClip, setActiveClip] = useState<ActiveClip>(() => ({
+    url: pickDefaultClipUrl(),
     key: "default",
     custom: false,
-  });
+  }));
   const [localClip, setLocalClip] = useState<Blob | null>(null);
   const [uploadedClipId, setUploadedClipId] = useState<string | null>(
     snapshot?.clipId ?? null
@@ -102,7 +119,7 @@ export default function EasyButtonPage() {
       URL.revokeObjectURL(objectUrl.current);
       objectUrl.current = null;
     }
-    setActiveClip({ url: defaultClipUrl, key: "default", custom: false });
+    setActiveClip({ url: pickDefaultClipUrl(), key: "default", custom: false });
     setLocalClip(null);
     setUploadedClipId(null);
     setUploadStatus("idle");
@@ -172,7 +189,8 @@ export default function EasyButtonPage() {
     trackStat(MODULE_ID, "presses");
     setError(null);
     try {
-      const played = await playUrl(activeClip.url);
+      const url = activeClip.custom ? activeClip.url : pickDefaultClipUrl();
+      const played = await playUrl(url);
       if (played && activeClip.custom && !playedRecordings.current.has(activeClip.key)) {
         playedRecordings.current.add(activeClip.key);
         trackStat(MODULE_ID, "recordings");
@@ -304,10 +322,10 @@ export default function EasyButtonPage() {
       <header className="mb-bento grid gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-primary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-            🔴 Easy Button
+            🔴 Brainrot Button
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            That was easy
+            Pure brainrot
           </h1>
         </div>
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
@@ -317,7 +335,7 @@ export default function EasyButtonPage() {
       </header>
 
       {expired && (
-        <div className="easy-expired-alert mb-bento flex flex-col gap-3 rounded-neobrutal border-thick border-brand-border bg-brand-warning p-4 font-bold shadow-neo-lg sm:flex-row sm:items-center sm:justify-between">
+        <div className="brainrot-expired-alert mb-bento flex flex-col gap-3 rounded-neobrutal border-thick border-brand-border bg-brand-warning p-4 font-bold shadow-neo-lg sm:flex-row sm:items-center sm:justify-between">
           <span>CUSTOM SPELL EXPIRED. DEFAULT BUTTON RESTORED.</span>
           <button
             onClick={() => setExpired(false)}
@@ -339,14 +357,14 @@ export default function EasyButtonPage() {
         <div className="flex justify-center py-4 sm:py-6">
           <button
             onClick={pressButton}
-            aria-label="That was easy"
+            aria-label="Brainrot button"
             className="group relative aspect-square w-[min(76vw,360px)] rounded-full border-massive border-brand-border bg-brand-border shadow-neo-lg transition-[transform,box-shadow] duration-100 active:translate-x-2 active:translate-y-2 active:shadow-neo-pressed"
           >
             <span className="absolute inset-2 rounded-full border-thick border-brand-border bg-[#7A001A]" />
             <span className="absolute inset-5 rounded-full border-thick border-brand-border bg-[radial-gradient(circle_at_35%_24%,#ff6f7f_0%,#ff003c_34%,#b8002b_70%,#780018_100%)] shadow-[inset_-10px_-14px_0_rgba(0,0,0,0.22),inset_8px_10px_0_rgba(255,255,255,0.2)] transition-[inset] duration-100 group-active:inset-7" />
             <span className="absolute left-[24%] top-[16%] h-[12%] w-[34%] rotate-[-20deg] rounded-full bg-white/35 blur-[1px]" />
             <span className="relative z-10 mx-auto flex h-full max-w-[68%] items-center justify-center text-center font-heading text-4xl uppercase leading-[0.9] text-brand-background drop-shadow-[3px_3px_0_#000] sm:text-5xl">
-              That was easy
+              Brainrot
             </span>
           </button>
         </div>
