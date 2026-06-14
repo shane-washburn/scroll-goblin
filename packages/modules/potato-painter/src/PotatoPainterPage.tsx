@@ -340,7 +340,6 @@ export default function PotatoPainterPage() {
             <ShareButton
               moduleId={MODULE_ID}
               version={SHARE_VERSION}
-              disabled={stampCount === 0}
               getState={(): ShareState => ({
                 used,
                 stamps: stampsRef.current.map(toTuple),

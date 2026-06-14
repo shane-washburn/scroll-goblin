@@ -519,10 +519,6 @@ export default function PushyPawsPage() {
             paws — shove them off the shelf to rack up chaos and level up your
             increasingly buff cat.
           </p>
-          <div className="flex flex-wrap gap-2">
-            <MuteButton />
-            <ShareButton moduleId={MODULE_ID} version={SHARE_VERSION} getState={shareState} disabled={pushed === 0} />
-          </div>
         </div>
       </header>
 
@@ -581,6 +577,11 @@ export default function PushyPawsPage() {
           </Card>
         </div>
       </section>
+
+      <div className="flex flex-wrap gap-2">
+        <MuteButton />
+        <ShareButton moduleId={MODULE_ID} version={SHARE_VERSION} getState={shareState} />
+      </div>
 
       <div className="grid grid-cols-3 gap-2 sm:gap-3">
         <Card className="p-2.5 sm:p-4">

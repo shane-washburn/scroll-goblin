@@ -466,7 +466,6 @@ export default function BalloonBlowerPage() {
             <ShareButton
               moduleId={MODULE_ID}
               version={SHARE_VERSION}
-              disabled={filled === 0 && popped === 0}
               getState={(): ShareState => ({ filled, popped })}
               className="!px-3 !py-1.5 !shadow-neo-sm"
             />

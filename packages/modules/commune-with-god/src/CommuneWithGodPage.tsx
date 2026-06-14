@@ -107,28 +107,37 @@ export default function CommuneWithGodPage() {
 
         {/* Question input */}
         {!answer && (
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <input
-              value={question}
-              maxLength={500}
-              onChange={(e) => setQuestion(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && onAsk()}
-              placeholder={placeholder}
-              disabled={loading}
-              className="w-full rounded-neobrutal border-thick border-brand-border bg-brand-surface p-4 text-base font-bold text-brand-text shadow-neo-md outline-none transition focus:bg-brand-background disabled:opacity-60"
-            />
-            <button
-              onClick={onAsk}
-              disabled={loading || !question.trim()}
-              className="inline-flex items-center justify-center gap-2 rounded-neobrutal border-thick border-brand-border bg-brand-primary px-5 py-3 font-bold text-brand-text shadow-neo-lg transition-[transform,box-shadow,background-color] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed disabled:cursor-not-allowed disabled:opacity-50 disabled:active:translate-x-0 disabled:active:translate-y-0 disabled:active:shadow-neo-lg"
-            >
-              {loading ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                <Send className="h-4 w-4" />
-              )}
-              Ask
-            </button>
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <input
+                value={question}
+                maxLength={500}
+                onChange={(e) => setQuestion(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && onAsk()}
+                placeholder={placeholder}
+                disabled={loading}
+                className="w-full rounded-neobrutal border-thick border-brand-border bg-brand-surface p-4 text-base font-bold text-brand-text shadow-neo-md outline-none transition focus:bg-brand-background disabled:opacity-60"
+              />
+              <button
+                onClick={onAsk}
+                disabled={loading || !question.trim()}
+                className="inline-flex items-center justify-center gap-2 rounded-neobrutal border-thick border-brand-border bg-brand-primary px-5 py-3 font-bold text-brand-text shadow-neo-lg transition-[transform,box-shadow,background-color] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed disabled:cursor-not-allowed disabled:opacity-50 disabled:active:translate-x-0 disabled:active:translate-y-0 disabled:active:shadow-neo-lg"
+              >
+                {loading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <Send className="h-4 w-4" />
+                )}
+                Ask
+              </button>
+            </div>
+            <div className="flex justify-end">
+              <ShareButton
+                moduleId={MODULE_ID}
+                version={SHARE_VERSION}
+                getState={(): ShareState => ({ asked: null, answer: null })}
+              />
+            </div>
           </div>
         )}
 

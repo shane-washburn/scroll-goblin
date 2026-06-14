@@ -428,7 +428,6 @@ export default function BrainrotButtonPage() {
               moduleId={MODULE_ID}
               version={SHARE_VERSION}
               getState={() => ({ clipId: uploadedClipId })}
-              disabled={!uploadedClipId}
               className="min-h-12 w-full justify-center bg-brand-secondary px-5 text-base sm:min-h-0 sm:w-auto"
             />
           </div>
