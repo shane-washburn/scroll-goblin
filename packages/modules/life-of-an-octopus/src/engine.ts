@@ -62,6 +62,8 @@ export interface Octopus {
   carrying: number;
   /** brief invulnerability window after taking a hit. */
   invuln: number;
+  /** Whether displaying for courtship (automatic when near mate). */
+  displaying: boolean;
 }
 
 export interface Stats {
@@ -102,6 +104,11 @@ export interface World {
   endTime: number;
   /** Eggs lost to predators in the guardian chapter (lowers the final count). */
   eggsLost: number;
+  /** Track which predators have started hunting the player for escape metric. */
+  huntingPredators: Set<number>;
+  /** Courtship success animation state. */
+  mateSuccess: boolean;
+  mateSuccessTime: number;
 }
 
 export interface FrameEvents {
@@ -140,10 +147,10 @@ export interface ChapterDef {
 }
 
 /* --- World geometry --- */
-export const W = 860;
-export const H = 540;
-export const SURFACE_Y = 64;
-export const FLOOR_Y = 482;
+export const W = 400;
+export const H = 560;
+export const SURFACE_Y = 48;
+export const FLOOR_Y = 500;
 
 export const clamp = (v: number, lo: number, hi: number) =>
   Math.max(lo, Math.min(hi, v));
@@ -154,6 +161,57 @@ const dist2 = (ax: number, ay: number, bx: number, by: number) => {
   const dy = ay - by;
   return dx * dx + dy * dy;
 };
+
+/** Deterministic pseudo-random for static scenery matching draw.ts. */
+function rng(seed: number) {
+  let s = seed;
+  return () => {
+    s = (s * 9301 + 49297) % 233280;
+    return s / 233280;
+  };
+}
+
+/** Check if octopus is near environmental cover (rocks, coral, seaweed). */
+function getCoverFactor(x: number, y: number): number {
+  const r = rng(7);
+  let cover = 0;
+
+  // Check proximity to rocks (12 rocks with various sizes)
+  for (let i = 0; i < 12; i++) {
+    const rx = 50 + r() * (W - 100);
+    const rad = 18 + r() * 35;
+    const ry = FLOOR_Y - rad * 0.2 + r() * 15;
+    const d = Math.sqrt(dist2(x, y, rx, ry));
+    if (d < rad + 20) {
+      cover = Math.max(cover, 1 - d / (rad + 40));
+    }
+  }
+
+  // Check proximity to coral (8 coral patches)
+  for (let i = 0; i < 8; i++) {
+    const cx = 60 + r() * (W - 120);
+    const cy = FLOOR_Y - 5 + r() * 20;
+    const size = 8 + r() * 16;
+    const d = Math.sqrt(dist2(x, y, cx, cy));
+    if (d < size + 25) {
+      cover = Math.max(cover, 0.7 - d / (size + 50));
+    }
+  }
+
+  // Check proximity to seaweed (10 strands)
+  for (let i = 0; i < 10; i++) {
+    const sx = 30 + r() * (W - 60);
+    const sy = FLOOR_Y + 10;
+    const height = 30 + r() * 60;
+    // Seaweed extends upward from sy
+    const d = Math.sqrt(dist2(x, y, sx, Math.max(y, sy - height * 0.5)));
+    if (d < 20 && y > sy - height && y < sy + 10) {
+      cover = Math.max(cover, 0.5 - d / 40);
+    }
+  }
+
+  return clamp(cover, 0, 1);
+}
 
 export const INK_COOLDOWN_MS = 4200;
 export const INK_RADIUS = 150;
@@ -274,6 +332,7 @@ export function createWorld(): World {
       facing: 1,
       carrying: 0,
       invuln: 0,
+      displaying: false,
     },
     creatures: [],
     target: { x: W / 2, y: FLOOR_Y - 30, active: false },
@@ -300,6 +359,9 @@ export function createWorld(): World {
     phase: "playing",
     endTime: 0,
     eggsLost: 0,
+    huntingPredators: new Set(),
+    mateSuccess: false,
+    mateSuccessTime: 0,
   };
 }
 
@@ -329,7 +391,7 @@ function makePredator(species: string, x: number, y: number): Creature {
     baseSpeed: speeds[species] ?? 140,
     behavior: "wander",
     // Fry actively swarm the hatchling chase, so they sense from much farther.
-    detect: species === "Fry" ? 240 : (sizes[species] ?? 20) * 6 + 70,
+    detect: species === "Fry" ? 200 : (sizes[species] ?? 20) * 5 + 60,
     alive: true,
     hue: 205,
     wobble: rand(0, 6.28),
@@ -423,6 +485,10 @@ export function setupChapter(world: World, idx: number, now: number) {
   world.shake = 0;
   world.octo.health = world.octo.maxHealth;
   world.octo.camo = 0;
+  world.octo.displaying = false;
+  world.huntingPredators.clear();
+  world.mateSuccess = false;
+  world.mateSuccessTime = 0;
   world.octo.vx = 0;
   world.octo.vy = 0;
 
@@ -658,15 +724,43 @@ function stepOcto(world: World, dt: number) {
   o.y = clamp(o.y + o.vy * dt, SURFACE_Y - 6, FLOOR_Y);
   if (Math.abs(o.vx) > 6) o.facing = o.vx > 0 ? 1 : -1;
 
-  // Camouflage: strongest when pressed against the seafloor, lost in open
-  // water. Holding still on the bottom makes you nearly indistinguishable;
-  // leaving the floor returns you to full colour.
+  // Camouflage: strongest when pressed against the seafloor OR near environmental
+  // features (rocks, coral, seaweed). Holding still makes you nearly indistinguishable.
   const floorFactor = clamp(1 - (FLOOR_Y - o.y) / 70, 0, 1);
+  // Environmental cover from biodiversity (rocks, coral, seaweed)
+  const coverFactor = getCoverFactor(o.x, o.y) * 0.85; // Slightly less effective than floor
+  // Combine floor and cover - take the best of both
+  const locationFactor = Math.max(floorFactor, coverFactor);
   const sp = octoSpeed(o);
   const stillFactor = sp < 36 ? 1 : 0.45;
-  const camoTarget = floorFactor * stillFactor;
+  const camoTarget = locationFactor * stillFactor;
+  const prevCamo = o.camo;
   const rate = camoTarget > o.camo ? 3.2 : 5;
   o.camo = clamp(o.camo + (camoTarget - o.camo) * Math.min(1, rate * dt), 0, 1);
+
+  // Speed bonus when emerging from camouflage - the element of surprise!
+  if (o.camo < prevCamo && prevCamo > 0.5) {
+    const burst = (prevCamo - o.camo) * 180;
+    if (Math.abs(o.vx) > 1 || Math.abs(o.vy) > 1) {
+      const spf = Math.hypot(o.vx, o.vy) || 1;
+      o.vx += (o.vx / spf) * burst;
+      o.vy += (o.vy / spf) * burst;
+    }
+  }
+
+  // Automatic displaying for courtship - happens automatically when near mate
+  if (world.chapter === 4 && !world.mateSuccess) {
+    const mate = world.creatures.find((c) => c.kind === "mate");
+    if (mate) {
+      const distToMate = Math.sqrt(dist2(o.x, o.y, mate.x, mate.y));
+      // Auto-display when within 100px of mate
+      o.displaying = distToMate < 100;
+    } else {
+      o.displaying = false;
+    }
+  } else {
+    o.displaying = false;
+  }
 
   if (o.invuln > 0) o.invuln = Math.max(0, o.invuln - dt);
 }
@@ -763,8 +857,20 @@ function stepCreature(c: Creature, world: World, dt: number, now: number, ev: Fr
   const stunned = now < c.stun;
 
   if (c.kind === "predator") {
+    // During mate success animation, predators just wander peacefully
+    if (world.mateSuccess) {
+      c.behavior = "wander";
+      wander(c, dt);
+      return;
+    }
+
     if (stunned) {
-      // Flee the ink cloud.
+      // Flee the ink cloud - counts as escape if was hunting
+      if (world.huntingPredators.has(c.id)) {
+        world.huntingPredators.delete(c.id);
+        world.stats.predatorsEscaped++;
+        ev.escaped = true;
+      }
       if (world.ink.active)
         steer(c, c.x - (world.ink.x - c.x), c.y - (world.ink.y - c.y), c.baseSpeed, dt);
       else wander(c, dt);
@@ -792,16 +898,24 @@ function stepCreature(c: Creature, world: World, dt: number, now: number, ev: Fr
         }
       } else if (eggs && octoNear) {
         // Driven off by the guardian.
+        if (world.huntingPredators.has(c.id)) {
+          world.huntingPredators.delete(c.id);
+          world.stats.predatorsEscaped++;
+          ev.escaped = true;
+        }
         c.behavior = "flee";
         steer(c, c.x + (c.x - o.x), c.y + (c.y - o.y), c.baseSpeed, dt);
         if (distToOcto > o.size * 4 + 120) c.behavior = "wander";
       } else if (distToOcto < effectiveDetect(c, world)) {
+        // Start hunting - add to tracking set
+        world.huntingPredators.add(c.id);
         c.behavior = "hunt";
         steer(c, o.x, o.y, c.baseSpeed, dt);
         bitePlayer(c, world, now, ev);
       } else {
-        if (c.behavior === "hunt") {
-          // Lost the target (likely camouflaged) — counts as an escape.
+        // Lost sight of target - count as escape if was hunting
+        if (world.huntingPredators.has(c.id)) {
+          world.huntingPredators.delete(c.id);
           world.stats.predatorsEscaped++;
           ev.escaped = true;
         }
@@ -947,17 +1061,28 @@ export function stepWorld(world: World, dt: number, now: number): FrameEvents {
         const mate = world.creatures.find((c) => c.kind === "mate");
         if (mate) {
           const near = dist2(o.x, o.y, mate.x, mate.y) < 90 * 90;
-          if (near && o.flash > 0.15) {
-            world.goalProgress = clamp(
-              world.goalProgress + dt * (0.18 + o.flash * 0.5),
-              0,
-              1
-            );
-          } else {
-            world.goalProgress = clamp(world.goalProgress - dt * 0.12, 0, 1);
+          // Once mateSuccess is triggered, lock progress at 1 until chapter completes
+          if (!world.mateSuccess) {
+            if (near && o.flash > 0.15) {
+              world.goalProgress = clamp(
+                world.goalProgress + dt * (0.18 + o.flash * 0.5),
+                0,
+                1
+              );
+            } else {
+              world.goalProgress = clamp(world.goalProgress - dt * 0.12, 0, 1);
+            }
           }
           if (world.goalProgress >= 1) {
             ev.heart = true;
+            // Trigger mate success animation - predators stop, heart shows
+            if (!world.mateSuccess) {
+              world.mateSuccess = true;
+              world.mateSuccessTime = now;
+            }
+          }
+          // Complete chapter after short animation delay
+          if (world.mateSuccess && now - world.mateSuccessTime > 2500) {
             ev.chapterComplete = true;
           }
         }

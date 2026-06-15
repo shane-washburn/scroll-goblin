@@ -180,6 +180,9 @@ export const STAT_METRICS: Record<string, Record<string, string>> = {
     plays: "Songs played",
     notes: "Notes sequenced",
   },
+  "life-of-an-octopus": {
+    won: "Games won as octopus",
+  },
 };
 
 /** Reserved metric name for page visits; valid for every module. */

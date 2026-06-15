@@ -62,6 +62,11 @@ export function drawWorld(ctx: CanvasRenderingContext2D, world: World, now: numb
   drawInk(ctx, world, now);
   drawOctopus(ctx, world, now);
 
+  // Mate success heart animation
+  if (world.mateSuccess) {
+    drawMateHearts(ctx, world, now);
+  }
+
   // Surface shimmer overlay near the top.
   drawSurface(ctx, now);
   ctx.restore();
@@ -123,7 +128,10 @@ function drawSurface(ctx: CanvasRenderingContext2D, now: number) {
 
 function drawSeafloor(ctx: CanvasRenderingContext2D, world: World) {
   ctx.save();
-  // Sand mound.
+  const base = bgColorAt(world, FLOOR_Y);
+  const r = rng(7);
+
+  // Sand mound with texture.
   ctx.beginPath();
   ctx.moveTo(0, FLOOR_Y + 30);
   for (let x = 0; x <= W; x += 40) {
@@ -133,21 +141,112 @@ function drawSeafloor(ctx: CanvasRenderingContext2D, world: World) {
   ctx.lineTo(W, H);
   ctx.lineTo(0, H);
   ctx.closePath();
-  const base = bgColorAt(world, FLOOR_Y);
-  ctx.fillStyle = rgb(mix(base, [40, 32, 24], 0.5));
+  ctx.fillStyle = rgb(mix(base, [45, 38, 30], 0.5));
   ctx.fill();
 
-  // A few rocks for hiding spots / camo cues.
-  const r = rng(7);
-  for (let i = 0; i < 7; i++) {
-    const x = 60 + r() * (W - 120);
-    const rad = 22 + r() * 30;
-    const y = FLOOR_Y - rad * 0.3;
+  // Sand patches - lighter areas for contrast.
+  for (let i = 0; i < 5; i++) {
+    const x = 40 + r() * (W - 80);
+    const y = FLOOR_Y + 20 + r() * 40;
+    const rad = 30 + r() * 50;
     ctx.beginPath();
-    ctx.ellipse(x, y, rad, rad * 0.7, 0, Math.PI, Math.PI * 2);
-    ctx.fillStyle = rgb(mix(base, [20, 24, 30], 0.6), 0.95);
+    ctx.ellipse(x, y, rad, rad * 0.4, 0, 0, Math.PI * 2);
+    ctx.fillStyle = rgb(mix(base, [65, 58, 48], 0.4), 0.6);
     ctx.fill();
   }
+
+  // Varied rocks for hiding spots / camo cues - different colors and sizes.
+  const rockColors = [
+    [20, 24, 30],   // dark grey
+    [35, 40, 45],   // medium grey
+    [50, 42, 38],   // brownish
+    [28, 32, 38],   // blue-grey
+    [42, 38, 35],   // warm grey
+  ];
+  for (let i = 0; i < 12; i++) {
+    const x = 50 + r() * (W - 100);
+    const rad = 18 + r() * 35;
+    const y = FLOOR_Y - rad * 0.2 + r() * 15;
+    const color = rockColors[i % rockColors.length];
+    ctx.beginPath();
+    ctx.ellipse(x, y, rad, rad * (0.6 + r() * 0.3), r() * 0.5, Math.PI, Math.PI * 2);
+    ctx.fillStyle = rgb(mix(base, color as [number, number, number], 0.5 + r() * 0.3), 0.95);
+    ctx.fill();
+  }
+
+  // Colorful coral patches - great for showcasing camouflage with vibrant colors.
+  const coralColors = [
+    [255, 120, 100],  // coral pink
+    [255, 180, 80],   // orange
+    [200, 100, 160],  // purple
+    [100, 180, 160],  // teal
+    [240, 200, 100],  // yellow
+    [180, 80, 80],    // red
+  ];
+  for (let i = 0; i < 8; i++) {
+    const x = 60 + r() * (W - 120);
+    const y = FLOOR_Y - 5 + r() * 20;
+    const size = 8 + r() * 16;
+    const color = coralColors[i % coralColors.length];
+
+    // Coral branches.
+    ctx.save();
+    ctx.translate(x, y);
+    for (let b = 0; b < 3 + Math.floor(r() * 3); b++) {
+      const angle = -Math.PI / 2 + (r() - 0.5) * 1.5;
+      const len = size * (0.8 + r() * 0.6);
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.quadraticCurveTo(
+        Math.cos(angle) * len * 0.5 + (r() - 0.5) * size * 0.5,
+        Math.sin(angle) * len * 0.5,
+        Math.cos(angle) * len,
+        Math.sin(angle) * len
+      );
+      ctx.strokeStyle = rgb(color as [number, number, number], 0.85);
+      ctx.lineWidth = 2 + r() * 2;
+      ctx.lineCap = "round";
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  // Seaweed / kelp strands.
+  const seaweedColors = [
+    [40, 100, 60],   // green
+    [50, 120, 80],   // lighter green
+    [35, 80, 50],    // dark green
+    [60, 100, 70],   // olive
+  ];
+  for (let i = 0; i < 10; i++) {
+    const x = 30 + r() * (W - 60);
+    const y = FLOOR_Y + 10;
+    const height = 30 + r() * 60;
+    const color = seaweedColors[i % seaweedColors.length];
+
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    for (let s = 0; s < 8; s++) {
+      const sy = y - (s / 8) * height;
+      const sway = Math.sin(s * 0.8) * (2 + s * 0.5);
+      ctx.lineTo(x + sway, sy);
+    }
+    ctx.strokeStyle = rgb(color as [number, number, number], 0.7);
+    ctx.lineWidth = 2 + r() * 2;
+    ctx.stroke();
+  }
+
+  // Small pebbles and details.
+  ctx.fillStyle = rgb(mix(base, [60, 55, 50], 0.5), 0.8);
+  for (let i = 0; i < 25; i++) {
+    const x = r() * W;
+    const y = FLOOR_Y + 15 + r() * 50;
+    const size = 2 + r() * 4;
+    ctx.beginPath();
+    ctx.arc(x, y, size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
   ctx.restore();
 }
 
@@ -502,5 +601,49 @@ function drawInk(ctx: CanvasRenderingContext2D, world: World, now: number) {
   ctx.beginPath();
   ctx.arc(world.ink.x, world.ink.y, r, 0, Math.PI * 2);
   ctx.fill();
+  ctx.restore();
+}
+
+/** Heart animation between octopuses during successful courtship. */
+function drawMateHearts(ctx: CanvasRenderingContext2D, world: World, now: number) {
+  const mate = world.creatures.find((c) => c.kind === "mate");
+  if (!mate) return;
+
+  const elapsed = now - world.mateSuccessTime;
+  const duration = 2500;
+  const progress = clamp(elapsed / duration, 0, 1);
+
+  const midX = (world.octo.x + mate.x) / 2;
+  const midY = (world.octo.y + mate.y) / 2 - 30;
+
+  ctx.save();
+
+  // Multiple hearts floating up
+  for (let i = 0; i < 3; i++) {
+    const heartOffset = i * 150;
+    const heartProgress = clamp((elapsed - heartOffset) / 1000, 0, 1);
+    if (heartProgress <= 0) continue;
+
+    const floatY = heartProgress * 40;
+    const alpha = (1 - heartProgress) * (1 - progress);
+    const scale = 1 + heartProgress * 0.5;
+
+    ctx.save();
+    ctx.translate(midX, midY - floatY);
+    ctx.scale(scale, scale);
+    ctx.globalAlpha = alpha;
+
+    // Draw heart shape
+    ctx.fillStyle = "#ff4466";
+    ctx.beginPath();
+    const heartSize = 12;
+    ctx.moveTo(0, heartSize * 0.3);
+    ctx.bezierCurveTo(-heartSize, -heartSize * 0.5, -heartSize, -heartSize, 0, -heartSize * 0.8);
+    ctx.bezierCurveTo(heartSize, -heartSize, heartSize, -heartSize * 0.5, 0, heartSize * 0.3);
+    ctx.fill();
+
+    ctx.restore();
+  }
+
   ctx.restore();
 }

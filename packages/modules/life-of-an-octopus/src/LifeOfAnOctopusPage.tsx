@@ -62,7 +62,6 @@ export default function LifeOfAnOctopusPage() {
   const camoRef = useRef<HTMLSpanElement>(null);
 
   // Input state lives in refs so the rAF loop reads fresh values.
-  const displaying = useRef(false);
   const keys = useRef<Set<string>>(new Set());
   const gesture = useRef({ x: 0, y: 0, t: 0, moved: false });
 
@@ -74,7 +73,6 @@ export default function LifeOfAnOctopusPage() {
   const [chapterIdx, setChapterIdx] = useState(0);
   const [message, setMessage] = useState("");
   const [finalStats, setFinalStats] = useState<Stats | null>(shared ?? null);
-  const [showDisplayHint, setShowDisplayHint] = useState(false);
 
   // View kept in a ref so the loop branches without re-subscribing.
   const viewRef = useRef<View>(view);
@@ -94,7 +92,6 @@ export default function LifeOfAnOctopusPage() {
   const startChapter = (idx: number) => {
     setupChapter(world.current, idx, performance.now());
     setChapterIdx(idx);
-    setShowDisplayHint(idx === 4);
     setView("playing");
     setMsg(CHAPTERS[idx].goal);
   };
@@ -149,6 +146,7 @@ export default function LifeOfAnOctopusPage() {
   const finishLife = () => {
     setFinalStats({ ...world.current.stats });
     setView("complete");
+    trackStat(MODULE_ID, "won");
   };
 
   const die = () => {
@@ -185,7 +183,7 @@ export default function LifeOfAnOctopusPage() {
         wld.keyX = kx;
         wld.keyY = ky;
 
-        if (displaying.current)
+        if (wld.octo.displaying)
           wld.octo.flash = Math.min(1, wld.octo.flash + dt * 1.5);
 
         const ev = stepWorld(wld, dt, now);
@@ -295,13 +293,10 @@ export default function LifeOfAnOctopusPage() {
       if (["arrowup", "arrowdown", "arrowleft", "arrowright", " "].includes(key))
         e.preventDefault();
       if (key === " " || key === "f") doInk();
-      else if (key === "e") displaying.current = true;
       else keys.current.add(key);
     };
     const up = (e: KeyboardEvent) => {
-      const key = e.key.toLowerCase();
-      if (key === "e") displaying.current = false;
-      keys.current.delete(key);
+      keys.current.delete(e.key.toLowerCase());
     };
     window.addEventListener("keydown", down);
     window.addEventListener("keyup", up);
@@ -315,8 +310,8 @@ export default function LifeOfAnOctopusPage() {
   const chapter = CHAPTERS[chapterIdx];
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:py-12">
-      <header className="mb-bento grid gap-bento sm:grid-cols-[1fr_1fr]">
+    <div className="mx-auto max-w-4xl px-0 sm:px-4 py-0 sm:py-12">
+      <header className="hidden sm:grid mb-bento gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
             🐙 Life of an Octopus
@@ -334,7 +329,7 @@ export default function LifeOfAnOctopusPage() {
         </p>
       </header>
 
-      <Card ref={gameCardRef} className="overflow-hidden bg-brand-background">
+      <Card ref={gameCardRef} className="overflow-hidden bg-brand-background rounded-none border-0 sm:rounded-neobrutal sm:border-thick">
         {/* HUD */}
         <div className="grid grid-cols-3 gap-2 border-b-thick border-brand-border bg-brand-surface p-3 text-xs font-bold uppercase text-brand-text">
           <div>
@@ -367,8 +362,8 @@ export default function LifeOfAnOctopusPage() {
           </div>
         </div>
 
-        {/* Stage */}
-        <div className="relative bg-[#0b3b66]">
+        {/* Stage - constrained to fit viewport */}
+        <div className="relative bg-[#0b3b66] max-h-[calc(100dvh-180px)] sm:max-h-none flex items-center justify-center">
           {/* Camouflage indicator — surfaces only while you're actually hidden. */}
           <span
             ref={camoRef}
@@ -386,24 +381,23 @@ export default function LifeOfAnOctopusPage() {
             onPointerUp={onPointerUp}
             onPointerCancel={onPointerLeave}
             onPointerLeave={onPointerLeave}
-            className="block w-full cursor-crosshair touch-none select-none"
-            style={{ aspectRatio: `${W} / ${H}` }}
+            className="block max-h-[calc(100dvh-180px)] w-auto max-w-full cursor-crosshair touch-none select-none object-contain"
           />
 
           {/* Overlays */}
           {view === "intro" && (
             <Overlay>
-              <h2 className="font-heading text-3xl uppercase text-white sm:text-4xl">
+              <h2 className="font-heading text-xl sm:text-3xl uppercase text-white sm:text-4xl">
                 Life of an Octopus
               </h2>
-              <p className="mt-4 max-w-sm text-sm font-bold leading-relaxed text-white/90">
+              <p className="mt-2 sm:mt-4 max-w-sm text-xs sm:text-sm font-bold leading-relaxed text-white/90">
                 You will hatch.<br />
                 You will hunt.<br />
                 You will hide.<br />
                 You will love.<br />
                 You will die.
               </p>
-              <p className="mt-3 text-xs font-bold text-white/70">
+              <p className="mt-2 sm:mt-3 text-[10px] sm:text-xs font-bold text-white/70">
                 Most octopuses never reach adulthood. Can you?
               </p>
               <PrimaryButton onClick={beginLife}>Hatch →</PrimaryButton>
@@ -412,13 +406,13 @@ export default function LifeOfAnOctopusPage() {
 
           {view === "chapterCard" && (
             <Overlay>
-              <p className="text-xs font-bold uppercase tracking-widest text-white/60">
+              <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/60">
                 Chapter {chapter.no} · {chapter.age === 0 ? "Newly hatched" : `Age ${chapter.age} months`}
               </p>
-              <h2 className="mt-2 font-heading text-3xl uppercase text-white sm:text-4xl">
+              <h2 className="mt-1 sm:mt-2 font-heading text-xl sm:text-3xl uppercase text-white sm:text-4xl">
                 {chapter.title}
               </h2>
-              <p className="mt-4 max-w-md text-sm font-bold leading-relaxed text-white/90">
+              <p className="mt-2 sm:mt-4 max-w-md text-xs sm:text-sm font-bold leading-relaxed text-white/90 px-2">
                 {chapter.card}
               </p>
               <PrimaryButton onClick={() => startChapter(chapterIdx)}>
@@ -437,55 +431,55 @@ export default function LifeOfAnOctopusPage() {
 
           {view === "dead" && (
             <Overlay>
-              <h2 className="font-heading text-3xl uppercase text-white">
+              <h2 className="font-heading text-xl sm:text-3xl uppercase text-white">
                 You did not survive
               </h2>
-              <p className="mt-3 max-w-sm text-sm font-bold text-white/80">
+              <p className="mt-2 sm:mt-3 max-w-sm text-xs sm:text-sm font-bold text-white/80 px-2">
                 Most octopuses are eaten long before adulthood. That's the
                 ocean — and it's biologically honest.
               </p>
-              <p className="mt-3 text-xs font-bold uppercase text-white/60">
+              <p className="mt-2 sm:mt-3 text-[10px] sm:text-xs font-bold uppercase text-white/60">
                 Reached: {chapter.title} · Age {finalStats?.ageReached ?? 0} months
               </p>
-              <div className="mt-5 flex gap-3">
+              <div className="mt-3 sm:mt-5 flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <PrimaryButton onClick={() => startChapter(world.current.chapter)}>
-                  Try this chapter again
+                  Try again
                 </PrimaryButton>
-                <SecondaryButton onClick={beginLife}>Restart life</SecondaryButton>
+                <SecondaryButton onClick={beginLife}>Restart</SecondaryButton>
               </div>
             </Overlay>
           )}
 
           {view === "complete" && finalStats && (
             <Overlay>
-              <p className="text-xs font-bold uppercase tracking-widest text-white/60">
+              <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/60">
                 Life of an Octopus — Complete
               </p>
-              <h2 className="mt-1 font-heading text-2xl uppercase text-white sm:text-3xl">
+              <h2 className="mt-1 font-heading text-lg sm:text-2xl uppercase text-white sm:text-3xl">
                 {shared && view === "complete" && !world.current.stats.ageReached
                   ? "A friend's octopus lived this life"
                   : "An octopus lives only once"}
               </h2>
-              <div className="mt-4 grid w-full max-w-sm grid-cols-2 gap-2 text-left">
+              <div className="mt-2 sm:mt-4 grid w-full max-w-sm grid-cols-2 gap-1.5 sm:gap-2 text-left px-2">
                 {STAT_LABELS.map(([key, label]) => (
                   <div
                     key={key}
-                    className="rounded-neobrutal border-thin border-white/30 bg-white/10 px-3 py-2"
+                    className="rounded-neobrutal border-thin border-white/30 bg-white/10 px-2 sm:px-3 py-1.5 sm:py-2"
                   >
-                    <p className="text-[10px] font-bold uppercase text-white/60">
+                    <p className="text-[9px] sm:text-[10px] font-bold uppercase text-white/60">
                       {label}
                     </p>
-                    <p className="font-heading text-lg text-white">
+                    <p className="font-heading text-sm sm:text-lg text-white">
                       {finalStats[key].toLocaleString()}
                       {key === "ageReached" ? " mo" : ""}
                     </p>
                   </div>
                 ))}
               </div>
-              <p className="mt-3 text-xs font-bold text-white/70">
+              <p className="mt-2 sm:mt-3 text-[10px] sm:text-xs font-bold text-white/70">
                 Your offspring hatched successfully.
               </p>
-              <div className="mt-4">
+              <div className="mt-3 sm:mt-4">
                 <PrimaryButton onClick={beginLife}>Live again →</PrimaryButton>
               </div>
             </Overlay>
@@ -493,27 +487,17 @@ export default function LifeOfAnOctopusPage() {
         </div>
 
         {/* Footer controls */}
-        <div className="flex flex-col gap-3 border-t-thick border-brand-border bg-brand-surface p-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-bold text-brand-text">
+        <div className="flex items-center justify-between gap-2 border-t-thick border-brand-border bg-brand-surface p-2 sm:p-4">
+          <p className="hidden sm:block text-sm font-bold text-brand-text">
             {view === "playing" ? message : "🐙 " + chapter.title}
           </p>
-          <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-brand-text">
+          <div className="flex items-center gap-2 text-xs font-bold text-brand-text w-full sm:w-auto justify-end">
             {view === "playing" && (
               <button
                 onClick={doInk}
                 className="rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
               >
                 🖤 Ink
-              </button>
-            )}
-            {view === "playing" && showDisplayHint && (
-              <button
-                onPointerDown={() => (displaying.current = true)}
-                onPointerUp={() => (displaying.current = false)}
-                onPointerLeave={() => (displaying.current = false)}
-                className="rounded-neobrutal border-thin border-brand-border bg-brand-secondary px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
-              >
-                🌈 Hold to display
               </button>
             )}
             <MuteButton />
@@ -534,7 +518,7 @@ export default function LifeOfAnOctopusPage() {
 
 function Overlay({ children }: { children: React.ReactNode }) {
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-black/60 to-black/75 px-6 text-center backdrop-blur-[2px]">
+    <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-black/60 to-black/75 px-3 sm:px-6 text-center backdrop-blur-[2px] overflow-y-auto py-4">
       {children}
     </div>
   );
@@ -550,7 +534,7 @@ function PrimaryButton({
   return (
     <button
       onClick={onClick}
-      className="mt-6 rounded-neobrutal border-thick border-brand-border bg-brand-primary px-6 py-3 font-heading text-lg uppercase text-brand-text shadow-neo-md transition-[transform,box-shadow] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed"
+      className="mt-4 sm:mt-6 rounded-neobrutal border-thick border-brand-border bg-brand-primary px-4 sm:px-6 py-2 sm:py-3 font-heading text-base sm:text-lg uppercase text-brand-text shadow-neo-md transition-[transform,box-shadow] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed"
     >
       {children}
     </button>
@@ -567,7 +551,7 @@ function SecondaryButton({
   return (
     <button
       onClick={onClick}
-      className="mt-6 rounded-neobrutal border-thick border-brand-border bg-brand-surface px-6 py-3 font-heading text-lg uppercase text-brand-text shadow-neo-md transition-[transform,box-shadow] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed"
+      className="mt-4 sm:mt-6 rounded-neobrutal border-thick border-brand-border bg-brand-surface px-4 sm:px-6 py-2 sm:py-3 font-heading text-base sm:text-lg uppercase text-brand-text shadow-neo-md transition-[transform,box-shadow] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed"
     >
       {children}
     </button>

@@ -54,7 +54,9 @@ export function useMobileGameFit<T extends HTMLElement>(
         // fully in frame. The nav stays pinned, so we offset by its height.
         const nav = document.querySelector("nav");
         const navHeight = nav ? nav.getBoundingClientRect().height : 0;
-        top = Math.max(0, Math.round(rect.top + window.scrollY - navHeight));
+        // Add a small buffer so the content isn't flush against the nav
+        const buffer = 8;
+        top = Math.max(0, Math.round(rect.top + window.scrollY - navHeight - buffer));
       } else {
         // visualViewport tracks the *actual* visible height on mobile (URL bar
         // shown/hidden, etc.) more reliably than innerHeight on older browsers.
@@ -62,7 +64,7 @@ export function useMobileGameFit<T extends HTMLElement>(
         const bottom = rect.bottom + window.scrollY;
         top = Math.max(0, Math.round(bottom - viewport));
       }
-      window.scrollTo({ top, behavior: "auto" });
+      window.scrollTo({ top, behavior: "smooth" });
     };
 
     // Two frames lets the lazy-loaded module chunk paint before measuring.
@@ -77,13 +79,16 @@ export function useMobileGameFit<T extends HTMLElement>(
         window.addEventListener("wheel", cancel, { passive: true, once: true });
       });
     });
-    // Re-align once more after late layout shifts (web fonts, images).
+    // Re-align after late layout shifts (web fonts, images).
     const timer = window.setTimeout(align, 350);
+    // One more aggressive re-alignment to ensure game HUD is visible
+    const timer2 = window.setTimeout(align, 800);
 
     return () => {
       cancelled = true;
       cancelAnimationFrame(raf);
       window.clearTimeout(timer);
+      window.clearTimeout(timer2);
       window.removeEventListener("touchstart", cancel);
       window.removeEventListener("wheel", cancel);
     };
