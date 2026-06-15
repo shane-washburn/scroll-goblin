@@ -109,6 +109,13 @@ export interface World {
   /** Courtship success animation state. */
   mateSuccess: boolean;
   mateSuccessTime: number;
+  /** Guardian end animation state. */
+  endAnimation: {
+    phase: "fade" | "ascend" | "heaven";
+    startTime: number;
+    fadeOpacity: number;
+    ascended: boolean;
+  };
 }
 
 export interface FrameEvents {
@@ -362,6 +369,12 @@ export function createWorld(): World {
     huntingPredators: new Set(),
     mateSuccess: false,
     mateSuccessTime: 0,
+    endAnimation: {
+      phase: "fade",
+      startTime: 0,
+      fadeOpacity: 0,
+      ascended: false,
+    },
   };
 }
 
@@ -489,6 +502,12 @@ export function setupChapter(world: World, idx: number, now: number) {
   world.huntingPredators.clear();
   world.mateSuccess = false;
   world.mateSuccessTime = 0;
+  world.endAnimation = {
+    phase: "fade",
+    startTime: 0,
+    fadeOpacity: 0,
+    ascended: false,
+  };
   world.octo.vx = 0;
   world.octo.vy = 0;
 
@@ -726,25 +745,28 @@ function stepOcto(world: World, dt: number) {
 
   // Camouflage: strongest when pressed against the seafloor OR near environmental
   // features (rocks, coral, seaweed). Holding still makes you nearly indistinguishable.
-  const floorFactor = clamp(1 - (FLOOR_Y - o.y) / 70, 0, 1);
-  // Environmental cover from biodiversity (rocks, coral, seaweed)
-  const coverFactor = getCoverFactor(o.x, o.y) * 0.85; // Slightly less effective than floor
-  // Combine floor and cover - take the best of both
-  const locationFactor = Math.max(floorFactor, coverFactor);
-  const sp = octoSpeed(o);
-  const stillFactor = sp < 36 ? 1 : 0.45;
-  const camoTarget = locationFactor * stillFactor;
-  const prevCamo = o.camo;
-  const rate = camoTarget > o.camo ? 3.2 : 5;
-  o.camo = clamp(o.camo + (camoTarget - o.camo) * Math.min(1, rate * dt), 0, 1);
+  // SKIP during end animation - we force camo to 1 for the death sequence
+  if (!(world.chapter === 5 && world.chapterTime >= world.goalTarget)) {
+    const floorFactor = clamp(1 - (FLOOR_Y - o.y) / 70, 0, 1);
+    // Environmental cover from biodiversity (rocks, coral, seaweed)
+    const coverFactor = getCoverFactor(o.x, o.y) * 0.85; // Slightly less effective than floor
+    // Combine floor and cover - take the best of both
+    const locationFactor = Math.max(floorFactor, coverFactor);
+    const sp = octoSpeed(o);
+    const stillFactor = sp < 36 ? 1 : 0.45;
+    const camoTarget = locationFactor * stillFactor;
+    const prevCamo = o.camo;
+    const rate = camoTarget > o.camo ? 3.2 : 5;
+    o.camo = clamp(o.camo + (camoTarget - o.camo) * Math.min(1, rate * dt), 0, 1);
 
-  // Speed bonus when emerging from camouflage - the element of surprise!
-  if (o.camo < prevCamo && prevCamo > 0.5) {
-    const burst = (prevCamo - o.camo) * 180;
-    if (Math.abs(o.vx) > 1 || Math.abs(o.vy) > 1) {
-      const spf = Math.hypot(o.vx, o.vy) || 1;
-      o.vx += (o.vx / spf) * burst;
-      o.vy += (o.vy / spf) * burst;
+    // Speed bonus when emerging from camouflage - the element of surprise!
+    if (o.camo < prevCamo && prevCamo > 0.5) {
+      const burst = (prevCamo - o.camo) * 180;
+      if (Math.abs(o.vx) > 1 || Math.abs(o.vy) > 1) {
+        const spf = Math.hypot(o.vx, o.vy) || 1;
+        o.vx += (o.vx / spf) * burst;
+        o.vy += (o.vy / spf) * burst;
+      }
     }
   }
 
@@ -1107,7 +1129,73 @@ export function stepWorld(world: World, dt: number, now: number): FrameEvents {
       world.stats.eggsProtected = Math.max(0, 2000 - world.eggsLost);
       // A steady decline you cannot stop, no matter how well you guard.
       o.health = Math.max(1, o.health - dt * 2.2);
-      if (world.chapterTime >= world.goalTarget) ev.chapterComplete = true;
+
+      // End animation: when eggs hatch, trigger death/ascension sequence
+      if (world.chapterTime >= world.goalTarget) {
+        if (world.endAnimation.phase === "fade") {
+          // Start the end animation
+          if (world.endAnimation.startTime === 0) {
+            world.endAnimation.startTime = now;
+            // Remove all predators
+            world.creatures = world.creatures.filter((c) => c.kind !== "predator");
+          }
+
+          const elapsed = now - world.endAnimation.startTime;
+          const fadeDuration = 3000; // 3 seconds to fade to black
+          world.endAnimation.fadeOpacity = clamp(elapsed / fadeDuration, 0, 1);
+
+          // Move octopus to center during fade (slower, gentler movement)
+          const centerX = W / 2;
+          const centerY = (SURFACE_Y + FLOOR_Y) / 2;
+          o.x += (centerX - o.x) * Math.min(1, dt * 1.5);
+          o.y += (centerY - o.y) * Math.min(1, dt * 1.5);
+
+          // FORCE color drain - directly set to near 1
+          o.camo = Math.min(1, o.camo + dt * 1.2);
+
+          // Transition to ascend phase when mostly faded (ignore camo requirement)
+          if (world.endAnimation.fadeOpacity >= 0.85) {
+            world.endAnimation.phase = "ascend";
+            world.endAnimation.ascended = false;
+            // Ensure camo is fully drained
+            o.camo = 1;
+            // Reset position to center for clean ascend start
+            o.x = W / 2;
+            o.y = (SURFACE_Y + FLOOR_Y) / 2;
+            o.vx = 0;
+            o.vy = 0;
+          }
+        } else if (world.endAnimation.phase === "ascend") {
+          // Single ascent from bottom to middle, then transition to heaven while staying in middle
+          if (world.endAnimation.ascended === false) {
+            world.endAnimation.ascended = 0; // Use as progress tracker 0-1
+          }
+
+          // Progress from 0 to 1 over 4 seconds
+          const ascentDuration = 4000;
+          world.endAnimation.ascended = Math.min(1, (now - world.endAnimation.startTime - 3000) / ascentDuration);
+          const progress = world.endAnimation.ascended;
+
+          o.x = W / 2;
+
+          if (progress < 0.6) {
+            // First 60%: move from bottom to middle
+            const p = progress / 0.6;
+            o.y = lerp(FLOOR_Y, H / 2, p);
+          } else {
+            // Last 40%: stay in middle while heaven background fades in
+            o.y = H / 2;
+          }
+
+          // Transition to heaven phase at end
+          if (progress >= 1) {
+            world.endAnimation.phase = "heaven";
+            o.x = W / 2;
+            o.y = H / 2;
+            ev.chapterComplete = true;
+          }
+        }
+      }
       break;
   }
 

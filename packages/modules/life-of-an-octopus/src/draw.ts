@@ -48,14 +48,24 @@ export function drawWorld(ctx: CanvasRenderingContext2D, world: World, now: numb
     );
   }
 
-  drawBackground(ctx, world, now);
-  drawSeafloor(ctx, world);
+  // Check if in end animation phases where we hide seafloor/home/eggs
+  const inEndAnimation = world.chapter === 5 &&
+    world.chapterTime >= world.goalTarget &&
+    (world.endAnimation.phase === "ascend" || world.endAnimation.phase === "heaven");
 
-  // Den in den/guardian chapters.
-  if (world.chapter === 3 || world.chapter === 5) drawDen(ctx, world, now);
+  drawBackground(ctx, world, now);
+
+  // Skip seafloor/den/eggs during end animation (ascend/heaven phases)
+  if (!inEndAnimation) {
+    drawSeafloor(ctx, world);
+    // Den in den/guardian chapters.
+    if (world.chapter === 3 || world.chapter === 5) drawDen(ctx, world, now);
+  }
 
   for (const c of world.creatures) {
     if (!c.alive && c.kind !== "egg") continue;
+    // Skip drawing eggs during end animation
+    if (inEndAnimation && c.kind === "egg") continue;
     drawCreature(ctx, c, now);
   }
 
@@ -65,6 +75,11 @@ export function drawWorld(ctx: CanvasRenderingContext2D, world: World, now: numb
   // Mate success heart animation
   if (world.mateSuccess) {
     drawMateHearts(ctx, world, now);
+  }
+
+  // Guardian end animation (fade to black + heaven)
+  if (world.chapter === 5 && world.chapterTime >= world.goalTarget) {
+    drawEndAnimation(ctx, world, now);
   }
 
   // Surface shimmer overlay near the top.
@@ -450,7 +465,8 @@ function octoShape(
   color: [number, number, number],
   facing: number,
   legPhase: number,
-  eyeAlpha = 1
+  eyeAlpha = 1,
+  isDying = false
 ) {
   ctx.save();
   ctx.scale(facing, 1);
@@ -481,16 +497,41 @@ function octoShape(
   // Eyes — faded out as camouflage strengthens so they don't give you away.
   ctx.save();
   ctx.globalAlpha = eyeAlpha;
-  ctx.fillStyle = "#fff";
-  ctx.beginPath();
-  ctx.arc(-size * 0.4, -size * 0.4, size * 0.28, 0, Math.PI * 2);
-  ctx.arc(size * 0.4, -size * 0.4, size * 0.28, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.fillStyle = "#101820";
-  ctx.beginPath();
-  ctx.arc(-size * 0.36, -size * 0.4, size * 0.13, 0, Math.PI * 2);
-  ctx.arc(size * 0.44, -size * 0.4, size * 0.13, 0, Math.PI * 2);
-  ctx.fill();
+
+  if (isDying) {
+    // X eyes for dead octopus
+    ctx.strokeStyle = "#101820";
+    ctx.lineWidth = size * 0.15;
+    ctx.lineCap = "round";
+    const eyeY = -size * 0.4;
+    const eyeSize = size * 0.25;
+    // Left X
+    ctx.beginPath();
+    ctx.moveTo(-size * 0.4 - eyeSize, eyeY - eyeSize);
+    ctx.lineTo(-size * 0.4 + eyeSize, eyeY + eyeSize);
+    ctx.moveTo(-size * 0.4 + eyeSize, eyeY - eyeSize);
+    ctx.lineTo(-size * 0.4 - eyeSize, eyeY + eyeSize);
+    ctx.stroke();
+    // Right X
+    ctx.beginPath();
+    ctx.moveTo(size * 0.4 - eyeSize, eyeY - eyeSize);
+    ctx.lineTo(size * 0.4 + eyeSize, eyeY + eyeSize);
+    ctx.moveTo(size * 0.4 + eyeSize, eyeY - eyeSize);
+    ctx.lineTo(size * 0.4 - eyeSize, eyeY + eyeSize);
+    ctx.stroke();
+  } else {
+    // Normal eyes
+    ctx.fillStyle = "#fff";
+    ctx.beginPath();
+    ctx.arc(-size * 0.4, -size * 0.4, size * 0.28, 0, Math.PI * 2);
+    ctx.arc(size * 0.4, -size * 0.4, size * 0.28, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#101820";
+    ctx.beginPath();
+    ctx.arc(-size * 0.36, -size * 0.4, size * 0.13, 0, Math.PI * 2);
+    ctx.arc(size * 0.44, -size * 0.4, size * 0.13, 0, Math.PI * 2);
+    ctx.fill();
+  }
   ctx.restore();
   ctx.restore();
 }
@@ -528,7 +569,13 @@ function drawOctopus(ctx: CanvasRenderingContext2D, world: World, now: number) {
     color = mix(color, [255, 60, 60], 0.5);
   }
 
-  octoShape(ctx, o.size, now, color, o.facing, 0, 1 - o.camo * 0.88);
+  // Check if in end animation fade phase (dying)
+  const isDying = world.chapter === 5 &&
+    world.chapterTime >= world.goalTarget &&
+    world.endAnimation.phase === "fade" &&
+    world.endAnimation.fadeOpacity > 0.5;
+
+  octoShape(ctx, o.size, now, color, o.facing, 0, 1 - o.camo * 0.88, isDying);
 
   // Carried shell.
   if (o.carrying > 0) drawShellShape(ctx, 0, o.size * 1.6, o.size * 0.5, 30);
@@ -644,6 +691,238 @@ function drawMateHearts(ctx: CanvasRenderingContext2D, world: World, now: number
 
     ctx.restore();
   }
+
+  ctx.restore();
+}
+
+/** End animation: fade to black + octopus heaven with halos. */
+function drawEndAnimation(ctx: CanvasRenderingContext2D, world: World, now: number) {
+  const { endAnimation, octo } = world;
+
+  if (endAnimation.phase === "fade") {
+    // Fade to black overlay
+    ctx.save();
+    ctx.fillStyle = `rgba(0, 0, 0, ${endAnimation.fadeOpacity})`;
+    ctx.fillRect(0, 0, W, H);
+    ctx.restore();
+  } else if (endAnimation.phase === "ascend") {
+    // Ascend phase: octopus rises from bottom to middle (0-60%), then stays while heaven fades in (60-100%)
+    const progress = endAnimation.ascended as number; // 0 to 1
+
+    // Background transitions from black to heaven:
+    // - 0-30%: fully black
+    // - 30-70%: heaven fades in while octopus is moving or stationary
+    // - 70-100%: fully in heaven while octopus stays in middle
+    const bgTransition = clamp((progress - 0.3) / 0.4, 0, 1);
+
+    if (bgTransition > 0) {
+      // Draw heaven background with increasing opacity
+      const heavenGradient = ctx.createLinearGradient(0, 0, 0, H);
+      heavenGradient.addColorStop(0, "#ffe4b5");
+      heavenGradient.addColorStop(0.5, "#ffd700");
+      heavenGradient.addColorStop(1, "#ff8c00");
+      ctx.save();
+      ctx.globalAlpha = bgTransition;
+      ctx.fillStyle = heavenGradient;
+      ctx.fillRect(0, 0, W, H);
+      ctx.restore();
+    }
+
+    // Draw black overlay that fades out
+    ctx.fillStyle = `rgba(10, 10, 10, ${1 - bgTransition})`;
+    ctx.fillRect(0, 0, W, H);
+
+    // Draw clouds as transition progresses (start appearing at 40%)
+    if (bgTransition > 0.25) {
+      ctx.save();
+      ctx.globalAlpha = bgTransition;
+      ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+      for (let i = 0; i < 5; i++) {
+        const cx = ((i * 137 + now * 0.02) % (W + 100)) - 50;
+        const cy = 80 + Math.sin(now * 0.001 + i) * 30;
+        ctx.beginPath();
+        ctx.arc(cx, cy, 40, 0, Math.PI * 2);
+        ctx.arc(cx + 30, cy, 50, 0, Math.PI * 2);
+        ctx.arc(cx + 60, cy, 40, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    // Draw octopus with X eyes and halo
+    const o = octo;
+    ctx.save();
+    ctx.translate(o.x, o.y);
+
+    // Halo (golden ring above head)
+    const haloPulse = 0.8 + 0.2 * Math.sin(now * 0.005);
+    ctx.save();
+    ctx.globalAlpha = haloPulse * 0.6;
+    ctx.strokeStyle = "#ffd700";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.ellipse(0, -o.size * 1.8, o.size * 1.5, o.size * 0.4, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fillStyle = "rgba(255, 215, 0, 0.2)";
+    ctx.fill();
+    ctx.restore();
+
+    // Ghostly octopus - always X eyes during ascent (dead), normal eyes come in heaven phase
+    const ghostColor: [number, number, number] = [200, 200, 220];
+    ctx.globalAlpha = 0.85;
+    octoShape(ctx, o.size, now, ghostColor, o.facing, 0, 1, true); // X eyes during ascent
+
+    ctx.restore();
+  } else if (endAnimation.phase === "heaven") {
+    // Heaven scene - golden background
+    const heavenGradient = ctx.createLinearGradient(0, 0, 0, H);
+    heavenGradient.addColorStop(0, "#ffe4b5"); // moccasin
+    heavenGradient.addColorStop(0.5, "#ffd700"); // gold
+    heavenGradient.addColorStop(1, "#ff8c00"); // dark orange
+    ctx.fillStyle = heavenGradient;
+    ctx.fillRect(0, 0, W, H);
+
+    // Draw clouds
+    ctx.save();
+    ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+    for (let i = 0; i < 5; i++) {
+      const cx = ((i * 137 + now * 0.02) % (W + 100)) - 50;
+      const cy = 80 + Math.sin(now * 0.001 + i) * 30;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 40, 0, Math.PI * 2);
+      ctx.arc(cx + 30, cy, 50, 0, Math.PI * 2);
+      ctx.arc(cx + 60, cy, 40, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+
+    // Draw octopus spirits with halos
+    const spirits = [
+      { size: 12, x: W * 0.2, y: H * 0.3, hue: 200 },
+      { size: 16, x: W * 0.8, y: H * 0.35, hue: 180 },
+      { size: 10, x: W * 0.15, y: H * 0.6, hue: 220 },
+      { size: 18, x: W * 0.85, y: H * 0.65, hue: 160 },
+      { size: 14, x: W * 0.5, y: H * 0.25, hue: 240 },
+      { size: 11, x: W * 0.3, y: H * 0.7, hue: 190 },
+      { size: 13, x: W * 0.7, y: H * 0.75, hue: 170 },
+    ];
+
+    for (const spirit of spirits) {
+      drawSpiritOctopus(ctx, spirit.x, spirit.y, spirit.size, now, spirit.hue);
+    }
+
+    // Draw the main octopus (player) in the center - alive again with full color!
+    // Use warm vibrant color to show life restored
+    drawAliveOctopusInHeaven(ctx, world.octo, now);
+  }
+}
+
+/** Draw a spirit octopus with halo in heaven. */
+function drawSpiritOctopus(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  size: number,
+  now: number,
+  hue: number,
+  isPlayer = false
+) {
+  ctx.save();
+  ctx.translate(x, y);
+
+  // Gentle floating motion
+  const floatY = Math.sin(now * 0.002 + x) * 10;
+  ctx.translate(0, floatY);
+
+  // Halo
+  const haloPulse = 0.8 + 0.2 * Math.sin(now * 0.003 + x);
+  ctx.save();
+  ctx.globalAlpha = haloPulse * 0.6;
+  ctx.strokeStyle = "#ffd700";
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.ellipse(0, -size * 1.8, size * 1.5, size * 0.4, 0, 0, Math.PI * 2);
+  ctx.stroke();
+  // Inner glow
+  ctx.fillStyle = "rgba(255, 215, 0, 0.2)";
+  ctx.fill();
+  ctx.restore();
+
+  // Spirit body (slightly translucent) - pastel colors in RGB
+  const spiritColors: Record<number, [number, number, number]> = {
+    30: [255, 200, 150],  // warm peach (player)
+    160: [150, 220, 200], // teal
+    170: [160, 230, 180], // mint
+    180: [170, 210, 230], // sky blue
+    190: [180, 200, 240], // periwinkle
+    200: [200, 180, 220], // lavender
+    220: [220, 190, 210], // pink
+    240: [240, 200, 190], // salmon
+  };
+  const color = spiritColors[hue] || [200, 200, 255];
+  ctx.globalAlpha = 0.85;
+
+  // Draw spirit octopus with normal (alive) eyes
+  octoShape(ctx, size, now, color, 1, 0, 1, false);
+
+  // Player gets a special glow
+  if (isPlayer) {
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    ctx.globalAlpha = 0.3;
+    ctx.fillStyle = "#ffd700";
+    ctx.beginPath();
+    ctx.arc(0, 0, size * 3, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  ctx.restore();
+}
+
+/** Draw the player octopus fully alive and vibrant in heaven. */
+function drawAliveOctopusInHeaven(
+  ctx: CanvasRenderingContext2D,
+  o: import("./engine").Octopus,
+  now: number
+) {
+  ctx.save();
+  ctx.translate(o.x, o.y);
+
+  // Gentle floating motion
+  const floatY = Math.sin(now * 0.002) * 10;
+  ctx.translate(0, floatY);
+
+  // Bright golden halo
+  const haloPulse = 0.8 + 0.2 * Math.sin(now * 0.003);
+  ctx.save();
+  ctx.globalAlpha = haloPulse * 0.7;
+  ctx.strokeStyle = "#ffd700";
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.ellipse(0, -o.size * 1.8, o.size * 1.6, o.size * 0.5, 0, 0, Math.PI * 2);
+  ctx.stroke();
+  // Inner glow
+  ctx.fillStyle = "rgba(255, 215, 0, 0.3)";
+  ctx.fill();
+  ctx.restore();
+
+  // Special glow around player (subtle)
+  ctx.save();
+  ctx.globalCompositeOperation = "lighter";
+  ctx.globalAlpha = 0.2;
+  ctx.fillStyle = "#ffaa44";
+  ctx.beginPath();
+  ctx.arc(0, 0, o.size * 2.5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  // Vibrant warm color - fully alive octopus (coral/orange tone)
+  const aliveColor: [number, number, number] = [255, 140, 80];
+  ctx.globalAlpha = 1.0;
+
+  // Draw octopus with normal alive eyes (no X, no transparency)
+  octoShape(ctx, o.size, now, aliveColor, o.facing, 0, 1, false);
 
   ctx.restore();
 }
