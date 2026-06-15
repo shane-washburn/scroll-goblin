@@ -9,6 +9,7 @@ import { manifest as balloonBlower } from "@scroll-goblin/module-balloon-blower"
 import { manifest as brainrotButton } from "@scroll-goblin/module-brainrot-button";
 import { manifest as pushyPaws } from "@scroll-goblin/module-pushy-paws";
 import { manifest as musicalDna } from "@scroll-goblin/module-musical-dna";
+import { manifest as lifeOfAnOctopus } from "@scroll-goblin/module-life-of-an-octopus";
 
 /**
  * The single source of truth for every module in the suite.
@@ -28,4 +29,5 @@ export const MODULES: ModuleManifest[] = [
   brainrotButton,
   pushyPaws,
   musicalDna,
+  lifeOfAnOctopus,
 ];
