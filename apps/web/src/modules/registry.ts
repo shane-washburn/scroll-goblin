@@ -10,6 +10,7 @@ import { manifest as brainrotButton } from "@scroll-goblin/module-brainrot-butto
 import { manifest as pushyPaws } from "@scroll-goblin/module-pushy-paws";
 import { manifest as musicalDna } from "@scroll-goblin/module-musical-dna";
 import { manifest as lifeOfAnOctopus } from "@scroll-goblin/module-life-of-an-octopus";
+import { manifest as auraFarm } from "@scroll-goblin/module-aura-farm";
 
 /**
  * The single source of truth for every module in the suite.
@@ -30,4 +31,5 @@ export const MODULES: ModuleManifest[] = [
   pushyPaws,
   musicalDna,
   lifeOfAnOctopus,
+  auraFarm,
 ];

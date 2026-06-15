@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@scroll-goblin/module-aura-farm": "workspace:*",
     "@scroll-goblin/module-balloon-blower": "workspace:*",
     "@scroll-goblin/module-commune-with-god": "workspace:*",
     "@scroll-goblin/module-brainrot-button": "workspace:*",
