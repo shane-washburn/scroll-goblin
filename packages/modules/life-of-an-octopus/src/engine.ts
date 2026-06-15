@@ -114,7 +114,7 @@ export interface World {
     phase: "fade" | "ascend" | "heaven";
     startTime: number;
     fadeOpacity: number;
-    ascended: boolean;
+    ascended: boolean | number;
   };
 }
 
@@ -373,7 +373,7 @@ export function createWorld(): World {
       phase: "fade",
       startTime: 0,
       fadeOpacity: 0,
-      ascended: false,
+      ascended: 0,
     },
   };
 }
@@ -506,7 +506,7 @@ export function setupChapter(world: World, idx: number, now: number) {
     phase: "fade",
     startTime: 0,
     fadeOpacity: 0,
-    ascended: false,
+    ascended: 0,
   };
   world.octo.vx = 0;
   world.octo.vy = 0;
@@ -1167,9 +1167,6 @@ export function stepWorld(world: World, dt: number, now: number): FrameEvents {
           }
         } else if (world.endAnimation.phase === "ascend") {
           // Single ascent from bottom to middle, then transition to heaven while staying in middle
-          if (world.endAnimation.ascended === false) {
-            world.endAnimation.ascended = 0; // Use as progress tracker 0-1
-          }
 
           // Progress from 0 to 1 over 4 seconds
           const ascentDuration = 4000;

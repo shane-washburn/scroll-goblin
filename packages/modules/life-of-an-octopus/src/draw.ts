@@ -707,7 +707,7 @@ function drawEndAnimation(ctx: CanvasRenderingContext2D, world: World, now: numb
     ctx.restore();
   } else if (endAnimation.phase === "ascend") {
     // Ascend phase: octopus rises from bottom to middle (0-60%), then stays while heaven fades in (60-100%)
-    const progress = endAnimation.ascended as number; // 0 to 1
+    const progress = typeof endAnimation.ascended === "number" ? endAnimation.ascended : 0; // 0 to 1
 
     // Background transitions from black to heaven:
     // - 0-30%: fully black
