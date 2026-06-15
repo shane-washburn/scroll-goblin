@@ -57,6 +57,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@scroll-goblin/module-aura-farm':
+        specifier: workspace:*
+        version: link:../../packages/modules/aura-farm
       '@scroll-goblin/module-balloon-blower':
         specifier: workspace:*
         version: link:../../packages/modules/balloon-blower
@@ -136,6 +139,28 @@ importers:
       tsx:
         specifier: ^4.19.2
         version: 4.22.4
+      typescript:
+        specifier: ^5.6.3
+        version: 5.9.3
+      vite:
+        specifier: ^5.4.8
+        version: 5.4.21(@types/node@22.19.21)
+
+  packages/modules/aura-farm:
+    dependencies:
+      '@scroll-goblin/ui':
+        specifier: workspace:*
+        version: link:../../ui
+      lucide-react:
+        specifier: ^0.451.0
+        version: 0.451.0(react@18.3.1)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.11
+        version: 18.3.31
       typescript:
         specifier: ^5.6.3
         version: 5.9.3

@@ -1132,6 +1132,13 @@ export function stepWorld(world: World, dt: number, now: number): FrameEvents {
 
       // End animation: when eggs hatch, trigger death/ascension sequence
       if (world.chapterTime >= world.goalTarget) {
+        // Check if all eggs are lost - you lose the level and must retry
+        if (world.eggsLost >= 2000) {
+          world.phase = "dead";
+          ev.died = true;
+          break;
+        }
+
         if (world.endAnimation.phase === "fade") {
           // Start the end animation
           if (world.endAnimation.startTime === 0) {
@@ -1156,12 +1163,12 @@ export function stepWorld(world: World, dt: number, now: number): FrameEvents {
           // Transition to ascend phase when mostly faded (ignore camo requirement)
           if (world.endAnimation.fadeOpacity >= 0.85) {
             world.endAnimation.phase = "ascend";
-            world.endAnimation.ascended = false;
+            world.endAnimation.ascended = 0;
             // Ensure camo is fully drained
             o.camo = 1;
-            // Reset position to center for clean ascend start
+            // Reset position to bottom for ascent start
             o.x = W / 2;
-            o.y = (SURFACE_Y + FLOOR_Y) / 2;
+            o.y = FLOOR_Y;
             o.vx = 0;
             o.vy = 0;
           }
