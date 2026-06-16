@@ -182,6 +182,7 @@ export const STAT_METRICS: Record<string, Record<string, string>> = {
   },
   "life-of-an-octopus": {
     won: "Games won as octopus",
+    died: "Octopus deaths",
   },
   "aura-farm": {
     harvests: "Auras farmed",

@@ -153,6 +153,7 @@ export default function LifeOfAnOctopusPage() {
     setFinalStats({ ...world.current.stats });
     setView("dead");
     playDeath();
+    trackStat(MODULE_ID, "died");
   };
 
   /* --- main loop --- */
@@ -398,7 +399,7 @@ export default function LifeOfAnOctopusPage() {
                 You will die.
               </p>
               <p className="mt-2 sm:mt-3 text-[10px] sm:text-xs font-bold text-white/70">
-                Most octopuses never reach adulthood. Can you?
+                Only 1% of octopuses reach adulthood. Can you?
               </p>
               <PrimaryButton onClick={beginLife}>Hatch →</PrimaryButton>
             </Overlay>
