@@ -18,6 +18,9 @@ import {
   SITE_ABOUT,
   SITE_DESCRIPTION,
   SITE_FACTS,
+  SITE_FAQ,
+  SITE_LANG,
+  SITE_LOGO,
   SITE_NAME,
   SITE_URL,
   STATIC_PAGES,
@@ -25,6 +28,13 @@ import {
 } from "../src/seo/site";
 
 const dist = resolve(dirname(fileURLToPath(import.meta.url)), "../dist");
+
+/** Build timestamp (date only) used as schema.org dateModified. */
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
+
+/** Stable JSON-LD node @ids so graph nodes can cross-reference each other. */
+const ORG_ID = `${SITE_URL}/#organization`;
+const SITE_ID = `${SITE_URL}/#website`;
 
 interface Page {
   path: string;
@@ -41,7 +51,26 @@ const escapeHtml = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 
 // --- robots.txt ---
-const aiBots = ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"];
+// Explicitly welcome the major AI crawlers and assistant user-agents. Listing
+// each one is an "AI openness" signal that scanners (e.g. BuiltWith) detect.
+const aiBots = [
+  "GPTBot",
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "ClaudeBot",
+  "Claude-Web",
+  "anthropic-ai",
+  "PerplexityBot",
+  "Perplexity-User",
+  "Google-Extended",
+  "Applebot-Extended",
+  "Amazonbot",
+  "Bytespider",
+  "CCBot",
+  "cohere-ai",
+  "Meta-ExternalAgent",
+  "Diffbot",
+];
 writeFileSync(
   join(dist, "robots.txt"),
   [
@@ -97,8 +126,134 @@ writeFileSync(
   ].join("\n")
 );
 
+// --- llms-full.txt ---
+// The llmstxt.org "full" companion: a single self-contained document an agent
+// can read without crawling further. Inlines the site summary, facts, FAQ, and
+// the full title+description of every app and static page.
+writeFileSync(
+  join(dist, "llms-full.txt"),
+  [
+    `# ${SITE_NAME}`,
+    "",
+    `> ${SITE_DESCRIPTION}`,
+    "",
+    SITE_ABOUT,
+    "",
+    "## Good to know",
+    "",
+    ...SITE_FACTS.map((f) => `- ${f}`),
+    "",
+    "## Frequently asked questions",
+    "",
+    ...SITE_FAQ.flatMap((f) => [`### ${f.question}`, "", f.answer, ""]),
+    "## Apps",
+    "",
+    ...modulePages.flatMap((p) => [
+      `### ${p.title}`,
+      "",
+      `URL: ${SITE_URL}${p.path}`,
+      "",
+      p.description,
+      "",
+    ]),
+    "## Other pages",
+    "",
+    ...STATIC_PAGES.filter((p) => p.path !== "/").flatMap((p) => [
+      `### ${p.title}`,
+      "",
+      `URL: ${SITE_URL}${p.path}`,
+      "",
+      p.description,
+      "",
+    ]),
+  ].join("\n")
+);
+
 // --- per-route prerendered HTML shells ---
 const shell = readFileSync(join(dist, "index.html"), "utf8");
+
+const modulePaths = new Set(modulePages.map((p) => p.path));
+
+/** Organization + WebSite nodes, shared (by @id) across every page's graph. */
+const baseNodes = [
+  {
+    "@type": "Organization",
+    "@id": ORG_ID,
+    name: SITE_NAME,
+    url: `${SITE_URL}/`,
+    logo: { "@type": "ImageObject", url: SITE_LOGO },
+    description: SITE_DESCRIPTION,
+  },
+  {
+    "@type": "WebSite",
+    "@id": SITE_ID,
+    name: SITE_NAME,
+    url: `${SITE_URL}/`,
+    description: SITE_DESCRIPTION,
+    inLanguage: SITE_LANG,
+    publisher: { "@id": ORG_ID },
+  },
+];
+
+/**
+ * Builds a JSON-LD @graph for a page. Every page shares the Organization and
+ * WebSite nodes; the home page adds a FAQPage, module pages add a
+ * WebApplication + BreadcrumbList, and other static pages add a WebPage.
+ */
+function buildGraph(page: Page): object {
+  const url = `${SITE_URL}${page.path === "/" ? "/" : page.path}`;
+  const nodes: object[] = [...baseNodes];
+
+  if (page.path === "/") {
+    nodes.push({
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      isPartOf: { "@id": SITE_ID },
+      inLanguage: SITE_LANG,
+      mainEntity: SITE_FAQ.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    });
+  } else {
+    nodes.push({
+      "@type": modulePaths.has(page.path) ? "WebApplication" : "WebPage",
+      name: pageTitle(page.title),
+      url,
+      description: page.description,
+      inLanguage: SITE_LANG,
+      dateModified: BUILD_DATE,
+      isPartOf: { "@id": SITE_ID },
+      publisher: { "@id": ORG_ID },
+      ...(modulePaths.has(page.path)
+        ? {
+            applicationCategory: "EntertainmentApplication",
+            operatingSystem: "Web",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+          }
+        : {}),
+    });
+    nodes.push({
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: SITE_NAME,
+          item: `${SITE_URL}/`,
+        },
+        { "@type": "ListItem", position: 2, name: page.title, item: url },
+      ],
+    });
+  }
+
+  return { "@context": "https://schema.org", "@graph": nodes };
+}
 
 function applyMeta(html: string, page: Page): string {
   const title = escapeHtml(pageTitle(page.title));
@@ -120,22 +275,18 @@ function applyMeta(html: string, page: Page): string {
     .replace(/(property="og:title"[\s\S]*?content=")[^"]*(")/, `$1${title}$2`)
     .replace(/(name="twitter:title"[\s\S]*?content=")[^"]*(")/, `$1${title}$2`);
 
-  // Per-app pages carry WebApplication schema; the home page keeps WebSite.
-  if (page.path !== "/") {
-    out = out.replace(
-      "</head>",
-      `<script type="application/ld+json">${JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        name: pageTitle(page.title),
-        url,
-        description: page.description,
-        applicationCategory: "EntertainmentApplication",
-        operatingSystem: "Web",
-        isPartOf: { "@type": "WebSite", name: SITE_NAME, url: `${SITE_URL}/` },
-      })}</script></head>`
-    );
-  }
+  // Replace the shell's single JSON-LD block with this page's richer @graph.
+  out = out.replace(
+    /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
+    `<script type="application/ld+json">${JSON.stringify(buildGraph(page))}</script>`
+  );
+
+  // Invisible discovery hints pointing crawlers/agents at the markdown corpora.
+  out = out.replace(
+    "</head>",
+    `<link rel="alternate" type="text/markdown" title="llms.txt" href="${SITE_URL}/llms.txt" />` +
+      `<link rel="alternate" type="text/markdown" title="llms-full.txt" href="${SITE_URL}/llms-full.txt" /></head>`
+  );
   return out;
 }
 
@@ -202,5 +353,5 @@ for (const page of pages) {
 }
 
 console.log(
-  `[generate-seo] wrote robots.txt, sitemap.xml, llms.txt and ${pages.length} prerendered pages (incl. home) to dist/`
+  `[generate-seo] wrote robots.txt, sitemap.xml, llms.txt, llms-full.txt and ${pages.length} prerendered pages (incl. home) to dist/`
 );
