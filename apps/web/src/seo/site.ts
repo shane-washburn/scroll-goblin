@@ -12,6 +12,12 @@ export const SITE_DESCRIPTION =
 
 export const OG_IMAGE = `${SITE_URL}/scroll-goblin-mascot.png`;
 
+/** BCP-47 language tag, surfaced as schema.org `inLanguage`. */
+export const SITE_LANG = "en";
+
+/** Absolute URL of the site logo, used by the Organization schema node. */
+export const SITE_LOGO = `${SITE_URL}/favicon.png`;
+
 /**
  * A short "about" paragraph and a set of plain-fact statements. These exist
  * specifically to answer the questions crawlers and LLMs ask but cannot infer
@@ -29,6 +35,38 @@ export const SITE_FACTS = [
   "The AI-powered apps (Emoji Translator, Commune with God) send your input to a language model and return a playful response.",
   "A global leaderboard ranks the apps by how often they are visited and poked.",
   "Built purely for fun — it is a novelty entertainment site, not a tool, product, or service.",
+];
+
+/**
+ * Question/answer pairs emitted as schema.org FAQPage JSON-LD only. They are
+ * never rendered in the UI — they exist purely so crawlers and LLMs can answer
+ * common questions about the site directly from structured data.
+ */
+export const SITE_FAQ: { question: string; answer: string }[] = [
+  {
+    question: "What is Scroll Goblin?",
+    answer:
+      "Scroll Goblin is a free collection of silly, interactive browser toys powered by AI. Each mini-app does one absurd thing well, with nothing to install and nothing to learn.",
+  },
+  {
+    question: "Does Scroll Goblin cost anything or require an account?",
+    answer:
+      "No. Every app is free to use with no account, sign-up, login, or email required.",
+  },
+  {
+    question: "Does it involve ads, crypto, or payments?",
+    answer:
+      "No. There are no ads, no crypto, no wallet, and no payments — only basic anonymous visit counts.",
+  },
+  {
+    question: "Do I need to download or install anything?",
+    answer: "No. Everything runs in your web browser; nothing to download or install.",
+  },
+  {
+    question: "How do the AI-powered apps work?",
+    answer:
+      "AI-powered apps such as Emoji Translator and Commune with God send your input to a language model and return a playful response.",
+  },
 ];
 
 /** Static (non-module) routes that should appear in the sitemap. */
