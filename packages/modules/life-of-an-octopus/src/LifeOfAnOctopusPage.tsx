@@ -153,6 +153,7 @@ export default function LifeOfAnOctopusPage() {
     setFinalStats({ ...world.current.stats });
     setView("dead");
     playDeath();
+    trackStat(MODULE_ID, "died");
   };
 
   /* --- main loop --- */

@@ -761,7 +761,7 @@ function stepOcto(world: World, dt: number) {
 
     // Speed bonus when emerging from camouflage - the element of surprise!
     if (o.camo < prevCamo && prevCamo > 0.5) {
-      const burst = (prevCamo - o.camo) * 180;
+      const burst = (prevCamo - o.camo) * 320;
       if (Math.abs(o.vx) > 1 || Math.abs(o.vy) > 1) {
         const spf = Math.hypot(o.vx, o.vy) || 1;
         o.vx += (o.vx / spf) * burst;
@@ -947,7 +947,7 @@ function stepCreature(c: Creature, world: World, dt: number, now: number, ev: Fr
     }
   } else if (c.kind === "prey") {
     const d = Math.sqrt(dist2(c.x, c.y, o.x, o.y));
-    if (d < c.detect * (1 - world.octo.camo * 0.5)) {
+    if (d < c.detect * (1 - world.octo.camo)) {
       c.behavior = "flee";
       steer(c, c.x + (c.x - o.x), c.y + (c.y - o.y), c.baseSpeed, dt);
     } else {
