@@ -189,13 +189,7 @@ export const STAT_METRICS: Record<string, Record<string, string>> = {
     drops: "Energy mixed",
   },
   "goblin-mirror": {
-    scans: "Devices scanned",
-    cookies_deleted: "Cookies deleted",
-    localstorage_deleted: "Local storage wiped",
-    notifications_granted: "Notifications allowed",
-    location_granted: "Location shared",
-    camera_granted: "Camera allowed",
-    mic_granted: "Microphone allowed",
+    scans: "Goblins scanned",
   },
 };
 
