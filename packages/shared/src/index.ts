@@ -188,6 +188,15 @@ export const STAT_METRICS: Record<string, Record<string, string>> = {
     harvests: "Auras farmed",
     drops: "Energy mixed",
   },
+  "goblin-mirror": {
+    scans: "Devices scanned",
+    cookies_deleted: "Cookies deleted",
+    localstorage_deleted: "Local storage wiped",
+    notifications_granted: "Notifications allowed",
+    location_granted: "Location shared",
+    camera_granted: "Camera allowed",
+    mic_granted: "Microphone allowed",
+  },
 };
 
 /** Reserved metric name for page visits; valid for every module. */
