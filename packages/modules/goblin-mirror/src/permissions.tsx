@@ -11,9 +11,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Bell, Camera, Check, Mic, MapPin, ShieldCheck } from "lucide-react";
-import { trackStat } from "@scroll-goblin/ui";
-
-const MODULE_ID = "goblin-mirror";
 
 type DareState = "idle" | "requesting" | "granted" | "denied";
 
@@ -189,7 +186,6 @@ export function NotificationDare({ onGrant }: { onGrant?: () => void }) {
     Notification.requestPermission()
       .then((perm) => {
         if (perm === "granted") {
-          trackStat(MODULE_ID, "notifications_granted");
           onGrant?.();
           setState("granted");
           try {
@@ -258,7 +254,6 @@ export function GeolocationDare({ onGrant }: { onGrant?: () => void }) {
     setState("requesting");
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        trackStat(MODULE_ID, "location_granted");
         onGrant?.();
         setCoords({
           lat: pos.coords.latitude,
@@ -398,7 +393,6 @@ export function CameraDare({ onGrant }: { onGrant?: () => void }) {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ video: true });
       streamRef.current = stream;
-      trackStat(MODULE_ID, "camera_granted");
       onGrant?.();
       setState("granted");
     } catch {
@@ -530,7 +524,6 @@ export function MicrophoneDare({ onGrant }: { onGrant?: () => void }) {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       streamRef.current = stream;
-      trackStat(MODULE_ID, "mic_granted");
       onGrant?.();
       setState("granted");
     } catch {

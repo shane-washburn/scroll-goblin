@@ -264,13 +264,11 @@ export default function GoblinMirrorPage() {
   const onDeleteCookies = () => {
     setMemory(clearCookies());
     setCookiesWiped(true);
-    trackStat(MODULE_ID, "cookies_deleted");
   };
 
   const onDeleteLocalStorage = () => {
     setMemory(clearLocalStorage());
     setLsWiped(true);
-    trackStat(MODULE_ID, "localstorage_deleted");
   };
 
   const bothWiped = cookiesWiped && lsWiped;
