@@ -19,25 +19,8 @@
     "{size} captured": "847bd63c2ba88623326d3fe52046ceee",
     "{tempo} BPM": "f7b2e59ada25f957a9f6261ff1614c42",
     "+{points} chaos": "6067b1ebfa68b4e474b849e585208c93",
-    "✋ Touch": "3db700f7aa85f76cc4c27f9731ee7506",
-    "🌱 Touch Grass": "2de696490b0342d13d6f69aa53696e18",
-    "🎈 Balloon Blower": "63ad62872696b1ec2af88b3535dfcb31",
-    "🎤 Start blowing": "8a1c90cc6093dcfb7d152599e680438c",
-    "🎼 Your song will appear here": "b5f5490f81d1dba20565de003ae5a001",
-    "🐌 Slug Fencing": "f34e739a6cda54f65205d85a8c21ba66",
-    "🐔 Screaming Chicken": "d5e2fa3a48caf6181a1616033abf8c76",
-    "🐙 Life of an Octopus": "81f4c612c89a1e5f401f53e11ffa556d",
-    "🐾 Pushy Paws": "455f86847ec3654e9dbca0c4b4a99816",
     "💥 POP! You blew past full. A new balloon appears.": "3a0a1b8153aa283a4620762323229a26",
-    "🔮 Goblin Aura Farm": "001442297843a44a5b7c371c18071686",
-    "🔴 Brainrot Button": "25531d8b221bf91a53db6fd8cec90a2f",
-    "🖤 Ink": "673e2d3eb42f6b255d516a397924bf53",
-    "🥔 Potato Painter": "71840e0da89706a8964984711ab765ee",
-    "🧬 Musical DNA": "9d2d038a434d59dafea5bd1a342071d7",
-    "🧽 Clear canvas": "85ea94a2d0ea302d4eae283b6acb6f01",
-    "🪢 Tie it off": "9d86f151aea0123a4279a82455034d09",
     "🫥 Camouflaged": "1e1369b80a3d12af65747fff34835705",
-    "🚿 Water": "61720bbd8303ba226d0d8b0d5b5fc7e0",
     "1 day ago": "44ba1391bb5be07bbe3a4737dc1873d5",
     "10 seconds max.": "76cb3314bd8e37f21d729b8aeeaadf1e",
     "404: Goblin not found": "ea1cb11191f69296ba3feb853954243d",
@@ -63,16 +46,12 @@
     "Accuracy": "d78f1fb7e69f7cddcf3e168f2663db20",
     "Active": "4d3d769b812b6faa6b76e1a8abaece2d",
     "Add some amino acids below to compose a song.": "261482907c967b0e7476f300bf428a83",
-    "Advertisers rarely know who you are — they bid on profiles . Here's a mock auction for yours, scaled by the signals brokers actually price on. Grant more above and watch it climb.": "794a4a2d5298d99d0358dac56702611e",
     "Advertisers rarely know who you are — they bid on profiles. Here's a mock auction for yours, scaled by the signals brokers actually price on. Grant more above and watch it climb.": "38825eaae85f3c98ddd616e52a42a886",
     "Afternoon browsing": "c56b87c38ea7e006f89f9ee1552f0a79",
     "Age": "9d8d2d5ab12b515182a505f54db7f538",
     "Age {age} months": "003c4fe73a50c1aba65dbace02882944",
     "Age / Gender / Income": "b9f2062acff072f15dd27278801a47b5",
-    "Age 0 mo": "cc3117ee5fe4f0b3cd7ca52a6d870f31",
     "Age Reached": "283dc8241af0eee178d700d03eed4786",
-    "age, gender, and income": "592be7cd08b839df0f3868fe0fbd7e8a",
-    "ageReached": "266c8ec78e93c1f9259c8a5c2b8d7b4a",
     "AI Emoji Translator": "53bac412db363202e48786800c836aca",
     "AI-powered apps such as Emoji Translator and Commune with God send your input to a language model and return a playful response.": "55691de122cb11239b054456a1c4a791",
     "Alternatives": "ccf847bbe927621373e2891eca80bf93",
@@ -82,6 +61,7 @@
     "Ancient Magic Scroll": "9bd95ce88c81494fa071f5c333149ce8",
     "Ancient Magic Scroll leaves the shelf.": "a1b0baa24133f42ef911e9cbe87ae9f0",
     "Another hit! The rival recoils in disgust.": "5e6f1d1f526e79e0e4fce7d3f5ef2b2a",
+    "Answers from God": "9020c0a035536b0b077d3c70caca39ad",
     "Arcane Wizard Casting": "09f636751e906964457866eae9685148",
     "Archetype": "15f752f90268a1a39fe449871b75267c",
     "Ask": "a0b271a9d8aa8e7473922164d6a1c03c",
@@ -89,6 +69,7 @@
     "Ask anything that weighs on your heart. A benevolent, non-denominational presence answers with kindness, love, and support. No judgment, ever.": "ee599068629cda3897f5b18df2a3da77",
     "Ask the divine anything. A benevolent, non-denominational AI oracle answers with kindness, love, and support.": "984558d83ad08f1a7e9a749bc9f4d8a2",
     "Audio": "b22f0418e8ac915eb66f829d262d14a2",
+    "Auras farmed": "4191368b74fa23beec35fa07475c07fc",
     "Back": "0557fa923dcee4d0f86b1409f5c2167f",
     "Back to the apps": "3f7b34a69a6b223a15e42b821dfeb692",
     "Balloon Blower": "120fc521aa7a836de738ec833889f86c",
@@ -97,7 +78,6 @@
     "Base ad impression": "79df66e83f356d8e97e8733b4a130e9e",
     "Behavioral Tracking": "a0723407935932fde6303956b7b98a2e",
     "Beta": "0b87d66b88c72957dfea8c9605016442",
-    "Block": "e1e4c8c9ccd9fc39c391da4bcd093fb2",
     "Blow into your mic to inflate it. Tie it off before it pops.": "daf04b82bbb6d5dac5c3b9484418b8f1",
     "Blow into your microphone to inflate a balloon on screen — the harder you blow, the faster it fills. Tie it off in time to bank it, or keep blowing past full and watch it explode.": "8a3f58cad12ff9d5f9662d66171ae2f9",
     "Blow into your microphone to inflate the balloon — the harder you blow, the faster it fills. Tie it off before it bursts to bank a balloon. Keep blowing past full and it explodes.": "7bf15cbf9ff78759008b615e4017c15a",
@@ -105,7 +85,6 @@
     "Blue": "9594eec95be70e7b1710f730fdda33d9",
     "Blue calm. Moves like it's underwater and in no hurry.": "bf10bd4fd1dd9d0a3326d96da6276e17",
     "Blue is a primary — cool, calm, the slow side of the wheel.": "0fb82d649f6df0ea855c357a447f242d",
-    "Books": "6225eb5bf8a031f750a1b03f810ccc6a",
     "Brainrot": "f36a3b3cfd170fb6afc1aaa774c85830",
     "Brainrot button": "5ae4f4ec4eac4e618302ed04e7646889",
     "Brainrot Button": "57bf5c76f0f88545c91c6d102b1e927f",
@@ -120,6 +99,7 @@
     "Bubbling Potion Flask leaves the shelf.": "8b899d07d38f2cd31df389d2cad92909",
     "Budget / older": "34cc035fe6a83a94c000c35aada0f9bd",
     "Buttery and smug about it.": "c9a8540ab52cf682e757d8d2ab9e7cd9",
+    "Button pushes": "5c9804311036edde069a5d683c337f70",
     "Caffeinated Doomscroller": "9fbb175a7ab2600aa297ca7b5306951b",
     "Calms toward balance, grows slowly": "e8ae3c91b40e51ef58442bf24abc5cd8",
     "Camera": "967d35e40f3f95b1f538bd248640bf3b",
@@ -147,12 +127,12 @@
     "Chaos score": "0a04ec9911970bb271dc716b0ccc122f",
     "Chaos scrambles the mix — color theory politely leaves the room.": "5db47947db721dddf68e4e4c55d7a15e",
     "Chapter {chapter} · {age}": "acff5c43d264286879c0d60e21acf4a1",
+    "Chicken squeezes": "6e65bd5cbce722249c39a3a128561cec",
     "Choose your brainrot spell": "03e40907eae80e82bbe536003146ea8a",
     "Classical": "2091523979dbedcad728958414922c72",
     "Clear": "dc30bc0c7914db5918da4263fce93ad2",
     "Clear all": "81aa2078d1eceede831b2976dbf32e62",
     "Clear canvas": "9d2d5d29ecf0f7e4506aed8a55399edd",
-    "Click the lock / tune icon (or ⓘ ) at the left of the address bar.": "b6b12af4f6913d7df30fa17a1cef5e03",
     "Click the lock / tune icon at the left of the address bar.": "c467d87d5b148698bfee834a46d1b9f9",
     "Clicks / Taps": "b4f0111751d8ad295f2a77525fd10799",
     "Color Depth": "fa921c1a38f588518635f20b8f74e889",
@@ -160,7 +140,6 @@
     "Combined totals from every goblin who has ever scrolled through. Every blade plucked, egg laid, and answer received — counted forever.": "c49f442cdfa223b439442f5d7e3a9629",
     "Common": "d13bc5b68b2bd9e18f29777db17cc563",
     "Commune with God": "9be325b26d22431ef237255e0b7416a6",
-    "Commune with God 🔮": "e30f46b5bcc7fb9b3e09e560e8d53a96",
     "Connection": "c2cc7082a89c1ad6631a2f66af5f00c0",
     "Continue →": "92c9a254bfb99e0af25ad63aa193fbf6",
     "Cookie memory erased.": "a58319c33b822694b7474b065a74ef6b",
@@ -181,6 +160,7 @@
     "Curious Wanderer": "d78b58224a415cc04ff3a9f5d212b23a",
     "Current target": "49dc52f50366fed91bc26c0f095eecff",
     "Custom button armed. Preview it, save it, or smash it now.": "489bd2360d30caaf6413bfa61cae446c",
+    "Custom recordings": "52c45537cb6f53e723eafa4ae57a5283",
     "CUSTOM SPELL EXPIRED. DEFAULT BUTTON RESTORED.": "f052a2912f8c194107d2cf847b13bfbb",
     "Custom voice": "2f27b79e6766def352e4512f21ac7359",
     "CUSTOM VOICE ACTIVE": "6ae448f6823b1396c3ed08d0e10d4fe5",
@@ -192,12 +172,9 @@
     "DEFAULT VOICE ACTIVE": "8e2edd13a3d0fa7c714960c5b2058f43",
     "Delete browser storage": "76f4be787f913c40f17bf742f4ede35b",
     "Delete Cookies": "dd97fb3d9eeec1db2abfb139946ab9de",
-    "Delete Local Storage": "6d0b3b13043e13bab3de3e1b1c6ca1ae",
     "Dens Built": "4d0efe56f32f5ff72d0bb04885418773",
-    "densBuilt": "76d83071e7ff569953691b1e323b57ce",
     "Desktop / Laptop": "923589d5bfae50112692fae58296e9b8",
     "Desktop audience": "1158caa0e9aa22dc6da119a444bc08c2",
-    "device fingerprint remains": "3af00863cf7b73924a869dc0794289d1",
     "Device Memory": "9e48e97f7b63e2be3b408dff37c3aaf4",
     "Device Tier": "b17643294746db2c28347877b72847e2",
     "Device Type": "3efefb2586548f4ae74fa1de6ad6d5c6",
@@ -211,7 +188,6 @@
     "Drag (or use WASD / arrows) to swim. Stay still to camouflage — predators see you from closer when you're hidden. Tap, click, or press Space to release ink and escape. Survive your way from hatchling to guardian.": "e375c0922c90975f2bcb0b1cee588c5f",
     "Drag a spud from the tray and drop it on the canvas to stamp it. Every potato you use is replaced by a brand-new one — same variety, never the same shape.": "3703ce383347a69718ec4e99e7a61f30",
     "Drift up to the bright surface currents.": "2c4e9a035a3f04081569352163a4848c",
-    "Drip Red , Yellow & Blue energy into the jar, then raise the blob with care. Warm colors grow fast and dance hard; cool ones stay smooth. Harvest a ripe aura and your goblin erupts into a dance chosen by its color.": "54ddd366242e561114751ca1d0078788",
     "Drip Red, Yellow & Blue energy into the jar, then raise the blob with care. Warm colors grow fast and dance hard; cool ones stay smooth. Harvest a ripe aura and your goblin erupts into a dance chosen by its color.": "5f29b741e20fe98135e1548d3dbc31c0",
     "Drop a potato here to stamp it": "4669f4f58d822279229ca66a925a66ef",
     "Duel of the slugs": "c759eb3b8c0a8d05473c8360c30e5fa8",
@@ -222,15 +198,17 @@
     "Educational simulation. Real per-sale prices for one person run from fractions of a cent up to roughly $0.50; these figures are illustrative, scaled by the same criteria (engagement, device, market, location, re-identifiability) that data brokers use.": "f93c2ff36478fc6860a3f07c2d405cc4",
     "Educational simulation. The Goblin kept all of this on your device and sent none of it anywhere.": "2ee206b51bf51048748bbc1792a40b1b",
     "Eggs": "9890f06976131702b942e59eda2f750a",
+    "Eggs laid": "fe3f49d0798adc86225e2c9547798437",
     "Eggs Protected": "c46d0c335f1f195ff6af56df8ee34592",
-    "eggsProtected": "490547f4ef17ba07d1e24d615e000a31",
     "Emoji → Text": "f9eda21f6aa0601404ee1bb533cb4974",
+    "Emoji translations": "5f7044fec21b63934935bbbd7ad95fdf",
     "Emoji Translator": "17821a10400745194709fce7b87855e2",
     "Empty": "ce2c8aed9c2fa0cfbed56cbda4d8bf07",
     "Empty jar": "6e0a095b9d62ae062990d0da9a11242c",
     "En garde! Slide up and down, then click to lunge.": "3241f51921f45ed1548ec45024329ad3",
     "Enchanted Wand": "b66ef86fcdf97877d86ce17682f18479",
     "Enchanted Wand leaves the shelf.": "b0b249463e0b8ca48339a9004ab7d525",
+    "Energy mixed": "bfcf3506f689f7beec318e5c4dffd752",
     "Engagement": "f034ccfdba0f830ec14d37f73be77578",
     "Environment": "0ba29c6a1afacf586b03a26162c72274",
     "Equal red + yellow + blue cancels into neutral — true balance is rare.": "1911b2982820d4046f86f3f29f746c54",
@@ -267,6 +245,7 @@
     "FULL! Tie it off now — keep blowing and it'll explode!": "f33966e5d29e26d43dd39b20a68d9eb2",
     "Fwump. Deeply unsatisfying.": "7b0bff0b0d401f45d95e8bf776e72be7",
     "Gamer Aura": "1d52ee6892e33465bb9af5c35c98d790",
+    "Games won as octopus": "f16e39fa9201043da18bdbf63ce5a160",
     "Global leaderboard of the most-visited and most-poked Scroll Goblin mini-apps.": "c02222d0f5fe593d5cb97f091e5b37b5",
     "Glug glug. The grass drinks happily. 💧": "bec8bcea16badbe875c1b105dc5fce2a",
     "Go ahead. Touch the grass": "22f8668bdf1828a12f975aa4a70b5aaa",
@@ -280,21 +259,21 @@
     "Goblin Surveillance Mirror": "d8de60cdc272cee8e2d9169b86ba170d",
     "Goblin Surveillance Report": "651ded75e0b4cca192eb114ea29708f5",
     "Goblin Surveillance Score": "0645068f1e4a6e5c2c1ecbcd3a812cd3",
+    "Goblins scanned": "5b0abc79ae560f2d9e31020871cb036f",
     "GPS coordinates are far more precise than a city. From them, a website could look up your street address, and from that address typically dig up:": "a64284326408fb4d71cf9acd3974a695",
     "GPU": "52f9ec21735243ad9917cda3ca077d32",
     "Grab a spud, drag it onto the canvas, and stamp masterpieces. Every potato you use grows back different.": "e65cbe98ae5758ee3733adf113555345",
+    "Grass plucked": "0ac9875a8822dc33d81eead21d5558f0",
+    "Grass touches": "5d97a274c0a7695c11ed7b5a9d01dd81",
     "Green and chaotic. Claw hands. No touching grass.": "78e4a7326c54c2dd95dfefd8ea8c4cf4",
     "Green is a SECONDARY — yellow mixed with blue.": "678c5283588c304353b5174f964fd6d0",
     "Gremlin Aura": "709cf30c268cb694515830ee89b19c98",
     "Grow another": "566c4b5395e394df5642c9d576049a79",
     "Grow it. Harvest it. Watch it dance": "2c2ad85d3838ae54b8081f736db7252e",
     "Growth": "699aed86dada6ca01ef74013a4464066",
-    "Growth Seedling": "7bf0161f4c9a3010e04a6817ba4c8180",
     "Guard the eggs": "649505fcc2a36bbd10de858693289c7d",
     "Guard your eggs. Stay close. Drive away anything that comes.": "777d23fea2bbb04e3b924f6a48ca09ba",
     "Guesses, not facts. Notice the bottom one: your age, gender, and income can't be read from your device at all — those come from data brokers, not your browser.": "48539e472484c8719dbec2acd905496f",
-    "Half-Full Ceramic Mug": "cbb4f1b35a35df99ce9d7e5b5c3f7784",
-    "Half-Full Ceramic Mug leaves the shelf.": "e88c5fc32e876cf3fe643606aef58cde",
     "Harvest the Aura!": "ab14750660837da0a11fa32745c36140",
     "Hatch →": "183f3d745dbe86729da049d32e41af89",
     "Health": "605669cab962bf944d99ce89cf9e58d9",
@@ -308,6 +287,7 @@
     "High-end": "9db042cdbedaeab6a292b7adeafb23f6",
     "High-value ad market": "6e8b744de19914ca7c29e18de0844273",
     "Highly Unique": "bcb71b56363c0913ba82fe48200c2e5c",
+    "Hits landed": "ace3bc0ae2977ee161e4b58dae5c4135",
     "Hold down on the chicken to squeeze the air out. Release and it screams its way back into shape. Deeper squeeze, bigger scream.": "9aea67c572fb2d45718c027f002f2ed9",
     "How do I take {label} access back?": "a94babea0b85ae9e292185a4141583b8",
     "How do the AI-powered apps work?": "8105d094b8c4242657a9aeaed4f4e1ab",
@@ -316,13 +296,10 @@
     "Identify your surroundings — home, office, car, in bed": "0088bc449005a746ae8a5663247b27a6",
     "Idle Periods": "83e0acccb155a58c3fc7164f15160482",
     "If your data were sold...": "f78df62580b874be1dba5637bbe335ad",
-    "Inaudible \"ultrasonic beacons\" in ads that link your phone to your TV": "cccd34306ec953d0e3ed7b5e0188fee8",
     "Inaudible ultrasonic beacons in ads that link your phone to your TV": "a62aa0645c1320778c1d3e323d13b711",
     "Inferno Aura": "a708fb40824b75fd85b4131f1cba7748",
     "Inferred from CPU cores and memory the browser reports.": "1e479a6a1c61d2532fc61cf8af955aae",
     "Ink": "2bf0074bb2c7b5812e901258f98f91d3",
-    "Ink Age 0 mo": "0e74be0d1705e5d7f1333d7fda915991",
-    "inkUsed": "027da3b741d55bc078824f6f20928d04",
     "Input language": "ded0391fe56617593736da20f03cc6c3",
     "Input Type": "a749642e2afeea63aac9d550e51abf64",
     "Inspiration — intensifies the dominant color": "a16126725ada75742d33374c7cb88d17",
@@ -330,6 +307,7 @@
     "Interesting Specimen": "4ffe5af41f75cdece0e84d4d2a6f3b9c",
     "Is it time to let go?": "58b2f566e8c0a2e75d57a4f0dc0eec12",
     "It lost you in your camouflage.": "91c79f3e2d41737d9d8c4f160c7c2c1a",
+    "Items pushed": "8200e99d9964a0a85e61050e86246372",
     "Jazz": "9a284efda4d46636bd9d5298dfea1335",
     "Just now": "58038ee4a4e2d0e2f764aa223fbecfae",
     "Keep raising it…": "edc88385482c9c474da9591cd9cfe174",
@@ -363,13 +341,13 @@
     "Local memory erased.": "0d4921024a9e8cf26a0a194dfcd03910",
     "Local Storage": "6827a85b76e967f6a129e08f9272e76d",
     "Local Storage can remember far more than cookies, and websites reach for it constantly.": "6dee8b3ca1d07c98aa33f5e6b32f2148",
-    "Local Storage erased ✓": "7ab158925dabe649fba18f9dd893f91a",
     "Location": "ce5bf551379459c1c61d2a204061c455",
     "Locked": "d0f2e5376298c880665077b565ffd7dd",
     "Long. Weird. Beautiful.": "67af75653ebaa58451ab0d08ebc80b84",
     "Loyal Returning Specimen": "fe5879874f135b031dd78786c4536611",
     "Lunar Moonwalk": "f48b9b93f3ef0d4f5ed31cfa62ce8954",
     "Lunges": "6b38310863bdd5631c22400cb4846a6a",
+    "Lunges thrown": "213655080c5bfd374417971e061ec977",
     "Lurker": "3242698d7d5aec57dba2890244f01b4b",
     "Lv {level}": "6a4dbc41d56d288fdcc6f6f2533f4694",
     "Matches ~{share} of people": "cf11e31fe1749c22ac62e5fdc679288a",
@@ -387,7 +365,6 @@
     "Mouse": "f2a47c6809d88e175dade0ef7b16aa13",
     "Move your slug up and down — drag on touch, or use the mouse / W / S. Tap (or click, or Space) to lunge. Line up with your rival and strike to score. Every move and lunge burns energy, so watch your meter. Left-handed? Tap the hand button to swap sides.": "d883c0a8f62113b6c449827b344a685f",
     "Movement": "4642e767f9251fa40afadbc963f80b7a",
-    "Mug": "085ebaaa85343c9978e8145f24aba2a2",
     "Music": "47dcbd834e669233d7eb8a51456ed217",
     "Musical DNA": "190157c33457c39365bad78b26edfcc5",
     "Mute sound effects": "72840f00dc8e591aa7b57631b0cb42b5",
@@ -404,10 +381,12 @@
     "No. There are no ads, no crypto, no wallet, and no payments — only basic anonymous visit counts.": "8260a27997dc130b5a78bef354481e35",
     "Nonpolar": "fde42827d1c952cb98d401d717059ce9",
     "Note:": "fc9d3df613063ee57906c461320744e2",
+    "Notes sequenced": "f024a3dbe500628afbb0a5f021d46b49",
     "Notice how each permission hands me a brand-new sense. Saying no is always a valid move — that's the whole point.": "e74a548442b95f2abd75c6cdd06faab1",
     "Notifications": "a274f4d4670213a9045ce258c6c56b80",
     "Now dancing:": "cd3644325d39f50016ef64ad5b9966c0",
     "Ocean Aura": "cf1f8a201d5a6e6955191aa5fce220a3",
+    "Octopus deaths": "2220877465d58ae6ac3afbeaf434907e",
     "Once in a life, you search for another. Few octopuses ever meet one.": "cec5eebbc35983d154d706da6f7b9252",
     "Only 1% of octopuses reach adulthood. Can you?": "820864a539958babee88b7e31a999778",
     "Operating System": "64d354dc5879cf570ce7b4ef676e75bd",
@@ -437,6 +416,7 @@
     "Portrait": "1c7444be9626d149ab598fb79b639f96",
     "Positive": "3289297424e01eda5b788c083bbf3147",
     "Potato Painter": "3df9340f24f273b8e3b94195098592cd",
+    "Potatoes stamped": "d5581d98c97ae696fb8d020098853f75",
     "Potatoes used": "cc819c1daa74d1bf8041614d44d6bb02",
     "Potion": "f7f5d540f521d6d642502a9d459e7b16",
     "Potted Mandrake": "3bec5c7cdaa940f43b9731e0f09946ca",
@@ -444,7 +424,6 @@
     "Powered by an LLM. Pick a direction, choose a language, and go.": "b2f48f98a8f68bc84c8fc3317e3cf861",
     "Precise location shared": "645dd076647154c356dfea68141b5ba1",
     "Predators Escaped": "8a223950292dd8cf80f72b69d24e28e2",
-    "predatorsEscaped": "1309ee6555fed5dbbbe0a068d23747b0",
     "Premium device (spend signal)": "db7e0ba65fb0dddd8f87065d48177c45",
     "Press and hold anywhere on the chicken — release to scream": "1c4d044670a1a1dc04f5cadde42b8fc3",
     "Press and hold to pour": "37b5ac7fcc77edc236284745a7d864d6",
@@ -452,7 +431,6 @@
     "Preview": "31fde7b05ac8952dacf4af8a704074ec",
     "Previewing your custom button.": "deccff1b7aada3d1bd5b04f5ebcf125f",
     "Prey Caught": "3f59f397e1c23fc856af5b0053fcb8e8",
-    "preyCaught": "707234bd8122081882af386e2cd52cb2",
     "Probable Country": "207c99352e5189147901d91978de70eb",
     "Property records: owner, value, and purchase date": "8e7175d659c364c3aab41d5ffc3077d8",
     "Pulls it cosmic & purple": "89485bfa4443cef79c2738e6f654fb15",
@@ -468,7 +446,6 @@
     "Raised on nothing but music. Point up. Point down. Repeat forever.": "8d1cdd56b2b5650439ad7df94a21cf14",
     "Random Goblin DNA": "565e07f87629e872bf893f67bec2e34e",
     "Rare": "a2cc588f2ab07ad61b05400f593eeb0a",
-    "Re-bait you for months to juice \"engagement\" numbers": "4d08d4149bc05f356f980c153c1d775a",
     "Re-bait you for months to juice engagement numbers": "493dd4c4c2cfa41a5449ec586dbc578d",
     "Re-engagement channel": "9d2e8fd09318fbc105f4440f38b916ac",
     "Re-engagement Channel": "4895925a2825193211381385f0f51cfc",
@@ -514,6 +491,7 @@
     "Scrambles everything. Anything can happen.": "370c6ba155a021be3a594d740eb38065",
     "Screaming Chicken": "08d2e8ec5bbc8ed4c5918aaf1512e889",
     "Screams": "37d94670e4261b0b3caa6b8b2a777299",
+    "Screams unleashed": "b08d895dee0fea8a5371451ade15c907",
     "Screen": "2fc3359e12b2a9104121dcf04246f6a0",
     "Scroll": "105078d294d30c978ca2badf7f376934",
     "Scroll Goblin": "e75b44a79a1855b72a6e7de341f46dc7",
@@ -527,10 +505,8 @@
     "served from cache": "a6959f83f1d7bf39353be0c305b41f39",
     "Session": "71c7ae294b7abd866b3fb295b3b9e4a4",
     "Session length": "2e40d0aed96932630e10c1e63c60b27d",
-    "Set it to Block (or Ask ), then reload the page.": "03fdbba895f225ed166379a32ad2b21c",
     "Set it to Block or Ask, then reload the page.": "f021f843f02dcb9b1a6142157aa275ec",
     "Share": "5a95a425f74314a96f13a2f136992178",
-    "Shared by ~{share} of people": "cb8ee29540e03dc2323cdb226053b555",
     "Shared custom button loaded. Smash it.": "3526650dcd77415263633823ec9b7847",
     "Should I take the leap?": "ee110d5442ab2aa985b97a2ba099b289",
     "Show the {count} technical signals the Goblin also used": "c8fee15d5d19a2090ff6bfb7ea40755e",
@@ -545,13 +521,13 @@
     "Smooth Tidal Sway": "a6bbc832badc94cd8aaae8d1d9f60206",
     "Something went wrong": "6609dd239e143d00002123326c5e4aad",
     "Songs played": "6bf71cd6474b295a85be682bb04e9823",
-    "Sound": "9d07e0e08af7f96cf45be0112b9ccfbe",
     "Sound is muted. The button is judging silently.": "dc9958e590c153c146c2c0254e92bb24",
     "Specimen ID": "d072081d9a646278ea607cd16b7c307a",
     "Speech Activity": "af580a1f882389fee67a17438a565579",
     "Speech turned to text: topics, names, even your mood": "220a31675ac2d52f54846661d503019e",
     "Splat — the rival lunged and got you.": "cbd8a9a9fe95b0d8820514da3c27bc14",
     "Spud acquired. Drop it where you want it!": "a2cccfe7010f389e5d381b26ad6cf35e",
+    "Squeak. The cat looks personally betrayed.": "92a4ac3ab60ca841f70be1cf2bc1a75d",
     "Squeeze the chicken": "cc78099e1a854c2b179da8077c50d7e4",
     "Squeezes": "d19121bc39fe3320ddb42a5738fe846a",
     "Stack of books": "ad347dee7ae527795187c72b523ebea0",
@@ -582,12 +558,12 @@
     "Tallying the chaos...": "7fe3083aa4ba58f7590674f4ae536c45",
     "Tap “Start blowing”, then blow into your mic to inflate the balloon.": "5de1e454ae0ff01bab6fac344d62e1b1",
     "Tap residues below, type/paste a sequence, or load a preset.": "0ee634c5c8f09ecf8bb99a105c5afdef",
-    "Tap the object once for each cat swat. Heavier targets need more paws — shove them off the shelf to rack up chaos and level up your increasingly buff cat.": "68806e507008a25d2da6eedf94857e20",
     "Tap the object once for each cat swat. Heavier targets need more paws.": "95fe949817e5a643a714416d30fabe26",
     "Tap the objects once for each cat swat. Heavier targets need more paws — shove them off the shelf to rack up chaos and level up your increasingly buff cat.": "bfef4202fb74876f072d8aa0a2690157",
     "Tax Fraud Aura": "c3590efd69b45d7c1b30e3f7644b59fe",
     "Technically not a potato. Don't tell it.": "e70dda90ab647b5fe12883c62fb6bb94",
     "Text → Emoji": "25af92bc0b3d5db781117c340bc4b50b",
+    "The chalice rings forever. Beautiful.": "ed28ca2ca99e3ff648f68b512939b664",
     "The chicken is mostly flat now. It remembers everything.": "8d5afb8ec1dfe202083b5dcb7958752c",
     "The chicken is trembling. Something is happening in there...": "bcd931c78fb6371eb855824c972b2ac3",
     "The chicken regards you with suspicion.": "8eaef7102812860662441e3d79d20548",
@@ -618,6 +594,7 @@
     "The Hunter": "1d964bf03f1b3bc13543c9245fb0dcb9",
     "The open water is full of mouths. Reach the seafloor where you can hide.": "c11d4b81269521ad81e4333eb3a89a7d",
     "The potato rolls back to the tray, unused.": "30ba2efe76a2a8a53a4f8f5aea3321c2",
+    "The rune stone detonates. Worth it.": "eff44baeb4e177399abd84663a0db93f",
     "The Sea Lion": "44ae4d04fb49e50ee3b77f3f568592de",
     "The shared custom clip expired, so the default is back.": "f09a5085eb3772d614679639dfe7f194",
     "The stats database isn't connected yet, so everything reads zero. (API is missing its Upstash Redis credentials.)": "3ab30a179e90d2edf29efb2efa64a95e",
@@ -647,7 +624,6 @@
     "Translate": "deccbe4e9083c3b5f7cd2632722765bb",
     "Translate between human language and emoji in both directions, powered by an LLM.": "259de296529020290617e62e34cb2b86",
     "Translate language": "8394fd0f15a541fd96deb460ab680746",
-    "Translate language ↔️ emoji": "ff0d9ba316c6853a3bf8f441415d58c3",
     "Translating...": "d03e99730ddba93542f7af93d8d6c93a",
     "Translation will appear here": "8386b947510242bb242c6067ecf6891a",
     "Tree-Hugging Hippie Sway": "d3fb982f84886290540de1aee3b621d7",
@@ -673,6 +649,7 @@
     "Warms it up, grows fastest": "3b270cbfbbb3f0fdb0d8326f364e3cdb",
     "Water": "27634ff8002b12e75d98e07ccd005d18",
     "Waterings": "9530aff942e829d59618cf7d505e8f50",
+    "Waterings poured": "3abba7f45a5df4a747703512a7c95b85",
     "Websites infer who you are from behavior alone — no name required. These metrics update live.": "ded7e16828852873c4e81575c86bb737",
     "What does the internet know about you? A goblin scans your device, remembers your visits, and infers who you are — then proves that deleting cookies isn't enough. Educational, slightly unsettling, runs entirely on your device.": "3cf95cc5bcf7376650d8a962ff147871",
     "What does the internet know about you? Everything below runs on your device only — the Goblin sends nothing to any server.": "86b0b4029a6dbac08b432ee1e93da30a",
@@ -702,9 +679,7 @@
     "You will lay thousands of eggs — and never eat again. Guard them to the end.": "86a8b653a6f2f9bb31bd56d6ddc7daf4",
     "You're on {browser} / {operatingSystem} — a {device} in {location}, reading in {language}.": "4fa9709afcdff43c0d7fc265290791c8",
     "You're really pressing into it now. The grass forgives you.": "ff5afa8cea1dafa4885b6d9dc478ccc0",
-    "Your cookies are gone. Your Local Storage is gone. But your device fingerprint remains . Clearing storage doesn't make you anonymous — your device itself is identifying.": "99c0098c3973cf73e8793a50bfa8a576",
     "Your cookies are gone. Your Local Storage is gone. But your device fingerprint remains. Clearing storage doesn't make you anonymous — your device itself is identifying.": "706fdd84b9aaaf11161ef7edbbac226e",
-    "your device only": "6e999b0ce4561a56d9041141ebba24e3",
     "Your eggs are hatching...": "bcb8352311390f911b171cd4d6ed03a3",
     "Your home address and who else lives there": "072d1e50bec199194d315501c6681178",
     "Your income": "53018594fafffefdb1eeec40d6f7e9f6",
@@ -714,10 +689,7 @@
     "Your sequence": "866e764e53ad76a5f0e43721fd24b096",
     "Your setting — quiet home, busy office, car, or street": "8d53649d0c28c8d071e33096d78da00b",
     "Your song will appear here": "1482d2f60adc0720e052dadfc4076980",
-    "Yukon Gold": "6b6a1b8220bfc2890fbeab028a97aab7",
-    "Squeak. The cat looks personally betrayed.": "92a4ac3ab60ca841f70be1cf2bc1a75d",
-    "The rune stone detonates. Worth it.": "eff44baeb4e177399abd84663a0db93f",
-    "The chalice rings forever. Beautiful.": "ed28ca2ca99e3ff648f68b512939b664"
+    "Yukon Gold": "6b6a1b8220bfc2890fbeab028a97aab7"
   },
   "sources": [
     {
@@ -797,80 +769,12 @@
       "key": "6067b1ebfa68b4e474b849e585208c93"
     },
     {
-      "source": "✋ Touch",
-      "key": "3db700f7aa85f76cc4c27f9731ee7506"
-    },
-    {
-      "source": "🌱 Touch Grass",
-      "key": "2de696490b0342d13d6f69aa53696e18"
-    },
-    {
-      "source": "🎈 Balloon Blower",
-      "key": "63ad62872696b1ec2af88b3535dfcb31"
-    },
-    {
-      "source": "🎤 Start blowing",
-      "key": "8a1c90cc6093dcfb7d152599e680438c"
-    },
-    {
-      "source": "🎼 Your song will appear here",
-      "key": "b5f5490f81d1dba20565de003ae5a001"
-    },
-    {
-      "source": "🐌 Slug Fencing",
-      "key": "f34e739a6cda54f65205d85a8c21ba66"
-    },
-    {
-      "source": "🐔 Screaming Chicken",
-      "key": "d5e2fa3a48caf6181a1616033abf8c76"
-    },
-    {
-      "source": "🐙 Life of an Octopus",
-      "key": "81f4c612c89a1e5f401f53e11ffa556d"
-    },
-    {
-      "source": "🐾 Pushy Paws",
-      "key": "455f86847ec3654e9dbca0c4b4a99816"
-    },
-    {
       "source": "💥 POP! You blew past full. A new balloon appears.",
       "key": "3a0a1b8153aa283a4620762323229a26"
     },
     {
-      "source": "🔮 Goblin Aura Farm",
-      "key": "001442297843a44a5b7c371c18071686"
-    },
-    {
-      "source": "🔴 Brainrot Button",
-      "key": "25531d8b221bf91a53db6fd8cec90a2f"
-    },
-    {
-      "source": "🖤 Ink",
-      "key": "673e2d3eb42f6b255d516a397924bf53"
-    },
-    {
-      "source": "🥔 Potato Painter",
-      "key": "71840e0da89706a8964984711ab765ee"
-    },
-    {
-      "source": "🧬 Musical DNA",
-      "key": "9d2d038a434d59dafea5bd1a342071d7"
-    },
-    {
-      "source": "🧽 Clear canvas",
-      "key": "85ea94a2d0ea302d4eae283b6acb6f01"
-    },
-    {
-      "source": "🪢 Tie it off",
-      "key": "9d86f151aea0123a4279a82455034d09"
-    },
-    {
       "source": "🫥 Camouflaged",
       "key": "1e1369b80a3d12af65747fff34835705"
-    },
-    {
-      "source": "🚿 Water",
-      "key": "61720bbd8303ba226d0d8b0d5b5fc7e0"
     },
     {
       "source": "1 day ago",
@@ -973,10 +877,6 @@
       "key": "261482907c967b0e7476f300bf428a83"
     },
     {
-      "source": "Advertisers rarely know who you are — they bid on profiles . Here's a mock auction for yours, scaled by the signals brokers actually price on. Grant more above and watch it climb.",
-      "key": "794a4a2d5298d99d0358dac56702611e"
-    },
-    {
       "source": "Advertisers rarely know who you are — they bid on profiles. Here's a mock auction for yours, scaled by the signals brokers actually price on. Grant more above and watch it climb.",
       "key": "38825eaae85f3c98ddd616e52a42a886"
     },
@@ -997,20 +897,8 @@
       "key": "b9f2062acff072f15dd27278801a47b5"
     },
     {
-      "source": "Age 0 mo",
-      "key": "cc3117ee5fe4f0b3cd7ca52a6d870f31"
-    },
-    {
       "source": "Age Reached",
       "key": "283dc8241af0eee178d700d03eed4786"
-    },
-    {
-      "source": "age, gender, and income",
-      "key": "592be7cd08b839df0f3868fe0fbd7e8a"
-    },
-    {
-      "source": "ageReached",
-      "key": "266c8ec78e93c1f9259c8a5c2b8d7b4a"
     },
     {
       "source": "AI Emoji Translator",
@@ -1049,6 +937,10 @@
       "key": "5e6f1d1f526e79e0e4fce7d3f5ef2b2a"
     },
     {
+      "source": "Answers from God",
+      "key": "9020c0a035536b0b077d3c70caca39ad"
+    },
+    {
       "source": "Arcane Wizard Casting",
       "key": "09f636751e906964457866eae9685148"
     },
@@ -1075,6 +967,10 @@
     {
       "source": "Audio",
       "key": "b22f0418e8ac915eb66f829d262d14a2"
+    },
+    {
+      "source": "Auras farmed",
+      "key": "4191368b74fa23beec35fa07475c07fc"
     },
     {
       "source": "Back",
@@ -1109,10 +1005,6 @@
       "key": "0b87d66b88c72957dfea8c9605016442"
     },
     {
-      "source": "Block",
-      "key": "e1e4c8c9ccd9fc39c391da4bcd093fb2"
-    },
-    {
       "source": "Blow into your mic to inflate it. Tie it off before it pops.",
       "key": "daf04b82bbb6d5dac5c3b9484418b8f1"
     },
@@ -1139,10 +1031,6 @@
     {
       "source": "Blue is a primary — cool, calm, the slow side of the wheel.",
       "key": "0fb82d649f6df0ea855c357a447f242d"
-    },
-    {
-      "source": "Books",
-      "key": "6225eb5bf8a031f750a1b03f810ccc6a"
     },
     {
       "source": "Brainrot",
@@ -1199,6 +1087,10 @@
     {
       "source": "Buttery and smug about it.",
       "key": "c9a8540ab52cf682e757d8d2ab9e7cd9"
+    },
+    {
+      "source": "Button pushes",
+      "key": "5c9804311036edde069a5d683c337f70"
     },
     {
       "source": "Caffeinated Doomscroller",
@@ -1309,6 +1201,10 @@
       "key": "acff5c43d264286879c0d60e21acf4a1"
     },
     {
+      "source": "Chicken squeezes",
+      "key": "6e65bd5cbce722249c39a3a128561cec"
+    },
+    {
       "source": "Choose your brainrot spell",
       "key": "03e40907eae80e82bbe536003146ea8a"
     },
@@ -1327,10 +1223,6 @@
     {
       "source": "Clear canvas",
       "key": "9d2d5d29ecf0f7e4506aed8a55399edd"
-    },
-    {
-      "source": "Click the lock / tune icon (or ⓘ ) at the left of the address bar.",
-      "key": "b6b12af4f6913d7df30fa17a1cef5e03"
     },
     {
       "source": "Click the lock / tune icon at the left of the address bar.",
@@ -1359,10 +1251,6 @@
     {
       "source": "Commune with God",
       "key": "9be325b26d22431ef237255e0b7416a6"
-    },
-    {
-      "source": "Commune with God 🔮",
-      "key": "e30f46b5bcc7fb9b3e09e560e8d53a96"
     },
     {
       "source": "Connection",
@@ -1445,6 +1333,10 @@
       "key": "489bd2360d30caaf6413bfa61cae446c"
     },
     {
+      "source": "Custom recordings",
+      "key": "52c45537cb6f53e723eafa4ae57a5283"
+    },
+    {
       "source": "CUSTOM SPELL EXPIRED. DEFAULT BUTTON RESTORED.",
       "key": "f052a2912f8c194107d2cf847b13bfbb"
     },
@@ -1489,16 +1381,8 @@
       "key": "dd97fb3d9eeec1db2abfb139946ab9de"
     },
     {
-      "source": "Delete Local Storage",
-      "key": "6d0b3b13043e13bab3de3e1b1c6ca1ae"
-    },
-    {
       "source": "Dens Built",
       "key": "4d0efe56f32f5ff72d0bb04885418773"
-    },
-    {
-      "source": "densBuilt",
-      "key": "76d83071e7ff569953691b1e323b57ce"
     },
     {
       "source": "Desktop / Laptop",
@@ -1507,10 +1391,6 @@
     {
       "source": "Desktop audience",
       "key": "1158caa0e9aa22dc6da119a444bc08c2"
-    },
-    {
-      "source": "device fingerprint remains",
-      "key": "3af00863cf7b73924a869dc0794289d1"
     },
     {
       "source": "Device Memory",
@@ -1565,10 +1445,6 @@
       "key": "2c4e9a035a3f04081569352163a4848c"
     },
     {
-      "source": "Drip Red , Yellow & Blue energy into the jar, then raise the blob with care. Warm colors grow fast and dance hard; cool ones stay smooth. Harvest a ripe aura and your goblin erupts into a dance chosen by its color.",
-      "key": "54ddd366242e561114751ca1d0078788"
-    },
-    {
       "source": "Drip Red, Yellow & Blue energy into the jar, then raise the blob with care. Warm colors grow fast and dance hard; cool ones stay smooth. Harvest a ripe aura and your goblin erupts into a dance chosen by its color.",
       "key": "5f29b741e20fe98135e1548d3dbc31c0"
     },
@@ -1609,16 +1485,20 @@
       "key": "9890f06976131702b942e59eda2f750a"
     },
     {
+      "source": "Eggs laid",
+      "key": "fe3f49d0798adc86225e2c9547798437"
+    },
+    {
       "source": "Eggs Protected",
       "key": "c46d0c335f1f195ff6af56df8ee34592"
     },
     {
-      "source": "eggsProtected",
-      "key": "490547f4ef17ba07d1e24d615e000a31"
-    },
-    {
       "source": "Emoji → Text",
       "key": "f9eda21f6aa0601404ee1bb533cb4974"
+    },
+    {
+      "source": "Emoji translations",
+      "key": "5f7044fec21b63934935bbbd7ad95fdf"
     },
     {
       "source": "Emoji Translator",
@@ -1643,6 +1523,10 @@
     {
       "source": "Enchanted Wand leaves the shelf.",
       "key": "b0b249463e0b8ca48339a9004ab7d525"
+    },
+    {
+      "source": "Energy mixed",
+      "key": "bfcf3506f689f7beec318e5c4dffd752"
     },
     {
       "source": "Engagement",
@@ -1789,6 +1673,10 @@
       "key": "1d52ee6892e33465bb9af5c35c98d790"
     },
     {
+      "source": "Games won as octopus",
+      "key": "f16e39fa9201043da18bdbf63ce5a160"
+    },
+    {
       "source": "Global leaderboard of the most-visited and most-poked Scroll Goblin mini-apps.",
       "key": "c02222d0f5fe593d5cb97f091e5b37b5"
     },
@@ -1841,6 +1729,10 @@
       "key": "0645068f1e4a6e5c2c1ecbcd3a812cd3"
     },
     {
+      "source": "Goblins scanned",
+      "key": "5b0abc79ae560f2d9e31020871cb036f"
+    },
+    {
       "source": "GPS coordinates are far more precise than a city. From them, a website could look up your street address, and from that address typically dig up:",
       "key": "a64284326408fb4d71cf9acd3974a695"
     },
@@ -1851,6 +1743,14 @@
     {
       "source": "Grab a spud, drag it onto the canvas, and stamp masterpieces. Every potato you use grows back different.",
       "key": "e65cbe98ae5758ee3733adf113555345"
+    },
+    {
+      "source": "Grass plucked",
+      "key": "0ac9875a8822dc33d81eead21d5558f0"
+    },
+    {
+      "source": "Grass touches",
+      "key": "5d97a274c0a7695c11ed7b5a9d01dd81"
     },
     {
       "source": "Green and chaotic. Claw hands. No touching grass.",
@@ -1877,10 +1777,6 @@
       "key": "699aed86dada6ca01ef74013a4464066"
     },
     {
-      "source": "Growth Seedling",
-      "key": "7bf0161f4c9a3010e04a6817ba4c8180"
-    },
-    {
       "source": "Guard the eggs",
       "key": "649505fcc2a36bbd10de858693289c7d"
     },
@@ -1891,14 +1787,6 @@
     {
       "source": "Guesses, not facts. Notice the bottom one: your age, gender, and income can't be read from your device at all — those come from data brokers, not your browser.",
       "key": "48539e472484c8719dbec2acd905496f"
-    },
-    {
-      "source": "Half-Full Ceramic Mug",
-      "key": "cbb4f1b35a35df99ce9d7e5b5c3f7784"
-    },
-    {
-      "source": "Half-Full Ceramic Mug leaves the shelf.",
-      "key": "e88c5fc32e876cf3fe643606aef58cde"
     },
     {
       "source": "Harvest the Aura!",
@@ -1953,6 +1841,10 @@
       "key": "bcb71b56363c0913ba82fe48200c2e5c"
     },
     {
+      "source": "Hits landed",
+      "key": "ace3bc0ae2977ee161e4b58dae5c4135"
+    },
+    {
       "source": "Hold down on the chicken to squeeze the air out. Release and it screams its way back into shape. Deeper squeeze, bigger scream.",
       "key": "9aea67c572fb2d45718c027f002f2ed9"
     },
@@ -1985,10 +1877,6 @@
       "key": "f78df62580b874be1dba5637bbe335ad"
     },
     {
-      "source": "Inaudible \"ultrasonic beacons\" in ads that link your phone to your TV",
-      "key": "cccd34306ec953d0e3ed7b5e0188fee8"
-    },
-    {
       "source": "Inaudible ultrasonic beacons in ads that link your phone to your TV",
       "key": "a62aa0645c1320778c1d3e323d13b711"
     },
@@ -2003,14 +1891,6 @@
     {
       "source": "Ink",
       "key": "2bf0074bb2c7b5812e901258f98f91d3"
-    },
-    {
-      "source": "Ink Age 0 mo",
-      "key": "0e74be0d1705e5d7f1333d7fda915991"
-    },
-    {
-      "source": "inkUsed",
-      "key": "027da3b741d55bc078824f6f20928d04"
     },
     {
       "source": "Input language",
@@ -2039,6 +1919,10 @@
     {
       "source": "It lost you in your camouflage.",
       "key": "91c79f3e2d41737d9d8c4f160c7c2c1a"
+    },
+    {
+      "source": "Items pushed",
+      "key": "8200e99d9964a0a85e61050e86246372"
     },
     {
       "source": "Jazz",
@@ -2173,10 +2057,6 @@
       "key": "6dee8b3ca1d07c98aa33f5e6b32f2148"
     },
     {
-      "source": "Local Storage erased ✓",
-      "key": "7ab158925dabe649fba18f9dd893f91a"
-    },
-    {
       "source": "Location",
       "key": "ce5bf551379459c1c61d2a204061c455"
     },
@@ -2199,6 +2079,10 @@
     {
       "source": "Lunges",
       "key": "6b38310863bdd5631c22400cb4846a6a"
+    },
+    {
+      "source": "Lunges thrown",
+      "key": "213655080c5bfd374417971e061ec977"
     },
     {
       "source": "Lurker",
@@ -2269,10 +2153,6 @@
       "key": "4642e767f9251fa40afadbc963f80b7a"
     },
     {
-      "source": "Mug",
-      "key": "085ebaaa85343c9978e8145f24aba2a2"
-    },
-    {
       "source": "Music",
       "key": "47dcbd834e669233d7eb8a51456ed217"
     },
@@ -2337,6 +2217,10 @@
       "key": "fc9d3df613063ee57906c461320744e2"
     },
     {
+      "source": "Notes sequenced",
+      "key": "f024a3dbe500628afbb0a5f021d46b49"
+    },
+    {
       "source": "Notice how each permission hands me a brand-new sense. Saying no is always a valid move — that's the whole point.",
       "key": "e74a548442b95f2abd75c6cdd06faab1"
     },
@@ -2351,6 +2235,10 @@
     {
       "source": "Ocean Aura",
       "key": "cf1f8a201d5a6e6955191aa5fce220a3"
+    },
+    {
+      "source": "Octopus deaths",
+      "key": "2220877465d58ae6ac3afbeaf434907e"
     },
     {
       "source": "Once in a life, you search for another. Few octopuses ever meet one.",
@@ -2469,6 +2357,10 @@
       "key": "3df9340f24f273b8e3b94195098592cd"
     },
     {
+      "source": "Potatoes stamped",
+      "key": "d5581d98c97ae696fb8d020098853f75"
+    },
+    {
       "source": "Potatoes used",
       "key": "cc819c1daa74d1bf8041614d44d6bb02"
     },
@@ -2497,10 +2389,6 @@
       "key": "8a223950292dd8cf80f72b69d24e28e2"
     },
     {
-      "source": "predatorsEscaped",
-      "key": "1309ee6555fed5dbbbe0a068d23747b0"
-    },
-    {
       "source": "Premium device (spend signal)",
       "key": "db7e0ba65fb0dddd8f87065d48177c45"
     },
@@ -2527,10 +2415,6 @@
     {
       "source": "Prey Caught",
       "key": "3f59f397e1c23fc856af5b0053fcb8e8"
-    },
-    {
-      "source": "preyCaught",
-      "key": "707234bd8122081882af386e2cd52cb2"
     },
     {
       "source": "Probable Country",
@@ -2591,10 +2475,6 @@
     {
       "source": "Rare",
       "key": "a2cc588f2ab07ad61b05400f593eeb0a"
-    },
-    {
-      "source": "Re-bait you for months to juice \"engagement\" numbers",
-      "key": "4d08d4149bc05f356f980c153c1d775a"
     },
     {
       "source": "Re-bait you for months to juice engagement numbers",
@@ -2777,6 +2657,10 @@
       "key": "37d94670e4261b0b3caa6b8b2a777299"
     },
     {
+      "source": "Screams unleashed",
+      "key": "b08d895dee0fea8a5371451ade15c907"
+    },
+    {
       "source": "Screen",
       "key": "2fc3359e12b2a9104121dcf04246f6a0"
     },
@@ -2829,20 +2713,12 @@
       "key": "2e40d0aed96932630e10c1e63c60b27d"
     },
     {
-      "source": "Set it to Block (or Ask ), then reload the page.",
-      "key": "03fdbba895f225ed166379a32ad2b21c"
-    },
-    {
       "source": "Set it to Block or Ask, then reload the page.",
       "key": "f021f843f02dcb9b1a6142157aa275ec"
     },
     {
       "source": "Share",
       "key": "5a95a425f74314a96f13a2f136992178"
-    },
-    {
-      "source": "Shared by ~{share} of people",
-      "key": "cb8ee29540e03dc2323cdb226053b555"
     },
     {
       "source": "Shared custom button loaded. Smash it.",
@@ -2901,10 +2777,6 @@
       "key": "6bf71cd6474b295a85be682bb04e9823"
     },
     {
-      "source": "Sound",
-      "key": "9d07e0e08af7f96cf45be0112b9ccfbe"
-    },
-    {
       "source": "Sound is muted. The button is judging silently.",
       "key": "dc9958e590c153c146c2c0254e92bb24"
     },
@@ -2927,6 +2799,10 @@
     {
       "source": "Spud acquired. Drop it where you want it!",
       "key": "a2cccfe7010f389e5d381b26ad6cf35e"
+    },
+    {
+      "source": "Squeak. The cat looks personally betrayed.",
+      "key": "92a4ac3ab60ca841f70be1cf2bc1a75d"
     },
     {
       "source": "Squeeze the chicken",
@@ -3049,10 +2925,6 @@
       "key": "0ee634c5c8f09ecf8bb99a105c5afdef"
     },
     {
-      "source": "Tap the object once for each cat swat. Heavier targets need more paws — shove them off the shelf to rack up chaos and level up your increasingly buff cat.",
-      "key": "68806e507008a25d2da6eedf94857e20"
-    },
-    {
       "source": "Tap the object once for each cat swat. Heavier targets need more paws.",
       "key": "95fe949817e5a643a714416d30fabe26"
     },
@@ -3071,6 +2943,10 @@
     {
       "source": "Text → Emoji",
       "key": "25af92bc0b3d5db781117c340bc4b50b"
+    },
+    {
+      "source": "The chalice rings forever. Beautiful.",
+      "key": "ed28ca2ca99e3ff648f68b512939b664"
     },
     {
       "source": "The chicken is mostly flat now. It remembers everything.",
@@ -3193,6 +3069,10 @@
       "key": "30ba2efe76a2a8a53a4f8f5aea3321c2"
     },
     {
+      "source": "The rune stone detonates. Worth it.",
+      "key": "eff44baeb4e177399abd84663a0db93f"
+    },
+    {
       "source": "The Sea Lion",
       "key": "44ae4d04fb49e50ee3b77f3f568592de"
     },
@@ -3309,10 +3189,6 @@
       "key": "8394fd0f15a541fd96deb460ab680746"
     },
     {
-      "source": "Translate language ↔️ emoji",
-      "key": "ff0d9ba316c6853a3bf8f441415d58c3"
-    },
-    {
       "source": "Translating...",
       "key": "d03e99730ddba93542f7af93d8d6c93a"
     },
@@ -3411,6 +3287,10 @@
     {
       "source": "Waterings",
       "key": "9530aff942e829d59618cf7d505e8f50"
+    },
+    {
+      "source": "Waterings poured",
+      "key": "3abba7f45a5df4a747703512a7c95b85"
     },
     {
       "source": "Websites infer who you are from behavior alone — no name required. These metrics update live.",
@@ -3529,16 +3409,8 @@
       "key": "ff5afa8cea1dafa4885b6d9dc478ccc0"
     },
     {
-      "source": "Your cookies are gone. Your Local Storage is gone. But your device fingerprint remains . Clearing storage doesn't make you anonymous — your device itself is identifying.",
-      "key": "99c0098c3973cf73e8793a50bfa8a576"
-    },
-    {
       "source": "Your cookies are gone. Your Local Storage is gone. But your device fingerprint remains. Clearing storage doesn't make you anonymous — your device itself is identifying.",
       "key": "706fdd84b9aaaf11161ef7edbbac226e"
-    },
-    {
-      "source": "your device only",
-      "key": "6e999b0ce4561a56d9041141ebba24e3"
     },
     {
       "source": "Your eggs are hatching...",
@@ -3579,18 +3451,6 @@
     {
       "source": "Yukon Gold",
       "key": "6b6a1b8220bfc2890fbeab028a97aab7"
-    },
-    {
-      "source": "Squeak. The cat looks personally betrayed.",
-      "key": "92a4ac3ab60ca841f70be1cf2bc1a75d"
-    },
-    {
-      "source": "The rune stone detonates. Worth it.",
-      "key": "eff44baeb4e177399abd84663a0db93f"
-    },
-    {
-      "source": "The chalice rings forever. Beautiful.",
-      "key": "ed28ca2ca99e3ff648f68b512939b664"
     }
   ]
 }

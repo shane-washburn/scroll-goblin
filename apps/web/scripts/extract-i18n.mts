@@ -715,6 +715,20 @@ function extractTsFile(file: string): Occurrence[] {
           );
         }
       }
+      if (!info && variableNameForInitializer(node) === "STAT_METRICS") {
+        const statLabelValue = literalValue(node.initializer);
+        if (statLabelValue) {
+          addOccurrence(
+            occurrences,
+            sourceFile,
+            node,
+            statLabelValue,
+            "label",
+            "leaderboard-stat-label",
+            "compact leaderboard metric label; keep short for mobile rows"
+          );
+        }
+      }
     }
 
     if (ts.isArrayLiteralExpression(node)) {
