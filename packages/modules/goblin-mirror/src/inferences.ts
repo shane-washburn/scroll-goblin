@@ -24,6 +24,13 @@ export interface Inference {
   note?: string;
 }
 
+export const INFERENCE_VALUE_LABELS = [
+  "Late-night browsing",
+  "Morning browsing",
+  "Afternoon browsing",
+  "Evening browsing",
+];
+
 /** Friendly region label from an IANA timezone like "America/Denver". */
 function regionFromTimezone(): { value: string; confidence: Confidence } {
   let tz = "";

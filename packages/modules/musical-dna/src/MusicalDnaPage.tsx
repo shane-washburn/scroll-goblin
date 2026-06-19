@@ -6,6 +6,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import {
@@ -43,6 +44,7 @@ function randomGoblinSequence(): string {
 }
 
 export default function MusicalDnaPage() {
+  const { t } = useTranslation();
   const [snapshot] = useState(() =>
     consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
   );
@@ -125,8 +127,8 @@ export default function MusicalDnaPage() {
         key={aa}
         onClick={() => append(aa)}
         disabled={sequence.length >= MAX_NOTES}
-        title={`${aa} — ${info.name} · ${PROPERTY_LABEL[info.property]}${
-          info.extended ? " · extended code" : ""
+        title={`${aa} — ${t(info.name)} · ${t(PROPERTY_LABEL[info.property])}${
+          info.extended ? ` · ${t("extended code")}` : ""
         }`}
         className={`flex flex-col items-center rounded-neobrutal border-thin border-brand-border py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed disabled:cursor-not-allowed disabled:opacity-40 ${
           info.extended ? "border-dashed" : ""
@@ -137,7 +139,7 @@ export default function MusicalDnaPage() {
           {aa}
         </span>
         <span className="text-[9px] font-bold leading-tight text-brand-text/70">
-          {info.name.slice(0, 3)}
+          {t(info.name).slice(0, 3)}
         </span>
       </button>
     );
@@ -158,16 +160,16 @@ export default function MusicalDnaPage() {
       <header className="mb-bento grid gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-primary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-            🧬 Musical DNA
+            🧬 {t("Musical DNA")}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            Listen to your DNA
+            {t("Listen to your DNA")}
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          String together amino acids and hit play. The sequence picks a key,
-          scale, tempo, and chord progression — so every protein becomes its own
-          little song. Same sequence always sounds the same.
+          {t(
+            "String together amino acids and hit play. The sequence picks a key, scale, tempo, and chord progression — so every protein becomes its own little song. Same sequence always sounds the same."
+          )}
         </p>
       </header>
 
@@ -181,16 +183,17 @@ export default function MusicalDnaPage() {
               {song ? (
                 <>
                   <p className="truncate font-heading text-xl leading-tight">
-                    {song.title}
+                    {t(song.title)}
                   </p>
                   <p className="text-xs font-bold text-brand-muted">
-                    {song.genreEmoji} {song.genreLabel} · {song.key} ·{" "}
-                    {song.mood} · {song.tempo} BPM · {song.noteCount} notes
+                    {song.genreEmoji} {t(song.genreLabel)} · {song.key} ·{" "}
+                    {t(song.mood)} · {t("{tempo} BPM", { tempo: song.tempo })} ·{" "}
+                    {t("{count} notes", { count: song.noteCount })}
                   </p>
                 </>
               ) : (
                 <p className="text-sm font-bold text-brand-muted">
-                  Add some amino acids below to compose a song.
+                  {t("Add some amino acids below to compose a song.")}
                 </p>
               )}
             </div>
@@ -198,11 +201,11 @@ export default function MusicalDnaPage() {
             <div className="flex shrink-0 items-center gap-2">
               <button
                 onClick={cycleGenre}
-                title="Change musical style — same sequence, different song"
+                title={t("Change musical style — same sequence, different song")}
                 className="inline-flex items-center gap-1.5 rounded-neobrutal border-thin border-brand-border bg-brand-surface px-3 py-2.5 text-sm font-bold text-brand-text shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
               >
                 <Sliders className="h-4 w-4" />
-                {GENRES[genreId].emoji} {GENRES[genreId].label}
+                {GENRES[genreId].emoji} {t(GENRES[genreId].label)}
               </button>
               <button
                 onClick={togglePlay}
@@ -211,11 +214,11 @@ export default function MusicalDnaPage() {
               >
                 {playing ? (
                   <>
-                    <Square className="h-4 w-4" /> Stop
+                    <Square className="h-4 w-4" /> {t("Stop")}
                   </>
                 ) : (
                   <>
-                    <Play className="h-4 w-4" /> Play
+                    <Play className="h-4 w-4" /> {t("Play")}
                   </>
                 )}
               </button>
@@ -227,24 +230,24 @@ export default function MusicalDnaPage() {
         <div className="border-t-thick border-brand-border bg-brand-surface p-4">
           <div className="mb-2 flex items-center justify-between">
             <span className="text-xs font-bold uppercase">
-              Your sequence ({sequence.length}/{MAX_NOTES})
+              {t("Your sequence")} ({sequence.length}/{MAX_NOTES})
             </span>
             <div className="flex gap-2">
               <button
                 onClick={backspace}
                 disabled={sequence.length === 0}
-                title="Remove last"
+                title={t("Remove last")}
                 className="inline-flex items-center gap-1 rounded-neobrutal border-thin border-brand-border bg-brand-background px-2.5 py-1 text-xs font-bold shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed disabled:opacity-40"
               >
-                <Delete className="h-3.5 w-3.5" /> Back
+                <Delete className="h-3.5 w-3.5" /> {t("Back")}
               </button>
               <button
                 onClick={clear}
                 disabled={sequence.length === 0}
-                title="Clear all"
+                title={t("Clear all")}
                 className="inline-flex items-center gap-1 rounded-neobrutal border-thin border-brand-border bg-brand-background px-2.5 py-1 text-xs font-bold shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed disabled:opacity-40"
               >
-                <Trash2 className="h-3.5 w-3.5" /> Clear
+                <Trash2 className="h-3.5 w-3.5" /> {t("Clear")}
               </button>
             </div>
           </div>
@@ -252,7 +255,7 @@ export default function MusicalDnaPage() {
           <div className="flex min-h-[52px] flex-wrap content-start gap-1 rounded-neobrutal border-thin border-brand-border bg-brand-background p-2">
             {sequence.length === 0 ? (
               <span className="px-1 py-1 text-sm font-bold text-brand-muted">
-                Tap residues below, type/paste a sequence, or load a preset.
+                {t("Tap residues below, type/paste a sequence, or load a preset.")}
               </span>
             ) : (
               sequence.split("").map((aa, i) => {
@@ -260,7 +263,7 @@ export default function MusicalDnaPage() {
                 return (
                   <span
                     key={i}
-                    title={`${info.name} (${PROPERTY_LABEL[info.property]})`}
+                    title={`${t(info.name)} (${t(PROPERTY_LABEL[info.property])})`}
                     className="flex h-7 w-7 items-center justify-center rounded border border-brand-border text-sm font-bold text-brand-text"
                     style={{ backgroundColor: info.color }}
                   >
@@ -277,7 +280,7 @@ export default function MusicalDnaPage() {
             onChange={onType}
             onPaste={onPaste}
             spellCheck={false}
-            placeholder="…or type / paste here (your name works too — non-amino letters are dropped)"
+            placeholder={t("…or type / paste here (your name works too — non-amino letters are dropped)")}
             className="mt-2 w-full rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-2 font-mono text-sm font-bold shadow-neo-sm outline-none focus:translate-x-0.5 focus:translate-y-0.5 focus:shadow-neo-pressed"
           />
         </div>
@@ -286,7 +289,7 @@ export default function MusicalDnaPage() {
         <div className="border-t-thick border-brand-border bg-brand-background p-4">
           {/* Standard 20 — the residues your DNA actually codes for. */}
           <p className="mb-1.5 text-[11px] font-bold uppercase text-brand-muted">
-            Standard 20 — the amino acids your DNA codes for
+            {t("Standard 20 — the amino acids your DNA codes for")}
           </p>
           <div className="grid grid-cols-5 gap-1.5 sm:grid-cols-10">
             {AMINO_ACIDS.split("").map(residueButton)}
@@ -294,8 +297,7 @@ export default function MusicalDnaPage() {
 
           {/* Extended codes — fill out the rest of the alphabet (A–Z). */}
           <p className="mt-3 text-[11px] font-bold uppercase text-brand-muted">
-            Extended codes — rare &amp; ambiguous residues that complete the
-            alphabet
+            {t("Extended codes — rare & ambiguous residues that complete the alphabet")}
           </p>
           <div className="mt-1.5 grid grid-cols-6 gap-1.5 sm:grid-cols-10">
             {EXTENDED_AMINO_ACIDS.split("").map(residueButton)}
@@ -309,12 +311,12 @@ export default function MusicalDnaPage() {
                   className="inline-block h-3 w-3 rounded border border-brand-border"
                   style={{ backgroundColor: PROPERTY_COLOR[p] }}
                 />
-                {PROPERTY_LABEL[p]}
+                {t(PROPERTY_LABEL[p])}
               </span>
             ))}
             <span className="inline-flex items-center gap-1.5">
               <span className="inline-block h-3 w-3 rounded border border-dashed border-brand-border" />
-              Extended (dashed)
+              {t("Extended (dashed)")}
             </span>
           </div>
         </div>
@@ -326,7 +328,7 @@ export default function MusicalDnaPage() {
               onClick={() => setSequence(randomGoblinSequence())}
               className="inline-flex items-center gap-1.5 rounded-neobrutal border-thin border-brand-border bg-brand-primary px-3 py-1.5 text-xs font-bold shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
             >
-              <Shuffle className="h-3.5 w-3.5" /> Random Goblin DNA
+              <Shuffle className="h-3.5 w-3.5" /> {t("Random Goblin DNA")}
             </button>
             <MuteButton />
             <ShareButton
@@ -336,7 +338,7 @@ export default function MusicalDnaPage() {
               className="!px-3 !py-1.5 !shadow-neo-sm"
             />
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-muted">
-              <Dna className="h-3.5 w-3.5" /> Songs played: {plays}
+              <Dna className="h-3.5 w-3.5" /> {t("Songs played")}: {plays}
             </span>
           </div>
         </div>
@@ -353,13 +355,14 @@ function PianoRoll({
   song: ReturnType<typeof generateSong>;
   progress: number;
 }) {
+  const { t } = useTranslation();
   const W = 1000;
   const H = 220;
 
   if (!song) {
     return (
       <div className="flex h-[220px] items-center justify-center rounded-neobrutal border-thin border-dashed border-brand-border bg-brand-surface text-sm font-bold text-brand-muted">
-        🎼 Your song will appear here
+        🎼 {t("Your song will appear here")}
       </div>
     );
   }

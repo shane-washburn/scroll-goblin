@@ -5,6 +5,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import {
@@ -50,6 +51,7 @@ const STAT_LABELS: [keyof Stats, string][] = [
 ];
 
 export default function LifeOfAnOctopusPage() {
+  const { t } = useTranslation();
   const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const world = useRef<World>(createWorld());
@@ -93,7 +95,7 @@ export default function LifeOfAnOctopusPage() {
     setupChapter(world.current, idx, performance.now());
     setChapterIdx(idx);
     setView("playing");
-    setMsg(CHAPTERS[idx].goal);
+    setMsg(t(CHAPTERS[idx].goal));
   };
 
   const advanceFromChapter = (completed: number) => {
@@ -138,7 +140,7 @@ export default function LifeOfAnOctopusPage() {
       wld.creatures.push(baby);
     }
     setView("ending");
-    setMsg("Your eggs are hatching...");
+    setMsg(t("Your eggs are hatching..."));
     playHatch();
     setTimeout(() => playDeath(), 1800);
   };
@@ -195,7 +197,7 @@ export default function LifeOfAnOctopusPage() {
           lastSiblingSound.current = now;
           playEat();
         }
-        if (ev.escaped) setMsg("It lost you in your camouflage.");
+        if (ev.escaped) setMsg(t("It lost you in your camouflage."));
         if (ev.died) {
           die();
         } else if (ev.chapterComplete) {
@@ -315,18 +317,16 @@ export default function LifeOfAnOctopusPage() {
       <header className="hidden sm:grid mb-bento gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-            🐙 Life of an Octopus
+            🐙 {t("Life of an Octopus")}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            A whole life, in minutes
+            {t("A whole life, in minutes")}
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          Drag (or use WASD / arrows) to swim. Stay still to{" "}
-          <strong>camouflage</strong> — predators see you from closer when
-          you're hidden. Tap, click, or press <strong>Space</strong> to release{" "}
-          <strong>ink</strong> and escape. Survive your way from hatchling to
-          guardian.
+          {t(
+            "Drag (or use WASD / arrows) to swim. Stay still to camouflage — predators see you from closer when you're hidden. Tap, click, or press Space to release ink and escape. Survive your way from hatchling to guardian."
+          )}
         </p>
       </header>
 
@@ -335,7 +335,7 @@ export default function LifeOfAnOctopusPage() {
         <div className="grid grid-cols-3 gap-2 border-b-thick border-brand-border bg-brand-surface p-3 text-xs font-bold uppercase text-brand-text">
           <div>
             <div className="mb-1 flex items-center justify-between">
-              <span>Health</span>
+              <span>{t("Health")}</span>
             </div>
             <div className="h-3 w-full overflow-hidden rounded-neobrutal border-thin border-brand-border bg-brand-background">
               <div ref={healthRef} className="h-full bg-brand-pink" style={{ width: "100%" }} />
@@ -343,9 +343,9 @@ export default function LifeOfAnOctopusPage() {
           </div>
           <div>
             <div className="mb-1 flex items-center justify-between gap-1">
-              <span>Goal</span>
+              <span>{t("Goal")}</span>
               <span className="truncate text-[10px] text-brand-text/70">
-                {chapter.hint}
+                {t(chapter.hint)}
               </span>
             </div>
             <div className="h-3 w-full overflow-hidden rounded-neobrutal border-thin border-brand-border bg-brand-background">
@@ -354,8 +354,10 @@ export default function LifeOfAnOctopusPage() {
           </div>
           <div>
             <div className="mb-1 flex items-center justify-between">
-              <span>Ink</span>
-              <span>Age <span ref={ageRef}>0</span> mo</span>
+              <span>{t("Ink")}</span>
+              <span>
+                {t("Age")} <span ref={ageRef}>0</span> {t("mo")}
+              </span>
             </div>
             <div className="h-3 w-full overflow-hidden rounded-neobrutal border-thin border-brand-border bg-brand-background">
               <div ref={inkRef} className="h-full bg-brand-warning" style={{ width: "100%" }} />
@@ -389,35 +391,39 @@ export default function LifeOfAnOctopusPage() {
           {view === "intro" && (
             <Overlay>
               <h2 className="font-heading text-xl sm:text-3xl uppercase text-white sm:text-4xl">
-                Life of an Octopus
+                {t("Life of an Octopus")}
               </h2>
               <p className="mt-2 sm:mt-4 max-w-sm text-xs sm:text-sm font-bold leading-relaxed text-white/90">
-                You will hatch.<br />
-                You will hunt.<br />
-                You will hide.<br />
-                You will love.<br />
-                You will die.
+                {t(
+                  "You will hatch. You will hunt. You will hide. You will love. You will die."
+                )}
               </p>
               <p className="mt-2 sm:mt-3 text-[10px] sm:text-xs font-bold text-white/70">
-                Only 1% of octopuses reach adulthood. Can you?
+                {t("Only 1% of octopuses reach adulthood. Can you?")}
               </p>
-              <PrimaryButton onClick={beginLife}>Hatch →</PrimaryButton>
+              <PrimaryButton onClick={beginLife}>{t("Hatch →")}</PrimaryButton>
             </Overlay>
           )}
 
           {view === "chapterCard" && (
             <Overlay>
               <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/60">
-                Chapter {chapter.no} · {chapter.age === 0 ? "Newly hatched" : `Age ${chapter.age} months`}
+                {t("Chapter {chapter} · {age}", {
+                  chapter: chapter.no,
+                  age:
+                    chapter.age === 0
+                      ? t("Newly hatched")
+                      : t("Age {age} months", { age: chapter.age }),
+                })}
               </p>
               <h2 className="mt-1 sm:mt-2 font-heading text-xl sm:text-3xl uppercase text-white sm:text-4xl">
-                {chapter.title}
+                {t(chapter.title)}
               </h2>
               <p className="mt-2 sm:mt-4 max-w-md text-xs sm:text-sm font-bold leading-relaxed text-white/90 px-2">
-                {chapter.card}
+                {t(chapter.card)}
               </p>
               <PrimaryButton onClick={() => startChapter(chapterIdx)}>
-                Continue →
+                {t("Continue →")}
               </PrimaryButton>
             </Overlay>
           )}
@@ -425,7 +431,7 @@ export default function LifeOfAnOctopusPage() {
           {view === "ending" && (
             <div className="pointer-events-none absolute inset-0 flex items-end justify-center bg-black/40 pb-10 transition-all duration-1000">
               <p className="px-6 text-center font-heading text-xl uppercase text-white/90 sm:text-2xl">
-                Thousands hatch. Few survive.
+                {t("Thousands hatch. Few survive.")}
               </p>
             </div>
           )}
@@ -433,20 +439,26 @@ export default function LifeOfAnOctopusPage() {
           {view === "dead" && (
             <Overlay>
               <h2 className="font-heading text-xl sm:text-3xl uppercase text-white">
-                You did not survive
+                {t("You did not survive")}
               </h2>
               <p className="mt-2 sm:mt-3 max-w-sm text-xs sm:text-sm font-bold text-white/80 px-2">
-                Most octopuses are eaten long before adulthood. That's the
-                ocean — and it's biologically honest.
+                {t(
+                  "Most octopuses are eaten long before adulthood. That's the ocean — and it's biologically honest."
+                )}
               </p>
               <p className="mt-2 sm:mt-3 text-[10px] sm:text-xs font-bold uppercase text-white/60">
-                Reached: {chapter.title} · Age {finalStats?.ageReached ?? 0} months
+                {t("Reached: {chapter} · Age {age} months", {
+                  chapter: t(chapter.title),
+                  age: finalStats?.ageReached ?? 0,
+                })}
               </p>
               <div className="mt-3 sm:mt-5 flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <PrimaryButton onClick={() => startChapter(world.current.chapter)}>
-                  Try again
+                  {t("Try again")}
                 </PrimaryButton>
-                <SecondaryButton onClick={beginLife}>Restart</SecondaryButton>
+                <SecondaryButton onClick={beginLife}>
+                  {t("Restart")}
+                </SecondaryButton>
               </div>
             </Overlay>
           )}
@@ -454,12 +466,12 @@ export default function LifeOfAnOctopusPage() {
           {view === "complete" && finalStats && (
             <Overlay>
               <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/60">
-                Life of an Octopus — Complete
+                {t("Life of an Octopus — Complete")}
               </p>
               <h2 className="mt-1 font-heading text-lg sm:text-2xl uppercase text-white sm:text-3xl">
                 {shared && view === "complete" && !world.current.stats.ageReached
-                  ? "A friend's octopus lived this life"
-                  : "An octopus lives only once"}
+                  ? t("A friend's octopus lived this life")
+                  : t("An octopus lives only once")}
               </h2>
               <div className="mt-2 sm:mt-4 grid w-full max-w-sm grid-cols-2 gap-1.5 sm:gap-2 text-left px-2">
                 {STAT_LABELS.map(([key, label]) => (
@@ -468,20 +480,22 @@ export default function LifeOfAnOctopusPage() {
                     className="rounded-neobrutal border-thin border-white/30 bg-white/10 px-2 sm:px-3 py-1.5 sm:py-2"
                   >
                     <p className="text-[9px] sm:text-[10px] font-bold uppercase text-white/60">
-                      {label}
+                      {t(label)}
                     </p>
                     <p className="font-heading text-sm sm:text-lg text-white">
                       {finalStats[key].toLocaleString()}
-                      {key === "ageReached" ? " mo" : ""}
+                      {key === "ageReached" ? ` ${t("mo")}` : ""}
                     </p>
                   </div>
                 ))}
               </div>
               <p className="mt-2 sm:mt-3 text-[10px] sm:text-xs font-bold text-white/70">
-                Your offspring hatched successfully.
+                {t("Your offspring hatched successfully.")}
               </p>
               <div className="mt-3 sm:mt-4">
-                <PrimaryButton onClick={beginLife}>Live again →</PrimaryButton>
+                <PrimaryButton onClick={beginLife}>
+                  {t("Live again →")}
+                </PrimaryButton>
               </div>
             </Overlay>
           )}
@@ -490,7 +504,7 @@ export default function LifeOfAnOctopusPage() {
         {/* Footer controls */}
         <div className="flex items-center justify-between gap-2 border-t-thick border-brand-border bg-brand-surface p-2 sm:p-4">
           <p className="hidden sm:block text-sm font-bold text-brand-text">
-            {view === "playing" ? message : "🐙 " + chapter.title}
+            {view === "playing" ? message : `🐙 ${t(chapter.title)}`}
           </p>
           <div className="flex items-center gap-2 text-xs font-bold text-brand-text w-full sm:w-auto justify-end">
             {view === "playing" && (
@@ -498,7 +512,7 @@ export default function LifeOfAnOctopusPage() {
                 onClick={doInk}
                 className="rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
               >
-                🖤 Ink
+                🖤 {t("Ink")}
               </button>
             )}
             <MuteButton />

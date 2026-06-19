@@ -5,6 +5,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import {
@@ -96,6 +97,7 @@ const MESSAGES = {
 };
 
 export default function SlugFencingPage() {
+  const { t } = useTranslation();
   const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
   const svgRef = useRef<SVGSVGElement>(null);
   const playerGRef = useRef<SVGGElement>(null);
@@ -488,17 +490,16 @@ export default function SlugFencingPage() {
       <header className="mb-bento grid gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-            🐌 Slug Fencing
+            🐌 {t("Slug Fencing")}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            Duel of the slugs
+            {t("Duel of the slugs")}
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          Move your slug up and down — drag on touch, or use the mouse / W / S.
-          Tap (or click, or Space) to lunge. Line up with your rival and strike
-          to score. Every move and lunge burns energy, so watch your meter.
-          Left-handed? Tap the hand button to swap sides.
+          {t(
+            "Move your slug up and down — drag on touch, or use the mouse / W / S. Tap (or click, or Space) to lunge. Line up with your rival and strike to score. Every move and lunge burns energy, so watch your meter. Left-handed? Tap the hand button to swap sides."
+          )}
         </p>
       </header>
 
@@ -518,7 +519,7 @@ export default function SlugFencingPage() {
                 }`}
               >
                 <p className="text-xs font-bold uppercase text-brand-text">
-                  {isYou ? "You" : "Rival"}
+                  {isYou ? t("You") : t("Rival")}
                 </p>
                 <p className="font-heading text-3xl leading-none text-brand-text">
                   {isYou ? playerScore : rivalScore}
@@ -576,23 +577,23 @@ export default function SlugFencingPage() {
         </div>
 
         <div className="flex flex-col gap-3 border-t-thick border-brand-border bg-brand-surface p-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-bold text-brand-text">{message}</p>
+          <p className="text-sm font-bold text-brand-text">{t(message)}</p>
           <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-brand-text">
             <span>
-              Lunges: <span className="bg-brand-secondary px-1">{lunges}</span>
+              {t("Lunges")}: <span className="bg-brand-secondary px-1">{lunges}</span>
             </span>
             <button
               onClick={toggleSide}
-              title="Swap which side your slug fights on"
+              title={t("Swap which side your slug fights on")}
               className="rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
             >
-              {side === "right" ? "🫱 Righty" : "🫲 Lefty"}
+              {side === "right" ? `🫱 ${t("Righty")}` : `🫲 ${t("Lefty")}`}
             </button>
             <button
               onClick={resetMatch}
               className="rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
             >
-              Reset
+              {t("Reset")}
             </button>
             <MuteButton />
             <ShareButton

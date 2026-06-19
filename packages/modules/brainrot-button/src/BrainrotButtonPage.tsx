@@ -15,6 +15,7 @@ import {
   consumeShareSnapshot,
   isMuted,
   trackStat,
+  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import type { BrainrotButtonShareState } from "@scroll-goblin/shared";
@@ -40,6 +41,10 @@ function pickDefaultClipUrl(): string {
 
 const MODULE_ID = "brainrot-button";
 const SHARE_VERSION = 1;
+const INITIAL_MESSAGES = [
+  "Summoning a shared custom button...",
+  "Press the button. Receive wisdom.",
+];
 const MAX_RECORDING_MS = 10_000;
 const MAX_BYTES = 500 * 1024;
 
@@ -72,6 +77,7 @@ function formatBytes(bytes: number): string {
 }
 
 export default function BrainrotButtonPage() {
+  const { t } = useTranslation();
   const snapshot = useRef(
     consumeShareSnapshot<BrainrotButtonShareState>(MODULE_ID, SHARE_VERSION)
   ).current;
@@ -92,8 +98,8 @@ export default function BrainrotButtonPage() {
   const [uploadStatus, setUploadStatus] = useState<UploadStatus>("idle");
   const [message, setMessage] = useState(
     snapshot?.clipId
-      ? "Summoning a shared custom button..."
-      : "Press the button. Receive wisdom."
+      ? INITIAL_MESSAGES[0]
+      : INITIAL_MESSAGES[1]
   );
   const [error, setError] = useState<string | null>(null);
   const [expired, setExpired] = useState(false);
@@ -250,7 +256,11 @@ export default function BrainrotButtonPage() {
         recordedBytes.current += event.data.size;
         chunks.current.push(event.data);
         if (recordedBytes.current > MAX_BYTES) {
-          setError(`Recording is too large. Keep it under ${formatBytes(MAX_BYTES)}.`);
+          setError(
+            t("Recording is too large. Keep it under {size}.", {
+              size: formatBytes(MAX_BYTES),
+            })
+          );
           stopRecording();
         }
       };
@@ -269,7 +279,12 @@ export default function BrainrotButtonPage() {
           return;
         }
         if (blob.size > MAX_BYTES) {
-          setError(`Recording is ${formatBytes(blob.size)}. Limit is ${formatBytes(MAX_BYTES)}.`);
+          setError(
+            t("Recording is {size}. Limit is {limit}.", {
+              size: formatBytes(blob.size),
+              limit: formatBytes(MAX_BYTES),
+            })
+          );
           return;
         }
 
@@ -322,26 +337,27 @@ export default function BrainrotButtonPage() {
       <header className="mb-bento grid gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-primary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-            🔴 Brainrot Button
+            🔴 {t("Brainrot Button")}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            Pure brainrot
+            {t("Pure brainrot")}
           </h1>
         </div>
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          Record your own button voice, save it, and share a spell that expires
-          before it gets too powerful.
+          {t(
+            "Record your own button voice, save it, and share a spell that expires before it gets too powerful."
+          )}
         </div>
       </header>
 
       {expired && (
         <div className="brainrot-expired-alert mb-bento flex flex-col gap-3 rounded-neobrutal border-thick border-brand-border bg-brand-warning p-4 font-bold shadow-neo-lg sm:flex-row sm:items-center sm:justify-between">
-          <span>CUSTOM SPELL EXPIRED. DEFAULT BUTTON RESTORED.</span>
+          <span>{t("CUSTOM SPELL EXPIRED. DEFAULT BUTTON RESTORED.")}</span>
           <button
             onClick={() => setExpired(false)}
             className="rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
           >
-            Dismiss
+            {t("Dismiss")}
           </button>
         </div>
       )}
@@ -349,7 +365,9 @@ export default function BrainrotButtonPage() {
       <Card ref={gameCardRef} className="grid gap-bento bg-brand-background p-4 sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="rounded-neobrutal border-thin border-brand-border bg-brand-surface px-3 py-2 text-xs font-bold shadow-neo-sm">
-            {activeClip.custom ? "CUSTOM VOICE ACTIVE" : "DEFAULT VOICE ACTIVE"}
+            {activeClip.custom
+              ? t("CUSTOM VOICE ACTIVE")
+              : t("DEFAULT VOICE ACTIVE")}
           </div>
           <MuteButton />
         </div>
@@ -357,20 +375,20 @@ export default function BrainrotButtonPage() {
         <div className="flex justify-center py-4 sm:py-6">
           <button
             onClick={pressButton}
-            aria-label="Brainrot button"
+            aria-label={t("Brainrot button")}
             className="group relative aspect-square w-[min(76vw,360px)] rounded-full border-massive border-brand-border bg-brand-border shadow-neo-lg transition-[transform,box-shadow] duration-100 active:translate-x-2 active:translate-y-2 active:shadow-neo-pressed"
           >
             <span className="absolute inset-2 rounded-full border-thick border-brand-border bg-[#7A001A]" />
             <span className="absolute inset-5 rounded-full border-thick border-brand-border bg-[radial-gradient(circle_at_35%_24%,#ff6f7f_0%,#ff003c_34%,#b8002b_70%,#780018_100%)] shadow-[inset_-10px_-14px_0_rgba(0,0,0,0.22),inset_8px_10px_0_rgba(255,255,255,0.2)] transition-[inset] duration-100 group-active:inset-7" />
             <span className="absolute left-[24%] top-[16%] h-[12%] w-[34%] rotate-[-20deg] rounded-full bg-white/35 blur-[1px]" />
             <span className="relative z-10 mx-auto flex h-full max-w-[68%] items-center justify-center text-center font-heading text-4xl uppercase leading-[0.9] text-brand-background drop-shadow-[3px_3px_0_#000] sm:text-5xl">
-              Brainrot
+              {t("Brainrot")}
             </span>
           </button>
         </div>
 
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-4 text-sm font-bold shadow-neo-md">
-          {message}
+          {t(message)}
         </div>
 
         {error && (
@@ -381,7 +399,7 @@ export default function BrainrotButtonPage() {
 
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-4 shadow-neo-md">
           <h2 className="mb-3 font-heading text-2xl uppercase leading-none">
-            Custom voice
+            {t("Custom voice")}
           </h2>
           <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
             {recording ? (
@@ -390,7 +408,7 @@ export default function BrainrotButtonPage() {
                 className="min-h-12 w-full !bg-brand-warning sm:min-h-0 sm:w-auto"
               >
                 <Square className="h-4 w-4" />
-                Stop
+                {t("Stop")}
               </Button>
             ) : (
               <Button
@@ -399,7 +417,7 @@ export default function BrainrotButtonPage() {
                 className="min-h-12 w-full bg-brand-primary sm:min-h-0 sm:w-auto"
               >
                 <Mic className="h-4 w-4" />
-                Record
+                {t("Record")}
               </Button>
             )}
             <Button
@@ -408,7 +426,7 @@ export default function BrainrotButtonPage() {
               className="min-h-12 w-full !bg-brand-orange sm:min-h-0 sm:w-auto"
             >
               <Play className="h-4 w-4" />
-              Preview
+              {t("Preview")}
             </Button>
             <Button
               onClick={saveRecording}
@@ -422,7 +440,7 @@ export default function BrainrotButtonPage() {
               ) : (
                 <UploadCloud className="h-4 w-4" />
               )}
-              {uploadStatus === "saved" ? "Saved" : "Save"}
+              {uploadStatus === "saved" ? t("Saved") : t("Save")}
             </Button>
             <ShareButton
               moduleId={MODULE_ID}
@@ -440,12 +458,12 @@ export default function BrainrotButtonPage() {
           </div>
           <p className="mt-2 text-xs font-bold">
             {recording
-              ? `${recordingSeconds}s / 10s`
+              ? t("{seconds}s / 10s", { seconds: recordingSeconds })
               : localClip
-                ? `${formatBytes(localClip.size)} captured`
+                ? t("{size} captured", { size: formatBytes(localClip.size) })
                 : canRecord
-                  ? "10 seconds max."
-                  : "Recording is not supported in this browser."}
+                  ? t("10 seconds max.")
+                  : t("Recording is not supported in this browser.")}
           </p>
         </div>
       </Card>

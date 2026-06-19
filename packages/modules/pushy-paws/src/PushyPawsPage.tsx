@@ -5,6 +5,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import {
@@ -20,6 +21,7 @@ interface ShelfItem {
   id: string;
   name: string;
   short: string;
+  fallMessage?: string;
   kind: SoundKind;
   weight: number;
   points: number;
@@ -42,12 +44,21 @@ interface ShareState {
 
 const MODULE_ID = "pushy-paws";
 const SHARE_VERSION = 1;
+const PUSHY_PAWS_MESSAGES = [
+  "A shared shelf awaits further judgment.",
+  "Tap the object once for each cat swat. Heavier targets need more paws.",
+  "Fwump. Deeply unsatisfying.",
+  "Squeak. The cat looks personally betrayed.",
+  "The rune stone detonates. Worth it.",
+  "The chalice rings forever. Beautiful.",
+];
 
 const ITEMS: ShelfItem[] = [
   {
     id: "potion",
     name: "Bubbling Potion Flask",
     short: "Potion",
+    fallMessage: "Bubbling Potion Flask leaves the shelf.",
     kind: "potion",
     weight: 42,
     points: 2,
@@ -58,6 +69,7 @@ const ITEMS: ShelfItem[] = [
     id: "crystal",
     name: "Heavy Crystal Ball",
     short: "Crystal",
+    fallMessage: "Heavy Crystal Ball leaves the shelf.",
     kind: "crystal",
     weight: 78,
     points: 4,
@@ -68,6 +80,7 @@ const ITEMS: ShelfItem[] = [
     id: "scroll",
     name: "Ancient Magic Scroll",
     short: "Scroll",
+    fallMessage: "Ancient Magic Scroll leaves the shelf.",
     kind: "scroll",
     weight: 24,
     points: 1,
@@ -78,6 +91,7 @@ const ITEMS: ShelfItem[] = [
     id: "wand",
     name: "Enchanted Wand",
     short: "Wand",
+    fallMessage: "Enchanted Wand leaves the shelf.",
     kind: "wand",
     weight: 34,
     points: 2,
@@ -86,8 +100,9 @@ const ITEMS: ShelfItem[] = [
   },
   {
     id: "mug",
-    name: "Half-Full Ceramic Mug",
-    short: "Mug",
+    name: "Ceramic Mug",
+    short: "Ceramic mug",
+    fallMessage: "Ceramic Mug leaves the shelf.",
     kind: "mug",
     weight: 50,
     points: 2,
@@ -98,6 +113,7 @@ const ITEMS: ShelfItem[] = [
     id: "plant",
     name: "Potted Mandrake",
     short: "Plant",
+    fallMessage: "Potted Mandrake leaves the shelf.",
     kind: "plant",
     weight: 66,
     points: 3,
@@ -107,7 +123,8 @@ const ITEMS: ShelfItem[] = [
   {
     id: "books",
     name: "Stack of Heavy Spellbooks",
-    short: "Books",
+    short: "Stack of books",
+    fallMessage: "Stack of Heavy Spellbooks leaves the shelf.",
     kind: "books",
     weight: 86,
     points: 4,
@@ -118,6 +135,7 @@ const ITEMS: ShelfItem[] = [
     id: "portrait",
     name: "Framed Portrait",
     short: "Portrait",
+    fallMessage: "Framed Portrait leaves the shelf.",
     kind: "portrait",
     weight: 58,
     points: 3,
@@ -187,11 +205,11 @@ function strengthFor(level: number) {
 }
 
 function messageFor(item: ShelfItem) {
-  if (item.kind === "mouse") return "Squeak. The cat looks personally betrayed.";
-  if (item.kind === "rune") return "The rune stone detonates. Worth it.";
-  if (item.kind === "chalice") return "The chalice rings forever. Beautiful.";
-  if (item.kind === "scroll") return "Fwump. Deeply unsatisfying.";
-  return `${item.name} leaves the shelf.`;
+  if (item.kind === "mouse") return PUSHY_PAWS_MESSAGES[3];
+  if (item.kind === "rune") return PUSHY_PAWS_MESSAGES[4];
+  if (item.kind === "chalice") return PUSHY_PAWS_MESSAGES[5];
+  if (item.kind === "scroll") return PUSHY_PAWS_MESSAGES[2];
+  return item.fallMessage ?? `${item.name} leaves the shelf.`;
 }
 
 function ItemArt({ item }: { item: ShelfItem }) {
@@ -438,6 +456,7 @@ function Cat({ level, pawing }: { level: number; pawing: boolean }) {
 }
 
 export default function PushyPawsPage() {
+  const { t } = useTranslation();
   const [snapshot] = useState(() =>
     consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
   );
@@ -448,15 +467,16 @@ export default function PushyPawsPage() {
   const [pawing, setPawing] = useState(false);
   const [shake, setShake] = useState(false);
   const [message, setMessage] = useState(
-    snapshot
-      ? "A shared shelf awaits further judgment."
-      : "Tap the object once for each cat swat. Heavier targets need more paws."
+    snapshot ? PUSHY_PAWS_MESSAGES[0] : PUSHY_PAWS_MESSAGES[1]
   );
   const pawTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const level = levelFor(pushed);
   const strength = strengthFor(level);
   const progressPct = Math.min(100, (item.progress / item.weight) * 100);
-  const pushLabel = item.points < 0 ? "-2 chaos" : `+${item.points} chaos`;
+  const pushLabel =
+    item.points < 0
+      ? t("{points} chaos", { points: item.points })
+      : t("+{points} chaos", { points: item.points });
 
   const nextItem = (previous: ShelfItem) => {
     setItem(makeActive(previous.id));
@@ -476,7 +496,7 @@ export default function PushyPawsPage() {
         ...current,
         progress: Math.min(current.weight - 1, current.progress + shove),
       }));
-      setMessage(`${item.short} scoots closer to doom.`);
+      setMessage(t("{item} scoots closer to doom.", { item: t(item.short) }));
       return;
     }
 
@@ -507,17 +527,17 @@ export default function PushyPawsPage() {
       <header className="grid gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-            🐾 Pushy Paws
+            🐾 {t("Pushy Paws")}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            Knock it off
+            {t("Knock it off")}
           </h1>
         </div>
         <div className="flex flex-col justify-between gap-4 rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 shadow-neo-lg">
           <p className="text-sm font-bold leading-relaxed">
-            Tap the object once for each cat swat. Heavier targets need more
-            paws — shove them off the shelf to rack up chaos and level up your
-            increasingly buff cat.
+            {t(
+              "Tap the objects once for each cat swat. Heavier targets need more paws — shove them off the shelf to rack up chaos and level up your increasingly buff cat."
+            )}
           </p>
         </div>
       </header>
@@ -542,7 +562,7 @@ export default function PushyPawsPage() {
             left: `${item.x + progressPct * 0.12}%`,
             transform: `translate(-50%, -50%) rotate(${progressPct / 5}deg)`,
           }}
-          aria-label={`Swat ${item.name}`}
+          aria-label={t("Swat {item}", { item: t(item.name) })}
         >
           <ItemArt item={item} />
         </button>
@@ -556,23 +576,28 @@ export default function PushyPawsPage() {
           <Card className="bg-brand-background/95 p-2.5 sm:p-4">
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
-                <p className="text-xs font-bold uppercase text-brand-muted">Current target</p>
+                <p className="text-xs font-bold uppercase text-brand-muted">
+                  {t("Current target")}
+                </p>
                 <h2 className="truncate font-heading text-base leading-tight sm:text-xl">
-                  {item.name}
+                  {t(item.name)}
                 </h2>
                 <p className="mt-0.5 text-xs font-bold sm:mt-1 sm:text-sm">
-                  {pushLabel} / weight {item.weight}
+                  {t("{points} / weight {weight}", {
+                    points: pushLabel,
+                    weight: item.weight,
+                  })}
                 </p>
               </div>
               <div className="shrink-0 rounded-neobrutal border-thin border-brand-border bg-brand-warning px-2 py-0.5 text-xs font-bold sm:px-3 sm:py-1 sm:text-sm">
-                Lv {level}
+                {t("Lv {level}", { level })}
               </div>
             </div>
             <div className="mt-2 h-3 overflow-hidden rounded-neobrutal border-thin border-brand-border bg-white sm:mt-3 sm:h-5">
               <div className="h-full bg-brand-primary transition-[width] duration-100" style={{ width: `${progressPct}%` }} />
             </div>
             <p className="mt-2 min-h-8 text-xs font-bold leading-snug sm:mt-3 sm:min-h-10 sm:text-sm">
-              {message}
+              {t(message)}
             </p>
           </Card>
         </div>
@@ -585,15 +610,15 @@ export default function PushyPawsPage() {
 
       <div className="grid grid-cols-3 gap-2 sm:gap-3">
         <Card className="p-2.5 sm:p-4">
-          <p className="text-xs font-bold uppercase text-brand-muted">Pushed off</p>
+          <p className="text-xs font-bold uppercase text-brand-muted">{t("Pushed off")}</p>
           <p className="font-heading text-2xl sm:text-3xl">{pushed}</p>
         </Card>
         <Card className="p-2.5 sm:p-4">
-          <p className="text-xs font-bold uppercase text-brand-muted">Chaos score</p>
+          <p className="text-xs font-bold uppercase text-brand-muted">{t("Chaos score")}</p>
           <p className="font-heading text-2xl sm:text-3xl">{score}</p>
         </Card>
         <Card className="p-2.5 sm:p-4">
-          <p className="text-xs font-bold uppercase text-brand-muted">Paw power</p>
+          <p className="text-xs font-bold uppercase text-brand-muted">{t("Paw power")}</p>
           <p className="font-heading text-2xl sm:text-3xl">{strength}</p>
         </Card>
       </div>
