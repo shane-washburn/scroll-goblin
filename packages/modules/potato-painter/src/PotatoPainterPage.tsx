@@ -5,6 +5,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
+  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import { playPickup, playReturn, playStamp, playWipe } from "./sounds";
@@ -102,6 +103,7 @@ function PotatoSvg({ potato }: { potato: Potato }) {
 }
 
 export default function PotatoPainterPage() {
+  const { t } = useTranslation();
   // Consume a share snapshot exactly once; the URL param is stripped so a
   // refresh or fresh navigation starts the module blank.
   const [snapshot] = useState(() =>
@@ -272,16 +274,16 @@ export default function PotatoPainterPage() {
       <header className="mb-bento grid gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-warning p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-            🥔 Potato Painter
+            🥔 {t("Potato Painter")}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            Paint with potatoes
+            {t("Paint with potatoes")}
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          Drag a spud from the tray and drop it on the canvas to stamp it.
-          Every potato you use is replaced by a brand-new one — same variety,
-          never the same shape.
+          {t(
+            "Drag a spud from the tray and drop it on the canvas to stamp it. Every potato you use is replaced by a brand-new one — same variety, never the same shape."
+          )}
         </p>
       </header>
 
@@ -289,7 +291,7 @@ export default function PotatoPainterPage() {
         {/* Potato tray */}
         <div className="border-b-thick border-brand-border bg-brand-primary p-4">
           <p className="mb-3 text-xs font-bold uppercase text-brand-text">
-            The Tray — pick your spud
+            {t("The Tray — pick your spud")}
           </p>
           <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
             {tray.map((p, i) => (
@@ -299,7 +301,7 @@ export default function PotatoPainterPage() {
                 className={`flex h-28 cursor-grab touch-none select-none flex-col items-center justify-between rounded-neobrutal border-thin border-brand-border bg-brand-background p-2 shadow-neo-sm transition-transform duration-100 hover:-translate-y-0.5 active:cursor-grabbing ${
                   drag?.slot === i ? "opacity-40" : ""
                 }`}
-                title={VARIETIES[p.varietyIndex].blurb}
+                title={t(VARIETIES[p.varietyIndex].blurb)}
               >
                 <div className="flex flex-1 items-center justify-center overflow-hidden">
                   <div style={{ transform: "scale(0.62)" }}>
@@ -307,7 +309,7 @@ export default function PotatoPainterPage() {
                   </div>
                 </div>
                 <span className="text-center text-[10px] font-bold uppercase leading-tight text-brand-text">
-                  {VARIETIES[p.varietyIndex].name}
+                  {t(VARIETIES[p.varietyIndex].name)}
                 </span>
               </div>
             ))}
@@ -322,20 +324,20 @@ export default function PotatoPainterPage() {
           <canvas ref={canvasRef} className="absolute inset-0" />
           {stampCount === 0 && !drag && (
             <p className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm font-bold uppercase text-brand-text opacity-30">
-              Drop a potato here to stamp it
+              {t("Drop a potato here to stamp it")}
             </p>
           )}
         </div>
 
         {/* Status bar */}
         <div className="flex flex-col gap-3 border-t-thick border-brand-border bg-brand-surface p-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-bold text-brand-text">{message}</p>
+          <p className="text-sm font-bold text-brand-text">{t(message)}</p>
           <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-brand-text">
             <span>
-              Stamps: <span className="bg-brand-warning px-1">{stampCount}</span>
+              {t("Stamps")}: <span className="bg-brand-warning px-1">{stampCount}</span>
             </span>
             <span>
-              Potatoes used: <span className="bg-brand-primary px-1">{used}</span>
+              {t("Potatoes used")}: <span className="bg-brand-primary px-1">{used}</span>
             </span>
             <ShareButton
               moduleId={MODULE_ID}
@@ -351,7 +353,7 @@ export default function PotatoPainterPage() {
               onClick={clearCanvas}
               className="rounded-neobrutal border-thin border-brand-border bg-brand-secondary px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
             >
-              🧽 Clear canvas
+              🧽 {t("Clear canvas")}
             </button>
           </div>
         </div>

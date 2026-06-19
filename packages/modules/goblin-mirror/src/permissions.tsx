@@ -11,6 +11,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Bell, Camera, Check, Mic, MapPin, ShieldCheck } from "lucide-react";
+import { useTranslation } from "@scroll-goblin/ui";
 
 type DareState = "idle" | "requesting" | "granted" | "denied";
 
@@ -38,6 +39,7 @@ interface DareProps {
  * own permissions via JS — only the browser can — so we explain how.
  */
 function RevokeHelp({ label }: { label: string }) {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   return (
     <div className="mt-2">
@@ -45,26 +47,24 @@ function RevokeHelp({ label }: { label: string }) {
         onClick={() => setOpen((o) => !o)}
         className="text-xs font-bold text-brand-text/70 underline"
       >
-        How do I take {label} access back?
+        {t("How do I take {label} access back?", { label: t(label) })}
       </button>
       {open && (
         <div className="mt-1 rounded-neobrutal border-thin border-brand-border bg-brand-background p-2 text-xs text-brand-text/80">
           <p>
-            A web page can't revoke its own permissions — only your browser can.
-            To fully take it back:
+            {t(
+              "A web page can't revoke its own permissions — only your browser can. To fully take it back:"
+            )}
           </p>
           <ol className="mt-1 list-decimal pl-4">
             <li>
-              Click the lock / tune icon (or <span className="font-bold">ⓘ</span>)
-              at the left of the address bar.
+              {t("Click the lock / tune icon at the left of the address bar.")}
             </li>
             <li>
-              Find <span className="font-bold">{label}</span> in this site's
-              permissions.
+              {t("Find {label} in this site's permissions.", { label: t(label) })}
             </li>
             <li>
-              Set it to <span className="font-bold">Block</span> (or{" "}
-              <span className="font-bold">Ask</span>), then reload the page.
+              {t("Set it to Block or Ask, then reload the page.")}
             </li>
           </ol>
         </div>
@@ -87,30 +87,31 @@ function Dare({
   lesson,
   children,
 }: DareProps) {
+  const { t } = useTranslation();
   return (
     <div className="rounded-neobrutal border-thin border-brand-border bg-brand-surface p-3">
       <div className="flex items-center gap-2">
         <span className="flex h-8 w-8 items-center justify-center rounded-neobrutal border-thin border-brand-border bg-brand-background">
           {icon}
         </span>
-        <span className="font-bold text-brand-text">{title}</span>
+        <span className="font-bold text-brand-text">{t(title)}</span>
       </div>
 
       {state === "idle" && (
         <>
-          <p className="mt-2 text-sm text-brand-text/70">{blurb}</p>
+          <p className="mt-2 text-sm text-brand-text/70">{t(blurb)}</p>
           <button
             onClick={onRequest}
             className="mt-2 rounded-neobrutal border-thick border-brand-border bg-brand-secondary px-4 py-2 text-sm font-bold text-brand-text shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
           >
-            {buttonLabel}
+            {t(buttonLabel)}
           </button>
         </>
       )}
 
       {state === "requesting" && (
         <p className="mt-2 text-sm font-bold text-brand-text">
-          Waiting for your answer in the browser prompt...
+          {t("Waiting for your answer in the browser prompt...")}
         </p>
       )}
 
@@ -123,7 +124,7 @@ function Dare({
               onClick={onStop}
               className="mt-2 rounded-neobrutal border-thin border-brand-border bg-brand-alert/20 px-3 py-1.5 text-xs font-bold text-brand-text"
             >
-              Stop &amp; release device
+              {t("Stop & release device")}
             </button>
           )}
           {revokeLabel && <RevokeHelp label={revokeLabel} />}
@@ -135,12 +136,12 @@ function Dare({
           <p className="flex items-start gap-1.5 text-sm font-bold text-brand-text">
             <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0" />
             {error ??
-              "Smart. You kept that from me — exactly the right instinct."}
+              t("Smart. You kept that from me — exactly the right instinct.")}
           </p>
           {lesson && (
             <div className="mt-2">
               <p className="text-xs font-bold text-brand-text/70">
-                Here's what you just avoided handing over:
+                {t("Here's what you just avoided handing over:")}
               </p>
               {lesson}
             </div>
@@ -153,12 +154,13 @@ function Dare({
 
 /** Small labeled value used inside a granted dare. */
 function Readout({ label, value }: { label: string; value: string }) {
+  const { t } = useTranslation();
   return (
     <div className="rounded-neobrutal border-thin border-brand-border bg-brand-background px-2 py-1">
       <span className="text-[0.6rem] font-bold uppercase tracking-wide text-brand-text/60">
-        {label}
+        {t(label)}
       </span>
-      <div className="font-bold text-brand-text">{value}</div>
+      <div className="font-bold text-brand-text">{t(value)}</div>
     </div>
   );
 }
@@ -168,6 +170,7 @@ function Readout({ label, value }: { label: string; value: string }) {
 /* ------------------------------------------------------------------ */
 
 export function NotificationDare({ onGrant }: { onGrant?: () => void }) {
+  const { t } = useTranslation();
   const supported = typeof Notification !== "undefined";
   const [state, setState] = useState<DareState>(() =>
     supported && Notification.permission === "granted" ? "granted" : "idle"
@@ -189,8 +192,8 @@ export function NotificationDare({ onGrant }: { onGrant?: () => void }) {
           onGrant?.();
           setState("granted");
           try {
-            new Notification("🧌 The Goblin can reach you now", {
-              body: "See? I can tap you on the shoulder whenever I like.",
+            new Notification(t("The Goblin can reach you now"), {
+              body: t("See? I can tap you on the shoulder whenever I like."),
             });
           } catch {
             /* some browsers require a service worker; ignore */
@@ -214,19 +217,19 @@ export function NotificationDare({ onGrant }: { onGrant?: () => void }) {
       lesson={
         <div className="mt-2 rounded-neobrutal border-thin border-brand-border bg-brand-warning/40 p-2">
           <p className="text-xs font-bold text-brand-text">
-            A notification permission is a permanent hook back to you. With it,
-            a site can:
+            {t(
+              "A notification permission is a permanent hook back to you. With it, a site can:"
+            )}
           </p>
           <ul className="mt-1 list-disc pl-4 text-xs text-brand-text/80">
-            <li>Ping you any time — even after you close the tab or browser</li>
-            <li>Learn your timezone and daily rhythm from when you open them</li>
-            <li>Track which alerts you click to profile what lures you back</li>
-            <li>Tie a push subscription to your device as a semi-permanent ID</li>
-            <li>Re-bait you for months to juice "engagement" numbers</li>
+            <li>{t("Ping you any time — even after you close the tab or browser")}</li>
+            <li>{t("Learn your timezone and daily rhythm from when you open them")}</li>
+            <li>{t("Track which alerts you click to profile what lures you back")}</li>
+            <li>{t("Tie a push subscription to your device as a semi-permanent ID")}</li>
+            <li>{t("Re-bait you for months to juice engagement numbers")}</li>
           </ul>
           <p className="mt-1 text-xs italic text-brand-text/70">
-            The Goblin never actually does this — and nothing leaves your
-            device.
+            {t("The Goblin never actually does this — and nothing leaves your device.")}
           </p>
         </div>
       }
@@ -241,6 +244,7 @@ export function NotificationDare({ onGrant }: { onGrant?: () => void }) {
 /* ------------------------------------------------------------------ */
 
 export function GeolocationDare({ onGrant }: { onGrant?: () => void }) {
+  const { t } = useTranslation();
   const [state, setState] = useState<DareState>("idle");
   const [coords, setCoords] = useState<{
     lat: number;
@@ -281,20 +285,21 @@ export function GeolocationDare({ onGrant }: { onGrant?: () => void }) {
       lesson={
         <div className="mt-2 rounded-neobrutal border-thin border-brand-border bg-brand-warning/40 p-2">
           <p className="text-xs font-bold text-brand-text">
-            GPS coordinates are far more precise than a city. From them, a
-            website could look up your street address, and from that address
-            typically dig up:
+            {t(
+              "GPS coordinates are far more precise than a city. From them, a website could look up your street address, and from that address typically dig up:"
+            )}
           </p>
           <ul className="mt-1 list-disc pl-4 text-xs text-brand-text/80">
-            <li>Your home address and who else lives there</li>
-            <li>Property records: owner, value, and purchase date</li>
-            <li>An estimated household income and net-worth bracket</li>
-            <li>Neighborhood demographics and places you likely visit</li>
-            <li>Links to public records, voter rolls, and social profiles</li>
+            <li>{t("Your home address and who else lives there")}</li>
+            <li>{t("Property records: owner, value, and purchase date")}</li>
+            <li>{t("An estimated household income and net-worth bracket")}</li>
+            <li>{t("Neighborhood demographics and places you likely visit")}</li>
+            <li>{t("Links to public records, voter rolls, and social profiles")}</li>
           </ul>
           <p className="mt-1 text-xs italic text-brand-text/70">
-            The Goblin does none of this. Your location never leaves this page —
-            nothing is sent anywhere.
+            {t(
+              "The Goblin does none of this. Your location never leaves this page — nothing is sent anywhere."
+            )}
           </p>
         </div>
       }
@@ -317,6 +322,7 @@ export function GeolocationDare({ onGrant }: { onGrant?: () => void }) {
 /* ------------------------------------------------------------------ */
 
 export function CameraDare({ onGrant }: { onGrant?: () => void }) {
+  const { t } = useTranslation();
   const [state, setState] = useState<DareState>("idle");
   const [brightness, setBrightness] = useState("—");
   const [movement, setMovement] = useState("—");
@@ -420,20 +426,21 @@ export function CameraDare({ onGrant }: { onGrant?: () => void }) {
       lesson={
         <div className="mt-2 rounded-neobrutal border-thin border-brand-border bg-brand-warning/40 p-2">
           <p className="text-xs font-bold text-brand-text">
-            A brightness reading is the least of it. With real camera access, a
-            site could:
+            {t("A brightness reading is the least of it. With real camera access, a site could:")}
           </p>
           <ul className="mt-1 list-disc pl-4 text-xs text-brand-text/80">
-            <li>Capture your face and match it to photos of you elsewhere</li>
-            <li>Read your expression to infer mood or attention</li>
-            <li>See who else is in the room with you</li>
-            <li>Identify your surroundings — home, office, car, in bed</li>
-            <li>Catch documents, screens, or reflections in view</li>
-            <li>Even estimate your heart rate from skin-color changes</li>
+            <li>{t("Capture your face and match it to photos of you elsewhere")}</li>
+            <li>{t("Read your expression to infer mood or attention")}</li>
+            <li>{t("See who else is in the room with you")}</li>
+            <li>{t("Identify your surroundings — home, office, car, in bed")}</li>
+            <li>{t("Catch documents, screens, or reflections in view")}</li>
+            <li>{t("Even estimate your heart rate from skin-color changes")}</li>
           </ul>
           <p className="mt-1 flex items-center gap-1 text-xs italic text-brand-text/70">
-            <Check className="h-3 w-3 shrink-0" /> The Goblin only measures
-            brightness and motion, live. Nothing is captured or sent.
+            <Check className="h-3 w-3 shrink-0" />{" "}
+            {t(
+              "The Goblin only measures brightness and motion, live. Nothing is captured or sent."
+            )}
           </p>
         </div>
       }
@@ -457,6 +464,7 @@ export function CameraDare({ onGrant }: { onGrant?: () => void }) {
 /* ------------------------------------------------------------------ */
 
 export function MicrophoneDare({ onGrant }: { onGrant?: () => void }) {
+  const { t } = useTranslation();
   const [state, setState] = useState<DareState>("idle");
   const [level, setLevel] = useState(0);
   const [noise, setNoise] = useState("—");
@@ -552,20 +560,21 @@ export function MicrophoneDare({ onGrant }: { onGrant?: () => void }) {
       lesson={
         <div className="mt-2 rounded-neobrutal border-thin border-brand-border bg-brand-warning/40 p-2">
           <p className="text-xs font-bold text-brand-text">
-            A loudness meter is the least of it. With raw microphone access, a
-            site could work out:
+            {t("A loudness meter is the least of it. With raw microphone access, a site could work out:")}
           </p>
           <ul className="mt-1 list-disc pl-4 text-xs text-brand-text/80">
-            <li>Whether you're alone or others are nearby (multiple voices)</li>
-            <li>Your setting — quiet home, busy office, car, or street</li>
-            <li>Speech turned to text: topics, names, even your mood</li>
-            <li>TV or music in the background — the media you consume</li>
-            <li>Inaudible "ultrasonic beacons" in ads that link your phone to your TV</li>
-            <li>Even what you type, from the sound of your keystrokes</li>
+            <li>{t("Whether you're alone or others are nearby (multiple voices)")}</li>
+            <li>{t("Your setting — quiet home, busy office, car, or street")}</li>
+            <li>{t("Speech turned to text: topics, names, even your mood")}</li>
+            <li>{t("TV or music in the background — the media you consume")}</li>
+            <li>{t("Inaudible ultrasonic beacons in ads that link your phone to your TV")}</li>
+            <li>{t("Even what you type, from the sound of your keystrokes")}</li>
           </ul>
           <p className="mt-1 flex items-center gap-1 text-xs italic text-brand-text/70">
-            <Check className="h-3 w-3 shrink-0" /> The Goblin only measures
-            loudness, live. Nothing is recorded, transcribed, or sent.
+            <Check className="h-3 w-3 shrink-0" />{" "}
+            {t(
+              "The Goblin only measures loudness, live. Nothing is recorded, transcribed, or sent."
+            )}
           </p>
         </div>
       }

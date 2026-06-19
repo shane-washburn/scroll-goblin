@@ -1,0 +1,81 @@
+{
+  "uniqueSourceStrings": 670,
+  "localeCount": 12,
+  "locales": [
+    "en-AU",
+    "en-CA",
+    "en-GB",
+    "en-IN",
+    "es-ES",
+    "fr-CA",
+    "hi-IN",
+    "nl-NL",
+    "pl-PL",
+    "ru-RU",
+    "sv-SE",
+    "uk-UA"
+  ],
+  "missingTranslations": 0,
+  "perLocale": {
+    "en-AU": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    },
+    "en-CA": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    },
+    "en-GB": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    },
+    "en-IN": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    },
+    "es-ES": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    },
+    "fr-CA": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    },
+    "hi-IN": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    },
+    "nl-NL": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    },
+    "pl-PL": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    },
+    "ru-RU": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    },
+    "sv-SE": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    },
+    "uk-UA": {
+      "total": 670,
+      "ready": 670,
+      "missing": 0
+    }
+  }
+}
