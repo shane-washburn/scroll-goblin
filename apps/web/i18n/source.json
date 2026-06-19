@@ -1184,6 +1184,24 @@
       ]
     },
     {
+      "key": "9020c0a035536b0b077d3c70caca39ad",
+      "source": "Answers from God",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 159,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "09f636751e906964457866eae9685148",
       "source": "Arcane Wizard Casting",
       "contexts": [
@@ -1322,6 +1340,24 @@
       ]
     },
     {
+      "key": "4191368b74fa23beec35fa07475c07fc",
+      "source": "Auras farmed",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 188,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "0557fa923dcee4d0f86b1409f5c2167f",
       "source": "Back",
       "contexts": [
@@ -1402,6 +1438,18 @@
               "kind": "translation-call"
             }
           ]
+        },
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 169,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
         }
       ]
     },
@@ -1418,6 +1466,18 @@
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
               "line": 341,
               "kind": "translation-call"
+            }
+          ]
+        },
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 170,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
@@ -1862,6 +1922,24 @@
               "file": "packages/modules/potato-painter/src/potato.ts",
               "line": 32,
               "kind": "object-blurb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5c9804311036edde069a5d683c337f70",
+      "source": "Button pushes",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 173,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
@@ -2348,6 +2426,24 @@
               "file": "packages/modules/life-of-an-octopus/src/LifeOfAnOctopusPage.tsx",
               "line": 411,
               "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "6e65bd5cbce722249c39a3a128561cec",
+      "source": "Chicken squeezes",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 151,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
@@ -2966,6 +3062,24 @@
       ]
     },
     {
+      "key": "52c45537cb6f53e723eafa4ae57a5283",
+      "source": "Custom recordings",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 174,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "f052a2912f8c194107d2cf847b13bfbb",
       "source": "CUSTOM SPELL EXPIRED. DEFAULT BUTTON RESTORED.",
       "contexts": [
@@ -3066,7 +3180,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 290,
+              "line": 311,
               "kind": "translation-call"
             }
           ]
@@ -3644,6 +3758,24 @@
       ]
     },
     {
+      "key": "fe3f49d0798adc86225e2c9547798437",
+      "source": "Eggs laid",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 153,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "c46d0c335f1f195ff6af56df8ee34592",
       "source": "Eggs Protected",
       "contexts": [
@@ -3674,6 +3806,24 @@
               "file": "packages/modules/emoji-translator/src/EmojiTranslatorPage.tsx",
               "line": 155,
               "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5f7044fec21b63934935bbbd7ad95fdf",
+      "source": "Emoji translations",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 162,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
@@ -3794,6 +3944,24 @@
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
               "line": 94,
               "kind": "object-fall-message"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "bfcf3506f689f7beec318e5c4dffd752",
+      "source": "Energy mixed",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 189,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
@@ -4458,6 +4626,24 @@
       ]
     },
     {
+      "key": "f16e39fa9201043da18bdbf63ce5a160",
+      "source": "Games won as octopus",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 184,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "c02222d0f5fe593d5cb97f091e5b37b5",
       "source": "Global leaderboard of the most-visited and most-poked Scroll Goblin mini-apps.",
       "contexts": [
@@ -4716,6 +4902,24 @@
       ]
     },
     {
+      "key": "5b0abc79ae560f2d9e31020871cb036f",
+      "source": "Goblins scanned",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 192,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "a64284326408fb4d71cf9acd3974a695",
       "source": "GPS coordinates are far more precise than a city. From them, a website could look up your street address, and from that address typically dig up:",
       "contexts": [
@@ -4764,6 +4968,42 @@
               "file": "packages/modules/potato-painter/src/manifest.ts",
               "line": 6,
               "kind": "object-description"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "0ac9875a8822dc33d81eead21d5558f0",
+      "source": "Grass plucked",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 147,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5d97a274c0a7695c11ed7b5a9d01dd81",
+      "source": "Grass touches",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 146,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
@@ -5166,6 +5406,24 @@
       ]
     },
     {
+      "key": "ace3bc0ae2977ee161e4b58dae5c4135",
+      "source": "Hits landed",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 165,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "9aea67c572fb2d45718c027f002f2ed9",
       "source": "Hold down on the chicken to squeeze the air out. Release and it screams its way back into shape. Deeper squeeze, bigger scream.",
       "contexts": [
@@ -5513,6 +5771,24 @@
       ]
     },
     {
+      "key": "8200e99d9964a0a85e61050e86246372",
+      "source": "Items pushed",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 177,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "9a284efda4d46636bd9d5298dfea1335",
       "source": "Jazz",
       "contexts": [
@@ -5630,7 +5906,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 199,
+              "line": 220,
               "kind": "translation-call"
             }
           ]
@@ -5648,7 +5924,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 212,
+              "line": 233,
               "kind": "translation-call"
             }
           ]
@@ -5702,7 +5978,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 260,
+              "line": 281,
               "kind": "translation-call"
             },
             {
@@ -6096,7 +6372,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 270,
+              "line": 291,
               "kind": "div-text"
             }
           ]
@@ -6272,6 +6548,24 @@
               "file": "packages/modules/slug-fencing/src/SlugFencingPage.tsx",
               "line": 583,
               "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "213655080c5bfd374417971e061ec977",
+      "source": "Lunges thrown",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 166,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
@@ -6884,6 +7178,24 @@
       ]
     },
     {
+      "key": "f024a3dbe500628afbb0a5f021d46b49",
+      "source": "Notes sequenced",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 181,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "e74a548442b95f2abd75c6cdd06faab1",
       "source": "Notice how each permission hands me a brand-new sense. Saying no is always a valid move — that's the whole point.",
       "contexts": [
@@ -6950,6 +7262,24 @@
               "file": "packages/modules/aura-farm/src/aura.ts",
               "line": 246,
               "kind": "object-name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2220877465d58ae6ac3afbeaf434907e",
+      "source": "Octopus deaths",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 185,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
@@ -7484,6 +7814,24 @@
               "file": "packages/modules/potato-painter/src/manifest.ts",
               "line": 5,
               "kind": "object-title"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "d5581d98c97ae696fb8d020098853f75",
+      "source": "Potatoes stamped",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 156,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
@@ -8846,6 +9194,24 @@
       ]
     },
     {
+      "key": "b08d895dee0fea8a5371451ade15c907",
+      "source": "Screams unleashed",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 152,
+              "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "2fc3359e12b2a9104121dcf04246f6a0",
       "source": "Screen",
       "contexts": [
@@ -8904,7 +9270,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 252,
+              "line": 273,
               "kind": "translation-call"
             },
             {
@@ -9401,6 +9767,18 @@
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
               "line": 341,
               "kind": "translation-call"
+            }
+          ]
+        },
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 180,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
@@ -11754,6 +12132,24 @@
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
               "line": 519,
               "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "3abba7f45a5df4a747703512a7c95b85",
+      "source": "Waterings poured",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "compact leaderboard metric label; keep short for mobile rows",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 148,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
