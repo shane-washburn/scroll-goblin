@@ -225,8 +225,7 @@ export default function Leaderboard() {
                     palette[i % palette.length]
                   }`}
                 >
-                  {row.visits.toLocaleString()}{" "}
-                  <span className="font-body text-xs">{t("visits")}</span>
+                  {row.visits.toLocaleString()}
                 </span>
               </li>
             ))}
