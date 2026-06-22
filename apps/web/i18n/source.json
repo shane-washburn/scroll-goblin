@@ -11456,7 +11456,7 @@
           "locations": [
             {
               "file": "apps/web/src/pages/Leaderboard.tsx",
-              "line": 238,
+              "line": 237,
               "kind": "translation-call"
             }
           ]
