@@ -6025,9 +6025,9 @@
       "source": "Lefty",
       "contexts": [
         {
-          "shape": "body",
-          "purpose": "source string passed to the runtime translation helper",
-          "visualContext": "",
+          "shape": "button",
+          "purpose": "compact handedness toggle label in Slug Fencing; means left-handed player, not the direction left",
+          "visualContext": "Shown beside a left-hand emoji on the button that swaps the player's slug side for left-handed play",
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugFencingPage.tsx",
@@ -8880,9 +8880,9 @@
       "source": "Righty",
       "contexts": [
         {
-          "shape": "body",
-          "purpose": "source string passed to the runtime translation helper",
-          "visualContext": "",
+          "shape": "button",
+          "purpose": "compact handedness toggle label in Slug Fencing; means right-handed player, not the direction right",
+          "visualContext": "Shown beside a right-hand emoji on the button that swaps the player's slug side for right-handed play",
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugFencingPage.tsx",

@@ -320,6 +320,20 @@ const contextOverrides: Record<
     visualContext:
       "SVG depicts a round purple crystal ball on a gray base",
   },
+  Righty: {
+    shape: "button",
+    purpose:
+      "compact handedness toggle label in Slug Fencing; means right-handed player, not the direction right",
+    visualContext:
+      "Shown beside a right-hand emoji on the button that swaps the player's slug side for right-handed play",
+  },
+  Lefty: {
+    shape: "button",
+    purpose:
+      "compact handedness toggle label in Slug Fencing; means left-handed player, not the direction left",
+    visualContext:
+      "Shown beside a left-hand emoji on the button that swaps the player's slug side for left-handed play",
+  },
   "Stack of books": {
     purpose:
       "short singular collective label for a stack of books object in Pushy Paws",
