@@ -430,7 +430,7 @@ export function VictoryScreen({
             </button>
           </div>
           {isMultiplayer && opponentWantsRematch && !rematchPending ? (
-            <p className="mt-3 text-sm font-bold text-brand-primary">
+            <p className="mt-3 text-sm font-bold text-brand-secondary">
               {t("Opponent wants a rematch!")}
             </p>
           ) : null}
