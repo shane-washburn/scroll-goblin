@@ -182,11 +182,11 @@ export async function peekRoom(
 /**
  * How often the client polls during a live point (ms).
  *
- * Tuned aggressively low for snappy duels: Upstash Free has no total-command
- * quota, only a 10,000 cmd/s throughput cap and a 50GB/mo bandwidth budget, and
- * one match costs only ~75 cmds/s — so we'd need ~130 concurrent matches to
- * even approach the rate limit. If the site ever gets that popular, raise this.
+ * Balances latency against Upstash Free's 500k commands/month budget. At 120ms
+ * each match costs ~50 cmds/s (both players), and combined with the server's
+ * throttled TTL refresh that lands at a few hundred free matches/month. Lower
+ * it for snappier play (more commands) or raise it to stretch the budget.
  */
-export const ACTIVE_POLL_MS = 80;
+export const ACTIVE_POLL_MS = 120;
 /** Slower cadence for lobby / countdown / victory, where latency doesn't matter. */
 export const IDLE_POLL_MS = 500;

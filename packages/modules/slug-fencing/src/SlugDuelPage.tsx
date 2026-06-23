@@ -61,6 +61,11 @@ const MODULE_ID = "slug-fencing";
 const SIDE_KEY = "slug-fencing:side";
 /** Lead time before a point begins, covering the 3-2-1-SLUG countdown. */
 const COUNTDOWN_LEAD_MS = 3600;
+/**
+ * Hard cap on a single match's play time. Stops AFK/idle players from keeping a
+ * room (and its polling) alive indefinitely and burning the Redis budget.
+ */
+const MAX_MATCH_MS = 90_000;
 
 type Phase =
   | "menu"
@@ -354,14 +359,28 @@ export default function SlugDuelPage() {
           // The opponent only comes alive once the countdown is over — no
           // moving or lunging during 3-2-1.
           if (playing) {
-            if (mode === "solo") {
-              stepAi(p2.current, p1.current, dt, now, ai.current, PERSONALITIES[difficulty].tuning);
+            // AFK / stalemate guard: end the match once it exceeds the cap so
+            // idle players can't keep the room polling forever. The current
+            // leader wins (ties break toward whoever has more energy). Nulling
+            // startAt makes this fire exactly once. Solo and host only.
+            if (startAt.current != null && Date.now() - startAt.current >= MAX_MATCH_MS) {
+              const a = s1.current;
+              const b = s2.current;
+              const timeoutWinner: 1 | 2 =
+                a > b ? 1 : b > a ? 2 : p1.current.energy >= p2.current.energy ? 1 : 2;
+              startAt.current = null;
+              seq.current += 1;
+              endMatch(timeoutWinner);
             } else {
-              driveGuestControlledFencer(p2.current, dt, now);
+              if (mode === "solo") {
+                stepAi(p2.current, p1.current, dt, now, ai.current, PERSONALITIES[difficulty].tuning);
+              } else {
+                driveGuestControlledFencer(p2.current, dt, now);
+              }
+              const r = resolveLunges(p1.current, p2.current, now);
+              handleOutcome(r.p1, 1);
+              handleOutcome(r.p2, 2);
             }
-            const r = resolveLunges(p1.current, p2.current, now);
-            handleOutcome(r.p1, 1);
-            handleOutcome(r.p2, 2);
           }
         } else {
           // Guest: smooth the opponent toward the last authoritative sample.
