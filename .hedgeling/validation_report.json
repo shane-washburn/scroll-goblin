@@ -1,5 +1,5 @@
 {
-  "uniqueSourceStrings": 690,
+  "uniqueSourceStrings": 742,
   "localeCount": 12,
   "locales": [
     "en-AU",
@@ -18,63 +18,63 @@
   "missingTranslations": 0,
   "perLocale": {
     "en-AU": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     },
     "en-CA": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     },
     "en-GB": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     },
     "en-IN": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     },
     "es-ES": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     },
     "fr-CA": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     },
     "hi-IN": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     },
     "nl-NL": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     },
     "pl-PL": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     },
     "ru-RU": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     },
     "sv-SE": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     },
     "uk-UA": {
-      "total": 690,
-      "ready": 690,
+      "total": 742,
+      "ready": 742,
       "missing": 0
     }
   }
