@@ -35,6 +35,7 @@ import {
 import { PERSONALITIES, type Difficulty } from "./personalities";
 import { randomAccessory, randomAura, randomEmote, randomTitle, type Accessory } from "./titles";
 import { Slug } from "./Slug";
+import { Confetti } from "./Confetti";
 import {
   CountdownOverlay,
   LobbyScreen,
@@ -115,6 +116,9 @@ export default function SlugDuelPage() {
   const [victoryTitle, setVictoryTitle] = useState("SIGMA SLUG");
   const [victoryAccessory, setVictoryAccessory] = useState<Accessory>("shades");
   const [victoryAura, setVictoryAura] = useState(3000);
+  // The summary panel waits a beat so the win animation can play in the arena
+  // first, then opens as an overlay on top of the game (no scrolling needed).
+  const [showVictoryPanel, setShowVictoryPanel] = useState(false);
 
   const role: "host" | "guest" | null = transport?.role ?? null;
   const youAreP1 = mode === "solo" || role === "host";
@@ -496,6 +500,18 @@ export default function SlugDuelPage() {
     return () => window.clearInterval(id);
   }, [phase, role]);
 
+  // Hold the victory summary back ~1.8s so the slug's growth/dance is visible,
+  // then reveal it as an overlay. Resets whenever we leave the victory phase.
+  useEffect(() => {
+    if (phase !== "victory") {
+      setShowVictoryPanel(false);
+      return;
+    }
+    setShowVictoryPanel(false);
+    const id = window.setTimeout(() => setShowVictoryPanel(true), 1800);
+    return () => window.clearTimeout(id);
+  }, [phase]);
+
   /* ----------------------- Multiplayer plumbing ----------------------- */
   const getHostState = useCallback((): HostState => {
     const now = performance.now();
@@ -764,23 +780,6 @@ export default function SlugDuelPage() {
         />
       ) : null}
 
-      {phase === "victory" ? (
-        <VictoryScreen
-          youWon={isMine(winner)}
-          title={victoryTitle}
-          accessory={victoryAccessory}
-          aura={victoryAura}
-          score1={score1}
-          score2={score2}
-          youAreP1={youAreP1}
-          isMultiplayer={mode === "mp"}
-          rematchPending={rematchMine && !rematchOpp}
-          opponentWantsRematch={rematchOpp}
-          onRematch={requestRematch}
-          onNewMatch={leaveToMenu}
-        />
-      ) : null}
-
       {showArena ? (
         <Card ref={gameCardRef} className="relative mt-bento overflow-hidden bg-brand-background">
           <div className="grid grid-cols-2 border-b-thick border-brand-border">
@@ -888,6 +887,41 @@ export default function SlugDuelPage() {
               <MuteButton />
             </div>
           </div>
+
+          {phase === "victory" && isMine(winner) ? (
+            <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
+              <Confetti />
+            </div>
+          ) : null}
+
+          {phase === "victory" && showVictoryPanel ? (
+            <div
+              className="absolute inset-0 z-30 flex items-center justify-center bg-brand-text/40 p-4 backdrop-blur-sm"
+              style={{ animation: "slugVictoryFade 0.3s ease-out" }}
+            >
+              <div
+                className="w-full max-w-md"
+                style={{ animation: "slugVictoryPop 0.4s cubic-bezier(0.22,1.3,0.4,1)" }}
+              >
+                <VictoryScreen
+                  youWon={isMine(winner)}
+                  title={victoryTitle}
+                  accessory={victoryAccessory}
+                  aura={victoryAura}
+                  score1={score1}
+                  score2={score2}
+                  youAreP1={youAreP1}
+                  isMultiplayer={mode === "mp"}
+                  rematchPending={rematchMine && !rematchOpp}
+                  opponentWantsRematch={rematchOpp}
+                  onRematch={requestRematch}
+                  onNewMatch={leaveToMenu}
+                  showConfetti={false}
+                />
+              </div>
+              <style>{`@keyframes slugVictoryFade{from{opacity:0}to{opacity:1}}@keyframes slugVictoryPop{0%{transform:scale(0.8) translateY(12px);opacity:0}100%{transform:scale(1) translateY(0);opacity:1}}`}</style>
+            </div>
+          ) : null}
         </Card>
       ) : null}
     </div>

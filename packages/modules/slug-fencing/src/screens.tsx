@@ -371,6 +371,7 @@ export function VictoryScreen({
   opponentWantsRematch,
   onRematch,
   onNewMatch,
+  showConfetti = true,
 }: {
   youWon: boolean;
   title: string;
@@ -384,13 +385,14 @@ export function VictoryScreen({
   opponentWantsRematch: boolean;
   onRematch: () => void;
   onNewMatch: () => void;
+  showConfetti?: boolean;
 }) {
   const { t } = useTranslation();
   const yourScore = youAreP1 ? score1 : score2;
   const theirScore = youAreP1 ? score2 : score1;
   return (
     <div className="relative overflow-hidden">
-      {youWon ? <Confetti /> : null}
+      {youWon && showConfetti ? <Confetti /> : null}
       <Panel>
         <div className="relative text-center">
           {youWon ? (
