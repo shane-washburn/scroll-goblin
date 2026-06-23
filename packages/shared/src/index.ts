@@ -343,7 +343,8 @@ export const SlugStateRequestSchema = z.object({
   scoreToWin: z.number().int().min(1).max(50),
   phase: SlugPhaseSchema,
   startAt: z.number().nullable(),
-  guestJoined: z.boolean(),
+  // Note: guestJoined is NOT accepted from the host — the server derives it
+  // authoritatively from the room's guestToken/input so it can't be spoofed.
   score1: z.number().int().min(0),
   score2: z.number().int().min(0),
   p1: SlugFencerStateSchema,
