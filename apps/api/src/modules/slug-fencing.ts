@@ -26,6 +26,12 @@ import { getRedis } from "../redis.js";
 export const slugFencingRouter = new Hono();
 
 const ROOM_TTL_SECONDS = 120;
+/**
+ * Re-issue EXPIRE at most this often (ms) rather than on every sync, to conserve
+ * Redis commands. Must stay comfortably under ROOM_TTL_SECONDS so a live room's
+ * key never lapses between refreshes.
+ */
+const TTL_REFRESH_MS = 30_000;
 const ROOM_ID_ALPHABET =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
@@ -42,6 +48,8 @@ interface RoomHash {
   guestToken: string;
   snapshot: SlugRoomSnapshot;
   input: SlugGuestInput;
+  /** Epoch ms of the last EXPIRE refresh, so syncs can throttle it. */
+  ttlAt: number;
 }
 
 type RedisClient = NonNullable<ReturnType<typeof getRedis>>;
@@ -107,6 +115,7 @@ async function readRoom(redis: RedisClient, id: string): Promise<RoomHash | null
     guestToken: (data.guestToken as string) || "",
     snapshot: data.snapshot as SlugRoomSnapshot,
     input: (data.input as SlugGuestInput) ?? freshInput(),
+    ttlAt: Number(data.ttlAt ?? 0),
   };
 }
 
@@ -140,6 +149,7 @@ slugFencingRouter.post("/v1/rooms", async (c) => {
       guestToken: "",
       snapshot,
       input: freshInput(),
+      ttlAt: Date.now(),
     });
     await redis.expire(roomKey(roomId), ROOM_TTL_SECONDS);
   } catch (err) {
@@ -178,7 +188,7 @@ slugFencingRouter.post("/v1/rooms/:id/join", async (c) => {
   const guestToken = newToken();
   const input: SlugGuestInput = { ...freshInput(), joined: true };
   try {
-    await redis.hset(roomKey(id), { guestToken, input });
+    await redis.hset(roomKey(id), { guestToken, input, ttlAt: Date.now() });
     await redis.expire(roomKey(id), ROOM_TTL_SECONDS);
   } catch (err) {
     console.error("Slug room join failed:", err);
@@ -214,9 +224,11 @@ slugFencingRouter.post("/v1/rooms/:id/guest-sync", async (c) => {
     joined: true,
     rematch: parsed.data.rematch ?? false,
   };
+  const now = Date.now();
+  const refreshTtl = now - room.ttlAt > TTL_REFRESH_MS;
   try {
-    await redis.hset(roomKey(id), { input });
-    await redis.expire(roomKey(id), ROOM_TTL_SECONDS);
+    await redis.hset(roomKey(id), refreshTtl ? { input, ttlAt: now } : { input });
+    if (refreshTtl) await redis.expire(roomKey(id), ROOM_TTL_SECONDS);
   } catch (err) {
     console.error("Slug guest-sync failed:", err);
     return c.json({ error: "Sync failed." }, 502);
@@ -247,6 +259,7 @@ slugFencingRouter.post("/v1/rooms/:id/host-sync", async (c) => {
 
   const input = room.input;
   const guestJoined = Boolean(room.guestToken) || input.joined;
+  const now = Date.now();
 
   // Server owns the guest-derived fields so they can't be spoofed by the host.
   const snapshot: SlugRoomSnapshot = {
@@ -263,12 +276,13 @@ slugFencingRouter.post("/v1/rooms/:id/host-sync", async (c) => {
     rematchHost: parsed.data.rematchHost,
     rematchGuest: input.rematch,
     seq: parsed.data.seq,
-    updatedAt: Date.now(),
+    updatedAt: now,
   };
 
+  const refreshTtl = now - room.ttlAt > TTL_REFRESH_MS;
   try {
-    await redis.hset(roomKey(id), { snapshot });
-    await redis.expire(roomKey(id), ROOM_TTL_SECONDS);
+    await redis.hset(roomKey(id), refreshTtl ? { snapshot, ttlAt: now } : { snapshot });
+    if (refreshTtl) await redis.expire(roomKey(id), ROOM_TTL_SECONDS);
   } catch (err) {
     console.error("Slug host-sync failed:", err);
     return c.json({ error: "Sync failed." }, 502);
