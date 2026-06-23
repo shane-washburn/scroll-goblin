@@ -164,6 +164,8 @@ export const STAT_METRICS: Record<string, Record<string, string>> = {
   "slug-fencing": {
     hits: "Hits landed",
     lunges: "Lunges thrown",
+    matches: "Matches played",
+    mpWins: "Multiplayer wins",
   },
   "balloon-blower": {
     filled: "Balloons filled",
@@ -230,6 +232,127 @@ export const LeaderboardResponseSchema = z.object({
   live: z.boolean(),
 });
 export type LeaderboardResponse = z.infer<typeof LeaderboardResponseSchema>;
+
+/* ------------------------------------------------------------------ */
+/* Slug Fencing — multiplayer duel room contract                        */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Server-mediated, host-authoritative multiplayer. The host's browser runs the
+ * one true simulation and writes the room snapshot; the guest writes only its
+ * input. Players only ever talk to our API, so neither learns the other's IP.
+ *
+ * Room ids are short, random, and contain no identifying data. Rooms are
+ * purely transient: every write refreshes a Redis TTL, so abandoned and
+ * finished rooms expire on their own with no cleanup code and no privacy
+ * footprint.
+ */
+
+/** Short, URL-safe, non-guessable room id (e.g. "4Rj9KmPq"). */
+export const SlugRoomIdSchema = z
+  .string()
+  .regex(/^[A-Za-z0-9]{8}$/, "Invalid room id");
+export type SlugRoomId = z.infer<typeof SlugRoomIdSchema>;
+
+/** Opaque per-role secret proving a client is the host or the guest. */
+export const SlugRoomTokenSchema = z.string().regex(/^[a-f0-9]{32}$/);
+
+export const SLUG_PHASES = [
+  "lobby",
+  "countdown",
+  "playing",
+  "victory",
+] as const;
+export const SlugPhaseSchema = z.enum(SLUG_PHASES);
+export type SlugPhase = z.infer<typeof SlugPhaseSchema>;
+
+/** Renderable fencer state. `lungePhase` is 0 when idle, else 0..1 progress. */
+export const SlugFencerStateSchema = z.object({
+  y: z.number(),
+  energy: z.number(),
+  lungePhase: z.number().min(0).max(1),
+});
+export type SlugFencerState = z.infer<typeof SlugFencerStateSchema>;
+
+/** The full authoritative room snapshot the host writes and the guest reads. */
+export const SlugRoomSnapshotSchema = z.object({
+  roomId: SlugRoomIdSchema,
+  scoreToWin: z.number().int().min(1).max(50),
+  phase: SlugPhaseSchema,
+  /** Epoch ms when the live point begins, for a clock-synced 3-2-1 countdown. */
+  startAt: z.number().nullable(),
+  guestJoined: z.boolean(),
+  /** p1 = host, p2 = guest. */
+  score1: z.number().int().min(0),
+  score2: z.number().int().min(0),
+  p1: SlugFencerStateSchema,
+  p2: SlugFencerStateSchema,
+  /** 1 | 2 | null. */
+  winner: z.number().int().nullable(),
+  rematchHost: z.boolean(),
+  rematchGuest: z.boolean(),
+  /** Monotonic snapshot counter so the client can drop stale reads. */
+  seq: z.number().int().min(0),
+  /** Server epoch ms stamped on write, for clock-offset estimation. */
+  updatedAt: z.number(),
+});
+export type SlugRoomSnapshot = z.infer<typeof SlugRoomSnapshotSchema>;
+
+export const SlugCreateRoomRequestSchema = z.object({
+  scoreToWin: z.number().int().min(1).max(50),
+});
+export type SlugCreateRoomRequest = z.infer<typeof SlugCreateRoomRequestSchema>;
+
+export const SlugCreateRoomResponseSchema = z.object({
+  roomId: SlugRoomIdSchema,
+  hostToken: SlugRoomTokenSchema,
+  snapshot: SlugRoomSnapshotSchema,
+});
+export type SlugCreateRoomResponse = z.infer<
+  typeof SlugCreateRoomResponseSchema
+>;
+
+export const SlugJoinResponseSchema = z.object({
+  guestToken: SlugRoomTokenSchema,
+  snapshot: SlugRoomSnapshotSchema,
+});
+export type SlugJoinResponse = z.infer<typeof SlugJoinResponseSchema>;
+
+/** Guest-owned input record (the guest is the sole writer of this key). */
+export const SlugGuestInputSchema = z.object({
+  targetY: z.number(),
+  /** Increments once per guest lunge press; host fires on a rising value. */
+  lungeSeq: z.number().int().min(0),
+  joined: z.boolean(),
+  rematch: z.boolean(),
+});
+export type SlugGuestInput = z.infer<typeof SlugGuestInputSchema>;
+
+/** Guest -> server: update my input (and optional join/rematch flags). */
+export const SlugInputRequestSchema = z.object({
+  token: SlugRoomTokenSchema,
+  targetY: z.number(),
+  lungeSeq: z.number().int().min(0),
+  rematch: z.boolean().optional(),
+});
+export type SlugInputRequest = z.infer<typeof SlugInputRequestSchema>;
+
+/** Host -> server: persist the authoritative gameplay state. */
+export const SlugStateRequestSchema = z.object({
+  token: SlugRoomTokenSchema,
+  scoreToWin: z.number().int().min(1).max(50),
+  phase: SlugPhaseSchema,
+  startAt: z.number().nullable(),
+  guestJoined: z.boolean(),
+  score1: z.number().int().min(0),
+  score2: z.number().int().min(0),
+  p1: SlugFencerStateSchema,
+  p2: SlugFencerStateSchema,
+  winner: z.number().int().nullable(),
+  rematchHost: z.boolean(),
+  seq: z.number().int().min(0),
+});
+export type SlugStateRequest = z.infer<typeof SlugStateRequestSchema>;
 
 export const ErrorResponseSchema = z.object({
   error: z.string(),

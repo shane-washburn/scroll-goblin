@@ -4,6 +4,7 @@ import { getModelId } from "./ai.js";
 import { emojiTranslatorRouter } from "./modules/emoji-translator.js";
 import { communeWithGodRouter } from "./modules/commune-with-god.js";
 import { brainrotButtonRouter } from "./modules/brainrot-button.js";
+import { slugFencingRouter } from "./modules/slug-fencing.js";
 import { statsRouter } from "./modules/stats.js";
 
 /**
@@ -34,6 +35,7 @@ const moduleRouters: Record<string, Hono> = {
   "emoji-translator": emojiTranslatorRouter,
   "commune-with-god": communeWithGodRouter,
   "brainrot-button": brainrotButtonRouter,
+  "slug-fencing": slugFencingRouter,
   stats: statsRouter,
 };
 

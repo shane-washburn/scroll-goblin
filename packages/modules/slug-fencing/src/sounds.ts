@@ -143,6 +143,26 @@ export function playTired(): void {
   buzz.stop(now + 0.2);
 }
 
+/** Triumphant little rising arpeggio sting for the victory screen. */
+export function playVictory(): void {
+  const { ctx: ac, out } = getAudioBus();
+  const now = ac.currentTime;
+  const notes = [523.25, 659.25, 783.99, 1046.5]; // C5 E5 G5 C6
+  notes.forEach((freq, i) => {
+    const t = now + i * 0.12;
+    const osc = ac.createOscillator();
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(freq, t);
+    const gain = ac.createGain();
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.exponentialRampToValueAtTime(0.18, t + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.32);
+    osc.connect(gain).connect(out);
+    osc.start(t);
+    osc.stop(t + 0.34);
+  });
+}
+
 /** Tiny tick when energy refills enough to lunge again. */
 export function playReady(): void {
   const { ctx: ac, out } = getAudioBus();
