@@ -366,6 +366,9 @@ importers:
 
   packages/modules/slug-fencing:
     dependencies:
+      '@scroll-goblin/shared':
+        specifier: workspace:*
+        version: link:../../shared
       '@scroll-goblin/ui':
         specifier: workspace:*
         version: link:../../ui
