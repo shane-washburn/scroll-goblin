@@ -66,6 +66,15 @@ const COUNTDOWN_LEAD_MS = 3600;
  * room (and its polling) alive indefinitely and burning the Redis budget.
  */
 const MAX_MATCH_MS = 90_000;
+/**
+ * Most guest lunge presses the host will hold in reserve. The guest's lunge
+ * counter can run ahead of the host (network latency, or a brief energy/cooldown
+ * desync between the two simulations). We honor that backlog one press at a time
+ * so no lunge is silently dropped — but cap it so a lag spike can't later
+ * unleash a flood of stale, phantom lunges. ~2 covers a normal round-trip
+ * without letting intent go stale.
+ */
+const MAX_PENDING_GUEST_LUNGES = 2;
 
 type Phase =
   | "menu"
@@ -152,6 +161,9 @@ export default function SlugDuelPage() {
     joined: false,
     rematch: false,
   });
+  // Host-side cursor: how many of the guest's lunge presses we've already
+  // launched. The gap between this and the incoming `lungeSeq` count is the
+  // pending backlog we drain in driveGuestControlledFencer.
   const lastGuestSeq = useRef(0);
 
   // Mirrors so the rAF/network loops read fresh values without resubscribing.
@@ -413,10 +425,24 @@ export default function SlugDuelPage() {
 
   function driveGuestControlledFencer(f: Fencer, dt: number, now: number) {
     f.targetY = guestInput.current.targetY;
-    if (guestInput.current.lungeSeq > lastGuestSeq.current) {
-      lastGuestSeq.current = guestInput.current.lungeSeq;
-      if (now >= lungeLockUntil.current) tryLunge(f, now);
+
+    // The guest's `lungeSeq` is a monotonic COUNT of presses, not an edge flag.
+    // Drain it one press per available lunge cycle: a press that can't fire yet
+    // (mid-lunge, cooldown, or low energy on this side) stays pending and is
+    // retried on a later frame rather than being consumed and lost. We only
+    // advance our cursor when tryLunge actually launches, so every honored
+    // press maps to exactly one lunge.
+    const requested = guestInput.current.lungeSeq;
+    if (requested > lastGuestSeq.current) {
+      // Discard intent older than the backlog cap so a latency/desync spike
+      // can't replay a stale flood of lunges long after the guest pressed.
+      const oldestKept = requested - MAX_PENDING_GUEST_LUNGES;
+      if (oldestKept > lastGuestSeq.current) lastGuestSeq.current = oldestKept;
+      if (now >= lungeLockUntil.current && tryLunge(f, now)) {
+        lastGuestSeq.current += 1;
+      }
     }
+
     applyMovement(f, dt);
     advanceLungeLifecycle(f, now);
   }

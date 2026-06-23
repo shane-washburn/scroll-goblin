@@ -321,7 +321,12 @@ export type SlugJoinResponse = z.infer<typeof SlugJoinResponseSchema>;
 /** Guest-owned input record (the guest is the sole writer of this key). */
 export const SlugGuestInputSchema = z.object({
   targetY: z.number(),
-  /** Increments once per guest lunge press; host fires on a rising value. */
+  /**
+   * Monotonic count of guest lunge presses. The host tracks how many it has
+   * launched and drains the backlog one press per lunge cycle, so presses
+   * aren't lost when several land between polls or while the host is on
+   * cooldown. Never resets within a session.
+   */
   lungeSeq: z.number().int().min(0),
   joined: z.boolean(),
   rematch: z.boolean(),
