@@ -16,8 +16,14 @@ Current modules:
 | 🐔 **Screaming Chicken** | A rubber chicken you can squeeze. Hold to compress, release to hear it scream. |
 | 🔮 **Commune with God** | Ask the divine anything. A benevolent, non-denominational AI oracle answers with kindness. |
 | 🥔 **Potato Painter** | Grab a spud, drag it onto the canvas, and stamp masterpieces. Every potato grows back different. |
-| 🐌 **Slug Fencing** | A duel of two slimy duelists. Slide your slug up and down, lunge to strike, and manage your energy meter. |
+| 🐌 **Slug Duel** | A best-of-N duel of two slimy duelists. Play solo against a Sleepy/Average/Sigma AI, or send a friend a link for host-authoritative online multiplayer. Win to make your slug ascend into a confetti-soaked sigma champion. |
 | 🎈 **Balloon Blower** | Blow into your microphone to inflate a balloon. Tie it off in time to bank it — or push past full and pop it. |
+| 🔴 **Brainrot Button** | Smash a giant button for instant affirmation, then record your own dramatic version and share it for seven chaotic days. Ships a pack of meme sound effects. |
+| 🐈 **Pushy Paws** | Play as an orange cat with one goal: shove everything off the shelf. Heavy mugs, magic junk, and squeaky toys all fall differently. |
+| 🧬 **Musical DNA** | String together amino acids and listen to the song they encode. Same sequence, same tune — every protein gets its own key, mood, and groove. |
+| 🐙 **Life of an Octopus** | A playable nature documentary: hatch, hunt, hide, love, and die — the whole short, strange life of an octopus in a few minutes. |
+| 🔮 **Goblin Aura Farm** | Mix colored energy into a jarred aura blob, raise it, then harvest it onto your goblin — who erupts into a dance picked by your color. Sneaky color-theory lessons, extremely dumb dances. |
+| 🪞 **Goblin Surveillance Mirror** _(beta)_ | What does the internet know about you? A goblin scans your device, remembers your visits, and infers who you are — an educational, slightly unsettling privacy demo that runs entirely on-device. |
 
 There's also a suite-wide **Leaderboard** (`/leaderboard`) showing combined
 interaction totals and per-module visits across all users, backed by Upstash
@@ -42,8 +48,14 @@ scroll-goblin/
         ├── screaming-chicken/
         ├── commune-with-god/
         ├── potato-painter/
-        ├── slug-fencing/
-        └── balloon-blower/
+        ├── slug-fencing/      # "Slug Duel" (solo + online multiplayer)
+        ├── balloon-blower/
+        ├── brainrot-button/
+        ├── pushy-paws/
+        ├── musical-dna/
+        ├── life-of-an-octopus/
+        ├── aura-farm/
+        └── goblin-mirror/
 ```
 
 ## Architecture
@@ -79,15 +91,22 @@ scroll-goblin/
 - **Stats:** modules report interactions via the batched tracker in
   `@scroll-goblin/ui` (`trackStat`); the API aggregates them in Upstash Redis
   and serves the leaderboard at `/api/stats/v1/leaderboard`.
-- **Sound:** all sound effects are synthesized live with the Web Audio API —
-  zero audio asset files. `@scroll-goblin/ui` provides the shared plumbing
+- **Sound:** most sound effects are synthesized live with the Web Audio API
+  (no asset files for those). `@scroll-goblin/ui` provides the shared plumbing
   (`getAudioBus`: lazy AudioContext + master gain, `getNoiseBuffer`, and a
   persisted global mute with a `MuteButton` component); each module composes
-  its own sounds in a local `sounds.ts` (lunges and splats in Slug Fencing,
+  its own sounds in a local `sounds.ts` (lunges and splats in Slug Duel,
   rustle/droplets in Touch Grass, hiss/creak/pop in Balloon Blower, stamps in
-  Potato Painter, the chicken's scream). Muting in any module silences the
-  whole suite. Continuous loops start only on user interaction, per browser
-  autoplay policy.
+  Potato Painter, the chicken's scream). A few modules also ship **recorded
+  audio assets** where synthesis won't do: Brainrot Button bundles meme sound
+  effects (`packages/modules/brainrot-button/src/assets/*.mp3`) and lets users
+  record and play back their own clips, and Goblin Aura Farm plays a dance
+  track (`packages/modules/aura-farm/src/assets/sigma-boy.mp3`). Muting in any
+  module silences the whole suite. Continuous loops start only on user
+  interaction, per browser autoplay policy.
+- **Localization (Hedgeling):** the suite is multilingual via an in-house i18n
+  layer in `@scroll-goblin/ui` (`i18n.tsx`). Author copy in English only; see
+  the [Localization](#localization-hedgeling) section below.
 - **Share links:** modules can capture their state into a compact
   URL-encoded snapshot (`ShareButton` + `consumeShareSnapshot` in
   `@scroll-goblin/ui`) so users share their grass patch, potato art, or duel
@@ -101,6 +120,34 @@ scroll-goblin/
   structured data and a crawlable app list — so no-JS crawlers and LLM agents
   see real content. New modules are picked up automatically from the registry.
 
+## Localization (Hedgeling)
+
+The suite is multilingual through an in-house i18n layer called **Hedgeling**,
+which lives in `@scroll-goblin/ui` (`packages/ui/src/i18n.tsx`).
+
+- **Author in English only.** Wrap user-facing copy in `t()` from
+  `useTranslation()` — e.g. `t("Start Match")` or `t("First to {n}", { n })`
+  with `{placeholder}` interpolation. `en-US` is the source locale and needs no
+  translation file.
+- **Runtime provider.** `HedgelingProvider` (mounted in `apps/web/src/App.tsx`)
+  resolves the visitor's locale (persisted choice → browser `navigator.languages`
+  → source), exposes `t()`, and re-renders when the language selector dispatches
+  a `scroll-goblin:language-change` event.
+- **Locale data is static + lazy.** On load it fetches
+  `apps/web/public/hedgeling-bundle.json` (translated strings, keyed per locale)
+  and `hedgeling-source-key-map.json` (English source → stable key). `t()`
+  normalizes whitespace, looks up the key, and **falls back to the English
+  source** when a translation is missing, so a gap never breaks the UI.
+- **Build-time extraction.** `apps/web/scripts/extract-i18n.mts` scans every
+  module plus `packages/ui` and `packages/shared` for `t()` calls and emits a
+  catalog (`apps/web/i18n/source.json` / `source.html`) annotating each string's
+  shape, purpose, and visual context to guide translation. New strings in any
+  module are picked up automatically — no per-module wiring.
+- **Supported languages** are declared once in `apps/web/src/App.tsx`
+  (`LANGUAGES`): English (US/AU/CA/GB/IN), Dutch, French (Canada), Hindi,
+  Polish, Russian, Spanish, Swedish, and Ukrainian. Add a language by appending
+  to that list and providing its bundle entries.
+
 ## Tech Stack
 
 | Layer    | Choice |
@@ -111,7 +158,8 @@ scroll-goblin/
 | Backend  | Node, Hono, Vercel AI SDK (`ai`), Zod |
 | LLM      | Google Gemini (default, provider-agnostic) |
 | Stats    | Upstash Redis (leaderboard counters) |
-| Sound    | Web Audio API synthesis (shared audio bus in `@scroll-goblin/ui`, no asset files) |
+| Sound    | Web Audio API synthesis (shared audio bus in `@scroll-goblin/ui`) + a few bundled audio assets (Brainrot Button meme SFX, Aura Farm track) |
+| i18n     | Hedgeling — build-time string extraction + runtime locale bundles (`@scroll-goblin/ui`) |
 | SEO      | Build-time generation: robots.txt, sitemap.xml, llms.txt, prerendered per-route HTML + JSON-LD |
 | Contract | `@scroll-goblin/shared` (Zod) |
 | Tooling  | pnpm workspaces |
