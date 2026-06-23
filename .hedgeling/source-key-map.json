@@ -19,6 +19,7 @@
     "{size} captured": "847bd63c2ba88623326d3fe52046ceee",
     "{tempo} BPM": "f7b2e59ada25f957a9f6261ff1614c42",
     "+{points} chaos": "6067b1ebfa68b4e474b849e585208c93",
+    "+1 point!": "a8fbe40cf3123798cf862820ec6657f9",
     "💥 POP! You blew past full. A new balloon appears.": "3a0a1b8153aa283a4620762323229a26",
     "🫥 Camouflaged": "1e1369b80a3d12af65747fff34835705",
     "1 day ago": "44ba1391bb5be07bbe3a4737dc1873d5",
@@ -27,7 +28,8 @@
     "A balloon that inflates as you blow": "a4589956eef2581ad809f8f3f99ad7f0",
     "A brightness reading is the least of it. With real camera access, a site could:": "5d89b2dfb04899d893692af1fdc1ff34",
     "A cool aura that got TOO much rest. It only knows how to clap.": "d18557da6a8d0f5549ccf6a035decbe2",
-    "A duel of two slimy duelists. Slide your slug up and down, then click to lunge. Land a hit on your rival to score — but mind your energy meter, because moving and lunging both drain it.": "c14cef20dd79b5b5a215d5238ba93686",
+    "A duel of two slimy duelists. Pick solo (vs a Sleepy, Average, or Sigma slug) or send a friend a link. Slide up and down, tap to lunge, and win the match to make your slug ascend into a confetti-soaked sigma champion.": "d6c86df5bb54928e43da7705bd287547",
+    "A fair fight. Shadows you and strikes when lined up.": "543c80b13040e961cf9df533187f50b6",
     "A friend's octopus lived this life": "5f4c6bb2e07f80b6de4a7da2cb5e9542",
     "A gentle squeeze. The chicken tolerates this.": "82a3609905983df76554c32145c5c070",
     "A grown octopus needs a fortress. Gather shells and wall up your den.": "f55781d826ae5753bf37832d8b654581",
@@ -54,13 +56,13 @@
     "Age Reached": "283dc8241af0eee178d700d03eed4786",
     "AI Emoji Translator": "53bac412db363202e48786800c836aca",
     "AI-powered apps such as Emoji Translator and Commune with God send your input to a language model and return a playful response.": "55691de122cb11239b054456a1c4a791",
+    "ALPHA MOLLUSK": "ad25ef971d10b97f9803c6f2ee9fd3fd",
     "Alternatives": "ccf847bbe927621373e2891eca80bf93",
     "Am I on the right path?": "82c34ac6bcca387b2cf012d0ad7565e1",
     "An estimated household income and net-worth bracket": "e2f38adc2a190504a610544a73647e7b",
     "An octopus lives only once": "478f281a6c24812757c880fce66a2476",
     "Ancient Magic Scroll": "9bd95ce88c81494fa071f5c333149ce8",
     "Ancient Magic Scroll leaves the shelf.": "a1b0baa24133f42ef911e9cbe87ae9f0",
-    "Another hit! The rival recoils in disgust.": "5e6f1d1f526e79e0e4fce7d3f5ef2b2a",
     "Answers from God": "9020c0a035536b0b077d3c70caca39ad",
     "Arcane Wizard Casting": "09f636751e906964457866eae9685148",
     "Archetype": "15f752f90268a1a39fe449871b75267c",
@@ -69,7 +71,9 @@
     "Ask anything that weighs on your heart. A benevolent, non-denominational presence answers with kindness, love, and support. No judgment, ever.": "ee599068629cda3897f5b18df2a3da77",
     "Ask the divine anything. A benevolent, non-denominational AI oracle answers with kindness, love, and support.": "984558d83ad08f1a7e9a749bc9f4d8a2",
     "Audio": "b22f0418e8ac915eb66f829d262d14a2",
+    "Aura": "6ed3cf13906dc93a2f205a19e122c640",
     "Auras farmed": "4191368b74fa23beec35fa07475c07fc",
+    "Average Slug": "277cc70b17e7a7f609f009140946556b",
     "Back": "0557fa923dcee4d0f86b1409f5c2167f",
     "Back to the apps": "3f7b34a69a6b223a15e42b821dfeb692",
     "Balloon Blower": "120fc521aa7a836de738ec833889f86c",
@@ -85,6 +89,7 @@
     "Blue": "9594eec95be70e7b1710f730fdda33d9",
     "Blue calm. Moves like it's underwater and in no hurry.": "bf10bd4fd1dd9d0a3326d96da6276e17",
     "Blue is a primary — cool, calm, the slow side of the wheel.": "0fb82d649f6df0ea855c357a447f242d",
+    "Both slugs ready. Starting…": "7bf75713772c556655bcdd134146721f",
     "Brainrot": "f36a3b3cfd170fb6afc1aaa774c85830",
     "Brainrot button": "5ae4f4ec4eac4e618302ed04e7646889",
     "Brainrot Button": "57bf5c76f0f88545c91c6d102b1e927f",
@@ -98,6 +103,7 @@
     "Bubbling Potion Flask": "f6b5007a581d16854acd55624622635a",
     "Bubbling Potion Flask leaves the shelf.": "8b899d07d38f2cd31df389d2cad92909",
     "Budget / older": "34cc035fe6a83a94c000c35aada0f9bd",
+    "Built different. Fast, relentless, terrifyingly aligned.": "8429cbd06db2cbecbd32a27b16e7d70d",
     "Buttery and smug about it.": "c9a8540ab52cf682e757d8d2ab9e7cd9",
     "Button pushes": "5c9804311036edde069a5d683c337f70",
     "Caffeinated Doomscroller": "9fbb175a7ab2600aa297ca7b5306951b",
@@ -119,6 +125,7 @@
     "Ceramic Mug": "49c49e565d914a10755221f265d5b736",
     "Ceramic Mug leaves the shelf.": "0fd9a792b4d171c8854280129d5b1591",
     "Chalice": "7372a523dc53273b52fc33669dc3edcd",
+    "CHAMPION OF GOO": "d43f21f5e5083cad1fb4c0d6ae9350d3",
     "Change musical style — same sequence, different song": "f550d97aa41becadd5e77b151380bd04",
     "Chaos": "7e8214916782021125d0afd9d9d9ee66",
     "Chaos on a COOL aura stays reserved — same energy, less talking.": "37440a13d92b7ebf1cea74ff0c1c85b4",
@@ -129,6 +136,7 @@
     "Chapter {chapter} · {age}": "acff5c43d264286879c0d60e21acf4a1",
     "Chicken squeezes": "6e65bd5cbce722249c39a3a128561cec",
     "Choose your brainrot spell": "03e40907eae80e82bbe536003146ea8a",
+    "Choose your mode": "1adb68ef57445f7c513d1ede6cd2f9a1",
     "Classical": "2091523979dbedcad728958414922c72",
     "Clear": "dc30bc0c7914db5918da4263fce93ad2",
     "Clear all": "81aa2078d1eceede831b2976dbf32e62",
@@ -150,15 +158,20 @@
     "Cool and chaotic. Arms crossed. Says nothing. Nods slowly.": "adecbed9f6d2f190ab51dcd67799401c",
     "Cool colors + lots of rest = slow, mellow, flappy energy.": "183f3a9fe77c92e099800cc49ef96418",
     "Coordinates": "99171d3a2f274547100bf2bfca5a0f6f",
+    "Copied": "a588b1abc58b8b758c4b34b69b9e10bb",
     "Copy": "5fb63579fc981698f97d55bfecb213ea",
     "Copy a shareable link": "5298ce63f24a14df7c600e25460e3e32",
     "Cosmic Aura": "dd67f4164e112ff62deca0f040abefe2",
+    "Could not create a match. Try again.": "cf1caa71556b25aa2a122e1a127f753c",
     "Could not load the shared clip. Default button restored.": "1dc3f2056a67131b90c295bb87ff7e39",
     "CPU Cores": "c574c9e9c4c8f40e140ebf8b99180701",
+    "Create Match": "8f8f16680f8ae3f8863ec8e6ad51a288",
+    "Creating…": "8c4f121ceb8c4b814d99921aa7776314",
     "Crystal": "a48296ad11ed041e4db9991af1057fb6",
     "crystal ball": "8df897a106143920124afb643cce4d93",
     "Curious Wanderer": "d78b58224a415cc04ff3a9f5d212b23a",
     "Current target": "49dc52f50366fed91bc26c0f095eecff",
+    "Custom": "90589c47f06eb971d548591f23c285af",
     "Custom button armed. Preview it, save it, or smash it now.": "489bd2360d30caaf6413bfa61cae446c",
     "Custom recordings": "52c45537cb6f53e723eafa4ae57a5283",
     "CUSTOM SPELL EXPIRED. DEFAULT BUTTON RESTORED.": "f052a2912f8c194107d2cf847b13bfbb",
@@ -170,6 +183,7 @@
     "Deepest": "0e70e100819c7fbbb2ddf472ddbc622f",
     "Default button restored.": "4f658ce5e64f02a51b390810d7666e00",
     "DEFAULT VOICE ACTIVE": "8e2edd13a3d0fa7c714960c5b2058f43",
+    "Defeated": "171e33a0853c270a1609b29ce5e2e45d",
     "Delete browser storage": "76f4be787f913c40f17bf742f4ede35b",
     "Delete Cookies": "dd97fb3d9eeec1db2abfb139946ab9de",
     "Dens Built": "4d0efe56f32f5ff72d0bb04885418773",
@@ -178,6 +192,7 @@
     "Device Memory": "9e48e97f7b63e2be3b408dff37c3aaf4",
     "Device Tier": "b17643294746db2c28347877b72847e2",
     "Device Type": "3efefb2586548f4ae74fa1de6ad6d5c6",
+    "Difficulty": "7b29ca96ada2afa3aadbcf55cd61a1ed",
     "Disco Aura": "5ff5784756d65b6ca23e42548e60ae4d",
     "Dismiss": "c8a59e7135a20b362f9c768b09454fdb",
     "Divine Oracle": "10c94d6f6651a92e97aa962fb2d145da",
@@ -185,12 +200,13 @@
     "Do Not Track": "c98a380f0d0268dc7076dbed8ebf3555",
     "Does it involve ads, crypto, or payments?": "f84a54f1ed204dc0baf1da84e6683049",
     "Does Scroll Goblin cost anything or require an account?": "6d72ee98ab53525fc3e79994b4c68109",
+    "Dominant hand": "3bdc048cd6fdbd058635609182c4a5f4",
     "Drag (or use WASD / arrows) to swim. Stay still to camouflage — predators see you from closer when you're hidden. Tap, click, or press Space to release ink and escape. Survive your way from hatchling to guardian.": "e375c0922c90975f2bcb0b1cee588c5f",
     "Drag a spud from the tray and drop it on the canvas to stamp it. Every potato you use is replaced by a brand-new one — same variety, never the same shape.": "3703ce383347a69718ec4e99e7a61f30",
     "Drift up to the bright surface currents.": "2c4e9a035a3f04081569352163a4848c",
     "Drip Red, Yellow & Blue energy into the jar, then raise the blob with care. Warm colors grow fast and dance hard; cool ones stay smooth. Harvest a ripe aura and your goblin erupts into a dance chosen by its color.": "5f29b741e20fe98135e1548d3dbc31c0",
     "Drop a potato here to stamp it": "4669f4f58d822279229ca66a925a66ef",
-    "Duel of the slugs": "c759eb3b8c0a8d05473c8360c30e5fa8",
+    "Duel the AI or send a friend a link. First slug to the target score wins.": "7a40884af6712d1e998e396f8cdcbaea",
     "Each tile shows roughly how many people share your value — the rarer it is, the more it singles you out. Combine a few rare ones and you're trivial to pick out of a crowd.": "3c390ed9202a0bafa723b99d32f44304",
     "Earlier today": "9b2a481466c4ddaf2edd7b683e7e7d7a",
     "Easily re-identified": "1e476d222c33157c39304233c09d2462",
@@ -205,7 +221,6 @@
     "Emoji Translator": "17821a10400745194709fce7b87855e2",
     "Empty": "ce2c8aed9c2fa0cfbed56cbda4d8bf07",
     "Empty jar": "6e0a095b9d62ae062990d0da9a11242c",
-    "En garde! Slide up and down, then click to lunge.": "3241f51921f45ed1548ec45024329ad3",
     "Enchanted Wand": "b66ef86fcdf97877d86ce17682f18479",
     "Enchanted Wand leaves the shelf.": "b0b249463e0b8ca48339a9004ab7d525",
     "Energy mixed": "bfcf3506f689f7beec318e5c4dffd752",
@@ -234,9 +249,12 @@
     "Fingerprint": "536c0c9bcd09855d120989eee2aed942",
     "Fingerprint Uniqueness": "22240c5d336b0a5401d42c5c6b64e3dc",
     "First Seen": "d916cc29cf1ef03264b111bd15660324",
+    "First to": "f67496515f3bae9862a67a4b97bb9c43",
+    "First to {n}": "16fa7d1d495861fda37ad42613db36d5",
     "Flaming Breakdance": "50c288b279be94b766c1eee991c6a856",
     "Fonts": "59c4ad3f3cb3d812d68fab7a354d4a63",
     "Forest Aura": "6251f385ab111216f0d78b7e0b62e019",
+    "Forest Floor": "759bc463670641a7fe80767ddfbfd7eb",
     "Forgotten": "155f25da0ecfab1f56f21310490daaa7",
     "Framed Portrait": "f4576ec99e1467467e782d25d02bcdf4",
     "Framed Portrait leaves the shelf.": "b05798cbcacc7fae80055b438157f5b5",
@@ -246,12 +264,14 @@
     "Fwump. Deeply unsatisfying.": "7b0bff0b0d401f45d95e8bf776e72be7",
     "Gamer Aura": "1d52ee6892e33465bb9af5c35c98d790",
     "Games won as octopus": "f16e39fa9201043da18bdbf63ce5a160",
+    "Garden": "ea9f1881279a97a59f479e8d0a8bc695",
     "Global leaderboard of the most-visited and most-poked Scroll Goblin mini-apps.": "c02222d0f5fe593d5cb97f091e5b37b5",
     "Glug glug. The grass drinks happily. 💧": "bec8bcea16badbe875c1b105dc5fce2a",
     "Go ahead. Touch the grass": "22f8668bdf1828a12f975aa4a70b5aaa",
     "Goal": "12c74214cb4c18cf36d885303d6aa2e1",
     "Goblin": "8e81e2940511f7152ba4462fe53e35b8",
     "Goblin Aura Farm": "e18dd236d01b6f5375d090c906361e49",
+    "Goblin Cave": "af8afee0190ffd7f9da7a94f0649b37b",
     "Goblin Headbang": "463e32c04a4b8c708111648886f94973",
     "Goblin Memory #1": "b0bb986659e4b8dcb54f5e071c854a0d",
     "Goblin Memory #2": "2f080b8b1556820a893ed9cef3171788",
@@ -260,9 +280,11 @@
     "Goblin Surveillance Report": "651ded75e0b4cca192eb114ea29708f5",
     "Goblin Surveillance Score": "0645068f1e4a6e5c2c1ecbcd3a812cd3",
     "Goblins scanned": "5b0abc79ae560f2d9e31020871cb036f",
+    "GOO TYCOON": "896decd0df498ad11b282aa3022fbfb9",
     "GPS coordinates are far more precise than a city. From them, a website could look up your street address, and from that address typically dig up:": "a64284326408fb4d71cf9acd3974a695",
     "GPU": "52f9ec21735243ad9917cda3ca077d32",
     "Grab a spud, drag it onto the canvas, and stamp masterpieces. Every potato you use grows back different.": "e65cbe98ae5758ee3733adf113555345",
+    "GRAND SLUGGER": "cbd2448105112ff90455c4bbdafe8033",
     "Grass plucked": "0ac9875a8822dc33d81eead21d5558f0",
     "Grass touches": "5d97a274c0a7695c11ed7b5a9d01dd81",
     "Green and chaotic. Claw hands. No touching grass.": "78e4a7326c54c2dd95dfefd8ea8c4cf4",
@@ -274,6 +296,7 @@
     "Guard the eggs": "649505fcc2a36bbd10de858693289c7d",
     "Guard your eggs. Stay close. Drive away anything that comes.": "777d23fea2bbb04e3b924f6a48ca09ba",
     "Guesses, not facts. Notice the bottom one: your age, gender, and income can't be read from your device at all — those come from data brokers, not your browser.": "48539e472484c8719dbec2acd905496f",
+    "Half asleep. Reacts late and lunges lazily.": "2528d87e51dfe91a1b276b0eba620481",
     "Harvest the Aura!": "ab14750660837da0a11fa32745c36140",
     "Hatch →": "183f3d745dbe86729da049d32e41af89",
     "Health": "605669cab962bf944d99ce89cf9e58d9",
@@ -289,6 +312,7 @@
     "Highly Unique": "bcb71b56363c0913ba82fe48200c2e5c",
     "Hits landed": "ace3bc0ae2977ee161e4b58dae5c4135",
     "Hold down on the chicken to squeeze the air out. Release and it screams its way back into shape. Deeper squeeze, bigger scream.": "9aea67c572fb2d45718c027f002f2ed9",
+    "Host": "c2ca16d048ec66e04bca283eab048ec2",
     "How do I take {label} access back?": "a94babea0b85ae9e292185a4141583b8",
     "How do the AI-powered apps work?": "8105d094b8c4242657a9aeaed4f4e1ab",
     "I can recognize your device": "83647432b4024794f885a140ccd231e9",
@@ -311,6 +335,7 @@
     "Jazz": "9a284efda4d46636bd9d5298dfea1335",
     "Just now": "58038ee4a4e2d0e2f764aa223fbecfae",
     "Keep raising it…": "edc88385482c9c474da9591cd9cfe174",
+    "Kitchen Counter": "d3154a8160efaee827c753e49f355982",
     "Knock it off": "00a68793cf2c6943e157600f970ed4e1",
     "Language": "4994a8ffeba4ac3140beb89e8d41f174",
     "Language: {language}": "6ef66a7bd1510a3034c0dd7bd9cce4b2",
@@ -319,6 +344,8 @@
     "Late-night browsing": "669c9fd4a888739a805c00fd02792f8a",
     "Leaderboard": "e02b89857b91a11b8be92fca409827ba",
     "Learn your timezone and daily rhythm from when you open them": "32787ddce9035a3b44bd44164fcc2601",
+    "Leave Arena": "de812a54c381277ead1bb87313cc0107",
+    "Left": "945d5e233cf7d6240f6b783b36a374ff",
     "Lefty": "806084d45a2aa4a769a4930fbbd8e3ac",
     "Let Goblin Call You Back": "602cf7247f9f70007a88b21d8d2216d2",
     "Let Goblin Find You": "b297a59d1e462948c7345f6d1b780ba2",
@@ -344,13 +371,14 @@
     "Location": "ce5bf551379459c1c61d2a204061c455",
     "Locked": "d0f2e5376298c880665077b565ffd7dd",
     "Long. Weird. Beautiful.": "67af75653ebaa58451ab0d08ebc80b84",
+    "LORD OF THE LAWN": "1c6a5c19e5ddc11a272c0202e00114c7",
     "Loyal Returning Specimen": "fe5879874f135b031dd78786c4536611",
     "Lunar Moonwalk": "f48b9b93f3ef0d4f5ed31cfa62ce8954",
-    "Lunges": "6b38310863bdd5631c22400cb4846a6a",
     "Lunges thrown": "213655080c5bfd374417971e061ec977",
     "Lurker": "3242698d7d5aec57dba2890244f01b4b",
     "Lv {level}": "6a4dbc41d56d288fdcc6f6f2533f4694",
     "Matches ~{share} of people": "cf11e31fe1749c22ac62e5fdc679288a",
+    "Matches played": "57b1ad555256e8d1f75bcb5eafe206d4",
     "Metal": "eaa57a9b4248ce3968e718895e1c2f04",
     "Mic blocked. Allow microphone access in your browser, then tap Start blowing again.": "0ef4b91a918ae561d55c5018eb67e39b",
     "Mic live": "0c39267898adddda4c8fc92c72dfd753",
@@ -363,8 +391,11 @@
     "Morning browsing": "822bf021d2c387b77641aa3cf20bffee",
     "Most octopuses are eaten long before adulthood. That's the ocean — and it's biologically honest.": "0b33215a02fa46499bc7fcdc5f1cd689",
     "Mouse": "f2a47c6809d88e175dade0ef7b16aa13",
-    "Move your slug up and down — drag on touch, or use the mouse / W / S. Tap (or click, or Space) to lunge. Line up with your rival and strike to score. Every move and lunge burns energy, so watch your meter. Left-handed? Tap the hand button to swap sides.": "d883c0a8f62113b6c449827b344a685f",
     "Movement": "4642e767f9251fa40afadbc963f80b7a",
+    "MUCUS KING": "4316a11084d5430aa63ae2d7a250a0fe",
+    "Multiplayer": "901a7320e77e54c4794bd577399eb0a6",
+    "Multiplayer Match": "083a96d65b2afbf24d1d9d5160ed4726",
+    "Multiplayer wins": "f750956479ceabee5d403c7457a17f35",
     "Music": "47dcbd834e669233d7eb8a51456ed217",
     "Musical DNA": "190157c33457c39365bad78b26edfcc5",
     "Mute sound effects": "72840f00dc8e591aa7b57631b0cb42b5",
@@ -373,6 +404,7 @@
     "Negative": "ffb9356ff2b7da85c75c92fa7ea03b8b",
     "Neighborhood demographics and places you likely visit": "7a7ad2b2ae72bca3934113df8b9c6582",
     "Neutral": "e9bb5320b3890b6747c91b5a71ae5a01",
+    "New Match": "4e966eb4a1be386621fcb791bd99bab1",
     "Newly hatched": "63eef78fa1d66a078180b28aecff7ff5",
     "Nice — balloon banked! A fresh one drifts in.": "6040127172500bb426c0c28bab973840",
     "No device signal reveals these. Advertisers only 'know' them by buying your cross-site history from data brokers — which this page never has.": "8816a9a712d5ee8c2cd0ebf3abe40466",
@@ -390,6 +422,9 @@
     "Once in a life, you search for another. Few octopuses ever meet one.": "cec5eebbc35983d154d706da6f7b9252",
     "Only 1% of octopuses reach adulthood. Can you?": "820864a539958babee88b7e31a999778",
     "Operating System": "64d354dc5879cf570ce7b4ef676e75bd",
+    "Opponent": "857ccf501e3d5cb92473fa1eb4d9fee5",
+    "Opponent scores!": "262716a71556373e56e5ba1d3a644cf8",
+    "Opponent wants a rematch!": "76e9c0790dd239b2d387beeea817f55c",
     "Orange is a SECONDARY — red mixed with yellow.": "339bc15ecab648b4c11a2e66a460fffc",
     "Output language": "59602ea00044d7d1c6c783bec5e6cba8",
     "Overconfident Hero Pose": "1509998b49a1daa93680a82f62560c5d",
@@ -410,6 +445,7 @@
     "Platform": "419f3742e6de8e0ec4b22cce005e7630",
     "Play": "de3c731be5633838089a07179d301d7b",
     "Play as an orange cat with one goal: shove everything off the shelf. Heavy mugs, magic junk, and squeaky toys all fall differently.": "c377d9444d4d449c7504317e71c1993e",
+    "Play to": "424607653cfe010baa8924709d579ad7",
     "Plucked": "de9ae8838c2da5b79db3787a27d9333a",
     "Polar": "e266cfd65ad46a67fc54b0efd38e40dd",
     "POP. An egg?! You squeezed an entire egg out of the chicken.": "c7343b62a23769218f9619b913874665",
@@ -441,7 +477,9 @@
     "Purple Majesty": "d4aab156dd544936c6ede038d069be97",
     "Pushed off": "7b4fc12d81bf8de2bd2e5b45317abf8c",
     "Pushy Paws": "90d682b3b24f21f31f5435508e8e0b5a",
+    "Quit": "0d82790b0612935992bd564a17ce37d6",
     "Rainbow Aura": "47ef31573e4088b055272baa69a6f734",
+    "Rainy Sidewalk": "eb38df12a32a35a05d1652429e3f5201",
     "Raised on bedtime stories until it drifted into space.": "ca4687ffc50248b5c336e83f5c26fedb",
     "Raised on nothing but music. Point up. Point down. Repeat forever.": "8d1cdd56b2b5650439ad7df94a21cf14",
     "Random Goblin DNA": "565e07f87629e872bf893f67bec2e34e",
@@ -469,13 +507,13 @@
     "Reduced Motion": "4def4fd8ba1232dda2e8c97a0904b8ec",
     "Refresh": "63a6a88c066880c5ac42394a22803ca6",
     "Refreshingly Forgettable": "d245840bf415dd057e958033edb3da73",
+    "Rematch": "28dede002d8d61c17436b40be4971f21",
     "Remove last": "e473cd694fdab1a47d9f1a5f7832f9c8",
     "Repeat visitor": "627e3142964036c62d8991b3d4d54b9a",
-    "Reset": "526d688f37a86d3c3f27d0c5016eb71d",
     "Rest": "55276c10d84e1df7713b441e76e141f9",
     "Restart": "51cfbcff36da74a9fc47f3a5140f99f2",
+    "Right": "92b09c7c48c520c3c55e497875da437c",
     "Righty": "efd8c8f4ed28e893ef91723da074d69a",
-    "Rival": "eea9d021db5d7c44a2db94cf7ceeba0d",
     "Rough Location": "f2b9efd43863f63d6b538c40139af45b",
     "Roughly 1 in {count} people share a device profile like yours ({bits} bits of entropy).": "768a74250b9a50c0eab2616c9454c12e",
     "Royalty among tubers.": "c067b656bd4d1eeba204505959c5eeeb",
@@ -507,25 +545,34 @@
     "Session length": "2e40d0aed96932630e10c1e63c60b27d",
     "Set it to Block or Ask, then reload the page.": "f021f843f02dcb9b1a6142157aa275ec",
     "Share": "5a95a425f74314a96f13a2f136992178",
+    "Share this link": "0cfbecb992a97c76007e7ceb22c47695",
     "Shared custom button loaded. Smash it.": "3526650dcd77415263633823ec9b7847",
     "Should I take the leap?": "ee110d5442ab2aa985b97a2ba099b289",
     "Show the {count} technical signals the Goblin also used": "c8fee15d5d19a2090ff6bfb7ea40755e",
     "Sigma Aura": "c031af8c1b86907aff551d05b5cbd26e",
+    "Sigma Slug": "5a2637bc1ceaff870f151aab7395874d",
+    "SIGMA SLUG": "844cf4cfd6f217c0734ef8f554c09276",
     "Silent Lurker": "ff4fdf8ae968a8ba117367632fb6cac1",
     "Sink down to the seafloor — and survive the open water.": "d1fa02af20b5223b65b6e6719a3cf351",
     "Skimmer": "35df3ca5eba9b6a591478ed74d137fcd",
-    "Slug Fencing": "761079ddeb4dd684414da1164c34a7c1",
+    "Sleepy Slug": "66d6b8f00303342824668e9f01ae868c",
+    "SLIME EMPEROR": "1ca47ac8a383af8d6fe57070f04c3feb",
+    "SLIME LORD": "49f7526714f56a65f53f774cf35c75dd",
+    "Slug Arena": "ee0211a7aa690226d60b6d1a83b60f3f",
+    "Slug Duel": "0bfef60bb379ef9cf24fa8d472747638",
+    "SLUG!": "6fbd04625d983873feec434a870428f1",
     "Small, round, full of joy.": "166b58ce30e5bdc4c0ea01415e6c0ac1",
     "Smart. You kept that from me — exactly the right instinct.": "83d121d935fd8e06067c9cae873ee343",
     "Smash a giant button for instant affirmation, then record your own dramatic version and share it for seven chaotic days.": "e64daa20ea6ae7e9d5bb44c98eccea49",
     "Smooth Tidal Sway": "a6bbc832badc94cd8aaae8d1d9f60206",
+    "Solo": "26c04769d2607a2234d4329b7630ed35",
+    "Solo Match": "638caa12811deb15f5209535a8a33547",
     "Something went wrong": "6609dd239e143d00002123326c5e4aad",
     "Songs played": "6bf71cd6474b295a85be682bb04e9823",
     "Sound is muted. The button is judging silently.": "dc9958e590c153c146c2c0254e92bb24",
     "Specimen ID": "d072081d9a646278ea607cd16b7c307a",
     "Speech Activity": "af580a1f882389fee67a17438a565579",
     "Speech turned to text: topics, names, even your mood": "220a31675ac2d52f54846661d503019e",
-    "Splat — the rival lunged and got you.": "cbd8a9a9fe95b0d8820514da3c27bc14",
     "Spud acquired. Drop it where you want it!": "a2cccfe7010f389e5d381b26ad6cf35e",
     "Squeak. The cat looks personally betrayed.": "92a4ac3ab60ca841f70be1cf2bc1a75d",
     "Squeeze the chicken": "cc78099e1a854c2b179da8077c50d7e4",
@@ -537,6 +584,7 @@
     "Stamps": "b78b9e865bb7e11d953601ef9cb5d2b9",
     "Standard 20 — the amino acids your DNA codes for": "be9c83c93e14a997e465864fea859792",
     "Start blowing": "5ad0ab115b56c981dc57d3249796dd9c",
+    "Start Match": "32a406a139d52b97daba3dda8136ab61",
     "Still as Stone": "76e9936b5e08f27bd30cdebc9ba5afb7",
     "Stoic Sigma Nod": "00b3763f557305f3647268567530d8e9",
     "Stop": "11a755d598c0c417f9a36758c3da7481",
@@ -551,7 +599,6 @@
     "Sunlight": "d4b463d3734eeb600987a0dc64f33f05",
     "Surprise me": "fdc2ecfc0a58cf6b77c93ced6db095ad",
     "Swap direction": "70d8dbd167eec8d08729460d8db753da",
-    "Swap which side your slug fights on": "817a0b7b8df76ead3e3c736b79d8da88",
     "Swat {item}": "98379a7d2d5bc5324df3ee642be5ca00",
     "Sweet Potato": "65a730710a283f0dd365db8e00b5b1cd",
     "Tablet": "36384a9ea3ec791e6bd4ab6b36f2ff2a",
@@ -563,6 +610,7 @@
     "Tax Fraud Aura": "c3590efd69b45d7c1b30e3f7644b59fe",
     "Technically not a potato. Don't tell it.": "e70dda90ab647b5fe12883c62fb6bb94",
     "Text → Emoji": "25af92bc0b3d5db781117c340bc4b50b",
+    "That match link is invalid or full.": "5035ef0de04e049d75fbf19294137630",
     "The chalice rings forever. Beautiful.": "ed28ca2ca99e3ff648f68b512939b664",
     "The chicken is mostly flat now. It remembers everything.": "8d5afb8ec1dfe202083b5dcb7958752c",
     "The chicken is trembling. Something is happening in there...": "bcd931c78fb6371eb855824c972b2ac3",
@@ -592,8 +640,10 @@
     "The Hatchling": "e0d58cb9594f7bead9b479eeea9248b2",
     "The heavens are listening...": "e07c1a6e750a13e5ae624552c876ac78",
     "The Hunter": "1d964bf03f1b3bc13543c9245fb0dcb9",
+    "THE MOIST ONE": "b91a1f5d29c33f812fa18c7058ddafce",
     "The open water is full of mouths. Reach the seafloor where you can hide.": "c11d4b81269521ad81e4333eb3a89a7d",
     "The potato rolls back to the tray, unused.": "30ba2efe76a2a8a53a4f8f5aea3321c2",
+    "The room expired or could not be reached.": "b605170c0f329540b3f1d628470d5645",
     "The rune stone detonates. Worth it.": "eff44baeb4e177399abd84663a0db93f",
     "The Sea Lion": "44ae4d04fb49e50ee3b77f3f568592de",
     "The shared custom clip expired, so the default is back.": "f09a5085eb3772d614679639dfe7f194",
@@ -612,12 +662,11 @@
     "Tiny-Arm Rage Stomp": "3449dc4de825a9cf3fbe786063469d49",
     "Too big to share": "7b1e8153efef2cb815724abbbf1b3ea0",
     "Too much and you'll get a Disco Aura": "dcf68c889faba8ff9620eb8637f56d3b",
-    "Too pooped to lunge. Let the energy meter refill.": "d8174f02265773742061e3b49ee0b326",
+    "Too pooped to lunge. Let the meter refill.": "82502df93a6422e972c1531c7361cf53",
     "Totals update within about a minute. Stats are anonymous — nobody knows it was you who squeezed the chicken 4,000 times.": "1ccd3d8c50e2f554b913c3f097732858",
     "Touch": "f0f31c9700c6b10d8a20dc487b2ae6a8",
     "Touch device": "101507f9f0c167fe15518d77f2ab81b4",
     "Touch Grass": "c9bf947730af2c9c78ef334b3660a2d0",
-    "TOUCHÉ! Your slug lands a slimy strike.": "205357466c56bc3f8ac1e821b4e53787",
     "Touches": "2e57552ac1759f81608d0b2f3cdfc770",
     "Track which alerts you click to profile what lures you back": "fe2d6a81009a51999ef5792958707bc9",
     "Tracking Resistance": "550f8b51424d87934c2ac3e93fd72eed",
@@ -641,6 +690,7 @@
     "Visits": "d7e637a6e9ff116de2fa89551240a94d",
     "Void Aura": "50c7cc4cc55f2d870aa14e1887572fdd",
     "Volatile Rune Stone": "b310cd8281f18bf98bad56b3d074f919",
+    "Waiting for opponent…": "a82a38493f2abe32edbec4275896a624",
     "Waiting for your answer in the browser prompt...": "d0bceca52ff16e38e75886c0dc08b49e",
     "Wand": "05dc4afe009464372a1191713caece68",
     "Warm — fast & energetic": "4900ca4967db53ee99c7d15b52b10d24",
@@ -661,7 +711,6 @@
     "What I Remember": "9235eecda77c478de7ef9d324d7a9a88",
     "What is Scroll Goblin?": "581893fae3f7d95cc85d34adf73f0ef4",
     "Whether you're alone or others are nearby (multiple voices)": "14685c4b0785f7f7a13d26f94eb92414",
-    "Whiff. Your lunge slurps through empty air.": "401684b46c17aadcfae375d02d7923ec",
     "Will things work out for me?": "482295d1a42d99b322bfbaf654579396",
     "Yellow": "51e6cd92b6c45f9affdc158ecca2b8b8",
     "Yellow + Blue serenity. Wants to hug everything, especially trees.": "7b0a1506100b425c158c1abe1f606226",
@@ -688,6 +737,9 @@
     "Your passwords or messages": "d8c2803b534c5d58392f6edb130ee1dd",
     "Your sequence": "866e764e53ad76a5f0e43721fd24b096",
     "Your setting — quiet home, busy office, car, or street": "8d53649d0c28c8d071e33096d78da00b",
+    "Your slug always fights on your dominant side.": "e9073434fc012927dcb292340b7e0a7d",
+    "Your slug has ascended.": "813fd31e931ee9474f5e064a891c7376",
+    "Your slug will train harder. Here's a tiny dumbbell.": "c6f1d29ed869f77426fb23a470f706ad",
     "Your song will appear here": "1482d2f60adc0720e052dadfc4076980",
     "Yukon Gold": "6b6a1b8220bfc2890fbeab028a97aab7"
   },
@@ -769,6 +821,10 @@
       "key": "6067b1ebfa68b4e474b849e585208c93"
     },
     {
+      "source": "+1 point!",
+      "key": "a8fbe40cf3123798cf862820ec6657f9"
+    },
+    {
       "source": "💥 POP! You blew past full. A new balloon appears.",
       "key": "3a0a1b8153aa283a4620762323229a26"
     },
@@ -801,8 +857,12 @@
       "key": "d18557da6a8d0f5549ccf6a035decbe2"
     },
     {
-      "source": "A duel of two slimy duelists. Slide your slug up and down, then click to lunge. Land a hit on your rival to score — but mind your energy meter, because moving and lunging both drain it.",
-      "key": "c14cef20dd79b5b5a215d5238ba93686"
+      "source": "A duel of two slimy duelists. Pick solo (vs a Sleepy, Average, or Sigma slug) or send a friend a link. Slide up and down, tap to lunge, and win the match to make your slug ascend into a confetti-soaked sigma champion.",
+      "key": "d6c86df5bb54928e43da7705bd287547"
+    },
+    {
+      "source": "A fair fight. Shadows you and strikes when lined up.",
+      "key": "543c80b13040e961cf9df533187f50b6"
     },
     {
       "source": "A friend's octopus lived this life",
@@ -909,6 +969,10 @@
       "key": "55691de122cb11239b054456a1c4a791"
     },
     {
+      "source": "ALPHA MOLLUSK",
+      "key": "ad25ef971d10b97f9803c6f2ee9fd3fd"
+    },
+    {
       "source": "Alternatives",
       "key": "ccf847bbe927621373e2891eca80bf93"
     },
@@ -931,10 +995,6 @@
     {
       "source": "Ancient Magic Scroll leaves the shelf.",
       "key": "a1b0baa24133f42ef911e9cbe87ae9f0"
-    },
-    {
-      "source": "Another hit! The rival recoils in disgust.",
-      "key": "5e6f1d1f526e79e0e4fce7d3f5ef2b2a"
     },
     {
       "source": "Answers from God",
@@ -969,8 +1029,16 @@
       "key": "b22f0418e8ac915eb66f829d262d14a2"
     },
     {
+      "source": "Aura",
+      "key": "6ed3cf13906dc93a2f205a19e122c640"
+    },
+    {
       "source": "Auras farmed",
       "key": "4191368b74fa23beec35fa07475c07fc"
+    },
+    {
+      "source": "Average Slug",
+      "key": "277cc70b17e7a7f609f009140946556b"
     },
     {
       "source": "Back",
@@ -1033,6 +1101,10 @@
       "key": "0fb82d649f6df0ea855c357a447f242d"
     },
     {
+      "source": "Both slugs ready. Starting…",
+      "key": "7bf75713772c556655bcdd134146721f"
+    },
+    {
       "source": "Brainrot",
       "key": "f36a3b3cfd170fb6afc1aaa774c85830"
     },
@@ -1083,6 +1155,10 @@
     {
       "source": "Budget / older",
       "key": "34cc035fe6a83a94c000c35aada0f9bd"
+    },
+    {
+      "source": "Built different. Fast, relentless, terrifyingly aligned.",
+      "key": "8429cbd06db2cbecbd32a27b16e7d70d"
     },
     {
       "source": "Buttery and smug about it.",
@@ -1169,6 +1245,10 @@
       "key": "7372a523dc53273b52fc33669dc3edcd"
     },
     {
+      "source": "CHAMPION OF GOO",
+      "key": "d43f21f5e5083cad1fb4c0d6ae9350d3"
+    },
+    {
       "source": "Change musical style — same sequence, different song",
       "key": "f550d97aa41becadd5e77b151380bd04"
     },
@@ -1207,6 +1287,10 @@
     {
       "source": "Choose your brainrot spell",
       "key": "03e40907eae80e82bbe536003146ea8a"
+    },
+    {
+      "source": "Choose your mode",
+      "key": "1adb68ef57445f7c513d1ede6cd2f9a1"
     },
     {
       "source": "Classical",
@@ -1293,6 +1377,10 @@
       "key": "99171d3a2f274547100bf2bfca5a0f6f"
     },
     {
+      "source": "Copied",
+      "key": "a588b1abc58b8b758c4b34b69b9e10bb"
+    },
+    {
       "source": "Copy",
       "key": "5fb63579fc981698f97d55bfecb213ea"
     },
@@ -1305,12 +1393,24 @@
       "key": "dd67f4164e112ff62deca0f040abefe2"
     },
     {
+      "source": "Could not create a match. Try again.",
+      "key": "cf1caa71556b25aa2a122e1a127f753c"
+    },
+    {
       "source": "Could not load the shared clip. Default button restored.",
       "key": "1dc3f2056a67131b90c295bb87ff7e39"
     },
     {
       "source": "CPU Cores",
       "key": "c574c9e9c4c8f40e140ebf8b99180701"
+    },
+    {
+      "source": "Create Match",
+      "key": "8f8f16680f8ae3f8863ec8e6ad51a288"
+    },
+    {
+      "source": "Creating…",
+      "key": "8c4f121ceb8c4b814d99921aa7776314"
     },
     {
       "source": "Crystal",
@@ -1327,6 +1427,10 @@
     {
       "source": "Current target",
       "key": "49dc52f50366fed91bc26c0f095eecff"
+    },
+    {
+      "source": "Custom",
+      "key": "90589c47f06eb971d548591f23c285af"
     },
     {
       "source": "Custom button armed. Preview it, save it, or smash it now.",
@@ -1373,6 +1477,10 @@
       "key": "8e2edd13a3d0fa7c714960c5b2058f43"
     },
     {
+      "source": "Defeated",
+      "key": "171e33a0853c270a1609b29ce5e2e45d"
+    },
+    {
       "source": "Delete browser storage",
       "key": "76f4be787f913c40f17bf742f4ede35b"
     },
@@ -1405,6 +1513,10 @@
       "key": "3efefb2586548f4ae74fa1de6ad6d5c6"
     },
     {
+      "source": "Difficulty",
+      "key": "7b29ca96ada2afa3aadbcf55cd61a1ed"
+    },
+    {
       "source": "Disco Aura",
       "key": "5ff5784756d65b6ca23e42548e60ae4d"
     },
@@ -1433,6 +1545,10 @@
       "key": "6d72ee98ab53525fc3e79994b4c68109"
     },
     {
+      "source": "Dominant hand",
+      "key": "3bdc048cd6fdbd058635609182c4a5f4"
+    },
+    {
       "source": "Drag (or use WASD / arrows) to swim. Stay still to camouflage — predators see you from closer when you're hidden. Tap, click, or press Space to release ink and escape. Survive your way from hatchling to guardian.",
       "key": "e375c0922c90975f2bcb0b1cee588c5f"
     },
@@ -1453,8 +1569,8 @@
       "key": "4669f4f58d822279229ca66a925a66ef"
     },
     {
-      "source": "Duel of the slugs",
-      "key": "c759eb3b8c0a8d05473c8360c30e5fa8"
+      "source": "Duel the AI or send a friend a link. First slug to the target score wins.",
+      "key": "7a40884af6712d1e998e396f8cdcbaea"
     },
     {
       "source": "Each tile shows roughly how many people share your value — the rarer it is, the more it singles you out. Combine a few rare ones and you're trivial to pick out of a crowd.",
@@ -1511,10 +1627,6 @@
     {
       "source": "Empty jar",
       "key": "6e0a095b9d62ae062990d0da9a11242c"
-    },
-    {
-      "source": "En garde! Slide up and down, then click to lunge.",
-      "key": "3241f51921f45ed1548ec45024329ad3"
     },
     {
       "source": "Enchanted Wand",
@@ -1629,6 +1741,14 @@
       "key": "d916cc29cf1ef03264b111bd15660324"
     },
     {
+      "source": "First to",
+      "key": "f67496515f3bae9862a67a4b97bb9c43"
+    },
+    {
+      "source": "First to {n}",
+      "key": "16fa7d1d495861fda37ad42613db36d5"
+    },
+    {
       "source": "Flaming Breakdance",
       "key": "50c288b279be94b766c1eee991c6a856"
     },
@@ -1639,6 +1759,10 @@
     {
       "source": "Forest Aura",
       "key": "6251f385ab111216f0d78b7e0b62e019"
+    },
+    {
+      "source": "Forest Floor",
+      "key": "759bc463670641a7fe80767ddfbfd7eb"
     },
     {
       "source": "Forgotten",
@@ -1677,6 +1801,10 @@
       "key": "f16e39fa9201043da18bdbf63ce5a160"
     },
     {
+      "source": "Garden",
+      "key": "ea9f1881279a97a59f479e8d0a8bc695"
+    },
+    {
       "source": "Global leaderboard of the most-visited and most-poked Scroll Goblin mini-apps.",
       "key": "c02222d0f5fe593d5cb97f091e5b37b5"
     },
@@ -1699,6 +1827,10 @@
     {
       "source": "Goblin Aura Farm",
       "key": "e18dd236d01b6f5375d090c906361e49"
+    },
+    {
+      "source": "Goblin Cave",
+      "key": "af8afee0190ffd7f9da7a94f0649b37b"
     },
     {
       "source": "Goblin Headbang",
@@ -1733,6 +1865,10 @@
       "key": "5b0abc79ae560f2d9e31020871cb036f"
     },
     {
+      "source": "GOO TYCOON",
+      "key": "896decd0df498ad11b282aa3022fbfb9"
+    },
+    {
       "source": "GPS coordinates are far more precise than a city. From them, a website could look up your street address, and from that address typically dig up:",
       "key": "a64284326408fb4d71cf9acd3974a695"
     },
@@ -1743,6 +1879,10 @@
     {
       "source": "Grab a spud, drag it onto the canvas, and stamp masterpieces. Every potato you use grows back different.",
       "key": "e65cbe98ae5758ee3733adf113555345"
+    },
+    {
+      "source": "GRAND SLUGGER",
+      "key": "cbd2448105112ff90455c4bbdafe8033"
     },
     {
       "source": "Grass plucked",
@@ -1787,6 +1927,10 @@
     {
       "source": "Guesses, not facts. Notice the bottom one: your age, gender, and income can't be read from your device at all — those come from data brokers, not your browser.",
       "key": "48539e472484c8719dbec2acd905496f"
+    },
+    {
+      "source": "Half asleep. Reacts late and lunges lazily.",
+      "key": "2528d87e51dfe91a1b276b0eba620481"
     },
     {
       "source": "Harvest the Aura!",
@@ -1847,6 +1991,10 @@
     {
       "source": "Hold down on the chicken to squeeze the air out. Release and it screams its way back into shape. Deeper squeeze, bigger scream.",
       "key": "9aea67c572fb2d45718c027f002f2ed9"
+    },
+    {
+      "source": "Host",
+      "key": "c2ca16d048ec66e04bca283eab048ec2"
     },
     {
       "source": "How do I take {label} access back?",
@@ -1937,6 +2085,10 @@
       "key": "edc88385482c9c474da9591cd9cfe174"
     },
     {
+      "source": "Kitchen Counter",
+      "key": "d3154a8160efaee827c753e49f355982"
+    },
+    {
       "source": "Knock it off",
       "key": "00a68793cf2c6943e157600f970ed4e1"
     },
@@ -1967,6 +2119,14 @@
     {
       "source": "Learn your timezone and daily rhythm from when you open them",
       "key": "32787ddce9035a3b44bd44164fcc2601"
+    },
+    {
+      "source": "Leave Arena",
+      "key": "de812a54c381277ead1bb87313cc0107"
+    },
+    {
+      "source": "Left",
+      "key": "945d5e233cf7d6240f6b783b36a374ff"
     },
     {
       "source": "Lefty",
@@ -2069,16 +2229,16 @@
       "key": "67af75653ebaa58451ab0d08ebc80b84"
     },
     {
+      "source": "LORD OF THE LAWN",
+      "key": "1c6a5c19e5ddc11a272c0202e00114c7"
+    },
+    {
       "source": "Loyal Returning Specimen",
       "key": "fe5879874f135b031dd78786c4536611"
     },
     {
       "source": "Lunar Moonwalk",
       "key": "f48b9b93f3ef0d4f5ed31cfa62ce8954"
-    },
-    {
-      "source": "Lunges",
-      "key": "6b38310863bdd5631c22400cb4846a6a"
     },
     {
       "source": "Lunges thrown",
@@ -2095,6 +2255,10 @@
     {
       "source": "Matches ~{share} of people",
       "key": "cf11e31fe1749c22ac62e5fdc679288a"
+    },
+    {
+      "source": "Matches played",
+      "key": "57b1ad555256e8d1f75bcb5eafe206d4"
     },
     {
       "source": "Metal",
@@ -2145,12 +2309,24 @@
       "key": "f2a47c6809d88e175dade0ef7b16aa13"
     },
     {
-      "source": "Move your slug up and down — drag on touch, or use the mouse / W / S. Tap (or click, or Space) to lunge. Line up with your rival and strike to score. Every move and lunge burns energy, so watch your meter. Left-handed? Tap the hand button to swap sides.",
-      "key": "d883c0a8f62113b6c449827b344a685f"
-    },
-    {
       "source": "Movement",
       "key": "4642e767f9251fa40afadbc963f80b7a"
+    },
+    {
+      "source": "MUCUS KING",
+      "key": "4316a11084d5430aa63ae2d7a250a0fe"
+    },
+    {
+      "source": "Multiplayer",
+      "key": "901a7320e77e54c4794bd577399eb0a6"
+    },
+    {
+      "source": "Multiplayer Match",
+      "key": "083a96d65b2afbf24d1d9d5160ed4726"
+    },
+    {
+      "source": "Multiplayer wins",
+      "key": "f750956479ceabee5d403c7457a17f35"
     },
     {
       "source": "Music",
@@ -2183,6 +2359,10 @@
     {
       "source": "Neutral",
       "key": "e9bb5320b3890b6747c91b5a71ae5a01"
+    },
+    {
+      "source": "New Match",
+      "key": "4e966eb4a1be386621fcb791bd99bab1"
     },
     {
       "source": "Newly hatched",
@@ -2251,6 +2431,18 @@
     {
       "source": "Operating System",
       "key": "64d354dc5879cf570ce7b4ef676e75bd"
+    },
+    {
+      "source": "Opponent",
+      "key": "857ccf501e3d5cb92473fa1eb4d9fee5"
+    },
+    {
+      "source": "Opponent scores!",
+      "key": "262716a71556373e56e5ba1d3a644cf8"
+    },
+    {
+      "source": "Opponent wants a rematch!",
+      "key": "76e9c0790dd239b2d387beeea817f55c"
     },
     {
       "source": "Orange is a SECONDARY — red mixed with yellow.",
@@ -2331,6 +2523,10 @@
     {
       "source": "Play as an orange cat with one goal: shove everything off the shelf. Heavy mugs, magic junk, and squeaky toys all fall differently.",
       "key": "c377d9444d4d449c7504317e71c1993e"
+    },
+    {
+      "source": "Play to",
+      "key": "424607653cfe010baa8924709d579ad7"
     },
     {
       "source": "Plucked",
@@ -2457,8 +2653,16 @@
       "key": "90d682b3b24f21f31f5435508e8e0b5a"
     },
     {
+      "source": "Quit",
+      "key": "0d82790b0612935992bd564a17ce37d6"
+    },
+    {
       "source": "Rainbow Aura",
       "key": "47ef31573e4088b055272baa69a6f734"
+    },
+    {
+      "source": "Rainy Sidewalk",
+      "key": "eb38df12a32a35a05d1652429e3f5201"
     },
     {
       "source": "Raised on bedtime stories until it drifted into space.",
@@ -2569,16 +2773,16 @@
       "key": "d245840bf415dd057e958033edb3da73"
     },
     {
+      "source": "Rematch",
+      "key": "28dede002d8d61c17436b40be4971f21"
+    },
+    {
       "source": "Remove last",
       "key": "e473cd694fdab1a47d9f1a5f7832f9c8"
     },
     {
       "source": "Repeat visitor",
       "key": "627e3142964036c62d8991b3d4d54b9a"
-    },
-    {
-      "source": "Reset",
-      "key": "526d688f37a86d3c3f27d0c5016eb71d"
     },
     {
       "source": "Rest",
@@ -2589,12 +2793,12 @@
       "key": "51cfbcff36da74a9fc47f3a5140f99f2"
     },
     {
-      "source": "Righty",
-      "key": "efd8c8f4ed28e893ef91723da074d69a"
+      "source": "Right",
+      "key": "92b09c7c48c520c3c55e497875da437c"
     },
     {
-      "source": "Rival",
-      "key": "eea9d021db5d7c44a2db94cf7ceeba0d"
+      "source": "Righty",
+      "key": "efd8c8f4ed28e893ef91723da074d69a"
     },
     {
       "source": "Rough Location",
@@ -2721,6 +2925,10 @@
       "key": "5a95a425f74314a96f13a2f136992178"
     },
     {
+      "source": "Share this link",
+      "key": "0cfbecb992a97c76007e7ceb22c47695"
+    },
+    {
       "source": "Shared custom button loaded. Smash it.",
       "key": "3526650dcd77415263633823ec9b7847"
     },
@@ -2737,6 +2945,14 @@
       "key": "c031af8c1b86907aff551d05b5cbd26e"
     },
     {
+      "source": "Sigma Slug",
+      "key": "5a2637bc1ceaff870f151aab7395874d"
+    },
+    {
+      "source": "SIGMA SLUG",
+      "key": "844cf4cfd6f217c0734ef8f554c09276"
+    },
+    {
       "source": "Silent Lurker",
       "key": "ff4fdf8ae968a8ba117367632fb6cac1"
     },
@@ -2749,8 +2965,28 @@
       "key": "35df3ca5eba9b6a591478ed74d137fcd"
     },
     {
-      "source": "Slug Fencing",
-      "key": "761079ddeb4dd684414da1164c34a7c1"
+      "source": "Sleepy Slug",
+      "key": "66d6b8f00303342824668e9f01ae868c"
+    },
+    {
+      "source": "SLIME EMPEROR",
+      "key": "1ca47ac8a383af8d6fe57070f04c3feb"
+    },
+    {
+      "source": "SLIME LORD",
+      "key": "49f7526714f56a65f53f774cf35c75dd"
+    },
+    {
+      "source": "Slug Arena",
+      "key": "ee0211a7aa690226d60b6d1a83b60f3f"
+    },
+    {
+      "source": "Slug Duel",
+      "key": "0bfef60bb379ef9cf24fa8d472747638"
+    },
+    {
+      "source": "SLUG!",
+      "key": "6fbd04625d983873feec434a870428f1"
     },
     {
       "source": "Small, round, full of joy.",
@@ -2767,6 +3003,14 @@
     {
       "source": "Smooth Tidal Sway",
       "key": "a6bbc832badc94cd8aaae8d1d9f60206"
+    },
+    {
+      "source": "Solo",
+      "key": "26c04769d2607a2234d4329b7630ed35"
+    },
+    {
+      "source": "Solo Match",
+      "key": "638caa12811deb15f5209535a8a33547"
     },
     {
       "source": "Something went wrong",
@@ -2791,10 +3035,6 @@
     {
       "source": "Speech turned to text: topics, names, even your mood",
       "key": "220a31675ac2d52f54846661d503019e"
-    },
-    {
-      "source": "Splat — the rival lunged and got you.",
-      "key": "cbd8a9a9fe95b0d8820514da3c27bc14"
     },
     {
       "source": "Spud acquired. Drop it where you want it!",
@@ -2839,6 +3079,10 @@
     {
       "source": "Start blowing",
       "key": "5ad0ab115b56c981dc57d3249796dd9c"
+    },
+    {
+      "source": "Start Match",
+      "key": "32a406a139d52b97daba3dda8136ab61"
     },
     {
       "source": "Still as Stone",
@@ -2897,10 +3141,6 @@
       "key": "70d8dbd167eec8d08729460d8db753da"
     },
     {
-      "source": "Swap which side your slug fights on",
-      "key": "817a0b7b8df76ead3e3c736b79d8da88"
-    },
-    {
       "source": "Swat {item}",
       "key": "98379a7d2d5bc5324df3ee642be5ca00"
     },
@@ -2943,6 +3183,10 @@
     {
       "source": "Text → Emoji",
       "key": "25af92bc0b3d5db781117c340bc4b50b"
+    },
+    {
+      "source": "That match link is invalid or full.",
+      "key": "5035ef0de04e049d75fbf19294137630"
     },
     {
       "source": "The chalice rings forever. Beautiful.",
@@ -3061,12 +3305,20 @@
       "key": "1d964bf03f1b3bc13543c9245fb0dcb9"
     },
     {
+      "source": "THE MOIST ONE",
+      "key": "b91a1f5d29c33f812fa18c7058ddafce"
+    },
+    {
       "source": "The open water is full of mouths. Reach the seafloor where you can hide.",
       "key": "c11d4b81269521ad81e4333eb3a89a7d"
     },
     {
       "source": "The potato rolls back to the tray, unused.",
       "key": "30ba2efe76a2a8a53a4f8f5aea3321c2"
+    },
+    {
+      "source": "The room expired or could not be reached.",
+      "key": "b605170c0f329540b3f1d628470d5645"
     },
     {
       "source": "The rune stone detonates. Worth it.",
@@ -3141,8 +3393,8 @@
       "key": "dcf68c889faba8ff9620eb8637f56d3b"
     },
     {
-      "source": "Too pooped to lunge. Let the energy meter refill.",
-      "key": "d8174f02265773742061e3b49ee0b326"
+      "source": "Too pooped to lunge. Let the meter refill.",
+      "key": "82502df93a6422e972c1531c7361cf53"
     },
     {
       "source": "Totals update within about a minute. Stats are anonymous — nobody knows it was you who squeezed the chicken 4,000 times.",
@@ -3159,10 +3411,6 @@
     {
       "source": "Touch Grass",
       "key": "c9bf947730af2c9c78ef334b3660a2d0"
-    },
-    {
-      "source": "TOUCHÉ! Your slug lands a slimy strike.",
-      "key": "205357466c56bc3f8ac1e821b4e53787"
     },
     {
       "source": "Touches",
@@ -3257,6 +3505,10 @@
       "key": "b310cd8281f18bf98bad56b3d074f919"
     },
     {
+      "source": "Waiting for opponent…",
+      "key": "a82a38493f2abe32edbec4275896a624"
+    },
+    {
       "source": "Waiting for your answer in the browser prompt...",
       "key": "d0bceca52ff16e38e75886c0dc08b49e"
     },
@@ -3335,10 +3587,6 @@
     {
       "source": "Whether you're alone or others are nearby (multiple voices)",
       "key": "14685c4b0785f7f7a13d26f94eb92414"
-    },
-    {
-      "source": "Whiff. Your lunge slurps through empty air.",
-      "key": "401684b46c17aadcfae375d02d7923ec"
     },
     {
       "source": "Will things work out for me?",
@@ -3443,6 +3691,18 @@
     {
       "source": "Your setting — quiet home, busy office, car, or street",
       "key": "8d53649d0c28c8d071e33096d78da00b"
+    },
+    {
+      "source": "Your slug always fights on your dominant side.",
+      "key": "e9073434fc012927dcb292340b7e0a7d"
+    },
+    {
+      "source": "Your slug has ascended.",
+      "key": "813fd31e931ee9474f5e064a891c7376"
+    },
+    {
+      "source": "Your slug will train harder. Here's a tiny dumbbell.",
+      "key": "c6f1d29ed869f77426fb23a470f706ad"
     },
     {
       "source": "Your song will appear here",

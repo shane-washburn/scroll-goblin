@@ -334,6 +334,27 @@ const contextOverrides: Record<
     visualContext:
       "Shown beside a left-hand emoji on the button that swaps the player's slug side for left-handed play",
   },
+  Right: {
+    shape: "button",
+    purpose:
+      "dominant-hand choice in Slug Duel setup; means right-handed player, not the direction right",
+    visualContext:
+      "Shown beside a right-hand emoji in the Dominant hand control that chooses which side the player's slug fights on",
+  },
+  Left: {
+    shape: "button",
+    purpose:
+      "dominant-hand choice in Slug Duel setup; means left-handed player, not the direction left",
+    visualContext:
+      "Shown beside a left-hand emoji in the Dominant hand control that chooses which side the player's slug fights on",
+  },
+  "Dominant hand": {
+    shape: "label",
+    purpose:
+      "label for the Slug Duel setup control where the player chooses right-handed or left-handed play",
+    visualContext:
+      "Appears above right-hand and left-hand choice buttons in Slug Duel setup",
+  },
   "Stack of books": {
     purpose:
       "short singular collective label for a stack of books object in Pushy Paws",
