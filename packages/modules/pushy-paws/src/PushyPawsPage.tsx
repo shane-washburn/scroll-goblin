@@ -289,7 +289,7 @@ function makeActive(level = 1, previousId?: string): ActiveItem {
     ...base,
     weight: scaledWeight(base, level),
     nonce: Date.now() + Math.random(),
-    x: 34 + Math.random() * 26,
+    x: base.boss ? 66 : 34 + Math.random() * 26,
     progress: 0,
     falling: false,
   };
@@ -491,7 +491,7 @@ function CandyConfetti() {
           className="absolute animate-[pushy-candy-fall_3800ms_cubic-bezier(.16,.68,.24,1)_infinite] text-4xl saturate-150 drop-shadow-[0_3px_0_#ffffff] sm:text-5xl"
           style={{
             left: `${(index * 37) % 100}%`,
-            animationDelay: `${(index % 8) * 180}ms`,
+            animationDelay: `-${240 + (index % 8) * 430}ms`,
             animationDuration: `${3300 + (index % 5) * 360}ms`,
             transform: `rotate(${index * 23}deg)`,
           }}
@@ -883,7 +883,7 @@ export default function PushyPawsPage() {
           <ItemArt item={item} governmentLabel={t("Government")} />
         </button>
 
-        <div className="absolute left-0 top-[16px] z-30 h-[210px] w-[235px] sm:left-6 sm:top-[24px] sm:h-[275px] sm:w-[340px]">
+        <div className="absolute left-[-24px] top-[16px] z-30 h-[210px] w-[235px] sm:left-[-10px] sm:top-[24px] sm:h-[275px] sm:w-[340px]">
           <Cat level={level} pawing={pawing} victory={won} />
         </div>
 
@@ -969,7 +969,7 @@ export default function PushyPawsPage() {
           100% { transform: translate(-50%, -50%) translateY(430px) rotate(130deg); opacity: 0; }
         }
         @keyframes pushy-candy-fall {
-          0% { opacity: 0; top: -16%; filter: brightness(1.2) saturate(1.5); transform: translateY(0) rotate(0deg) scale(0.82); }
+          0% { opacity: 1; top: -16%; filter: brightness(1.2) saturate(1.5); transform: translateY(0) rotate(0deg) scale(0.82); }
           14% { opacity: 1; }
           82% { opacity: 1; }
           100% { opacity: 0; top: 105%; filter: brightness(1.28) saturate(1.65); transform: translateY(60px) rotate(420deg) scale(1.18); }
