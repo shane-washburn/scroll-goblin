@@ -840,10 +840,27 @@ export default function PushyPawsPage() {
   );
 
   useEffect(() => {
+    const stopVictoryAudio = () => {
+      if (victoryTimer.current) {
+        clearTimeout(victoryTimer.current);
+        victoryTimer.current = null;
+      }
+      stopVictoryMusic();
+    };
+    const onVisibilityChange = () => {
+      if (document.hidden) stopVictoryAudio();
+    };
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    window.addEventListener("pagehide", stopVictoryAudio);
+    window.addEventListener("freeze", stopVictoryAudio);
+
     return () => {
       if (pawTimer.current) clearTimeout(pawTimer.current);
-      if (victoryTimer.current) clearTimeout(victoryTimer.current);
-      stopVictoryMusic();
+      stopVictoryAudio();
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      window.removeEventListener("pagehide", stopVictoryAudio);
+      window.removeEventListener("freeze", stopVictoryAudio);
     };
   }, []);
 

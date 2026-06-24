@@ -184,7 +184,7 @@ export default function Leaderboard() {
                 </span>
                 <span className="text-2xl">{row.emoji}</span>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-bold text-brand-text">
+                  <p className="break-words text-sm font-bold leading-snug text-brand-text">
                     {t(row.label)}
                   </p>
                   <p className="text-xs font-bold uppercase text-brand-text opacity-60">
