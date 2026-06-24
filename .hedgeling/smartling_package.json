@@ -16,7 +16,7 @@
   ],
   "files": {
     "apps/web/i18n/source.html": {
-      "updatedAt": "2026-06-23T01:09:27.622Z",
+      "updatedAt": "2026-06-24T03:26:46.223Z",
       "entries": {
         "e75b44a79a1855b72a6e7de341f46dc7": {
           "sourceText": "Scroll Goblin",
@@ -76948,6 +76948,2006 @@
               "source": "gemini"
             }
           }
+        },
+        "762ee0989af33569108ad1e457093045": {
+          "sourceText": "Anvil",
+          "shape": "label",
+          "purpose": "short label for a small decorative metal anvil object in Pushy Paws",
+          "visualContext": "SVG depicts a compact gray metal anvil sitting on the shelf",
+          "contextVariants": [
+            {
+              "shape": "label",
+              "purpose": "short label for a small decorative metal anvil object in Pushy Paws",
+              "visualContext": "SVG depicts a compact gray metal anvil sitting on the shelf"
+            }
+          ],
+          "limit": 7,
+          "translations": {
+            "en-GB": {
+              "text": "Anvil",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Anvil",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Anvil",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Enclume",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Anvil",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "निहाई",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Aambie",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Städ",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Kowadło",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Ковадло",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Кузня",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Yunke",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "452f809d8dc51300087f69573bf9b029": {
+          "sourceText": "Cauldron",
+          "shape": "label",
+          "purpose": "short label for an overfilled iron cauldron object in Pushy Paws",
+          "visualContext": "SVG depicts a black iron cauldron filled with bubbling green liquid",
+          "contextVariants": [
+            {
+              "shape": "label",
+              "purpose": "short label for an overfilled iron cauldron object in Pushy Paws",
+              "visualContext": "SVG depicts a black iron cauldron filled with bubbling green liquid"
+            }
+          ],
+          "limit": 10,
+          "translations": {
+            "en-GB": {
+              "text": "Cauldron",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Cauldron",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Cauldron",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Chaudron",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Cauldron",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "देग",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Slijmketel",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Kittel",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Kocioł",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Котел",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Котел",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Caldero",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "18450de39aceed82b26abe218d377740": {
+          "sourceText": "Government",
+          "shape": "body",
+          "purpose": "short label printed on the Government Urn boss object in Pushy Paws, not a general government menu section",
+          "visualContext": "Large boss shelf object; SVG depicts an urn with a Government label",
+          "contextVariants": [
+            {
+              "shape": "body",
+              "purpose": "short label printed on the Government Urn boss object in Pushy Paws, not a general government menu section",
+              "visualContext": "Large boss shelf object; SVG depicts an urn with a Government label"
+            }
+          ],
+          "limit": 13,
+          "translations": {
+            "en-GB": {
+              "text": "Government",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Government",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Government",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Gouvernement",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Government",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "सरकार",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Het Systeem",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Regeringen",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Rząd",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Уряд",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Правительство",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Gobierno",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "ea694328e03aef3fd9b3ff9c5bbf10a2": {
+          "sourceText": "Government has been toppled!",
+          "shape": "header",
+          "purpose": "Pushy Paws win headline after the player knocks the Government Urn boss object off the shelf",
+          "visualContext": "Victory screen shown after the final Government Urn boss object falls",
+          "contextVariants": [
+            {
+              "shape": "header",
+              "purpose": "Pushy Paws win headline after the player knocks the Government Urn boss object off the shelf",
+              "visualContext": "Victory screen shown after the final Government Urn boss object falls"
+            }
+          ],
+          "limit": 35,
+          "translations": {
+            "en-GB": {
+              "text": "Government's been binned!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Gov's been yeeted!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Gov't has been yeeted!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Le gouvernement est tombé!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Govt. toppled! GG EZ.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "सरकार का खेल खत्म!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Het Systeem is omver!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Regeringen är OUT!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Rząd spadł z rowerka!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Уряд повалено!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Правительство отлетело!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "¡Gobierno al suelo!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "df34dc71eff0336e82948c837caa8e60": {
+          "sourceText": "Government Urn",
+          "shape": "label",
+          "purpose": "name of the final boss object in Pushy Paws, an urn labeled Government",
+          "visualContext": "Large boss shelf object; SVG depicts an urn with a Government label",
+          "contextVariants": [
+            {
+              "shape": "label",
+              "purpose": "name of the final boss object in Pushy Paws, an urn labeled Government",
+              "visualContext": "Large boss shelf object; SVG depicts an urn with a Government label"
+            }
+          ],
+          "limit": 18,
+          "translations": {
+            "en-GB": {
+              "text": "The Gov Urn is real",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:17.075Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Gov Urn",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Government Urn",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Urne Gouv.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Government Urn",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "सरकारी कलश",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Systeem Urn",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Regeringsurnan",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Urna Rządu",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Урядова Урна",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Урна Правительства",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Urna Gobierno",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "a763a6912ca9396aa379b32f40db5dca": {
+          "sourceText": "Government urns toppled",
+          "shape": "label",
+          "purpose": "leaderboard stat label for how many Government Urn boss objects players have knocked over in Pushy Paws",
+          "visualContext": "Compact leaderboard metric label for Pushy Paws completions",
+          "contextVariants": [
+            {
+              "shape": "label",
+              "purpose": "leaderboard stat label for how many Government Urn boss objects players have knocked over in Pushy Paws",
+              "visualContext": "Compact leaderboard metric label for Pushy Paws completions"
+            }
+          ],
+          "limit": 29,
+          "translations": {
+            "en-GB": {
+              "text": "Gov't urns binned",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Gov urns: absolutely cooked",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:53.349Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Gov't urns yeeted",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Urnes Gouv. renversées",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Govt. Urns rekt",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "सरकारी कलश ढेर",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Systeem Urnen omver",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Regeringsurnor: K.O.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Urny Rządu spadły",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Урядових урн повалено",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Урн Правительства свергнуто",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Urnas Gobierno caídas",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "b5452113b21173f7d9e425bf746efd31": {
+          "sourceText": "I'll do it again 😼",
+          "shape": "button",
+          "purpose": "Pushy Paws victory button to restart and play again with mischievous cat tone",
+          "visualContext": "Restart button on the Pushy Paws victory screen",
+          "contextVariants": [
+            {
+              "shape": "button",
+              "purpose": "Pushy Paws victory button to restart and play again with mischievous cat tone",
+              "visualContext": "Restart button on the Pushy Paws victory screen"
+            }
+          ],
+          "limit": 24,
+          "translations": {
+            "en-GB": {
+              "text": "I'll do it again 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "I'll do it again 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "I'll do it again 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "J'le r'fais! 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "I'll do it again 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "फिर से बवाल 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Ik doe het weer 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Jag gör det igen 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Jeszcze raz 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Зроблю це знову 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Ещё раз! 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Lo haré de nuevo 😼",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "928e15f6b02c7fa7f21cf4d41982bebd": {
+          "sourceText": "Overfilled Iron Cauldron",
+          "shape": "label",
+          "purpose": "name of an overfilled iron cauldron object in Pushy Paws",
+          "visualContext": "SVG depicts a black iron cauldron filled with bubbling green liquid",
+          "contextVariants": [
+            {
+              "shape": "label",
+              "purpose": "name of an overfilled iron cauldron object in Pushy Paws",
+              "visualContext": "SVG depicts a black iron cauldron filled with bubbling green liquid"
+            }
+          ],
+          "limit": 30,
+          "translations": {
+            "en-GB": {
+              "text": "Overfilled Iron Cauldron",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Chockers Cauldron",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Overfilled Iron Cauldron",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Chaudron d'fer trop plein",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Overfilled Iron Cauldron",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "लबालब लोहे की देग",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Borrelende Slijmketel",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Överfylld järnkittel",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Przepełniony Żelazny Kocioł",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Переповнений Залізний Котел",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Переполненный Железный Котел",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Caldero de hierro rebosante",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "7f7a8baf10ba503aab63f3db3213e091": {
+          "sourceText": "Overfilled Iron Cauldron leaves the shelf.",
+          "shape": "body",
+          "purpose": "status message when the overfilled iron cauldron object falls off the shelf in Pushy Paws",
+          "visualContext": "SVG depicts a black iron cauldron filled with bubbling green liquid",
+          "contextVariants": [
+            {
+              "shape": "body",
+              "purpose": "status message when the overfilled iron cauldron object falls off the shelf in Pushy Paws",
+              "visualContext": "SVG depicts a black iron cauldron filled with bubbling green liquid"
+            }
+          ],
+          "limit": 53,
+          "translations": {
+            "en-GB": {
+              "text": "Overfilled Iron Cauldron's been binned.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Chockers Cauldron's gone, mate.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Cauldron yeeted itself off the shelf.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Le chaudron d'fer trop plein est tombé.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Overfilled Iron Cauldron got yeeted.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "लबालब लोहे की देग शेल्फ से टाटा बाय-बाय!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "De Borrelende Slijmketel is van de plank gekickt.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Överfylld järngryta *yeetar* sig från hyllan!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:48.072Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Przepełniony Żelazny Kocioł spada z półki.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Переповнений Залізний Котел покинув полицю.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Переполненный Железный Котел слетел с полки.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "El Caldero de Hierro Rebosa se pira del estante.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "c6eea0560cd6f377e78dff2c85cc9122": {
+          "sourceText": "Safe",
+          "shape": "label",
+          "purpose": "short label for a small metal safe/lockbox object in Pushy Paws, not the adjective safe",
+          "visualContext": "SVG depicts a small heavy metal safe/lockbox with a dial and door",
+          "contextVariants": [
+            {
+              "shape": "label",
+              "purpose": "short label for a small metal safe/lockbox object in Pushy Paws, not the adjective safe",
+              "visualContext": "SVG depicts a small heavy metal safe/lockbox with a dial and door"
+            }
+          ],
+          "limit": 5,
+          "translations": {
+            "en-GB": {
+              "text": "Safe",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Safe",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Safe",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Fort",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Safe",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "तिजोरी",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Kluis",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Box",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Sejf",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Сейф",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Сейф",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Caja",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "2d0b13c91b5da8e1894e23d8cfc756b1": {
+          "sourceText": "Shelf liberated.",
+          "shape": "body",
+          "purpose": "short Pushy Paws victory status message after clearing the shelf",
+          "visualContext": "Victory screen after the final boss object falls off the shelf",
+          "contextVariants": [
+            {
+              "shape": "body",
+              "purpose": "short Pushy Paws victory status message after clearing the shelf",
+              "visualContext": "Victory screen after the final boss object falls off the shelf"
+            }
+          ],
+          "limit": 20,
+          "translations": {
+            "en-GB": {
+              "text": "Shelf's been cleared!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Shelf's clear!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Shelf cleared, ez.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Étagère libérée.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Shelf cleared!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "शेल्फ क्लियर!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Plank is gecleard.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Hyllan är fri!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Półka wolna!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Полицю звільнено.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Полка зачищена!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Estante liberado.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "cba708d988ead357e63b696b3299079d": {
+          "sourceText": "Suspicious Little Safe",
+          "shape": "label",
+          "purpose": "name of a small metal safe/lockbox object in Pushy Paws, not the adjective safe",
+          "visualContext": "SVG depicts a small heavy metal safe/lockbox with a dial and door",
+          "contextVariants": [
+            {
+              "shape": "label",
+              "purpose": "name of a small metal safe/lockbox object in Pushy Paws, not the adjective safe",
+              "visualContext": "SVG depicts a small heavy metal safe/lockbox with a dial and door"
+            }
+          ],
+          "limit": 28,
+          "translations": {
+            "en-GB": {
+              "text": "Sus Little Safe",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Sus Safe",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Sus Little Safe",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:22.481Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "P'tit coffre louche",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Suspicious Little Safe",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "शक वाली छोटी तिजोरी",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Sus kluisje",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:10.753Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Suspekt liten safe",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Podejrzany Mały Sejf",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Підозрілий Маленький Сейф",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Подозрительный Маленький Сейф",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Cajita Sospechosa",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "2d7795e379c72de0140ea96b273403fc": {
+          "sourceText": "Suspicious Little Safe leaves the shelf.",
+          "shape": "body",
+          "purpose": "status message when the small metal safe/lockbox object falls off the shelf in Pushy Paws",
+          "visualContext": "SVG depicts a small heavy metal safe/lockbox with a dial and door",
+          "contextVariants": [
+            {
+              "shape": "body",
+              "purpose": "status message when the small metal safe/lockbox object falls off the shelf in Pushy Paws",
+              "visualContext": "SVG depicts a small heavy metal safe/lockbox with a dial and door"
+            }
+          ],
+          "limit": 50,
+          "translations": {
+            "en-GB": {
+              "text": "Sus Little Safe's been binned.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Sus Safe's gone, mate.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Sus Safe yeeted itself off the shelf.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Le p'tit coffre louche est tombé.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Suspicious Little Safe got yeeted.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "शक वाली छोटी तिजोरी शेल्फ से टाटा बाय-बाय!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "De Sus Kleine Kluis is van de plank gekickt.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Suspekt liten safe: Adios hyllan!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Podejrzany Mały Sejf spada z półki.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Підозрілий Маленький Сейф покинув полицю.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Подозрительный Маленький Сейф слетел с полки.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "La Cajita Sospechosa se pira del estante.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "14db617d9ae085eff161e57d2f1483f8": {
+          "sourceText": "Tax code",
+          "shape": "label",
+          "purpose": "short label for a heavy tax law book/document object in Pushy Paws",
+          "visualContext": "SVG depicts a thick official-looking tax code book/document on the shelf",
+          "contextVariants": [
+            {
+              "shape": "label",
+              "purpose": "short label for a heavy tax law book/document object in Pushy Paws",
+              "visualContext": "SVG depicts a thick official-looking tax code book/document on the shelf"
+            }
+          ],
+          "limit": 10,
+          "translations": {
+            "en-GB": {
+              "text": "Tax code",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Tax code",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Tax code",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Impôts",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Tax code",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "टैक्स कोड",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Taks",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Skattekod",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Podatki",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Кодекс",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Кодекс",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Hacienda",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "a85147e64bb8d67fc328940f5064cf5b": {
+          "sourceText": "The Government Urn has appeared. Ten clean paws decide everything.",
+          "shape": "body",
+          "purpose": "Pushy Paws boss announcement telling the player the Government Urn final object has appeared and needs ten cat swats",
+          "visualContext": "Status panel shown when the final Government Urn boss object appears on the shelf",
+          "contextVariants": [
+            {
+              "shape": "body",
+              "purpose": "Pushy Paws boss announcement telling the player the Government Urn final object has appeared and needs ten cat swats",
+              "visualContext": "Status panel shown when the final Government Urn boss object appears on the shelf"
+            }
+          ],
+          "limit": 83,
+          "translations": {
+            "en-GB": {
+              "text": "Gov't Urn's spawned. Ten clean paws, make it happen.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "The Gov Urn's here. Ten clean paws to sort it.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "The Gov't Urn has entered the chat. Ten paws decide.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "L'urne Gouv. est là. Dix p'tites pattes décident tout.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Govt. Urn's here! 10 paws to end it all.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "सरकारी कलश आ गया है। अब दस पंजे ही सब तय करेंगे।",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "De Systeem Urn is verschenen. Tien schone pootjes beslissen alles.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Regeringsurnan är här! 10 rena tassar avgör allt.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Urna Rządu wjechała. Dziesięć czystych łap decyduje.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "З'явилась Урядова Урна. Десять чистих лапок вирішать все.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Появилась Урна Правительства. Десять чистых лап решают все.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Ha aparecido la Urna del Gobierno. Diez zarpas limpias lo deciden todo.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "b16f67e6d21640016266567a11eda9e1": {
+          "sourceText": "Tiny Decorative Anvil",
+          "shape": "label",
+          "purpose": "name of a small decorative metal anvil object in Pushy Paws",
+          "visualContext": "SVG depicts a compact gray metal anvil sitting on the shelf",
+          "contextVariants": [
+            {
+              "shape": "label",
+              "purpose": "name of a small decorative metal anvil object in Pushy Paws",
+              "visualContext": "SVG depicts a compact gray metal anvil sitting on the shelf"
+            }
+          ],
+          "limit": 27,
+          "translations": {
+            "en-GB": {
+              "text": "Lil' Decor Anvil",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Tiny Anvil",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Tiny Decorative Anvil",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "P'tite enclume déco",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Tiny Decorative Anvil",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "नन्ही सजावटी निहाई",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "Mini Decor Aambie",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Litet pynt-städ",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Kowadełko ozdobne",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Маленьке Декоративне Ковадло",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Малая Декоративная Наковальня",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Yunquecito Decorativo",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "c90a1c7b70b992ea48cde541c170c1b3": {
+          "sourceText": "Tiny Decorative Anvil leaves the shelf.",
+          "shape": "body",
+          "purpose": "status message when the small decorative metal anvil object falls off the shelf in Pushy Paws",
+          "visualContext": "SVG depicts a compact gray metal anvil sitting on the shelf",
+          "contextVariants": [
+            {
+              "shape": "body",
+              "purpose": "status message when the small decorative metal anvil object falls off the shelf in Pushy Paws",
+              "visualContext": "SVG depicts a compact gray metal anvil sitting on the shelf"
+            }
+          ],
+          "limit": 49,
+          "translations": {
+            "en-GB": {
+              "text": "Lil' Decor Anvil's been binned.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Tiny Anvil's gone, mate.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Anvil yeeted itself off the shelf.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "La p'tite enclume déco est tombée.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Tiny Decorative Anvil got yeeted.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "नन्ही सजावटी निहाई शेल्फ से टाटा बाय-बाय!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "De Mini Decor Aambie is van de plank gekickt.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Litet pynt-städ: Adios hyllan!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Kowadełko ozdobne spada z półki.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Маленьке Декоративне Ковадло покинуло полицю.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Малая Декоративная Наковальня слетела с полки.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "El Yunquecito Decorativo se pira del estante.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "7b51ef352221adef206ff45c5c290814": {
+          "sourceText": "Unabridged Tax Code",
+          "shape": "label",
+          "purpose": "name of a heavy tax law book/document object in Pushy Paws",
+          "visualContext": "SVG depicts a thick official-looking tax code book/document on the shelf",
+          "contextVariants": [
+            {
+              "shape": "label",
+              "purpose": "name of a heavy tax law book/document object in Pushy Paws",
+              "visualContext": "SVG depicts a thick official-looking tax code book/document on the shelf"
+            }
+          ],
+          "limit": 24,
+          "translations": {
+            "en-GB": {
+              "text": "The Whole Damn Tax Code",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Full Tax Code",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Unabridged Tax Code",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Code fiscal intégral",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Unabridged Tax Code",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "अखंड टैक्स कोड",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "De Grote Taks Code",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Oavkortad skattekod",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Pełny Kodeks Podatkowy",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Повний Податковий Кодекс",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Полный Налоговый Кодекс",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "Código Fiscal Completo",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "d99cd2d73ea5342c47a535430e4b028e": {
+          "sourceText": "Unabridged Tax Code leaves the shelf.",
+          "shape": "body",
+          "purpose": "status message when the heavy tax law book/document object falls off the shelf in Pushy Paws",
+          "visualContext": "SVG depicts a thick official-looking tax code book/document on the shelf",
+          "contextVariants": [
+            {
+              "shape": "body",
+              "purpose": "status message when the heavy tax law book/document object falls off the shelf in Pushy Paws",
+              "visualContext": "SVG depicts a thick official-looking tax code book/document on the shelf"
+            }
+          ],
+          "limit": 47,
+          "translations": {
+            "en-GB": {
+              "text": "The Whole Damn Tax Code's been binned.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "Full Tax Code's gone, mate.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "Tax Code yeeted itself off the shelf.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "Le code fiscal intégral est tombé.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "Unabridged Tax Code got yeeted.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "अखंड टैक्स कोड शेल्फ से टाटा बाय-बाय!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "De Grote Taks Code is van de plank gekickt.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "Oavkortad skattekod: Adios hyllan!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "Pełny Kodeks Podatkowy spada z półki.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Повний Податковий Кодекс покинув полицю.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Полный Налоговый Кодекс слетел с полки.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "El Código Fiscal Completo se pira del estante.",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
+        },
+        "5c39abc730cc23567774e94251d4d025": {
+          "sourceText": "You win",
+          "shape": "label",
+          "purpose": "short Pushy Paws victory badge shown when the player wins",
+          "visualContext": "Small victory badge on the Pushy Paws completion screen",
+          "contextVariants": [
+            {
+              "shape": "label",
+              "purpose": "short Pushy Paws victory badge shown when the player wins",
+              "visualContext": "Small victory badge on the Pushy Paws completion screen"
+            }
+          ],
+          "limit": 9,
+          "translations": {
+            "en-GB": {
+              "text": "W, fam!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:10.003Z",
+              "source": "gemini"
+            },
+            "en-AU": {
+              "text": "GG!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:27:41.728Z",
+              "source": "gemini"
+            },
+            "en-CA": {
+              "text": "GG EZ",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:16.111Z",
+              "source": "gemini"
+            },
+            "fr-CA": {
+              "text": "T'as gagné",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:28:44.039Z",
+              "source": "gemini"
+            },
+            "en-IN": {
+              "text": "W!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:02.931Z",
+              "source": "gemini"
+            },
+            "hi-IN": {
+              "text": "तू जीत गया!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:29:34.164Z",
+              "source": "gemini"
+            },
+            "nl-NL": {
+              "text": "GG!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:04.865Z",
+              "source": "gemini"
+            },
+            "sv-SE": {
+              "text": "W",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:30:38.775Z",
+              "source": "gemini"
+            },
+            "pl-PL": {
+              "text": "GG",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:10.336Z",
+              "source": "gemini"
+            },
+            "uk-UA": {
+              "text": "Перемога!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:29.652Z",
+              "source": "gemini"
+            },
+            "ru-RU": {
+              "text": "Победа!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:31:59.309Z",
+              "source": "gemini"
+            },
+            "es-ES": {
+              "text": "¡Ganaste!",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-06-24T03:32:22.098Z",
+              "source": "gemini"
+            }
+          }
         }
       },
       "sourceIndex": {
@@ -80855,6 +82855,106 @@
           "key": "c6f1d29ed869f77426fb23a470f706ad",
           "shape": "body",
           "purpose": "source string passed to the runtime translation helper"
+        },
+        "762ee0989af33569108ad1e457093045": {
+          "key": "762ee0989af33569108ad1e457093045",
+          "shape": "label",
+          "purpose": "short label for a small decorative metal anvil object in Pushy Paws"
+        },
+        "452f809d8dc51300087f69573bf9b029": {
+          "key": "452f809d8dc51300087f69573bf9b029",
+          "shape": "label",
+          "purpose": "short label for an overfilled iron cauldron object in Pushy Paws"
+        },
+        "18450de39aceed82b26abe218d377740": {
+          "key": "18450de39aceed82b26abe218d377740",
+          "shape": "body",
+          "purpose": "short label printed on the Government Urn boss object in Pushy Paws, not a general government menu section"
+        },
+        "ea694328e03aef3fd9b3ff9c5bbf10a2": {
+          "key": "ea694328e03aef3fd9b3ff9c5bbf10a2",
+          "shape": "header",
+          "purpose": "Pushy Paws win headline after the player knocks the Government Urn boss object off the shelf"
+        },
+        "df34dc71eff0336e82948c837caa8e60": {
+          "key": "df34dc71eff0336e82948c837caa8e60",
+          "shape": "label",
+          "purpose": "name of the final boss object in Pushy Paws, an urn labeled Government"
+        },
+        "a763a6912ca9396aa379b32f40db5dca": {
+          "key": "a763a6912ca9396aa379b32f40db5dca",
+          "shape": "label",
+          "purpose": "leaderboard stat label for how many Government Urn boss objects players have knocked over in Pushy Paws"
+        },
+        "b5452113b21173f7d9e425bf746efd31": {
+          "key": "b5452113b21173f7d9e425bf746efd31",
+          "shape": "button",
+          "purpose": "Pushy Paws victory button to restart and play again with mischievous cat tone"
+        },
+        "928e15f6b02c7fa7f21cf4d41982bebd": {
+          "key": "928e15f6b02c7fa7f21cf4d41982bebd",
+          "shape": "label",
+          "purpose": "name of an overfilled iron cauldron object in Pushy Paws"
+        },
+        "7f7a8baf10ba503aab63f3db3213e091": {
+          "key": "7f7a8baf10ba503aab63f3db3213e091",
+          "shape": "body",
+          "purpose": "status message when the overfilled iron cauldron object falls off the shelf in Pushy Paws"
+        },
+        "c6eea0560cd6f377e78dff2c85cc9122": {
+          "key": "c6eea0560cd6f377e78dff2c85cc9122",
+          "shape": "label",
+          "purpose": "short label for a small metal safe/lockbox object in Pushy Paws, not the adjective safe"
+        },
+        "2d0b13c91b5da8e1894e23d8cfc756b1": {
+          "key": "2d0b13c91b5da8e1894e23d8cfc756b1",
+          "shape": "body",
+          "purpose": "short Pushy Paws victory status message after clearing the shelf"
+        },
+        "cba708d988ead357e63b696b3299079d": {
+          "key": "cba708d988ead357e63b696b3299079d",
+          "shape": "label",
+          "purpose": "name of a small metal safe/lockbox object in Pushy Paws, not the adjective safe"
+        },
+        "2d7795e379c72de0140ea96b273403fc": {
+          "key": "2d7795e379c72de0140ea96b273403fc",
+          "shape": "body",
+          "purpose": "status message when the small metal safe/lockbox object falls off the shelf in Pushy Paws"
+        },
+        "14db617d9ae085eff161e57d2f1483f8": {
+          "key": "14db617d9ae085eff161e57d2f1483f8",
+          "shape": "label",
+          "purpose": "short label for a heavy tax law book/document object in Pushy Paws"
+        },
+        "a85147e64bb8d67fc328940f5064cf5b": {
+          "key": "a85147e64bb8d67fc328940f5064cf5b",
+          "shape": "body",
+          "purpose": "Pushy Paws boss announcement telling the player the Government Urn final object has appeared and needs ten cat swats"
+        },
+        "b16f67e6d21640016266567a11eda9e1": {
+          "key": "b16f67e6d21640016266567a11eda9e1",
+          "shape": "label",
+          "purpose": "name of a small decorative metal anvil object in Pushy Paws"
+        },
+        "c90a1c7b70b992ea48cde541c170c1b3": {
+          "key": "c90a1c7b70b992ea48cde541c170c1b3",
+          "shape": "body",
+          "purpose": "status message when the small decorative metal anvil object falls off the shelf in Pushy Paws"
+        },
+        "7b51ef352221adef206ff45c5c290814": {
+          "key": "7b51ef352221adef206ff45c5c290814",
+          "shape": "label",
+          "purpose": "name of a heavy tax law book/document object in Pushy Paws"
+        },
+        "d99cd2d73ea5342c47a535430e4b028e": {
+          "key": "d99cd2d73ea5342c47a535430e4b028e",
+          "shape": "body",
+          "purpose": "status message when the heavy tax law book/document object falls off the shelf in Pushy Paws"
+        },
+        "5c39abc730cc23567774e94251d4d025": {
+          "key": "5c39abc730cc23567774e94251d4d025",
+          "shape": "label",
+          "purpose": "short Pushy Paws victory badge shown when the player wins"
         }
       }
     }
