@@ -10,6 +10,7 @@ export {
   setMuted,
   toggleMuted,
   subscribeMuted,
+  registerAudioLifecycleStop,
 } from "./audio";
 export type { AudioBus } from "./audio";
 export { buildShareUrl, consumeShareSnapshot } from "./share";
