@@ -4,6 +4,7 @@ import {
   MuteButton,
   ShareButton,
   consumeShareSnapshot,
+  registerAudioLifecycleStop,
   trackStat,
   useTranslation,
   useMobileGameFit,
@@ -847,20 +848,12 @@ export default function PushyPawsPage() {
       }
       stopVictoryMusic();
     };
-    const onVisibilityChange = () => {
-      if (document.hidden) stopVictoryAudio();
-    };
-
-    document.addEventListener("visibilitychange", onVisibilityChange);
-    window.addEventListener("pagehide", stopVictoryAudio);
-    window.addEventListener("freeze", stopVictoryAudio);
+    const unregisterAudioStop = registerAudioLifecycleStop(stopVictoryAudio);
 
     return () => {
       if (pawTimer.current) clearTimeout(pawTimer.current);
       stopVictoryAudio();
-      document.removeEventListener("visibilitychange", onVisibilityChange);
-      window.removeEventListener("pagehide", stopVictoryAudio);
-      window.removeEventListener("freeze", stopVictoryAudio);
+      unregisterAudioStop();
     };
   }, []);
 

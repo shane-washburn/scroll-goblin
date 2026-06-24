@@ -17,6 +17,7 @@ import {
   ShareButton,
   consumeShareSnapshot,
   getAudioBus,
+  registerAudioLifecycleStop,
   trackStat,
   useTranslation,
   useMobileGameFit,
@@ -270,8 +271,10 @@ export default function AuraFarmPage() {
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
+    const unregisterAudioStop = registerAudioLifecycleStop(stopGroove);
     return () => {
       cancelAnimationFrame(raf);
+      unregisterAudioStop();
       stopGroove();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps

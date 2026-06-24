@@ -4,6 +4,7 @@ import {
   MuteButton,
   ShareButton,
   consumeShareSnapshot,
+  registerAudioLifecycleStop,
   trackStat,
   useTranslation,
   useMobileGameFit,
@@ -287,13 +288,19 @@ export default function BalloonBlowerPage() {
     }
   };
 
-  // Clean up the mic when leaving the page.
+  // Clean up the mic when leaving or backgrounding the page.
   useEffect(() => {
-    return () => {
+    const stopMicAudio = () => {
       mic.current?.stop();
       mic.current = null;
       hiss.current?.stop();
       hiss.current = null;
+      setMicOn(false);
+    };
+    const unregisterAudioStop = registerAudioLifecycleStop(stopMicAudio);
+    return () => {
+      unregisterAudioStop();
+      stopMicAudio();
     };
   }, []);
 

@@ -5,6 +5,7 @@ import {
   MuteButton,
   ShareButton,
   consumeShareSnapshot,
+  registerAudioLifecycleStop,
   trackStat,
   useTranslation,
   useMobileGameFit,
@@ -77,8 +78,14 @@ export default function MusicalDnaPage() {
     setProgress(0);
   };
 
-  // Stop any audio when the sequence/genre changes or the page unmounts.
-  useEffect(() => stopPlayback, []);
+  // Stop any audio when the sequence/genre changes, page backgrounds, or unmounts.
+  useEffect(() => {
+    const unregisterAudioStop = registerAudioLifecycleStop(stopPlayback);
+    return () => {
+      unregisterAudioStop();
+      stopPlayback();
+    };
+  }, []);
   useEffect(() => {
     stopPlayback();
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -24,6 +24,8 @@ let muted = (() => {
 })();
 
 const muteListeners = new Set<() => void>();
+const lifecycleStopListeners = new Set<() => void>();
+let lifecycleListenersAttached = false;
 
 export interface AudioBus {
   ctx: AudioContext;
@@ -83,4 +85,44 @@ export function toggleMuted(): void {
 export function subscribeMuted(listener: () => void): () => void {
   muteListeners.add(listener);
   return () => muteListeners.delete(listener);
+}
+
+function stopLifecycleAudio(): void {
+  lifecycleStopListeners.forEach((listener) => {
+    try {
+      listener();
+    } catch {
+      /* One bad module cleanup should not keep other audio running. */
+    }
+  });
+  if (ctx?.state === "running") void ctx.suspend();
+}
+
+function attachLifecycleListeners(): void {
+  if (
+    lifecycleListenersAttached ||
+    typeof window === "undefined" ||
+    typeof document === "undefined"
+  ) {
+    return;
+  }
+  lifecycleListenersAttached = true;
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopLifecycleAudio();
+  });
+  window.addEventListener("pagehide", stopLifecycleAudio);
+  window.addEventListener("freeze", stopLifecycleAudio);
+}
+
+/**
+ * Registers long-running audio cleanup for browser lifecycle events.
+ *
+ * Components should register active music/ambient loops here so audio stops
+ * when a mobile browser backgrounds the page, freezes it, or navigates away.
+ */
+export function registerAudioLifecycleStop(listener: () => void): () => void {
+  attachLifecycleListeners();
+  lifecycleStopListeners.add(listener);
+  return () => lifecycleStopListeners.delete(listener);
 }

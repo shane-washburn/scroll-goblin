@@ -4,6 +4,7 @@ import {
   MuteButton,
   ShareButton,
   consumeShareSnapshot,
+  registerAudioLifecycleStop,
   trackStat,
   useTranslation,
   useMobileGameFit,
@@ -315,10 +316,15 @@ export default function TouchGrassPage() {
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
-    return () => {
-      cancelAnimationFrame(raf);
+    const stopGrassAudio = () => {
       grassAudio.current?.stop();
       grassAudio.current = null;
+    };
+    const unregisterAudioStop = registerAudioLifecycleStop(stopGrassAudio);
+    return () => {
+      cancelAnimationFrame(raf);
+      unregisterAudioStop();
+      stopGrassAudio();
     };
   }, []);
 
