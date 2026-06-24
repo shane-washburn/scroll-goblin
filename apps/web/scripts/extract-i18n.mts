@@ -320,6 +320,126 @@ const contextOverrides: Record<
     visualContext:
       "SVG depicts a round purple crystal ball on a gray base",
   },
+  "Overfilled Iron Cauldron": {
+    purpose: "name of an overfilled iron cauldron object in Pushy Paws",
+    visualContext:
+      "SVG depicts a black iron cauldron filled with bubbling green liquid",
+  },
+  Cauldron: {
+    purpose:
+      "short label for an overfilled iron cauldron object in Pushy Paws",
+    visualContext:
+      "SVG depicts a black iron cauldron filled with bubbling green liquid",
+  },
+  "Overfilled Iron Cauldron leaves the shelf.": {
+    purpose:
+      "status message when the overfilled iron cauldron object falls off the shelf in Pushy Paws",
+    visualContext:
+      "SVG depicts a black iron cauldron filled with bubbling green liquid",
+  },
+  "Unabridged Tax Code": {
+    purpose:
+      "name of a heavy tax law book/document object in Pushy Paws",
+    visualContext:
+      "SVG depicts a thick official-looking tax code book/document on the shelf",
+  },
+  "Tax code": {
+    purpose:
+      "short label for a heavy tax law book/document object in Pushy Paws",
+    visualContext:
+      "SVG depicts a thick official-looking tax code book/document on the shelf",
+  },
+  "Unabridged Tax Code leaves the shelf.": {
+    purpose:
+      "status message when the heavy tax law book/document object falls off the shelf in Pushy Paws",
+    visualContext:
+      "SVG depicts a thick official-looking tax code book/document on the shelf",
+  },
+  "Tiny Decorative Anvil": {
+    purpose: "name of a small decorative metal anvil object in Pushy Paws",
+    visualContext:
+      "SVG depicts a compact gray metal anvil sitting on the shelf",
+  },
+  Anvil: {
+    purpose:
+      "short label for a small decorative metal anvil object in Pushy Paws",
+    visualContext:
+      "SVG depicts a compact gray metal anvil sitting on the shelf",
+  },
+  "Tiny Decorative Anvil leaves the shelf.": {
+    purpose:
+      "status message when the small decorative metal anvil object falls off the shelf in Pushy Paws",
+    visualContext:
+      "SVG depicts a compact gray metal anvil sitting on the shelf",
+  },
+  "Suspicious Little Safe": {
+    purpose:
+      "name of a small metal safe/lockbox object in Pushy Paws, not the adjective safe",
+    visualContext:
+      "SVG depicts a small heavy metal safe/lockbox with a dial and door",
+  },
+  Safe: {
+    purpose:
+      "short label for a small metal safe/lockbox object in Pushy Paws, not the adjective safe",
+    visualContext:
+      "SVG depicts a small heavy metal safe/lockbox with a dial and door",
+  },
+  "Suspicious Little Safe leaves the shelf.": {
+    purpose:
+      "status message when the small metal safe/lockbox object falls off the shelf in Pushy Paws",
+    visualContext:
+      "SVG depicts a small heavy metal safe/lockbox with a dial and door",
+  },
+  "Government Urn": {
+    purpose:
+      "name of the final boss object in Pushy Paws, an urn labeled Government",
+    visualContext:
+      "Large boss shelf object; SVG depicts an urn with a Government label",
+  },
+  Government: {
+    purpose:
+      "short label printed on the Government Urn boss object in Pushy Paws, not a general government menu section",
+    visualContext:
+      "Large boss shelf object; SVG depicts an urn with a Government label",
+  },
+  "The Government Urn has appeared. Ten clean paws decide everything.": {
+    shape: "body",
+    purpose:
+      "Pushy Paws boss announcement telling the player the Government Urn final object has appeared and needs ten cat swats",
+    visualContext:
+      "Status panel shown when the final Government Urn boss object appears on the shelf",
+  },
+  "Government has been toppled!": {
+    shape: "header",
+    purpose:
+      "Pushy Paws win headline after the player knocks the Government Urn boss object off the shelf",
+    visualContext:
+      "Victory screen shown after the final Government Urn boss object falls",
+  },
+  "Government urns toppled": {
+    shape: "label",
+    purpose:
+      "leaderboard stat label for how many Government Urn boss objects players have knocked over in Pushy Paws",
+    visualContext:
+      "Compact leaderboard metric label for Pushy Paws completions",
+  },
+  "Shelf liberated.": {
+    shape: "body",
+    purpose:
+      "short Pushy Paws victory status message after clearing the shelf",
+    visualContext: "Victory screen after the final boss object falls off the shelf",
+  },
+  "I'll do it again 😼": {
+    shape: "button",
+    purpose:
+      "Pushy Paws victory button to restart and play again with mischievous cat tone",
+    visualContext: "Restart button on the Pushy Paws victory screen",
+  },
+  "You win": {
+    shape: "label",
+    purpose: "short Pushy Paws victory badge shown when the player wins",
+    visualContext: "Small victory badge on the Pushy Paws completion screen",
+  },
   Righty: {
     shape: "button",
     purpose:

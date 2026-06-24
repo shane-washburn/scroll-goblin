@@ -12,7 +12,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 283,
+              "line": 290,
               "kind": "translation-call"
             }
           ]
@@ -48,7 +48,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 519,
+              "line": 522,
               "kind": "translation-call"
             }
           ]
@@ -144,7 +144,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 191,
+              "line": 198,
               "kind": "translation-call"
             }
           ]
@@ -162,7 +162,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 515,
+              "line": 518,
               "kind": "translation-call"
             }
           ]
@@ -228,7 +228,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 499,
+              "line": 807,
               "kind": "translation-call"
             }
           ]
@@ -276,7 +276,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 586,
+              "line": 925,
               "kind": "translation-call"
             }
           ]
@@ -294,7 +294,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 478,
+              "line": 766,
               "kind": "translation-call"
             }
           ]
@@ -378,7 +378,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 190,
+              "line": 197,
               "kind": "translation-call"
             }
           ]
@@ -396,7 +396,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 479,
+              "line": 767,
               "kind": "translation-call"
             }
           ]
@@ -414,7 +414,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 249,
+              "line": 261,
               "kind": "translation-call"
             }
           ]
@@ -432,7 +432,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 61,
+              "line": 62,
               "kind": "message-source"
             }
           ]
@@ -534,7 +534,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 354,
+              "line": 361,
               "kind": "translation-call"
             }
           ]
@@ -714,7 +714,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 138,
+              "line": 139,
               "kind": "message-source"
             }
           ]
@@ -804,7 +804,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 48,
+              "line": 64,
               "kind": "array-string"
             }
           ]
@@ -942,7 +942,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 196,
+              "line": 203,
               "kind": "translation-call"
             }
           ]
@@ -1194,7 +1194,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 81,
+              "line": 100,
               "kind": "object-name"
             }
           ]
@@ -1212,7 +1212,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 83,
+              "line": 102,
               "kind": "object-fall-message"
             }
           ]
@@ -1232,6 +1232,24 @@
               "file": "packages/shared/src/index.ts",
               "line": 159,
               "kind": "leaderboard-stat-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "762ee0989af33569108ad1e457093045",
+      "source": "Anvil",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "short label for a small decorative metal anvil object in Pushy Paws",
+          "visualContext": "SVG depicts a compact gray metal anvil sitting on the shelf",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 223,
+              "kind": "object-short-label"
             }
           ]
         }
@@ -1404,7 +1422,7 @@
           "locations": [
             {
               "file": "packages/shared/src/index.ts",
-              "line": 190,
+              "line": 191,
               "kind": "leaderboard-stat-label"
             }
           ]
@@ -1440,7 +1458,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 242,
+              "line": 249,
               "kind": "translation-call"
             },
             {
@@ -1486,7 +1504,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 315,
+              "line": 322,
               "kind": "translation-call"
             }
           ]
@@ -1516,7 +1534,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 333,
+              "line": 340,
               "kind": "translation-call"
             }
           ]
@@ -1546,7 +1564,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 341,
+              "line": 348,
               "kind": "translation-call"
             }
           ]
@@ -1630,7 +1648,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 58,
+              "line": 59,
               "kind": "message-source"
             }
           ]
@@ -1666,7 +1684,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 322,
+              "line": 329,
               "kind": "translation-call"
             }
           ]
@@ -1684,7 +1702,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 318,
+              "line": 325,
               "kind": "translation-call"
             }
           ]
@@ -1702,7 +1720,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 100,
+              "line": 101,
               "kind": "object-label"
             }
           ]
@@ -1930,7 +1948,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 440,
+              "line": 446,
               "kind": "translation-call"
             }
           ]
@@ -1948,7 +1966,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 474,
+              "line": 480,
               "kind": "translation-call"
             }
           ]
@@ -1966,7 +1984,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 59,
+              "line": 78,
               "kind": "object-name"
             }
           ]
@@ -1984,7 +2002,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 61,
+              "line": 80,
               "kind": "object-fall-message"
             }
           ]
@@ -2092,7 +2110,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 91,
+              "line": 92,
               "kind": "object-hint"
             }
           ]
@@ -2334,6 +2352,24 @@
       ]
     },
     {
+      "key": "452f809d8dc51300087f69573bf9b029",
+      "source": "Cauldron",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "short label for an overfilled iron cauldron object in Pushy Paws",
+          "visualContext": "SVG depicts a black iron cauldron filled with bubbling green liquid",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 197,
+              "kind": "object-short-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "46522a8942ccdc8dd85688d288b2fc3b",
       "source": "Ceramic mug",
       "contexts": [
@@ -2344,7 +2380,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 104,
+              "line": 123,
               "kind": "object-short-label"
             }
           ]
@@ -2362,7 +2398,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 103,
+              "line": 122,
               "kind": "object-name"
             }
           ]
@@ -2380,7 +2416,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 105,
+              "line": 124,
               "kind": "object-fall-message"
             }
           ]
@@ -2398,7 +2434,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 148,
+              "line": 167,
               "kind": "object-short-label"
             }
           ]
@@ -2434,7 +2470,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 204,
+              "line": 211,
               "kind": "translation-call"
             }
           ]
@@ -2452,7 +2488,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 94,
+              "line": 95,
               "kind": "object-label"
             }
           ]
@@ -2524,7 +2560,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 617,
+              "line": 979,
               "kind": "translation-call"
             }
           ]
@@ -2650,7 +2686,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 250,
+              "line": 257,
               "kind": "translation-call"
             }
           ]
@@ -2668,7 +2704,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 247,
+              "line": 254,
               "kind": "translation-call"
             }
           ]
@@ -3123,7 +3159,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 677,
+              "line": 703,
               "kind": "translation-call"
             }
           ]
@@ -3213,7 +3249,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 71,
+              "line": 90,
               "kind": "object-short-label"
             }
           ]
@@ -3267,7 +3303,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 580,
+              "line": 919,
               "kind": "translation-call"
             }
           ]
@@ -3393,7 +3429,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 514,
+              "line": 517,
               "kind": "translation-call"
             }
           ]
@@ -3879,7 +3915,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 339,
+              "line": 342,
               "kind": "translation-call"
             }
           ]
@@ -3915,7 +3951,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 746,
+              "line": 772,
               "kind": "translation-call"
             }
           ]
@@ -4191,7 +4227,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 446,
+              "line": 449,
               "kind": "translation-call"
             }
           ]
@@ -4209,7 +4245,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 92,
+              "line": 111,
               "kind": "object-name"
             }
           ]
@@ -4227,7 +4263,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 94,
+              "line": 113,
               "kind": "object-fall-message"
             }
           ]
@@ -4245,7 +4281,7 @@
           "locations": [
             {
               "file": "packages/shared/src/index.ts",
-              "line": 191,
+              "line": 192,
               "kind": "leaderboard-stat-label"
             }
           ]
@@ -4443,7 +4479,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 319,
+              "line": 326,
               "kind": "translation-call"
             }
           ]
@@ -4461,7 +4497,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 131,
+              "line": 138,
               "kind": "translation-call"
             }
           ]
@@ -4479,7 +4515,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 300,
+              "line": 307,
               "kind": "translation-call"
             }
           ]
@@ -4515,7 +4551,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 89,
+              "line": 90,
               "kind": "object-label"
             }
           ]
@@ -4551,7 +4587,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 416,
+              "line": 423,
               "kind": "translation-call"
             }
           ]
@@ -4718,7 +4754,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 890,
+              "line": 916,
               "kind": "translation-call"
             }
           ]
@@ -4736,7 +4772,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 886,
+              "line": 912,
               "kind": "translation-call"
             }
           ]
@@ -4849,7 +4885,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 136,
+              "line": 155,
               "kind": "object-name"
             }
           ]
@@ -4867,7 +4903,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 138,
+              "line": 157,
               "kind": "object-fall-message"
             }
           ]
@@ -4921,7 +4957,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 60,
+              "line": 61,
               "kind": "message-source"
             }
           ]
@@ -4939,7 +4975,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 50,
+              "line": 66,
               "kind": "array-string"
             }
           ]
@@ -4975,7 +5011,7 @@
           "locations": [
             {
               "file": "packages/shared/src/index.ts",
-              "line": 186,
+              "line": 187,
               "kind": "leaderboard-stat-label"
             }
           ]
@@ -5029,7 +5065,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 139,
+              "line": 140,
               "kind": "message-source"
             }
           ]
@@ -5047,7 +5083,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 436,
+              "line": 442,
               "kind": "translation-call"
             }
           ]
@@ -5101,7 +5137,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 332,
+              "line": 335,
               "kind": "translation-call"
             }
           ]
@@ -5287,7 +5323,7 @@
           "locations": [
             {
               "file": "packages/shared/src/index.ts",
-              "line": 194,
+              "line": 195,
               "kind": "leaderboard-stat-label"
             }
           ]
@@ -5307,6 +5343,88 @@
               "file": "packages/modules/slug-fencing/src/titles.ts",
               "line": 9,
               "kind": "array-string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "18450de39aceed82b26abe218d377740",
+      "source": "Government",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "short label printed on the Government Urn boss object in Pushy Paws, not a general government menu section",
+          "visualContext": "Large boss shelf object; SVG depicts an urn with a Government label",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 906,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ea694328e03aef3fd9b3ff9c5bbf10a2",
+      "source": "Government has been toppled!",
+      "contexts": [
+        {
+          "shape": "header",
+          "purpose": "Pushy Paws win headline after the player knocks the Government Urn boss object off the shelf",
+          "visualContext": "Victory screen shown after the final Government Urn boss object falls",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 71,
+              "kind": "array-string"
+            },
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 953,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "df34dc71eff0336e82948c837caa8e60",
+      "source": "Government Urn",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "name of the final boss object in Pushy Paws, an urn labeled Government",
+          "visualContext": "Large boss shelf object; SVG depicts an urn with a Government label",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 252,
+              "kind": "object-name"
+            },
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 253,
+              "kind": "object-short-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "a763a6912ca9396aa379b32f40db5dca",
+      "source": "Government urns toppled",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "leaderboard stat label for how many Government Urn boss objects players have knocked over in Pushy Paws",
+          "visualContext": "Compact leaderboard metric label for Pushy Paws completions",
+          "locations": [
+            {
+              "file": "packages/shared/src/index.ts",
+              "line": 180,
+              "kind": "leaderboard-stat-label"
             }
           ]
         }
@@ -5485,7 +5603,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 494,
+              "line": 497,
               "kind": "translation-call"
             }
           ]
@@ -5503,7 +5621,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 335,
+              "line": 338,
               "kind": "translation-call"
             }
           ]
@@ -5521,7 +5639,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 418,
+              "line": 421,
               "kind": "translation-call"
             }
           ]
@@ -5611,7 +5729,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 440,
+              "line": 443,
               "kind": "translation-call"
             }
           ]
@@ -5665,7 +5783,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 70,
+              "line": 89,
               "kind": "object-name"
             }
           ]
@@ -5683,7 +5801,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 72,
+              "line": 91,
               "kind": "object-fall-message"
             }
           ]
@@ -5943,6 +6061,24 @@
       ]
     },
     {
+      "key": "b5452113b21173f7d9e425bf746efd31",
+      "source": "I'll do it again 😼",
+      "contexts": [
+        {
+          "shape": "button",
+          "purpose": "Pushy Paws victory button to restart and play again with mischievous cat tone",
+          "visualContext": "Restart button on the Pushy Paws victory screen",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 960,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "6712dbd6b9de89b8b4560f91a3a3c4c7",
       "source": "I'm watching how you move",
       "contexts": [
@@ -6138,7 +6274,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 89,
+              "line": 90,
               "kind": "object-hint"
             }
           ]
@@ -6299,7 +6435,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 440,
+              "line": 443,
               "kind": "translation-call"
             }
           ]
@@ -6335,7 +6471,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 533,
+              "line": 868,
               "kind": "translation-call"
             }
           ]
@@ -6532,7 +6668,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 896,
+              "line": 922,
               "kind": "translation-call"
             }
           ]
@@ -6801,7 +6937,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 166,
+              "line": 173,
               "kind": "translation-call"
             }
           ]
@@ -6837,7 +6973,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 450,
+              "line": 457,
               "kind": "translation-call"
             }
           ]
@@ -6855,7 +6991,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 451,
+              "line": 458,
               "kind": "translation-call"
             }
           ]
@@ -6975,7 +7111,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 532,
+              "line": 535,
               "kind": "translation-call"
             }
           ]
@@ -7101,7 +7237,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 593,
+              "line": 932,
               "kind": "translation-call"
             }
           ]
@@ -7173,7 +7309,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 62,
+              "line": 63,
               "kind": "message-source"
             }
           ]
@@ -7191,7 +7327,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 447,
+              "line": 454,
               "kind": "translation-call"
             }
           ]
@@ -7353,7 +7489,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 168,
+              "line": 187,
               "kind": "object-short-label"
             }
           ]
@@ -7461,7 +7597,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 92,
+              "line": 93,
               "kind": "object-label"
             }
           ]
@@ -7479,7 +7615,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 163,
+              "line": 170,
               "kind": "translation-call"
             }
           ]
@@ -7653,7 +7789,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 59,
+              "line": 60,
               "kind": "message-source"
             }
           ]
@@ -7779,7 +7915,7 @@
           "locations": [
             {
               "file": "packages/shared/src/index.ts",
-              "line": 183,
+              "line": 184,
               "kind": "leaderboard-stat-label"
             }
           ]
@@ -7833,7 +7969,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 479,
+              "line": 482,
               "kind": "translation-call"
             }
           ]
@@ -7869,7 +8005,7 @@
           "locations": [
             {
               "file": "packages/shared/src/index.ts",
-              "line": 187,
+              "line": 188,
               "kind": "leaderboard-stat-label"
             }
           ]
@@ -7941,7 +8077,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 735,
+              "line": 761,
               "kind": "translation-call"
             },
             {
@@ -7964,7 +8100,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 249,
+              "line": 261,
               "kind": "translation-call"
             }
           ]
@@ -8062,6 +8198,42 @@
       ]
     },
     {
+      "key": "928e15f6b02c7fa7f21cf4d41982bebd",
+      "source": "Overfilled Iron Cauldron",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "name of an overfilled iron cauldron object in Pushy Paws",
+          "visualContext": "SVG depicts a black iron cauldron filled with bubbling green liquid",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 196,
+              "kind": "object-name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "7f7a8baf10ba503aab63f3db3213e091",
+      "source": "Overfilled Iron Cauldron leaves the shelf.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "status message when the overfilled iron cauldron object falls off the shelf in Pushy Paws",
+          "visualContext": "SVG depicts a black iron cauldron filled with bubbling green liquid",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 198,
+              "kind": "object-fall-message"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "7026deec11e651076d5c230535f4d677",
       "source": "Paint with potatoes",
       "contexts": [
@@ -8108,7 +8280,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 621,
+              "line": 983,
               "kind": "translation-call"
             }
           ]
@@ -8162,7 +8334,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 532,
+              "line": 535,
               "kind": "translation-call"
             }
           ]
@@ -8288,7 +8460,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 115,
+              "line": 134,
               "kind": "object-short-label"
             }
           ]
@@ -8324,7 +8496,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 221,
+              "line": 228,
               "kind": "translation-call"
             }
           ]
@@ -8383,7 +8555,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 516,
+              "line": 522,
               "kind": "translation-call"
             }
           ]
@@ -8437,7 +8609,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 137,
+              "line": 156,
               "kind": "object-short-label"
             }
           ]
@@ -8539,7 +8711,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 60,
+              "line": 79,
               "kind": "object-short-label"
             }
           ]
@@ -8557,7 +8729,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 114,
+              "line": 133,
               "kind": "object-name"
             }
           ]
@@ -8575,7 +8747,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 116,
+              "line": 135,
               "kind": "object-fall-message"
             }
           ]
@@ -8683,7 +8855,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 473,
+              "line": 479,
               "kind": "translation-call"
             }
           ]
@@ -8809,7 +8981,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 93,
+              "line": 94,
               "kind": "object-hint"
             }
           ]
@@ -8917,7 +9089,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 613,
+              "line": 975,
               "kind": "translation-call"
             }
           ]
@@ -8935,7 +9107,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 530,
+              "line": 865,
               "kind": "translation-call"
             }
           ]
@@ -8965,7 +9137,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 903,
+              "line": 929,
               "kind": "translation-call"
             }
           ]
@@ -9055,7 +9227,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 331,
+              "line": 338,
               "kind": "translation-call"
             }
           ]
@@ -9361,7 +9533,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 98,
+              "line": 99,
               "kind": "object-label"
             }
           ]
@@ -9523,7 +9695,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 239,
+              "line": 246,
               "kind": "translation-call"
             }
           ]
@@ -9559,7 +9731,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 91,
+              "line": 92,
               "kind": "object-label"
             }
           ]
@@ -9613,7 +9785,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 896,
+              "line": 922,
               "kind": "translation-call"
             }
           ]
@@ -9685,7 +9857,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 167,
+              "line": 186,
               "kind": "object-name"
             }
           ]
@@ -9703,7 +9875,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 158,
+              "line": 177,
               "kind": "object-short-label"
             }
           ]
@@ -9741,6 +9913,24 @@
               "file": "packages/modules/potato-painter/src/potato.ts",
               "line": 22,
               "kind": "object-name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "c6eea0560cd6f377e78dff2c85cc9122",
+      "source": "Safe",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "short label for a small metal safe/lockbox object in Pushy Paws, not the adjective safe",
+          "visualContext": "SVG depicts a small heavy metal safe/lockbox with a dial and door",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 236,
+              "kind": "object-short-label"
             }
           ]
         }
@@ -9847,7 +10037,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 94,
+              "line": 95,
               "kind": "object-hint"
             }
           ]
@@ -9949,7 +10139,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 82,
+              "line": 101,
               "kind": "object-short-label"
             }
           ]
@@ -10110,7 +10300,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 420,
+              "line": 423,
               "kind": "translation-call"
             }
           ]
@@ -10244,6 +10434,24 @@
       ]
     },
     {
+      "key": "2d0b13c91b5da8e1894e23d8cfc756b1",
+      "source": "Shelf liberated.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "short Pushy Paws victory status message after clearing the shelf",
+          "visualContext": "Victory screen after the final boss object falls off the shelf",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 72,
+              "kind": "array-string"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "ee110d5442ab2aa985b97a2ba099b289",
       "source": "Should I take the leap?",
       "contexts": [
@@ -10326,7 +10534,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 121,
+              "line": 130,
               "kind": "translation-call"
             }
           ]
@@ -10482,7 +10690,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 743,
+              "line": 769,
               "kind": "translation-call"
             },
             {
@@ -10671,7 +10879,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 341,
+              "line": 348,
               "kind": "translation-call"
             }
           ]
@@ -10683,7 +10891,7 @@
           "locations": [
             {
               "file": "packages/shared/src/index.ts",
-              "line": 182,
+              "line": 183,
               "kind": "leaderboard-stat-label"
             }
           ]
@@ -10791,7 +10999,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 51,
+              "line": 67,
               "kind": "array-string"
             }
           ]
@@ -10845,7 +11053,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 126,
+              "line": 145,
               "kind": "object-short-label"
             }
           ]
@@ -10863,7 +11071,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 125,
+              "line": 144,
               "kind": "object-name"
             }
           ]
@@ -10881,7 +11089,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 127,
+              "line": 146,
               "kind": "object-fall-message"
             }
           ]
@@ -10935,7 +11143,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 292,
+              "line": 299,
               "kind": "translation-call"
             }
           ]
@@ -10953,7 +11161,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 442,
+              "line": 449,
               "kind": "translation-call"
             }
           ]
@@ -11030,7 +11238,7 @@
             },
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 217,
+              "line": 224,
               "kind": "translation-call"
             }
           ]
@@ -11084,7 +11292,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 93,
+              "line": 94,
               "kind": "object-label"
             }
           ]
@@ -11120,7 +11328,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 170,
+              "line": 177,
               "kind": "translation-call"
             }
           ]
@@ -11192,7 +11400,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 90,
+              "line": 91,
               "kind": "object-label"
             }
           ]
@@ -11212,6 +11420,42 @@
               "file": "apps/web/src/pages/Landing.tsx",
               "line": 62,
               "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "cba708d988ead357e63b696b3299079d",
+      "source": "Suspicious Little Safe",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "name of a small metal safe/lockbox object in Pushy Paws, not the adjective safe",
+          "visualContext": "SVG depicts a small heavy metal safe/lockbox with a dial and door",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 235,
+              "kind": "object-name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2d7795e379c72de0140ea96b273403fc",
+      "source": "Suspicious Little Safe leaves the shelf.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "status message when the small metal safe/lockbox object falls off the shelf in Pushy Paws",
+          "visualContext": "SVG depicts a small heavy metal safe/lockbox with a dial and door",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 237,
+              "kind": "object-fall-message"
             }
           ]
         }
@@ -11246,7 +11490,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 565,
+              "line": 904,
               "kind": "translation-call"
             }
           ]
@@ -11318,7 +11562,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 57,
+              "line": 58,
               "kind": "message-source"
             }
           ]
@@ -11336,7 +11580,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 258,
+              "line": 265,
               "kind": "translation-call"
             }
           ]
@@ -11354,7 +11598,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 49,
+              "line": 65,
               "kind": "array-string"
             }
           ]
@@ -11372,8 +11616,26 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 538,
+              "line": 873,
               "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "14db617d9ae085eff161e57d2f1483f8",
+      "source": "Tax code",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "short label for a heavy tax law book/document object in Pushy Paws",
+          "visualContext": "SVG depicts a thick official-looking tax code book/document on the shelf",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 210,
+              "kind": "object-short-label"
             }
           ]
         }
@@ -11444,7 +11706,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 697,
+              "line": 723,
               "kind": "translation-call"
             }
           ]
@@ -11462,7 +11724,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 53,
+              "line": 69,
               "kind": "array-string"
             }
           ]
@@ -11840,8 +12102,26 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 147,
+              "line": 166,
               "kind": "object-name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "a85147e64bb8d67fc328940f5064cf5b",
+      "source": "The Government Urn has appeared. Ten clean paws decide everything.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "Pushy Paws boss announcement telling the player the Government Urn final object has appeared and needs ten cat swats",
+          "visualContext": "Status panel shown when the final Government Urn boss object appears on the shelf",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 70,
+              "kind": "array-string"
             }
           ]
         }
@@ -11858,7 +12138,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 133,
+              "line": 134,
               "kind": "message-source"
             }
           ]
@@ -11876,7 +12156,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 140,
+              "line": 141,
               "kind": "message-source"
             }
           ]
@@ -11894,7 +12174,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 134,
+              "line": 135,
               "kind": "message-source"
             }
           ]
@@ -12038,7 +12318,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 630,
+              "line": 656,
               "kind": "translation-call"
             }
           ]
@@ -12056,7 +12336,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 52,
+              "line": 68,
               "kind": "array-string"
             }
           ]
@@ -12236,7 +12516,7 @@
           "locations": [
             {
               "file": "packages/modules/balloon-blower/src/BalloonBlowerPage.tsx",
-              "line": 466,
+              "line": 473,
               "kind": "translation-call"
             }
           ]
@@ -12316,6 +12596,42 @@
       ]
     },
     {
+      "key": "b16f67e6d21640016266567a11eda9e1",
+      "source": "Tiny Decorative Anvil",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "name of a small decorative metal anvil object in Pushy Paws",
+          "visualContext": "SVG depicts a compact gray metal anvil sitting on the shelf",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 222,
+              "kind": "object-name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "c90a1c7b70b992ea48cde541c170c1b3",
+      "source": "Tiny Decorative Anvil leaves the shelf.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "status message when the small decorative metal anvil object falls off the shelf in Pushy Paws",
+          "visualContext": "SVG depicts a compact gray metal anvil sitting on the shelf",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 224,
+              "kind": "object-fall-message"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "3449dc4de825a9cf3fbe786063469d49",
       "source": "Tiny-Arm Rage Stomp",
       "contexts": [
@@ -12362,7 +12678,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 92,
+              "line": 93,
               "kind": "object-hint"
             }
           ]
@@ -12380,7 +12696,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 279,
+              "line": 291,
               "kind": "translation-call"
             }
           ]
@@ -12416,7 +12732,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 458,
+              "line": 464,
               "kind": "translation-call"
             }
           ]
@@ -12452,7 +12768,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 433,
+              "line": 439,
               "kind": "translation-call"
             }
           ]
@@ -12482,7 +12798,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 513,
+              "line": 519,
               "kind": "translation-call"
             }
           ]
@@ -12706,6 +13022,42 @@
       ]
     },
     {
+      "key": "7b51ef352221adef206ff45c5c290814",
+      "source": "Unabridged Tax Code",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "name of a heavy tax law book/document object in Pushy Paws",
+          "visualContext": "SVG depicts a thick official-looking tax code book/document on the shelf",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 209,
+              "kind": "object-name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "d99cd2d73ea5342c47a535430e4b028e",
+      "source": "Unabridged Tax Code leaves the shelf.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "status message when the heavy tax law book/document object falls off the shelf in Pushy Paws",
+          "visualContext": "SVG depicts a thick official-looking tax code book/document on the shelf",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 211,
+              "kind": "object-fall-message"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "a4fd1ff3ab1075fe7f3fb30ec3829a00",
       "source": "Uncommon",
       "contexts": [
@@ -12910,7 +13262,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 157,
+              "line": 176,
               "kind": "object-name"
             }
           ]
@@ -12969,7 +13321,7 @@
           "locations": [
             {
               "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
-              "line": 93,
+              "line": 112,
               "kind": "object-short-label"
             }
           ]
@@ -13041,7 +13393,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 90,
+              "line": 91,
               "kind": "object-hint"
             }
           ]
@@ -13059,7 +13411,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 468,
+              "line": 474,
               "kind": "translation-call"
             }
           ]
@@ -13077,7 +13429,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 519,
+              "line": 525,
               "kind": "translation-call"
             }
           ]
@@ -13329,7 +13681,7 @@
           "locations": [
             {
               "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
-              "line": 99,
+              "line": 100,
               "kind": "object-label"
             }
           ]
@@ -13401,7 +13753,7 @@
           "locations": [
             {
               "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
-              "line": 733,
+              "line": 759,
               "kind": "translation-call"
             }
           ]
@@ -13509,7 +13861,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 135,
+              "line": 136,
               "kind": "message-source"
             }
           ]
@@ -13527,7 +13879,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 137,
+              "line": 138,
               "kind": "message-source"
             }
           ]
@@ -13571,6 +13923,24 @@
       ]
     },
     {
+      "key": "5c39abc730cc23567774e94251d4d025",
+      "source": "You win",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "short Pushy Paws victory badge shown when the player wins",
+          "visualContext": "Small victory badge on the Pushy Paws completion screen",
+          "locations": [
+            {
+              "file": "packages/modules/pushy-paws/src/PushyPawsPage.tsx",
+              "line": 950,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "4fa9709afcdff43c0d7fc265290791c8",
       "source": "You're on {browser} / {operatingSystem} — a {device} in {location}, reading in {language}.",
       "contexts": [
@@ -13599,7 +13969,7 @@
           "locations": [
             {
               "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
-              "line": 136,
+              "line": 137,
               "kind": "message-source"
             }
           ]
@@ -13743,7 +14113,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 233,
+              "line": 240,
               "kind": "translation-call"
             }
           ]
@@ -13833,7 +14203,7 @@
           "locations": [
             {
               "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
-              "line": 365,
+              "line": 372,
               "kind": "translation-call"
             }
           ]
