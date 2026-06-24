@@ -177,6 +177,7 @@ export const STAT_METRICS: Record<string, Record<string, string>> = {
   },
   "pushy-paws": {
     pushed: "Items pushed",
+    wins: "Government urns toppled",
   },
   "musical-dna": {
     plays: "Songs played",

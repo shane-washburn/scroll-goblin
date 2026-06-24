@@ -14,19 +14,33 @@ import {
   playFall,
   playLevelUp,
   playTap,
+  playVictoryMusic,
+  preloadVictoryMusic,
+  stopVictoryMusic,
   type SoundKind,
 } from "./sounds";
+
+type ItemKind =
+  | SoundKind
+  | "cauldron"
+  | "anvil"
+  | "safe"
+  | "tax-code"
+  | "government-urn";
 
 interface ShelfItem {
   id: string;
   name: string;
   short: string;
   fallMessage?: string;
-  kind: SoundKind;
+  kind: ItemKind;
+  soundKind?: SoundKind;
   weight: number;
   points: number;
   rarity: number;
   color: string;
+  minLevel?: number;
+  boss?: boolean;
 }
 
 interface ActiveItem extends ShelfItem {
@@ -44,6 +58,7 @@ interface ShareState {
 
 const MODULE_ID = "pushy-paws";
 const SHARE_VERSION = 1;
+const BOSS_LEVEL = 30;
 const PUSHY_PAWS_MESSAGES = [
   "A shared shelf awaits further judgment.",
   "Tap the object once for each cat swat. Heavier targets need more paws.",
@@ -51,6 +66,9 @@ const PUSHY_PAWS_MESSAGES = [
   "Squeak. The cat looks personally betrayed.",
   "The rune stone detonates. Worth it.",
   "The chalice rings forever. Beautiful.",
+  "The Government Urn has appeared. Ten clean paws decide everything.",
+  "Government has been toppled!",
+  "Shelf liberated.",
 ];
 
 const ITEMS: ShelfItem[] = [
@@ -172,23 +190,104 @@ const ITEMS: ShelfItem[] = [
     rarity: 3,
     color: "#94a3b8",
   },
+  {
+    id: "cauldron",
+    name: "Overfilled Iron Cauldron",
+    short: "Cauldron",
+    fallMessage: "Overfilled Iron Cauldron leaves the shelf.",
+    kind: "cauldron",
+    soundKind: "plant",
+    weight: 138,
+    points: 8,
+    rarity: 4,
+    color: "#334155",
+    minLevel: 10,
+  },
+  {
+    id: "tax-code",
+    name: "Unabridged Tax Code",
+    short: "Tax code",
+    fallMessage: "Unabridged Tax Code leaves the shelf.",
+    kind: "tax-code",
+    soundKind: "books",
+    weight: 164,
+    points: 10,
+    rarity: 3,
+    color: "#0f766e",
+    minLevel: 16,
+  },
+  {
+    id: "anvil",
+    name: "Tiny Decorative Anvil",
+    short: "Anvil",
+    fallMessage: "Tiny Decorative Anvil leaves the shelf.",
+    kind: "anvil",
+    soundKind: "crystal",
+    weight: 190,
+    points: 12,
+    rarity: 3,
+    color: "#64748b",
+    minLevel: 22,
+  },
+  {
+    id: "safe",
+    name: "Suspicious Little Safe",
+    short: "Safe",
+    fallMessage: "Suspicious Little Safe leaves the shelf.",
+    kind: "safe",
+    soundKind: "books",
+    weight: 235,
+    points: 16,
+    rarity: 2,
+    color: "#475569",
+    minLevel: 26,
+  },
 ];
 
-function chooseItem(): ShelfItem {
-  const total = ITEMS.reduce((sum, item) => sum + item.rarity, 0);
+function bossItem(): ShelfItem {
+  const strength = strengthFor(BOSS_LEVEL);
+  return {
+    id: "government-urn",
+    name: "Government Urn",
+    short: "Government Urn",
+    fallMessage: PUSHY_PAWS_MESSAGES[7],
+    kind: "government-urn",
+    soundKind: "mug",
+    weight: strength * 10,
+    points: 100,
+    rarity: 0,
+    color: "#e5e7eb",
+    minLevel: BOSS_LEVEL,
+    boss: true,
+  };
+}
+
+function chooseItem(level: number): ShelfItem {
+  const pool = ITEMS.filter((item) => level >= (item.minLevel ?? 1));
+  const total = pool.reduce((sum, item) => sum + item.rarity, 0);
   let roll = Math.random() * total;
-  for (const item of ITEMS) {
+  for (const item of pool) {
     roll -= item.rarity;
     if (roll <= 0) return item;
   }
-  return ITEMS[0];
+  return pool[0] ?? ITEMS[0];
 }
 
-function makeActive(previousId?: string): ActiveItem {
-  let base = chooseItem();
-  if (base.id === previousId && Math.random() < 0.7) base = chooseItem();
+function scaledWeight(item: ShelfItem, level: number) {
+  if (item.boss) return item.weight;
+  const levelScale = 1 + Math.max(0, level - 1) * 0.026;
+  const lateGameScale = level >= 20 ? 1.15 : 1;
+  return Math.round(item.weight * levelScale * lateGameScale);
+}
+
+function makeActive(level = 1, previousId?: string): ActiveItem {
+  let base = level >= BOSS_LEVEL ? bossItem() : chooseItem(level);
+  if (!base.boss && base.id === previousId && Math.random() < 0.7) {
+    base = chooseItem(level);
+  }
   return {
     ...base,
+    weight: scaledWeight(base, level),
     nonce: Date.now() + Math.random(),
     x: 34 + Math.random() * 26,
     progress: 0,
@@ -204,7 +303,12 @@ function strengthFor(level: number) {
   return 14 + (level - 1) * 5;
 }
 
+function soundKindFor(item: ShelfItem): SoundKind {
+  return item.soundKind ?? (item.kind as SoundKind);
+}
+
 function messageFor(item: ShelfItem) {
+  if (item.boss) return item.fallMessage ?? PUSHY_PAWS_MESSAGES[7];
   if (item.kind === "mouse") return PUSHY_PAWS_MESSAGES[3];
   if (item.kind === "rune") return PUSHY_PAWS_MESSAGES[4];
   if (item.kind === "chalice") return PUSHY_PAWS_MESSAGES[5];
@@ -212,7 +316,7 @@ function messageFor(item: ShelfItem) {
   return item.fallMessage ?? `${item.name} leaves the shelf.`;
 }
 
-function ItemArt({ item }: { item: ShelfItem }) {
+function ItemArt({ item, governmentLabel }: { item: ShelfItem; governmentLabel: string }) {
   switch (item.kind) {
     case "potion":
       return (
@@ -309,10 +413,105 @@ function ItemArt({ item }: { item: ShelfItem }) {
           <path d="M64 36l11 7" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
         </svg>
       );
+    case "cauldron":
+      return (
+        <svg viewBox="0 0 94 82" className="h-full w-full">
+          <path d="M18 31h58l-8 36c-2 9-9 13-21 13s-19-4-21-13z" fill="#334155" stroke="#111827" strokeWidth="4" />
+          <path d="M20 31c5-14 50-14 56 0" fill="#64748b" stroke="#111827" strokeWidth="4" />
+          <path d="M15 39H7M79 39h8" stroke="#111827" strokeWidth="5" strokeLinecap="round" />
+          <circle cx="36" cy="25" r="5" fill="#86efac" />
+          <circle cx="51" cy="22" r="4" fill="#bbf7d0" />
+          <path d="M30 13c5-8 2-10 9-15M53 13c7-6 2-11 10-16" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" />
+        </svg>
+      );
+    case "tax-code":
+      return (
+        <svg viewBox="0 0 90 78" className="h-full w-full">
+          <rect x="15" y="12" width="56" height="54" rx="3" fill="#0f766e" stroke="#111827" strokeWidth="4" />
+          <path d="M27 12v54" stroke="#fef3c7" strokeWidth="5" />
+          <path d="M37 28h21M37 39h19M37 50h23" stroke="#ccfbf1" strokeWidth="3" strokeLinecap="round" />
+          <path d="M22 20l-7 46h49" fill="none" stroke="#111827" strokeWidth="4" strokeLinecap="round" />
+        </svg>
+      );
+    case "anvil":
+      return (
+        <svg viewBox="0 0 96 66" className="h-full w-full">
+          <path d="M17 21h47c13 0 18-7 22-12v25c-8 1-16 4-22 11H30c-4 0-8-3-8-8V29h-5z" fill="#94a3b8" stroke="#111827" strokeWidth="4" />
+          <path d="M35 45h22l6 14H29z" fill="#64748b" stroke="#111827" strokeWidth="4" />
+          <path d="M23 58h46" stroke="#111827" strokeWidth="5" strokeLinecap="round" />
+          <path d="M28 28h32" stroke="#cbd5e1" strokeWidth="4" strokeLinecap="round" />
+        </svg>
+      );
+    case "safe":
+      return (
+        <svg viewBox="0 0 84 84" className="h-full w-full">
+          <rect x="13" y="12" width="58" height="60" rx="7" fill="#475569" stroke="#111827" strokeWidth="4" />
+          <rect x="23" y="22" width="38" height="40" rx="4" fill="#64748b" stroke="#111827" strokeWidth="3" />
+          <circle cx="42" cy="42" r="12" fill="#cbd5e1" stroke="#111827" strokeWidth="4" />
+          <path d="M42 30v24M30 42h24M34 34l16 16M50 34L34 50" stroke="#111827" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M60 26h5v32h-5" stroke="#111827" strokeWidth="3" strokeLinecap="round" />
+        </svg>
+      );
+    case "government-urn":
+      return (
+        <svg viewBox="0 0 104 116" className="h-full w-full">
+          <path d="M34 7h36v16c0 7-5 12-12 14v5c18 6 29 23 26 45-2 17-14 25-32 25s-30-8-32-25c-3-22 8-39 26-45v-5c-7-2-12-7-12-14z" fill="#e5e7eb" stroke="#111827" strokeWidth="5" />
+          <path d="M31 22h42M25 83c12 8 42 8 54 0" stroke="#9ca3af" strokeWidth="5" strokeLinecap="round" />
+          <path d="M31 54h42v26H31z" fill="#fef3c7" stroke="#111827" strokeWidth="3" />
+          <text
+            x="52"
+            y="66"
+            textAnchor="middle"
+            fontSize="6.5"
+            fontWeight="900"
+            fill="#111827"
+            textLength="35"
+            lengthAdjust="spacingAndGlyphs"
+          >
+            {governmentLabel}
+          </text>
+          <path d="M23 51c-12 2-14 20-1 25M81 51c12 2 14 20 1 25" fill="none" stroke="#111827" strokeWidth="4" strokeLinecap="round" />
+        </svg>
+      );
   }
 }
 
-function Cat({ level, pawing }: { level: number; pawing: boolean }) {
+function CandyConfetti() {
+  const candies = [
+    "🍭", "🍬", "🍥", "🍡", "🍭", "🍬", "🍥", "🍡", "🍭", "🍬", "🍥", "🍡",
+    "🍭", "🍬", "🍥", "🍡", "🍭", "🍬", "🍥", "🍡", "🍭", "🍬", "🍥", "🍡",
+    "🍭", "🍬", "🍥", "🍡", "🍭", "🍬", "🍥", "🍡",
+  ];
+
+  return (
+    <div className="pointer-events-none absolute inset-0 z-[60] overflow-hidden" aria-hidden="true">
+      {candies.map((candy, index) => (
+        <span
+          key={`${candy}-${index}`}
+          className="absolute animate-[pushy-candy-fall_3800ms_cubic-bezier(.16,.68,.24,1)_infinite] text-4xl saturate-150 drop-shadow-[0_3px_0_#ffffff] sm:text-5xl"
+          style={{
+            left: `${(index * 37) % 100}%`,
+            animationDelay: `${(index % 8) * 180}ms`,
+            animationDuration: `${3300 + (index % 5) * 360}ms`,
+            transform: `rotate(${index * 23}deg)`,
+          }}
+        >
+          {candy}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function Cat({
+  level,
+  pawing,
+  victory = false,
+}: {
+  level: number;
+  pawing: boolean;
+  victory?: boolean;
+}) {
   const bulk = Math.min(1.38, 1 + (level - 1) * 0.055);
   const muscle = Math.min(1, (level - 1) / 5);
   const bicepRx = 18 + muscle * 22;
@@ -326,9 +525,91 @@ function Cat({ level, pawing }: { level: number; pawing: boolean }) {
       <g transform={`translate(36 20) scale(${bulk})`}>
         <ellipse cx="82" cy="98" rx="70" ry="48" fill="#f6b35f" stroke="#111827" strokeWidth="5" />
         <path d="M41 70c28 24 72 24 100 0 0 30-20 53-50 53S41 100 41 70z" fill="#ffe3b3" opacity="0.85" />
+        {victory && (
+          <g strokeLinecap="round" strokeLinejoin="round">
+            <path
+              d="M44 78c17 14 59 14 76 0M57 94c13 8 37 8 50 0"
+              fill="none"
+              stroke="#ffe3b3"
+              strokeWidth="5"
+              opacity="0.55"
+            />
+            <path
+              d="M82 76v42M66 89c8 10 24 10 32 0"
+              fill="none"
+              stroke="#111827"
+              strokeWidth="3"
+              opacity="0.42"
+            />
+          </g>
+        )}
         <path d="M19 93c-25 13-16 45 17 36" fill="none" stroke="#f6b35f" strokeWidth="18" strokeLinecap="round" />
         <path d="M19 93c-25 13-16 45 17 36" fill="none" stroke="#111827" strokeWidth="5" strokeLinecap="round" />
-        <g transform="translate(94 19)">
+        {victory && (
+          <g transform="translate(39 58) rotate(-72) scale(-1 1)">
+            <ellipse
+              cx="-13"
+              cy="-2"
+              rx={bicepRx * 1.08}
+              ry={bicepRy * 1.02}
+              fill="#f6b35f"
+              stroke="#111827"
+              strokeWidth="5"
+            />
+            <ellipse
+              cx="16"
+              cy="-37"
+              rx={forearmRx * 0.82}
+              ry={forearmRy * 1.1}
+              fill="#f6b35f"
+              stroke="#111827"
+              strokeWidth="5"
+              transform="rotate(-84 16 -37)"
+            />
+            <ellipse cx="18" cy="-67" rx="17" ry="14" fill="#ffe3b3" stroke="#111827" strokeWidth="4" />
+            <path
+              d={`M-${28 + muscle * 5} ${-8 - muscle * 5}c${10 + muscle * 9}-${7 + muscle * 9} ${28 + muscle * 8}-${3 + muscle * 4} ${35 + muscle * 2} 2`}
+              fill="none"
+              stroke="#ffe3b3"
+              strokeWidth={3 + muscle * 2}
+              strokeLinecap="round"
+              opacity={0.48 + muscle * 0.2}
+            />
+          </g>
+        )}
+        {victory && (
+          <g transform="translate(125 58) rotate(72)">
+            <ellipse
+              cx="-13"
+              cy="-2"
+              rx={bicepRx * 1.08}
+              ry={bicepRy * 1.02}
+              fill="#f6b35f"
+              stroke="#111827"
+              strokeWidth="5"
+            />
+            <ellipse
+              cx="16"
+              cy="-37"
+              rx={forearmRx * 0.82}
+              ry={forearmRy * 1.1}
+              fill="#f6b35f"
+              stroke="#111827"
+              strokeWidth="5"
+              transform="rotate(-84 16 -37)"
+            />
+            <ellipse cx="18" cy="-67" rx="17" ry="14" fill="#ffe3b3" stroke="#111827" strokeWidth="4" />
+            <path
+              d={`M-${28 + muscle * 5} ${-8 - muscle * 5}c${10 + muscle * 9}-${7 + muscle * 9} ${28 + muscle * 8}-${3 + muscle * 4} ${35 + muscle * 2} 2`}
+              fill="none"
+              stroke="#ffe3b3"
+              strokeWidth={3 + muscle * 2}
+              strokeLinecap="round"
+              opacity={0.48 + muscle * 0.2}
+            />
+          </g>
+        )}
+        <g transform={victory ? "translate(84 8)" : "translate(94 19)"}>
           {level >= 20 && (
             <g stroke="#111827" strokeLinecap="round" strokeLinejoin="round">
               <path
@@ -388,68 +669,70 @@ function Cat({ level, pawing }: { level: number; pawing: boolean }) {
           <path d="M2 34l-5 5h10z" fill="#fb7185" stroke="#111827" strokeWidth="2" />
           <path d="M-18 2l7 9M24 2l-8 9" stroke="#d97706" strokeWidth="4" strokeLinecap="round" />
         </g>
-        <g
-          className="transition-transform duration-100"
-          style={{
-            transform: pawing
-              ? "translate(128px, 72px) rotate(-6deg)"
-              : "translate(88px, 86px) rotate(8deg)",
-          }}
-        >
-          <ellipse
-            cx="-15"
-            cy="-3"
-            rx={bicepRx}
-            ry={bicepRy}
-            fill="#f6b35f"
-            stroke="#111827"
-            strokeWidth="5"
-          />
-          <ellipse
-            cx="3"
-            cy="2"
-            rx={forearmRx}
-            ry={forearmRy}
-            fill="#f6b35f"
-            stroke="#111827"
-            strokeWidth="5"
-          />
-          <path
-            d={`M-${28 + muscle * 8} ${-2 - muscle * 8}c${12 + muscle * 9}-${9 + muscle * 10} ${31 + muscle * 12}-${6 + muscle * 7} ${42 + muscle * 3} 3`}
-            fill="none"
-            stroke="#ffe3b3"
-            strokeWidth={3 + muscle * 2}
-            strokeLinecap="round"
-            opacity={0.42 + muscle * 0.18}
-          />
-          <path
-            d={`M-${25 + muscle * 4} ${8 + muscle * 4}c${9 + muscle * 8} ${7 + muscle * 8} ${27 + muscle * 8} ${8 + muscle * 3} ${39 + muscle * 4}-1`}
-            fill="none"
-            stroke="#c96b28"
-            strokeWidth={2 + muscle * 2}
-            strokeLinecap="round"
-            opacity={0.2 + muscle * 0.35}
-          />
-          {muscle > 0 && (
-            <g
+        {!victory && (
+          <g
+            className="transition-transform duration-100"
+            style={{
+              transform: pawing
+                ? "translate(128px, 72px) rotate(-6deg)"
+                : "translate(88px, 86px) rotate(8deg)",
+            }}
+          >
+            <ellipse
+              cx="-15"
+              cy="-3"
+              rx={bicepRx}
+              ry={bicepRy}
+              fill="#f6b35f"
+              stroke="#111827"
+              strokeWidth="5"
+            />
+            <ellipse
+              cx="3"
+              cy="2"
+              rx={forearmRx}
+              ry={forearmRy}
+              fill="#f6b35f"
+              stroke="#111827"
+              strokeWidth="5"
+            />
+            <path
+              d={`M-${28 + muscle * 8} ${-2 - muscle * 8}c${12 + muscle * 9}-${9 + muscle * 10} ${31 + muscle * 12}-${6 + muscle * 7} ${42 + muscle * 3} 3`}
               fill="none"
-              stroke="#38bdf8"
+              stroke="#ffe3b3"
+              strokeWidth={3 + muscle * 2}
               strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={veinWidth}
-              opacity={veinOpacity}
-            >
-              <path d={`M-${30 + muscle * 8} ${-8 - muscle * 7}c9 ${-4 - muscle * 4} 17 ${1 + muscle * 2} 25-5`} />
-              <path d={`M-${18 + muscle * 5} ${-9 - muscle * 5}l-${6 + muscle * 4}-${8 + muscle * 5}`} />
-              <path d={`M-${15 + muscle * 4} ${-7 - muscle * 4}l${8 + muscle * 5}-${7 + muscle * 4}`} />
-              <path d={`M-${25 + muscle * 6} ${3 + muscle * 2}c8 ${-3 - muscle * 3} 18 2 27-4`} />
-              <path d={`M-${12 + muscle * 3} ${2 + muscle}l-${5 + muscle * 3} ${8 + muscle * 3}`} />
-              <path d={`M-${9 + muscle * 2} ${1}l${7 + muscle * 4} ${6 + muscle * 3}`} />
-            </g>
-          )}
-          <ellipse cx="25" cy="1" rx="18" ry="15" fill="#ffe3b3" stroke="#111827" strokeWidth="4" />
-          <path d="M18 7l4 5M28 7l2 6M38 5v6" stroke="#111827" strokeWidth="2.5" strokeLinecap="round" />
-        </g>
+              opacity={0.42 + muscle * 0.18}
+            />
+            <path
+              d={`M-${25 + muscle * 4} ${8 + muscle * 4}c${9 + muscle * 8} ${7 + muscle * 8} ${27 + muscle * 8} ${8 + muscle * 3} ${39 + muscle * 4}-1`}
+              fill="none"
+              stroke="#c96b28"
+              strokeWidth={2 + muscle * 2}
+              strokeLinecap="round"
+              opacity={0.2 + muscle * 0.35}
+            />
+            {muscle > 0 && (
+              <g
+                fill="none"
+                stroke="#38bdf8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={veinWidth}
+                opacity={veinOpacity}
+              >
+                <path d={`M-${30 + muscle * 8} ${-8 - muscle * 7}c9 ${-4 - muscle * 4} 17 ${1 + muscle * 2} 25-5`} />
+                <path d={`M-${18 + muscle * 5} ${-9 - muscle * 5}l-${6 + muscle * 4}-${8 + muscle * 5}`} />
+                <path d={`M-${15 + muscle * 4} ${-7 - muscle * 4}l${8 + muscle * 5}-${7 + muscle * 4}`} />
+                <path d={`M-${25 + muscle * 6} ${3 + muscle * 2}c8 ${-3 - muscle * 3} 18 2 27-4`} />
+                <path d={`M-${12 + muscle * 3} ${2 + muscle}l-${5 + muscle * 3} ${8 + muscle * 3}`} />
+                <path d={`M-${9 + muscle * 2} ${1}l${7 + muscle * 4} ${6 + muscle * 3}`} />
+              </g>
+            )}
+            <ellipse cx="25" cy="1" rx="18" ry="15" fill="#ffe3b3" stroke="#111827" strokeWidth="4" />
+            <path d="M18 7l4 5M28 7l2 6M38 5v6" stroke="#111827" strokeWidth="2.5" strokeLinecap="round" />
+          </g>
+        )}
       </g>
     </svg>
   );
@@ -463,9 +746,12 @@ export default function PushyPawsPage() {
   const gameCardRef = useMobileGameFit<HTMLElement>({ align: "top" });
   const [pushed, setPushed] = useState(snapshot?.pushed ?? 0);
   const [score, setScore] = useState(snapshot?.score ?? 0);
-  const [item, setItem] = useState<ActiveItem>(() => makeActive());
+  const [item, setItem] = useState<ActiveItem>(() =>
+    makeActive(levelFor(snapshot?.pushed ?? 0))
+  );
   const [pawing, setPawing] = useState(false);
   const [shake, setShake] = useState(false);
+  const [won, setWon] = useState(false);
   const [message, setMessage] = useState(
     snapshot ? PUSHY_PAWS_MESSAGES[0] : PUSHY_PAWS_MESSAGES[1]
   );
@@ -478,18 +764,34 @@ export default function PushyPawsPage() {
       ? t("{points} chaos", { points: item.points })
       : t("+{points} chaos", { points: item.points });
 
-  const nextItem = (previous: ShelfItem) => {
-    setItem(makeActive(previous.id));
+  const nextItem = (previous: ShelfItem, nextLevel: number) => {
+    const next = makeActive(nextLevel, previous.id);
+    if (next.boss) {
+      preloadVictoryMusic();
+      setMessage(PUSHY_PAWS_MESSAGES[6]);
+    }
+    setItem(next);
+  };
+
+  const restart = () => {
+    stopVictoryMusic();
+    setPushed(0);
+    setScore(0);
+    setWon(false);
+    setShake(false);
+    setPawing(false);
+    setMessage(PUSHY_PAWS_MESSAGES[1]);
+    setItem(makeActive(1));
   };
 
   const swat = () => {
-    if (item.falling) return;
+    if (item.falling || won) return;
     playTap(strength);
     setPawing(true);
     if (pawTimer.current) clearTimeout(pawTimer.current);
     pawTimer.current = setTimeout(() => setPawing(false), 130);
 
-    const shove = strength * (0.75 + Math.random() * 0.35);
+    const shove = item.boss ? strength : strength * (0.75 + Math.random() * 0.35);
     const nextProgress = item.progress + shove;
     if (nextProgress < item.weight) {
       setItem((current) => ({
@@ -506,15 +808,25 @@ export default function PushyPawsPage() {
     setPushed(nextPushed);
     setScore((n) => Math.max(0, n + item.points));
     trackStat(MODULE_ID, "pushed");
-    playFall(item.kind);
-    window.setTimeout(() => playBreak(item.kind), FALL_SOUND_MS);
+    const soundKind = soundKindFor(item);
+    playFall(soundKind);
+    window.setTimeout(() => playBreak(soundKind), FALL_SOUND_MS);
     setMessage(messageFor(item));
-    if (item.kind === "rune") {
+    if (item.kind === "rune" || item.boss) {
       setShake(true);
       setTimeout(() => setShake(false), 420);
     }
+    if (item.boss) {
+      trackStat(MODULE_ID, "wins");
+      window.setTimeout(() => {
+        playVictoryMusic();
+        setWon(true);
+        setMessage(PUSHY_PAWS_MESSAGES[8]);
+      }, FALL_SOUND_MS + 2000);
+      return;
+    }
     if (nextLevel > level) playLevelUp();
-    window.setTimeout(() => nextItem(item), FALL_SOUND_MS + 360);
+    window.setTimeout(() => nextItem(item, nextLevel), FALL_SOUND_MS + 360);
   };
 
   const shareState = useMemo(
@@ -548,14 +860,18 @@ export default function PushyPawsPage() {
       >
         <div className="absolute inset-0 bg-[linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)] bg-[size:42px_42px] opacity-35" />
         <div className="absolute left-0 right-0 top-6 h-20 bg-[#fef3c7] shadow-[0_6px_0_#111827] sm:top-10 sm:h-24" />
-        <div className="absolute left-0 right-0 top-[236px] h-12 border-y-thick border-brand-border bg-[#b7794f] sm:top-[274px] sm:h-14" />
-        <div className="absolute left-0 right-0 top-[278px] h-8 bg-[#7c4a32] sm:top-[322px] sm:h-9" />
+        <div className="absolute left-0 right-0 top-[186px] h-12 border-y-thick border-brand-border bg-[#b7794f] sm:top-[216px] sm:h-14" />
+        <div className="absolute left-0 right-0 top-[228px] h-8 bg-[#7c4a32] sm:top-[264px] sm:h-9" />
 
         <button
           key={item.nonce}
           type="button"
           onClick={swat}
-          className={`absolute top-[208px] z-40 h-24 w-24 touch-manipulation select-none transition-transform duration-100 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary sm:top-[246px] sm:h-28 sm:w-28 ${
+          className={`absolute z-50 touch-manipulation select-none transition-transform duration-100 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary ${
+            item.boss
+              ? "top-[110px] h-[13.77rem] w-[13.77rem] sm:top-[126px] sm:h-[17.2125rem] sm:w-[17.2125rem]"
+              : "top-[158px] h-24 w-24 sm:top-[186px] sm:h-28 sm:w-28"
+          } ${
             item.falling ? "pointer-events-none animate-[pushy-fall_760ms_ease-in_forwards]" : "hover:scale-105 active:scale-95"
           }`}
           style={{
@@ -564,15 +880,15 @@ export default function PushyPawsPage() {
           }}
           aria-label={t("Swat {item}", { item: t(item.name) })}
         >
-          <ItemArt item={item} />
+          <ItemArt item={item} governmentLabel={t("Government")} />
         </button>
 
-        <div className="absolute bottom-0 left-0 z-30 h-[220px] w-[235px] sm:left-6 sm:h-[275px] sm:w-[340px]">
-          <Cat level={level} pawing={pawing} />
+        <div className="absolute left-0 top-[16px] z-30 h-[210px] w-[235px] sm:left-6 sm:top-[24px] sm:h-[275px] sm:w-[340px]">
+          <Cat level={level} pawing={pawing} victory={won} />
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-12 border-t-thick border-brand-border bg-[#5b3a29] sm:h-16" />
-        <div className="absolute left-2 top-2 z-40 w-[min(78vw,330px)] sm:left-4 sm:top-4 sm:w-[380px]">
+        <div className="absolute bottom-3 right-2 z-40 w-[min(82vw,350px)] sm:bottom-4 sm:right-4 sm:w-[390px]">
           <Card className="bg-brand-background/95 p-2.5 sm:p-4">
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
@@ -601,6 +917,29 @@ export default function PushyPawsPage() {
             </p>
           </Card>
         </div>
+
+        {won && (
+          <>
+            <CandyConfetti />
+            <div className="absolute inset-0 z-50 bg-brand-text/10">
+              <Card className="absolute bottom-3 right-2 w-[min(82vw,350px)] bg-brand-background p-5 text-center shadow-neo-lg sm:bottom-4 sm:right-4 sm:w-[390px]">
+                <p className="font-heading text-3xl uppercase leading-none text-brand-text sm:text-4xl">
+                  {t("You win")}
+                </p>
+                <p className="mt-3 text-sm font-bold leading-relaxed">
+                  {t("Government has been toppled!")}
+                </p>
+                <button
+                  type="button"
+                  onClick={restart}
+                  className="mt-4 rounded-neobrutal border-thick border-brand-border bg-brand-primary px-4 py-2 font-heading text-lg uppercase text-brand-text shadow-neo-sm transition-transform hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  {t("I'll do it again 😼")}
+                </button>
+              </Card>
+            </div>
+          </>
+        )}
       </section>
 
       <div className="flex flex-wrap gap-2">
@@ -628,6 +967,12 @@ export default function PushyPawsPage() {
           0% { opacity: 1; }
           45% { transform: translate(-50%, -50%) translateY(120px) rotate(42deg); opacity: 1; }
           100% { transform: translate(-50%, -50%) translateY(430px) rotate(130deg); opacity: 0; }
+        }
+        @keyframes pushy-candy-fall {
+          0% { opacity: 0; top: -16%; filter: brightness(1.2) saturate(1.5); transform: translateY(0) rotate(0deg) scale(0.82); }
+          14% { opacity: 1; }
+          82% { opacity: 1; }
+          100% { opacity: 0; top: 105%; filter: brightness(1.28) saturate(1.65); transform: translateY(60px) rotate(420deg) scale(1.18); }
         }
       `}</style>
     </div>
