@@ -1,4 +1,22 @@
-import { getAudioBus, getNoiseBuffer } from "@scroll-goblin/ui";
+import { getAudioBus, getNoiseBuffer, isMuted } from "@scroll-goblin/ui";
+
+const VICTORY_MUSIC_URL = Object.values(
+  import.meta.glob("./assets/pushy-paws-win.mp4", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  })
+)[0] as string;
+
+let victoryBufferPromise: Promise<AudioBuffer> | null = null;
+let victorySource: AudioBufferSourceNode | null = null;
+
+function loadVictoryBuffer(ac: AudioContext): Promise<AudioBuffer> {
+  victoryBufferPromise ??= fetch(VICTORY_MUSIC_URL)
+    .then((res) => res.arrayBuffer())
+    .then((buffer) => ac.decodeAudioData(buffer));
+  return victoryBufferPromise;
+}
 
 export type SoundKind =
   | "potion"
@@ -73,6 +91,37 @@ export function playLevelUp(): void {
   [0, 0.08, 0.16].forEach((offset, i) =>
     tone(ac, out, now + offset, 0.12, 360 + i * 180, 0.08, "sine")
   );
+}
+
+export function preloadVictoryMusic(): void {
+  const { ctx: ac } = getAudioBus();
+  void loadVictoryBuffer(ac);
+}
+
+export function playVictoryMusic(): void {
+  if (isMuted()) return;
+  const { ctx: ac, out } = getAudioBus();
+  void loadVictoryBuffer(ac).then((buffer) => {
+    stopVictoryMusic();
+    const src = ac.createBufferSource();
+    src.buffer = buffer;
+    src.loop = true;
+    const gain = ac.createGain();
+    gain.gain.value = 0.9;
+    src.connect(gain).connect(out);
+    victorySource = src;
+    src.start();
+  });
+}
+
+export function stopVictoryMusic(): void {
+  if (!victorySource) return;
+  try {
+    victorySource.stop();
+  } catch {
+    /* Already stopped. */
+  }
+  victorySource = null;
 }
 
 export const FALL_SOUND_MS = 760;
