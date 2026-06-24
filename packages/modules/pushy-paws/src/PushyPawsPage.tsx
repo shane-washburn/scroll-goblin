@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Card,
   MuteButton,
@@ -289,7 +289,7 @@ function makeActive(level = 1, previousId?: string): ActiveItem {
     ...base,
     weight: scaledWeight(base, level),
     nonce: Date.now() + Math.random(),
-    x: base.boss ? 66 : 34 + Math.random() * 26,
+    x: base.boss ? 74 : 48 + Math.random() * 24,
     progress: 0,
     falling: false,
   };
@@ -756,6 +756,7 @@ export default function PushyPawsPage() {
     snapshot ? PUSHY_PAWS_MESSAGES[0] : PUSHY_PAWS_MESSAGES[1]
   );
   const pawTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const victoryTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const level = levelFor(pushed);
   const strength = strengthFor(level);
   const progressPct = Math.min(100, (item.progress / item.weight) * 100);
@@ -774,6 +775,10 @@ export default function PushyPawsPage() {
   };
 
   const restart = () => {
+    if (victoryTimer.current) {
+      clearTimeout(victoryTimer.current);
+      victoryTimer.current = null;
+    }
     stopVictoryMusic();
     setPushed(0);
     setScore(0);
@@ -818,11 +823,11 @@ export default function PushyPawsPage() {
     }
     if (item.boss) {
       trackStat(MODULE_ID, "wins");
-      window.setTimeout(() => {
+      victoryTimer.current = window.setTimeout(() => {
         playVictoryMusic();
         setWon(true);
         setMessage(PUSHY_PAWS_MESSAGES[8]);
-      }, FALL_SOUND_MS + 2000);
+      }, FALL_SOUND_MS + 1000);
       return;
     }
     if (nextLevel > level) playLevelUp();
@@ -833,6 +838,14 @@ export default function PushyPawsPage() {
     () => () => ({ pushed, score, level }),
     [pushed, score, level]
   );
+
+  useEffect(() => {
+    return () => {
+      if (pawTimer.current) clearTimeout(pawTimer.current);
+      if (victoryTimer.current) clearTimeout(victoryTimer.current);
+      stopVictoryMusic();
+    };
+  }, []);
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-3 px-3 py-3 sm:gap-5 sm:px-4 sm:py-6">
