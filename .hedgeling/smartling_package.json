@@ -34360,11 +34360,11 @@
               "source": "gemini"
             },
             "ru-RU": {
-              "text": "🐌 Улиточные бои",
+              "text": "🐌 Слизнефехт",
               "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-06-19T02:13:32.799Z",
-              "source": "gemini"
+              "humanStatus": "verified",
+              "source": "human",
+              "updatedAt": "2026-06-28T07:22:08.453Z"
             },
             "es-ES": {
               "text": "🐌 Esgrima de babosas",
