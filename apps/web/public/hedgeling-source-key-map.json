@@ -206,6 +206,7 @@
     "Ancient Magic Scroll leaves the shelf.": "a1b0baa24133f42ef911e9cbe87ae9f0",
     "Android": "e84e30b9390cdb64db6db2c9ab87846d",
     "Another hit! The rival recoils in disgust.": "5e6f1d1f526e79e0e4fce7d3f5ef2b2a",
+    "Answers from God": "9020c0a035536b0b077d3c70caca39ad",
     "Antarctica (really?)": "c66fa72be0878ecbffb0e8afd27371e1",
     "Anthem": "e1b264fa574b7d2928a174cca3314fd9",
     "Anvil": "762ee0989af33569108ad1e457093045",
@@ -237,6 +238,7 @@
     "audio/webm": "d8f319cc60f78e23a966f0b74a917476",
     "audio/webm;codecs=opus": "20eb0166ad9de2e4fbcea081ebf5f088",
     "Aura": "6ed3cf13906dc93a2f205a19e122c640",
+    "Auras farmed": "4191368b74fa23beec35fa07475c07fc",
     "Australia": "4442e4af0916f53a07fb8ca9a49b98ed",
     "Australia/Sydney": "29d14b8bf8e1098db4fa13c453a3814a",
     "Average Slug": "277cc70b17e7a7f609f009140946556b",
@@ -287,6 +289,7 @@
     "Built different. Fast, relentless, terrifyingly aligned.": "8429cbd06db2cbecbd32a27b16e7d70d",
     "Built purely for fun — it is a novelty entertainment site, not a tool, product, or service.": "2dc11367e78bb4ac70e761eda6ddcb66",
     "Buttery and smug about it.": "c9a8540ab52cf682e757d8d2ab9e7cd9",
+    "Button pushes": "5c9804311036edde069a5d683c337f70",
     "C#": "d7efa19fbe7d3972fd5adb6024223d74",
     "Caffeinated Doomscroller": "9fbb175a7ab2600aa297ca7b5306951b",
     "Calibri": "f7cee5eaf81ca6750bedc48055a4dffb",
@@ -322,6 +325,7 @@
     "Chaos scrambles the mix — color theory politely leaves the room.": "5db47947db721dddf68e4e4c55d7a15e",
     "Chapter {chapter} · {age}": "acff5c43d264286879c0d60e21acf4a1",
     "Chapter {no} · {value0}": "cf926fced41ca191448770f693915787",
+    "Chicken squeezes": "6e65bd5cbce722249c39a3a128561cec",
     "Choose your brainrot spell": "03e40907eae80e82bbe536003146ea8a",
     "Choose your mode": "1adb68ef57445f7c513d1ede6cd2f9a1",
     "Chorus": "9dcf77c2f2237c9e2013ea0175bf1745",
@@ -380,6 +384,7 @@
     "Custom": "90589c47f06eb971d548591f23c285af",
     "Custom affirmation deployed.": "91e01438437d50bf259a15d85d867226",
     "Custom button armed. Preview it, save it, or smash it now.": "489bd2360d30caaf6413bfa61cae446c",
+    "Custom recordings": "52c45537cb6f53e723eafa4ae57a5283",
     "CUSTOM SPELL EXPIRED. DEFAULT BUTTON RESTORED.": "f052a2912f8c194107d2cf847b13bfbb",
     "Custom voice": "2f27b79e6766def352e4512f21ac7359",
     "CUSTOM VOICE ACTIVE": "6ae448f6823b1396c3ed08d0e10d4fe5",
@@ -439,11 +444,13 @@
     "Educational simulation. Real per-sale prices for one person run from fractions of a cent up to roughly $0.50; these figures are illustrative, scaled by the same criteria (engagement, device, market, location, re-identifiability) that data brokers use.": "f93c2ff36478fc6860a3f07c2d405cc4",
     "Educational simulation. The Goblin kept all of this on your device and sent none of it anywhere.": "2ee206b51bf51048748bbc1792a40b1b",
     "Eggs": "9890f06976131702b942e59eda2f750a",
+    "Eggs laid": "fe3f49d0798adc86225e2c9547798437",
     "Eggs Protected": "c46d0c335f1f195ff6af56df8ee34592",
     "Eggs: <0>🥚 {eggs}</0>": "117b4de05be2f3ceb3283596d095eec7",
     "eggsProtected": "490547f4ef17ba07d1e24d615e000a31",
     "Electric": "a74711a0a27d5306d53f17771c2161cb",
     "Emoji → Text": "f9eda21f6aa0601404ee1bb533cb4974",
+    "Emoji translations": "5f7044fec21b63934935bbbd7ad95fdf",
     "Emoji Translator": "17821a10400745194709fce7b87855e2",
     "Empty": "ce2c8aed9c2fa0cfbed56cbda4d8bf07",
     "Empty jar": "6e0a095b9d62ae062990d0da9a11242c",
@@ -456,6 +463,7 @@
     "Enabled": "00d23a76e43b46dae9ec7aa9dcbebb32",
     "Enchanted Wand": "b66ef86fcdf97877d86ce17682f18479",
     "Enchanted Wand leaves the shelf.": "b0b249463e0b8ca48339a9004ab7d525",
+    "Energy mixed": "bfcf3506f689f7beec318e5c4dffd752",
     "Engagement": "f034ccfdba0f830ec14d37f73be77578",
     "English": "78463a384a5aa4fad5fa73e2f506ecfc",
     "English (Australia)": "150425a9e856e8efd4d4ccb2fd977e2c",
@@ -523,6 +531,7 @@
     "Fwump. Deeply unsatisfying.": "7b0bff0b0d401f45d95e8bf776e72be7",
     "G#": "0c095cfc02d215118eee995ab679a00f",
     "Gamer Aura": "1d52ee6892e33465bb9af5c35c98d790",
+    "Games won as octopus": "f16e39fa9201043da18bdbf63ce5a160",
     "Garamond": "96a7872564f8ba8cb1d2975a13bde360",
     "Garden": "ea9f1881279a97a59f479e8d0a8bc695",
     "Georgia": "eada819634d0164c6a7547bdcc405033",
@@ -546,6 +555,7 @@
     "Goblin Surveillance Mirror": "d8de60cdc272cee8e2d9169b86ba170d",
     "Goblin Surveillance Report": "651ded75e0b4cca192eb114ea29708f5",
     "Goblin Surveillance Score": "0645068f1e4a6e5c2c1ecbcd3a812cd3",
+    "Goblins scanned": "5b0abc79ae560f2d9e31020871cb036f",
     "Golden": "7d2b88f5977b8a31c6193b4c81a43daf",
     "GOO TYCOON": "896decd0df498ad11b282aa3022fbfb9",
     "Government": "18450de39aceed82b26abe218d377740",
@@ -556,6 +566,8 @@
     "GPU": "52f9ec21735243ad9917cda3ca077d32",
     "Grab a spud, drag it onto the canvas, and stamp masterpieces. Every potato you use grows back different.": "e65cbe98ae5758ee3733adf113555345",
     "GRAND SLUGGER": "cbd2448105112ff90455c4bbdafe8033",
+    "Grass plucked": "0ac9875a8822dc33d81eead21d5558f0",
+    "Grass touches": "5d97a274c0a7695c11ed7b5a9d01dd81",
     "Green and chaotic. Claw hands. No touching grass.": "78e4a7326c54c2dd95dfefd8ea8c4cf4",
     "Green is a SECONDARY — yellow mixed with blue.": "678c5283588c304353b5174f964fd6d0",
     "Gremlin Aura": "709cf30c268cb694515830ee89b19c98",
@@ -594,6 +606,7 @@
     "High-value ad market": "6e8b744de19914ca7c29e18de0844273",
     "Highly Unique": "bcb71b56363c0913ba82fe48200c2e5c",
     "Histidine": "f03ab79ef0ab2085d5ebae1abc716b9d",
+    "Hits landed": "ace3bc0ae2977ee161e4b58dae5c4135",
     "Hold down on the chicken to squeeze the air out. Release and it screams its way back into shape. Deeper squeeze, bigger scream.": "9aea67c572fb2d45718c027f002f2ed9",
     "Hollow": "450cbae633304212e5e2cdf32ac17117",
     "HOME": "710533dd879dd1202e5c73b27705bf02",
@@ -637,6 +650,7 @@
     "Is it time to let go?": "58b2f566e8c0a2e75d57a4f0dc0eec12",
     "Isoleucine": "28cf66f57f7621566f9503980a2b638f",
     "It lost you in your camouflage.": "91c79f3e2d41737d9d8c4f160c7c2c1a",
+    "Items pushed": "8200e99d9964a0a85e61050e86246372",
     "Jazz": "9a284efda4d46636bd9d5298dfea1335",
     "Just now": "58038ee4a4e2d0e2f764aa223fbecfae",
     "Keep raising it…": "edc88385482c9c474da9591cd9cfe174",
@@ -691,6 +705,7 @@
     "Loyal Returning Specimen": "fe5879874f135b031dd78786c4536611",
     "Lunar Moonwalk": "f48b9b93f3ef0d4f5ed31cfa62ce8954",
     "Lunges": "6b38310863bdd5631c22400cb4846a6a",
+    "Lunges thrown": "213655080c5bfd374417971e061ec977",
     "Lurker": "3242698d7d5aec57dba2890244f01b4b",
     "Lv {level}": "6a4dbc41d56d288fdcc6f6f2533f4694",
     "Lydian": "b1cfb8d73516579a3d9e11d16377205a",
@@ -770,11 +785,13 @@
     "Norway": "d5b9290a0b67727d4ba1ca6059dc31a6",
     "NotAllowedError": "7802c5c0f76a9f0cd41432e20f243ad7",
     "Note:": "fc9d3df613063ee57906c461320744e2",
+    "Notes sequenced": "f024a3dbe500628afbb0a5f021d46b49",
     "Notice how each permission hands me a brand-new sense. Saying no is always a valid move — that's the whole point.": "e74a548442b95f2abd75c6cdd06faab1",
     "Notifications": "a274f4d4670213a9045ce258c6c56b80",
     "Now dancing:": "cd3644325d39f50016ef64ad5b9966c0",
     "Ocean Aura": "cf1f8a201d5a6e6955191aa5fce220a3",
     "Octopus": "f4f71aeb5fd31cb543b0f8f4113ffb81",
+    "Octopus deaths": "2220877465d58ae6ac3afbeaf434907e",
     "Off": "d15305d7a4e34e02489c74a5ef542f36",
     "Ominous": "2f70b6e353bcd8d510610389ccea0469",
     "On": "521c36a31c2762741cf0f8890cbe05e3",
@@ -831,6 +848,7 @@
     "POST": "a02439ec229d8be0e74b0c1602392310",
     "Potato Painter": "3df9340f24f273b8e3b94195098592cd",
     "potato-{value0}": "0fb4e1daa796758724e15bfd9aa437d8",
+    "Potatoes stamped": "d5581d98c97ae696fb8d020098853f75",
     "Potatoes used": "cc819c1daa74d1bf8041614d44d6bb02",
     "Potatoes used: <0>{used}</0>": "d8395e5a73cdbc7ca27400a61db95a65",
     "Potion": "f7f5d540f521d6d642502a9d459e7b16",
@@ -964,6 +982,7 @@
     "Scrambles everything. Anything can happen.": "370c6ba155a021be3a594d740eb38065",
     "Screaming Chicken": "08d2e8ec5bbc8ed4c5918aaf1512e889",
     "Screams": "37d94670e4261b0b3caa6b8b2a777299",
+    "Screams unleashed": "b08d895dee0fea8a5371451ade15c907",
     "Screams: <0>{screams}</0>": "0348e1c15a0082e363a378ab4a48b173",
     "Screen": "2fc3359e12b2a9104121dcf04246f6a0",
     "Scroll": "105078d294d30c978ca2badf7f376934",
@@ -1232,6 +1251,7 @@
     "Warms it up, grows fastest": "3b270cbfbbb3f0fdb0d8326f364e3cdb",
     "Water": "27634ff8002b12e75d98e07ccd005d18",
     "Waterings": "9530aff942e829d59618cf7d505e8f50",
+    "Waterings poured": "3abba7f45a5df4a747703512a7c95b85",
     "Waterings: <0>{waters}</0>": "370b4ff4c1f8e9b358394b77d1cae9ea",
     "WEBGL_debug_renderer_info": "fd24b40311679f21554a2ea751b54886",
     "Websites infer who you are from behavior alone — no name required. These metrics update live.": "ded7e16828852873c4e81575c86bb737",
@@ -1289,32 +1309,96 @@
     "Yukon Gold": "6b6a1b8220bfc2890fbeab028a97aab7",
     "Русский": "a5c072fa947c0f5677a599b14f3fd48c",
     "Українська": "e1c319e56cddb033e36ac4c1c92fc996",
-    "हिन्दी": "450e0a7004f052c5cacb05548a10bedf",
-    "Answers from God": "9020c0a035536b0b077d3c70caca39ad",
-    "Auras farmed": "4191368b74fa23beec35fa07475c07fc",
-    "Button pushes": "5c9804311036edde069a5d683c337f70",
-    "Chicken squeezes": "6e65bd5cbce722249c39a3a128561cec",
-    "Custom recordings": "52c45537cb6f53e723eafa4ae57a5283",
-    "Eggs laid": "fe3f49d0798adc86225e2c9547798437",
-    "Emoji translations": "5f7044fec21b63934935bbbd7ad95fdf",
-    "Energy mixed": "bfcf3506f689f7beec318e5c4dffd752",
-    "Games won as octopus": "f16e39fa9201043da18bdbf63ce5a160",
-    "Goblins scanned": "5b0abc79ae560f2d9e31020871cb036f",
-    "Grass plucked": "0ac9875a8822dc33d81eead21d5558f0",
-    "Grass touches": "5d97a274c0a7695c11ed7b5a9d01dd81",
-    "Hits landed": "ace3bc0ae2977ee161e4b58dae5c4135",
-    "Items pushed": "8200e99d9964a0a85e61050e86246372",
-    "Lunges thrown": "213655080c5bfd374417971e061ec977",
-    "Notes sequenced": "f024a3dbe500628afbb0a5f021d46b49",
-    "Octopus deaths": "2220877465d58ae6ac3afbeaf434907e",
-    "Potatoes stamped": "d5581d98c97ae696fb8d020098853f75",
-    "Screams unleashed": "b08d895dee0fea8a5371451ade15c907",
-    "Waterings poured": "3abba7f45a5df4a747703512a7c95b85"
+    "हिन्दी": "450e0a7004f052c5cacb05548a10bedf"
   },
   "sources": [
     {
+      "source": "-{value0}ms",
+      "key": "edb49c68610fae425a3bfe2530d927a0"
+    },
+    {
+      "source": "!bg-brand-warning",
+      "key": "776b934ed5d4a7e9622e276b45784ddc"
+    },
+    {
+      "source": "?url",
+      "key": "1ad4c671c589a4e16dbc24a6af200741"
+    },
+    {
       "source": "…or type / paste here (your name works too — non-amino letters are dropped)",
       "key": "f4078ba042990272cc8678168e4ed1d0"
+    },
+    {
+      "source": "./assets/*",
+      "key": "f0e50178d63e3e5f609173de01f4d036"
+    },
+    {
+      "source": "./assets/pushy-paws-win.mp4",
+      "key": "06cd8cb2939da1f8df533f3b74c5d208"
+    },
+    {
+      "source": "./assets/sigma-boy.mp3",
+      "key": "042160e2ff1c98b827af836530950f26"
+    },
+    {
+      "source": "./AuraFarmPage",
+      "key": "0ac3782b420a3269c2009ded66052217"
+    },
+    {
+      "source": "./BalloonBlowerPage",
+      "key": "7a549a42cf0fce9724920e4f81f5f6a2"
+    },
+    {
+      "source": "./BrainrotButtonPage",
+      "key": "f04c780fba8ac80874bbee5c02516260"
+    },
+    {
+      "source": "./CommuneWithGodPage",
+      "key": "d90e6a304339668142f22079ea64c56f"
+    },
+    {
+      "source": "./EmojiTranslatorPage",
+      "key": "1ff45d7c467e3ed7b2f276d596e69df8"
+    },
+    {
+      "source": "./GoblinMirrorPage",
+      "key": "d49df3b52850733f0970159523fb4d07"
+    },
+    {
+      "source": "./LifeOfAnOctopusPage",
+      "key": "10c6451107c9f986a186d08165e96ff9"
+    },
+    {
+      "source": "./MusicalDnaPage",
+      "key": "6a3afeea455e87f39813a31df39e2eb8"
+    },
+    {
+      "source": "./PotatoPainterPage",
+      "key": "ce4b7e334aeb9dc64bac102b26cfb526"
+    },
+    {
+      "source": "./PushyPawsPage",
+      "key": "12ec788f4592159115cdae4009a8c931"
+    },
+    {
+      "source": "./ScreamingChickenPage",
+      "key": "1766a6d51add7c800ca751fe906aee59"
+    },
+    {
+      "source": "./SlugDuelPage",
+      "key": "a45c30e866b0350c2e1e7ed575dc90a7"
+    },
+    {
+      "source": "./TouchGrassPage",
+      "key": "a10c161b9dc10e8adf9b92a207c171cc"
+    },
+    {
+      "source": "(prefers-color-scheme: dark)",
+      "key": "01eeb91a15a4bc5abe5576c7afc5ae23"
+    },
+    {
+      "source": "(prefers-reduced-motion: reduce)",
+      "key": "a68607cafe9d952370d4c3633d42327c"
     },
     {
       "source": "(survives wipes)",
@@ -1323,6 +1407,10 @@
     {
       "source": "(tap a discovered dance to perform it)",
       "key": "3a775becc383bb9a75b3f675e8b82095"
+    },
+    {
+      "source": "{colorDepth}-bit",
+      "key": "086860ad482a55ffe111a8c43c0fbfb8"
     },
     {
       "source": "{confidence} confidence",
@@ -1349,6 +1437,22 @@
       "key": "cd955c28608dd452da4f8ebdc72f92e7"
     },
     {
+      "source": "{days} days ago",
+      "key": "21040be428d3d917781bf3623fc15282"
+    },
+    {
+      "source": "{drift}px",
+      "key": "1b04da4ee404d802b68a7fd37860648f"
+    },
+    {
+      "source": "{h}h {m}m",
+      "key": "32e6dc3e300b8fe9129c83066d522129"
+    },
+    {
+      "source": "{hours} hours ago",
+      "key": "9caad9900751c93ff1ac7154cd6ed975"
+    },
+    {
       "source": "{hours}h {minutes}m",
       "key": "6dc97c87386c949982eedd564c6c59ed"
     },
@@ -1357,8 +1461,44 @@
       "key": "16f09a82b5962f2986b479b4fbfd93c7"
     },
     {
+      "source": "{length}/{value0} detected",
+      "key": "07f1540058e4cf59ff0dcbb23f5535f0"
+    },
+    {
+      "source": "{m}m {s}s",
+      "key": "aee6baed3243396557d43cd622d7ec87"
+    },
+    {
+      "source": "{m}m {value0}s",
+      "key": "4272fd6913f4d6a4bb8d1854d3882141"
+    },
+    {
+      "source": "{mem} GB",
+      "key": "ce9ac1f5bae28b43de913b71b91ee302"
+    },
+    {
       "source": "{minutes}m {seconds}s",
       "key": "a6a906d8a5a1c22823a49d4b73a32686"
+    },
+    {
+      "source": "{name} leaves the shelf.",
+      "key": "b4c2acfd9dfca17023368cbd3b0d3859"
+    },
+    {
+      "source": "{name}=; path=/; max-age=0; SameSite=Lax",
+      "key": "f90cfb182e0520263e1cb875a82385b3"
+    },
+    {
+      "source": "{name}={value0}; path=/; max-age={maxAge}; SameSite=Lax",
+      "key": "ab97b1195f05cd7adbe8a55553256c4e"
+    },
+    {
+      "source": "{noteCount} notes",
+      "key": "415d8fb558bc053847651eda8ef60898"
+    },
+    {
+      "source": "{origin}/apps/slug-fencing?room={roomId}",
+      "key": "77dd65837c7846ded5518493c2095cce"
     },
     {
       "source": "{points} / weight {weight}",
@@ -1369,6 +1509,38 @@
       "key": "49675203d01609f0accd2a5a9f2c7130"
     },
     {
+      "source": "{pushLabel} / weight {weight}",
+      "key": "d5a7dbc5d94486da5be9f29eddaca3a2"
+    },
+    {
+      "source": "{recordingSeconds}s / 10s",
+      "key": "033e913de88bb54a485901b2555a81fe"
+    },
+    {
+      "source": "{region} (near {city})",
+      "key": "d67b8970c9fcf6053ad8512e97658152"
+    },
+    {
+      "source": "{ROOMS_URL}/{roomId}/guest-sync",
+      "key": "852246a922e8a08dfa05ebcf8a232dde"
+    },
+    {
+      "source": "{ROOMS_URL}/{roomId}/host-sync",
+      "key": "993d1d0ee0f63609badad801a9f1592e"
+    },
+    {
+      "source": "{ROOMS_URL}/{roomId}/join",
+      "key": "61d71bbb345ecdee83fd37e58a34ac0c"
+    },
+    {
+      "source": "{s}s",
+      "key": "02bfa4f10dbedd07b16abd80c77f8070"
+    },
+    {
+      "source": "{screenRes} @ {pixelRatio}x",
+      "key": "e1443cd3c7213a6c92bfe1edcfd6c88a"
+    },
+    {
       "source": "{seconds}s",
       "key": "5863d63d1319d13645a4a028420ec253"
     },
@@ -1377,12 +1549,184 @@
       "key": "1debe5b37607c05751cc5dc35b2fa066"
     },
     {
+      "source": "{short} scoots closer to doom.",
+      "key": "66dd5c908ed28a5d3260980df1d5cdb9"
+    },
+    {
       "source": "{size} captured",
       "key": "847bd63c2ba88623326d3fe52046ceee"
     },
     {
+      "source": "{size}/{total} unlocked",
+      "key": "a448790e8f67256a9122edd3fd1df791"
+    },
+    {
+      "source": "{size}px",
+      "key": "e872edf7c192d2774168649e31317f48"
+    },
+    {
+      "source": "{speed} · Data Saver on",
+      "key": "ee21bb888836710d639502e160ecf59a"
+    },
+    {
       "source": "{tempo} BPM",
       "key": "f7b2e59ada25f957a9f6261ff1614c42"
+    },
+    {
+      "source": "{touch} ({touchPoints} pts)",
+      "key": "0b6c8aeeef3615c811152bf3e6b0389f"
+    },
+    {
+      "source": "{value0} billion",
+      "key": "93e4d3cd9f3c27b91088aa6929e2cdf7"
+    },
+    {
+      "source": "{value0} captured",
+      "key": "9f5610e5e6e81e99d6ca01630ca06a52"
+    },
+    {
+      "source": "{value0} million",
+      "key": "ccda2ef165bb05b9cf7613b33e2133b2"
+    },
+    {
+      "source": "{value0}KB",
+      "key": "d8fd9583772eec0332f7a769a9788aa2"
+    },
+    {
+      "source": "{value0}ms",
+      "key": "46254a4129d0c6868513c5d2b8444d4a"
+    },
+    {
+      "source": "{value0}px",
+      "key": "5f3f2ffa2c8be8152b213ebc4533fde2"
+    },
+    {
+      "source": "{visits} visits",
+      "key": "368127c373e83d8953ffb94c4292f142"
+    },
+    {
+      "source": "@keyframes pushy-fall { 0% { opacity: 1; } 45% { transform: translate(-50%, -50%) translateY(120px) rotate(42deg); opacity: 1; } 100% { transform: translate(-50%, -50%) translateY(430px) rotate(130deg); opacity: 0; } } @keyframes pushy-candy-fall { 0% { opacity: 1; top: -16%; filter: brightness(1.2) saturate(1.5); transform: translateY(0) rotate(0deg) scale(0.82); } 14% { opacity: 1; } 82% { opacity: 1; } 100% { opacity: 0; top: 105%; filter: brightness(1.28) saturate(1.65); transform: translateY(60px) rotate(420deg) scale(1.18); } }",
+      "key": "6ef729af4eb578d8cc19466c8cac2e62"
+    },
+    {
+      "source": "@keyframes slugConfettiFall { 0% { transform: translate(0, 0) rotate(0deg); opacity: 1; } 100% { transform: translate(var(--slug-confetti-drift, 0), 110vh) rotate(720deg); opacity: 0.9; } }",
+      "key": "4045ef932288b387befecca5dcc258c2"
+    },
+    {
+      "source": "@keyframes slugCountPop{0%{transform:scale(0.4);opacity:0}40%{transform:scale(1.15);opacity:1}100%{transform:scale(1);opacity:1}}",
+      "key": "2c6da4445617ea441d1b616b02899d3b"
+    },
+    {
+      "source": "@keyframes slugVictoryFade{from{opacity:0}to{opacity:1}}@keyframes slugVictoryPop{0%{transform:scale(0.8) translateY(12px);opacity:0}100%{transform:scale(1) translateY(0);opacity:1}}",
+      "key": "c277319acf984ba5510e506af117151d"
+    },
+    {
+      "source": "#00BFFF",
+      "key": "a06bc9acc3261a1979dda518a149f793"
+    },
+    {
+      "source": "#22C55E",
+      "key": "ee0d66b82d87dfcd063d30411e2040b9"
+    },
+    {
+      "source": "#39FF14",
+      "key": "259c2eabe7e9a08ceb9ba789d05ef8ec"
+    },
+    {
+      "source": "#3B82F6",
+      "key": "2b3e3d51bd4b1773ecf63ff55bf09f19"
+    },
+    {
+      "source": "#8B4513",
+      "key": "bba3b1d80f62846d1100050dc34b4737"
+    },
+    {
+      "source": "#A855F7",
+      "key": "dc60fe075d574515da5e850f10da3484"
+    },
+    {
+      "source": "#B388FF",
+      "key": "7aed35ca5d1b1dc1c4309b8ad699d398"
+    },
+    {
+      "source": "#CBD5E1",
+      "key": "2c166c386b333ef9e215d42baa5647fa"
+    },
+    {
+      "source": "#D1FAE5",
+      "key": "1b96901daafd5d27eba013aef03ad0c6"
+    },
+    {
+      "source": "#DCFCE7",
+      "key": "07c14d9434620e50fd5942c85540ec81"
+    },
+    {
+      "source": "#DDD6FE",
+      "key": "318b67d08f77ae2cfebb03ff87e3f98e"
+    },
+    {
+      "source": "#E0F2FE",
+      "key": "91c11a839f9dced4353f520db60c877a"
+    },
+    {
+      "source": "#E2E8F0",
+      "key": "0c39e19a079f0bf0de728726739dfafd"
+    },
+    {
+      "source": "#E7E5C8",
+      "key": "48315270e4919ae1e7f68b9ed413d5f6"
+    },
+    {
+      "source": "#E9D5FF",
+      "key": "e499f0a4f27c3120a1222ecf0b0fe5d6"
+    },
+    {
+      "source": "#EAEAEA",
+      "key": "ab1ac1a763691e1960e1aa4781727873"
+    },
+    {
+      "source": "#EC4899",
+      "key": "97751d7f69c972ce2258e26b179f7f45"
+    },
+    {
+      "source": "#F1F5F9",
+      "key": "a03090a263cc5d21aa37b8a13e91e4a1"
+    },
+    {
+      "source": "#F97316",
+      "key": "e304fc750851c96048631ade0a10c63e"
+    },
+    {
+      "source": "#FACC15",
+      "key": "aa85d4ecd3147fc500c5e7a76da2f839"
+    },
+    {
+      "source": "#FEF9C3",
+      "key": "fa6dbaec8a12655f8868a932111e8895"
+    },
+    {
+      "source": "#FF003C",
+      "key": "b23fcbe565682788940dd3b1d429c8ee"
+    },
+    {
+      "source": "#FF6EC7",
+      "key": "3fbc518455860941b6db23ea26a2981a"
+    },
+    {
+      "source": "#FF9100",
+      "key": "959f13983d5f950abb0ecf1314278fc5"
+    },
+    {
+      "source": "#FFEA00",
+      "key": "660824b0d8b62919ac03284ba574bd92"
+    },
+    {
+      "source": "#FFFFFF",
+      "key": "262da8014d7d6e3c30cd4b6a9bb7a338"
+    },
+    {
+      "source": "← Back",
+      "key": "fa9309cd5ba2f89ef8590aa88cbc9579"
     },
     {
       "source": "+{points} chaos",
@@ -1391,6 +1735,22 @@
     {
       "source": "+1 point!",
       "key": "a8fbe40cf3123798cf862820ec6657f9"
+    },
+    {
+      "source": "<0></0> <1></1> <2></2> <3> Brainrot </3>",
+      "key": "0eef46baf313bd3c6ce8cf17ee88f847"
+    },
+    {
+      "source": "<0></0> Extended (dashed)",
+      "key": "f4c0efe45dab8bb112e51e881740b7cb"
+    },
+    {
+      "source": "<0>Growth</0> <1> Seedling </1>",
+      "key": "277d06a25b080b22021254e7fba5de4e"
+    },
+    {
+      "source": "<0>Health</0>",
+      "key": "c77f51043708c6decd788a71b2ad51d7"
     },
     {
       "source": "✋ Touch",
@@ -1413,8 +1773,20 @@
       "key": "b5f5490f81d1dba20565de003ae5a001"
     },
     {
+      "source": "🐌 Slug Duel",
+      "key": "fcfe1296fbc0eeebaf982e2c7650bb1e"
+    },
+    {
       "source": "🐌 Slug Fencing",
       "key": "f34e739a6cda54f65205d85a8c21ba66"
+    },
+    {
+      "source": "🐌 Solo Match",
+      "key": "155ce7c4ca927f2e2316a8e3312caf33"
+    },
+    {
+      "source": "🐌🐌 Multiplayer Match",
+      "key": "8a0a6fe39a74d5e9bd296e48e10d25ed"
     },
     {
       "source": "🐔 Screaming Chicken",
@@ -1469,6 +1841,10 @@
       "key": "61720bbd8303ba226d0d8b0d5b5fc7e0"
     },
     {
+      "source": "0px 0px 0px 0px #000000",
+      "key": "d3fa636d5028919f36ecbcc7946eb12a"
+    },
+    {
       "source": "1 day ago",
       "key": "44ba1391bb5be07bbe3a4737dc1873d5"
     },
@@ -1477,8 +1853,36 @@
       "key": "76cb3314bd8e37f21d729b8aeeaadf1e"
     },
     {
+      "source": "16px 'Arial'",
+      "key": "52a8db6cadaf3ca1337c9f1bf970ac11"
+    },
+    {
+      "source": "2 GB",
+      "key": "083ad21990802d20fc5fdefdb7255565"
+    },
+    {
+      "source": "2px 2px 0px 0px #000000",
+      "key": "a8863f3f3b6a6a78d2bda67e52b3fe78"
+    },
+    {
+      "source": "4 GB",
+      "key": "974c2262615af73433567515efbb80e9"
+    },
+    {
       "source": "404: Goblin not found",
       "key": "ea1cb11191f69296ba3feb853954243d"
+    },
+    {
+      "source": "4px 4px 0px 0px #000000",
+      "key": "fe52fba58e79bbe34ff2c6426a9055ee"
+    },
+    {
+      "source": "8 GB",
+      "key": "af5700014f646d2567efa6288d85ab2b"
+    },
+    {
+      "source": "8px 8px 0px 0px #000000",
+      "key": "a6f4839cfc65a2f46bbf66ca37ccff79"
     },
     {
       "source": "A balloon that inflates as you blow",
@@ -1487,6 +1891,10 @@
     {
       "source": "A brightness reading is the least of it. With real camera access, a site could:",
       "key": "5d89b2dfb04899d893692af1fdc1ff34"
+    },
+    {
+      "source": "A challenger shared their balloon run. Can you beat it?",
+      "key": "88e40c7d0c4873e7dd33eb1eb4955ca9"
     },
     {
       "source": "A cool aura that got TOO much rest. It only knows how to clap.",
@@ -1511,6 +1919,10 @@
     {
       "source": "A gentle squeeze. The chicken tolerates this.",
       "key": "82a3609905983df76554c32145c5c070"
+    },
+    {
+      "source": "A global leaderboard ranks the apps by how often they are visited and poked.",
+      "key": "c15d47dc6b67d74b5995818179952104"
     },
     {
       "source": "A grown octopus needs a fortress. Gather shells and wall up your den.",
@@ -1549,6 +1961,14 @@
       "key": "84bc2913d3168e55e2f3ddbd99c50091"
     },
     {
+      "source": "A suite of gloriously pointless browser mini-apps: translate text to emoji, touch virtual grass, squeeze a screaming chicken, commune with god, paint potatoes, fence with slugs, blow up balloons with your voice, and play as a shelf-smashing cat.",
+      "key": "9229c3ade270b61248e549f1fbf6b3c7"
+    },
+    {
+      "source": "A timeless truth echoes through the browser.",
+      "key": "ad76bad327dc04858f9f03c1fda3a028"
+    },
+    {
       "source": "A warm aura overdosed on sunlight. Pure kinetic showing off.",
       "key": "e24452daa58a05209a43e456e84c2b60"
     },
@@ -1561,12 +1981,20 @@
       "key": "46b4202be55d8b1973852830a4977032"
     },
     {
+      "source": "A#",
+      "key": "b58e28cf4a5b86e86bcca74465be9bc5"
+    },
+    {
       "source": "AAAAAAAAAA. The chicken screams back to shape.",
       "key": "66921ea43fc5348589bace4144333ed3"
     },
     {
       "source": "Accuracy",
       "key": "d78f1fb7e69f7cddcf3e168f2663db20"
+    },
+    {
+      "source": "ACDEFGHIKLMNPQRSTVWY",
+      "key": "638ef73a7502450731f6bfb2c2dd8747"
     },
     {
       "source": "Active",
@@ -1577,12 +2005,24 @@
       "key": "261482907c967b0e7476f300bf428a83"
     },
     {
+      "source": "Adds ~{value0} bits of uniqueness",
+      "key": "48c481fe7341744266db0c9fe8e27839"
+    },
+    {
+      "source": "Adventurous",
+      "key": "7f39598e5adac52de6cbb0751dc59e54"
+    },
+    {
       "source": "Advertisers rarely know who you are — they bid on profiles . Here's a mock auction for yours, scaled by the signals brokers actually price on. Grant more above and watch it climb.",
       "key": "794a4a2d5298d99d0358dac56702611e"
     },
     {
       "source": "Advertisers rarely know who you are — they bid on profiles. Here's a mock auction for yours, scaled by the signals brokers actually price on. Grant more above and watch it climb.",
       "key": "38825eaae85f3c98ddd616e52a42a886"
+    },
+    {
+      "source": "Africa",
+      "key": "f5cd262901883dff68d06b215fb0f28e"
     },
     {
       "source": "Afternoon browsing",
@@ -1599,6 +2039,10 @@
     {
       "source": "Age / Gender / Income",
       "key": "b9f2062acff072f15dd27278801a47b5"
+    },
+    {
+      "source": "Age <0>0</0> mo",
+      "key": "34c7cef435726458ffd8a5fca04cbba0"
     },
     {
       "source": "Age 0 mo",
@@ -1625,6 +2069,14 @@
       "key": "55691de122cb11239b054456a1c4a791"
     },
     {
+      "source": "Alanine",
+      "key": "6d91f2c6735ca91cc8e0754d27c5132b"
+    },
+    {
+      "source": "Alaska Time · North America",
+      "key": "8d416bdbf8bc9ee4184a16232b92ece8"
+    },
+    {
       "source": "ALPHA MOLLUSK",
       "key": "ad25ef971d10b97f9803c6f2ee9fd3fd"
     },
@@ -1637,12 +2089,36 @@
       "key": "82c34ac6bcca387b2cf012d0ad7565e1"
     },
     {
+      "source": "America/Chicago",
+      "key": "f4b3b4fc343702ec1387c90fb45dfad4"
+    },
+    {
+      "source": "America/Denver",
+      "key": "73c3d1c8ac11ec8a84774fb755963a81"
+    },
+    {
+      "source": "America/Los_Angeles",
+      "key": "7a86dc880dd3c0a589c3ec553f86c669"
+    },
+    {
+      "source": "America/New_York",
+      "key": "786bd9a79768dd61da6fdc8b2e3fa3e1"
+    },
+    {
+      "source": "America/Sao_Paulo",
+      "key": "1c978baa6e3453cca63bcbed6d20d232"
+    },
+    {
       "source": "An estimated household income and net-worth bracket",
       "key": "e2f38adc2a190504a610544a73647e7b"
     },
     {
       "source": "An octopus lives only once",
       "key": "478f281a6c24812757c880fce66a2476"
+    },
+    {
+      "source": "Ancient",
+      "key": "bdf1893b54669831286b617d7dc24e27"
     },
     {
       "source": "Ancient Magic Scroll",
@@ -1653,6 +2129,10 @@
       "key": "a1b0baa24133f42ef911e9cbe87ae9f0"
     },
     {
+      "source": "Android",
+      "key": "e84e30b9390cdb64db6db2c9ab87846d"
+    },
+    {
       "source": "Another hit! The rival recoils in disgust.",
       "key": "5e6f1d1f526e79e0e4fce7d3f5ef2b2a"
     },
@@ -1661,8 +2141,24 @@
       "key": "9020c0a035536b0b077d3c70caca39ad"
     },
     {
+      "source": "Antarctica (really?)",
+      "key": "c66fa72be0878ecbffb0e8afd27371e1"
+    },
+    {
+      "source": "Anthem",
+      "key": "e1b264fa574b7d2928a174cca3314fd9"
+    },
+    {
       "source": "Anvil",
       "key": "762ee0989af33569108ad1e457093045"
+    },
+    {
+      "source": "application/json",
+      "key": "d1f5a9d446c6cec2cf63545e8163e585"
+    },
+    {
+      "source": "application/octet-stream",
+      "key": "fe7a824e702dbb28a101bb89430df06b"
     },
     {
       "source": "Arcane Wizard Casting",
@@ -1671,6 +2167,46 @@
     {
       "source": "Archetype",
       "key": "15f752f90268a1a39fe449871b75267c"
+    },
+    {
+      "source": "Archivo Black",
+      "key": "1815204f137ceeb8ac188d4f2ae87e98"
+    },
+    {
+      "source": "Arginine",
+      "key": "8e6a049963314042453489e0c0218492"
+    },
+    {
+      "source": "Arial",
+      "key": "6fbda3a3567da6d01bc9da915e91d702"
+    },
+    {
+      "source": "ArrowDown",
+      "key": "49c46f6d84c8d55a8ab230f676c2454c"
+    },
+    {
+      "source": "ArrowUp",
+      "key": "1766072510e73215188615125158e669"
+    },
+    {
+      "source": "Asia",
+      "key": "154a67340e8c14dd5253dc4ff6120197"
+    },
+    {
+      "source": "Asia/Kolkata",
+      "key": "b6672fd0add674f3e715f6d14fba9190"
+    },
+    {
+      "source": "Asia/Shanghai",
+      "key": "6f2283e1c7bb34615096517161927ebf"
+    },
+    {
+      "source": "Asia/Singapore",
+      "key": "f8a14564c1d18e588ed28a7dc60a3bc6"
+    },
+    {
+      "source": "Asia/Tokyo",
+      "key": "95992ea604f8a2cb945c3d3d61b8606f"
     },
     {
       "source": "Ask",
@@ -1689,8 +2225,40 @@
       "key": "984558d83ad08f1a7e9a749bc9f4d8a2"
     },
     {
+      "source": "Asparagine",
+      "key": "1d8b6b9eade7ca6bdf28ca71c665177e"
+    },
+    {
+      "source": "Aspartate",
+      "key": "199e51798b6ff3a43545bde132c8975a"
+    },
+    {
+      "source": "Asx — Asn or Asp",
+      "key": "7d85c0295320297e7509569bf4dd6581"
+    },
+    {
+      "source": "Atlantic region",
+      "key": "54b5056ac6ef2c4a912922d35018212d"
+    },
+    {
       "source": "Audio",
       "key": "b22f0418e8ac915eb66f829d262d14a2"
+    },
+    {
+      "source": "audio/mp4",
+      "key": "5b724d8987ac886b9f962dc258cba8e4"
+    },
+    {
+      "source": "audio/mpeg",
+      "key": "f3459d88a01501e64fe6c19ef16f1c9c"
+    },
+    {
+      "source": "audio/webm",
+      "key": "d8f319cc60f78e23a966f0b74a917476"
+    },
+    {
+      "source": "audio/webm;codecs=opus",
+      "key": "20eb0166ad9de2e4fbcea081ebf5f088"
     },
     {
       "source": "Aura",
@@ -1699,6 +2267,14 @@
     {
       "source": "Auras farmed",
       "key": "4191368b74fa23beec35fa07475c07fc"
+    },
+    {
+      "source": "Australia",
+      "key": "4442e4af0916f53a07fb8ca9a49b98ed"
+    },
+    {
+      "source": "Australia/Sydney",
+      "key": "29d14b8bf8e1098db4fa13c453a3814a"
     },
     {
       "source": "Average Slug",
@@ -1737,8 +2313,36 @@
       "key": "0b87d66b88c72957dfea8c9605016442"
     },
     {
+      "source": "bg-brand-background opacity-60 cursor-not-allowed",
+      "key": "8c11b5c16e6e5dc40519fe53844147c2"
+    },
+    {
+      "source": "bg-brand-background text-brand-text",
+      "key": "5974031416a368f91ce04c93c4d0493e"
+    },
+    {
+      "source": "bg-brand-primary text-brand-text",
+      "key": "cd8d8811e4a6282b1377a8bb11a8931e"
+    },
+    {
+      "source": "bg-brand-surface hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed cursor-pointer",
+      "key": "550bf36cbd936334212256bbda829a29"
+    },
+    {
+      "source": "bg-brand-surface text-brand-text",
+      "key": "a225dec80a046a9c643325e60d15c569"
+    },
+    {
+      "source": "BJOUXZ",
+      "key": "d2293e9ceaab520853608f18e2c7dfea"
+    },
+    {
       "source": "Block",
       "key": "e1e4c8c9ccd9fc39c391da4bcd093fb2"
+    },
+    {
+      "source": "Blooming",
+      "key": "1c76609bae9af8092e6f6bdc6c4dcb15"
     },
     {
       "source": "Blow into your mic to inflate it. Tie it off before it pops.",
@@ -1769,8 +2373,20 @@
       "key": "0fb82d649f6df0ea855c357a447f242d"
     },
     {
+      "source": "Blues",
+      "key": "aca2a3c07f76ae685ae818b312e025c5"
+    },
+    {
+      "source": "bold 16px sans-serif",
+      "key": "ca0520e32f11f8c9a7d196ed5ef39885"
+    },
+    {
       "source": "Books",
       "key": "6225eb5bf8a031f750a1b03f810ccc6a"
+    },
+    {
+      "source": "border-r-thick border-brand-border",
+      "key": "23d52fa3e0f89f49c42a6bf4f0f9d1c6"
     },
     {
       "source": "Both slugs ready. Starting…",
@@ -1789,8 +2405,20 @@
       "key": "57bf5c76f0f88545c91c6d102b1e927f"
     },
     {
+      "source": "Bright",
+      "key": "45c1428dbdf63826b7b1a999e012df3b"
+    },
+    {
       "source": "Bring 3 shells home",
       "key": "bf4cae6ff3b808f21e5cc13c0f348d1b"
+    },
+    {
+      "source": "Broken",
+      "key": "c98dbc22f49f1b4a644307551924f8da"
+    },
+    {
+      "source": "Brooding",
+      "key": "49f4bdb972caa294d2030feac3e8a617"
     },
     {
       "source": "Browser",
@@ -1833,6 +2461,10 @@
       "key": "8429cbd06db2cbecbd32a27b16e7d70d"
     },
     {
+      "source": "Built purely for fun — it is a novelty entertainment site, not a tool, product, or service.",
+      "key": "2dc11367e78bb4ac70e761eda6ddcb66"
+    },
+    {
       "source": "Buttery and smug about it.",
       "key": "c9a8540ab52cf682e757d8d2ab9e7cd9"
     },
@@ -1841,12 +2473,24 @@
       "key": "5c9804311036edde069a5d683c337f70"
     },
     {
+      "source": "C#",
+      "key": "d7efa19fbe7d3972fd5adb6024223d74"
+    },
+    {
       "source": "Caffeinated Doomscroller",
       "key": "9fbb175a7ab2600aa297ca7b5306951b"
     },
     {
+      "source": "Calibri",
+      "key": "f7cee5eaf81ca6750bedc48055a4dffb"
+    },
+    {
       "source": "Calms toward balance, grows slowly",
       "key": "e8ae3c91b40e51ef58442bf24abc5cd8"
+    },
+    {
+      "source": "Cambria",
+      "key": "37f1cc582dd4411a4a0bde650358d5e1"
     },
     {
       "source": "Camera",
@@ -1863,6 +2507,10 @@
     {
       "source": "Can't tell",
       "key": "9bf718fdf1dccbea8907401aa52d54f2"
+    },
+    {
+      "source": "Canada",
+      "key": "445d337b5cd5de476f99333df6b0c2a7"
     },
     {
       "source": "Cannot be known here",
@@ -1903,6 +2551,10 @@
     {
       "source": "Cauldron",
       "key": "452f809d8dc51300087f69573bf9b029"
+    },
+    {
+      "source": "Central Time · North America",
+      "key": "c955356f50d5e5dfa735ba2b8f515461"
     },
     {
       "source": "Ceramic mug",
@@ -1957,6 +2609,10 @@
       "key": "acff5c43d264286879c0d60e21acf4a1"
     },
     {
+      "source": "Chapter {no} · {value0}",
+      "key": "cf926fced41ca191448770f693915787"
+    },
+    {
       "source": "Chicken squeezes",
       "key": "6e65bd5cbce722249c39a3a128561cec"
     },
@@ -1967,6 +2623,14 @@
     {
       "source": "Choose your mode",
       "key": "1adb68ef57445f7c513d1ede6cd2f9a1"
+    },
+    {
+      "source": "Chorus",
+      "key": "9dcf77c2f2237c9e2013ea0175bf1745"
+    },
+    {
+      "source": "Chrome",
+      "key": "986c37480b1f1c2e443504b38b6361b4"
     },
     {
       "source": "Classical",
@@ -1997,6 +2661,22 @@
       "key": "b4f0111751d8ad295f2a77525fd10799"
     },
     {
+      "source": "Clip not found",
+      "key": "c391a971d5de8ddc9d9a74ba61fcc3a2"
+    },
+    {
+      "source": "clip:{clipId}",
+      "key": "4caa4c4ac5c3965e884ff1f0ff7e58d9"
+    },
+    {
+      "source": "ClipNotFoundError",
+      "key": "aa3c1c762dee563ca3ead96842eec6a6"
+    },
+    {
+      "source": "Codon",
+      "key": "05b6a6f625efb303f1a04d9753988520"
+    },
+    {
       "source": "Color Depth",
       "key": "fa921c1a38f588518635f20b8f74e889"
     },
@@ -2009,6 +2689,10 @@
       "key": "c49f442cdfa223b439442f5d7e3a9629"
     },
     {
+      "source": "Comic Sans MS",
+      "key": "9495d2157f98b84570d8237d636b6712"
+    },
+    {
       "source": "Common",
       "key": "d13bc5b68b2bd9e18f29777db17cc563"
     },
@@ -2017,12 +2701,20 @@
       "key": "9be325b26d22431ef237255e0b7416a6"
     },
     {
+      "source": "Commune with God <0>🔮</0>",
+      "key": "4decd528a1c253fde0924fa916fddc0c"
+    },
+    {
       "source": "Commune with God 🔮",
       "key": "e30f46b5bcc7fb9b3e09e560e8d53a96"
     },
     {
       "source": "Connection",
       "key": "c2cc7082a89c1ad6631a2f66af5f00c0"
+    },
+    {
+      "source": "Consolas",
+      "key": "16507cdd5bdee782f26fca800650b3c2"
     },
     {
       "source": "Continue →",
@@ -2073,6 +2765,10 @@
       "key": "5298ce63f24a14df7c600e25460e3e32"
     },
     {
+      "source": "Cosmic",
+      "key": "9cdda33fe168673057d1facfb8615fcf"
+    },
+    {
       "source": "Cosmic Aura",
       "key": "dd67f4164e112ff62deca0f040abefe2"
     },
@@ -2081,12 +2777,28 @@
       "key": "cf1caa71556b25aa2a122e1a127f753c"
     },
     {
+      "source": "Could not load clip",
+      "key": "a671c4758973b009197448f0757b995f"
+    },
+    {
       "source": "Could not load the shared clip. Default button restored.",
       "key": "1dc3f2056a67131b90c295bb87ff7e39"
     },
     {
+      "source": "Could not start recording.",
+      "key": "53fbc6c50f575baae2b1515b2771176c"
+    },
+    {
+      "source": "Courier New",
+      "key": "f800def454d897e4d903c63eca00829f"
+    },
+    {
       "source": "CPU Cores",
       "key": "c574c9e9c4c8f40e140ebf8b99180701"
+    },
+    {
+      "source": "Crab",
+      "key": "ff174d64774d5421545e1b38ded8db2f"
     },
     {
       "source": "Create Match",
@@ -2097,12 +2809,24 @@
       "key": "8c4f121ceb8c4b814d99921aa7776314"
     },
     {
+      "source": "Crooked",
+      "key": "a88947d07091f36f93e364eed0137de3"
+    },
+    {
       "source": "Crystal",
       "key": "a48296ad11ed041e4db9991af1057fb6"
     },
     {
       "source": "crystal ball",
       "key": "8df897a106143920124afb643cce4d93"
+    },
+    {
+      "source": "cubic-bezier(0.3, 0, 0.6, 1)",
+      "key": "3d3eec387c3608b5102cf503de41fc51"
+    },
+    {
+      "source": "Curious",
+      "key": "2f2604b73c6be8cbf9b84a24fb6f4519"
     },
     {
       "source": "Curious Wanderer",
@@ -2115,6 +2839,10 @@
     {
       "source": "Custom",
       "key": "90589c47f06eb971d548591f23c285af"
+    },
+    {
+      "source": "Custom affirmation deployed.",
+      "key": "91e01438437d50bf259a15d85d867226"
     },
     {
       "source": "Custom button armed. Preview it, save it, or smash it now.",
@@ -2137,8 +2865,20 @@
       "key": "6ae448f6823b1396c3ed08d0e10d4fe5"
     },
     {
+      "source": "Cysteine",
+      "key": "7e1890bbd7ffb4025157053182ce6e55"
+    },
+    {
+      "source": "D#",
+      "key": "2041690356042e27ff4e74124f1fb9df"
+    },
+    {
       "source": "Dance Encyclopedia",
       "key": "f29dd0982f418ed1a496e933fd5b7ff2"
+    },
+    {
+      "source": "Dark",
+      "key": "a18366b217ebf811ad1886e4f4f865b2"
     },
     {
       "source": "Data Broker Auction",
@@ -2153,6 +2893,10 @@
       "key": "0e70e100819c7fbbb2ddf472ddbc622f"
     },
     {
+      "source": "Deepest: <0>{record}%</0>",
+      "key": "1853f5db5f4e3d19b474bd423f147708"
+    },
+    {
       "source": "Default button restored.",
       "key": "4f658ce5e64f02a51b390810d7666e00"
     },
@@ -2165,6 +2909,10 @@
       "key": "171e33a0853c270a1609b29ce5e2e45d"
     },
     {
+      "source": "Defeated 🏋️",
+      "key": "0990e407953b12574a553cd03a98fd6b"
+    },
+    {
       "source": "Delete browser storage",
       "key": "76f4be787f913c40f17bf742f4ede35b"
     },
@@ -2175,6 +2923,10 @@
     {
       "source": "Delete Local Storage",
       "key": "6d0b3b13043e13bab3de3e1b1c6ca1ae"
+    },
+    {
+      "source": "Denmark",
+      "key": "424214945ba5615eca039bfe5d731c09"
     },
     {
       "source": "Dens Built",
@@ -2191,6 +2943,10 @@
     {
       "source": "Desktop audience",
       "key": "1158caa0e9aa22dc6da119a444bc08c2"
+    },
+    {
+      "source": "Detected",
+      "key": "495ede3d060199c507c8708600b51784"
     },
     {
       "source": "device fingerprint remains",
@@ -2211,6 +2967,10 @@
     {
       "source": "Difficulty",
       "key": "7b29ca96ada2afa3aadbcf55cd61a1ed"
+    },
+    {
+      "source": "Dim",
+      "key": "8ed64ce6e8032ddb62a463ffa78881d9"
     },
     {
       "source": "Disco Aura",
@@ -2245,12 +3005,20 @@
       "key": "3bdc048cd6fdbd058635609182c4a5f4"
     },
     {
+      "source": "Dorian",
+      "key": "b8dd79e4a88047dee0f3bf56dcb37ca8"
+    },
+    {
       "source": "Drag (or use WASD / arrows) to swim. Stay still to camouflage — predators see you from closer when you're hidden. Tap, click, or press Space to release ink and escape. Survive your way from hatchling to guardian.",
       "key": "e375c0922c90975f2bcb0b1cee588c5f"
     },
     {
       "source": "Drag a spud from the tray and drop it on the canvas to stamp it. Every potato you use is replaced by a brand-new one — same variety, never the same shape.",
       "key": "3703ce383347a69718ec4e99e7a61f30"
+    },
+    {
+      "source": "Dreamy",
+      "key": "432531077f74f2e7cd457d3aa7367174"
     },
     {
       "source": "Drift up to the bright surface currents.",
@@ -2267,6 +3035,10 @@
     {
       "source": "Drop a potato here to stamp it",
       "key": "4669f4f58d822279229ca66a925a66ef"
+    },
+    {
+      "source": "Drowsy",
+      "key": "30f84f73037f25d1b248ba5099ccc282"
     },
     {
       "source": "Duel of the slugs",
@@ -2289,8 +3061,20 @@
       "key": "1e476d222c33157c39304233c09d2462"
     },
     {
+      "source": "Eastern Time · North America",
+      "key": "d3c77c45ce72724ffb6300c093bcf95b"
+    },
+    {
       "source": "Eat 6 prey",
       "key": "f3101c135194695bd4521e818a17de3a"
+    },
+    {
+      "source": "Echo",
+      "key": "d31ef811301c6b4111380dda959d6125"
+    },
+    {
+      "source": "Edge",
+      "key": "e4a297a0f76119a442c2595ac040673e"
     },
     {
       "source": "Educational simulation. Real per-sale prices for one person run from fractions of a cent up to roughly $0.50; these figures are illustrative, scaled by the same criteria (engagement, device, market, location, re-identifiability) that data brokers use.",
@@ -2313,8 +3097,16 @@
       "key": "c46d0c335f1f195ff6af56df8ee34592"
     },
     {
+      "source": "Eggs: <0>🥚 {eggs}</0>",
+      "key": "117b4de05be2f3ceb3283596d095eec7"
+    },
+    {
       "source": "eggsProtected",
       "key": "490547f4ef17ba07d1e24d615e000a31"
+    },
+    {
+      "source": "Electric",
+      "key": "a74711a0a27d5306d53f17771c2161cb"
     },
     {
       "source": "Emoji → Text",
@@ -2341,6 +3133,30 @@
       "key": "3241f51921f45ed1548ec45024329ad3"
     },
     {
+      "source": "en-AU",
+      "key": "6587cc614779e137ee49fbdb96916a3e"
+    },
+    {
+      "source": "en-CA",
+      "key": "22adf1e8cbf4b96513c1b5c3b5ef6e85"
+    },
+    {
+      "source": "en-GB",
+      "key": "04e4adf37ffcbe95bf074adf5cbd1d1b"
+    },
+    {
+      "source": "en-IN",
+      "key": "11bd9c4e3f4f767849654850cb6e8ac9"
+    },
+    {
+      "source": "en-US",
+      "key": "cce16c45e622d9ceae4b626c9353ecec"
+    },
+    {
+      "source": "Enabled",
+      "key": "00d23a76e43b46dae9ec7aa9dcbebb32"
+    },
+    {
       "source": "Enchanted Wand",
       "key": "b66ef86fcdf97877d86ce17682f18479"
     },
@@ -2357,6 +3173,30 @@
       "key": "f034ccfdba0f830ec14d37f73be77578"
     },
     {
+      "source": "English",
+      "key": "78463a384a5aa4fad5fa73e2f506ecfc"
+    },
+    {
+      "source": "English (Australia)",
+      "key": "150425a9e856e8efd4d4ccb2fd977e2c"
+    },
+    {
+      "source": "English (Canada)",
+      "key": "f40c3cde472013baa7b5696d117c5fde"
+    },
+    {
+      "source": "English (India)",
+      "key": "33326798efae7caf4800ba91394cbb4c"
+    },
+    {
+      "source": "English (United Kingdom)",
+      "key": "c130e0351f05cd81663901c30ed53567"
+    },
+    {
+      "source": "Enter",
+      "key": "f1851d5600eae616ee802a31ac74701b"
+    },
+    {
       "source": "Environment",
       "key": "0ba29c6a1afacf586b03a26162c72274"
     },
@@ -2365,12 +3205,48 @@
       "key": "1911b2982820d4046f86f3f29f746c54"
     },
     {
+      "source": "es-ES",
+      "key": "c593893196169ba8d4e81bf88fb24c39"
+    },
+    {
+      "source": "Escape",
+      "key": "013ec032d3460d4be4431c6ab1f8f224"
+    },
+    {
+      "source": "Español",
+      "key": "de92bbe05815c4eb756acb5897baa99c"
+    },
+    {
       "source": "Est. Data Value",
       "key": "087c82f06d468304e54b3d7d2f9c18a8"
     },
     {
       "source": "Estimated Profile Value",
       "key": "9e8da51af8b2b74647ded3841feebf7c"
+    },
+    {
+      "source": "Europe",
+      "key": "912d59cdf1d3f551fae21f6f0062258f"
+    },
+    {
+      "source": "Europe/Berlin",
+      "key": "f047a3577fcd6af23b47814293e293c0"
+    },
+    {
+      "source": "Europe/London",
+      "key": "5e9c869a1c36da8a24dcb5ed986abde7"
+    },
+    {
+      "source": "Europe/Madrid",
+      "key": "ec3855edb2075487b81541099c2e9690"
+    },
+    {
+      "source": "Europe/Moscow",
+      "key": "c3977dd0d0fcf423c8cef6e7acdd7ba7"
+    },
+    {
+      "source": "Europe/Paris",
+      "key": "22e2618c276f62ea6092e9ed9cde3f38"
     },
     {
       "source": "Even estimate your heart rate from skin-color changes",
@@ -2389,6 +3265,10 @@
       "key": "086e470245c981c1627373cd981fce6c"
     },
     {
+      "source": "Everything runs in your web browser; nothing to download or install.",
+      "key": "f6d42d8f9a1af090cabe200b3642179e"
+    },
+    {
       "source": "Explorer",
       "key": "94fbbf67e0c8cea8cbaff55287746f3e"
     },
@@ -2405,6 +3285,14 @@
       "key": "7a5bb3052e4dd5b6bd65991c70a3d90a"
     },
     {
+      "source": "F#",
+      "key": "629b160731f33947eac814bf3e585044"
+    },
+    {
+      "source": "Fast (4G/Wi-Fi class)",
+      "key": "0fb2862f3caf2b9023750ff35388e5a1"
+    },
+    {
       "source": "Fast Scroller",
       "key": "f46a9ff5c03d478e0ec773da3b214942"
     },
@@ -2415,6 +3303,10 @@
     {
       "source": "Feeling safe yet?",
       "key": "1037fbda9e6e05ca2c988cb4db0ca5c6"
+    },
+    {
+      "source": "Feral",
+      "key": "403122f3e0eeacc0171040d9ac077f3b"
     },
     {
       "source": "Fill",
@@ -2449,6 +3341,10 @@
       "key": "22240c5d336b0a5401d42c5c6b64e3dc"
     },
     {
+      "source": "Firefox",
+      "key": "763f7f1aec350cd1a46238d1d5c3c229"
+    },
+    {
       "source": "First Seen",
       "key": "d916cc29cf1ef03264b111bd15660324"
     },
@@ -2459,6 +3355,14 @@
     {
       "source": "First to {n}",
       "key": "16fa7d1d495861fda37ad42613db36d5"
+    },
+    {
+      "source": "First to {scoreToWin}",
+      "key": "f9bfafd00274bd664d63f36774a0b31c"
+    },
+    {
+      "source": "First to: <0>{scoreToWin}</0>",
+      "key": "33259b76688f39b362c8a61417e8b8a9"
     },
     {
       "source": "Flaming Breakdance",
@@ -2481,12 +3385,28 @@
       "key": "155f25da0ecfab1f56f21310490daaa7"
     },
     {
+      "source": "fr-CA",
+      "key": "61415987d1731fbe9a829ae606ed66af"
+    },
+    {
       "source": "Framed Portrait",
       "key": "f4576ec99e1467467e782d25d02bcdf4"
     },
     {
       "source": "Framed Portrait leaves the shelf.",
       "key": "b05798cbcacc7fae80055b438157f5b5"
+    },
+    {
+      "source": "Français (Canada)",
+      "key": "1c8fb6ae6497af7c153c5cb11e315071"
+    },
+    {
+      "source": "Free to use — no account, sign-up, login, or email required.",
+      "key": "5ca414b890ecaaf69f9aa8d8de6a94ef"
+    },
+    {
+      "source": "Frequency",
+      "key": "7cf395303ce3665a9834721d4b748e4b"
     },
     {
       "source": "From your language setting — many people use English abroad.",
@@ -2497,12 +3417,20 @@
       "key": "e97f9d9920379204857ab2dbe7cdf79c"
     },
     {
+      "source": "Fry",
+      "key": "be4990aa4393c80dc49843107b3d6366"
+    },
+    {
       "source": "FULL! Tie it off now — keep blowing and it'll explode!",
       "key": "f33966e5d29e26d43dd39b20a68d9eb2"
     },
     {
       "source": "Fwump. Deeply unsatisfying.",
       "key": "7b0bff0b0d401f45d95e8bf776e72be7"
+    },
+    {
+      "source": "G#",
+      "key": "0c095cfc02d215118eee995ab679a00f"
     },
     {
       "source": "Gamer Aura",
@@ -2513,8 +3441,20 @@
       "key": "f16e39fa9201043da18bdbf63ce5a160"
     },
     {
+      "source": "Garamond",
+      "key": "96a7872564f8ba8cb1d2975a13bde360"
+    },
+    {
       "source": "Garden",
       "key": "ea9f1881279a97a59f479e8d0a8bc695"
+    },
+    {
+      "source": "Georgia",
+      "key": "eada819634d0164c6a7547bdcc405033"
+    },
+    {
+      "source": "Germany",
+      "key": "d8b00929dec65d422303256336ada04f"
     },
     {
       "source": "Global leaderboard of the most-visited and most-poked Scroll Goblin mini-apps.",
@@ -2523,6 +3463,22 @@
     {
       "source": "Glug glug. The grass drinks happily. 💧",
       "key": "bec8bcea16badbe875c1b105dc5fce2a"
+    },
+    {
+      "source": "Glutamate",
+      "key": "80c7055f20bbd5eb773b8eabacf37270"
+    },
+    {
+      "source": "Glutamine",
+      "key": "601730a18ba8f7064529f59dfed3d839"
+    },
+    {
+      "source": "Glx — Glu or Gln",
+      "key": "ef4d82838f4d2661d83c0a26ca30fc1f"
+    },
+    {
+      "source": "Glycine",
+      "key": "22ea6250db0a252ef6e1b690f3a15f75"
     },
     {
       "source": "Go ahead. Touch the grass",
@@ -2561,6 +3517,10 @@
       "key": "c88978e3ada2d21cfd0b83ce9913a5d1"
     },
     {
+      "source": "Goblin sees you 🧌",
+      "key": "8497cca8704d04a356ece7ad41e6ccc7"
+    },
+    {
       "source": "Goblin Surveillance Mirror",
       "key": "d8de60cdc272cee8e2d9169b86ba170d"
     },
@@ -2575,6 +3535,10 @@
     {
       "source": "Goblins scanned",
       "key": "5b0abc79ae560f2d9e31020871cb036f"
+    },
+    {
+      "source": "Golden",
+      "key": "7d2b88f5977b8a31c6193b4c81a43daf"
     },
     {
       "source": "GOO TYCOON",
@@ -2633,6 +3597,14 @@
       "key": "709cf30c268cb694515830ee89b19c98"
     },
     {
+      "source": "Gritty",
+      "key": "c8cc4da80c172206a69be42258a3f69e"
+    },
+    {
+      "source": "Groove",
+      "key": "a5d7f2d1b78f9222563004a41a616334"
+    },
+    {
       "source": "Grow another",
       "key": "566c4b5395e394df5642c9d576049a79"
     },
@@ -2673,12 +3645,20 @@
       "key": "e88c5fc32e876cf3fe643606aef58cde"
     },
     {
+      "source": "Harmonic Minor",
+      "key": "8f627c3b55ef7ba934d81418257e9844"
+    },
+    {
       "source": "Harvest the Aura!",
       "key": "ab14750660837da0a11fa32745c36140"
     },
     {
       "source": "Hatch →",
       "key": "183f3d745dbe86729da049d32e41af89"
+    },
+    {
+      "source": "Hatchling",
+      "key": "4f2a8e89489dbc86d3f095c147b2f5d9"
     },
     {
       "source": "Health",
@@ -2693,6 +3673,18 @@
       "key": "bc474e766ca6ed11c1d1fca6323cdfd3"
     },
     {
+      "source": "hedgeling.locale",
+      "key": "0138d3106cfc34572072b2e18bbea35e"
+    },
+    {
+      "source": "Helix",
+      "key": "87b2ccc9693d1d35db611ffe6cf37f30"
+    },
+    {
+      "source": "Helvetica Neue",
+      "key": "af3ce2da081f1fbc3acb7474ee6f0d5b"
+    },
+    {
       "source": "Here's what you just avoided handing over:",
       "key": "adbd9664900ee7c3496cc81a1751f70d"
     },
@@ -2701,12 +3693,28 @@
       "key": "167e9afd7401e0064d7af0941104655b"
     },
     {
+      "source": "hi-IN",
+      "key": "a9f2363a9e4b2bb7b20cf47fcc69ede8"
+    },
+    {
+      "source": "Hidden",
+      "key": "7acdf85c69cc3c5305456a293524386e"
+    },
+    {
       "source": "Hidden by browser",
       "key": "ee99b2480fe324cad6fcbbe334b032d1"
     },
     {
+      "source": "hidden sm:inline-flex",
+      "key": "17785e2ccd9a44859ce8cba7b1c4d2a5"
+    },
+    {
       "source": "Hide technical signals",
       "key": "2ab0b886589508292fa9d5d13a6023ee"
+    },
+    {
+      "source": "High",
+      "key": "655d20c1ca69519ca647684edbb2db35"
     },
     {
       "source": "High engagement",
@@ -2725,6 +3733,10 @@
       "key": "bcb71b56363c0913ba82fe48200c2e5c"
     },
     {
+      "source": "Histidine",
+      "key": "f03ab79ef0ab2085d5ebae1abc716b9d"
+    },
+    {
       "source": "Hits landed",
       "key": "ace3bc0ae2977ee161e4b58dae5c4135"
     },
@@ -2733,8 +3745,20 @@
       "key": "9aea67c572fb2d45718c027f002f2ed9"
     },
     {
+      "source": "Hollow",
+      "key": "450cbae633304212e5e2cdf32ac17117"
+    },
+    {
+      "source": "HOME",
+      "key": "710533dd879dd1202e5c73b27705bf02"
+    },
+    {
       "source": "Host",
       "key": "c2ca16d048ec66e04bca283eab048ec2"
+    },
+    {
+      "source": "hover:scale-105 active:scale-95",
+      "key": "ce7adc3f632c598541618fe922cc49bf"
     },
     {
       "source": "How do I take {label} access back?",
@@ -2743,6 +3767,54 @@
     {
       "source": "How do the AI-powered apps work?",
       "key": "8105d094b8c4242657a9aeaed4f4e1ab"
+    },
+    {
+      "source": "hsl({bodyHue},35%,{light})",
+      "key": "5924b0a68837a63d6585d17945a637cf"
+    },
+    {
+      "source": "hsl({bodyHue},35%,{value0})",
+      "key": "0b2486e3c5986715164fbee523105052"
+    },
+    {
+      "source": "hsl({hue}, {sat}%, {light}%)",
+      "key": "bf50b61988021366aa52a1c0ec791b3b"
+    },
+    {
+      "source": "hsl({hue}, {sat}%, {value0}%)",
+      "key": "78397555c0f626a316e2871d575de3eb"
+    },
+    {
+      "source": "hsl({hue}, {value0}%, {value1}%)",
+      "key": "caa64eb1ac8b2e6ff2d3bfc845a725c8"
+    },
+    {
+      "source": "hsl({hue},40%,45%)",
+      "key": "8cb413ae6d92fe40d07075c76c4a8cd7"
+    },
+    {
+      "source": "hsl({hue},45%,72%)",
+      "key": "67e291533284fef00e21cef8c18750ba"
+    },
+    {
+      "source": "hsl({hue},60%,38%)",
+      "key": "fb93968c18b1f10f0863f81f3759dcd9"
+    },
+    {
+      "source": "hsl({hue},60%,50%)",
+      "key": "d7987a430c77f5e4fb4bf63daf7abc12"
+    },
+    {
+      "source": "hsl({hue},65%,52%)",
+      "key": "c80153163e2d40295bab4fb842bae410"
+    },
+    {
+      "source": "hsl({hue},70%,72%)",
+      "key": "ab4bedd0be04d185ee845aa7b85d76b4"
+    },
+    {
+      "source": "Hymn",
+      "key": "c248070d2882751c181de690458b7037"
     },
     {
       "source": "I can recognize your device",
@@ -2769,12 +3841,20 @@
       "key": "f78df62580b874be1dba5637bbe335ad"
     },
     {
+      "source": "Impact",
+      "key": "21f59b54f62b5b8b4bc0f63f0f617fc1"
+    },
+    {
       "source": "Inaudible \"ultrasonic beacons\" in ads that link your phone to your TV",
       "key": "cccd34306ec953d0e3ed7b5e0188fee8"
     },
     {
       "source": "Inaudible ultrasonic beacons in ads that link your phone to your TV",
       "key": "a62aa0645c1320778c1d3e323d13b711"
+    },
+    {
+      "source": "Indian Ocean region",
+      "key": "a877e83dd86b5effa14e1474fc7a2cb4"
     },
     {
       "source": "Inferno Aura",
@@ -2817,8 +3897,16 @@
       "key": "4ffe5af41f75cdece0e84d4d2a6f3b9c"
     },
     {
+      "source": "Ireland",
+      "key": "06e415f918c577f07328a52e24f75d43"
+    },
+    {
       "source": "Is it time to let go?",
       "key": "58b2f566e8c0a2e75d57a4f0dc0eec12"
+    },
+    {
+      "source": "Isoleucine",
+      "key": "28cf66f57f7621566f9503980a2b638f"
     },
     {
       "source": "It lost you in your camouflage.",
@@ -2849,8 +3937,16 @@
       "key": "00a68793cf2c6943e157600f970ed4e1"
     },
     {
+      "source": "Lament",
+      "key": "ee7fcf1fa3208db690007f486fb6740a"
+    },
+    {
       "source": "Language",
       "key": "4994a8ffeba4ac3140beb89e8d41f174"
+    },
+    {
+      "source": "Language: {label}",
+      "key": "dc1db36332a7392b7fc691b79a14767c"
     },
     {
       "source": "Language: {language}",
@@ -2921,6 +4017,10 @@
       "key": "831916bb4f030bcae6edb493ffb19c39"
     },
     {
+      "source": "Leucine",
+      "key": "79c0fd5b60886bdb83cdfefb53c84b22"
+    },
+    {
       "source": "Life of an Octopus",
       "key": "9f4fd8c71b01cb468207eb8630c9d447"
     },
@@ -2929,8 +4029,20 @@
       "key": "9e5782306d3dc550ae93e8dafc2de996"
     },
     {
+      "source": "Light",
+      "key": "9914a0ce04a7b7b6a8e39bec55064b82"
+    },
+    {
       "source": "Lighting",
       "key": "2e4b97fde8cf63085ec969fcc7e490c0"
+    },
+    {
+      "source": "linear-gradient(to top, hsl({hue}, {value0}%, {value1}%), hsl({hue}, {value2}%, {value3}%))",
+      "key": "3540afd83a9255acf1eee665e6c5fce8"
+    },
+    {
+      "source": "linear-gradient(to top, hsl({hue}, 55%, 30%), hsl({hue}, 65%, 45%))",
+      "key": "fc7d47dc77fb98e530b36b6cab0afc8d"
     },
     {
       "source": "Link copied!",
@@ -2939,6 +4051,10 @@
     {
       "source": "Links to public records, voter rolls, and social profiles",
       "key": "8602513795d95048cb2edb9ef2866532"
+    },
+    {
+      "source": "Linux",
+      "key": "edc9f0a5a5d57797bf68e37364743831"
     },
     {
       "source": "Listen to your DNA",
@@ -2993,6 +4109,18 @@
       "key": "1c6a5c19e5ddc11a272c0202e00114c7"
     },
     {
+      "source": "Lots of movement",
+      "key": "a136502de1a04926a086c3c20df2731d"
+    },
+    {
+      "source": "Loud",
+      "key": "954e3a7b3f57aafbc6c23dd8d36cfea3"
+    },
+    {
+      "source": "Low",
+      "key": "28d0edd045e05cf5af64e35ae0c4c6ef"
+    },
+    {
       "source": "Loyal Returning Specimen",
       "key": "fe5879874f135b031dd78786c4536611"
     },
@@ -3017,20 +4145,88 @@
       "key": "6a4dbc41d56d288fdcc6f6f2533f4694"
     },
     {
+      "source": "Lydian",
+      "key": "b1cfb8d73516579a3d9e11d16377205a"
+    },
+    {
+      "source": "Lysine",
+      "key": "5bf5ccb977295489598301316c3379b6"
+    },
+    {
+      "source": "M {value0} {value1}",
+      "key": "7f8f1546ddf72e69ef623d22cf35b7ec"
+    },
+    {
+      "source": "Mackerel",
+      "key": "e46e03c883c2ac9e88acb082014ae610"
+    },
+    {
+      "source": "Major",
+      "key": "3b329734e45b57e60f3df64c2cf412a9"
+    },
+    {
       "source": "Matches ~{share} of people",
       "key": "cf11e31fe1749c22ac62e5fdc679288a"
+    },
+    {
+      "source": "Matches ~{value0} of people",
+      "key": "1bf4510c8ee16496eb83b9755af6ec59"
     },
     {
       "source": "Matches played",
       "key": "57b1ad555256e8d1f75bcb5eafe206d4"
     },
     {
+      "source": "Medium",
+      "key": "87f8a6ab85c9ced3702b4ea641ad4bb5"
+    },
+    {
+      "source": "Melancholy",
+      "key": "2e221a6022f316cabf92e286adb1355b"
+    },
+    {
+      "source": "Menlo",
+      "key": "73a6052cb11da2706b72657fbad0bd7c"
+    },
+    {
+      "source": "meta[name=\"description\"]",
+      "key": "09d9067cbae1554eb6e6034f412dd610"
+    },
+    {
+      "source": "meta[name=\"twitter:description\"]",
+      "key": "21b208f19b3dd497dcd42dc1e2431cf8"
+    },
+    {
+      "source": "meta[name=\"twitter:title\"]",
+      "key": "709e5d527803cfe88d724afc5df30bf8"
+    },
+    {
+      "source": "meta[property=\"og:description\"]",
+      "key": "f6d56e9b79c441db590c9165d70fa15f"
+    },
+    {
+      "source": "meta[property=\"og:title\"]",
+      "key": "52c5ff348e2a9d073f0b3696498fbb44"
+    },
+    {
+      "source": "meta[property=\"og:url\"]",
+      "key": "4b7a8f19444cc82ccdc90ae2bd6e54d3"
+    },
+    {
       "source": "Metal",
       "key": "eaa57a9b4248ce3968e718895e1c2f04"
     },
     {
+      "source": "Methionine",
+      "key": "cdfb2625b9fc606693cea5a34ea61630"
+    },
+    {
       "source": "Mic blocked. Allow microphone access in your browser, then tap Start blowing again.",
       "key": "0ef4b91a918ae561d55c5018eb67e39b"
+    },
+    {
+      "source": "Mic blocked. Allow microphone access, then try again.",
+      "key": "41502c6d83c410329f96767587e76de6"
     },
     {
       "source": "Mic live",
@@ -3049,16 +4245,52 @@
       "key": "02ef992075574dd0ac549e1bde373812"
     },
     {
+      "source": "Midnight",
+      "key": "c8c012313f10e2d0830f3fbc5afca619"
+    },
+    {
       "source": "Mildly Trackable Creature",
       "key": "934bbfa8b3be2367517ef92199dcb73e"
+    },
+    {
+      "source": "Minimal",
+      "key": "30fc6bbba82125243ecf4ddb27fee645"
+    },
+    {
+      "source": "Minor",
+      "key": "6fed0c378a4b4e8c1e7dc5c16dabb388"
     },
     {
       "source": "Mix colored energy into a jarred aura blob, raise it with feeding, rest, sunlight, music and pure chaos, then harvest it onto your goblin — who erupts into a dance picked by your color. Sneaky color-theory lessons, extremely dumb dances.",
       "key": "6ba83d744527def6e2ec742e581fc6ae"
     },
     {
+      "source": "Mixolydian",
+      "key": "c1992ab744a3d5a14cb387c34a42c7ed"
+    },
+    {
+      "source": "Moderate",
+      "key": "1eb79d43dbb97d5ceb3c157fdb27fa60"
+    },
+    {
+      "source": "Moderate (3G class)",
+      "key": "5ae06ad13ba5d441f0cfe79fa89a9469"
+    },
+    {
       "source": "Moderately Unique",
       "key": "1a7896434e8847a0cdc2b50685548b01"
+    },
+    {
+      "source": "Molten",
+      "key": "6d4dfae94a85040c9c57a67eb7a91c91"
+    },
+    {
+      "source": "moments ago",
+      "key": "20227676211ee91ca980534befed120b"
+    },
+    {
+      "source": "Moray eel",
+      "key": "5c9a6b63a5f12b7d663214113e14fd24"
     },
     {
       "source": "Morning browsing",
@@ -3069,8 +4301,16 @@
       "key": "0b33215a02fa46499bc7fcdc5f1cd689"
     },
     {
+      "source": "Mountain Time · North America",
+      "key": "9174878e027085f1fd6b85cd3be458fb"
+    },
+    {
       "source": "Mouse",
       "key": "f2a47c6809d88e175dade0ef7b16aa13"
+    },
+    {
+      "source": "Mouse Style",
+      "key": "7f793606f779e50ada49003ad46e4107"
     },
     {
       "source": "Move your slug up and down — drag on touch, or use the mouse / W / S. Tap (or click, or Space) to lunge. Line up with your rival and strike to score. Every move and lunge burns energy, so watch your meter. Left-handed? Tap the hand button to swap sides.",
@@ -3109,6 +4349,10 @@
       "key": "190157c33457c39365bad78b26edfcc5"
     },
     {
+      "source": "Mutation",
+      "key": "59016373e3e4440ecf76c1d4b6bcd97d"
+    },
+    {
       "source": "Mute sound effects",
       "key": "72840f00dc8e591aa7b57631b0cb42b5"
     },
@@ -3117,8 +4361,16 @@
       "key": "70a51c85067ce6cd7fa1630b5a2d4951"
     },
     {
+      "source": "Mysterious",
+      "key": "2eb647120f7d88d2bbe8deb820cc7a1c"
+    },
+    {
       "source": "Mystic Aura",
       "key": "5e1d00a294ae5dc43e75f513e0b95f85"
+    },
+    {
+      "source": "Nederlands",
+      "key": "dea2dcc2d6d633e6a3d2a93ed23aa903"
     },
     {
       "source": "Negative",
@@ -3129,6 +4381,10 @@
       "key": "7a7ad2b2ae72bca3934113df8b9c6582"
     },
     {
+      "source": "Netherlands",
+      "key": "a67d4cbdd1b59e0ffccc6bafc83eb033"
+    },
+    {
       "source": "Neutral",
       "key": "e9bb5320b3890b6747c91b5a71ae5a01"
     },
@@ -3137,12 +4393,28 @@
       "key": "4e966eb4a1be386621fcb791bd99bab1"
     },
     {
+      "source": "New Zealand",
+      "key": "c51ed580ea5e20c910d951f692512b4d"
+    },
+    {
       "source": "Newly hatched",
       "key": "63eef78fa1d66a078180b28aecff7ff5"
     },
     {
       "source": "Nice — balloon banked! A fresh one drifts in.",
       "key": "6040127172500bb426c0c28bab973840"
+    },
+    {
+      "source": "nl-NL",
+      "key": "7b442fc94a859285de53fe40079b1d21"
+    },
+    {
+      "source": "No ads, no crypto, no wallet, no payments, and no tracking beyond basic anonymous visit counts.",
+      "key": "3bd9600b0be4fb583e7b9e22edd5066d"
+    },
+    {
+      "source": "No audio was captured. Try again.",
+      "key": "28b5b713ef6fdf858be194df7c4d0443"
     },
     {
       "source": "No device signal reveals these. Advertisers only 'know' them by buying your cross-site history from data brokers — which this page never has.",
@@ -3161,8 +4433,20 @@
       "key": "8260a27997dc130b5a78bef354481e35"
     },
     {
+      "source": "None",
+      "key": "6adf97f83acf6453d4a6a4b1070f3754"
+    },
+    {
       "source": "Nonpolar",
       "key": "fde42827d1c952cb98d401d717059ce9"
+    },
+    {
+      "source": "Norway",
+      "key": "d5b9290a0b67727d4ba1ca6059dc31a6"
+    },
+    {
+      "source": "NotAllowedError",
+      "key": "7802c5c0f76a9f0cd41432e20f243ad7"
     },
     {
       "source": "Note:",
@@ -3189,8 +4473,24 @@
       "key": "cf1f8a201d5a6e6955191aa5fce220a3"
     },
     {
+      "source": "Octopus",
+      "key": "f4f71aeb5fd31cb543b0f8f4113ffb81"
+    },
+    {
       "source": "Octopus deaths",
       "key": "2220877465d58ae6ac3afbeaf434907e"
+    },
+    {
+      "source": "Off",
+      "key": "d15305d7a4e34e02489c74a5ef542f36"
+    },
+    {
+      "source": "Ominous",
+      "key": "2f70b6e353bcd8d510610389ccea0469"
+    },
+    {
+      "source": "On",
+      "key": "521c36a31c2762741cf0f8890cbe05e3"
     },
     {
       "source": "Once in a life, you search for another. Few octopuses ever meet one.",
@@ -3199,6 +4499,10 @@
     {
       "source": "Only 1% of octopuses reach adulthood. Can you?",
       "key": "820864a539958babee88b7e31a999778"
+    },
+    {
+      "source": "Opera",
+      "key": "a956e985535b8d57732d14dfa0e4c71a"
     },
     {
       "source": "Operating System",
@@ -3241,8 +4545,20 @@
       "key": "7f7a8baf10ba503aab63f3db3213e091"
     },
     {
+      "source": "Pacific",
+      "key": "501a92c9b793cb44dfbfe0ca9ffee563"
+    },
+    {
+      "source": "Pacific Time · North America",
+      "key": "547af1660c0ccdcff7c7e0ebae02ff53"
+    },
+    {
       "source": "Paint with potatoes",
       "key": "7026deec11e651076d5c230535f4d677"
+    },
+    {
+      "source": "Palatino Linotype",
+      "key": "5d1a5b358cb957d0d89ff084fa13e7b3"
     },
     {
       "source": "Paste emoji to interpret... 🎉🍕🚀",
@@ -3251,6 +4567,10 @@
     {
       "source": "Paw power",
       "key": "2f37d21f349ec686da63d92664f791b8"
+    },
+    {
+      "source": "Pentatonic Minor",
+      "key": "0796ff062e9fb79df9b623ce35e3ff74"
     },
     {
       "source": "per sale — and a profile is sold over and over.",
@@ -3265,8 +4585,16 @@
       "key": "c95f3a045091df0ad072aa935001cc04"
     },
     {
+      "source": "Perform {danceName}",
+      "key": "a9eb954214e8dd537df977d34252556b"
+    },
+    {
       "source": "Permission Unlocks",
       "key": "b81e0ed1c925ef4b91eaf163b03a4e0a"
+    },
+    {
+      "source": "Phenylalanine",
+      "key": "47663408b83515ea1f06fd61d09d88c4"
     },
     {
       "source": "Phoenix Aura",
@@ -3275,6 +4603,10 @@
     {
       "source": "Phone",
       "key": "bcc254b55c4a1babdf1dcb82c207506b"
+    },
+    {
+      "source": "Phrygian",
+      "key": "805db0fe201d84ac80b9572cb7d262ea"
     },
     {
       "source": "Pick up a potato and drop it on the canvas.",
@@ -3287,6 +4619,10 @@
     {
       "source": "Ping you any time — even after you close the tab or browser",
       "key": "7f01450c5ab32a1c322d3931caa43838"
+    },
+    {
+      "source": "pl-PL",
+      "key": "0adc86e44103de68077794fdfcbce634"
     },
     {
       "source": "Plant",
@@ -3309,12 +4645,32 @@
       "key": "424607653cfe010baa8924709d579ad7"
     },
     {
+      "source": "Play to: <0>{scoreToWin}</0>",
+      "key": "269727d86c7bac0f47c3c7b30995f9bc"
+    },
+    {
       "source": "Plucked",
       "key": "de9ae8838c2da5b79db3787a27d9333a"
     },
     {
+      "source": "Plucked: <0>{plucks}</0>",
+      "key": "29970d0b5990243bc619477fb7f93b0c"
+    },
+    {
+      "source": "Pointer",
+      "key": "61cf8510205077b6f5491d38cd44c0f7"
+    },
+    {
+      "source": "pointer-events-none animate-[pushy-fall_760ms_ease-in_forwards]",
+      "key": "91e67a9f715d47e4fd989c2fb2ad756b"
+    },
+    {
       "source": "Polar",
       "key": "e266cfd65ad46a67fc54b0efd38e40dd"
+    },
+    {
+      "source": "Polski",
+      "key": "d0033788e612a4e0646c261eba804fb6"
     },
     {
       "source": "POP. An egg?! You squeezed an entire egg out of the chicken.",
@@ -3325,12 +4681,28 @@
       "key": "1c7444be9626d149ab598fb79b639f96"
     },
     {
+      "source": "position:absolute;left:{dropX}px;top:{y}px;width:3px;height:9px;border-radius:9999px;background:rgba(59,130,246,0.65);pointer-events:none;",
+      "key": "708bb44a1bb721b185c2e13b013dff14"
+    },
+    {
+      "source": "position:absolute;left:{value0}%;bottom:{h}px;font-size:20px;pointer-events:none;",
+      "key": "442623e40e499d96e163a80cf54578b6"
+    },
+    {
       "source": "Positive",
       "key": "3289297424e01eda5b788c083bbf3147"
     },
     {
+      "source": "POST",
+      "key": "a02439ec229d8be0e74b0c1602392310"
+    },
+    {
       "source": "Potato Painter",
       "key": "3df9340f24f273b8e3b94195098592cd"
+    },
+    {
+      "source": "potato-{value0}",
+      "key": "0fb4e1daa796758724e15bfd9aa437d8"
     },
     {
       "source": "Potatoes stamped",
@@ -3339,6 +4711,10 @@
     {
       "source": "Potatoes used",
       "key": "cc819c1daa74d1bf8041614d44d6bb02"
+    },
+    {
+      "source": "Potatoes used: <0>{used}</0>",
+      "key": "d8395e5a73cdbc7ca27400a61db95a65"
     },
     {
       "source": "Potion",
@@ -3389,6 +4765,10 @@
       "key": "31fde7b05ac8952dacf4af8a704074ec"
     },
     {
+      "source": "Preview failed. Try recording again.",
+      "key": "dc902081f7ec83204dbe3196226675b4"
+    },
+    {
       "source": "Previewing your custom button.",
       "key": "deccff1b7aada3d1bd5b04f5ebcf125f"
     },
@@ -3405,12 +4785,20 @@
       "key": "207c99352e5189147901d91978de70eb"
     },
     {
+      "source": "Proline",
+      "key": "cc95db87122eff66ff88bb5c6b537518"
+    },
+    {
       "source": "Property records: owner, value, and purchase date",
       "key": "8e7175d659c364c3aab41d5ffc3077d8"
     },
     {
       "source": "Pulls it cosmic & purple",
       "key": "89485bfa4443cef79c2738e6f654fb15"
+    },
+    {
+      "source": "Pulse",
+      "key": "ec8374db32bacb4cd9760199ec42819e"
     },
     {
       "source": "Pure brainrot",
@@ -3439,6 +4827,18 @@
     {
       "source": "Pushy Paws",
       "key": "90d682b3b24f21f31f5435508e8e0b5a"
+    },
+    {
+      "source": "Pyrrolysine (Pyl)",
+      "key": "3ddcf83b498d0c6cf1ba54fde863598f"
+    },
+    {
+      "source": "Q {value0} {value1} {value2} {value3}",
+      "key": "5122c84f754b058478ffc0b3d12dde6d"
+    },
+    {
+      "source": "Quiet",
+      "key": "098753f8980036f4b936e3d4b6997111"
     },
     {
       "source": "Quit",
@@ -3497,12 +4897,20 @@
       "key": "49e8a28df93e3b705362bb119fb702f8"
     },
     {
+      "source": "Reached: {title} · Age {value0} months",
+      "key": "e640798fd607bcac2052728729f3b717"
+    },
+    {
       "source": "Read your expression to infer mood or attention",
       "key": "f36315b58bf43ec7d469f6fa4aa10554"
     },
     {
       "source": "Reading style",
       "key": "4d62729a072322550a0e2ebb938076ee"
+    },
+    {
+      "source": "Ready to harvest!",
+      "key": "8277326ffe23b4bfb7c12510b4b75a07"
     },
     {
       "source": "Record",
@@ -3517,12 +4925,20 @@
       "key": "7335f3e8493def5bbb2814f299990e3b"
     },
     {
+      "source": "Recording is {value0}. Limit is {value1}.",
+      "key": "d0e744dc97de8abf77c10c8b0084caa3"
+    },
+    {
       "source": "Recording is not supported in this browser.",
       "key": "2088b074e1469e3a6e460706fa4523d8"
     },
     {
       "source": "Recording is too large. Keep it under {size}.",
       "key": "41f4751da6d01b3c5a5b5a3305a304f0"
+    },
+    {
+      "source": "Recording is too large. Keep it under {value0}.",
+      "key": "19b5b8eef837131db65337ad9e4c8d13"
     },
     {
       "source": "Recording saved. Share link is ready.",
@@ -3577,6 +4993,10 @@
       "key": "627e3142964036c62d8991b3d4d54b9a"
     },
     {
+      "source": "Request failed ({status})",
+      "key": "9183a379b76e6405166dec474875fcd7"
+    },
+    {
       "source": "Reset",
       "key": "526d688f37a86d3c3f27d0c5016eb71d"
     },
@@ -3589,6 +5009,110 @@
       "key": "51cfbcff36da74a9fc47f3a5140f99f2"
     },
     {
+      "source": "rgb({value0} {value1} {value2})",
+      "key": "85595a71f223deb095323262586eee30"
+    },
+    {
+      "source": "rgb(56 189 248)",
+      "key": "ba099e8b4e78a1e4b74baf2725f990d9"
+    },
+    {
+      "source": "rgba({value0}, {value1}, {value2}, {a})",
+      "key": "0388e9a78f661aa6ad1f8d2ac3b5a03a"
+    },
+    {
+      "source": "rgba({value0},{value1},{value2},{a})",
+      "key": "d59a81993c358385e3b888a9f3cf8b90"
+    },
+    {
+      "source": "rgba(0, 0, 0, {fadeOpacity})",
+      "key": "929de00fb506fa194fd8406e5eff411a"
+    },
+    {
+      "source": "rgba(0,0,0,0.12)",
+      "key": "974cd96bddf4b55084a4417473e5dcff"
+    },
+    {
+      "source": "rgba(0,0,0,0.18)",
+      "key": "5cd87efe8e69babae7b1c7358b385b71"
+    },
+    {
+      "source": "rgba(0,0,0,0.25)",
+      "key": "984d8fbb80dca0ad1c740a8ed31e1716"
+    },
+    {
+      "source": "rgba(0,0,0,0.72)",
+      "key": "f1e1f663d0268460aa2e07d0fb088348"
+    },
+    {
+      "source": "rgba(10, 10, 10, {value0})",
+      "key": "e12d8be4c81a586c85916f1cc38c6017"
+    },
+    {
+      "source": "rgba(120,200,50,0.7)",
+      "key": "768206119eca79ff8ec758ecc8590071"
+    },
+    {
+      "source": "rgba(120,225,235,0.35)",
+      "key": "220029563b77b08439c208a652c60d08"
+    },
+    {
+      "source": "rgba(120,225,235,0)",
+      "key": "73a06625ac78d96bca0973d29016f3f3"
+    },
+    {
+      "source": "rgba(15,10,25,0.95)",
+      "key": "7143cf08171bc69b934d83421355606e"
+    },
+    {
+      "source": "rgba(15,10,25,0)",
+      "key": "a05fda2a0dad639c913a806564699558"
+    },
+    {
+      "source": "rgba(255, 215, 0, 0.2)",
+      "key": "3a02e35723a4b198677eff439eb96dde"
+    },
+    {
+      "source": "rgba(255, 215, 0, 0.3)",
+      "key": "aa9208ab9c27c4e47b83adc15825559d"
+    },
+    {
+      "source": "rgba(255, 255, 255, 0.6)",
+      "key": "f56004b0ba41d33a796d817cd93f069d"
+    },
+    {
+      "source": "rgba(255,150,40,{value0})",
+      "key": "cca05f902de89daf8554d7081b8380be"
+    },
+    {
+      "source": "rgba(255,238,200,0.92)",
+      "key": "2349396385cd6f952d62dfb51eccd301"
+    },
+    {
+      "source": "rgba(255,240,220,0.5)",
+      "key": "a33fb0242b85ae9d1f58c4537479186e"
+    },
+    {
+      "source": "rgba(255,255,255,{value0})",
+      "key": "08b21dcb3f40302271f3a83cddb3d233"
+    },
+    {
+      "source": "rgba(255,255,255,0.16)",
+      "key": "6252f354f49ccebcda59e26894d555c8"
+    },
+    {
+      "source": "rgba(255,255,255,0.18)",
+      "key": "6bcd48a9709c1a6f42de3b206b74c2ca"
+    },
+    {
+      "source": "rgba(255,255,255,0.35)",
+      "key": "49ff92c2e01c77fe67582112caaf26fc"
+    },
+    {
+      "source": "rgba(255,255,255,0.5)",
+      "key": "5c615864d3d4f8bf9fca34d8678f9c4e"
+    },
+    {
       "source": "Right",
       "key": "92b09c7c48c520c3c55e497875da437c"
     },
@@ -3597,8 +5121,32 @@
       "key": "efd8c8f4ed28e893ef91723da074d69a"
     },
     {
+      "source": "ring-2 ring-brand-primary ring-offset-1 ring-offset-brand-background",
+      "key": "cccb93d4b456bb621392bedaa50e60b8"
+    },
+    {
+      "source": "Ritual",
+      "key": "94f57eacf08bb8bc6f40e40a17a7456c"
+    },
+    {
       "source": "Rival",
       "key": "eea9d021db5d7c44a2db94cf7ceeba0d"
+    },
+    {
+      "source": "rotate({angle}deg) scaleY({value0})",
+      "key": "93eda104695e66aced358925e3399f5f"
+    },
+    {
+      "source": "rotate({rotate}deg)",
+      "key": "b1bc18ee369e5d15caf5c11d3421e441"
+    },
+    {
+      "source": "rotate({rotation}deg)",
+      "key": "1673c81bdf3d799e55ccbd9d8ba3fec1"
+    },
+    {
+      "source": "rotate({value0}deg)",
+      "key": "4495a21687c5034f228ba74d696b8e8f"
     },
     {
       "source": "Rough Location",
@@ -3609,8 +5157,24 @@
       "key": "768a74250b9a50c0eab2616c9454c12e"
     },
     {
+      "source": "Roughly 1 in {value0} people share a device profile like yours ({value1} bits of entropy).",
+      "key": "f82bf9f88605f40882a74f5159bcc9d6"
+    },
+    {
+      "source": "rounded-neobrutal border-thick border-brand-border bg-brand-primary px-5 py-2.5 font-heading uppercase text-brand-text shadow-neo transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed disabled:opacity-50",
+      "key": "bf9e4873a1c8e3bce3a4258f94ff3df4"
+    },
+    {
+      "source": "rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1.5 text-sm font-bold shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed",
+      "key": "92e1c49ea3629387378db2536e2d3fdd"
+    },
+    {
       "source": "Royalty among tubers.",
       "key": "c067b656bd4d1eeba204505959c5eeeb"
+    },
+    {
+      "source": "ru-RU",
+      "key": "92addcb0c5eeba81a27e5d782e61da33"
     },
     {
       "source": "Rubber Mouse Toy",
@@ -3627,6 +5191,14 @@
     {
       "source": "Russet",
       "key": "e496a35db2128a465306cdafc0e5b91c"
+    },
+    {
+      "source": "Sacred",
+      "key": "06f27b4f79dffe59cfb096968c4ebe6b"
+    },
+    {
+      "source": "Safari",
+      "key": "50de9bc68c93dc32d8c7c90593471760"
     },
     {
       "source": "Safe",
@@ -3649,6 +5221,10 @@
       "key": "248336101b461380a4b2391a7625493d"
     },
     {
+      "source": "scale(0.62)",
+      "key": "51f37979f427b8887fdf54b02d7ee7d2"
+    },
+    {
       "source": "Scanning device.",
       "key": "f98d0e0159c81cc6baddbef0a5f6c78e"
     },
@@ -3669,6 +5245,10 @@
       "key": "b08d895dee0fea8a5371451ade15c907"
     },
     {
+      "source": "Screams: <0>{screams}</0>",
+      "key": "0348e1c15a0082e363a378ab4a48b173"
+    },
+    {
       "source": "Screen",
       "key": "2fc3359e12b2a9104121dcf04246f6a0"
     },
@@ -3679,6 +5259,10 @@
     {
       "source": "Scroll Goblin",
       "key": "e75b44a79a1855b72a6e7de341f46dc7"
+    },
+    {
+      "source": "Scroll Goblin is a free collection of silly, interactive browser toys powered by AI. Each mini-app does one absurd thing well — there is nothing to install and nothing to learn. Just open one and start poking.",
+      "key": "86da98651d84aa4554dbc59fc91d082f"
     },
     {
       "source": "Scroll Goblin is a free collection of silly, interactive browser toys powered by AI. Each mini-app does one absurd thing well, with nothing to install and nothing to learn.",
@@ -3707,6 +5291,18 @@
     {
       "source": "Seedling",
       "key": "dc690c54f0e087c46f30aea5f7bd0d77"
+    },
+    {
+      "source": "Segoe UI",
+      "key": "5664e732f82e7d7cc662c9a9fa8eeb7a"
+    },
+    {
+      "source": "Selenocysteine (Sec)",
+      "key": "b0a4ae56988af400b0f10a5dc5af386b"
+    },
+    {
+      "source": "Serine",
+      "key": "b11b6526fe7bdfd7dd2d08f96eea1feb"
     },
     {
       "source": "served from cache",
@@ -3749,12 +5345,32 @@
       "key": "2d0b13c91b5da8e1894e23d8cfc756b1"
     },
     {
+      "source": "Shell",
+      "key": "ea89b68c34ce4a63c0f77e17413c6e30"
+    },
+    {
       "source": "Should I take the leap?",
       "key": "ee110d5442ab2aa985b97a2ba099b289"
     },
     {
       "source": "Show the {count} technical signals the Goblin also used",
       "key": "c8fee15d5d19a2090ff6bfb7ea40755e"
+    },
+    {
+      "source": "Show the {length} technical signals the Goblin also used",
+      "key": "984ee47b5570dedb2a2dfd3c94adbcbb"
+    },
+    {
+      "source": "Shrimp",
+      "key": "2f2e1847f0dbddd2a94ddf9b8823390e"
+    },
+    {
+      "source": "Shuffle",
+      "key": "e8b4b40ec3622e371789b790caabc083"
+    },
+    {
+      "source": "Sibling",
+      "key": "ba3f6a5526b54675d54123702760ddf2"
     },
     {
       "source": "Sigma Aura",
@@ -3793,6 +5409,10 @@
       "key": "49f7526714f56a65f53f774cf35c75dd"
     },
     {
+      "source": "Slow (2G class)",
+      "key": "cfa75c7b33e468bc62965cc991d18e9b"
+    },
+    {
       "source": "Slug Arena",
       "key": "ee0211a7aa690226d60b6d1a83b60f3f"
     },
@@ -3807,6 +5427,26 @@
     {
       "source": "SLUG!",
       "key": "6fbd04625d983873feec434a870428f1"
+    },
+    {
+      "source": "slugConfettiFall {duration}s linear {delay}s forwards",
+      "key": "18e47b21438a6015b2d7ed8ae1042fa2"
+    },
+    {
+      "source": "slugCountPop 0.5s ease-out",
+      "key": "7fad04d766abe5f4c786ecfec9291d84"
+    },
+    {
+      "source": "slugVictoryFade 0.3s ease-out",
+      "key": "08b66c62d52dbbd78a8361d3e28dbdcb"
+    },
+    {
+      "source": "slugVictoryPop 0.4s cubic-bezier(0.22,1.3,0.4,1)",
+      "key": "913e4217b979c0c40ceaa3b4bbb89376"
+    },
+    {
+      "source": "Small shark",
+      "key": "117c341e0fb8004bf025f258235417dc"
     },
     {
       "source": "Small, round, full of joy.",
@@ -3833,8 +5473,28 @@
       "key": "638caa12811deb15f5209535a8a33547"
     },
     {
+      "source": "Some movement",
+      "key": "dc298cbefeb1b9a348923fdc077f9dd0"
+    },
+    {
+      "source": "Someone shared their chicken stats with you. Think you can do better?",
+      "key": "9d40251b128fc9126f61fc2819386148"
+    },
+    {
+      "source": "Someone shared their patch of grass with you. Treat it well.",
+      "key": "ed699123f0c1ace376343a5afe266a8c"
+    },
+    {
+      "source": "Someone shared their potato art with you. Add your own spuds!",
+      "key": "da3007588db3a9d3e36e6ebe1ddec3b1"
+    },
+    {
       "source": "Something went wrong",
       "key": "6609dd239e143d00002123326c5e4aad"
+    },
+    {
+      "source": "Sonata",
+      "key": "5265e2e77c94f0a014d6aa14dac2a977"
     },
     {
       "source": "Songs played",
@@ -3849,8 +5509,16 @@
       "key": "dc9958e590c153c146c2c0254e92bb24"
     },
     {
+      "source": "Space Mono",
+      "key": "6a643de4f7346ef146cab1f04dfabc0e"
+    },
+    {
       "source": "Specimen ID",
       "key": "d072081d9a646278ea607cd16b7c307a"
+    },
+    {
+      "source": "Spectral",
+      "key": "e37975b8856f3f6d3225897f27a442b4"
     },
     {
       "source": "Speech Activity",
@@ -3863,6 +5531,10 @@
     {
       "source": "Splat — the rival lunged and got you.",
       "key": "cbd8a9a9fe95b0d8820514da3c27bc14"
+    },
+    {
+      "source": "Sprouting",
+      "key": "5caad62285a112fd543def840273b54c"
     },
     {
       "source": "Spud acquired. Drop it where you want it!",
@@ -3879,6 +5551,10 @@
     {
       "source": "Squeezes",
       "key": "d19121bc39fe3320ddb42a5738fe846a"
+    },
+    {
+      "source": "Squeezes: <0>{squeezes}</0>",
+      "key": "8089497acc73acc00bf51ff4f1e044d1"
     },
     {
       "source": "Stack of books",
@@ -3901,6 +5577,10 @@
       "key": "b78b9e865bb7e11d953601ef9cb5d2b9"
     },
     {
+      "source": "Stamps: <0>{stampCount}</0>",
+      "key": "958de9a1251b09dc4d3bfcd192ec904d"
+    },
+    {
       "source": "Standard 20 — the amino acids your DNA codes for",
       "key": "be9c83c93e14a997e465864fea859792"
     },
@@ -3911,6 +5591,10 @@
     {
       "source": "Start Match",
       "key": "32a406a139d52b97daba3dda8136ab61"
+    },
+    {
+      "source": "Sticky",
+      "key": "d8f6d391ba573fe747a3360afb99904d"
     },
     {
       "source": "Still as Stone",
@@ -3939,6 +5623,10 @@
     {
       "source": "Storytelling pulled this aura cool and dreamy regardless of mix.",
       "key": "c3e3238bfdce588b8f612451ab173837"
+    },
+    {
+      "source": "Strand",
+      "key": "3c027078bb3e8e6fa9af0c17f09a74c4"
     },
     {
       "source": "String together amino acids and hit play. The sequence picks a key, scale, tempo, and chord progression — so every protein becomes its own little song. Same sequence always sounds the same.",
@@ -3973,6 +5661,14 @@
       "key": "2d7795e379c72de0140ea96b273403fc"
     },
     {
+      "source": "sv-SE",
+      "key": "2cd0b13f4dfbe54d96b03c4cd995aae1"
+    },
+    {
+      "source": "Svenska",
+      "key": "905bd3465e945f776a704e98677a09d8"
+    },
+    {
       "source": "Swap direction",
       "key": "70d8dbd167eec8d08729460d8db753da"
     },
@@ -3985,12 +5681,28 @@
       "key": "98379a7d2d5bc5324df3ee642be5ca00"
     },
     {
+      "source": "Swat {name}",
+      "key": "9dc5307888c3ca2aa527117758bc63c3"
+    },
+    {
+      "source": "Sweden",
+      "key": "c8f4261f9f46e6465709e17ebea7a92b"
+    },
+    {
       "source": "Sweet Potato",
       "key": "65a730710a283f0dd365db8e00b5b1cd"
     },
     {
+      "source": "Switzerland",
+      "key": "3ad08396dc5afa78f34f548eea3c1d64"
+    },
+    {
       "source": "Tablet",
       "key": "36384a9ea3ec791e6bd4ab6b36f2ff2a"
+    },
+    {
+      "source": "Tahoma",
+      "key": "2bd141ae2a8e92e3cdd9163089ec8924"
     },
     {
       "source": "Tallying the chaos...",
@@ -4035,6 +5747,14 @@
     {
       "source": "That match link is invalid or full.",
       "key": "5035ef0de04e049d75fbf19294137630"
+    },
+    {
+      "source": "The AI-powered apps (Emoji Translator, Commune with God) send your input to a language model and return a playful response.",
+      "key": "723985c49fc257263225ebd57383471b"
+    },
+    {
+      "source": "The Americas",
+      "key": "546e7182ae553cbf286d60b38df937d8"
     },
     {
       "source": "The chalice rings forever. Beautiful.",
@@ -4197,8 +5917,16 @@
       "key": "913686c75668d7bf20030d78a1e2df08"
     },
     {
+      "source": "This browser does not support recording.",
+      "key": "7c0d3756501fa59c38b4d61a0bc7ffce"
+    },
+    {
       "source": "This describes a type of device, not a proven one-of-a-kind machine. Many signals overlap (a phone model locks its screen, GPU and fonts together), so we discount for that — desktops vary a lot and trend unique, while phones cluster and are far less identifying. It's an estimate from all {count} signals above, calibrated against public research (EFF Panopticlick, AmIUnique). A precise figure would need a live database of real visitors — which would mean sending your data off-device, so the Goblin won't.",
       "key": "310519d9b4e4859330843a185ee175f2"
+    },
+    {
+      "source": "This describes a type of device, not a proven one-of-a-kind machine. Many signals overlap (a phone model locks its screen, GPU and fonts together), so we discount for that — desktops vary a lot and trend unique, while phones cluster and are far less identifying. It's an estimate from all {length} signals above, calibrated against public research (EFF Panopticlick, AmIUnique). A precise figure would need a live database of real visitors — which would mean sending your data off-device, so the Goblin won't.",
+      "key": "15288a73cd059d11b2c757609418f01b"
     },
     {
       "source": "This page doesn't exist. The goblin probably ate it.",
@@ -4207,6 +5935,10 @@
     {
       "source": "Thousands hatch. Few survive.",
       "key": "001afc29ea34125d3a01a7d9dfb59236"
+    },
+    {
+      "source": "Threonine",
+      "key": "fd32e8c9ae0629d7aaebe197c85bb761"
     },
     {
       "source": "Tie a push subscription to your device as a semi-permanent ID",
@@ -4223,6 +5955,10 @@
     {
       "source": "Times Inked",
       "key": "bdb7d9d07977753b2206355adc5f2e82"
+    },
+    {
+      "source": "Times New Roman",
+      "key": "8900726a3d038004964c7b84cf59be8d"
     },
     {
       "source": "Timezone",
@@ -4261,6 +5997,14 @@
       "key": "82502df93a6422e972c1531c7361cf53"
     },
     {
+      "source": "top-[110px] h-[13.77rem] w-[13.77rem] sm:top-[126px] sm:h-[17.2125rem] sm:w-[17.2125rem]",
+      "key": "48f4485086de02c87370ca0da876df36"
+    },
+    {
+      "source": "top-[158px] h-24 w-24 sm:top-[186px] sm:h-28 sm:w-28",
+      "key": "4153d8040f5091eb529b63e7492529eb"
+    },
+    {
       "source": "Totals update within about a minute. Stats are anonymous — nobody knows it was you who squeezed the chicken 4,000 times.",
       "key": "1ccd3d8c50e2f554b913c3f097732858"
     },
@@ -4277,12 +6021,20 @@
       "key": "c9bf947730af2c9c78ef334b3660a2d0"
     },
     {
+      "source": "Touch Style",
+      "key": "b18fbd2bc4fb455545c0901d654315ee"
+    },
+    {
       "source": "TOUCHÉ! Your slug lands a slimy strike.",
       "key": "205357466c56bc3f8ac1e821b4e53787"
     },
     {
       "source": "Touches",
       "key": "2e57552ac1759f81608d0b2f3cdfc770"
+    },
+    {
+      "source": "Touches: <0>{touches}</0>",
+      "key": "7347e516bbd70d2d183e23be6e0b780b"
     },
     {
       "source": "Track which alerts you click to profile what lures you back",
@@ -4309,12 +6061,100 @@
       "key": "ff0d9ba316c6853a3bf8f441415d58c3"
     },
     {
+      "source": "Translate language <0>↔️</0> emoji",
+      "key": "7d79dd65237f170acd9cee700d96aeed"
+    },
+    {
+      "source": "translate(-50%, -50%)",
+      "key": "c60d94c1a3fb3197a167361f787083a4"
+    },
+    {
+      "source": "translate(-50%, -50%) rotate({value0}deg)",
+      "key": "456e6eb87e4ba7309b39a37dd349a185"
+    },
+    {
+      "source": "translate({drift}px, 28px) rotate(-110deg)",
+      "key": "0342501c5dde1309493269b9865986ec"
+    },
+    {
+      "source": "translate({value0}px, -52px) rotate(-60deg)",
+      "key": "5bb64fe82f7f05311b7bb599c3937465"
+    },
+    {
+      "source": "translate({value0}px, 16px) rotate(-122deg)",
+      "key": "27d15d5a65828bdccbfcf4c69224f3f4"
+    },
+    {
+      "source": "translate({value0}px, 28px) rotate(-128deg)",
+      "key": "3b3be581b3f1bb1ee092ba5f6c87508b"
+    },
+    {
+      "source": "translate({x}px, {y}px) scale(0.3)",
+      "key": "0431a91278b64b3767687a1f718decd5"
+    },
+    {
+      "source": "translate({x}px, {y}px) scale(1.4)",
+      "key": "b0eff9382ba772e04a314485ebcf265e"
+    },
+    {
+      "source": "translate({x}px, 150px) scale(0.4)",
+      "key": "ccd6832b4b0238bd1cf8c0e74173f99d"
+    },
+    {
+      "source": "translate({x}px, 150px) scale(1.6)",
+      "key": "e001f03700de4fc7cc180bfa1e601081"
+    },
+    {
+      "source": "translate(0px, 0px) rotate(0deg)",
+      "key": "71fefe364585510c149b3f372f5dda64"
+    },
+    {
+      "source": "translate(128px, 72px) rotate(-6deg)",
+      "key": "abe6503c9b215a17c3f07585dffcca7a"
+    },
+    {
+      "source": "translate(84 8)",
+      "key": "b4eb112a0a6a2517842ebc9676b5f6e3"
+    },
+    {
+      "source": "translate(88px, 86px) rotate(8deg)",
+      "key": "293f43c19bddcc79999665b1b0cf275e"
+    },
+    {
+      "source": "translate(94 19)",
+      "key": "1b6be0c016f8fe5b763b9000b6c1b03d"
+    },
+    {
+      "source": "translateY(-70px) rotate(140deg)",
+      "key": "13f64b39822c9b6d8df147f77314eb83"
+    },
+    {
+      "source": "translateY({value0}px)",
+      "key": "1ad148b8d4187ad3661feaf7868bbc8e"
+    },
+    {
+      "source": "translateY(0)",
+      "key": "8d5d7acc328756a12bf971fd31de4760"
+    },
+    {
+      "source": "translateY(0) rotate(0deg)",
+      "key": "22daf4eb51eb0135aa071aa9ec514831"
+    },
+    {
       "source": "Translating...",
       "key": "d03e99730ddba93542f7af93d8d6c93a"
     },
     {
       "source": "Translation will appear here",
       "key": "8386b947510242bb242c6067ecf6891a"
+    },
+    {
+      "source": "TransportError",
+      "key": "a6bc95be5848e897dbc439dd4dc5f465"
+    },
+    {
+      "source": "Trebuchet MS",
+      "key": "720661ecef8eaa75b0d48a938bff3404"
     },
     {
       "source": "Tree-Hugging Hippie Sway",
@@ -4325,8 +6165,20 @@
       "key": "af877d748e171becbc151923a10584e3"
     },
     {
+      "source": "Triumphant",
+      "key": "58f74ec7ffde45867bed30acc745d7c5"
+    },
+    {
       "source": "Try again",
       "key": "f915a95e609bbd517a8a1e7bdcceef37"
+    },
+    {
+      "source": "Tryptophan",
+      "key": "5ab09b2b54d546edebb1781b7b67e2b6"
+    },
+    {
+      "source": "Tuna",
+      "key": "a8adf150861f4bfbf783e420da158968"
     },
     {
       "source": "TV or music in the background — the media you consume",
@@ -4335,6 +6187,14 @@
     {
       "source": "Type a sentence to turn into emoji...",
       "key": "96c2bd9a0aa2d9a4aeea8037c1fe5884"
+    },
+    {
+      "source": "Tyrosine",
+      "key": "6f87c180bef528ed5e72b3735811c5f0"
+    },
+    {
+      "source": "uk-UA",
+      "key": "ce949c7e1741fe95a9c6f4531affc974"
     },
     {
       "source": "Unabridged Tax Code",
@@ -4353,6 +6213,14 @@
       "key": "05bd61ad4f45a10da99965011b394abf"
     },
     {
+      "source": "United Kingdom",
+      "key": "89f9c9f489be2a83cf57e53b9197d288"
+    },
+    {
+      "source": "United States",
+      "key": "f253efe302d32ab264a76e0ce65be769"
+    },
+    {
       "source": "Unknown",
       "key": "88183b946cc5f0e8c96b2e66e1c74a7e"
     },
@@ -4365,8 +6233,32 @@
       "key": "cade351511c38951fd65431cb4b5e17e"
     },
     {
+      "source": "Upload failed",
+      "key": "299cb00a7a52f5147beda49090e08541"
+    },
+    {
+      "source": "Upload failed ({status})",
+      "key": "19d02e139b9156cf63b22ee05d516cce"
+    },
+    {
       "source": "Usable Screen",
       "key": "5df6d518d10b66ffd1fda0961ced7e8b"
+    },
+    {
+      "source": "UTC",
+      "key": "9234324ddf6b4176b57d803a925b7961"
+    },
+    {
+      "source": "Valine",
+      "key": "38b2dd8789fba928d792949edc7aaf2a"
+    },
+    {
+      "source": "Velvet",
+      "key": "eb20aad54d7c4fc89f400a5a446c48d3"
+    },
+    {
+      "source": "Verdana",
+      "key": "207c321933d5e7273bf3defb9eca01af"
     },
     {
       "source": "Very rare",
@@ -4391,6 +6283,10 @@
     {
       "source": "Waiting for your answer in the browser prompt...",
       "key": "d0bceca52ff16e38e75886c0dc08b49e"
+    },
+    {
+      "source": "Waltz",
+      "key": "687a618de975365f0b6d1b163f8b521b"
     },
     {
       "source": "Wand",
@@ -4423,6 +6319,14 @@
     {
       "source": "Waterings poured",
       "key": "3abba7f45a5df4a747703512a7c95b85"
+    },
+    {
+      "source": "Waterings: <0>{waters}</0>",
+      "key": "370b4ff4c1f8e9b358394b77d1cae9ea"
+    },
+    {
+      "source": "WEBGL_debug_renderer_info",
+      "key": "fd24b40311679f21554a2ea751b54886"
     },
     {
       "source": "Websites infer who you are from behavior alone — no name required. These metrics update live.",
@@ -4477,6 +6381,22 @@
       "key": "482295d1a42d99b322bfbaf654579396"
     },
     {
+      "source": "Windows",
+      "key": "aea23489ce3aa9b6406ebb28e0cda430"
+    },
+    {
+      "source": "Wistful",
+      "key": "e69422a862d1b3b9a11b140ba0e70fcd"
+    },
+    {
+      "source": "Xaa — any residue",
+      "key": "007c25f8a0cb4449a8009fa3f51e5d0d"
+    },
+    {
+      "source": "Xle — Leu or Ile",
+      "key": "47dc135e85010e5504df875c89705d21"
+    },
+    {
       "source": "Yellow",
       "key": "51e6cd92b6c45f9affdc158ecca2b8b8"
     },
@@ -4503,6 +6423,10 @@
     {
       "source": "You asked:",
       "key": "587d19d0ab1bad4c9c9717ac658e5caf"
+    },
+    {
+      "source": "You asked: <0>{asked}</0>",
+      "key": "f80d68e4c5d21432d1e31024e2176591"
     },
     {
       "source": "You did not survive",
@@ -4541,8 +6465,16 @@
       "key": "4fa9709afcdff43c0d7fc265290791c8"
     },
     {
+      "source": "You're on {value0} / {value1} — a {value2} in {summaryLocation}, reading in {value3}.",
+      "key": "27d11d1d1b5cb24290ea901978b3480b"
+    },
+    {
       "source": "You're really pressing into it now. The grass forgives you.",
       "key": "ff5afa8cea1dafa4885b6d9dc478ccc0"
+    },
+    {
+      "source": "Your browser blocked playback. Tap once more.",
+      "key": "f526b6037d59646341267761d6ee7707"
     },
     {
       "source": "Your cookies are gone. Your Local Storage is gone. But your device fingerprint remains . Clearing storage doesn't make you anonymous — your device itself is identifying.",
@@ -4607,6 +6539,18 @@
     {
       "source": "Yukon Gold",
       "key": "6b6a1b8220bfc2890fbeab028a97aab7"
+    },
+    {
+      "source": "Русский",
+      "key": "a5c072fa947c0f5677a599b14f3fd48c"
+    },
+    {
+      "source": "Українська",
+      "key": "e1c319e56cddb033e36ac4c1c92fc996"
+    },
+    {
+      "source": "हिन्दी",
+      "key": "450e0a7004f052c5cacb05548a10bedf"
     }
   ]
 }

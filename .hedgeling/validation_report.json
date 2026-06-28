@@ -1,5 +1,5 @@
 {
-  "uniqueSourceStrings": 824,
+  "uniqueSourceStrings": 1310,
   "localeCount": 13,
   "locales": [
     "en-AU",
@@ -16,76 +16,76 @@
     "sv-SE",
     "uk-UA"
   ],
-  "missingTranslations": 134,
+  "missingTranslations": 6452,
   "degradedAnalysis": {
     "pass1": 0,
     "pass2": 0
   },
   "perLocale": {
     "en-AU": {
-      "total": 824,
+      "total": 1310,
       "ready": 818,
-      "missing": 6
+      "missing": 492
     },
     "en-CA": {
-      "total": 824,
+      "total": 1310,
       "ready": 818,
-      "missing": 6
+      "missing": 492
     },
     "en-GB": {
-      "total": 824,
+      "total": 1310,
       "ready": 818,
-      "missing": 6
+      "missing": 492
     },
     "en-IN": {
-      "total": 824,
+      "total": 1310,
       "ready": 818,
-      "missing": 6
+      "missing": 492
     },
     "es-ES": {
-      "total": 824,
+      "total": 1310,
       "ready": 818,
-      "missing": 6
+      "missing": 492
     },
     "fr-CA": {
-      "total": 824,
+      "total": 1310,
       "ready": 818,
-      "missing": 6
+      "missing": 492
     },
     "hi-IN": {
-      "total": 824,
+      "total": 1310,
       "ready": 818,
-      "missing": 6
+      "missing": 492
     },
     "nl-NL": {
-      "total": 824,
+      "total": 1310,
       "ready": 818,
-      "missing": 6
+      "missing": 492
     },
     "pl-PL": {
-      "total": 824,
+      "total": 1310,
       "ready": 818,
-      "missing": 6
-    },
-    "ru-RU": {
-      "total": 824,
-      "ready": 818,
-      "missing": 6
-    },
-    "sv-SE": {
-      "total": 824,
-      "ready": 818,
-      "missing": 6
-    },
-    "uk-UA": {
-      "total": 824,
-      "ready": 818,
-      "missing": 6
+      "missing": 492
     },
     "pt-BR": {
-      "total": 824,
+      "total": 1310,
       "ready": 762,
-      "missing": 62
+      "missing": 548
+    },
+    "ru-RU": {
+      "total": 1310,
+      "ready": 818,
+      "missing": 492
+    },
+    "sv-SE": {
+      "total": 1310,
+      "ready": 818,
+      "missing": 492
+    },
+    "uk-UA": {
+      "total": 1310,
+      "ready": 818,
+      "missing": 492
     }
   }
 }

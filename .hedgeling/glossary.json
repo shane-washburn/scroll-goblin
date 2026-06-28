@@ -1,0 +1,17 @@
+{
+  "terms": [
+    { "term": "English", "doNotTranslate": true, "description": "Native language name in the language picker; always shown in its own form." },
+    { "term": "English (Australia)", "doNotTranslate": true, "description": "Native language name in the language picker." },
+    { "term": "English (Canada)", "doNotTranslate": true, "description": "Native language name in the language picker." },
+    { "term": "English (United Kingdom)", "doNotTranslate": true, "description": "Native language name in the language picker." },
+    { "term": "English (India)", "doNotTranslate": true, "description": "Native language name in the language picker." },
+    { "term": "Nederlands", "doNotTranslate": true, "description": "Native language name (Dutch) in the language picker." },
+    { "term": "Français (Canada)", "doNotTranslate": true, "description": "Native language name (French, Canada) in the language picker." },
+    { "term": "हिन्दी", "doNotTranslate": true, "description": "Native language name (Hindi) in the language picker." },
+    { "term": "Polski", "doNotTranslate": true, "description": "Native language name (Polish) in the language picker." },
+    { "term": "Русский", "doNotTranslate": true, "description": "Native language name (Russian) in the language picker." },
+    { "term": "Español", "doNotTranslate": true, "description": "Native language name (Spanish) in the language picker." },
+    { "term": "Svenska", "doNotTranslate": true, "description": "Native language name (Swedish) in the language picker." },
+    { "term": "Українська", "doNotTranslate": true, "description": "Native language name (Ukrainian) in the language picker." }
+  ]
+}
