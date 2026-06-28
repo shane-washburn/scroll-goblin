@@ -1,0 +1,51 @@
+{
+  "name": "@hedgeling/i18n",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/core/index.js",
+  "types": "dist/core/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/core/index.d.ts",
+      "default": "./dist/core/index.js"
+    },
+    "./vite": {
+      "types": "./dist/vite/index.d.ts",
+      "default": "./dist/vite/index.js"
+    },
+    "./runtime": {
+      "types": "./dist/runtime/index.d.ts",
+      "default": "./dist/runtime/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "echo \"(no lint configured)\"",
+    "test": "tsc -p tsconfig.json && node --test",
+    "demo": "node scripts/smoke.mjs",
+    "extract": "node scripts/extract-cli.mjs",
+    "playground": "node scripts/serve-playground.mjs"
+  },
+  "dependencies": {
+    "typescript": "^5.5.0"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "vite": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.11",
+    "react": "^18.3.1",
+    "vite": "^5.4.8"
+  }
+}

@@ -6,7 +6,6 @@ import {
   consumeShareSnapshot,
   registerAudioLifecycleStop,
   trackStat,
-  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import {
@@ -740,8 +739,7 @@ function Cat({
 }
 
 export default function PushyPawsPage() {
-  const { t } = useTranslation();
-  const [snapshot] = useState(() =>
+    const [snapshot] = useState(() =>
     consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
   );
   const gameCardRef = useMobileGameFit<HTMLElement>({ align: "top" });
@@ -763,8 +761,8 @@ export default function PushyPawsPage() {
   const progressPct = Math.min(100, (item.progress / item.weight) * 100);
   const pushLabel =
     item.points < 0
-      ? t("{points} chaos", { points: item.points })
-      : t("+{points} chaos", { points: item.points });
+      ? `${item.points} chaos`
+      : `+${item.points} chaos`;
 
   const nextItem = (previous: ShelfItem, nextLevel: number) => {
     const next = makeActive(nextLevel, previous.id);
@@ -804,7 +802,7 @@ export default function PushyPawsPage() {
         ...current,
         progress: Math.min(current.weight - 1, current.progress + shove),
       }));
-      setMessage(t("{item} scoots closer to doom.", { item: t(item.short) }));
+      setMessage(`${item.short} scoots closer to doom.`);
       return;
     }
 
@@ -862,17 +860,15 @@ export default function PushyPawsPage() {
       <header className="grid gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-            🐾 {t("Pushy Paws")}
+            🐾 {"Pushy Paws"}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            {t("Knock it off")}
+            {"Knock it off"}
           </h1>
         </div>
         <div className="flex flex-col justify-between gap-4 rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 shadow-neo-lg">
           <p className="text-sm font-bold leading-relaxed">
-            {t(
-              "Tap the objects once for each cat swat. Heavier targets need more paws — shove them off the shelf to rack up chaos and level up your increasingly buff cat."
-            )}
+            {"Tap the objects once for each cat swat. Heavier targets need more paws — shove them off the shelf to rack up chaos and level up your increasingly buff cat."}
           </p>
         </div>
       </header>
@@ -901,9 +897,9 @@ export default function PushyPawsPage() {
             left: `${item.x + progressPct * 0.12}%`,
             transform: `translate(-50%, -50%) rotate(${progressPct / 5}deg)`,
           }}
-          aria-label={t("Swat {item}", { item: t(item.name) })}
+          aria-label={`Swat ${item.name}`}
         >
-          <ItemArt item={item} governmentLabel={t("Government")} />
+          <ItemArt item={item} governmentLabel={"Government"} />
         </button>
 
         <div className="absolute left-[-24px] top-[16px] z-30 h-[210px] w-[235px] sm:left-[-10px] sm:top-[24px] sm:h-[275px] sm:w-[340px]">
@@ -916,27 +912,24 @@ export default function PushyPawsPage() {
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
                 <p className="text-xs font-bold uppercase text-brand-muted">
-                  {t("Current target")}
+                  {"Current target"}
                 </p>
                 <h2 className="truncate font-heading text-base leading-tight sm:text-xl">
-                  {t(item.name)}
+                  {item.name}
                 </h2>
                 <p className="mt-0.5 text-xs font-bold sm:mt-1 sm:text-sm">
-                  {t("{points} / weight {weight}", {
-                    points: pushLabel,
-                    weight: item.weight,
-                  })}
+                  {`${pushLabel} / weight ${item.weight}`}
                 </p>
               </div>
               <div className="shrink-0 rounded-neobrutal border-thin border-brand-border bg-brand-warning px-2 py-0.5 text-xs font-bold sm:px-3 sm:py-1 sm:text-sm">
-                {t("Lv {level}", { level })}
+                {`Lv ${level}`}
               </div>
             </div>
             <div className="mt-2 h-3 overflow-hidden rounded-neobrutal border-thin border-brand-border bg-white sm:mt-3 sm:h-5">
               <div className="h-full bg-brand-primary transition-[width] duration-100" style={{ width: `${progressPct}%` }} />
             </div>
             <p className="mt-2 min-h-8 text-xs font-bold leading-snug sm:mt-3 sm:min-h-10 sm:text-sm">
-              {t(message)}
+              {message}
             </p>
           </Card>
         </div>
@@ -947,17 +940,17 @@ export default function PushyPawsPage() {
             <div className="absolute inset-0 z-50 bg-brand-text/10">
               <Card className="absolute bottom-3 right-2 w-[min(82vw,350px)] bg-brand-background p-5 text-center shadow-neo-lg sm:bottom-4 sm:right-4 sm:w-[390px]">
                 <p className="font-heading text-3xl uppercase leading-none text-brand-text sm:text-4xl">
-                  {t("You win")}
+                  {"You win"}
                 </p>
                 <p className="mt-3 text-sm font-bold leading-relaxed">
-                  {t("Government has been toppled!")}
+                  {"Government has been toppled!"}
                 </p>
                 <button
                   type="button"
                   onClick={restart}
                   className="mt-4 rounded-neobrutal border-thick border-brand-border bg-brand-primary px-4 py-2 font-heading text-lg uppercase text-brand-text shadow-neo-sm transition-transform hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  {t("I'll do it again 😼")}
+                  {"I'll do it again 😼"}
                 </button>
               </Card>
             </div>
@@ -972,15 +965,15 @@ export default function PushyPawsPage() {
 
       <div className="grid grid-cols-3 gap-2 sm:gap-3">
         <Card className="p-2.5 sm:p-4">
-          <p className="text-xs font-bold uppercase text-brand-muted">{t("Pushed off")}</p>
+          <p className="text-xs font-bold uppercase text-brand-muted">{"Pushed off"}</p>
           <p className="font-heading text-2xl sm:text-3xl">{pushed}</p>
         </Card>
         <Card className="p-2.5 sm:p-4">
-          <p className="text-xs font-bold uppercase text-brand-muted">{t("Chaos score")}</p>
+          <p className="text-xs font-bold uppercase text-brand-muted">{"Chaos score"}</p>
           <p className="font-heading text-2xl sm:text-3xl">{score}</p>
         </Card>
         <Card className="p-2.5 sm:p-4">
-          <p className="text-xs font-bold uppercase text-brand-muted">{t("Paw power")}</p>
+          <p className="text-xs font-bold uppercase text-brand-muted">{"Paw power"}</p>
           <p className="font-heading text-2xl sm:text-3xl">{strength}</p>
         </Card>
       </div>

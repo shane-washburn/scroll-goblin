@@ -6,7 +6,6 @@ import {
   consumeShareSnapshot,
   registerAudioLifecycleStop,
   trackStat,
-  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import { startBlowMic, type BlowMic } from "./mic";
@@ -67,8 +66,7 @@ const MESSAGES = {
 type Phase = "live" | "popped";
 
 export default function BalloonBlowerPage() {
-  const { t } = useTranslation();
-  const snapshot = useRef(
+    const snapshot = useRef(
     consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
   ).current;
 
@@ -319,16 +317,14 @@ export default function BalloonBlowerPage() {
       <header className="mb-bento grid gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-            🎈 {t("Balloon Blower")}
+            🎈 {"Balloon Blower"}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            {t("Blow it up")}
+            {"Blow it up"}
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          {t(
-            "Blow into your microphone to inflate the balloon — the harder you blow, the faster it fills. Tie it off before it bursts to bank a balloon. Keep blowing past full and it explodes."
-          )}
+          {"Blow into your microphone to inflate the balloon — the harder you blow, the faster it fills. Tie it off before it bursts to bank a balloon. Keep blowing past full and it explodes."}
         </p>
       </header>
 
@@ -337,7 +333,7 @@ export default function BalloonBlowerPage() {
         <div className="grid grid-cols-2 border-b-thick border-brand-border">
           <div className="border-r-thick border-brand-border bg-brand-primary p-3">
             <p className="text-xs font-bold uppercase text-brand-text">
-              {t("Balloons filled")}
+              {"Balloons filled"}
             </p>
             <p className="font-heading text-3xl leading-none text-brand-text">
               {filled}
@@ -345,7 +341,7 @@ export default function BalloonBlowerPage() {
           </div>
           <div className="bg-brand-pink p-3 text-right">
             <p className="text-xs font-bold uppercase text-brand-text">
-              {t("Balloons popped")}
+              {"Balloons popped"}
             </p>
             <p className="font-heading text-3xl leading-none text-brand-text">
               {popped}
@@ -358,7 +354,7 @@ export default function BalloonBlowerPage() {
           <svg
             viewBox="0 0 320 300"
             className="h-[320px] w-full select-none"
-            aria-label={t("A balloon that inflates as you blow")}
+            aria-label={"A balloon that inflates as you blow"}
           >
             <g ref={balloonGroup} transform="translate(160 150) scale(0.45)">
               {/* String */}
@@ -420,7 +416,7 @@ export default function BalloonBlowerPage() {
         {/* Fill meter */}
         <div className="flex items-center gap-3 border-t-thick border-brand-border bg-brand-surface px-4 py-3">
           <span className="text-xs font-bold uppercase text-brand-text">
-            {t("Fill")}
+            {"Fill"}
           </span>
           <div className="h-4 flex-1 overflow-hidden rounded-neobrutal border-thin border-brand-border bg-brand-background">
             <div
@@ -439,23 +435,23 @@ export default function BalloonBlowerPage() {
 
         {/* Controls */}
         <div className="flex flex-col gap-3 border-t-thick border-brand-border bg-brand-surface p-4">
-          <p className="text-sm font-bold text-brand-text">{t(message)}</p>
+          <p className="text-sm font-bold text-brand-text">{message}</p>
           <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-brand-text">
             {!micOn && (
               <button
                 onClick={enableMic}
                 className="rounded-neobrutal border-thin border-brand-border bg-brand-warning px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
               >
-                🎤 {t("Start blowing")}
+                🎤 {"Start blowing"}
               </button>
             )}
             {micOn && (
               <span className="inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-primary px-3 py-1.5">
-                🎤 {t("Mic live")}
+                🎤 {"Mic live"}
                 <span
                   className="h-2 w-16 overflow-hidden rounded-neobrutal border-thin border-brand-border bg-brand-background"
-                  title={t("Live mic input")}
-                  aria-label={t("Live mic input level")}
+                  title={"Live mic input"}
+                  aria-label={"Live mic input level"}
                 >
                   <span
                     ref={inputBar}
@@ -470,7 +466,7 @@ export default function BalloonBlowerPage() {
               disabled={!armed || phase !== "live"}
               className="rounded-neobrutal border-thin border-brand-border bg-brand-secondary px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed disabled:cursor-not-allowed disabled:opacity-40"
             >
-              🪢 {t("Tie it off")}
+              🪢 {"Tie it off"}
             </button>
             <ShareButton
               moduleId={MODULE_ID}

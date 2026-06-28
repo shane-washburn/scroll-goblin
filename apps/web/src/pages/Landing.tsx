@@ -5,13 +5,11 @@ import {
   Card,
   trackModuleTileClick,
   trackSurpriseMeClick,
-  useTranslation,
 } from "@scroll-goblin/ui";
 import { MODULES } from "../modules/registry";
 
 export default function Landing() {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
+    const navigate = useNavigate();
   const visible = MODULES.filter((m) => m.status !== "hidden");
 
   const goToRandomModule = () => {
@@ -49,23 +47,23 @@ export default function Landing() {
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-primary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
             <Sparkles className="h-4 w-4" />
-            {t("Scroll Goblin")}
+            {"Scroll Goblin"}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            {t("Choose your brainrot spell")}
+            {"Choose your brainrot spell"}
           </h1>
           <Button
             onClick={goToRandomModule}
             className="mt-5 bg-brand-background uppercase"
           >
             <Dices className="h-5 w-5" />
-            {t("Surprise me")}
+            {"Surprise me"}
           </Button>
         </div>
         <div className="mascot-boil rounded-neobrutal border-thick border-brand-border bg-brand-background p-3 shadow-neo-lg">
           <img
             src="/scroll-goblin-mascot.png"
-            alt={t("Scroll Goblin mascot")}
+            alt={"Scroll Goblin mascot"}
             className="relative z-10 h-full max-h-[260px] w-full object-contain"
           />
         </div>
@@ -86,15 +84,15 @@ export default function Landing() {
             >
               <div className="mb-5 text-4xl">{m.emoji}</div>
               <h2 className="font-heading text-2xl uppercase leading-none text-brand-text">
-                {t(m.title)}
+                {m.title}
                 {m.status === "beta" && (
                   <span className="ml-2 inline-block rounded-neobrutal border-thin border-brand-border bg-brand-background px-2 py-0.5 align-middle font-body text-[10px] font-bold uppercase shadow-neo-sm">
-                    {t("Beta")}
+                    {"Beta"}
                   </span>
                 )}
               </h2>
               <p className="mt-3 text-sm font-bold leading-relaxed text-brand-text">
-                {t(m.description)}
+                {m.description}
               </p>
             </Card>
           </Link>

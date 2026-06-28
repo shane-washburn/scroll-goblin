@@ -4,7 +4,6 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
-  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import { playPop, playScream, startWheeze, type Wheeze } from "./scream";
@@ -47,8 +46,7 @@ const MESSAGES = {
 };
 
 export default function ScreamingChickenPage() {
-  const { t } = useTranslation();
-  const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
+    const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
   const svgRef = useRef<SVGSVGElement>(null);
   const bodyRef = useRef<SVGGElement>(null);
   const headRef = useRef<SVGGElement>(null);
@@ -317,23 +315,21 @@ export default function ScreamingChickenPage() {
       <header className="mb-bento grid gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-warning p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-            🐔 {t("Screaming Chicken")}
+            🐔 {"Screaming Chicken"}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            {t("Squeeze the chicken")}
+            {"Squeeze the chicken"}
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          {t(
-            "Hold down on the chicken to squeeze the air out. Release and it screams its way back into shape. Deeper squeeze, bigger scream."
-          )}
+          {"Hold down on the chicken to squeeze the air out. Release and it screams its way back into shape. Deeper squeeze, bigger scream."}
         </p>
       </header>
 
       <Card ref={gameCardRef} className="overflow-hidden bg-brand-background">
         <div className="border-b-thick border-brand-border bg-brand-secondary p-3">
           <p className="text-xs font-bold uppercase text-brand-text">
-            {t("Press and hold anywhere on the chicken — release to scream")}
+            {"Press and hold anywhere on the chicken — release to scream"}
           </p>
         </div>
 
@@ -425,19 +421,19 @@ export default function ScreamingChickenPage() {
         </div>
 
         <div className="flex flex-col gap-3 border-t-thick border-brand-border bg-brand-surface p-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-bold text-brand-text">{t(message)}</p>
+          <p className="text-sm font-bold text-brand-text">{message}</p>
           <div className="flex flex-wrap gap-2 text-xs font-bold text-brand-text">
             <span>
-              {t("Squeezes")}: <span className="bg-brand-warning px-1">{squeezes}</span>
+              {"Squeezes"}: <span className="bg-brand-warning px-1">{squeezes}</span>
             </span>
             <span>
-              {t("Screams")}: <span className="bg-brand-primary px-1">{screams}</span>
+              {"Screams"}: <span className="bg-brand-primary px-1">{screams}</span>
             </span>
             <span>
-              {t("Eggs")}: <span className="bg-brand-surface px-1">🥚 {eggs}</span>
+              {"Eggs"}: <span className="bg-brand-surface px-1">🥚 {eggs}</span>
             </span>
             <span>
-              {t("Deepest")}: <span className="bg-brand-secondary px-1">{record}%</span>
+              {"Deepest"}: <span className="bg-brand-secondary px-1">{record}%</span>
             </span>
             <ShareButton
               moduleId={MODULE_ID}

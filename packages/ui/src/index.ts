@@ -15,7 +15,6 @@ export {
 export type { AudioBus } from "./audio";
 export { buildShareUrl, consumeShareSnapshot } from "./share";
 export { useMobileGameFit } from "./useMobileGameFit";
-export { HedgelingProvider, resolvePreferredLocale, useTranslation } from "./i18n";
 export { trackStat, trackVisit } from "./stats";
 export {
   initGoogleAnalytics,

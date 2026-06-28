@@ -51,6 +51,25 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Hedgeling runtime: content-match translation of the rendered DOM. -->
+    <script src="/hedgeling-injector.js"></script>
+    <script>
+      (function () {
+        try {
+          var locale =
+            localStorage.getItem("hedgeling.locale") ||
+            document.documentElement.lang ||
+            navigator.language ||
+            "en-US";
+          document.documentElement.lang = locale;
+          if (window.Hedgeling && locale !== "en-US") {
+            window.Hedgeling.init({ locale: locale }).catch(function () {});
+          }
+        } catch (e) {
+          /* translation is best-effort */
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

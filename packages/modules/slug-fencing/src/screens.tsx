@@ -5,7 +5,6 @@
  * props so these stay easy to reason about and restyle.
  */
 import { useState } from "react";
-import { useTranslation } from "@scroll-goblin/ui";
 import { Confetti } from "./Confetti";
 import { DIFFICULTY_ORDER, PERSONALITIES, type Difficulty } from "./personalities";
 import type { Accessory } from "./titles";
@@ -45,22 +44,21 @@ function Pill({
 }
 
 function HandToggle({ hand, onChange }: { hand: Hand; onChange: (h: Hand) => void }) {
-  const { t } = useTranslation();
-  return (
+    return (
     <div>
       <p className="mb-2 text-xs font-bold uppercase text-brand-text">
-        {t("Dominant hand")}
+        {"Dominant hand"}
       </p>
       <div className="flex gap-2">
         <Pill active={hand === "right"} onClick={() => onChange("right")}>
-          🫱 {t("Right")}
+          🫱 {"Right"}
         </Pill>
         <Pill active={hand === "left"} onClick={() => onChange("left")}>
-          🫲 {t("Left")}
+          🫲 {"Left"}
         </Pill>
       </div>
       <p className="mt-1 text-xs font-bold text-brand-text opacity-70">
-        {t("Your slug always fights on your dominant side.")}
+        {"Your slug always fights on your dominant side."}
       </p>
     </div>
   );
@@ -73,13 +71,12 @@ function ScorePicker({
   value: number;
   onChange: (n: number) => void;
 }) {
-  const { t } = useTranslation();
-  const presets = [3, 5, 10];
+    const presets = [3, 5, 10];
   const isCustom = !presets.includes(value);
   return (
     <div>
       <p className="mb-2 text-xs font-bold uppercase text-brand-text">
-        {t("Play to")}
+        {"Play to"}
       </p>
       <div className="flex flex-wrap items-center gap-2">
         {presets.map((n) => (
@@ -88,7 +85,7 @@ function ScorePicker({
           </Pill>
         ))}
         <Pill active={isCustom} onClick={() => onChange(7)}>
-          {t("Custom")}
+          {"Custom"}
         </Pill>
         {isCustom ? (
           <input
@@ -114,21 +111,20 @@ export function ModeScreen({
   onSolo: () => void;
   onMultiplayer: () => void;
 }) {
-  const { t } = useTranslation();
-  return (
+    return (
     <Panel>
       <h2 className="mb-1 font-heading text-3xl uppercase text-brand-text">
-        🐌 {t("Slug Duel")}
+        🐌 {"Slug Duel"}
       </h2>
       <p className="mb-5 text-sm font-bold text-brand-text opacity-80">
-        {t("Choose your mode")}
+        {"Choose your mode"}
       </p>
       <div className="grid gap-3 sm:grid-cols-2">
         <button onClick={onSolo} className={`${BTN_PRIMARY} !bg-brand-secondary`}>
-          {t("Solo")}
+          {"Solo"}
         </button>
         <button onClick={onMultiplayer} className={`${BTN_PRIMARY} !bg-brand-pink`}>
-          {t("Multiplayer")}
+          {"Multiplayer"}
         </button>
       </div>
     </Panel>
@@ -154,15 +150,14 @@ export function SoloSetupScreen({
   onStart: () => void;
   onBack: () => void;
 }) {
-  const { t } = useTranslation();
-  return (
+    return (
     <Panel>
       <h2 className="mb-4 font-heading text-2xl uppercase text-brand-text">
-        🐌 {t("Solo Match")}
+        🐌 {"Solo Match"}
       </h2>
       <div className="mb-5">
         <p className="mb-2 text-xs font-bold uppercase text-brand-text">
-          {t("Difficulty")}
+          {"Difficulty"}
         </p>
         <div className="grid gap-2 sm:grid-cols-3">
           {DIFFICULTY_ORDER.map((d) => {
@@ -177,10 +172,10 @@ export function SoloSetupScreen({
                 }`}
               >
                 <span className="block font-heading text-sm uppercase">
-                  {p.emoji} {t(p.name)}
+                  {p.emoji} {p.name}
                 </span>
                 <span className="mt-1 block text-xs font-bold opacity-75">
-                  {t(p.blurb)}
+                  {p.blurb}
                 </span>
               </button>
             );
@@ -195,10 +190,10 @@ export function SoloSetupScreen({
       </div>
       <div className="flex items-center gap-3">
         <button onClick={onBack} className={BTN}>
-          ← {t("Back")}
+          ← {"Back"}
         </button>
         <button onClick={onStart} className={BTN_PRIMARY}>
-          {t("Start Match")}
+          {"Start Match"}
         </button>
       </div>
     </Panel>
@@ -224,11 +219,10 @@ export function MultiplayerSetupScreen({
   creating: boolean;
   error: string | null;
 }) {
-  const { t } = useTranslation();
-  return (
+    return (
     <Panel>
       <h2 className="mb-4 font-heading text-2xl uppercase text-brand-text">
-        🐌🐌 {t("Multiplayer Match")}
+        🐌🐌 {"Multiplayer Match"}
       </h2>
       <div className="mb-5">
         <ScorePicker value={scoreToWin} onChange={setScoreToWin} />
@@ -243,10 +237,10 @@ export function MultiplayerSetupScreen({
       ) : null}
       <div className="flex items-center gap-3">
         <button onClick={onBack} className={BTN}>
-          ← {t("Back")}
+          ← {"Back"}
         </button>
         <button onClick={onCreate} disabled={creating} className={BTN_PRIMARY}>
-          {creating ? t("Creating…") : t("Create Match")}
+          {creating ? "Creating…" : "Create Match"}
         </button>
       </div>
     </Panel>
@@ -270,8 +264,7 @@ export function LobbyScreen({
   setHand: (h: Hand) => void;
   onCancel: () => void;
 }) {
-  const { t } = useTranslation();
-  const [copied, setCopied] = useState(false);
+    const [copied, setCopied] = useState(false);
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(joinUrl);
@@ -284,29 +277,29 @@ export function LobbyScreen({
   return (
     <Panel>
       <h2 className="mb-4 font-heading text-2xl uppercase text-brand-text">
-        {t("Slug Arena")}
+        {"Slug Arena"}
       </h2>
       {role === "host" ? (
         <div className="mb-5">
           <p className="mb-2 text-xs font-bold uppercase text-brand-text">
-            {t("Share this link")}
+            {"Share this link"}
           </p>
           <div className="flex flex-wrap items-center gap-2">
             <code className="break-all rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-2 text-sm font-bold">
               {joinUrl}
             </code>
             <button onClick={copy} className={BTN}>
-              {copied ? `✓ ${t("Copied")}` : t("Copy")}
+              {copied ? `✓ ${"Copied"}` : "Copy"}
             </button>
           </div>
         </div>
       ) : null}
 
       <div className="mb-5 grid gap-2">
-        <PlayerRow label={t("Host")} ready joined />
-        <PlayerRow label={t("Opponent")} ready={guestJoined} joined={guestJoined} />
+        <PlayerRow label={"Host"} ready joined />
+        <PlayerRow label={"Opponent"} ready={guestJoined} joined={guestJoined} />
         <p className="text-sm font-bold text-brand-text">
-          {t("Play to")}: <span className="bg-brand-secondary px-1">{scoreToWin}</span>
+          {"Play to"}: <span className="bg-brand-secondary px-1">{scoreToWin}</span>
         </p>
       </div>
 
@@ -315,10 +308,10 @@ export function LobbyScreen({
       </div>
 
       <p className="mb-4 text-sm font-bold text-brand-text">
-        {guestJoined ? t("Both slugs ready. Starting…") : t("Waiting for opponent…")}
+        {guestJoined ? "Both slugs ready. Starting…" : "Waiting for opponent…"}
       </p>
       <button onClick={onCancel} className={BTN}>
-        {t("Leave Arena")}
+        {"Leave Arena"}
       </button>
     </Panel>
   );
@@ -343,8 +336,7 @@ function PlayerRow({
 }
 
 export function CountdownOverlay({ count }: { count: number }) {
-  const { t } = useTranslation();
-  const label = count > 0 ? String(count) : t("SLUG!");
+    const label = count > 0 ? String(count) : "SLUG!";
   return (
     <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
       <span
@@ -387,8 +379,7 @@ export function VictoryScreen({
   onNewMatch: () => void;
   showConfetti?: boolean;
 }) {
-  const { t } = useTranslation();
-  const yourScore = youAreP1 ? score1 : score2;
+    const yourScore = youAreP1 ? score1 : score2;
   const theirScore = youAreP1 ? score2 : score1;
   return (
     <div className="relative overflow-hidden">
@@ -398,22 +389,22 @@ export function VictoryScreen({
           {youWon ? (
             <>
               <p className="font-heading text-4xl uppercase text-brand-text">
-                🏆 {t(title)} 🏆
+                🏆 {title} 🏆
               </p>
               <p className="mt-2 text-sm font-bold text-brand-text">
-                {t("Your slug has ascended.")}
+                {"Your slug has ascended."}
               </p>
               <p className="mt-1 font-heading text-2xl uppercase text-brand-primary">
-                +{aura.toLocaleString()} {t("Aura")}
+                +{aura.toLocaleString()} {"Aura"}
               </p>
             </>
           ) : (
             <>
               <p className="font-heading text-3xl uppercase text-brand-text">
-                {t("Defeated")} 🏋️
+                {"Defeated"} 🏋️
               </p>
               <p className="mt-2 text-sm font-bold text-brand-text">
-                {t("Your slug will train harder. Here's a tiny dumbbell.")}
+                {"Your slug will train harder. Here's a tiny dumbbell."}
               </p>
             </>
           )}
@@ -423,15 +414,15 @@ export function VictoryScreen({
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <button onClick={onRematch} disabled={rematchPending} className={BTN_PRIMARY}>
-              {rematchPending ? t("Waiting for opponent…") : t("Rematch")}
+              {rematchPending ? "Waiting for opponent…" : "Rematch"}
             </button>
             <button onClick={onNewMatch} className={BTN}>
-              {t("New Match")}
+              {"New Match"}
             </button>
           </div>
           {isMultiplayer && opponentWantsRematch && !rematchPending ? (
             <p className="mt-3 text-sm font-bold text-brand-secondary">
-              {t("Opponent wants a rematch!")}
+              {"Opponent wants a rematch!"}
             </p>
           ) : null}
         </div>

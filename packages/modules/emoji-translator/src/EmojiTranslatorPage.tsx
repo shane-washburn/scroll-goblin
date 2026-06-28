@@ -18,7 +18,6 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
-  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import { translate } from "./api";
@@ -35,8 +34,7 @@ const MODULE_ID = "emoji-translator";
 const SHARE_VERSION = 1;
 
 export default function EmojiTranslatorPage() {
-  const { t } = useTranslation();
-  // Consume a share snapshot exactly once; the URL param is stripped so a
+    // Consume a share snapshot exactly once; the URL param is stripped so a
   // refresh or fresh navigation starts the module blank.
   const [snapshot] = useState(() =>
     consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
@@ -85,7 +83,7 @@ export default function EmojiTranslatorPage() {
       setCached(res.cached);
       trackStat(MODULE_ID, "translations");
     } catch (e) {
-      setError(e instanceof Error ? e.message : t("Something went wrong"));
+      setError(e instanceof Error ? e.message : "Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -109,7 +107,7 @@ export default function EmojiTranslatorPage() {
       ) : (
         <Sparkles className="h-4 w-4" />
       )}
-      {t("Translate")}
+      {"Translate"}
     </button>
   );
 
@@ -119,14 +117,14 @@ export default function EmojiTranslatorPage() {
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
           <Sparkles className="h-4 w-4" />
-          {t("AI Emoji Translator")}
+          {"AI Emoji Translator"}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-          {t("Translate language")} <span>↔️</span> {t("emoji")}
+          {"Translate language"} <span>↔️</span> {"emoji"}
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          {t("Powered by an LLM. Pick a direction, choose a language, and go.")}
+          {"Powered by an LLM. Pick a direction, choose a language, and go."}
         </p>
       </header>
 
@@ -142,7 +140,7 @@ export default function EmojiTranslatorPage() {
                   : "bg-brand-surface text-brand-text"
               }`}
             >
-              {t("Text → Emoji")}
+              {"Text → Emoji"}
             </button>
             <button
               onClick={() => !isTextToEmoji || swap()}
@@ -152,14 +150,14 @@ export default function EmojiTranslatorPage() {
                   : "bg-brand-surface text-brand-text"
               }`}
             >
-              {t("Emoji → Text")}
+              {"Emoji → Text"}
             </button>
           </div>
 
           <label className="flex items-center gap-2 text-sm font-bold text-brand-text">
             <Languages className="h-4 w-4 text-brand-text" />
             <span className="hidden sm:inline">
-              {isTextToEmoji ? t("Input language") : t("Output language")}
+              {isTextToEmoji ? "Input language" : "Output language"}
             </span>
             <select
               value={language}
@@ -168,7 +166,7 @@ export default function EmojiTranslatorPage() {
             >
               {LANGUAGES.map((l) => (
                 <option key={l.code} value={l.code}>
-              {t(l.label)}
+              {l.label}
                 </option>
               ))}
             </select>
@@ -183,8 +181,8 @@ export default function EmojiTranslatorPage() {
             onChange={(e) => setInput(e.target.value)}
             placeholder={
               isTextToEmoji
-                ? t("Type a sentence to turn into emoji...")
-                : t("Paste emoji to interpret... 🎉🍕🚀")
+                ? "Type a sentence to turn into emoji..."
+                : "Paste emoji to interpret... 🎉🍕🚀"
             }
             className="min-h-[180px] w-full resize-none rounded-neobrutal border-thick border-brand-border bg-brand-surface p-4 text-base font-bold text-brand-text shadow-neo-md outline-none transition focus:bg-brand-background"
           />
@@ -192,7 +190,7 @@ export default function EmojiTranslatorPage() {
           <div className="flex items-center justify-center gap-3 sm:gap-0">
             <button
               onClick={swap}
-              title={t("Swap direction")}
+              title={"Swap direction"}
               className="rounded-neobrutal border-thick border-brand-border bg-brand-warning p-2 text-brand-text shadow-neo-md transition-[transform,box-shadow] duration-100 hover:rotate-180 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed"
             >
               <ArrowLeftRight className="h-5 w-5" />
@@ -209,7 +207,7 @@ export default function EmojiTranslatorPage() {
                 <button
                   onClick={copyOutput}
                   className="absolute right-3 top-3 rounded-neobrutal border-thin border-brand-border bg-brand-background p-1.5 text-brand-text shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
-                  title={t("Copy")}
+                  title={"Copy"}
                 >
                   {copied ? (
                     <Check className="h-4 w-4 text-brand-text" />
@@ -220,7 +218,7 @@ export default function EmojiTranslatorPage() {
               </>
             ) : (
               <p className="text-sm font-bold text-brand-text">
-                {loading ? t("Translating...") : t("Translation will appear here")}
+                {loading ? "Translating..." : "Translation will appear here"}
               </p>
             )}
           </div>
@@ -254,7 +252,7 @@ export default function EmojiTranslatorPage() {
             {result.alternatives.length > 0 && (
               <div>
                 <p className="mb-2 text-xs font-bold uppercase text-brand-text">
-                  {t("Alternatives")}
+                  {"Alternatives"}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {result.alternatives.map((alt, i) => (
@@ -270,7 +268,7 @@ export default function EmojiTranslatorPage() {
             )}
             {result.notes && (
               <p className="text-sm font-bold text-brand-text">
-                <span className="bg-brand-warning px-1">{t("Note:")} </span>
+                <span className="bg-brand-warning px-1">{"Note:"} </span>
                 {result.notes}
               </p>
             )}
@@ -279,7 +277,7 @@ export default function EmojiTranslatorPage() {
 
         {cached && result && (
           <p className="mt-3 text-right text-xs font-bold text-brand-text">
-            {t("served from cache")}
+            {"served from cache"}
           </p>
         )}
       </Card>

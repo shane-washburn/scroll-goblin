@@ -1,5 +1,5 @@
 {
-  "uniqueSourceStrings": 762,
+  "uniqueSourceStrings": 1290,
   "localeCount": 12,
   "locales": [
     "en-AU",
@@ -15,67 +15,71 @@
     "sv-SE",
     "uk-UA"
   ],
-  "missingTranslations": 0,
+  "missingTranslations": 5940,
+  "degradedAnalysis": {
+    "pass1": 0,
+    "pass2": 0
+  },
   "perLocale": {
     "en-AU": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     },
     "en-CA": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     },
     "en-GB": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     },
     "en-IN": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     },
     "es-ES": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     },
     "fr-CA": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     },
     "hi-IN": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     },
     "nl-NL": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     },
     "pl-PL": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     },
     "ru-RU": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     },
     "sv-SE": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     },
     "uk-UA": {
-      "total": 762,
-      "ready": 762,
-      "missing": 0
+      "total": 1290,
+      "ready": 795,
+      "missing": 495
     }
   }
 }

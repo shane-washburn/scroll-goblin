@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && tsx scripts/generate-seo.mts",
-    "i18n:extract": "tsx scripts/extract-i18n.mts",
     "preview": "vite preview"
   },
   "dependencies": {

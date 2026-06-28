@@ -6,7 +6,6 @@ import {
   ShareButton,
   consumeShareSnapshot,
   trackStat,
-  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import { askTheDivine } from "./api";
@@ -28,8 +27,7 @@ const PLACEHOLDER_QUESTIONS = [
 ];
 
 export default function CommuneWithGodPage() {
-  const { t } = useTranslation();
-  // Consume a share snapshot exactly once; the URL param is stripped so a
+    // Consume a share snapshot exactly once; the URL param is stripped so a
   // refresh or fresh navigation starts the module blank.
   const [snapshot] = useState(() =>
     consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
@@ -45,11 +43,9 @@ export default function CommuneWithGodPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const placeholder = t(
-    PLACEHOLDER_QUESTIONS[
+  const placeholder = PLACEHOLDER_QUESTIONS[
       Math.abs(question.length) % PLACEHOLDER_QUESTIONS.length
-    ]
-  );
+    ];
 
   const onAsk = async () => {
     const q = question.trim();
@@ -63,7 +59,7 @@ export default function CommuneWithGodPage() {
       setAnswer(res.result);
       trackStat(MODULE_ID, "answers");
     } catch (e) {
-      setError(e instanceof Error ? e.message : t("Something went wrong"));
+      setError(e instanceof Error ? e.message : "Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -82,16 +78,14 @@ export default function CommuneWithGodPage() {
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
             <Sparkles className="h-4 w-4" />
-            {t("Divine Oracle")}
+            {"Divine Oracle"}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            {t("Commune with God")} <span>🔮</span>
+            {"Commune with God"} <span>🔮</span>
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          {t(
-            "Ask anything that weighs on your heart. A benevolent, non-denominational presence answers with kindness, love, and support. No judgment, ever."
-          )}
+          {"Ask anything that weighs on your heart. A benevolent, non-denominational presence answers with kindness, love, and support. No judgment, ever."}
         </p>
       </header>
 
@@ -132,7 +126,7 @@ export default function CommuneWithGodPage() {
                 ) : (
                   <Send className="h-4 w-4" />
                 )}
-                {t("Ask")}
+                {"Ask"}
               </button>
             </div>
             <div className="flex justify-end">
@@ -147,7 +141,7 @@ export default function CommuneWithGodPage() {
 
         {loading && (
           <p className="mt-4 text-center text-sm font-bold text-brand-text">
-            {t("The heavens are listening...")}
+            {"The heavens are listening..."}
           </p>
         )}
 
@@ -163,7 +157,7 @@ export default function CommuneWithGodPage() {
           <div className="space-y-bento">
             {asked && (
               <p className="text-center text-sm font-bold text-brand-text">
-                {t("You asked:")}{" "}
+                {"You asked:"}{" "}
                 <span className="bg-brand-warning px-1">{asked}</span>
               </p>
             )}
@@ -193,7 +187,7 @@ export default function CommuneWithGodPage() {
                 className="inline-flex items-center gap-2 rounded-neobrutal border-thick border-brand-border bg-brand-warning px-5 py-2.5 font-bold text-brand-text shadow-neo-lg transition-[transform,box-shadow] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed"
               >
                 <Sparkles className="h-4 w-4" />
-                {t("Ask another question")}
+                {"Ask another question"}
               </button>
               <ShareButton
                 moduleId={MODULE_ID}

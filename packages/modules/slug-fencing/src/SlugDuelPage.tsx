@@ -4,7 +4,6 @@ import {
   MuteButton,
   trackStat,
   useMobileGameFit,
-  useTranslation,
 } from "@scroll-goblin/ui";
 import type { SlugRoomSnapshot } from "@scroll-goblin/shared";
 import {
@@ -101,8 +100,7 @@ function loadHand(): Hand {
 }
 
 export default function SlugDuelPage() {
-  const { t } = useTranslation();
-  const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
+    const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
 
   /* ----------------------------- UI state ----------------------------- */
   const [phase, setPhase] = useState<Phase>("menu");
@@ -258,13 +256,13 @@ export default function SlugDuelPage() {
         setScore2(next);
       }
       const iScored = (scorer === 1) === youAreP1;
-      setMessage(iScored ? t("+1 point!") : t("Opponent scores!"));
+      setMessage(iScored ? "+1 point!" : "Opponent scores!");
       setEmote(randomEmote());
       window.setTimeout(() => setEmote(null), 1100);
       // Keep play fluid: no pause or recenter — the duel flows straight on.
       if (next >= scoreToWinRef.current) endMatch(scorer);
     },
-    [endMatch, t, youAreP1]
+    [endMatch, youAreP1]
   );
 
   /* ------------------------------ Inputs ------------------------------ */
@@ -288,11 +286,11 @@ export default function SlugDuelPage() {
       trackStat(MODULE_ID, "lunges");
       playLunge();
     } else if (f.energy < LUNGE_COST && f.lungeStart === 0) {
-      setMessage(t("Too pooped to lunge. Let the meter refill."));
+      setMessage("Too pooped to lunge. Let the meter refill.");
       playTired();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [t, youAreP1]);
+  }, [youAreP1]);
 
   const DRAG_SLOP = 14;
   const TAP_MS = 500;
@@ -653,7 +651,7 @@ export default function SlugDuelPage() {
     onGuestInput,
     onSnapshot,
     onRoomGone: () => {
-      setMpError(t("The room expired or could not be reached."));
+      setMpError("The room expired or could not be reached.");
       leaveToMenu();
     },
   });
@@ -700,7 +698,7 @@ export default function SlugDuelPage() {
       setWinner(null);
       setPhase("lobby");
     } catch {
-      setMpError(t("Could not create a match. Try again."));
+      setMpError("Could not create a match. Try again.");
     } finally {
       setCreating(false);
     }
@@ -720,7 +718,7 @@ export default function SlugDuelPage() {
         setGuestJoined(true);
         setPhase("lobby");
       })
-      .catch(() => setMpError(t("That match link is invalid or full.")));
+      .catch(() => setMpError("That match link is invalid or full."));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -756,9 +754,9 @@ export default function SlugDuelPage() {
 
   /* ------------------------------ Render ------------------------------ */
   const showArena = phase === "countdown" || phase === "playing" || phase === "victory";
-  const myName = mode === "solo" ? t("You") : t("You");
+  const myName = mode === "solo" ? "You" : "You";
   const oppName =
-    mode === "solo" ? t(PERSONALITIES[difficulty].name) : t("Opponent");
+    mode === "solo" ? PERSONALITIES[difficulty].name : "Opponent";
   const myScore = youAreP1 ? score1 : score2;
   const oppScore = youAreP1 ? score2 : score1;
 
@@ -766,10 +764,10 @@ export default function SlugDuelPage() {
     <div className="mx-auto max-w-4xl px-4 py-8 sm:py-12">
       <header className="mb-bento rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-5 shadow-neo-lg">
         <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-          🐌 {t("Slug Duel")}
+          🐌 {"Slug Duel"}
         </h1>
         <p className="mt-2 text-sm font-bold text-brand-text">
-          {t("Duel the AI or send a friend a link. First slug to the target score wins.")}
+          {"Duel the AI or send a friend a link. First slug to the target score wins."}
         </p>
       </header>
 
@@ -909,24 +907,24 @@ export default function SlugDuelPage() {
 
           <div className="flex flex-col gap-3 border-t-thick border-brand-border bg-brand-surface p-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm font-bold text-brand-text">
-              {message || t("First to {n}", { n: scoreToWin })}
+              {message || `First to ${scoreToWin}`}
             </p>
             <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-brand-text">
               <span>
-                {t("First to")}: <span className="bg-brand-secondary px-1">{scoreToWin}</span>
+                {"First to"}: <span className="bg-brand-secondary px-1">{scoreToWin}</span>
               </span>
               <button
                 onClick={() => persistHand(hand === "right" ? "left" : "right")}
                 className="rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
               >
-                {hand === "right" ? `🫱 ${t("Righty")}` : `🫲 ${t("Lefty")}`}
+                {hand === "right" ? `🫱 ${"Righty"}` : `🫲 ${"Lefty"}`}
               </button>
               {phase !== "victory" ? (
                 <button
                   onClick={leaveToMenu}
                   className="rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1.5 shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
                 >
-                  {t("Quit")}
+                  {"Quit"}
                 </button>
               ) : null}
               <MuteButton />

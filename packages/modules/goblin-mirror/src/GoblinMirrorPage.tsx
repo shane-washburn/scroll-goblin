@@ -14,7 +14,7 @@ import {
   ScanLine,
   Trash2,
 } from "lucide-react";
-import { Card, ShareButton, trackStat, useTranslation } from "@scroll-goblin/ui";
+import { Card, ShareButton, trackStat } from "@scroll-goblin/ui";
 import {
   collectFingerprint,
   formatOneInN,
@@ -121,11 +121,10 @@ function ratingFor(fp: Fingerprint): string {
 
 /** A labeled stat tile used throughout the report. */
 function Stat({ label, value }: { label: string; value: React.ReactNode }) {
-  const { t } = useTranslation();
-  return (
+    return (
     <div className="rounded-neobrutal border-thin border-brand-border bg-brand-surface px-3 py-2">
       <div className="text-[0.65rem] font-bold uppercase tracking-wide text-brand-text/60">
-        {t(label)}
+        {label}
       </div>
       <div className="break-words font-bold text-brand-text">{value}</div>
     </div>
@@ -142,8 +141,7 @@ function signalRarity(share: number): { label: string; className: string } {
 
 /** A fingerprint signal tile that also shows how identifying the value is. */
 function SignalStat({ signal }: { signal: FingerprintSignal }) {
-  const { t } = useTranslation();
-  const r = signalRarity(signal.share);
+    const r = signalRarity(signal.share);
   return (
     <div
       title={`Adds ~${signal.bits.toFixed(1)} bits of uniqueness`}
@@ -151,19 +149,17 @@ function SignalStat({ signal }: { signal: FingerprintSignal }) {
     >
       <div className="flex items-center justify-between gap-1">
         <span className="text-[0.65rem] font-bold uppercase tracking-wide text-brand-text/60">
-          {t(signal.label)}
+          {signal.label}
         </span>
         <span
           className={`shrink-0 rounded-neobrutal border-thin border-brand-border px-1 py-0.5 text-[0.5rem] font-bold uppercase tracking-wide ${r.className}`}
         >
-          {t(r.label)}
+          {r.label}
         </span>
       </div>
-      <div className="break-words font-bold text-brand-text">{t(signal.value)}</div>
+      <div className="break-words font-bold text-brand-text">{signal.value}</div>
       <div className="mt-0.5 text-[0.6rem] font-bold text-brand-text/50">
-        {t("Matches ~{share} of people", {
-          share: formatShare(signal.share),
-        })}
+        {`Matches ~${formatShare(signal.share)} of people`}
       </div>
     </div>
   );
@@ -177,14 +173,13 @@ const CONFIDENCE_STYLE: Record<Confidence, string> = {
 };
 
 function ConfidenceBadge({ confidence }: { confidence: Confidence }) {
-  const { t } = useTranslation();
-  return (
+    return (
     <span
       className={`inline-block rounded-neobrutal border-thin border-brand-border px-1.5 py-0.5 text-[0.6rem] font-bold uppercase tracking-wide ${CONFIDENCE_STYLE[confidence]}`}
     >
       {confidence === "None"
-        ? t("Can't tell")
-        : t("{confidence} confidence", { confidence: t(confidence) })}
+        ? "Can't tell"
+        : `${confidence} confidence`}
     </span>
   );
 }
@@ -198,18 +193,17 @@ function SectionHeading({
   kicker: string;
   title: string;
 }) {
-  const { t } = useTranslation();
-  return (
+    return (
     <div className="mb-4 flex items-center gap-3">
       <div className="flex h-10 w-10 items-center justify-center rounded-neobrutal border-thick border-brand-border bg-brand-warning shadow-neo-sm">
         {icon}
       </div>
       <div>
         <div className="text-[0.7rem] font-bold uppercase tracking-widest text-brand-text/60">
-          {t(kicker)}
+          {kicker}
         </div>
         <h2 className="font-heading text-xl leading-none text-brand-text">
-          {t(title)}
+          {title}
         </h2>
       </div>
     </div>
@@ -217,8 +211,7 @@ function SectionHeading({
 }
 
 export default function GoblinMirrorPage() {
-  const { t } = useTranslation();
-  // Fingerprint is computed once and never changes within a session — this is
+    // Fingerprint is computed once and never changes within a session — this is
   // exactly what lets the Phase 6 "twist" work.
   const [fp] = useState<Fingerprint>(() => collectFingerprint());
   const [memory, setMemory] = useState<MemoryState>(() => readMemory());
@@ -334,17 +327,17 @@ export default function GoblinMirrorPage() {
   };
 
   const firstSeenRelative = (firstSeen: number | null) => {
-    if (!firstSeen) return t("Just now");
+    if (!firstSeen) return "Just now";
     const diff = Date.now() - firstSeen;
-    if (diff < 60_000) return t("Just now");
+    if (diff < 60_000) return "Just now";
     if (diff < 24 * 60 * 60 * 1000) {
       const hours = Math.floor(diff / (60 * 60 * 1000));
       return hours <= 1
-        ? t("Earlier today")
-        : t("{count} hours ago", { count: hours });
+        ? "Earlier today"
+        : `${hours} hours ago`;
     }
     const days = Math.floor(diff / (24 * 60 * 60 * 1000));
-    return days === 1 ? t("1 day ago") : t("{count} days ago", { count: days });
+    return days === 1 ? "1 day ago" : `${days} days ago`;
   };
 
   const durationLabel = (ms: number) => {
@@ -352,9 +345,9 @@ export default function GoblinMirrorPage() {
     const h = Math.floor(totalSec / 3600);
     const m = Math.floor((totalSec % 3600) / 60);
     const s = totalSec % 60;
-    if (h > 0) return t("{hours}h {minutes}m", { hours: h, minutes: m });
-    if (m > 0) return t("{minutes}m {seconds}s", { minutes: m, seconds: s });
-    return t("{seconds}s", { seconds: s });
+    if (h > 0) return `${h}h ${m}m`;
+    if (m > 0) return `${m}m ${s}s`;
+    return `${s}s`;
   };
 
   return (
@@ -364,12 +357,10 @@ export default function GoblinMirrorPage() {
         <header className="text-center">
           <div className="text-5xl">🪞🧌</div>
           <h1 className="mt-2 font-heading text-3xl leading-tight text-brand-text">
-            {t("Goblin Surveillance Mirror")}
+            {"Goblin Surveillance Mirror"}
           </h1>
           <p className="mt-2 text-sm text-brand-text/70">
-            {t(
-              "What does the internet know about you? Everything below runs on your device only — the Goblin sends nothing to any server."
-            )}
+            {"What does the internet know about you? Everything below runs on your device only — the Goblin sends nothing to any server."}
           </p>
         </header>
 
@@ -378,9 +369,9 @@ export default function GoblinMirrorPage() {
           <Card className="flex flex-col items-center gap-3 p-8 text-center">
             <ScanLine className="h-10 w-10 animate-pulse text-brand-text" />
             <div className="font-heading text-xl">
-              {t("The Goblin sees a visitor...")}
+              {"The Goblin sees a visitor..."}
             </div>
-            <div className="text-sm text-brand-text/60">{t("Scanning device.")}</div>
+            <div className="text-sm text-brand-text/60">{"Scanning device."}</div>
           </Card>
         ) : (
           <>
@@ -392,16 +383,7 @@ export default function GoblinMirrorPage() {
                 title="I can recognize your device"
               />
               <p className="mb-4 text-brand-text">
-                {t(
-                  "You're on {browser} / {operatingSystem} — a {device} in {location}, reading in {language}.",
-                  {
-                    browser: sigValue("Browser"),
-                    operatingSystem: sigValue("Operating System"),
-                    device: t(summaryDevice).toLowerCase(),
-                    location: t(summaryLocation),
-                    language: sigValue("Language"),
-                  }
-                )}
+                {`You're on ${sigValue("Browser")} / ${sigValue("Operating System")} — a ${summaryDevice.toLowerCase()} in ${summaryLocation}, reading in ${sigValue("Language")}.`}
               </p>
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {primarySignals.map((s) => (
@@ -409,9 +391,7 @@ export default function GoblinMirrorPage() {
                 ))}
               </div>
               <p className="mt-2 text-xs text-brand-text/60">
-                {t(
-                  "Each tile shows roughly how many people share your value — the rarer it is, the more it singles you out. Combine a few rare ones and you're trivial to pick out of a crowd."
-                )}
+                {"Each tile shows roughly how many people share your value — the rarer it is, the more it singles you out. Combine a few rare ones and you're trivial to pick out of a crowd."}
               </p>
 
               {/* The technical signals: hidden by default, but always counted. */}
@@ -425,11 +405,8 @@ export default function GoblinMirrorPage() {
                   }`}
                 />
                 {showTechnical
-                  ? t("Hide technical signals")
-                  : t(
-                      "Show the {count} technical signals the Goblin also used",
-                      { count: technicalSignals.length }
-                    )}
+                  ? "Hide technical signals"
+                  : `Show the ${technicalSignals.length} technical signals the Goblin also used`}
               </button>
               {showTechnical && (
                 <>
@@ -439,9 +416,7 @@ export default function GoblinMirrorPage() {
                     ))}
                   </div>
                   <p className="mt-2 text-xs italic text-brand-text/50">
-                    {t(
-                      "These look like gibberish to you — and that's the point. Your GPU, canvas drawing, and installed fonts are exactly what make your device stand out from the crowd."
-                    )}
+                    {"These look like gibberish to you — and that's the point. Your GPU, canvas drawing, and installed fonts are exactly what make your device stand out from the crowd."}
                   </p>
                 </>
               )}
@@ -449,17 +424,11 @@ export default function GoblinMirrorPage() {
               <div className="mt-4 flex flex-wrap items-center gap-3 rounded-neobrutal border-thick border-brand-border bg-brand-primary p-4">
                 <div className="flex-1">
                   <div className="text-[0.7rem] font-bold uppercase tracking-widest text-brand-text/70">
-                    {t("Fingerprint")}
+                    {"Fingerprint"}
                   </div>
-                  <div className="font-heading text-2xl">{t(fp.rarity)}</div>
+                  <div className="font-heading text-2xl">{fp.rarity}</div>
                   <div className="text-sm text-brand-text/80">
-                    {t(
-                      "Roughly 1 in {count} people share a device profile like yours ({bits} bits of entropy).",
-                      {
-                        count: formatOneInN(fp.oneInN),
-                        bits: fp.totalBits.toFixed(1),
-                      }
-                    )}
+                    {`Roughly 1 in ${formatOneInN(fp.oneInN)} people share a device profile like yours (${fp.totalBits.toFixed(1)} bits of entropy).`}
                   </div>
                 </div>
                 <code className="rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-2 font-bold">
@@ -467,10 +436,7 @@ export default function GoblinMirrorPage() {
                 </code>
               </div>
               <p className="mt-2 text-xs italic text-brand-text/50">
-                {t(
-                  "This describes a type of device, not a proven one-of-a-kind machine. Many signals overlap (a phone model locks its screen, GPU and fonts together), so we discount for that — desktops vary a lot and trend unique, while phones cluster and are far less identifying. It's an estimate from all {count} signals above, calibrated against public research (EFF Panopticlick, AmIUnique). A precise figure would need a live database of real visitors — which would mean sending your data off-device, so the Goblin won't.",
-                  { count: fp.signals.length }
-                )}
+                {`This describes a type of device, not a proven one-of-a-kind machine. Many signals overlap (a phone model locks its screen, GPU and fonts together), so we discount for that — desktops vary a lot and trend unique, while phones cluster and are far less identifying. It's an estimate from all ${fp.signals.length} signals above, calibrated against public research (EFF Panopticlick, AmIUnique). A precise figure would need a live database of real visitors — which would mean sending your data off-device, so the Goblin won't.`}
               </p>
             </Card>
 
@@ -490,7 +456,7 @@ export default function GoblinMirrorPage() {
                   label="First Seen"
                   value={
                     cookiesWiped
-                      ? t("Forgotten")
+                      ? "Forgotten"
                       : `${firstSeenRelative(memory.firstSeen)} · ${exactFirstSeen(
                           memory.firstSeen
                         )}`
@@ -498,9 +464,7 @@ export default function GoblinMirrorPage() {
                 />
               </div>
               <p className="mt-3 text-sm text-brand-text/70">
-                {t(
-                  "Cookies help websites remember you between visits. Come back later and watch this count climb."
-                )}
+                {"Cookies help websites remember you between visits. Come back later and watch this count climb."}
               </p>
 
               <div className="mt-5">
@@ -513,18 +477,16 @@ export default function GoblinMirrorPage() {
                   <Stat
                     label="Time Wasted Here"
                     value={
-                      lsWiped ? t("Forgotten") : durationLabel(memory.totalTimeMs)
+                      lsWiped ? "Forgotten" : durationLabel(memory.totalTimeMs)
                     }
                   />
                   <Stat
                     label="Storage Status"
-                    value={memory.hasLocalStorage ? t("Active") : t("Empty")}
+                    value={memory.hasLocalStorage ? "Active" : "Empty"}
                   />
                 </div>
                 <p className="mt-3 text-sm text-brand-text/70">
-                  {t(
-                    "Local Storage can remember far more than cookies, and websites reach for it constantly."
-                  )}
+                  {"Local Storage can remember far more than cookies, and websites reach for it constantly."}
                 </p>
               </div>
             </Card>
@@ -542,21 +504,21 @@ export default function GoblinMirrorPage() {
                   disabled={cookiesWiped}
                   className="flex-1 rounded-neobrutal border-thick border-brand-border bg-brand-pink px-4 py-3 font-bold text-brand-text shadow-neo-md transition-[transform,box-shadow] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed disabled:opacity-50"
                 >
-                  {cookiesWiped ? t("Cookies erased ✓") : t("Delete Cookies")}
+                  {cookiesWiped ? "Cookies erased ✓" : "Delete Cookies"}
                 </button>
                 <button
                   onClick={onDeleteLocalStorage}
                   disabled={lsWiped}
                   className="flex-1 rounded-neobrutal border-thick border-brand-border bg-brand-orange px-4 py-3 font-bold text-brand-text shadow-neo-md transition-[transform,box-shadow] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed disabled:opacity-50"
                 >
-                  {lsWiped ? t("Browser storage erased ✓") : t("Delete browser storage")}
+                  {lsWiped ? "Browser storage erased ✓" : "Delete browser storage"}
                 </button>
               </div>
               {(cookiesWiped || lsWiped) && (
                 <p className="mt-3 text-sm font-bold text-brand-text">
-                  {cookiesWiped && `${t("Cookie memory erased.")} `}
-                  {lsWiped && `${t("Local memory erased.")} `}
-                  {t("Feeling safe yet?")}
+                  {cookiesWiped && `${"Cookie memory erased."} `}
+                  {lsWiped && `${"Local memory erased."} `}
+                  {"Feeling safe yet?"}
                 </p>
               )}
             </Card>
@@ -574,13 +536,11 @@ export default function GoblinMirrorPage() {
                     #{fp.hash}
                   </code>
                   <span className="text-sm font-bold text-brand-text">
-                    {t("Same fingerprint as before. ↑")}
+                    {"Same fingerprint as before. ↑"}
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-brand-text/80">
-                  {t(
-                    "Your cookies are gone. Your Local Storage is gone. But your device fingerprint remains. Clearing storage doesn't make you anonymous — your device itself is identifying."
-                  )}
+                  {"Your cookies are gone. Your Local Storage is gone. But your device fingerprint remains. Clearing storage doesn't make you anonymous — your device itself is identifying."}
                 </p>
               </Card>
             )}
@@ -594,19 +554,17 @@ export default function GoblinMirrorPage() {
               />
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 <Stat label="Session" value={formatSessionClock(behavior.sessionSeconds)} />
-                <Stat label="Scroll Style" value={t(behavior.scrollStyle)} />
+                <Stat label="Scroll Style" value={behavior.scrollStyle} />
                 <Stat
                   label={behavior.touch ? "Touch Style" : "Mouse Style"}
-                  value={t(behavior.interactionStyle)}
+                  value={behavior.interactionStyle}
                 />
                 <Stat label="Clicks / Taps" value={String(behavior.clicks)} />
                 <Stat label="Idle Periods" value={String(behavior.idlePeriods)} />
-                <Stat label="Archetype" value={t(archetype)} />
+                <Stat label="Archetype" value={archetype} />
               </div>
               <p className="mt-3 text-sm text-brand-text/70">
-                {t(
-                  "Websites infer who you are from behavior alone — no name required. These metrics update live."
-                )}
+                {"Websites infer who you are from behavior alone — no name required. These metrics update live."}
               </p>
             </Card>
 
@@ -624,9 +582,7 @@ export default function GoblinMirrorPage() {
                 <MicrophoneDare onGrant={() => markGranted("mic")} />
               </div>
               <p className="mt-3 text-sm text-brand-text/70">
-                {t(
-                  "Notice how each permission hands me a brand-new sense. Saying no is always a valid move — that's the whole point."
-                )}
+                {"Notice how each permission hands me a brand-new sense. Saying no is always a valid move — that's the whole point."}
               </p>
             </Card>
 
@@ -645,23 +601,21 @@ export default function GoblinMirrorPage() {
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="text-[0.65rem] font-bold uppercase tracking-wide text-brand-text/60">
-                        {t(inf.label)}
+                        {inf.label}
                       </span>
                       <ConfidenceBadge confidence={inf.confidence} />
                     </div>
-                    <div className="font-bold text-brand-text">{t(inf.value)}</div>
+                    <div className="font-bold text-brand-text">{inf.value}</div>
                     {inf.note && (
                       <div className="mt-1 text-xs italic text-brand-text/60">
-                        {t(inf.note)}
+                        {inf.note}
                       </div>
                     )}
                   </div>
                 ))}
               </div>
               <p className="mt-3 text-sm text-brand-text/70">
-                {t(
-                  "Guesses, not facts. Notice the bottom one: your age, gender, and income can't be read from your device at all — those come from data brokers, not your browser."
-                )}
+                {"Guesses, not facts. Notice the bottom one: your age, gender, and income can't be read from your device at all — those come from data brokers, not your browser."}
               </p>
             </Card>
 
@@ -673,9 +627,7 @@ export default function GoblinMirrorPage() {
                 title="If your data were sold..."
               />
               <p className="mb-3 text-sm text-brand-text/70">
-                {t(
-                  "Advertisers rarely know who you are — they bid on profiles. Here's a mock auction for yours, scaled by the signals brokers actually price on. Grant more above and watch it climb."
-                )}
+                {"Advertisers rarely know who you are — they bid on profiles. Here's a mock auction for yours, scaled by the signals brokers actually price on. Grant more above and watch it climb."}
               </p>
               <div className="flex flex-col gap-1">
                 {valuation.contributors.map((c) => (
@@ -683,7 +635,7 @@ export default function GoblinMirrorPage() {
                     key={c.label}
                     className="flex items-center justify-between rounded-neobrutal border-thin border-brand-border bg-brand-surface px-3 py-1.5 text-sm"
                   >
-                    <span className="text-brand-text/80">{t(c.label)}</span>
+                    <span className="text-brand-text/80">{c.label}</span>
                     <span className="font-bold text-brand-text">
                       +{formatCents(c.lowCents)}–{formatCents(c.highCents)}
                     </span>
@@ -692,20 +644,18 @@ export default function GoblinMirrorPage() {
               </div>
               <div className="mt-3 rounded-neobrutal border-thick border-brand-border bg-brand-primary p-4">
                 <div className="text-[0.7rem] font-bold uppercase tracking-widest text-brand-text/70">
-                  {t("Estimated Profile Value")}
+                  {"Estimated Profile Value"}
                 </div>
                 <div className="font-heading text-3xl">
                   {formatCents(valuation.lowCents)} –{" "}
                   {formatCents(valuation.highCents)}
                 </div>
                 <div className="text-sm text-brand-text/80">
-                  {t("per sale — and a profile is sold over and over.")}
+                  {"per sale — and a profile is sold over and over."}
                 </div>
               </div>
               <p className="mt-2 text-xs italic text-brand-text/50">
-                {t(
-                  "Educational simulation. Real per-sale prices for one person run from fractions of a cent up to roughly $0.50; these figures are illustrative, scaled by the same criteria (engagement, device, market, location, re-identifiability) that data brokers use."
-                )}
+                {"Educational simulation. Real per-sale prices for one person run from fractions of a cent up to roughly $0.50; these figures are illustrative, scaled by the same criteria (engagement, device, market, location, re-identifiability) that data brokers use."}
               </p>
             </Card>
 
@@ -719,60 +669,60 @@ export default function GoblinMirrorPage() {
               <div className="grid gap-3 sm:grid-cols-2">
                 <div>
                   <div className="mb-1 text-sm font-bold text-brand-text">
-                    {t("What I Know")}
+                    {"What I Know"}
                   </div>
                   <ul className="list-disc pl-5 text-sm text-brand-text/80">
-                    <li>{t("Browser, OS, screen & GPU")}</li>
-                    <li>{t("Timezone & language")}</li>
+                    <li>{"Browser, OS, screen & GPU"}</li>
+                    <li>{"Timezone & language"}</li>
                     <li>
-                      {t("Session length")}:{" "}
+                      {"Session length"}:{" "}
                       {formatSessionClock(behavior.sessionSeconds)}
                     </li>
                   </ul>
                 </div>
                 <div>
                   <div className="mb-1 text-sm font-bold text-brand-text">
-                    {t("What I Remember")}
+                    {"What I Remember"}
                   </div>
                   <ul className="list-disc pl-5 text-sm text-brand-text/80">
                     <li>
-                      {t("Cookies")}:{" "}
+                      {"Cookies"}:{" "}
                       {cookiesWiped
-                        ? t("erased")
-                        : t("{count} visits", { count: memory.visits })}
+                        ? "erased"
+                        : `${memory.visits} visits`}
                     </li>
                     <li>
-                      {t("Local Storage")}: {lsWiped ? t("erased") : t("active")}
+                      {"Local Storage"}: {lsWiped ? "erased" : "active"}
                     </li>
                     <li>
-                      {t("Fingerprint")}: #{fp.hash} {t("(survives wipes)")}
+                      {"Fingerprint"}: #{fp.hash} {"(survives wipes)"}
                     </li>
                   </ul>
                 </div>
                 <div>
                   <div className="mb-1 text-sm font-bold text-brand-text">
-                    {t("What I Inferred")}
+                    {"What I Inferred"}
                   </div>
                   <ul className="list-disc pl-5 text-sm text-brand-text/80">
                     <li>
-                      {t("Engagement")}: {t(behavior.interactionStyle)}
+                      {"Engagement"}: {behavior.interactionStyle}
                     </li>
                     <li>
-                      {t("Reading style")}: {t(behavior.scrollStyle)}
+                      {"Reading style"}: {behavior.scrollStyle}
                     </li>
                     <li>
-                      {t("Archetype")}: {t(archetype)}
+                      {"Archetype"}: {archetype}
                     </li>
                   </ul>
                 </div>
                 <div>
                   <div className="mb-1 flex items-center gap-1 text-sm font-bold text-brand-text">
-                    <Lock className="h-4 w-4" /> {t("What I Don't Know")}
+                    <Lock className="h-4 w-4" /> {"What I Don't Know"}
                   </div>
                   <ul className="list-disc pl-5 text-sm text-brand-text/80">
-                    <li>{t("Your name")}</li>
-                    <li>{t("Your income")}</li>
-                    <li>{t("Your passwords or messages")}</li>
+                    <li>{"Your name"}</li>
+                    <li>{"Your income"}</li>
+                    <li>{"Your passwords or messages"}</li>
                   </ul>
                 </div>
               </div>
@@ -780,15 +730,15 @@ export default function GoblinMirrorPage() {
               {/* Shareable score card */}
               <div className="mt-5 rounded-neobrutal border-thick border-brand-border bg-brand-secondary p-4">
                 <div className="font-heading text-lg">
-                  {t("Goblin Surveillance Score")}
+                  {"Goblin Surveillance Score"}
                 </div>
                 <div className="mt-2 grid grid-cols-2 gap-2">
-                  <Stat label="Fingerprint Uniqueness" value={t(fp.rarity)} />
+                  <Stat label="Fingerprint Uniqueness" value={fp.rarity} />
                   <Stat
                     label="Tracking Resistance"
-                    value={bothWiped ? t("Tried & Failed") : t("Untested")}
+                    value={bothWiped ? "Tried & Failed" : "Untested"}
                   />
-                  <Stat label="Goblin Rating" value={t(rating)} />
+                  <Stat label="Goblin Rating" value={rating} />
                   <Stat label="Est. Data Value" value={valueRange} />
                   <Stat label="Specimen ID" value={`#${fp.hash}`} />
                 </div>
@@ -802,9 +752,7 @@ export default function GoblinMirrorPage() {
               </div>
 
               <p className="mt-4 text-center text-xs italic text-brand-text/50">
-                {t(
-                  "Educational simulation. The Goblin kept all of this on your device and sent none of it anywhere."
-                )}
+                {"Educational simulation. The Goblin kept all of this on your device and sent none of it anywhere."}
               </p>
             </Card>
           </>

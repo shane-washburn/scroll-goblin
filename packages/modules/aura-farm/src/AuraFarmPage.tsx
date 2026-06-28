@@ -19,7 +19,6 @@ import {
   getAudioBus,
   registerAudioLifecycleStop,
   trackStat,
-  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import {
@@ -144,9 +143,6 @@ function takeSharedSnapshot(): ShareState | null {
 }
 
 export default function AuraFarmPage() {
-  const { t } = useTranslation();
-  const tRef = useRef(t);
-  tRef.current = t;
   const [snapshot] = useState(takeSharedSnapshot);
 
   const gameCardRef = useMobileGameFit<HTMLDivElement>({ align: "top" });
@@ -263,9 +259,8 @@ export default function AuraFarmPage() {
         if (growthBarRef.current)
           growthBarRef.current.style.width = `${Math.round(wld.growth * 100)}%`;
         if (stageTextRef.current)
-          stageTextRef.current.textContent = tRef.current(
-            STAGE_LABEL[stageFor(wld.growth)]
-          );
+          stageTextRef.current.textContent =
+            STAGE_LABEL[stageFor(wld.growth)];
       }
 
       raf = requestAnimationFrame(tick);
@@ -332,16 +327,14 @@ export default function AuraFarmPage() {
       <header className="hidden sm:grid mb-bento gap-bento sm:grid-cols-[1.1fr_0.9fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-purple p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-            🔮 {t("Goblin Aura Farm")}
+            🔮 {"Goblin Aura Farm"}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            {t("Grow it. Harvest it. Watch it dance")}
+            {"Grow it. Harvest it. Watch it dance"}
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          {t(
-            "Drip Red, Yellow & Blue energy into the jar, then raise the blob with care. Warm colors grow fast and dance hard; cool ones stay smooth. Harvest a ripe aura and your goblin erupts into a dance chosen by its color."
-          )}
+          {"Drip Red, Yellow & Blue energy into the jar, then raise the blob with care. Warm colors grow fast and dance hard; cool ones stay smooth. Harvest a ripe aura and your goblin erupts into a dance chosen by its color."}
         </p>
       </header>
 
@@ -375,7 +368,7 @@ export default function AuraFarmPage() {
                         }`}
                         style={{ backgroundColor: tint.bg }}
                       >
-                        + {t(c.label)}
+                        + {c.label}
                       </button>
                     );
                   })}
@@ -391,7 +384,7 @@ export default function AuraFarmPage() {
                       <button
                         key={b.kind}
                         onClick={() => onCare(b.kind)}
-                        title={t(b.hint)}
+                        title={b.hint}
                         className={`flex w-[60px] shrink flex-col items-center gap-0.5 rounded-neobrutal border-thin border-brand-border px-1 py-1.5 text-[10px] font-bold shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed ${
                           b.delta
                             ? tint.light
@@ -402,7 +395,7 @@ export default function AuraFarmPage() {
                         style={b.delta ? { backgroundColor: tint.bg } : undefined}
                       >
                         <Icon className="h-4 w-4" />
-                        {t(b.label)}
+                        {b.label}
                       </button>
                     );
                   })}
@@ -418,9 +411,9 @@ export default function AuraFarmPage() {
             {/* Growth meter */}
             <div className="mb-3">
               <div className="mb-1 flex items-center justify-between text-xs font-bold uppercase">
-                <span>{t("Growth")}</span>
+                <span>{"Growth"}</span>
                 <span ref={stageTextRef} className="text-brand-muted">
-                  {t("Seedling")}
+                  {"Seedling"}
                 </span>
               </div>
               <div className="h-3 w-full overflow-hidden rounded-neobrutal border-thin border-brand-border bg-brand-background">
@@ -440,13 +433,13 @@ export default function AuraFarmPage() {
                 className="inline-flex items-center gap-2 rounded-neobrutal border-thick border-brand-border bg-brand-pink px-5 py-2.5 text-sm font-bold text-brand-text shadow-neo-md transition-[transform,box-shadow] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <Wand2 className="h-4 w-4" />
-                {canHarvest ? t("Harvest the Aura!") : t("Keep raising it…")}
+                {canHarvest ? "Harvest the Aura!" : "Keep raising it…"}
               </button>
               <button
                 onClick={onNew}
                 className="inline-flex items-center gap-1.5 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-2 text-xs font-bold shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
               >
-                <RefreshCw className="h-3.5 w-3.5" /> {t("Empty jar")}
+                <RefreshCw className="h-3.5 w-3.5" /> {"Empty jar"}
               </button>
               <ShareButton
                 moduleId={MODULE_ID}
@@ -473,20 +466,20 @@ export default function AuraFarmPage() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div className="min-w-0">
                 <div className="mb-1 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-2 py-0.5 text-[10px] font-bold uppercase shadow-neo-sm">
-                  {t(aura.rarity)}
+                  {aura.rarity}
                 </div>
                 <h2 className="font-heading text-3xl leading-none">
-                  {aura.emoji} {t(aura.name)}
+                  {aura.emoji} {aura.name}
                 </h2>
                 <p className="mt-1 text-sm font-bold">
-                  {t("Now dancing:")} <strong>{t(aura.danceName)}</strong>
+                  {"Now dancing:"} <strong>{aura.danceName}</strong>
                 </p>
                 <p className="mt-1 text-sm font-bold text-brand-muted">
-                  {t(aura.blurb)}
+                  {aura.blurb}
                 </p>
                 <p className="mt-2 inline-flex items-start gap-1.5 rounded-neobrutal border-thin border-brand-border bg-brand-background px-2.5 py-1.5 text-xs font-bold shadow-neo-sm">
                   <Sparkles className="mt-0.5 h-3.5 w-3.5 shrink-0" />
-                  {t(aura.lesson)}
+                  {aura.lesson}
                 </p>
               </div>
               <div className="flex shrink-0 flex-wrap gap-2">
@@ -494,7 +487,7 @@ export default function AuraFarmPage() {
                   onClick={onNew}
                   className="inline-flex items-center gap-2 rounded-neobrutal border-thick border-brand-border bg-brand-primary px-4 py-2.5 text-sm font-bold text-brand-text shadow-neo-md transition-[transform,box-shadow] duration-100 active:translate-x-1 active:translate-y-1 active:shadow-neo-pressed"
                 >
-                  <RefreshCw className="h-4 w-4" /> {t("Grow another")}
+                  <RefreshCw className="h-4 w-4" /> {"Grow another"}
                 </button>
                 <ShareButton
                   moduleId={MODULE_ID}
@@ -514,12 +507,10 @@ export default function AuraFarmPage() {
         {/* Dance encyclopedia */}
         <div className="border-t-thick border-brand-border bg-brand-background p-4">
           <p className="mb-2 text-[11px] font-bold uppercase text-brand-muted">
-            {t("Dance Encyclopedia")} —{" "}
-            {t("{count} unlocked", {
-              count: `${dex.size}/${total}`,
-            })}
+            {"Dance Encyclopedia"} —{" "}
+            {`${dex.size}/${total} unlocked`}
             <span className="ml-1 normal-case text-brand-muted/80">
-              {t("(tap a discovered dance to perform it)")}
+              {"(tap a discovered dance to perform it)"}
             </span>
           </p>
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
@@ -532,7 +523,7 @@ export default function AuraFarmPage() {
                   type="button"
                   onClick={() => onReplay(a)}
                   disabled={!got}
-                  title={got ? t("Perform {dance}", { dance: t(a.danceName) }) : t("Locked")}
+                  title={got ? `Perform ${a.danceName}` : "Locked"}
                   className={`flex flex-col items-center gap-0.5 rounded-neobrutal border-thin border-brand-border p-2 text-center shadow-neo-sm transition-[transform,box-shadow] duration-100 ${
                     got
                       ? "bg-brand-surface hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed cursor-pointer"
@@ -543,7 +534,7 @@ export default function AuraFarmPage() {
                     {got ? a.emoji : <Lock className="h-5 w-5 text-brand-muted" />}
                   </span>
                   <span className="text-[10px] font-bold leading-tight">
-                    {got ? t(a.danceName) : "???"}
+                    {got ? a.danceName : "???"}
                   </span>
                 </button>
               );
