@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-06-28T06:57:36.331Z",
+  "filename": "apps/web/i18n/source.html",
+  "entries": [
+    {
+      "sourceHash": "0bfef60bb379ef9cf24fa8d472747638",
+      "sourceText": "Slug Duel",
+      "locale": "ru-RU",
+      "previousLocalText": "Слизнефехт",
+      "pulledText": "Слизнефехт",
+      "dbUpdatedAt": "2026-06-28T06:03:04.379Z",
+      "status": "pulled"
+    },
+    {
+      "sourceHash": "17821a10400745194709fce7b87855e2",
+      "sourceText": "Emoji Translator",
+      "locale": "ru-RU",
+      "previousLocalText": "Транслятор эмодзи",
+      "pulledText": "Переводчик эмодзи",
+      "dbUpdatedAt": "2026-06-28T06:53:23.717Z",
+      "status": "pulled"
+    }
+  ]
+}

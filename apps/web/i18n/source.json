@@ -3465,7 +3465,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 311,
+              "line": 312,
               "kind": "translation-call"
             }
           ]
@@ -6507,7 +6507,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 220,
+              "line": 221,
               "kind": "translation-call"
             }
           ]
@@ -6525,7 +6525,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 233,
+              "line": 234,
               "kind": "translation-call"
             }
           ]
@@ -6579,7 +6579,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 281,
+              "line": 282,
               "kind": "translation-call"
             },
             {
@@ -7009,7 +7009,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 291,
+              "line": 292,
               "kind": "div-text"
             }
           ]
@@ -10169,7 +10169,7 @@
           "locations": [
             {
               "file": "apps/web/src/App.tsx",
-              "line": 273,
+              "line": 274,
               "kind": "translation-call"
             },
             {
