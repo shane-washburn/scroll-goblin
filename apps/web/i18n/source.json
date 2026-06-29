@@ -1983,6 +1983,24 @@
       ]
     },
     {
+      "key": "9d8d2d5ab12b515182a505f54db7f538",
+      "source": "Age",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/life-of-an-octopus/src/LifeOfAnOctopusPage.tsx",
+              "line": 355,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "b9f2062acff072f15dd27278801a47b5",
       "source": "Age / Gender / Income",
       "contexts": [
@@ -3118,6 +3136,24 @@
             {
               "file": "packages/modules/slug-fencing/src/screens.tsx",
               "line": 311,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "f36a3b3cfd170fb6afc1aaa774c85830",
+      "source": "Brainrot",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/brainrot-button/src/BrainrotButtonPage.tsx",
+              "line": 376,
               "kind": "value-literal"
             }
           ]
@@ -4518,6 +4554,18 @@
       "contexts": [
         {
           "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/commune-with-god/src/CommuneWithGodPage.tsx",
+              "line": 84,
+              "kind": "value-literal"
+            }
+          ]
+        },
+        {
+          "shape": "body",
           "purpose": "data-driven UI text rendered dynamically from app data",
           "visualContext": "",
           "locations": [
@@ -5445,6 +5493,24 @@
             {
               "file": "apps/web/src/App.tsx",
               "line": 167,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "0e70e100819c7fbbb2ddf472ddbc622f",
+      "source": "Deepest",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/screaming-chicken/src/ScreamingChickenPage.tsx",
+              "line": 436,
               "kind": "value-literal"
             }
           ]
@@ -6424,6 +6490,11 @@
               "file": "packages/modules/life-of-an-octopus/src/engine.ts",
               "line": 654,
               "kind": "value-literal"
+            },
+            {
+              "file": "packages/modules/screaming-chicken/src/ScreamingChickenPage.tsx",
+              "line": 433,
+              "kind": "value-literal"
             }
           ]
         }
@@ -7012,6 +7083,24 @@
       ]
     },
     {
+      "key": "87d02293a37ff25fb25f3f8f1f8eb8fd",
+      "source": "Extended (dashed)",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/musical-dna/src/MusicalDnaPage.tsx",
+              "line": 322,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "06ef09396dc25808ea9e60bbdb39e21c",
       "source": "extended code",
       "contexts": [
@@ -7381,6 +7470,24 @@
               "file": "packages/modules/goblin-mirror/src/GoblinMirrorPage.tsx",
               "line": 456,
               "kind": "component-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "f67496515f3bae9862a67a4b97bb9c43",
+      "source": "First to",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/slug-fencing/src/SlugDuelPage.tsx",
+              "line": 914,
+              "kind": "value-literal"
             }
           ]
         }
@@ -8134,13 +8241,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "purpose": "text painted to a <canvas>, wrapped with __hlT at build time",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-mirror/src/fingerprint.ts",
               "line": 107,
-              "kind": "value-literal"
+              "kind": "canvas-text"
             }
           ]
         }
@@ -8553,6 +8660,24 @@
       ]
     },
     {
+      "key": "699aed86dada6ca01ef74013a4464066",
+      "source": "Growth",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
+              "line": 414,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "649505fcc2a36bbd10de858693289c7d",
       "source": "Guard the eggs",
       "contexts": [
@@ -8714,6 +8839,24 @@
             {
               "file": "packages/modules/life-of-an-octopus/src/LifeOfAnOctopusPage.tsx",
               "line": 136,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "605669cab962bf944d99ce89cf9e58d9",
+      "source": "Health",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/life-of-an-octopus/src/LifeOfAnOctopusPage.tsx",
+              "line": 334,
               "kind": "value-literal"
             }
           ]
@@ -9113,13 +9256,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "purpose": "text painted to a <canvas>, wrapped with __hlT at build time",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/life-of-an-octopus/src/draw.ts",
               "line": 316,
-              "kind": "value-literal"
+              "kind": "canvas-text"
             }
           ]
         }
@@ -9814,7 +9957,7 @@
           "locations": [
             {
               "file": "apps/web/src/LanguageSelector.tsx",
-              "line": 66,
+              "line": 67,
               "kind": "aria-label"
             }
           ]
@@ -9832,7 +9975,7 @@
           "locations": [
             {
               "file": "apps/web/src/LanguageSelector.tsx",
-              "line": 77,
+              "line": 78,
               "kind": "aria-label"
             }
           ]
@@ -13141,6 +13284,11 @@
               "file": "packages/modules/slug-fencing/src/screens.tsx",
               "line": 79,
               "kind": "value-literal"
+            },
+            {
+              "file": "packages/modules/slug-fencing/src/screens.tsx",
+              "line": 302,
+              "kind": "value-literal"
             }
           ]
         }
@@ -13159,6 +13307,24 @@
               "file": "packages/modules/slug-fencing/src/screens.tsx",
               "line": 301,
               "kind": "paragraph-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "de9ae8838c2da5b79db3787a27d9333a",
+      "source": "Plucked",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
+              "line": 518,
+              "kind": "value-literal"
             }
           ]
         }
@@ -13273,6 +13439,24 @@
       ]
     },
     {
+      "key": "c91e897d4a005988919e50f5247c9aed",
+      "source": "Português (Brasil)",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "apps/web/src/LanguageSelector.tsx",
+              "line": 21,
+              "kind": "data-field:label"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "3289297424e01eda5b788c083bbf3147",
       "source": "Positive",
       "contexts": [
@@ -13333,6 +13517,24 @@
               "file": "packages/modules/potato-painter/src/potato.ts",
               "line": 191,
               "kind": "value-interpolated"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "cc819c1daa74d1bf8041614d44d6bb02",
+      "source": "Potatoes used",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/potato-painter/src/PotatoPainterPage.tsx",
+              "line": 336,
+              "kind": "value-literal"
             }
           ]
         }
@@ -15082,6 +15284,24 @@
       ]
     },
     {
+      "key": "37d94670e4261b0b3caa6b8b2a777299",
+      "source": "Screams",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/screaming-chicken/src/ScreamingChickenPage.tsx",
+              "line": 430,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "0348e1c15a0082e363a378ab4a48b173",
       "source": "Screams: <0>{screams}</0>",
       "contexts": [
@@ -15334,6 +15554,11 @@
           "purpose": "UI text in a value position, applied at runtime by the DOM injector",
           "visualContext": "",
           "locations": [
+            {
+              "file": "packages/modules/aura-farm/src/AuraFarmPage.tsx",
+              "line": 416,
+              "kind": "value-literal"
+            },
             {
               "file": "packages/modules/aura-farm/src/aura.ts",
               "line": 489,
@@ -16444,6 +16669,24 @@
       ]
     },
     {
+      "key": "d19121bc39fe3320ddb42a5738fe846a",
+      "source": "Squeezes",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/screaming-chicken/src/ScreamingChickenPage.tsx",
+              "line": 427,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "8089497acc73acc00bf51ff4f1e044d1",
       "source": "Squeezes: <0>{squeezes}</0>",
       "contexts": [
@@ -16527,6 +16770,24 @@
             {
               "file": "packages/modules/potato-painter/src/PotatoPainterPage.tsx",
               "line": 55,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "b78b9e865bb7e11d953601ef9cb5d2b9",
+      "source": "Stamps",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/potato-painter/src/PotatoPainterPage.tsx",
+              "line": 333,
               "kind": "value-literal"
             }
           ]
@@ -16980,7 +17241,7 @@
           "locations": [
             {
               "file": "apps/web/src/LanguageSelector.tsx",
-              "line": 21,
+              "line": 22,
               "kind": "data-field:label"
             }
           ]
@@ -18690,6 +18951,24 @@
       ]
     },
     {
+      "key": "2e57552ac1759f81608d0b2f3cdfc770",
+      "source": "Touches",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
+              "line": 515,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "7347e516bbd70d2d183e23be6e0b780b",
       "source": "Touches: <0>{touches}</0>",
       "contexts": [
@@ -18786,6 +19065,24 @@
               "file": "packages/modules/emoji-translator/src/manifest.ts",
               "line": 6,
               "kind": "data-field:description"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "8394fd0f15a541fd96deb460ab680746",
+      "source": "Translate language",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/emoji-translator/src/EmojiTranslatorPage.tsx",
+              "line": 123,
+              "kind": "value-literal"
             }
           ]
         }
@@ -19663,6 +19960,24 @@
       ]
     },
     {
+      "key": "9530aff942e829d59618cf7d505e8f50",
+      "source": "Waterings",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/touch-grass/src/TouchGrassPage.tsx",
+              "line": 521,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "370b4ff4c1f8e9b358394b77d1cae9ea",
       "source": "Waterings: <0>{waters}</0>",
       "contexts": [
@@ -20143,6 +20458,24 @@
               "file": "packages/modules/life-of-an-octopus/src/engine.ts",
               "line": 234,
               "kind": "data-field:card"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "587d19d0ab1bad4c9c9717ac658e5caf",
+      "source": "You asked:",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/commune-with-god/src/CommuneWithGodPage.tsx",
+              "line": 160,
+              "kind": "value-literal"
             }
           ]
         }
@@ -20801,7 +21134,7 @@
           "locations": [
             {
               "file": "apps/web/src/LanguageSelector.tsx",
-              "line": 22,
+              "line": 23,
               "kind": "data-field:label"
             }
           ]

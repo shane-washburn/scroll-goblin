@@ -102,6 +102,7 @@
     "Advertisers rarely know who you are — they bid on profiles. Here's a mock auction for yours, scaled by the signals brokers actually price on. Grant more above and watch it climb.": "38825eaae85f3c98ddd616e52a42a886",
     "Africa": "f5cd262901883dff68d06b215fb0f28e",
     "Afternoon browsing": "c56b87c38ea7e006f89f9ee1552f0a79",
+    "Age": "9d8d2d5ab12b515182a505f54db7f538",
     "Age / Gender / Income": "b9f2062acff072f15dd27278801a47b5",
     "Age <0>0</0> mo": "34c7cef435726458ffd8a5fca04cbba0",
     "Age Reached": "283dc8241af0eee178d700d03eed4786",
@@ -157,6 +158,7 @@
     "Blue is a primary — cool, calm, the slow side of the wheel.": "0fb82d649f6df0ea855c357a447f242d",
     "Blues": "aca2a3c07f76ae685ae818b312e025c5",
     "Both slugs ready. Starting…": "7bf75713772c556655bcdd134146721f",
+    "Brainrot": "f36a3b3cfd170fb6afc1aaa774c85830",
     "Brainrot Button": "57bf5c76f0f88545c91c6d102b1e927f",
     "Bright": "45c1428dbdf63826b7b1a999e012df3b",
     "Bring 3 shells home": "bf4cae6ff3b808f21e5cc13c0f348d1b",
@@ -271,6 +273,7 @@
     "Dark": "a18366b217ebf811ad1886e4f4f865b2",
     "Data Broker Auction": "cc768298713d411a8a832f04ef287fdb",
     "Decoupled monorepo / React + TS shell / Hono API / Vercel AI SDK (Gemini)": "519c02d9623a10f733bb467b20b29caa",
+    "Deepest": "0e70e100819c7fbbb2ddf472ddbc622f",
     "Deepest: <0>{record}%</0>": "1853f5db5f4e3d19b474bd423f147708",
     "Default button restored.": "4f658ce5e64f02a51b390810d7666e00",
     "DEFAULT VOICE ACTIVE": "8e2edd13a3d0fa7c714960c5b2058f43",
@@ -343,6 +346,7 @@
     "Every 'yes' tells me more": "086e470245c981c1627373cd981fce6c",
     "Everything runs in your web browser; nothing to download or install.": "f6d42d8f9a1af090cabe200b3642179e",
     "Explorer": "94fbbf67e0c8cea8cbaff55287746f3e",
+    "Extended (dashed)": "87d02293a37ff25fb25f3f8f1f8eb8fd",
     "extended code": "06ef09396dc25808ea9e60bbdb39e21c",
     "Extended codes — rare & ambiguous residues that complete the alphabet": "7a5bb3052e4dd5b6bd65991c70a3d90a",
     "F#": "629b160731f33947eac814bf3e585044",
@@ -361,6 +365,7 @@
     "Fingerprint Uniqueness": "22240c5d336b0a5401d42c5c6b64e3dc",
     "Firefox": "763f7f1aec350cd1a46238d1d5c3c229",
     "First Seen": "d916cc29cf1ef03264b111bd15660324",
+    "First to": "f67496515f3bae9862a67a4b97bb9c43",
     "First to {scoreToWin}": "f9bfafd00274bd664d63f36774a0b31c",
     "First to: <0>{scoreToWin}</0>": "33259b76688f39b362c8a61417e8b8a9",
     "Flaming Breakdance": "50c288b279be94b766c1eee991c6a856",
@@ -418,6 +423,7 @@
     "Groove": "a5d7f2d1b78f9222563004a41a616334",
     "Grow another": "566c4b5395e394df5642c9d576049a79",
     "Grow it. Harvest it. Watch it dance": "2c2ad85d3838ae54b8081f736db7252e",
+    "Growth": "699aed86dada6ca01ef74013a4464066",
     "Guard the eggs": "649505fcc2a36bbd10de858693289c7d",
     "Guard your eggs. Stay close. Drive away anything that comes.": "777d23fea2bbb04e3b924f6a48ca09ba",
     "Guesses, not facts. Notice the bottom one: your age, gender, and income can't be read from your device at all — those come from data brokers, not your browser.": "48539e472484c8719dbec2acd905496f",
@@ -426,6 +432,7 @@
     "Harvest the Aura!": "ab14750660837da0a11fa32745c36140",
     "Hatch →": "183f3d745dbe86729da049d32e41af89",
     "Hatchling": "4f2a8e89489dbc86d3f095c147b2f5d9",
+    "Health": "605669cab962bf944d99ce89cf9e58d9",
     "Heavy Crystal Ball": "412111f26250c4c2fc89b892e1e447f1",
     "Heavy Crystal Ball leaves the shelf.": "bc474e766ca6ed11c1d1fca6323cdfd3",
     "Helix": "87b2ccc9693d1d35db611ffe6cf37f30",
@@ -635,15 +642,18 @@
     "Play as an orange cat with one goal: shove everything off the shelf. Heavy mugs, magic junk, and squeaky toys all fall differently.": "c377d9444d4d449c7504317e71c1993e",
     "Play to": "424607653cfe010baa8924709d579ad7",
     "Play to: <0>{scoreToWin}</0>": "269727d86c7bac0f47c3c7b30995f9bc",
+    "Plucked": "de9ae8838c2da5b79db3787a27d9333a",
     "Plucked: <0>{plucks}</0>": "29970d0b5990243bc619477fb7f93b0c",
     "Pointer": "61cf8510205077b6f5491d38cd44c0f7",
     "Polar": "e266cfd65ad46a67fc54b0efd38e40dd",
     "Polski": "d0033788e612a4e0646c261eba804fb6",
     "POP. An egg?! You squeezed an entire egg out of the chicken.": "c7343b62a23769218f9619b913874665",
     "Portrait": "1c7444be9626d149ab598fb79b639f96",
+    "Português (Brasil)": "c91e897d4a005988919e50f5247c9aed",
     "Positive": "3289297424e01eda5b788c083bbf3147",
     "Potato Painter": "3df9340f24f273b8e3b94195098592cd",
     "potato-{value0}": "0fb4e1daa796758724e15bfd9aa437d8",
+    "Potatoes used": "cc819c1daa74d1bf8041614d44d6bb02",
     "Potatoes used: <0>{used}</0>": "d8395e5a73cdbc7ca27400a61db95a65",
     "Potion": "f7f5d540f521d6d642502a9d459e7b16",
     "Potted Mandrake": "3bec5c7cdaa940f43b9731e0f09946ca",
@@ -730,6 +740,7 @@
     "Scanning device.": "f98d0e0159c81cc6baddbef0a5f6c78e",
     "Scrambles everything. Anything can happen.": "370c6ba155a021be3a594d740eb38065",
     "Screaming Chicken": "08d2e8ec5bbc8ed4c5918aaf1512e889",
+    "Screams": "37d94670e4261b0b3caa6b8b2a777299",
     "Screams: <0>{screams}</0>": "0348e1c15a0082e363a378ab4a48b173",
     "Screen": "2fc3359e12b2a9104121dcf04246f6a0",
     "Scroll": "105078d294d30c978ca2badf7f376934",
@@ -796,11 +807,13 @@
     "Spud acquired. Drop it where you want it!": "a2cccfe7010f389e5d381b26ad6cf35e",
     "Squeak. The cat looks personally betrayed.": "92a4ac3ab60ca841f70be1cf2bc1a75d",
     "Squeeze the chicken": "cc78099e1a854c2b179da8077c50d7e4",
+    "Squeezes": "d19121bc39fe3320ddb42a5738fe846a",
     "Squeezes: <0>{squeezes}</0>": "8089497acc73acc00bf51ff4f1e044d1",
     "Stack of books": "ad347dee7ae527795187c72b523ebea0",
     "Stack of Heavy Spellbooks": "9cfebd8ff23f32450ca4dbf1d30efe7f",
     "Stack of Heavy Spellbooks leaves the shelf.": "69a9ae9ed2f7c50546f39519ac32546f",
     "Stamped! A fresh potato has rolled into its place. 🥔": "a6202b10fb93ecb9d1b3220e29c8cf56",
+    "Stamps": "b78b9e865bb7e11d953601ef9cb5d2b9",
     "Stamps: <0>{stampCount}</0>": "958de9a1251b09dc4d3bfcd192ec904d",
     "Standard 20 — the amino acids your DNA codes for": "be9c83c93e14a997e465864fea859792",
     "Start blowing": "5ad0ab115b56c981dc57d3249796dd9c",
@@ -905,11 +918,13 @@
     "Touch device": "101507f9f0c167fe15518d77f2ab81b4",
     "Touch Grass": "c9bf947730af2c9c78ef334b3660a2d0",
     "Touch Style": "b18fbd2bc4fb455545c0901d654315ee",
+    "Touches": "2e57552ac1759f81608d0b2f3cdfc770",
     "Touches: <0>{touches}</0>": "7347e516bbd70d2d183e23be6e0b780b",
     "Track which alerts you click to profile what lures you back": "fe2d6a81009a51999ef5792958707bc9",
     "Tracking Resistance": "550f8b51424d87934c2ac3e93fd72eed",
     "Translate": "deccbe4e9083c3b5f7cd2632722765bb",
     "Translate between human language and emoji in both directions, powered by an LLM.": "259de296529020290617e62e34cb2b86",
+    "Translate language": "8394fd0f15a541fd96deb460ab680746",
     "Translate language <0>↔️</0> emoji": "7d79dd65237f170acd9cee700d96aeed",
     "Translating...": "d03e99730ddba93542f7af93d8d6c93a",
     "Translation will appear here": "8386b947510242bb242c6067ecf6891a",
@@ -952,6 +967,7 @@
     "Warm, chaotic, and sprinting from imaginary auditors.": "03218814a5c50fb75cca7aa7900e1ff6",
     "Warms it up, grows fastest": "3b270cbfbbb3f0fdb0d8326f364e3cdb",
     "Water": "27634ff8002b12e75d98e07ccd005d18",
+    "Waterings": "9530aff942e829d59618cf7d505e8f50",
     "Waterings: <0>{waters}</0>": "370b4ff4c1f8e9b358394b77d1cae9ea",
     "Websites infer who you are from behavior alone — no name required. These metrics update live.": "ded7e16828852873c4e81575c86bb737",
     "What does the internet know about you? A goblin scans your device, remembers your visits, and infers who you are — then proves that deleting cookies isn't enough. Educational, slightly unsettling, runs entirely on your device.": "3cf95cc5bcf7376650d8a962ff147871",
@@ -975,6 +991,7 @@
     "Yellow joy, no notes. Cannot stop bouncing.": "b089b0ed80526adc7841997ec5b8bbd1",
     "You": "cae8d14edd025e72c59dbab6f378c95a",
     "You and thousands of siblings hatch at once and rush for the surface. Almost none survive the gauntlet. Let the current carry you up.": "6b333cd34283d69a0336af46c7d1da85",
+    "You asked:": "587d19d0ab1bad4c9c9717ac658e5caf",
     "You asked: <0>{asked}</0>": "f80d68e4c5d21432d1e31024e2176591",
     "You did not survive": "db914e727ef9e59360abc6ff4f5d2730",
     "You have learned to hunt. Stay still, blend in, then strike.": "ced19c9489442e9224fc159000733431",
@@ -1415,6 +1432,10 @@
       "key": "c56b87c38ea7e006f89f9ee1552f0a79"
     },
     {
+      "source": "Age",
+      "key": "9d8d2d5ab12b515182a505f54db7f538"
+    },
+    {
       "source": "Age / Gender / Income",
       "key": "b9f2062acff072f15dd27278801a47b5"
     },
@@ -1633,6 +1654,10 @@
     {
       "source": "Both slugs ready. Starting…",
       "key": "7bf75713772c556655bcdd134146721f"
+    },
+    {
+      "source": "Brainrot",
+      "key": "f36a3b3cfd170fb6afc1aaa774c85830"
     },
     {
       "source": "Brainrot Button",
@@ -2091,6 +2116,10 @@
       "key": "519c02d9623a10f733bb467b20b29caa"
     },
     {
+      "source": "Deepest",
+      "key": "0e70e100819c7fbbb2ddf472ddbc622f"
+    },
+    {
       "source": "Deepest: <0>{record}%</0>",
       "key": "1853f5db5f4e3d19b474bd423f147708"
     },
@@ -2379,6 +2408,10 @@
       "key": "94fbbf67e0c8cea8cbaff55287746f3e"
     },
     {
+      "source": "Extended (dashed)",
+      "key": "87d02293a37ff25fb25f3f8f1f8eb8fd"
+    },
+    {
       "source": "extended code",
       "key": "06ef09396dc25808ea9e60bbdb39e21c"
     },
@@ -2449,6 +2482,10 @@
     {
       "source": "First Seen",
       "key": "d916cc29cf1ef03264b111bd15660324"
+    },
+    {
+      "source": "First to",
+      "key": "f67496515f3bae9862a67a4b97bb9c43"
     },
     {
       "source": "First to {scoreToWin}",
@@ -2679,6 +2716,10 @@
       "key": "2c2ad85d3838ae54b8081f736db7252e"
     },
     {
+      "source": "Growth",
+      "key": "699aed86dada6ca01ef74013a4464066"
+    },
+    {
       "source": "Guard the eggs",
       "key": "649505fcc2a36bbd10de858693289c7d"
     },
@@ -2709,6 +2750,10 @@
     {
       "source": "Hatchling",
       "key": "4f2a8e89489dbc86d3f095c147b2f5d9"
+    },
+    {
+      "source": "Health",
+      "key": "605669cab962bf944d99ce89cf9e58d9"
     },
     {
       "source": "Heavy Crystal Ball",
@@ -3547,6 +3592,10 @@
       "key": "269727d86c7bac0f47c3c7b30995f9bc"
     },
     {
+      "source": "Plucked",
+      "key": "de9ae8838c2da5b79db3787a27d9333a"
+    },
+    {
       "source": "Plucked: <0>{plucks}</0>",
       "key": "29970d0b5990243bc619477fb7f93b0c"
     },
@@ -3571,6 +3620,10 @@
       "key": "1c7444be9626d149ab598fb79b639f96"
     },
     {
+      "source": "Português (Brasil)",
+      "key": "c91e897d4a005988919e50f5247c9aed"
+    },
+    {
       "source": "Positive",
       "key": "3289297424e01eda5b788c083bbf3147"
     },
@@ -3581,6 +3634,10 @@
     {
       "source": "potato-{value0}",
       "key": "0fb4e1daa796758724e15bfd9aa437d8"
+    },
+    {
+      "source": "Potatoes used",
+      "key": "cc819c1daa74d1bf8041614d44d6bb02"
     },
     {
       "source": "Potatoes used: <0>{used}</0>",
@@ -3927,6 +3984,10 @@
       "key": "08d2e8ec5bbc8ed4c5918aaf1512e889"
     },
     {
+      "source": "Screams",
+      "key": "37d94670e4261b0b3caa6b8b2a777299"
+    },
+    {
       "source": "Screams: <0>{screams}</0>",
       "key": "0348e1c15a0082e363a378ab4a48b173"
     },
@@ -4191,6 +4252,10 @@
       "key": "cc78099e1a854c2b179da8077c50d7e4"
     },
     {
+      "source": "Squeezes",
+      "key": "d19121bc39fe3320ddb42a5738fe846a"
+    },
+    {
       "source": "Squeezes: <0>{squeezes}</0>",
       "key": "8089497acc73acc00bf51ff4f1e044d1"
     },
@@ -4209,6 +4274,10 @@
     {
       "source": "Stamped! A fresh potato has rolled into its place. 🥔",
       "key": "a6202b10fb93ecb9d1b3220e29c8cf56"
+    },
+    {
+      "source": "Stamps",
+      "key": "b78b9e865bb7e11d953601ef9cb5d2b9"
     },
     {
       "source": "Stamps: <0>{stampCount}</0>",
@@ -4627,6 +4696,10 @@
       "key": "b18fbd2bc4fb455545c0901d654315ee"
     },
     {
+      "source": "Touches",
+      "key": "2e57552ac1759f81608d0b2f3cdfc770"
+    },
+    {
       "source": "Touches: <0>{touches}</0>",
       "key": "7347e516bbd70d2d183e23be6e0b780b"
     },
@@ -4645,6 +4718,10 @@
     {
       "source": "Translate between human language and emoji in both directions, powered by an LLM.",
       "key": "259de296529020290617e62e34cb2b86"
+    },
+    {
+      "source": "Translate language",
+      "key": "8394fd0f15a541fd96deb460ab680746"
     },
     {
       "source": "Translate language <0>↔️</0> emoji",
@@ -4815,6 +4892,10 @@
       "key": "27634ff8002b12e75d98e07ccd005d18"
     },
     {
+      "source": "Waterings",
+      "key": "9530aff942e829d59618cf7d505e8f50"
+    },
+    {
       "source": "Waterings: <0>{waters}</0>",
       "key": "370b4ff4c1f8e9b358394b77d1cae9ea"
     },
@@ -4905,6 +4986,10 @@
     {
       "source": "You and thousands of siblings hatch at once and rush for the surface. Almost none survive the gauntlet. Let the current carry you up.",
       "key": "6b333cd34283d69a0336af46c7d1da85"
+    },
+    {
+      "source": "You asked:",
+      "key": "587d19d0ab1bad4c9c9717ac658e5caf"
     },
     {
       "source": "You asked: <0>{asked}</0>",

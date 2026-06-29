@@ -8,6 +8,10 @@ export type WrapTarget = {
     valueStart: number;
     valueEnd: number;
 } | {
+    type: "call-arg";
+    valueStart: number;
+    valueEnd: number;
+} | {
     type: "template";
     start: number;
     end: number;

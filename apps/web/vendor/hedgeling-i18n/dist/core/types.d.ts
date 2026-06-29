@@ -41,6 +41,8 @@ export type ExtractConfig = {
     objectFields: string[];
     contextOverrides: Record<string, ContextOverride>;
     adapters: string[];
+    resourceFormats: string[];
+    resourceDir: string;
 };
 export type AdapterOptions = {
     fileName: string;

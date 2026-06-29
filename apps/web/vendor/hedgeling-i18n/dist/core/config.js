@@ -42,6 +42,8 @@ export const DEFAULT_CONFIG = {
     ],
     contextOverrides: {},
     adapters: [],
+    resourceFormats: [],
+    resourceDir: "i18n/resources",
 };
 function asStringArray(value, fallback) {
     if (!Array.isArray(value))
@@ -74,6 +76,8 @@ export function loadExtractConfig(workspaceRoot) {
         objectFields: asStringArray(parsed.objectFields, DEFAULT_CONFIG.objectFields),
         contextOverrides: overrides,
         adapters: asStringArray(parsed.adapters, DEFAULT_CONFIG.adapters),
+        resourceFormats: asStringArray(parsed.resourceFormats, DEFAULT_CONFIG.resourceFormats),
+        resourceDir: typeof parsed.resourceDir === "string" ? parsed.resourceDir : DEFAULT_CONFIG.resourceDir,
     };
 }
 export function configExists(workspaceRoot) {

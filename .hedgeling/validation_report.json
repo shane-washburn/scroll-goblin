@@ -1,5 +1,5 @@
 {
-  "uniqueSourceStrings": 1004,
+  "uniqueSourceStrings": 1021,
   "localeCount": 13,
   "locales": [
     "en-AU",
@@ -16,76 +16,76 @@
     "sv-SE",
     "uk-UA"
   ],
-  "missingTranslations": 3444,
+  "missingTranslations": 3509,
   "degradedAnalysis": {
     "pass1": 1,
     "pass2": 1
   },
   "perLocale": {
     "en-AU": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     },
     "en-CA": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     },
     "en-GB": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     },
     "en-IN": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     },
     "es-ES": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     },
     "fr-CA": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     },
     "hi-IN": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     },
     "nl-NL": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     },
     "pl-PL": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     },
     "pt-BR": {
-      "total": 1004,
+      "total": 1021,
       "ready": 1004,
-      "missing": 0
+      "missing": 17
     },
     "ru-RU": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     },
     "sv-SE": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     },
     "uk-UA": {
-      "total": 1004,
-      "ready": 717,
-      "missing": 287
+      "total": 1021,
+      "ready": 730,
+      "missing": 291
     }
   }
 }

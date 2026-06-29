@@ -3,7 +3,7 @@ import { buildJsxMessage } from "./jsxMessage.js";
 import { jsxElementInfo } from "./shapes.js";
 import { buildTemplateMessage } from "./templateMessage.js";
 import { propShapes } from "../../core/shapes.js";
-import { isProbablyTranslatable, normalizeText } from "../../core/text.js";
+import { isProbablyTranslatable, looksTechnical, normalizeText } from "../../core/text.js";
 // True when the message has real words outside of {name} placeholders, so a
 // pure-substitution template like `${count}` ("{count}") is not extracted.
 function hasWordsOutsidePlaceholders(message) {
@@ -70,101 +70,20 @@ function callName(node) {
         return node.name.text;
     return null;
 }
-// Heuristic: a message that is really machine syntax (URL, cookie, CSS, SVG path,
-// inline style, bare unit) rather than UI copy. Such strings must be kept out of
-// the translation path: they get interpolated/rendered as-is, and a translator
-// rewriting "rotate"/"path"/a color keyword would break layout or logic.
-function looksTechnical(raw) {
-    const trimmed = raw.trim();
-    if (/:\/\//.test(raw))
-        return true; // protocol URLs
-    if (/[?&][\w-]*=/.test(raw))
-        return true; // query params
-    if (/^\.\.?\//.test(trimmed))
-        return true; // relative module/asset path ("./X", "../x")
-    if (/^\(\s*[a-z-]+\s*:\s*[^)]+\)$/i.test(trimmed))
-        return true; // CSS media query
-    if (/^[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)+$/.test(trimmed))
-        return true; // snake_case identifier/const
-    // BCP-47 locale tag ("en-US", "nl-NL", "zh-Hant", "zh-Hant-TW"): an internal
-    // identifier, never UI copy. Requires a subtag so hyphenated prose ("co-op")
-    // is left alone — region must be uppercase / script must be Titlecase.
-    if (/-/.test(trimmed) &&
-        /^[a-z]{2,3}(?:-[A-Z][a-z]{3})?(?:-(?:[A-Z]{2}|\d{3}))?$/.test(trimmed)) {
-        return true;
-    }
-    // Dotted namespace identifier ("hedgeling.locale", "feature.flag.name"): a
-    // config/storage key, never UI copy. Lowercase segments only; length guard
-    // skips abbreviations like "e.g"/"i.e".
-    if (trimmed.length >= 5 && /^[a-z][a-z0-9]*(?:\.[a-z][a-z0-9_]*)+$/.test(trimmed)) {
-        return true;
-    }
-    if (/#[0-9a-fA-F]{3,8}\b/.test(raw))
-        return true; // hex colors (shadows, palettes)
-    if (/^(?:GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS)$/.test(trimmed))
-        return true; // HTTP verbs
-    if (/^(?:application|text|image|audio|video|font|model|multipart)\/[a-z0-9.+-]+(?:\s*;\s*[a-z0-9.+=-]+)*$/i.test(trimmed)) {
-        return true; // MIME types, incl. parameters ("audio/webm;codecs=opus")
-    }
-    if (/^(?:Africa|America|Antarctica|Arctic|Asia|Atlantic|Australia|Europe|Indian|Pacific|Etc)\/[A-Za-z]+(?:[_/][A-Za-z]+)*$/.test(trimmed)) {
-        return true; // IANA timezone ("America/Chicago", "Asia/Tokyo")
-    }
-    // Canvas/CSS font shorthand with a quoted or generic family: "16px 'Arial'",
-    // "bold 16px sans-serif" (the family check avoids matching copy like "16px wide").
-    if (/^(?:(?:normal|italic|oblique|bold|bolder|lighter|small-caps|\d{3})\s+)*\d+(?:\.\d+)?(?:px|pt|em|rem)\s+(?:['"]|serif\b|sans-serif\b|monospace\b|cursive\b|fantasy\b)/i.test(trimmed)) {
-        return true;
-    }
-    // Tailwind / utility class clusters: "bg-brand-bg text-brand-text", "sm:px-4",
-    // "top-[110px] sm:h-[17rem]", "hidden sm:inline-flex" (lowercase only). A cluster
-    // is flagged when every token is a utility AND at least one is a separated/variant
-    // token (-, :, []) — so lowercase prose (even "well-being tips") is never dropped.
-    const tokens = trimmed.split(/\s+/);
-    const isSeparatedUtility = (t) => /^!?-?[a-z0-9]+(?:[-:/](?:\[[^\]]+\]|[a-z0-9.]+))+$/.test(t);
-    const isUtilityClass = (t) => isSeparatedUtility(t) || BARE_UTILITY_CLASSES.has(t);
-    if (tokens.length >= 2 && tokens.every(isUtilityClass) && tokens.some(isSeparatedUtility)) {
-        return true;
-    }
-    if (tokens.length === 1 &&
-        isSeparatedUtility(tokens[0]) &&
-        (tokens[0].match(/[-:/]/g) || []).length >= 2) {
-        return true;
-    }
-    // CSS / canvas functional notation (color, transform, gradient, filter, calc).
-    if (/\b(?:hsla?|rgba?|translate(?:3d|x|y|z)?|rotate[xyz]?|scale[xyz]?|skew[xy]?|matrix3?d?|perspective|calc|var|url|(?:linear|radial|conic)-gradient|cubic-bezier|drop-shadow|blur|brightness|saturate|grayscale)\s*\(/i.test(raw)) {
-        return true;
-    }
-    // Placeholders -> a sentinel so we can pattern-match the surrounding syntax.
-    const s = raw.replace(/\{[^}]*\}/g, "\u0000").trim();
-    if (!s)
+// CanvasRenderingContext2D text-drawing methods. Their first argument is text
+// painted to a <canvas> — there is no DOM node, so it can only be translated by
+// wrapping the argument at build time (the DOM injector can never reach it).
+const CANVAS_TEXT_METHODS = new Set(["fillText", "strokeText"]);
+// True when `node` is the text (first) argument of a canvas fillText/strokeText
+// call, e.g. ctx.fillText("HOME", x, y) or this.c.strokeText(`Age ${n}`, ...).
+function isCanvasTextArg(node) {
+    const parent = node.parent;
+    if (!parent || !ts.isCallExpression(parent))
         return false;
-    if (/^[/?#]/.test(s))
-        return true; // path / query / hash
-    // Slash-separated path with no spaces (e.g. {base}/{id}/join) — a URL/route,
-    // even when it starts with a placeholder. Require a placeholder or 2+ segments
-    // so ordinary copy like "and/or" or "him/her" is left alone.
-    if (/^[\u0000\w.-]*(?:\/[\u0000\w.-]+)+$/.test(s) &&
-        (s.includes("\u0000") || (s.match(/\//g) || []).length >= 2)) {
-        return true;
-    }
-    if (/^[a-z-]+:\S/i.test(s))
-        return true; // css declaration / id ref e.g. clip:x
-    if (/[a-z-]+\s*:\s*[^;]+;/i.test(s))
-        return true; // inline style "prop: value;"
-    if (/(?:^|[;\s])(?:path|max-age|samesite|domain|expires|secure|httponly)\b/i.test(s)) {
-        return true; // cookie attributes
-    }
-    // Bare unit value: "{n}px", "-{n}ms", "{n}%", "{n}s" with no real words.
-    if (/^[\u0000\d\s.,+-]*(?:px|ms|deg|rad|turn|em|rem|vh|vw|fr|pt|%|s)$/i.test(s))
-        return true;
-    // SVG path data: only command letters + numbers/placeholders.
-    if (/^[MLHVCSQTAZ][\u0000\d\s.,+-]*$/i.test(s))
-        return true;
-    // CSS animation/transition shorthand: a timing token plus an easing keyword.
-    if (/(?:\d|\u0000)(?:\.\d+)?m?s\b/.test(s) &&
-        /\b(?:linear|ease(?:-in|-out|-in-out)?|forwards|backwards|infinite|alternate|steps)\b/i.test(s)) {
-        return true;
-    }
-    return false;
+    if (parent.arguments[0] !== node)
+        return false;
+    return (ts.isPropertyAccessExpression(parent.expression) &&
+        CANVAS_TEXT_METHODS.has(parent.expression.name.text));
 }
 // Callees whose string arguments are never user-facing UI copy.
 const DENY_CALLEES = new Set([
@@ -295,48 +214,6 @@ function isExtractableValueLiteral(node) {
     }
     return true;
 }
-// Common single-word Tailwind/CSS utility classes (no hyphen/colon, so the
-// separated-utility shape can't catch them). Only used to confirm a class cluster
-// that ALSO contains a separated/variant token, so these never flag prose alone.
-const BARE_UTILITY_CLASSES = new Set([
-    "hidden",
-    "block",
-    "inline",
-    "flex",
-    "grid",
-    "table",
-    "contents",
-    "none",
-    "static",
-    "fixed",
-    "absolute",
-    "relative",
-    "sticky",
-    "visible",
-    "invisible",
-    "collapse",
-    "italic",
-    "underline",
-    "overline",
-    "truncate",
-    "uppercase",
-    "lowercase",
-    "capitalize",
-    "antialiased",
-    "container",
-    "isolate",
-    "group",
-    "peer",
-    "border",
-    "rounded",
-    "shadow",
-    "ring",
-    "outline",
-    "transition",
-    "transform",
-    "grow",
-    "shrink",
-]);
 // KeyboardEvent properties compared against a literal key name (event.key,
 // e.code, ...). The literal is a key identifier, not UI copy.
 const KEY_EVENT_PROPS = new Set(["key", "code", "keyCode", "which", "charCode"]);
@@ -484,6 +361,25 @@ export function identifyHits(sourceText, options) {
             wrap: { type: "template", start, end, values: tmpl.values, jsx },
         });
     };
+    // A rich (jsx-trans) message such as "Squeezes: <0>{count}</0>" can only be
+    // applied by the build-time <Trans> component. Content-match consumers (the
+    // DOM injector) see the static label as its own standalone text node, so we
+    // also extract each string-literal segment (e.g. {"Squeezes"}) as an
+    // extraction-only hit. These carry no wrap target, so they never participate
+    // in the source transform and cannot conflict with the <Trans> replacement.
+    const collectRichLiteralSegments = (children) => {
+        for (const child of children) {
+            if (ts.isJsxExpression(child) && child.expression) {
+                const literal = stringLiteralValue(child.expression);
+                if (literal !== null && !looksTechnical(literal)) {
+                    push(literal, "body", "value-literal", "UI text in a value position, applied at runtime by the DOM injector", lineFor(child), { type: "none" });
+                }
+            }
+            else if (ts.isJsxElement(child)) {
+                collectRichLiteralSegments(child.children);
+            }
+        }
+    };
     const visit = (node) => {
         // 1) JSX element children: plain text -> jsx-text, inline markup -> jsx-trans.
         if (ts.isJsxElement(node)) {
@@ -508,6 +404,9 @@ export function identifyHits(sourceText, options) {
                             componentTexts: rich.componentTexts,
                             valueNames: rich.valueNames,
                         });
+                        // Also extract the static string-literal segments so content-match
+                        // consumers can translate the standalone label text nodes.
+                        collectRichLiteralSegments(node.children);
                         // The message + components consume this subtree; do not descend so we
                         // don't double-extract the inline children.
                         return;
@@ -580,11 +479,22 @@ export function identifyHits(sourceText, options) {
                 }
             }
         }
+        // 6) Canvas text: ctx.fillText("HOME", ...) / strokeText(...). The string is
+        //    painted to a <canvas>, so it has no DOM node and the injector can never
+        //    reach it; the only way to translate it is to wrap the literal argument
+        //    with __hlT at build time. Interpolated canvas text (`Age ${n}`) is
+        //    covered by rule 5b's template wrap.
+        if ((ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node)) &&
+            isCanvasTextArg(node) &&
+            !looksTechnical(node.text)) {
+            push(node.text, "body", "canvas-text", "text painted to a <canvas>, wrapped with __hlT at build time", lineFor(node), { type: "call-arg", valueStart: node.getStart(sourceFile), valueEnd: node.getEnd() });
+        }
         // 5) Recall pass: any translatable string literal in a value position. These
         //    cannot be safely auto-wrapped (definition site may be module scope), so
         //    they are extraction-only and applied at runtime by the DOM injector.
         if ((ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node)) &&
-            isExtractableValueLiteral(node)) {
+            isExtractableValueLiteral(node) &&
+            !isCanvasTextArg(node)) {
             // Object values for known fields are already emitted by rule 2; don't dup.
             const parent = node.parent;
             const fieldName = ts.isPropertyAssignment(parent) && parent.initializer === node
@@ -642,6 +552,16 @@ export function transformSource(sourceText, options) {
                 start: hit.wrap.valueStart,
                 end: hit.wrap.valueEnd,
                 text: `{__hlT(${JSON.stringify(hit.text)})}`,
+            });
+            imports.add("__hlT");
+        }
+        else if (hit.wrap.type === "call-arg") {
+            // Replace a bare call argument (e.g. canvas fillText("HOME")) with a
+            // __hlT(...) call. No JSX braces — this is an ordinary expression position.
+            replacements.push({
+                start: hit.wrap.valueStart,
+                end: hit.wrap.valueEnd,
+                text: `__hlT(${JSON.stringify(hit.text)})`,
             });
             imports.add("__hlT");
         }

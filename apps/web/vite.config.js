@@ -7,11 +7,26 @@ import { hedgelingI18n } from "./vendor/hedgeling-i18n/dist/vite/index.js";
 var here = dirname(fileURLToPath(import.meta.url));
 var workspaceRoot = resolve(here, "..", "..");
 var runtimeEntry = resolve(here, "vendor/hedgeling-i18n/dist/runtime/index.js");
+// Transform our own source (.tsx/.jsx for JSX auto-wrap + <Trans/>, and .ts for
+// canvas fillText/strokeText auto-wrap), but never node_modules, declaration
+// files, or the vendored Hedgeling runtime itself.
+function includeForI18n(id) {
+    var _a;
+    var clean = (_a = id.split("?")[0]) !== null && _a !== void 0 ? _a : id;
+    if (clean.includes("node_modules"))
+        return false;
+    if (clean.includes("/vendor/hedgeling-i18n/"))
+        return false;
+    if (clean.endsWith(".d.ts"))
+        return false;
+    return /\.(tsx|jsx|ts|mts)$/.test(clean);
+}
 export default defineConfig({
     plugins: [
-        // enforce: "pre" -> auto-wraps JSX text/attributes with __hlT(...) and emits
-        // <Trans/> for inline markup BEFORE @vitejs/plugin-react compiles the JSX.
-        hedgelingI18n({ workspaceRoot: workspaceRoot }),
+        // enforce: "pre" -> auto-wraps JSX text/attributes with __hlT(...), emits
+        // <Trans/> for inline markup, and wraps canvas text in .ts draw files BEFORE
+        // @vitejs/plugin-react compiles the JSX.
+        hedgelingI18n({ workspaceRoot: workspaceRoot, include: includeForI18n }),
         react(),
     ],
     resolve: {
