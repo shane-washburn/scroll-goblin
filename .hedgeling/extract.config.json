@@ -12,7 +12,8 @@
     "pl-PL",
     "uk-UA",
     "ru-RU",
-    "es-ES"
+    "es-ES",
+    "pt-BR"
   ],
   "scanRoots": [
     "apps/web/src",

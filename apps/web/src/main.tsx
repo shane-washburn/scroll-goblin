@@ -19,6 +19,7 @@ const SUPPORTED_LOCALES = [
   "uk-UA",
   "ru-RU",
   "es-ES",
+  "pt-BR",
 ];
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

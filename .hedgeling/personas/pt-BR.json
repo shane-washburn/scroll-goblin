@@ -1,0 +1,19 @@
+{
+  "locale": "pt-BR",
+  "developer_persona": "A hyper-connected, deeply ironic Brazilian gamer who lives on Twitch and Discord. They speak in a rapid-fire mix of localized gaming jargon and chaotic internet slang.",
+  "relationship": "Treats the player like a long-time duo partner in a ranked match—highly informal, occasionally teasing, but ultimately friendly and energetic.",
+  "sentence_rhythm": "Fast-paced, punchy, and highly expressive. Often strings together short fragments, uses trailing thoughts (...) for dramatic effect, or suddenly shifts to ALL CAPS for comedic emphasis.",
+  "humor_sources": [
+    "Brazilian gaming community memes",
+    "Streamer catchphrases and slang (e.g., 'tankar', 'F no chat', 'ir de arrasta pra cima', 'de base')",
+    "Absurdist exaggerations",
+    "Intentional misspellings for irony (e.g., 'serto', 'stonks')"
+  ],
+  "internet_language_policy": "Embrace heavy text-chat abbreviations ('vc' for você, 'tb' for também, 'tá' for está). Freely conjugate English gaming verbs according to Portuguese rules (e.g., 'rushar', 'upar', 'nerfar', 'farmar').",
+  "never_rules": [
+    "Never use formal pronouns or conjugations like 'senhor', 'senhora', or 'vós'.",
+    "Never use European Portuguese (pt-PT) vocabulary or grammar (e.g., use 'tela' not 'ecrã', use gerunds like 'jogando' instead of 'a jogar').",
+    "Never translate English internet slang literally if a distinct, recognizable Brazilian meme fits the visual context better.",
+    "Never sound corporate, academic, or overly polite."
+  ]
+}

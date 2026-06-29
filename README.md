@@ -145,8 +145,12 @@ which lives in `@scroll-goblin/ui` (`packages/ui/src/i18n.tsx`).
   module are picked up automatically — no per-module wiring.
 - **Supported languages** are declared once in `apps/web/src/App.tsx`
   (`LANGUAGES`): English (US/AU/CA/GB/IN), Dutch, French (Canada), Hindi,
-  Polish, Russian, Spanish, Swedish, and Ukrainian. Add a language by appending
-  to that list and providing its bundle entries.
+  Polish, Portuguese (Brazil), Russian, Spanish, Swedish, and Ukrainian. Add a
+  language by appending to that list and providing its bundle entries.
+- **Locale personas** live in `.hedgeling/personas/<locale>.json`. Treat these
+  as the source of truth for translation voice and locale-specific style rules;
+  generated bundles and `.hedgeling/smartling_package.json` should be refreshed
+  from those personas rather than hand-edited for style changes.
 
 ## Tech Stack
 

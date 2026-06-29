@@ -1,9 +1,14 @@
 node_modules/
 dist/
+!apps/web/vendor/hedgeling-i18n/dist/
+!apps/web/vendor/hedgeling-i18n/dist/**
 build/
 .turbo/
 *.log
 .DS_Store
+
+# hedgeling
+.hedgeling/gemini-cache/
 
 # env
 .env

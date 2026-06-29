@@ -1,0 +1,10 @@
+import { reactTsAdapter } from "./react-ts/index.js";
+import { jsTsAdapter } from "./js-ts/index.js";
+import { htmlAdapter } from "./html/index.js";
+import { vueAdapter } from "./vue/index.js";
+export declare const DEFAULT_ADAPTERS: import("../index.js").SourceAdapter[];
+export { reactTsAdapter, jsTsAdapter, htmlAdapter, vueAdapter };
+export * from "./react-ts/index.js";
+export * from "./js-ts/index.js";
+export * from "./html/index.js";
+export * from "./vue/index.js";

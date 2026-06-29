@@ -16,10 +16,10 @@
     "sv-SE",
     "uk-UA"
   ],
-  "missingTranslations": 3750,
+  "missingTranslations": 3444,
   "degradedAnalysis": {
-    "pass1": 0,
-    "pass2": 0
+    "pass1": 1,
+    "pass2": 1
   },
   "perLocale": {
     "en-AU": {
@@ -69,8 +69,8 @@
     },
     "pt-BR": {
       "total": 1004,
-      "ready": 698,
-      "missing": 306
+      "ready": 1004,
+      "missing": 0
     },
     "ru-RU": {
       "total": 1004,

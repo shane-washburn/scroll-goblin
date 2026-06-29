@@ -18,6 +18,7 @@ const LANGUAGES = [
   { code: "pl-PL", label: "Polski" },
   { code: "ru-RU", label: "Русский" },
   { code: "es-ES", label: "Español" },
+  { code: "pt-BR", label: "Português (Brasil)" },
   { code: "sv-SE", label: "Svenska" },
   { code: "uk-UA", label: "Українська" },
 ] as const;
