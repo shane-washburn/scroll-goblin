@@ -141,19 +141,29 @@
     function observe() {
       if (observer || typeof MutationObserver === "undefined") return;
       let scheduled = false;
+      // Accumulate every delivered batch. Records delivered while a flush is
+      // pending must NOT be dropped: in high-frequency-mutation apps (e.g. a
+      // canvas game updating its HUD every frame) the one-shot mutation that
+      // sets a dynamic, translatable string can arrive in any batch, and
+      // dropping it would leave that text permanently untranslated.
+      let queued = [];
+      const flush = () => {
+        scheduled = false;
+        const batch = queued;
+        queued = [];
+        for (const m of batch) {
+          for (const added of m.addedNodes) walk(added);
+          if (m.type === "characterData") translateTextNode(m.target);
+          if (m.type === "attributes" && m.target.nodeType === Node.ELEMENT_NODE) {
+            translateAttributes(m.target);
+          }
+        }
+      };
       observer = new MutationObserver((mutations) => {
+        for (const m of mutations) queued.push(m);
         if (scheduled) return;
         scheduled = true;
-        requestAnimationFrame(() => {
-          scheduled = false;
-          for (const m of mutations) {
-            for (const added of m.addedNodes) walk(added);
-            if (m.type === "characterData") translateTextNode(m.target);
-            if (m.type === "attributes" && m.target.nodeType === Node.ELEMENT_NODE) {
-              translateAttributes(m.target);
-            }
-          }
-        });
+        requestAnimationFrame(flush);
       });
       observer.observe(document.body, {
         childList: true,
