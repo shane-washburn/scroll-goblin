@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && tsx scripts/generate-seo.mts",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "i18n:extract": "node vendor/hedgeling-i18n/dist/cli/index.js extract --write",
+    "i18n:diagnostics": "node vendor/hedgeling-i18n/dist/cli/index.js diagnostics",
+    "i18n:check": "node vendor/hedgeling-i18n/dist/cli/index.js check"
   },
   "dependencies": {
     "@scroll-goblin/module-aura-farm": "workspace:*",

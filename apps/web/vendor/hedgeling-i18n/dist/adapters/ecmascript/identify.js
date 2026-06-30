@@ -1,6 +1,6 @@
 import ts from "typescript";
 import { buildJsxMessage } from "./jsxMessage.js";
-import { jsxElementInfo } from "./shapes.js";
+import { jsxElementInfo, isInlineTextTag } from "./shapes.js";
 import { buildTemplateMessage } from "./templateMessage.js";
 import { propShapes } from "../../core/shapes.js";
 import { isProbablyTranslatable, looksTechnical, normalizeText } from "../../core/text.js";
@@ -36,6 +36,8 @@ function stringLiteralValue(node) {
     return null;
 }
 function stringLiteralWrap(node, sourceFile) {
+    if (!node)
+        return null;
     if (ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node)) {
         return {
             text: node.text,
@@ -72,6 +74,100 @@ function pureTextChildren(children) {
         return null;
     }
     return sawText ? parts.join("") : null;
+}
+// Detect JSX children that interleave human-readable words with a DYNAMIC value
+// (a `{expression}` sibling, or a value rendered imperatively through a child that
+// carries a ref / event handler) yet produce NO single translatable message:
+// pureTextChildren rejects the dynamic part, buildJsxMessage only emits a <Trans>
+// when there is inline *markup* (a text-bearing element), and ref/handler children
+// are deliberately left unwrapped. The static words are then orphaned — never
+// extracted, never translated — and their order can't be localized. The only
+// correct fix is a hand-authored ICU message: t("Age {n} mo", { n }). We surface
+// these as actionable "required" diagnostics instead of silently dropping them.
+// Returns the synthesized message (with {placeholders}) and whether a ref/handler
+// value is involved (so the hint can call out the ref -> React state change).
+function detectManualTNeed(children) {
+    let out = "";
+    let sawWords = false;
+    let sawDynamic = false;
+    let refDriven = false;
+    let anon = 0;
+    const anonName = () => {
+        anon += 1;
+        return anon === 1 ? "value" : `value${anon}`;
+    };
+    const exprName = (expr) => {
+        if (ts.isIdentifier(expr))
+            return expr.text;
+        if (ts.isPropertyAccessExpression(expr))
+            return expr.name.text;
+        return anonName();
+    };
+    for (const child of children) {
+        if (ts.isJsxText(child)) {
+            out += child.text;
+            if (/\p{L}/u.test(child.text))
+                sawWords = true;
+            continue;
+        }
+        if (ts.isJsxExpression(child)) {
+            if (!child.expression)
+                continue; // {/* comment */}
+            const literal = stringLiteralValue(child.expression);
+            if (literal !== null) {
+                out += literal;
+                if (/\p{L}/u.test(literal))
+                    sawWords = true;
+                continue;
+            }
+            out += `{${exprName(child.expression)}}`;
+            sawDynamic = true;
+            continue;
+        }
+        if (ts.isJsxElement(child) || ts.isJsxSelfClosingElement(child)) {
+            const opening = ts.isJsxElement(child) ? child.openingElement : child;
+            if (!isInlineTextTag(jsxTagName(opening)))
+                return null; // layout/component -> too complex
+            let refName = null;
+            let behavioral = false;
+            for (const attr of opening.attributes.properties) {
+                if (ts.isJsxSpreadAttribute(attr)) {
+                    behavioral = true; // {...props} may carry a ref/handler
+                    continue;
+                }
+                if (ts.isJsxAttribute(attr) && ts.isIdentifier(attr.name)) {
+                    const attrName = attr.name.text;
+                    if (attrName === "ref") {
+                        behavioral = true;
+                        const init = attr.initializer;
+                        if (init && ts.isJsxExpression(init) && init.expression && ts.isIdentifier(init.expression)) {
+                            refName = init.expression.text.replace(/Ref$/, "") || null;
+                        }
+                    }
+                    else if (/^on[A-Z]/.test(attrName)) {
+                        behavioral = true;
+                    }
+                }
+            }
+            // An inline element with its own text and NO ref/handler is genuine markup
+            // (e.g. <a>here</a>): that is buildJsxMessage/<Trans>'s job, not manual t().
+            if (!behavioral)
+                return null;
+            out += `{${refName ?? anonName()}}`;
+            sawDynamic = true;
+            refDriven = true;
+            continue;
+        }
+        return null; // fragment/other -> bail
+    }
+    const message = normalizeText(out);
+    if (!sawWords || !sawDynamic || !message)
+        return null;
+    if (!/\{[A-Za-z0-9_]+\}/.test(message))
+        return null; // need at least one placeholder
+    if (looksTechnical(message))
+        return null;
+    return { message, refDriven };
 }
 function callName(node) {
     if (ts.isIdentifier(node))
@@ -183,9 +279,16 @@ function isExtractableValueLiteral(node) {
         return false; // obj["key"]
     if (ts.isPropertyAccessExpression(parent) && parent.expression === node)
         return false;
-    for (let p = parent; p && !ts.isSourceFile(p); p = p.parent) {
-        if (ts.isTemplateExpression(p) || ts.isTemplateSpan(p))
-            return false;
+    // A string literal interpolated directly into a template — `${"Righty"}` — is real
+    // UI text the surrounding template would otherwise hide, so allow it (wrap:"none").
+    // Literals nested deeper inside a template-embedded expression (e.g. a ternary in
+    // `${cond ? "A" : "B"}`) stay excluded: too ambiguous to attribute to UI safely.
+    const directTemplateSpanLiteral = ts.isTemplateSpan(parent) && parent.expression === node;
+    if (!directTemplateSpanLiteral) {
+        for (let p = parent; p && !ts.isSourceFile(p); p = p.parent) {
+            if (ts.isTemplateExpression(p) || ts.isTemplateSpan(p))
+                return false;
+        }
     }
     // Dynamic import specifier: import("./Page") — parent call's callee is `import`.
     if (ts.isCallExpression(parent) && parent.expression.kind === ts.SyntaxKind.ImportKeyword) {
@@ -229,6 +332,32 @@ function isExtractableValueLiteral(node) {
             return false;
     }
     return true;
+}
+// Sub-classify a value-position literal by HOW it is used, so diagnostics can
+// triage severity (only the adapter sees the AST position). "logic" = compared
+// in a branch (program logic, not UI copy); "assign" = stored on a property;
+// "call" = passed to a function; "value" = plain holder (array/object value,
+// return, variable init, ternary branch) — most likely real UI text.
+function valueLiteralRole(node) {
+    const parent = node.parent;
+    if (parent && ts.isBinaryExpression(parent)) {
+        const op = parent.operatorToken.kind;
+        if (op === ts.SyntaxKind.EqualsEqualsEqualsToken ||
+            op === ts.SyntaxKind.ExclamationEqualsEqualsToken ||
+            op === ts.SyntaxKind.EqualsEqualsToken ||
+            op === ts.SyntaxKind.ExclamationEqualsToken ||
+            op === ts.SyntaxKind.LessThanToken ||
+            op === ts.SyntaxKind.GreaterThanToken ||
+            op === ts.SyntaxKind.LessThanEqualsToken ||
+            op === ts.SyntaxKind.GreaterThanEqualsToken) {
+            return "logic";
+        }
+        if (op === ts.SyntaxKind.EqualsToken && parent.right === node)
+            return "assign";
+    }
+    if (parent && (ts.isCallExpression(parent) || ts.isNewExpression(parent)))
+        return "call";
+    return "value";
 }
 // KeyboardEvent properties compared against a literal key name (event.key,
 // e.code, ...). The literal is a key identifier, not UI copy.
@@ -427,7 +556,52 @@ export function identifyHits(sourceText, options) {
                         // don't double-extract the inline children.
                         return;
                     }
+                    // No <Trans> emitted. If the children interleave human words with a
+                    // dynamic value (a {expr} sibling or a ref/handler-driven child), there
+                    // is no single translatable message and the words are orphaned. Surface
+                    // it as a "required" manual-t() diagnostic (extraction-only, never wrapped).
+                    const manual = detectManualTNeed(node.children);
+                    if (manual) {
+                        push(manual.message, info.shape, manual.refDriven ? "manual-t:ref-adjacent" : "manual-t:interpolation", info.purpose, lineFor(node), { type: "none" });
+                    }
+                    // buildJsxMessage bailed (e.g. a layout container mixing a non-inline
+                    // element with a literal child: <div><Sparkles/>{"Divine Oracle"}</div>).
+                    // Neither pure-text nor the rich path captured it, and rule 5 defers all
+                    // JSX-expression literals to "the JSX rules" — so the label is orphaned.
+                    // Salvage the DIRECT string-literal expression children here as runtime-DOM
+                    // text (wrap:"none"); nested elements are still visited by forEachChild.
+                    for (const child of node.children) {
+                        if (ts.isJsxExpression(child) && child.expression) {
+                            const literal = stringLiteralValue(child.expression);
+                            if (literal !== null && !looksTechnical(literal)) {
+                                push(literal, info.shape, "jsx-expr-text", info.purpose, lineFor(child), {
+                                    type: "none",
+                                });
+                            }
+                        }
+                    }
                 }
+            }
+        }
+        // 1a) Fragments (<>…</>) have no tag, so the element rules above skip them.
+        //     When one groups a non-inline element with a literal child
+        //     (<><Check/>{"Link copied!"}</>), salvage the direct string-literal
+        //     expression children as runtime-DOM text (wrap:"none"). Nested elements are
+        //     still visited; the literals' StringLiteral nodes are excluded by rule 5.
+        if (ts.isJsxFragment(node)) {
+            for (const child of node.children) {
+                if (ts.isJsxExpression(child) && child.expression) {
+                    const literal = stringLiteralValue(child.expression);
+                    if (literal !== null && !looksTechnical(literal)) {
+                        push(literal, "body", "jsx-expr-text", "inline UI text rendered as a DOM text node", lineFor(child), {
+                            type: "none",
+                        });
+                    }
+                }
+            }
+            const manual = detectManualTNeed(node.children);
+            if (manual) {
+                push(manual.message, "body", manual.refDriven ? "manual-t:ref-adjacent" : "manual-t:interpolation", "inline UI text rendered as a DOM text node", lineFor(node), { type: "none" });
             }
         }
         // 1b) Interpolated template literal as a JSX child:
@@ -511,9 +685,14 @@ export function identifyHits(sourceText, options) {
             push(node.text, "body", "canvas-text", "text painted to a <canvas>, wrapped with __hlT at build time", lineFor(node), { type: "call-arg", valueStart: node.getStart(sourceFile), valueEnd: node.getEnd() });
         }
         // 5) Recall pass: any translatable string literal in a value position.
-        //    Function-scope literals are safe to wrap directly because they are
-        //    evaluated at render/event time. Module-scope literals stay extraction
-        //    only unless rule 2 converted them to lazy object getters.
+        //    EXTRACTION-ONLY. A value-position literal is indistinguishable from a
+        //    logic/config value (e.g. `mode === "big"`, `fish.behavior = "aggressive"`,
+        //    `return { size: "small" }`), so auto-wrapping it with __hlT would make the
+        //    running program compare against / store the *translated* string in a
+        //    non-source locale, silently breaking branches and config lookups. Genuine
+        //    UI text in these positions is still translated at runtime by the DOM
+        //    injector (content match); canvas text is wrapped by rule 6 and
+        //    interpolations by rule 5b. So these stay wrap:"none" and never alter source.
         if ((ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node)) &&
             isExtractableValueLiteral(node) &&
             !isCanvasTextArg(node)) {
@@ -523,13 +702,8 @@ export function identifyHits(sourceText, options) {
                 ? propertyName(parent.name)
                 : null;
             if (!(fieldName && objectFields.has(fieldName)) && !looksTechnical(node.text)) {
-                push(node.text, "body", "value-literal", "UI text in a value position", lineFor(node), isInFunctionScope(node)
-                    ? {
-                        type: "value",
-                        start: node.getStart(sourceFile),
-                        end: node.getEnd(),
-                    }
-                    : { type: "none" });
+                const role = valueLiteralRole(node);
+                push(node.text, "body", role === "value" ? "value-literal" : `value-literal:${role}`, "UI text in a value position", lineFor(node), { type: "none" });
             }
         }
         // 5b) Interpolated template literals in value positions (helpers, message

@@ -71,15 +71,41 @@ export function buildJsxMessage(node, sourceFile) {
                     ok = false;
                     break;
                 }
-                hasElements = true;
+                // Behavior-bearing elements must not be reconstructed by <Trans>: it
+                // re-creates them via cloneElement and overrides their children, which
+                // clobbers refs / imperative DOM updates (e.g. a game loop writing
+                // textContent through a ref) and detaches event handlers. Bail so the
+                // original JSX is left intact and the DOM injector translates instead.
+                const attrs = ts.isJsxElement(child)
+                    ? child.openingElement.attributes
+                    : child.attributes;
+                for (const attr of attrs.properties) {
+                    if (ts.isJsxSpreadAttribute(attr)) {
+                        ok = false; // {...props} may carry a ref/handler
+                        break;
+                    }
+                    if (ts.isJsxAttribute(attr) && ts.isIdentifier(attr.name)) {
+                        const attrName = attr.name.text;
+                        if (attrName === "ref" || /^on[A-Z]/.test(attrName)) {
+                            ok = false;
+                            break;
+                        }
+                    }
+                }
+                if (!ok)
+                    break;
                 const index = componentTexts.length;
+                const inner = ts.isJsxElement(child) ? serialize(child.children, depth + 1) : "";
+                // A captured component with no text/value content of its own is a
+                // decorative element (icon, gradient layer, divider), not inline markup
+                // wrapping text. <Trans> should not own it, so bail.
+                if (!/\S/.test(inner)) {
+                    ok = false;
+                    break;
+                }
+                hasElements = true;
                 componentTexts.push(child.getText(sourceFile));
-                if (ts.isJsxElement(child)) {
-                    out += `<${index}>${serialize(child.children, depth + 1)}</${index}>`;
-                }
-                else {
-                    out += `<${index}></${index}>`;
-                }
+                out += `<${index}>${inner}</${index}>`;
                 continue;
             }
             ok = false; // fragments, etc.

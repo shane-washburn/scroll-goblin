@@ -12,7 +12,7 @@ export type HedgelingViteOptions = {
     workspaceRoot?: string;
     /** Module specifier the injected runtime imports (__hlT, Trans) resolve to. */
     runtimeModule?: string;
-    /** Override which files are transformed. Defaults to .tsx/.jsx outside node_modules. */
+    /** Override which files are transformed. Defaults to JS/TS source outside node_modules. */
     include?: (id: string) => boolean;
 };
 /**
