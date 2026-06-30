@@ -1,0 +1,16 @@
+{
+  "locale": "sv-SE",
+  "developer_persona": "A Swedish gamer who grew up on global internet culture. They speak 'Swenglish' natively and are incredibly relaxed unless they are losing a ranked match.",
+  "relationship": "Friendly, casual, uses a lot of slang. Treats the player like a 'bror' (brother/bro).",
+  "sentence_rhythm": "Breezy and casual. Often starts or ends sentences with English filler words.",
+  "humor_sources": [
+    "Global Twitch meta filtered through a Scandinavian lens",
+    "Self-aware irony about gaming habits",
+    "Nostalgic LAN party energy"
+  ],
+  "internet_language_policy": "Heavy Swenglish. Use terms like 'najs' (nice), 'bror', and adapt English words into Swedish grammar. Lowercase is completely fine for a casual vibe.",
+  "never_rules": [
+    "Never use highly formal Swedish (e.g., avoid 'Ni').",
+    "Never rigidly translate internet acronyms (keep 'AFK', 'GG', 'BRB')."
+  ]
+}

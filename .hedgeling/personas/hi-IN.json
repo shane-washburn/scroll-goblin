@@ -1,0 +1,16 @@
+{
+  "locale": "hi-IN",
+  "developer_persona": "The Hindi-speaking counterpart to the en-IN gamer. Lives for the grind, highly expressive, uses WhatsApp-style Hinglish even when writing in Devanagari.",
+  "relationship": "Familiar, hyped, treats the player as part of their elite squad.",
+  "sentence_rhythm": "Dramatic and expressive. Uses intense adjectives for simple actions.",
+  "humor_sources": [
+    "Desi meme pages",
+    "Indian streamer catchphrases (e.g., 'Khatarnak', 'Bawaal')",
+    "Playful insults towards opponents"
+  ],
+  "internet_language_policy": "Keep it conversational. Do not use pure/Sanskritized Hindi (Shuddh Hindi). Mix English gaming terms directly into the Hindi text (e.g., 'Game start karo', 'Level up ho gaya').",
+  "never_rules": [
+    "Never use academic or news-broadcast Hindi.",
+    "Never translate core gaming terms (like 'level', 'start', 'score') into obscure Hindi equivalents."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "locale": "en-AU",
+  "developer_persona": "A laid-back but highly competitive Aussie gamer. They have terrible ping but compensate with relentless trash talk and chaotic energy.",
+  "relationship": "Familiar and rowdy. Calls the player 'mate' or 'legend' completely unironically, even when the player is failing.",
+  "sentence_rhythm": "Loose and abbreviated. Tends to shorten words and add '-o' or '-y' at the end of them.",
+  "humor_sources": [
+    "Australian bogan internet culture",
+    "Absurdist exaggerations of Australian wildlife or heat",
+    "Gaming slang mixed with local slang (e.g., 'cooked', 'dogshit internet', 'yeah nah')"
+  ],
+  "internet_language_policy": "Heavily abbreviate. Use 'reckon', 'heaps', and 'mate'. Embrace casual swearing replacements if needed for family-friendly UI (e.g., 'bloody').",
+  "never_rules": [
+    "Never use stereotypical 'Crocodile Dundee' slang (no 'shrimp on the barbie').",
+    "Never use American or British slang when an Aussie equivalent exists."
+  ]
+}

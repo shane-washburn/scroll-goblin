@@ -9,7 +9,9 @@ function defaultInclude(id) {
     const clean = id.split("?")[0] ?? id;
     if (clean.includes("node_modules"))
         return false;
-    return /\.(tsx|jsx)$/.test(clean);
+    if (clean.includes("/vendor/hedgeling-i18n/"))
+        return false;
+    return /\.(tsx|jsx|ts|mts|cts|js|mjs|cjs)$/.test(clean) && !/\.d\.ts$/.test(clean);
 }
 /**
  * Vite plugin that auto-wraps user-facing strings at build time so developers never

@@ -35,6 +35,16 @@ function stringLiteralValue(node) {
         return stringLiteralValue(node.expression);
     return null;
 }
+function stringLiteralWrap(node, sourceFile) {
+    if (ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node)) {
+        return {
+            text: node.text,
+            start: node.getStart(sourceFile),
+            end: node.getEnd(),
+        };
+    }
+    return null;
+}
 // Collect the plain-text content of a JSX element's children, but ONLY when the
 // children are safe to replace wholesale with a single t() call. If any child is a
 // nested element or a dynamic expression, return null (do not auto-wrap).
@@ -159,6 +169,8 @@ function isExtractableValueLiteral(node) {
         return false;
     if (ts.isJsxAttribute(parent))
         return false; // handled by the known-prop rule
+    if (ts.isJsxExpression(parent))
+        return false; // JSX child/attribute expressions are handled by JSX rules
     if (ts.isJsxExpression(parent) && parent.parent && ts.isJsxAttribute(parent.parent))
         return false;
     if (ts.isLiteralTypeNode(parent))
@@ -171,6 +183,10 @@ function isExtractableValueLiteral(node) {
         return false; // obj["key"]
     if (ts.isPropertyAccessExpression(parent) && parent.expression === node)
         return false;
+    for (let p = parent; p && !ts.isSourceFile(p); p = p.parent) {
+        if (ts.isTemplateExpression(p) || ts.isTemplateSpan(p))
+            return false;
+    }
     // Dynamic import specifier: import("./Page") — parent call's callee is `import`.
     if (ts.isCallExpression(parent) && parent.expression.kind === ts.SyntaxKind.ImportKeyword) {
         return false;
@@ -424,14 +440,19 @@ export function identifyHits(sourceText, options) {
             const tmpl = buildTemplateMessage(node.expression, sourceFile);
             pushTemplate(tmpl, "body", "jsx-text-interpolated", "interpolated UI text rendered inline", node.getStart(sourceFile), node.getEnd(), lineFor(node), true);
         }
-        // 2) Data-driven object-field string literals (extraction-only; applied at
-        //    runtime by the DOM injector since wrapping at definition would be stale).
+        // 2) Data-driven object-field string literals. These are rewritten as lazy
+        //    getters so module-scope data does not freeze before the bundle loads.
         if (ts.isPropertyAssignment(node)) {
             const name = propertyName(node.name);
             if (name && objectFields.has(name)) {
-                const value = stringLiteralValue(node.initializer);
+                const value = stringLiteralWrap(node.initializer, sourceFile);
                 if (value !== null) {
-                    push(value, "body", `data-field:${name}`, "data-driven UI text rendered dynamically from app data", lineFor(node), { type: "none" });
+                    push(value.text, "body", `data-field:${name}`, "data-driven UI text rendered dynamically from app data", lineFor(node), {
+                        type: "object-getter",
+                        start: node.getStart(sourceFile),
+                        end: node.getEnd(),
+                        name: node.name.getText(sourceFile),
+                    });
                 }
             }
         }
@@ -489,9 +510,10 @@ export function identifyHits(sourceText, options) {
             !looksTechnical(node.text)) {
             push(node.text, "body", "canvas-text", "text painted to a <canvas>, wrapped with __hlT at build time", lineFor(node), { type: "call-arg", valueStart: node.getStart(sourceFile), valueEnd: node.getEnd() });
         }
-        // 5) Recall pass: any translatable string literal in a value position. These
-        //    cannot be safely auto-wrapped (definition site may be module scope), so
-        //    they are extraction-only and applied at runtime by the DOM injector.
+        // 5) Recall pass: any translatable string literal in a value position.
+        //    Function-scope literals are safe to wrap directly because they are
+        //    evaluated at render/event time. Module-scope literals stay extraction
+        //    only unless rule 2 converted them to lazy object getters.
         if ((ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node)) &&
             isExtractableValueLiteral(node) &&
             !isCanvasTextArg(node)) {
@@ -501,7 +523,13 @@ export function identifyHits(sourceText, options) {
                 ? propertyName(parent.name)
                 : null;
             if (!(fieldName && objectFields.has(fieldName)) && !looksTechnical(node.text)) {
-                push(node.text, "body", "value-literal", "UI text in a value position, applied at runtime by the DOM injector", lineFor(node), { type: "none" });
+                push(node.text, "body", "value-literal", "UI text in a value position", lineFor(node), isInFunctionScope(node)
+                    ? {
+                        type: "value",
+                        start: node.getStart(sourceFile),
+                        end: node.getEnd(),
+                    }
+                    : { type: "none" });
             }
         }
         // 5b) Interpolated template literals in value positions (helpers, message
@@ -583,6 +611,22 @@ export function transformSource(sourceText, options) {
                 text: buildTransElement(hit.wrap, hit.text),
             });
             imports.add("Trans");
+        }
+        else if (hit.wrap.type === "value") {
+            replacements.push({
+                start: hit.wrap.start,
+                end: hit.wrap.end,
+                text: `__hlT(${JSON.stringify(hit.text)})`,
+            });
+            imports.add("__hlT");
+        }
+        else if (hit.wrap.type === "object-getter") {
+            replacements.push({
+                start: hit.wrap.start,
+                end: hit.wrap.end,
+                text: `get ${hit.wrap.name}() { return __hlT(${JSON.stringify(hit.text)}); }`,
+            });
+            imports.add("__hlT");
         }
     }
     if (replacements.length === 0)

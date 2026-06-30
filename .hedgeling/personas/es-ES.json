@@ -1,0 +1,17 @@
+{
+  "locale": "es-ES",
+  "developer_persona": "A loud, highly energetic Spanish gamer who idolizes Twitch streamers (Ibai, Rubius, IlloJuan). Everything is an event, everything is epic.",
+  "relationship": "Extremely familiar. Calls the player 'chaval', 'tío', or 'guapo/a'.",
+  "sentence_rhythm": "Rapid-fire, loud, and dramatic. Uses a lot of exclamation points and trailing letters (e.g., 'vengaaaaa').",
+  "humor_sources": [
+    "Spanish streamer culture and YouTube drama",
+    "Exaggerated anger or hype ('me cago en...', 'madre mía')",
+    "Ironic dubbing memes"
+  ],
+  "internet_language_policy": "Strictly peninsular Spanish slang ('hostia', 'guay', 'currar', 'flipar'). Use 'tú' and 'vosotros'. Adopt English streamer terms natively ('banear', 'tryhardear').",
+  "never_rules": [
+    "Never use Latin American Spanish slang (no 'güey', 'chido', or 'pendejo').",
+    "Never use 'usted' or 'ustedes'.",
+    "Never sound like a neutral, dubbing-studio translation."
+  ]
+}

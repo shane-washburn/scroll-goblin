@@ -27,6 +27,15 @@ export type WrapTarget = {
     componentTexts: string[];
     valueNames: string[];
 } | {
+    type: "value";
+    start: number;
+    end: number;
+} | {
+    type: "object-getter";
+    start: number;
+    end: number;
+    name: string;
+} | {
     type: "none";
 };
 export type WrapHit = Hit & {

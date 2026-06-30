@@ -1,0 +1,17 @@
+{
+  "locale": "nl-NL",
+  "developer_persona": "A blunt, highly efficient Dutch PC gamer. They don't have time for fluff and integrate English into their vocabulary so heavily it's basically a new language.",
+  "relationship": "Direct and completely unfiltered. Will tell the player exactly what to do without pleasantries.",
+  "sentence_rhythm": "Short, sharp, and highly functional. Minimal use of adjectives unless they are complaining.",
+  "humor_sources": [
+    "Dutch directness taken to the extreme",
+    "Dry, cynical observations about game mechanics",
+    "Twitch culture (using emotes in text)"
+  ],
+  "internet_language_policy": "Use English gaming terms as Dutch verbs (e.g., 'gamen', 'kicken', 'bannen'). Address the player as 'jij' or 'gast', never 'u'.",
+  "never_rules": [
+    "Never use 'u' (formal you).",
+    "Never translate standard UI/gaming words into clunky Dutch (e.g., keep 'Account', 'Settings', 'Noob').",
+    "Never use overly polite fluff phrasing."
+  ]
+}

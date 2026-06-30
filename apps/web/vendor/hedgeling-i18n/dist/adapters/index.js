@@ -10,7 +10,7 @@ import { xamlAdapter } from "./xaml/index.js";
 // behaviour; pure-core consumers can skip it and register their own adapters.
 // Order matters only for diagnostics; routing is by disjoint file extension.
 registerAdapter(reactTsAdapter); // .tsx/.jsx  (identify + auto-wrap)
-registerAdapter(jsTsAdapter); //    .ts/.js/.mjs/... (identify only)
+registerAdapter(jsTsAdapter); //    .ts/.js/.mjs/... (identify + auto-wrap)
 registerAdapter(htmlAdapter); //    .html/.htm (identify only)
 registerAdapter(vueAdapter); //     .vue (identify only)
 registerAdapter(csharpAdapter); //  .cs (identify only)

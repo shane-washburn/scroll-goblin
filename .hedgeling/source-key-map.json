@@ -46,7 +46,6 @@
     "🎤 Start blowing": "8a1c90cc6093dcfb7d152599e680438c",
     "🎼 Your song will appear here": "b5f5490f81d1dba20565de003ae5a001",
     "🐌 Slug Duel": "fcfe1296fbc0eeebaf982e2c7650bb1e",
-    "🐌 Slug Fencing": "f34e739a6cda54f65205d85a8c21ba66",
     "🐌 Solo Match": "155ce7c4ca927f2e2316a8e3312caf33",
     "🐌🐌 Multiplayer Match": "8a0a6fe39a74d5e9bd296e48e10d25ed",
     "🐔 Screaming Chicken": "d5e2fa3a48caf6181a1616033abf8c76",
@@ -229,7 +228,6 @@
     "Common": "d13bc5b68b2bd9e18f29777db17cc563",
     "Commune with God": "9be325b26d22431ef237255e0b7416a6",
     "Commune with God <0>🔮</0>": "4decd528a1c253fde0924fa916fddc0c",
-    "Commune with God 🔮": "e30f46b5bcc7fb9b3e09e560e8d53a96",
     "Connection": "c2cc7082a89c1ad6631a2f66af5f00c0",
     "Consolas": "16507cdd5bdee782f26fca800650b3c2",
     "Continue →": "92c9a254bfb99e0af25ad63aa193fbf6",
@@ -782,7 +780,6 @@
     "Slow (2G class)": "cfa75c7b33e468bc62965cc991d18e9b",
     "Slug Arena": "ee0211a7aa690226d60b6d1a83b60f3f",
     "Slug Duel": "0bfef60bb379ef9cf24fa8d472747638",
-    "Slug Fencing": "761079ddeb4dd684414da1164c34a7c1",
     "SLUG!": "6fbd04625d983873feec434a870428f1",
     "Small shark": "117c341e0fb8004bf025f258235417dc",
     "Small, round, full of joy.": "166b58ce30e5bdc4c0ea01415e6c0ac1",
@@ -1206,10 +1203,6 @@
     {
       "source": "🐌 Slug Duel",
       "key": "fcfe1296fbc0eeebaf982e2c7650bb1e"
-    },
-    {
-      "source": "🐌 Slug Fencing",
-      "key": "f34e739a6cda54f65205d85a8c21ba66"
     },
     {
       "source": "🐌 Solo Match",
@@ -1938,10 +1931,6 @@
     {
       "source": "Commune with God <0>🔮</0>",
       "key": "4decd528a1c253fde0924fa916fddc0c"
-    },
-    {
-      "source": "Commune with God 🔮",
-      "key": "e30f46b5bcc7fb9b3e09e560e8d53a96"
     },
     {
       "source": "Connection",
@@ -4150,10 +4139,6 @@
     {
       "source": "Slug Duel",
       "key": "0bfef60bb379ef9cf24fa8d472747638"
-    },
-    {
-      "source": "Slug Fencing",
-      "key": "761079ddeb4dd684414da1164c34a7c1"
     },
     {
       "source": "SLUG!",

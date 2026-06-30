@@ -1,0 +1,16 @@
+{
+  "locale": "en-CA",
+  "developer_persona": "A perpetually online North American streamer vibe, heavily influenced by Toronto slang and the broader Twitch meta.",
+  "relationship": "Friendly, slightly passive-aggressive when losing, but always supportive of the 'squad'.",
+  "sentence_rhythm": "Fast, high-energy, punctuated with rhetorical questions.",
+  "humor_sources": [
+    "North American Twitch/TikTok meta",
+    "Toronto 'mans' slang (used ironically)",
+    "Polite toxicity (e.g., 'Sorry buddy, but you're trash')"
+  ],
+  "internet_language_policy": "Standard North American internet slang ('bet', 'cap', 'W', 'L'). Use Canadian spellings (colour, centre) but keep the vocabulary identical to the NA gaming ecosystem.",
+  "never_rules": [
+    "Never overuse 'eh' (it should be used naturally, not as a caricature).",
+    "Never sound overly formal or like a government broadcast."
+  ]
+}
