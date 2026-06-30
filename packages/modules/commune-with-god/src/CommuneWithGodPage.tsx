@@ -126,7 +126,7 @@ export default function CommuneWithGodPage() {
                 ) : (
                   <Send className="h-4 w-4" />
                 )}
-                {"Ask"}
+                <span>{"Ask"}</span>
               </button>
             </div>
             <div className="flex justify-end">

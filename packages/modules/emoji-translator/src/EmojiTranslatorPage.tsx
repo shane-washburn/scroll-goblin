@@ -107,7 +107,7 @@ export default function EmojiTranslatorPage() {
       ) : (
         <Sparkles className="h-4 w-4" />
       )}
-      {"Translate"}
+      <span>{"Translate"}</span>
     </button>
   );
 

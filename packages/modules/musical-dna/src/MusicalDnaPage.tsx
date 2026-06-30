@@ -233,7 +233,7 @@ export default function MusicalDnaPage() {
         <div className="border-t-thick border-brand-border bg-brand-surface p-4">
           <div className="mb-2 flex items-center justify-between">
             <span className="text-xs font-bold uppercase">
-              {"Your sequence"} ({sequence.length}/{MAX_NOTES})
+              {`Your sequence (${sequence.length}/${MAX_NOTES})`}
             </span>
             <div className="flex gap-2">
               <button

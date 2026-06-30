@@ -518,7 +518,7 @@ export default function GoblinMirrorPage() {
                 <p className="mt-3 text-sm font-bold text-brand-text">
                   {cookiesWiped && `${"Cookie memory erased."} `}
                   {lsWiped && `${"Local memory erased."} `}
-                  {"Feeling safe yet?"}
+                  <span>{"Feeling safe yet?"}</span>
                 </p>
               )}
             </Card>
@@ -674,10 +674,7 @@ export default function GoblinMirrorPage() {
                   <ul className="list-disc pl-5 text-sm text-brand-text/80">
                     <li>{"Browser, OS, screen & GPU"}</li>
                     <li>{"Timezone & language"}</li>
-                    <li>
-                      {"Session length"}:{" "}
-                      {formatSessionClock(behavior.sessionSeconds)}
-                    </li>
+                    <li>{`Session length: ${formatSessionClock(behavior.sessionSeconds)}`}</li>
                   </ul>
                 </div>
                 <div>
@@ -685,18 +682,9 @@ export default function GoblinMirrorPage() {
                     {"What I Remember"}
                   </div>
                   <ul className="list-disc pl-5 text-sm text-brand-text/80">
-                    <li>
-                      {"Cookies"}:{" "}
-                      {cookiesWiped
-                        ? "erased"
-                        : `${memory.visits} visits`}
-                    </li>
-                    <li>
-                      {"Local Storage"}: {lsWiped ? "erased" : "active"}
-                    </li>
-                    <li>
-                      {"Fingerprint"}: #{fp.hash} {"(survives wipes)"}
-                    </li>
+                    <li>{`Cookies: ${cookiesWiped ? "erased" : `${memory.visits} visits`}`}</li>
+                    <li>{`Local Storage: ${lsWiped ? "erased" : "active"}`}</li>
+                    <li>{`Fingerprint: #${fp.hash} (survives wipes)`}</li>
                   </ul>
                 </div>
                 <div>
@@ -704,15 +692,9 @@ export default function GoblinMirrorPage() {
                     {"What I Inferred"}
                   </div>
                   <ul className="list-disc pl-5 text-sm text-brand-text/80">
-                    <li>
-                      {"Engagement"}: {behavior.interactionStyle}
-                    </li>
-                    <li>
-                      {"Reading style"}: {behavior.scrollStyle}
-                    </li>
-                    <li>
-                      {"Archetype"}: {archetype}
-                    </li>
+                    <li>{`Engagement: ${behavior.interactionStyle}`}</li>
+                    <li>{`Reading style: ${behavior.scrollStyle}`}</li>
+                    <li>{`Archetype: ${archetype}`}</li>
                   </ul>
                 </div>
                 <div>

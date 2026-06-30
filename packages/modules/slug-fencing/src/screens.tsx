@@ -395,7 +395,7 @@ export function VictoryScreen({
                 {"Your slug has ascended."}
               </p>
               <p className="mt-1 font-heading text-2xl uppercase text-brand-primary">
-                +{aura.toLocaleString()} {"Aura"}
+                {`+${aura.toLocaleString()} Aura`}
               </p>
             </>
           ) : (

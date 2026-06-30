@@ -58,7 +58,6 @@ export default function LifeOfAnOctopusPage() {
   const healthRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const inkRef = useRef<HTMLDivElement>(null);
-  const ageRef = useRef<HTMLSpanElement>(null);
   const camoRef = useRef<HTMLSpanElement>(null);
 
   // Input state lives in refs so the rAF loop reads fresh values.
@@ -73,6 +72,9 @@ export default function LifeOfAnOctopusPage() {
   const [chapterIdx, setChapterIdx] = useState(0);
   const [message, setMessage] = useState("");
   const [finalStats, setFinalStats] = useState<Stats | null>(shared ?? null);
+  // Age (months) drives a translatable label, so it lives in React state. setAge
+  // bails out of re-render when the value is unchanged, keeping the rAF loop cheap.
+  const [age, setAge] = useState(0);
 
   // View kept in a ref so the loop branches without re-subscribing.
   const viewRef = useRef<View>(view);
@@ -237,7 +239,7 @@ export default function LifeOfAnOctopusPage() {
       const remain = Math.max(0, wld.inkReadyAt - performance.now());
       inkRef.current.style.width = `${100 - (remain / INK_COOLDOWN_MS) * 100}%`;
     }
-    if (ageRef.current) ageRef.current.textContent = `${wld.age}`;
+    setAge(wld.age);
     if (camoRef.current)
       camoRef.current.style.opacity = wld.octo.camo > 0.5 ? "1" : "0";
   }
@@ -352,7 +354,7 @@ export default function LifeOfAnOctopusPage() {
             <div className="mb-1 flex items-center justify-between">
               <span>{"Ink"}</span>
               <span>
-                {"Age"} <span ref={ageRef}>0</span> {"mo"}
+                {`Age ${age} mo`}
               </span>
             </div>
             <div className="h-3 w-full overflow-hidden rounded-neobrutal border-thin border-brand-border bg-brand-background">
@@ -402,9 +404,9 @@ export default function LifeOfAnOctopusPage() {
           {view === "chapterCard" && (
             <Overlay>
               <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/60">
-                {`Chapter ${chapter.no} · ${chapter.age === 0
-                      ? "Newly hatched"
-                      : `Age ${chapter.age} months`}`}
+                {chapter.age === 0
+                  ? `Chapter ${chapter.no} · Newly hatched`
+                  : `Chapter ${chapter.no} · Age ${chapter.age} months`}
               </p>
               <h2 className="mt-1 sm:mt-2 font-heading text-xl sm:text-3xl uppercase text-white sm:text-4xl">
                 {chapter.title}
