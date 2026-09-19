@@ -1,7 +1,8 @@
 {
-  "uniqueSourceStrings": 762,
-  "localeCount": 12,
+  "uniqueSourceStrings": 945,
+  "localeCount": 14,
   "locales": [
+    "ar-SA",
     "en-AU",
     "en-CA",
     "en-GB",
@@ -11,70 +12,85 @@
     "hi-IN",
     "nl-NL",
     "pl-PL",
+    "pt-BR",
     "ru-RU",
     "sv-SE",
     "uk-UA"
   ],
   "missingTranslations": 0,
+  "degradedAnalysis": {
+    "pass1": 0,
+    "pass2": 0
+  },
   "perLocale": {
+    "ar-SA": {
+      "total": 945,
+      "ready": 945,
+      "missing": 0
+    },
     "en-AU": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
       "missing": 0
     },
     "en-CA": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
       "missing": 0
     },
     "en-GB": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
       "missing": 0
     },
     "en-IN": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
       "missing": 0
     },
     "es-ES": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
       "missing": 0
     },
     "fr-CA": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
       "missing": 0
     },
     "hi-IN": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
       "missing": 0
     },
     "nl-NL": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
       "missing": 0
     },
     "pl-PL": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
+      "missing": 0
+    },
+    "pt-BR": {
+      "total": 945,
+      "ready": 945,
       "missing": 0
     },
     "ru-RU": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
       "missing": 0
     },
     "sv-SE": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
       "missing": 0
     },
     "uk-UA": {
-      "total": 762,
-      "ready": 762,
+      "total": 945,
+      "ready": 945,
       "missing": 0
     }
   }

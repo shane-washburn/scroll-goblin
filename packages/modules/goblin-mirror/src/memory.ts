@@ -3,6 +3,7 @@
  * persists across visits, so a returning user sees real, growing numbers.
  * Nothing here is sent anywhere; it lives only in the visitor's browser.
  */
+import { t } from "@hedgeling/i18n/runtime";
 
 const COOKIE_VISITS = "goblin_visit_count";
 const COOKIE_FIRST_SEEN = "goblin_first_seen";
@@ -124,10 +125,10 @@ export function relativeFirstSeen(firstSeen: number | null): string {
   if (diff < 60_000) return "Just now";
   if (diff < DAY_MS) {
     const hours = Math.floor(diff / (60 * 60 * 1000));
-    return hours <= 1 ? "Earlier today" : `${hours} hours ago`;
+    return hours <= 1 ? "Earlier today" : t("{hours, plural, one {# hour ago} other {# hours ago}}", { hours });
   }
   const days = Math.floor(diff / DAY_MS);
-  return days === 1 ? "1 day ago" : `${days} days ago`;
+  return t("{days, plural, one {# day ago} other {# days ago}}", { days });
 }
 
 /** Exact local datetime, e.g. "Jun 3, 2026, 4:12 PM". */
@@ -149,7 +150,7 @@ export function formatDuration(ms: number): string {
   const h = Math.floor(totalSec / 3600);
   const m = Math.floor((totalSec % 3600) / 60);
   const s = totalSec % 60;
-  if (h > 0) return `${h}h ${m}m`;
-  if (m > 0) return `${m}m ${s}s`;
-  return `${s}s`;
+  if (h > 0) return t("{hours}h {minutes}m", { hours: h, minutes: m });
+  if (m > 0) return t("{minutes}m {seconds}s", { minutes: m, seconds: s });
+  return t("{seconds}s", { seconds: s });
 }

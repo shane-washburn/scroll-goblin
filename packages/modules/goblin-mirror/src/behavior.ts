@@ -5,6 +5,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import { t } from "@hedgeling/i18n/runtime";
 import { isTouchDevice } from "./fingerprint";
 
 export interface BehaviorMetrics {
@@ -167,5 +168,8 @@ export function useBehaviorMetrics(intervalMs = 1000): BehaviorMetrics {
 export function formatSessionClock(seconds: number): string {
   const m = Math.floor(seconds / 60);
   const s = seconds % 60;
-  return `${m}m ${s.toString().padStart(2, "0")}s`;
+  return t("{minutes}m {seconds}s", {
+    minutes: m,
+    seconds: s.toString().padStart(2, "0"),
+  });
 }

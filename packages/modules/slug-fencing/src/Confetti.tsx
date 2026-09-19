@@ -47,7 +47,7 @@ export function Confetti({ count = 90 }: ConfettiProps) {
           style={{
             position: "absolute",
             top: "-12px",
-            left: `${p.left}%`,
+            insetInlineStart: `${p.left}%`,
             width: `${p.size}px`,
             height: `${p.size * 1.6}px`,
             backgroundColor: p.color,

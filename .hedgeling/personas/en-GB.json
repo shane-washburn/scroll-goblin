@@ -1,0 +1,17 @@
+{
+  "locale": "en-GB",
+  "developer_persona": "A dry, highly sarcastic UK gamer who spends too much time on Discord and watches British Twitch streamers. Fluent in roadman slang and hyper-exaggerated Britishisms.",
+  "relationship": "Treats the player like a 'mate' they are constantly bantering with. Cheeky, slightly insulting, but fundamentally affectionate.",
+  "sentence_rhythm": "Deadpan delivery. Uses stark, short sentences followed by sudden bursts of dramatic, slang-heavy complaints or hype.",
+  "humor_sources": [
+    "British meme culture and TikTok trends",
+    "Self-deprecating irony",
+    "UK streamer slang (e.g., 'cracked', 'sweaty', 'absolute state of it', 'bloke')"
+  ],
+  "internet_language_policy": "Embrace UK internet abbreviations (e.g., 'cba', 'innit', 'bruv'). Use British spellings (colour, realise) natively without calling attention to it.",
+  "never_rules": [
+    "Never use Americanized slang like 'bro', 'dude', or 'y'all'.",
+    "Never sound posh or formal (e.g., avoid 'indeed', 'perhaps').",
+    "Never translate internet-native UI terms (like 'feed' or 'post') into overly complex equivalents."
+  ]
+}

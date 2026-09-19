@@ -4,16 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build && tsx scripts/generate-seo.mts",
-    "i18n:extract": "tsx scripts/extract-i18n.mts",
-    "preview": "vite preview"
+    "dev": "pnpm prepare:chess && vite",
+    "build": "pnpm prepare:chess && tsc -b && vite build && tsx scripts/generate-seo.mts",
+    "preview": "vite preview",
+    "i18n:extract": "hedgeling extract --write",
+    "i18n:diagnostics": "hedgeling diagnostics",
+    "i18n:check": "hedgeling check",
+    "prepare:chess": "node ../../scripts/prepare-chess.mjs"
   },
   "dependencies": {
     "@scroll-goblin/module-aura-farm": "workspace:*",
     "@scroll-goblin/module-balloon-blower": "workspace:*",
-    "@scroll-goblin/module-commune-with-god": "workspace:*",
     "@scroll-goblin/module-brainrot-button": "workspace:*",
+    "@scroll-goblin/module-commune-with-god": "workspace:*",
     "@scroll-goblin/module-emoji-translator": "workspace:*",
     "@scroll-goblin/module-goblin-mirror": "workspace:*",
     "@scroll-goblin/module-life-of-an-octopus": "workspace:*",
@@ -29,9 +32,11 @@
     "lucide-react": "^0.451.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2"
+    "react-router-dom": "^6.26.2",
+    "@scroll-goblin/module-goblin-chess": "workspace:*"
   },
   "devDependencies": {
+    "@hedgeling/i18n": "1.2.0",
     "@types/node": "^22.10.2",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
@@ -41,6 +46,7 @@
     "tailwindcss": "^3.4.13",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",
-    "vite": "^5.4.8"
+    "vite": "^5.4.8",
+    "stockfish": "19.0.0"
   }
 }

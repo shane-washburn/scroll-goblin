@@ -14,6 +14,8 @@
  * an estimate.
  */
 
+import { t } from "@hedgeling/i18n/runtime";
+
 export interface FingerprintSignal {
   /** Human-readable label, e.g. "Browser". */
   label: string;
@@ -442,7 +444,10 @@ export function collectFingerprint(): Fingerprint {
     },
     {
       label: "Input Type",
-      value: `${touch} (${touchPoints} pts)`,
+      value: t("{touch} ({touchPoints, plural, one {# pt} other {# pts}})", {
+        touch,
+        touchPoints,
+      }),
       share: touch === "Touch" ? 0.45 : 0.5,
       tier: "technical",
     },

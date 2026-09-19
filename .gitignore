@@ -1,9 +1,14 @@
 node_modules/
 dist/
+!apps/web/vendor/hedgeling-i18n/dist/
+!apps/web/vendor/hedgeling-i18n/dist/**
 build/
 .turbo/
 *.log
 .DS_Store
+
+# hedgeling
+.hedgeling/gemini-cache/
 
 # env
 .env
@@ -16,3 +21,12 @@ build/
 
 # vite
 apps/web/dist/
+
+.hedgeling/local.env
+
+# Reproducible Stockfish distribution, prepared from the pinned npm package
+apps/web/public/chess/engine/
+infra/quantum/__pycache__/
+
+# Local Vercel project links and downloaded environment settings
+.vercel/

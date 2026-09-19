@@ -7,7 +7,7 @@ import {
   STAT_METRICS,
   type LeaderboardResponse,
 } from "@scroll-goblin/shared";
-import { Card, useTranslation } from "@scroll-goblin/ui";
+import { Card } from "@scroll-goblin/ui";
 import { MODULES } from "../modules/registry";
 
 const API_BASE_URL = (
@@ -40,8 +40,7 @@ const medal = (rank: number) =>
   rank === 0 ? "🥇" : rank === 1 ? "🥈" : rank === 2 ? "🥉" : null;
 
 export default function Leaderboard() {
-  const { t } = useTranslation();
-  const [tab, setTab] = useState<Tab>("interactions");
+    const [tab, setTab] = useState<Tab>("interactions");
   const [data, setData] = useState<LeaderboardResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -54,7 +53,7 @@ export default function Leaderboard() {
       if (!res.ok) throw new Error(`Request failed (${res.status})`);
       setData(LeaderboardResponseSchema.parse(await res.json()));
     } catch (e) {
-      setError(e instanceof Error ? e.message : t("Something went wrong"));
+      setError(e instanceof Error ? e.message : "Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -75,7 +74,7 @@ export default function Leaderboard() {
         metricRows.push({
           moduleId: m.id,
           emoji: m.emoji,
-          moduleTitle: t(m.title),
+          moduleTitle: m.title,
           label,
           total: stats.metrics[metric] ?? 0,
         });
@@ -89,7 +88,7 @@ export default function Leaderboard() {
         .map((m) => ({
           moduleId: m.id,
           emoji: m.emoji,
-          moduleTitle: t(m.title),
+          moduleTitle: m.title,
           path: m.path,
           visits: data.modules[m.id].visits,
         }))
@@ -116,16 +115,14 @@ export default function Leaderboard() {
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-warning p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
             <Trophy className="h-4 w-4" />
-            {t("Leaderboard")}
+            {"Leaderboard"}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-            {t("The collective brainrot")}
+            {"The collective brainrot"}
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          {t(
-            "Combined totals from every goblin who has ever scrolled through. Every blade plucked, egg laid, and answer received — counted forever."
-          )}
+          {"Combined totals from every goblin who has ever scrolled through. Every blade plucked, egg laid, and answer received — counted forever."}
         </p>
       </header>
 
@@ -135,10 +132,10 @@ export default function Leaderboard() {
           <div className="flex items-center gap-2">
             {tabButton(
               "interactions",
-              t("Interactions"),
+              "Interactions",
               <Trophy className="h-4 w-4" />
             )}
-            {tabButton("visits", t("Visits"), <Footprints className="h-4 w-4" />)}
+            {tabButton("visits", "Visits", <Footprints className="h-4 w-4" />)}
           </div>
           <button
             onClick={() => void load()}
@@ -146,14 +143,14 @@ export default function Leaderboard() {
             className="inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-surface px-3 py-1.5 text-xs font-bold shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed disabled:opacity-50"
           >
             <RefreshCw className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} />
-            {t("Refresh")}
+            {"Refresh"}
           </button>
         </div>
 
         {loading && !data && (
           <div className="flex items-center justify-center gap-2 py-16 font-bold text-brand-text">
             <Loader2 className="h-5 w-5 animate-spin" />
-            {t("Tallying the chaos...")}
+            {"Tallying the chaos..."}
           </div>
         )}
 
@@ -165,9 +162,7 @@ export default function Leaderboard() {
 
         {data && !data.live && (
           <div className="m-4 rounded-neobrutal border-thin border-brand-border bg-brand-warning px-4 py-3 text-xs font-bold shadow-neo-sm">
-            {t(
-              "The stats database isn't connected yet, so everything reads zero. (API is missing its Upstash Redis credentials.)"
-            )}
+            {"The stats database isn't connected yet, so everything reads zero. (API is missing its Upstash Redis credentials.)"}
           </div>
         )}
 
@@ -185,7 +180,7 @@ export default function Leaderboard() {
                 <span className="text-2xl">{row.emoji}</span>
                 <div className="min-w-0 flex-1">
                   <p className="break-words text-sm font-bold leading-snug text-brand-text">
-                    {t(row.label)}
+                    {row.label}
                   </p>
                   <p className="text-xs font-bold uppercase text-brand-text opacity-60">
                     {row.moduleTitle}
@@ -234,9 +229,7 @@ export default function Leaderboard() {
       </Card>
 
       <p className="mt-4 text-center text-xs font-bold text-brand-text opacity-60">
-        {t(
-          "Totals update within about a minute. Stats are anonymous — nobody knows it was you who squeezed the chicken 4,000 times."
-        )}
+        {"Totals update within about a minute. Stats are anonymous — nobody knows it was you who squeezed the chicken 4,000 times."}
       </p>
     </div>
   );

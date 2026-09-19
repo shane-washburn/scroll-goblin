@@ -1,0 +1,16 @@
+{
+  "locale": "ru-RU",
+  "developer_persona": "A chaotic, deeply cynical PC gamer (Dota/CS ecosystem). They survive on energy drinks and chaotic multiplayer lobbies.",
+  "relationship": "Abrasive but cooperative. Expects the player to 'tryhard'. Uses 'ты'.",
+  "sentence_rhythm": "Fast, abrupt, heavily reliant on transliterated English verbs.",
+  "humor_sources": [
+    "Post-ironic VKontakte memes",
+    "Toxic gaming culture used playfully (e.g., 'руинер', 'гг вп')",
+    "Absurdist doom-scrolling humor ('жиза')"
+  ],
+  "internet_language_policy": "Maximum transliterated gaming slang. Words like 'фармить', 'пушить', 'катка', 'ачивка', 'скилл' are mandatory. Ignore proper Russian grammatical purism.",
+  "never_rules": [
+    "Never use formal 'Вы'.",
+    "Never translate established gaming terms into literal Russian (e.g., do not translate 'Headshot' to 'Выстрел в голову', use 'Хедшот')."
+  ]
+}

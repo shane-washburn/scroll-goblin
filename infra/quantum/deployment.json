@@ -1,0 +1,14 @@
+{
+  "region": "eu-north-1",
+  "stack": "scroll-goblins-quantum",
+  "apiUrl": "https://5o1vmqmw04.execute-api.eu-north-1.amazonaws.com/oracle",
+  "functionName": "scroll-goblins-quantum-Oracle-dojQjPTsCaMA",
+  "poolTable": "scroll-goblins-quantum-Pool-2T7FMLGI50B4",
+  "deviceArn": "arn:aws:braket:eu-north-1::device/qpu/iqm/Garnet",
+  "firstTaskArn": "arn:aws:braket:eu-north-1:058264317976:quantum-task/6c7840b3-a85b-46ae-84d6-af4c1f6c415f",
+  "firstTaskShots": 1000,
+  "firstTaskStatusAtHandoff": "QUEUED",
+  "firstTaskQueuePositionAtHandoff": "2",
+  "automaticPaidReplenishment": false,
+  "websitePublished": false
+}

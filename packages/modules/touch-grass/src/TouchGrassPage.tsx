@@ -6,7 +6,6 @@ import {
   consumeShareSnapshot,
   registerAudioLifecycleStop,
   trackStat,
-  useTranslation,
   useMobileGameFit,
 } from "@scroll-goblin/ui";
 import {
@@ -144,8 +143,7 @@ const MESSAGES: Record<string, string> = {
 type Mode = "touch" | "water";
 
 export default function TouchGrassPage() {
-  const { t } = useTranslation();
-  // Consume a share snapshot exactly once; the URL param is stripped so a
+    // Consume a share snapshot exactly once; the URL param is stripped so a
   // refresh or fresh navigation starts the module blank.
   const [snapshot] = useState(() =>
     consumeShareSnapshot<ShareState>(MODULE_ID, SHARE_VERSION)
@@ -210,7 +208,7 @@ export default function TouchGrassPage() {
           for (let d = 0; d < 2; d++) {
             const drop = document.createElement("span");
             const dropX = p.x + (Math.random() - 0.5) * 44;
-            drop.style.cssText = `position:absolute;left:${dropX}px;top:${p.y}px;width:3px;height:9px;border-radius:9999px;background:rgba(59,130,246,0.65);pointer-events:none;`;
+            drop.style.cssText = `position:absolute;inset-inline-start:${dropX}px;top:${p.y}px;width:3px;height:9px;border-radius:9999px;background:rgba(59,130,246,0.65);pointer-events:none;`;
             field.appendChild(drop);
             drop
               .animate(
@@ -418,7 +416,7 @@ export default function TouchGrassPage() {
     // A little leaf pops out where the blade was plucked.
     const pop = document.createElement("span");
     pop.textContent = "🌿";
-    pop.style.cssText = `position:absolute;left:${blade.x * 100}%;bottom:${blade.h}px;font-size:20px;pointer-events:none;`;
+    pop.style.cssText = `position:absolute;inset-inline-start:${blade.x * 100}%;bottom:${blade.h}px;font-size:20px;pointer-events:none;`;
     field.appendChild(pop);
     pop
       .animate(
@@ -436,16 +434,14 @@ export default function TouchGrassPage() {
       <header className="mb-bento grid gap-bento sm:grid-cols-[1fr_1fr]">
         <div className="rounded-neobrutal border-thick border-brand-border bg-brand-primary p-5 shadow-neo-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-neobrutal border-thin border-brand-border bg-brand-background px-3 py-1 text-xs font-bold uppercase shadow-neo-sm">
-          🌱 {t("Touch Grass")}
+          🌱 {"Touch Grass"}
           </div>
           <h1 className="font-heading text-4xl uppercase leading-none text-brand-text sm:text-5xl">
-          {t("Go ahead. Touch the grass")}
+          {"Go ahead. Touch the grass"}
           </h1>
         </div>
         <p className="rounded-neobrutal border-thick border-brand-border bg-brand-surface p-5 text-sm font-bold leading-relaxed shadow-neo-lg">
-          {t(
-            "Brush it, press to flatten it, double-tap to pluck a blade — or grab the watering can and help it grow."
-          )}
+          {"Brush it, press to flatten it, double-tap to pluck a blade — or grab the watering can and help it grow."}
         </p>
       </header>
 
@@ -461,7 +457,7 @@ export default function TouchGrassPage() {
                   : "bg-brand-surface text-brand-text"
               }`}
             >
-              ✋ {t("Touch")}
+              ✋ {"Touch"}
             </button>
             <button
               onClick={() => setMode("water")}
@@ -471,13 +467,13 @@ export default function TouchGrassPage() {
                   : "bg-brand-surface text-brand-text"
               }`}
             >
-              🚿 {t("Water")}
+              🚿 {"Water"}
             </button>
           </div>
           <p className="text-xs font-bold text-brand-text">
             {mode === "water"
-              ? t("Press and hold to pour")
-              : t("Brush, press, or double-tap")}
+              ? "Press and hold to pour"
+              : "Brush, press, or double-tap"}
           </p>
         </div>
 
@@ -491,7 +487,7 @@ export default function TouchGrassPage() {
           className="relative h-80 w-full cursor-pointer touch-none select-none overflow-hidden bg-gradient-to-b from-brand-secondary via-white to-brand-primary"
         >
           {/* Sun */}
-          <div className="absolute right-8 top-6 h-14 w-14 rounded-full border-thick border-brand-border bg-brand-warning shadow-neo-md" />
+          <div className="absolute end-8 top-6 h-14 w-14 rounded-full border-thick border-brand-border bg-brand-warning shadow-neo-md" />
 
           {/* Ground */}
           <div className="absolute bottom-0 h-10 w-full border-t-thick border-brand-border bg-brand-primary" />
@@ -503,7 +499,7 @@ export default function TouchGrassPage() {
               ref={(el) => (bladeEls.current[i] = el)}
               className="absolute bottom-0 origin-bottom rounded-t-full will-change-transform"
               style={{
-                left: `${b.x * 100}%`,
+                insetInlineStart: `${b.x * 100}%`,
                 width: b.w,
                 height: b.h,
                 background: `linear-gradient(to top, hsl(${b.hue}, 55%, 30%), hsl(${b.hue}, 65%, 45%))`,
@@ -513,16 +509,16 @@ export default function TouchGrassPage() {
         </div>
 
         <div className="flex flex-col gap-3 border-t-thick border-brand-border bg-brand-surface p-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-bold text-brand-text">{t(message)}</p>
+          <p className="text-sm font-bold text-brand-text">{message}</p>
           <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-brand-text">
             <span>
-              {t("Touches")}: <span className="bg-brand-primary px-1">{touches}</span>
+              {"Touches"}: <span className="bg-brand-primary px-1">{touches}</span>
             </span>
             <span>
-              {t("Plucked")}: <span className="bg-brand-secondary px-1">{plucks}</span>
+              {"Plucked"}: <span className="bg-brand-secondary px-1">{plucks}</span>
             </span>
             <span>
-              {t("Waterings")}: <span className="bg-brand-warning px-1">{waters}</span>
+              {"Waterings"}: <span className="bg-brand-warning px-1">{waters}</span>
             </span>
             <MuteButton />
             <ShareButton

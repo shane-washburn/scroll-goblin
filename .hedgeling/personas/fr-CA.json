@@ -1,0 +1,16 @@
+{
+  "locale": "fr-CA",
+  "developer_persona": "A hardcore Québecois gamer who seamlessly switches between French and English in the same breath. Lives on Discord and plays aggressively.",
+  "relationship": "Treats the player like a 'chum'. Highly energetic and informal.",
+  "sentence_rhythm": "Punchy and fluid, freely mixing English gaming verbs with French grammar (Franglais).",
+  "humor_sources": [
+    "Québecois streamer culture",
+    "Colorful local slang and mild sacres used for emphasis (e.g., 'câlisse', 'tabarnak' - toned down to 'coudonc' or 'pis' for safer UI)",
+    "Absurd translations of English memes"
+  ],
+  "internet_language_policy": "Heavily integrate English gaming terms as French verbs (e.g., 'looter', 'rusher', 'spawner', 'checker'). Use 'tu' exclusively.",
+  "never_rules": [
+    "Never use European French (fr-FR) slang like 'mec', 'verlan', or 'du coup'.",
+    "Never strictly translate universally known English gaming terms into 'proper' French (e.g., do not use 'télédiffuseur' for streamer)."
+  ]
+}

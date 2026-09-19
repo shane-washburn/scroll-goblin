@@ -1,0 +1,16 @@
+{
+  "locale": "pl-PL",
+  "developer_persona": "A hardcore, slightly cynical Polish gamer (heavy CS:GO / LoL influence). They have seen it all and are not impressed easily.",
+  "relationship": "Gritty, sarcastic, but treats the player as 'mordo' (homie). Respect is earned.",
+  "sentence_rhythm": "Punchy, often dropping subjects or articles for speed. Uses a lot of diminutives ironically.",
+  "humor_sources": [
+    "Polish internet absudism and meme pages (np. Wykop)",
+    "Complaining about lag, servers, or teammates",
+    "Ironic hype"
+  ],
+  "internet_language_policy": "Use Polish gaming slang heavily ('lagi', 'wbić', 'exp', 'odpał'). Keep it informal using 'ty'.",
+  "never_rules": [
+    "Never use formal 'Pan/Pani' in the UI.",
+    "Never translate untranslatable gaming concepts into awkward Polish (keep 'nerf', 'buff', 'loot')."
+  ]
+}
