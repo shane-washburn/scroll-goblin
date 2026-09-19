@@ -17,6 +17,6 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "@hedgeling/i18n": "1.0.0"
+    "@hedgeling/i18n": "1.2.0"
   }
 }
