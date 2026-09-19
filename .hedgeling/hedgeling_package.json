@@ -99828,11 +99828,11 @@
               "dependencyHashVersion": 2
             },
             "ru-RU": {
-              "text": "🐌 Дуэль слизней",
+              "text": "🐌 Слизнефехт",
               "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-07-11T00:45:12.910Z",
-              "source": "gemini",
+              "humanStatus": "verified",
+              "updatedAt": "2026-06-28T07:22:08.453Z",
+              "source": "human",
               "dependencyHash": "ed2bf90df237a4e0",
               "dependencyHashVersion": 2
             },
