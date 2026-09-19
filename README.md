@@ -11,6 +11,7 @@ Current modules:
 
 | Module | What it does |
 |--------|--------------|
+| 🏡 **Luna’s Playhouse** _(beta)_ | A local-save 3D decorating room with Mia, Luna, 26 unique objects, and tap-to-place play. [Game notes](packages/modules/lunas-playhouse/README.md). |
 | ♟️ **Scroll Goblins vs Hedgelings** _(beta)_ | 3D woodland chess with three browser Stockfish tiers, an experimental cheating LLM, and real Braket hardware measurements for faction assignment and cosmic endings. [Game notes](packages/modules/goblin-chess/README.md) · [Quantum service](infra/quantum/README.md).
 | 😀 **Emoji Translator** | Translate between human language and emoji in both directions, powered by an LLM. |
 | 🌱 **Touch Grass** | Finally, a way to touch grass without going outside. Brush it, pluck it, water it — it reacts (and sounds like it). |
