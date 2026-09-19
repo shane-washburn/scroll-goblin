@@ -11,6 +11,7 @@ Current modules:
 
 | Module | What it does |
 |--------|--------------|
+| ♟️ **Scroll Goblins vs Hedgelings** _(beta)_ | 3D woodland chess with three browser Stockfish tiers, an experimental cheating LLM, and real Braket hardware measurements for faction assignment and cosmic endings. [Game notes](packages/modules/goblin-chess/README.md) · [Quantum service](infra/quantum/README.md).
 | 😀 **Emoji Translator** | Translate between human language and emoji in both directions, powered by an LLM. |
 | 🌱 **Touch Grass** | Finally, a way to touch grass without going outside. Brush it, pluck it, water it — it reacts (and sounds like it). |
 | 🐔 **Screaming Chicken** | A rubber chicken you can squeeze. Hold to compress, release to hear it scream. |

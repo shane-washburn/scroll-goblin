@@ -23,3 +23,10 @@ build/
 apps/web/dist/
 
 .hedgeling/local.env
+
+# Reproducible Stockfish distribution, prepared from the pinned npm package
+apps/web/public/chess/engine/
+infra/quantum/__pycache__/
+
+# Local Vercel project links and downloaded environment settings
+.vercel/

@@ -19,7 +19,7 @@
   ],
   "files": {
     "apps/web/i18n/source.html": {
-      "updatedAt": "2026-07-11T20:58:51.650Z",
+      "updatedAt": "2026-07-12T00:43:14.575Z",
       "entries": {
         "cd4146dba9a95a47bc6f40e2da08e8ca": {
           "sourceText": "Scroll Goblin",
@@ -40096,7 +40096,7 @@
         "e176589c675ed4763269d12c9662f10e": {
           "sourceText": "Archetype: {archetype}",
           "shape": "body",
-          "purpose": "interpolated UI text rendered inline / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper",
+          "purpose": "interpolated UI text rendered inline / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper / source string passed to the runtime translation helper",
           "contextVariants": [
             {
               "shape": "body",
@@ -97302,7 +97302,7 @@
         "9890f06976131702b942e59eda2f750a": {
           "sourceText": "Eggs",
           "shape": "body",
-          "purpose": "UI text in a value position, applied at runtime by the DOM injector / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position",
+          "purpose": "UI text in a value position, applied at runtime by the DOM injector / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position / UI text in a value position",
           "contextVariants": [
             {
               "shape": "body",

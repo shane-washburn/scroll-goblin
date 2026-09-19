@@ -1,0 +1,162 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Scroll Goblins real-QPU entropy pool and public game oracle
+Parameters:
+  CodeBucket:
+    Type: String
+  CodeKey:
+    Type: String
+  DeviceArn:
+    Type: String
+    Default: arn:aws:braket:eu-north-1::device/qpu/iqm/Garnet
+Resources:
+  Results:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: !Sub amazon-braket-scroll-goblins-${AWS::AccountId}-${AWS::Region}
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+  Pool:
+    Type: AWS::DynamoDB::Table
+    DeletionPolicy: Retain
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: pk
+          AttributeType: S
+        - AttributeName: sk
+          AttributeType: S
+      KeySchema:
+        - AttributeName: pk
+          KeyType: HASH
+        - AttributeName: sk
+          KeyType: RANGE
+      TimeToLiveSpecification:
+        AttributeName: expires
+        Enabled: true
+  Role:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: QuantumPool
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: [dynamodb:GetItem, dynamodb:PutItem, dynamodb:UpdateItem, dynamodb:DeleteItem, dynamodb:Query, dynamodb:Scan]
+                Resource: !GetAtt Pool.Arn
+              - Effect: Allow
+                Action: [s3:GetObject, s3:PutObject]
+                Resource: !Sub '${Results.Arn}/*'
+              - Effect: Allow
+                Action: [s3:GetBucketLocation, s3:ListBucket]
+                Resource: !GetAtt Results.Arn
+              - Effect: Allow
+                Action: braket:CreateQuantumTask
+                Resource:
+                  - !Ref DeviceArn
+                  - !Sub 'arn:aws:braket:${AWS::Region}:${AWS::AccountId}:device/qpu/iqm/Garnet'
+                  - !Sub 'arn:aws:braket:${AWS::Region}:${AWS::AccountId}:quantum-task/*'
+              - Effect: Allow
+                Action: braket:GetQuantumTask
+                Resource: !Sub 'arn:aws:braket:${AWS::Region}:${AWS::AccountId}:quantum-task/*'
+  Oracle:
+    Type: AWS::Lambda::Function
+    Properties:
+      Runtime: python3.12
+      Handler: handler.handler
+      Role: !GetAtt Role.Arn
+      Timeout: 60
+      MemorySize: 256
+      Code:
+        S3Bucket: !Ref CodeBucket
+        S3Key: !Ref CodeKey
+      Environment:
+        Variables:
+          TABLE: !Ref Pool
+          BUCKET: !Ref Results
+          DEVICE: !Ref DeviceArn
+  LogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${Oracle}'
+      RetentionInDays: 14
+  Api:
+    Type: AWS::ApiGatewayV2::Api
+    Properties:
+      Name: scroll-goblins-universe
+      ProtocolType: HTTP
+      CorsConfiguration:
+        AllowOrigins: ['https://scrollgoblin.fun', 'https://www.scrollgoblin.fun', 'http://localhost:5173']
+        AllowMethods: [POST, OPTIONS]
+        AllowHeaders: [content-type]
+  Integration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId: !Ref Api
+      IntegrationType: AWS_PROXY
+      IntegrationUri: !GetAtt Oracle.Arn
+      PayloadFormatVersion: '2.0'
+  Route:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId: !Ref Api
+      RouteKey: POST /oracle
+      Target: !Sub integrations/${Integration}
+  Stage:
+    Type: AWS::ApiGatewayV2::Stage
+    Properties:
+      ApiId: !Ref Api
+      StageName: '$default'
+      AutoDeploy: true
+      DefaultRouteSettings:
+        ThrottlingBurstLimit: 20
+        ThrottlingRateLimit: 5
+  ApiPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref Oracle
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${Api}/*'
+  Poll:
+    Type: AWS::Events::Rule
+    Properties:
+      ScheduleExpression: rate(5 minutes)
+      State: ENABLED
+      Targets:
+        - Arn: !GetAtt Oracle.Arn
+          Id: ImportCompletedTasks
+          Input: '{"operation":"poll"}'
+  PollPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref Oracle
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt Poll.Arn
+Outputs:
+  ApiUrl:
+    Value: !Sub 'https://${Api}.execute-api.${AWS::Region}.amazonaws.com/oracle'
+  FunctionName:
+    Value: !Ref Oracle
+  PoolTable:
+    Value: !Ref Pool
+  ResultsBucket:
+    Value: !Ref Results
