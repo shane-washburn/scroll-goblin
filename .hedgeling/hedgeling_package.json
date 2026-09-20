@@ -224485,11 +224485,11 @@
               "updatedAt": "2026-09-20T18:06:42.471Z"
             },
             "ru-RU": {
-              "text": "твой оппонент",
-              "source": "gemini",
+              "text": "твоего оппонента",
+              "source": "human",
               "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
+              "humanStatus": "verified",
+              "updatedAt": "2026-09-20T21:13:34.593Z"
             },
             "es-ES": {
               "text": "tu oponente",
@@ -224591,11 +224591,11 @@
               "updatedAt": "2026-09-20T18:06:42.471Z"
             },
             "ru-RU": {
-              "text": "ты",
-              "source": "gemini",
+              "text": "тебя",
+              "source": "human",
               "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
+              "humanStatus": "verified",
+              "updatedAt": "2026-09-20T21:13:34.594Z"
             },
             "es-ES": {
               "text": "tú",
