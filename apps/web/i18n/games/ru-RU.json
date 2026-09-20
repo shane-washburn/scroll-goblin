@@ -1315,8 +1315,8 @@
     },
     "4da4c861bb5e54693080496c7f0edd86": {
       "source": "your opponent",
-      "text": "твой оппонент",
-      "status": "needs-review"
+      "text": "твоего оппонента",
+      "status": "reviewed"
     },
     "b445177ba69f0b6abf330a9854682e74": {
       "source": "Empty square",
@@ -1340,8 +1340,8 @@
     },
     "639bae9ac6b3e1a84cebb7b403297b79": {
       "source": "you",
-      "text": "ты",
-      "status": "needs-review"
+      "text": "тебя",
+      "status": "reviewed"
     },
     "11dfd868d93bc2b0e4ce0bee5756f8b1": {
       "source": "moved",
