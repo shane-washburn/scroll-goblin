@@ -5,7 +5,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseEnv } from 'node:util';
-import { extractFromWorkspace, loadExtractConfig } from '@hedgeling/i18n';
+import { extractFromWorkspace, loadExtractConfig, keyFor } from '@hedgeling/i18n';
 import { geminiTranslateBatch, localeInstructions } from '@hedgeling/i18n/translate';
 import { validateIcuTranslation } from '@hedgeling/i18n/runtime/icu.js';
 
@@ -13,13 +13,18 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, 'apps/web/i18n/games');
 const config = loadExtractConfig(root);
 config.scanRoots = [
-  ...['Board.tsx', 'ChessPage.tsx', 'Ending.tsx', 'FactionCoin.tsx', 'game.ts', 'manifest.ts'].map(f => `packages/modules/goblin-chess/src/${f}`),
+  ...['Board.tsx', 'ChessPage.tsx', 'Ending.tsx', 'FactionCoin.tsx', 'game.ts', 'messages.ts', 'manifest.ts'].map(f => `packages/modules/goblin-chess/src/${f}`),
   ...['Playhouse.tsx', 'Room.tsx', 'model.ts', 'manifest.ts'].map(f => `packages/modules/lunas-playhouse/src/${f}`),
 ];
 const extraction = extractFromWorkspace(root, config);
 // These are structured English context sent to the opponent, not UI messages.
 const protocol = /^(Human |No human action recorded yet\.|resurrected \{color\}|transformed \{color\}|\{value0\} \{color\} \{piece\})/;
 const entries = extraction.entries.filter(e => !protocol.test(e.source));
+// Short dynamic fragments are intentionally skipped by the generic extractor.
+// They are visible interpolation values, not game-state identifiers.
+for (const source of ['you', 'moved', 'teleported', 'Floor', 'Surface', 'Wall', 'Ceiling']) {
+  if (!entries.some(entry => entry.source === source)) entries.push({ key: keyFor(source), source, contexts: [{ shape: 'label', purpose: 'Translated dynamic value in a game message', visualContext: '', locations: [] }] });
+}
 const catalog = { schemaVersion: 1, sourceLocale: config.sourceLocale, locales: config.locales, entries };
 await fs.mkdir(out, { recursive: true });
 await fs.writeFile(path.join(out, 'source.json'), JSON.stringify(catalog, null, 2) + '\n');

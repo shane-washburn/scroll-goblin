@@ -355,8 +355,8 @@
     },
     "5dc1fd1f138edd801220826207555ff5": {
       "source": "Defensive Hoglet",
-      "text": "Защитный Кабанчик",
-      "status": "needs-review"
+      "text": "Колючий ежонок",
+      "status": "reviewed"
     },
     "c1baf14165e935275ade01b8501d9e3e": {
       "source": "Deploy the board →",
@@ -425,8 +425,8 @@
     },
     "45b9c968e88117a6f73411f3c43204e4": {
       "source": "Frog Rider",
-      "text": "Всадник-лягушка",
-      "status": "needs-review"
+      "text": "Всадник на жабе",
+      "status": "reviewed"
     },
     "95c14cfa71e176bcd48c2cce7c84bf23": {
       "source": "Fruit bowl",
@@ -780,23 +780,23 @@
     },
     "a957e0ef7f84a5d5b4a36272852439f6": {
       "source": "Scroll Goblins <0>vs</0> Hedgelings",
-      "text": "Свиточные Гоблины <0>против</0> Ежат",
-      "status": "needs-review"
+      "text": "Гоблины <0>против</0> Ежат",
+      "status": "reviewed"
     },
     "e4f6f82f88634759d120a98c81972e57": {
       "source": "Scroll Goblins vs Hedgelings",
-      "text": "Свиточные Гоблины против Ежат",
-      "status": "needs-review"
+      "text": "Гоблины против Ежат",
+      "status": "reviewed"
     },
     "437aa63d219a513be49e1553aee2d800": {
       "source": "Scroll Grunt",
-      "text": "Скролл-Грунт",
-      "status": "needs-review"
+      "text": "Гоблин со свитком",
+      "status": "reviewed"
     },
     "a3100ffd6b6e3f9ab69700f3164b8300": {
       "source": "Scroll Rider",
-      "text": "Скролл-Всадник",
-      "status": "needs-review"
+      "text": "Волчий всадник",
+      "status": "reviewed"
     },
     "e4b3723b967292633f55254b337868bf": {
       "source": "Select a piece, then its destination.",
@@ -1201,6 +1201,181 @@
     "b5365c72770d5d120ece55eb4a2ad63f": {
       "source": "YOUR OPPONENT",
       "text": "ТВОЙ ПРОТИВНИК",
+      "status": "needs-review"
+    },
+    "724450b95db10316b243f1681a21f136": {
+      "source": "{actor}: {action} {from} → {to}",
+      "text": "{actor}: {action} {from} → {to}",
+      "status": "needs-review"
+    },
+    "bae3eef6ca702d88fe347b4a9eeda7e7": {
+      "source": "{name}, in the room",
+      "text": "{name}, в комнате",
+      "status": "needs-review"
+    },
+    "93edc05b798190347d2d6684b1267312": {
+      "source": "All three cheats have been used.",
+      "text": "Все три читы юзнуты.",
+      "status": "needs-review"
+    },
+    "e31a27e0dd63afe11492c7cb49281daf": {
+      "source": "Chaos mode needs its server rate limiter configured.",
+      "text": "Режиму Хаоса нужен настроенный рейтрейтер сервера.",
+      "status": "needs-review"
+    },
+    "008486702187c2da5f3dff525de8996c": {
+      "source": "Choose one of your captured non-king pieces.",
+      "text": "Выбери одну из своих захваченных фигур, кроме короля.",
+      "status": "needs-review"
+    },
+    "60ade9f944666b0d1ae4549558958fb1": {
+      "source": "Choose one of your pieces and a different destination.",
+      "text": "Выбери одну из своих фигур и другую клетку.",
+      "status": "needs-review"
+    },
+    "489e1d11e5d8c40cd5687cbf22360237": {
+      "source": "Could not reach the chaos opponent service. Retry this turn once the connection returns. The Universe simulator handles coin flips and verdicts, not the LLM opponent.",
+      "text": "Не удалось достучаться до сервиса хаос-оппонента. Попробуй переходить, когда коннект вернётся. Симулятор Вселенной рулит подбрасываниями монеты и вердиктами, а не LLM-оппонент.",
+      "status": "needs-review"
+    },
+    "ddbc81f08fc9a9efe6fec0e76710c3c4": {
+      "source": "Declare victory",
+      "text": "Объявить победу",
+      "status": "needs-review"
+    },
+    "6b98a2fe285d201d3c3c7d60eb007d21": {
+      "source": "Invalid board.",
+      "text": "Невалидная доска.",
+      "status": "needs-review"
+    },
+    "857ccf501e3d5cb92473fa1eb4d9fee5": {
+      "source": "Opponent",
+      "text": "Оппонент",
+      "status": "needs-review"
+    },
+    "f8a6eee6de1a86836dfddcfde92285f1": {
+      "source": "Place {name} at {value0} spot {id}",
+      "text": "Поставь {name} на {value0} место {id}",
+      "status": "needs-review"
+    },
+    "0f1c7e0f9c468f4f5e945e5cb591a0b3": {
+      "source": "Resurrect onto an empty square.",
+      "text": "Воскреси на пустую клетку.",
+      "status": "needs-review"
+    },
+    "b4d370bb2f9b6c2b834069751df1c343": {
+      "source": "Stockfish timed out. Retry the turn.",
+      "text": "Stockfish таймаутнул. Попробуй переходить.",
+      "status": "needs-review"
+    },
+    "875a088c71ecf90847a8d83df2407391": {
+      "source": "That move needs a teleport cheat.",
+      "text": "Этому ходу нужен чит на телепорт.",
+      "status": "needs-review"
+    },
+    "51f502108c7cd98d7501d0a8f42dce69": {
+      "source": "That square already belongs to one of your pieces.",
+      "text": "Эта клетка уже занята одной из твоих фигур.",
+      "status": "needs-review"
+    },
+    "a6a730f10308956673951cd5ded0d546": {
+      "source": "The spirit is resting. Try again shortly.",
+      "text": "Дух отдыхает. Попробуй снова чуть позже.",
+      "status": "needs-review"
+    },
+    "6055a0008ed11c937b2c4ddd0697b891": {
+      "source": "The spirit lost its train of thought. Retry this turn.",
+      "text": "Дух потерял мысль. Попробуй переходить.",
+      "status": "needs-review"
+    },
+    "97199999b85248d8b3394a1f64edc78f": {
+      "source": "The spirit needs a moment. Try again shortly.",
+      "text": "Духу нужен момент. Попробуй чуть позже.",
+      "status": "needs-review"
+    },
+    "fb943e2c7bf1edd51b758521f5a21a1b": {
+      "source": "The spirit proposed an impossible board edit. Retry its turn.",
+      "text": "Дух предложил невозможный эдит доски. Попробуй переходить.",
+      "status": "needs-review"
+    },
+    "2372f61acdfd715dd35e1b656cba8dcf": {
+      "source": "Transform a non-king into a different non-king piece.",
+      "text": "Преврати не-короля в другую не-королевскую фигуру.",
+      "status": "needs-review"
+    },
+    "9258e257348c7e4f8c948d5ca16a35d5": {
+      "source": "Unknown action.",
+      "text": "Неизвестное действие.",
+      "status": "needs-review"
+    },
+    "cae8d14edd025e72c59dbab6f378c95a": {
+      "source": "You",
+      "text": "Ты",
+      "status": "needs-review"
+    },
+    "4da4c861bb5e54693080496c7f0edd86": {
+      "source": "your opponent",
+      "text": "твой оппонент",
+      "status": "needs-review"
+    },
+    "b445177ba69f0b6abf330a9854682e74": {
+      "source": "Empty square",
+      "text": "Пустая клетка",
+      "status": "needs-review"
+    },
+    "0c5018eb1255e5e2a2488c89382c1639": {
+      "source": "King in check",
+      "text": "Король под шахом",
+      "status": "needs-review"
+    },
+    "0de86e84523654186bf297d80ccde7e5": {
+      "source": "Opponent moved from here",
+      "text": "Противник ходил отсюда",
+      "status": "needs-review"
+    },
+    "1ba2e7ad855e1acca4bb93c23f41fffc": {
+      "source": "Opponent moved here",
+      "text": "Противник ходил сюда",
+      "status": "needs-review"
+    },
+    "639bae9ac6b3e1a84cebb7b403297b79": {
+      "source": "you",
+      "text": "ты",
+      "status": "needs-review"
+    },
+    "11dfd868d93bc2b0e4ce0bee5756f8b1": {
+      "source": "moved",
+      "text": "переместился",
+      "status": "needs-review"
+    },
+    "2802d83b625211b469b99fb7b688eb5c": {
+      "source": "teleported",
+      "text": "телепортировался",
+      "status": "needs-review"
+    },
+    "f3f6d0343d56ce88ce7958170ed05cb3": {
+      "source": "Floor",
+      "text": "Пол",
+      "status": "needs-review"
+    },
+    "aa0d528ba11ea1485d466dfe1ea40819": {
+      "source": "Surface",
+      "text": "Поверхность",
+      "status": "needs-review"
+    },
+    "94e8a499539d1a472f3b5dbbb85508c0": {
+      "source": "Wall",
+      "text": "Стена",
+      "status": "needs-review"
+    },
+    "3237fbc8204064c106cb9080088a17cb": {
+      "source": "Ceiling",
+      "text": "Потолок",
+      "status": "needs-review"
+    },
+    "c3e54f1fdff0bc370a15eeb50200cd9a": {
+      "source": "{color} {piece}",
+      "text": "{color} {piece}",
       "status": "needs-review"
     }
   }

@@ -1202,6 +1202,181 @@
       "source": "MADE FOR A LITTLE ESCAPE.",
       "text": "Para una pequeña escapada.",
       "status": "needs-review"
+    },
+    "724450b95db10316b243f1681a21f136": {
+      "source": "{actor}: {action} {from} → {to}",
+      "text": "{actor}: {action} de {from} → {to}",
+      "status": "needs-review"
+    },
+    "bae3eef6ca702d88fe347b4a9eeda7e7": {
+      "source": "{name}, in the room",
+      "text": "{name}, en la habitación",
+      "status": "needs-review"
+    },
+    "93edc05b798190347d2d6684b1267312": {
+      "source": "All three cheats have been used.",
+      "text": "Se han usado los tres trucos.",
+      "status": "needs-review"
+    },
+    "e31a27e0dd63afe11492c7cb49281daf": {
+      "source": "Chaos mode needs its server rate limiter configured.",
+      "text": "El modo Caos necesita que su limitador de velocidad del servidor esté configurado.",
+      "status": "needs-review"
+    },
+    "008486702187c2da5f3dff525de8996c": {
+      "source": "Choose one of your captured non-king pieces.",
+      "text": "Elige una de tus piezas capturadas que no sea el rey.",
+      "status": "needs-review"
+    },
+    "60ade9f944666b0d1ae4549558958fb1": {
+      "source": "Choose one of your pieces and a different destination.",
+      "text": "Elige una de tus piezas y un destino diferente.",
+      "status": "needs-review"
+    },
+    "489e1d11e5d8c40cd5687cbf22360237": {
+      "source": "Could not reach the chaos opponent service. Retry this turn once the connection returns. The Universe simulator handles coin flips and verdicts, not the LLM opponent.",
+      "text": "No se pudo contactar con el servicio del oponente Caos. Vuelve a intentarlo en este turno cuando la conexión se restablezca. El simulador del Universo gestiona los lanzamientos de moneda y los veredictos, no el oponente LLM.",
+      "status": "needs-review"
+    },
+    "ddbc81f08fc9a9efe6fec0e76710c3c4": {
+      "source": "Declare victory",
+      "text": "Declarar victoria",
+      "status": "needs-review"
+    },
+    "6b98a2fe285d201d3c3c7d60eb007d21": {
+      "source": "Invalid board.",
+      "text": "Tablero inválido.",
+      "status": "needs-review"
+    },
+    "857ccf501e3d5cb92473fa1eb4d9fee5": {
+      "source": "Opponent",
+      "text": "Oponente",
+      "status": "needs-review"
+    },
+    "f8a6eee6de1a86836dfddcfde92285f1": {
+      "source": "Place {name} at {value0} spot {id}",
+      "text": "Coloca {name} en el lugar {value0} {id}",
+      "status": "needs-review"
+    },
+    "0f1c7e0f9c468f4f5e945e5cb591a0b3": {
+      "source": "Resurrect onto an empty square.",
+      "text": "Resucita en una casilla vacía.",
+      "status": "needs-review"
+    },
+    "b4d370bb2f9b6c2b834069751df1c343": {
+      "source": "Stockfish timed out. Retry the turn.",
+      "text": "Stockfish ha agotado el tiempo. Vuelve a intentar el turno.",
+      "status": "needs-review"
+    },
+    "875a088c71ecf90847a8d83df2407391": {
+      "source": "That move needs a teleport cheat.",
+      "text": "Ese movimiento necesita un truco de teletransporte.",
+      "status": "needs-review"
+    },
+    "51f502108c7cd98d7501d0a8f42dce69": {
+      "source": "That square already belongs to one of your pieces.",
+      "text": "Esa casilla ya pertenece a una de tus piezas.",
+      "status": "needs-review"
+    },
+    "a6a730f10308956673951cd5ded0d546": {
+      "source": "The spirit is resting. Try again shortly.",
+      "text": "El espíritu está descansando. Inténtalo de nuevo en breve.",
+      "status": "needs-review"
+    },
+    "6055a0008ed11c937b2c4ddd0697b891": {
+      "source": "The spirit lost its train of thought. Retry this turn.",
+      "text": "El espíritu perdió el hilo. Vuelve a intentar este turno.",
+      "status": "needs-review"
+    },
+    "97199999b85248d8b3394a1f64edc78f": {
+      "source": "The spirit needs a moment. Try again shortly.",
+      "text": "El espíritu necesita un momento. Inténtalo de nuevo en breve.",
+      "status": "needs-review"
+    },
+    "fb943e2c7bf1edd51b758521f5a21a1b": {
+      "source": "The spirit proposed an impossible board edit. Retry its turn.",
+      "text": "El espíritu propuso una edición de tablero imposible. Vuelve a intentar su turno.",
+      "status": "needs-review"
+    },
+    "2372f61acdfd715dd35e1b656cba8dcf": {
+      "source": "Transform a non-king into a different non-king piece.",
+      "text": "Transforma una pieza que no sea el rey en otra pieza que no sea el rey.",
+      "status": "needs-review"
+    },
+    "9258e257348c7e4f8c948d5ca16a35d5": {
+      "source": "Unknown action.",
+      "text": "Acción desconocida.",
+      "status": "needs-review"
+    },
+    "cae8d14edd025e72c59dbab6f378c95a": {
+      "source": "You",
+      "text": "Tú",
+      "status": "needs-review"
+    },
+    "4da4c861bb5e54693080496c7f0edd86": {
+      "source": "your opponent",
+      "text": "tu oponente",
+      "status": "needs-review"
+    },
+    "c3e54f1fdff0bc370a15eeb50200cd9a": {
+      "source": "{color} {piece}",
+      "text": "{color} {piece}",
+      "status": "needs-review"
+    },
+    "b445177ba69f0b6abf330a9854682e74": {
+      "source": "Empty square",
+      "text": "Casilla vacía",
+      "status": "needs-review"
+    },
+    "0c5018eb1255e5e2a2488c89382c1639": {
+      "source": "King in check",
+      "text": "Rey en jaque",
+      "status": "needs-review"
+    },
+    "0de86e84523654186bf297d80ccde7e5": {
+      "source": "Opponent moved from here",
+      "text": "Tu oponente se movió desde aquí",
+      "status": "needs-review"
+    },
+    "1ba2e7ad855e1acca4bb93c23f41fffc": {
+      "source": "Opponent moved here",
+      "text": "Tu oponente se movió aquí",
+      "status": "needs-review"
+    },
+    "639bae9ac6b3e1a84cebb7b403297b79": {
+      "source": "you",
+      "text": "tú",
+      "status": "needs-review"
+    },
+    "11dfd868d93bc2b0e4ce0bee5756f8b1": {
+      "source": "moved",
+      "text": "se movió",
+      "status": "needs-review"
+    },
+    "2802d83b625211b469b99fb7b688eb5c": {
+      "source": "teleported",
+      "text": "se teletransportó",
+      "status": "needs-review"
+    },
+    "f3f6d0343d56ce88ce7958170ed05cb3": {
+      "source": "Floor",
+      "text": "Suelo",
+      "status": "needs-review"
+    },
+    "aa0d528ba11ea1485d466dfe1ea40819": {
+      "source": "Surface",
+      "text": "Superficie",
+      "status": "needs-review"
+    },
+    "94e8a499539d1a472f3b5dbbb85508c0": {
+      "source": "Wall",
+      "text": "Pared",
+      "status": "needs-review"
+    },
+    "3237fbc8204064c106cb9080088a17cb": {
+      "source": "Ceiling",
+      "text": "Techo",
+      "status": "needs-review"
     }
   }
 }

@@ -1,3 +1,4 @@
+import { t } from '@hedgeling/i18n/runtime';
 import { Chess, type Color, type PieceSymbol, type Square } from 'chess.js';
 export type Mode = 'easy' | 'medium' | 'hard' | 'chaos';
 export type Faction = 'goblins' | 'hedgelings';
@@ -77,7 +78,7 @@ export function applyChaos(state: ChaosState, action: ChaosAction, human: boolea
   return next;
 }
 export function normalEnding(chess: Chess): string | null {
-  if (chess.isCheckmate()) return `${chess.turn() === 'w' ? 'Black' : 'White'} wins by checkmate.`;
+  if (chess.isCheckmate()) return t('{value0} wins by checkmate.', { value0: chess.turn() === 'w' ? t('Black') : t('White') });
   if (chess.isStalemate()) return 'Draw by stalemate.';
   if (chess.isThreefoldRepetition()) return 'Draw by threefold repetition.';
   if (chess.isInsufficientMaterial()) return 'Draw by insufficient material.';

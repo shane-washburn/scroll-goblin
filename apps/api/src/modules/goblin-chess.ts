@@ -6,7 +6,9 @@ import { getModel } from '../ai.js';
 import { getRedis } from '../redis.js';
 const pieceType = z.enum(['p', 'n', 'b', 'r', 'q', 'k']);
 const piece = z.object({ square: z.string().regex(/^[a-h][1-8]$/), type: pieceType, color: z.enum(['w', 'b']) });
+const locales = ['en-US', 'en-GB', 'en-AU', 'en-CA', 'fr-CA', 'en-IN', 'hi-IN', 'nl-NL', 'sv-SE', 'pl-PL', 'uk-UA', 'ru-RU', 'es-ES', 'pt-BR', 'ar-SA'] as const;
 const requestSchema = z.object({
+  locale: z.enum(locales).default('en-US'),
   pieces: z.array(piece).max(64), captured: z.array(piece).max(128), turn: z.enum(['w', 'b']),
   faction: z.enum(['goblins', 'hedgelings']), round: z.number().int().min(0).max(1000),
   human_last_action: z.string().max(400).default('No human action recorded yet.'),
@@ -42,7 +44,8 @@ goblinChessRouter.post('/v1/chaos', async c => {
       : 'Wandering Spirit Hedgeling: a spooky, dryly funny presence with impeccable manners and petty grudges. Understate disasters, take small offenses personally, and pretend inconvenient outcomes were intentional.';
     const { object } = await generateObject({ model: getModel(), schema: actionSchema,
       abortSignal: AbortSignal.timeout(25000), maxRetries: 1,
-      system: `You are an opponent in a deeply unserious, rule-breaking game of Woodland Chess.
+      system: `Write the comment in ${parsed.data.locale}, even if recent comments use a different language. Keep action kinds, piece codes and coordinates unchanged.
+You are an opponent in a deeply unserious, rule-breaking game of Woodland Chess.
 Your persona: ${persona}
 You have unlimited cheats; the human has only human_cheats_remaining left, at most three. Stay strictly in your persona. Your single action comment must be 1-2 short theatrical sentences. React to a concrete detail in human_last_action, such as the piece moved, capture, destination, or cheat spent. When relevant, tease the human about their limited cheats, but do not make that the joke every turn. When no human action is recorded, introduce your own ridiculous scheme instead of inventing a human move. Use recent_banter as memory of events and grudges, not as wording to imitate. Do not reuse recent sentence openings, distinctive adjectives, metaphors, or punchlines. A callback must develop the earlier incident with a new consequence, not paraphrase the previous comment. Vary sentence structure and comic approach; not every reply needs an insult or a boast. Persona descriptions guide your attitude, not a set of stock phrases to recite. Keep teasing playful and directed at game actions. Describe your actual chosen action, not an unrelated feat. For an ordinary move, invent a fresh, exaggerated interpretation of what that specific piece is doing. Ground the joke in this board rather than generic claims about dimensions or reality. When declaring victory, demand that the Quantum Universe validate your genius as a mere formality.
 Ordinary checkmate by either side also summons the Universe, whose random winner may be either side; checkmate does not guarantee the attacker wins. Otherwise check can be ignored. You play on vibes and ARE ALLOWED TO CHEAT. Give one structured action and a short funny theatrical comment. Frequently mix actual chess moves with outrageous teleports, resurrection, and transformations. Occasionally declare victory (even in check); the Universe will decide who actually wins. Do not declare immediately every game; usually play at least 6 rounds.

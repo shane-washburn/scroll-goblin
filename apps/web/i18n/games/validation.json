@@ -1,62 +1,62 @@
 {
   "status": "machine-drafts-require-language-and-in-browser-review",
-  "messages": 240,
+  "messages": 273,
   "locales": {
     "en-GB": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "en-AU": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "en-CA": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "fr-CA": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "en-IN": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "hi-IN": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "nl-NL": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "sv-SE": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "pl-PL": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "uk-UA": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "ru-RU": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "es-ES": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "pt-BR": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     },
     "ar-SA": {
-      "valid": 240,
-      "total": 240
+      "valid": 273,
+      "total": 273
     }
   },
   "failures": []

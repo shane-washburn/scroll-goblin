@@ -1,3 +1,5 @@
+import { recoverChaosTurn } from './recovery';
+import { localizeError } from './messages';
 import { t } from '@hedgeling/i18n/runtime';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Chess, type PieceSymbol, type Square } from 'chess.js';
@@ -20,13 +22,13 @@ function afterChaos(m: Match, action: ChaosAction, human: boolean): Match {
   const chaos = applyChaos(m.chaos, action, human);
   const pending = chaosVerdictRequest(chaos, action);
   const memory = rememberChaos(m.memory, m.chaos, action, human);
-  const text = action.comment || `${human ? 'You' : 'Opponent'}: ${action.kind} ${action.from ?? action.piece ?? ''}${action.to ? ' → ' + action.to : ''}`;
+  const text = action.comment || t('{actor}: {action} {from} → {to}', { actor: human ? t('You') : t('Opponent'), action: t(({ move: 'Move', teleport: 'Teleport', resurrect: 'Revive', transform: 'Transform', declare: 'Declare victory' })[action.kind]), from: action.from ?? (action.piece ? t(roles[action.piece]) : ''), to: action.to ?? '' });
   const actor = action.from ? m.chaos.pieces.find(p => p.square === action.from) : undefined;
-  const pieceName = names[otherFaction(m.assignment.faction)][actor?.type ?? action.piece ?? 'p'];
+  const pieceName = t(names[otherFaction(m.assignment.faction)][actor?.type ?? action.piece ?? 'p']);
   const label = action.kind === 'declare' ? 'Opponent declared victory — the Universe will decide.'
-    : action.kind === 'transform' ? `Opponent transformed ${pieceName} on ${action.from} into ${roles[action.piece!]}.`
+    : action.kind === 'transform' ? `Opponent transformed ${pieceName} on ${action.from} into ${t(roles[action.piece!])}.`
     : action.kind === 'resurrect' ? `Opponent resurrected ${pieceName} on ${action.to}.`
-    : `Opponent ${action.kind === 'teleport' ? 'teleported' : 'moved'} ${pieceName}: ${action.from} → ${action.to}.`;
+    : `Opponent ${action.kind === 'teleport' ? t('teleported') : t('moved')} ${pieceName}: ${action.from} → ${action.to}.`;
   return { ...m, memory, lastOpponent: human ? undefined : { from: action.from, to: action.to ?? action.from, label }, chaos, pending, log: [...m.log, text, ...(pending?.declaration && action.kind !== 'declare' ? [chaos.pieces.filter(p=>p.type==='k').length === 2 ? 'Checkmate! The Universe will decide who actually wins.' : 'A king has fallen. The Universe will decide who actually wins.'] : [])] };
 }
 export default function ChessPage() {
@@ -86,22 +88,19 @@ export default function ChessPage() {
         if (m.pending) {
           const result = await verdict(m.assignment.session, m.seq + 1, m.pending.round, m.pending.declaration, (m.quantumProof ?? m.assignment.proof).source);
           if (cancelled) return;
-          const outcome = result.ended ? `The Universe declares ${result.winner === player ? 'you' : 'your opponent'} the winner. Cosmic paperwork is final.` : 'The Universe allows this nonsense to continue.';
+          const outcome = result.ended ? `The Universe declares ${result.winner === player ? t('you') : t('your opponent')} the winner. Cosmic paperwork is final.` : 'The Universe allows this nonsense to continue.';
           setMatch({ ...m, quantumProof: result.proof, seq: m.seq + 1, pending: null, result: result.ended ? outcome : null, outcome: result.ended ? result.winner === player ? 'win' : 'loss' : undefined, log: [...m.log, outcome] });
         } else if (m.mode === 'chaos') {
-          let lastError: string | undefined;
-          for (let attempt = 0; attempt < 2; attempt++) {
-            const action = await llmMove(m.chaos, otherFaction(m.assignment.faction), lastError, { ...readChaosMemory(m.memory), human_cheats_remaining: m.chaos.cheats });
-            if (cancelled) return;
-            try { setMatch(afterChaos(m, action, false)); return; } catch (e) { lastError = (e as Error).message; }
-          }
-          throw new Error('The spirit proposed an impossible board edit. Retry its turn.');
+          const action = await recoverChaosTurn(m.chaos,
+            lastError => llmMove(m.chaos, otherFaction(m.assignment.faction), lastError, { ...readChaosMemory(m.memory), human_cheats_remaining: m.chaos.cheats }),
+            () => cancelled);
+          if (action && !cancelled) setMatch(afterChaos(m, action, false));
         } else {
           if (!engine.current) engine.current = new Engine(m.mode);
           const uci = await engine.current.move(chessOf(m).fen());
           if (cancelled) return;
           const c = chessOf(m); const move = c.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] });
-          setMatch({ ...m, lastOpponent: { from: move.from, to: move.to, label: `Opponent moved ${names[otherFaction(m.assignment.faction)][move.piece]}: ${move.from} → ${move.to}${move.san.includes('O-O') ? ' (castling)' : ''}${move.promotion ? ` · promoted to ${roles[move.promotion]}` : ''}.` }, pgn: c.pgn(), result: normalEnding(c), log: [...m.log, `${move.color === 'w' ? 'White' : 'Black'} · ${move.san}`] });
+          setMatch({ ...m, lastOpponent: { from: move.from, to: move.to, label: `Opponent moved ${t(names[otherFaction(m.assignment.faction)][move.piece])}: ${move.from} → ${move.to}${move.san.includes('O-O') ? ' (castling)' : ''}${move.promotion ? ` · promoted to ${roles[move.promotion]}` : ''}.` }, pgn: c.pgn(), result: normalEnding(c), log: [...m.log, `${move.color === 'w' ? 'White' : 'Black'} · ${move.san}`] });
         }
       } catch (e) { if (!cancelled) { setError((e as Error).message); engine.current?.dispose(); engine.current = null; } }
       finally { if (!cancelled) setBusy(false); }
@@ -152,7 +151,7 @@ export default function ChessPage() {
   function reset() { setReviewEnding(false); engine.current?.dispose(); engine.current = null; setMatch(null); setAssignment(null); setSaved(null); setSelected(null); setError(''); setBusy(false); setConfirmNew(false); session.current = crypto.randomUUID(); try { localStorage.removeItem(SAVE); } catch {} }
   const endingOutcome: Outcome = match?.outcome ?? (chess.isCheckmate()
     ? chess.turn() === player ? 'loss' : 'win'
-    : match?.result?.startsWith('Draw') ? 'draw'
+    : match?.mode !== 'chaos' && chess.isDraw() ? 'draw'
     : match?.result?.includes('declares you the winner') ? 'win' : 'loss');
   const latestBanter = match?.mode === 'chaos' ? readChaosMemory(match.memory).recent_banter.at(-1) : undefined;
   useEffect(() => { if (journal.current && followJournal.current) journal.current.scrollTop = journal.current.scrollHeight; }, [match?.log.length, chronicleOpen]);
@@ -166,7 +165,7 @@ export default function ChessPage() {
       {saved && <button className="gc-secondary" onClick={() => { setMatch(saved); setSaved(null); }}>Resume your woodland battle</button>}
       </div><FactionCoin faction={assignment?.faction} busy={busy} onFlip={summon} /></section>
       {assignment && <section className="gc-choose"><p className="gc-eyebrow">02 / CHOOSE YOUR OPPONENT</p><div className="gc-tiers">{(Object.keys(tiers) as Mode[]).map(t => <button key={t} className={`gc-tier ${mode === t ? 'active' : ''}`} onClick={() => setMode(t)} aria-pressed={mode === t}><small>{tiers[t].label}</small><h3>{tiers[t][otherFaction(faction)]}</h3><p>{tiers[t].description}</p><span>{t === 'chaos' ? '✦ RULES ARE OPTIONAL' : '♟ STOCKFISH 19'}</span></button>)}</div><button className="gc-primary" onClick={begin}>Deploy the board →</button>{mode === 'hard' && <p className="gc-fine">The full NNUE engine downloads about 95 MB once, then runs on your device.</p>}</section>}
-      {error && <p className="gc-error" role="alert">{error} <button disabled={busy} onClick={summon}>Try again</button></p>}
+      {error && <p className="gc-error" role="alert">{localizeError(error)} <button disabled={busy} onClick={summon}>Try again</button></p>}
     </> : <>
       <div className="gc-matchbar"><div><small>{t('YOUR ALLEGIANCE')}</small><strong>{faction === 'goblins' ? 'Scroll Goblins' : 'Hedgelings'} <span> / {player === 'w' ? 'White' : 'Black'}</span></strong></div><div><small>{t('YOUR OPPONENT')}</small><strong>{tiers[match.mode][otherFaction(faction)]}</strong></div><button onClick={() => setConfirmNew(true)}>New match</button></div>
       <div className="gc-play"><div className="gc-table-column">
@@ -175,19 +174,19 @@ export default function ChessPage() {
       <p className="gc-last-move" role="status">{match.lastOpponent?.label}</p>
       <div className="gc-piece-info">{selectedPiece ? <><strong>{names[selectedPiece.color === player ? faction : otherFaction(faction)][selectedPiece.type]}</strong><span>{roles[selectedPiece.type]} · {selected}{threatened ? ' · This piece is under attack!' : ''}</span></> : <span>Every little creature has a role. Select one to meet it.</span>}</div>
       </div><aside className="gc-sidebar">
-        <section className="gc-panel gc-command-dock" aria-label="Game controls"><p className="gc-eyebrow">{match.result ? 'THE FINAL WORD' : match.pending ? 'COSMIC DELIBERATION' : 'AT THE TABLE'}</p><h2 aria-live="polite">{match.result ? 'The battle is over.' : match.pending ? 'The Universe is deciding…' : turn === player ? 'Your move.' : 'A scheme is brewing…'}</h2><p>{match.result || (match.mode !== 'chaos' && chess.isCheck() ? 'Check! Protect your king.' : busy ? match.mode === 'hard' ? 'Loading / thinking with full NNUE Stockfish…' : 'A little patience. Great nonsense takes time.' : 'Take your time.')}</p>
+        <section className="gc-panel gc-command-dock" aria-label="Game controls"><p className="gc-eyebrow">{match.result ? 'THE FINAL WORD' : match.pending ? 'COSMIC DELIBERATION' : 'AT THE TABLE'}</p><h2 aria-live="polite">{match.result ? 'The battle is over.' : match.pending ? 'The Universe is deciding…' : turn === player ? 'Your move.' : 'A scheme is brewing…'}</h2><p>{(match.result ? t(match.result) : '') || (match.mode !== 'chaos' && chess.isCheck() ? 'Check! Protect your king.' : busy ? match.mode === 'hard' ? 'Loading / thinking with full NNUE Stockfish…' : 'A little patience. Great nonsense takes time.' : 'Take your time.')}</p>
         {match.mode !== 'chaos' && <button disabled={locked || !match.undos || chess.history().length < (player === 'w' ? 2 : 3)} onClick={undo}>{t('↶ Undo decision')} <span>{t('{count, plural, one {# undo left} other {# undos left}}', { count: match.undos })}</span></button>}
         {match.mode === 'easy' && <label className="gc-checkbox"><input type="checkbox" checked={danger} onChange={e => setDanger(e.target.checked)} /> {t('Warn about attacked pieces')}</label>}
         {match.mode === 'chaos' && !match.result && <><p className="gc-cheat-count">{t('✦ {count, plural, one {# cheat remaining} other {# cheats remaining}}', { count: match.chaos.cheats })}</p><div className="gc-action-picker" role="group" aria-label="Choose action">{([['move','♟','Move'],['teleport','↗','Teleport'],['resurrect','✦','Revive'],['transform','✧','Transform']] as const).map(([id,icon,label])=><button key={id} aria-pressed={cheat===id} disabled={locked || (id!=='move'&&!match.chaos.cheats)} onClick={()=>{setCheat(id);setSelected(null);}}><span aria-hidden="true">{icon}</span>{label}</button>)}</div>
         {(cheat === 'transform' || cheat === 'resurrect') && <select aria-label="Piece type" value={cheatPiece} disabled={locked} onChange={e => setCheatPiece(e.target.value as PieceSymbol)}>{(['q', 'r', 'b', 'n', 'p'] as PieceSymbol[]).map(p => <option key={p} value={p}>{roles[p]}</option>)}</select>}
         {cheat === 'transform' && <button disabled={locked || !selected || !match.chaos.cheats} onClick={() => chaosAction({ kind: 'transform', from: selected!, piece: cheatPiece })}>Transform selected piece</button>}
         <p className="gc-fine">{cheat === 'resurrect' ? 'Choose a captured type, then an empty square.' : cheat === 'transform' ? 'Select your non-king piece, choose its new type, then transform.' : cheat === 'teleport' ? 'Select your piece, then any empty or enemy square.' : selected ? 'Choose a highlighted square to move your piece.' : 'Select a piece, then its destination. Cheats each use one turn.'}</p></>}
-        {error && <div className="gc-error" role="alert">{error}{(turn !== player || match.pending) && <button disabled={busy} onClick={() => setRetry(x => x + 1)}>Retry this turn</button>}</div>}
+        {error && <div className="gc-error" role="alert">{localizeError(error)}{(turn !== player || match.pending) && <button disabled={busy} onClick={() => setRetry(x => x + 1)}>Retry this turn</button>}</div>}
         {!match.result && <button className="gc-quiet" disabled={busy || !!match.pending} onClick={() => { setMatch({ ...match, outcome: 'loss', result: 'You resigned. Your opponent wins.' }); }}>Resign</button>}
         {match.result && <><button className="gc-primary" onClick={reset}>Another little war →</button><button onClick={() => setReviewEnding(false)}>View result</button></>}
         </section>
 
-        <details className="gc-panel gc-journal" open={chronicleOpen} onToggle={e=>setChronicleOpen(e.currentTarget.open)}><summary>{t('Battle chronicle')} <span>{t('{count, plural, one {# event} other {# events}}', { count: match.log.length })}</span></summary><p className="gc-journal-intro">Every move. Every dubious claim.</p><div ref={journal} role="log" aria-label="Battle history" onScroll={()=>{const el=journal.current!;followJournal.current=el.scrollHeight-el.scrollTop-el.clientHeight<48;}}>{match.log.map((line, i) => <p key={i} className={line===latestBanter?'gc-journal-banter':''}><small>{String(i+1).padStart(2,'0')}</small>{line}</p>)}</div><button className="gc-journal-latest" onClick={()=>{followJournal.current=true;journal.current?.scrollTo({top:journal.current.scrollHeight,behavior:'instant'});}}>Latest event ↓</button></details>
+        <details className="gc-panel gc-journal" open={chronicleOpen} onToggle={e=>setChronicleOpen(e.currentTarget.open)}><summary>{t('Battle chronicle')} <span>{t('{count, plural, one {# event} other {# events}}', { count: match.log.length })}</span></summary><p className="gc-journal-intro">Every move. Every dubious claim.</p><div ref={journal} role="log" aria-label="Battle history" onScroll={()=>{const el=journal.current!;followJournal.current=el.scrollHeight-el.scrollTop-el.clientHeight<48;}}>{match.log.map((line, i) => <p key={i} className={line===latestBanter?'gc-journal-banter':''}><small>{String(i+1).padStart(2,'0')}</small>{t(line)}</p>)}</div><button className="gc-journal-latest" onClick={()=>{followJournal.current=true;journal.current?.scrollTo({top:journal.current.scrollHeight,behavior:'instant'});}}>Latest event ↓</button></details>
       </aside></div>
       {match.result && !reviewEnding && <Ending outcome={endingOutcome} reason={match.result} faction={faction} onReview={() => setReviewEnding(true)} onRestart={reset} />}
       {promotion && <div className="gc-dialog" role="dialog" aria-modal="true" aria-label="Choose promotion"><div className="gc-panel"><h2>A grunt earns a promotion.</h2><p>Choose its new role.</p>{(['q', 'r', 'b', 'n'] as PieceSymbol[]).map(p => <button key={p} onClick={() => moveNormal(promotion.from, promotion.to, p)}>{glyphs[p]} {roles[p]}</button>)}<button onClick={() => setPromotion(null)}>Cancel</button></div></div>}

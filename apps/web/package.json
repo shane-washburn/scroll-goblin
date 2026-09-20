@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm prepare:chess && vite",
-    "build": "pnpm prepare:chess && tsc -b && vite build && tsx scripts/generate-seo.mts",
+    "build": "node ../../scripts/install-game-translations.mjs && pnpm prepare:chess && tsc -b && vite build && tsx scripts/generate-seo.mts",
     "preview": "vite preview",
     "i18n:extract": "hedgeling extract --write",
     "i18n:diagnostics": "hedgeling diagnostics",
