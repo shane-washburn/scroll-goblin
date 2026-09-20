@@ -1,0 +1,1382 @@
+{
+  "schemaVersion": 1,
+  "locale": "nl-NL",
+  "status": "machine-draft-needs-review",
+  "translations": {
+    "19d9b4abdfa59e7adbac0a33c3a84fe7": {
+      "source": "· This piece is under attack!",
+      "text": "· Dit stuk wordt aangevallen!",
+      "status": "needs-review"
+    },
+    "73e1f404296bd3a4de2e4c58f0dc2c6e": {
+      "source": "{count, plural, one {# event} other {# events}}",
+      "text": "{count, plural, one {# gebeurtenis} other {# gebeurtenissen}}",
+      "status": "needs-review"
+    },
+    "1252113be7bf97fff1f51e45f7fbbee3": {
+      "source": "{count, plural, one {# undo left} other {# undos left}}",
+      "text": "{count, plural, one {# keer ongedaan maken over} other {# keren ongedaan maken over}}",
+      "status": "needs-review"
+    },
+    "052ce64d95f3275ada0a7facbcb67858": {
+      "source": "{name} placed. Mia and Luna are coming to see!",
+      "text": "{name} is geplaatst. Mia en Luna komen kijken!",
+      "status": "needs-review"
+    },
+    "e764859a8fcf272fd24e505ecab1a1f8": {
+      "source": "{name} selected. Choose a glowing spot.",
+      "text": "{name} is gekozen. Kies een gloeiende plek.",
+      "status": "needs-review"
+    },
+    "19eea83c7cc7ffac4eb50856cb9091db": {
+      "source": "{value0} wins by checkmate.",
+      "text": "{value0} wint door schaakmat.",
+      "status": "needs-review"
+    },
+    "739fc1b45ab56e90da9847969933e96a": {
+      "source": "<0>SIMULATED UNIVERSE</0><1>This match uses simulated quantum measurements. Play continues even when hardware results are unavailable.</1>",
+      "text": "<0>GESIMULEERD UNIVERSUM</0><1>Deze wedstrijd maakt gebruik van gesimuleerde kwantummetingen. Het spel gaat door, zelfs als hardwareresultaten niet beschikbaar zijn.</1>",
+      "status": "needs-review"
+    },
+    "984605d8e33822e75d6bbb76dc8171cb": {
+      "source": "♟ STOCKFISH 19",
+      "text": "♟ STOCKFISH 19",
+      "status": "needs-review"
+    },
+    "c035fc1b0f57eebb0fca70cc3844f3e4": {
+      "source": "✦ {count, plural, one {# cheat remaining} other {# cheats remaining}}",
+      "text": "✦ {count, plural, one {# cheat over} other {# cheats over}}",
+      "status": "needs-review"
+    },
+    "8bc5f04830ab5a18804bacc32b4f5683": {
+      "source": "✦ RULES ARE OPTIONAL",
+      "text": "✦ REGELS ZIJN OPTIONEEL",
+      "status": "needs-review"
+    },
+    "93f6526debd524d41c08a47329523dc2": {
+      "source": "🎀 <0>Luna</0>",
+      "text": "🎀 <0>Luna</0>",
+      "status": "needs-review"
+    },
+    "e8d6a462416ae294b09d993034fb1f2f": {
+      "source": "🤠 <0>Mia</0>",
+      "text": "🤠 <0>Mia</0>",
+      "status": "needs-review"
+    },
+    "ec6da5223e2386548ead74373c646ffe": {
+      "source": "02 / CHOOSE YOUR OPPONENT",
+      "text": "02 / KIES JE TEGENSTANDER",
+      "status": "needs-review"
+    },
+    "fac1f3039032413d67fff36fd57f45fa": {
+      "source": "2D / keyboard board",
+      "text": "2D / toetsenbordbord",
+      "status": "needs-review"
+    },
+    "35083de990bf0f0e319171b0a8a63c60": {
+      "source": "3D could not start on this device. Try a browser with WebGL enabled.",
+      "text": "3D kon niet starten op dit apparaat. Probeer een browser met WebGL ingeschakeld.",
+      "status": "needs-review"
+    },
+    "7a5f57981e3c3519fee1df50512cac62": {
+      "source": "3D miniatures",
+      "text": "3D miniaturen",
+      "status": "needs-review"
+    },
+    "57b536dd828070f08002b5eec56ec4c3": {
+      "source": "A cheating LLM, three cheats of your own, and the Universe as referee.",
+      "text": "Een valsspelende LLM, drie eigen cheats en het Universum als scheidsrechter.",
+      "status": "needs-review"
+    },
+    "3b644c39e255153d301edd87dc9810b5": {
+      "source": "A gentle first adventure. Three takebacks and optional danger warnings.",
+      "text": "Een zachtaardig eerste avontuur. Drie keer terugdraaien en optionele gevaarwaarschuwingen.",
+      "status": "needs-review"
+    },
+    "215c0a278a815abe0e38c54c44821e6d": {
+      "source": "A grunt earns a promotion.",
+      "text": "Een pion verdient promotie.",
+      "status": "needs-review"
+    },
+    "ef27003c7edbbd144be764e7a1e0d639": {
+      "source": "A king has fallen. The Universe will decide who actually wins.",
+      "text": "Een koning is gevallen. Het Universum beslist wie er echt wint.",
+      "status": "needs-review"
+    },
+    "a76a17de1d727e39c9ea89340449bd8c": {
+      "source": "A little cunning. A little mercy. One takeback.",
+      "text": "Een beetje sluwheid. Een beetje genade. Eén keer terugdraaien.",
+      "status": "needs-review"
+    },
+    "06334e1fc828a889739015c26a865946": {
+      "source": "A little patience. Great nonsense takes time.",
+      "text": "Een beetje geduld. Grote onzin kost tijd.",
+      "status": "needs-review"
+    },
+    "2fb3c2c8405575ec49566d1fbfc6ea10": {
+      "source": "A little room, a world of treasures. Decorate and play with Mia and Luna.",
+      "text": "Een kamertje, een wereld vol schatten. Versier en speel met Mia en Luna.",
+      "status": "needs-review"
+    },
+    "cf9daeedbe8973e46a3b81d82eeb3d64": {
+      "source": "A LITTLE ROOM. A WHOLE WORLD.",
+      "text": "EEN KLEIN KAMERTJE. EEN HELE WERELD.",
+      "status": "needs-review"
+    },
+    "c99f4ceb3a2881421e77d72e7d00dcca": {
+      "source": "A MOMENT FOR THE FALLEN",
+      "text": "EEN MOMENT VOOR DE GEVALLENEN",
+      "status": "needs-review"
+    },
+    "52055bf910eb53134c9e50a3b6d635e2": {
+      "source": "A new match replaces your saved game.",
+      "text": "Een nieuwe wedstrijd vervangt je opgeslagen spel.",
+      "status": "needs-review"
+    },
+    "bab32a3bc14eff00a7fc87be5f67cc63": {
+      "source": "A scheme is brewing…",
+      "text": "Er broeit een plan…",
+      "status": "needs-review"
+    },
+    "2805af1f11cb373446313a65ee234f88": {
+      "source": "A SMALL WAR. A VERY STRANGE UNIVERSE.",
+      "text": "EEN KLEINE OORLOG. EEN HEEL VREEMD UNIVERSUM.",
+      "status": "needs-review"
+    },
+    "6694e18cdb57d7a96cef57f0d06d224e": {
+      "source": "A takeback: the previous decision is yours again.",
+      "text": "Een terugdraai: de vorige beslissing is weer van jou.",
+      "status": "needs-review"
+    },
+    "a8ba694623d73d3eb1d148c10fc0de92": {
+      "source": "Acorn Bombardier",
+      "text": "Eikelbombardier",
+      "status": "needs-review"
+    },
+    "2b878331b3b280c5245aad71d8d5e01e": {
+      "source": "Acoustic guitar",
+      "text": "Akoestische gitaar",
+      "status": "needs-review"
+    },
+    "b3f74fdec760db2287ee0a590d860dd5": {
+      "source": "Alebrije wooden creature",
+      "text": "Alebrije houten wezen",
+      "status": "needs-review"
+    },
+    "a1eb70f4d5dc35ab5aae649ef89d08dc": {
+      "source": "All games are untimed. White moves first. Easy gives three takebacks; medium gives one. Each takeback rewinds your move and the reply. Normal chess includes castling, en passant, promotion and draws.",
+      "text": "Alle spellen zijn ongetimed. Wit begint. Makkelijk geeft drie terugnames; gemiddeld geeft één. Elke terugname spoelt jouw zet en de reactie terug. Normaal schaken omvat rokeren, en passant, promotie en remises.",
+      "status": "needs-review"
+    },
+    "3e6defd685231cdd12065add41996c89": {
+      "source": "All objects",
+      "text": "Alle objecten",
+      "status": "needs-review"
+    },
+    "e0044fb3d8d703c680f4ae5e85df457c": {
+      "source": "An honorable draw.",
+      "text": "Een eervolle remise.",
+      "status": "needs-review"
+    },
+    "a46bb4e0f051ea2607499ed27de65fa7": {
+      "source": "Another little war →",
+      "text": "Nog een kleine oorlog →",
+      "status": "needs-review"
+    },
+    "7d08578c27c773dbe54adced0ceb3af9": {
+      "source": "AT THE TABLE",
+      "text": "AAN TAFEL",
+      "status": "needs-review"
+    },
+    "872d8319b328fe4e50111efd0fb5ba2f": {
+      "source": "Back in the toy basket.",
+      "text": "Terug in de speelgoedmand.",
+      "status": "needs-review"
+    },
+    "0370e0e0ac7dd351864560652ecd29ea": {
+      "source": "Banig woven mat",
+      "text": "Banig geweven mat",
+      "status": "needs-review"
+    },
+    "05c11ed32b534389b2f14e1c71fd9aae": {
+      "source": "Battle history",
+      "text": "Gevechtsgeschiedenis",
+      "status": "needs-review"
+    },
+    "3aa4584e547efba20238772d4af5c03d": {
+      "source": "Bishop",
+      "text": "Loper",
+      "status": "needs-review"
+    },
+    "e90dfb84e30edf611e326eeb04d680de": {
+      "source": "Black",
+      "text": "Zwart",
+      "status": "needs-review"
+    },
+    "b9907754f0467c20425915ba566ab880": {
+      "source": "BLACK AT HOME",
+      "text": "ZWART THUIS",
+      "status": "needs-review"
+    },
+    "cc61304023345642816ad6e7e9d7a57c": {
+      "source": "Bluebonnet window box",
+      "text": "Bluebonnet bloembak",
+      "status": "needs-review"
+    },
+    "c635cd31fdfe6b4887531458f2756857": {
+      "source": "Both armies lay down their crowns. Some battles end with a shared cup of tea.",
+      "text": "Beide legers leggen hun kronen neer. Sommige gevechten eindigen met een gedeeld kopje thee.",
+      "status": "needs-review"
+    },
+    "ae7623103cb5665530d1878a3b61486f": {
+      "source": "Bunny slippers",
+      "text": "Konijnensloffen",
+      "status": "needs-review"
+    },
+    "ea4788705e6873b424c65e91c2846b19": {
+      "source": "Cancel",
+      "text": "Annuleren",
+      "status": "needs-review"
+    },
+    "9f3930f3396cf6289eb3c6d65fff5c19": {
+      "source": "Capiz shell nightlight",
+      "text": "Capiz schelpen nachtlampje",
+      "status": "needs-review"
+    },
+    "ef1244de30348e17cf2247544d19fe25": {
+      "source": "Carabao plush",
+      "text": "Carabao knuffel",
+      "status": "needs-review"
+    },
+    "7e8214916782021125d0afd9d9d9ee66": {
+      "source": "Chaos",
+      "text": "Chaos",
+      "status": "needs-review"
+    },
+    "991384f36a13c11e2437292fbbbf8ed8": {
+      "source": "Chaos: check can be ignored, but ordinary checkmate, capturing a king, or an LLM victory declaration calls the Universe. Cheats do not count as checkmate escapes. Castling and en passant are disabled. You get three cheats, each using a turn. After round five, the Universe may end any completed round and choose either side as winner.",
+      "text": "Chaos: schaak kan worden genegeerd, maar een gewone schaakmat, het slaan van een koning, of een LLM-overwinningsverklaring roept het Universum op. Cheats tellen niet als ontsnappingen aan schaakmat. Rokereren en en passant zijn uitgeschakeld. Je krijgt drie cheats, elk kost een beurt. Na ronde vijf kan het Universum elke voltooide ronde beëindigen en een van beide partijen als winnaar kiezen.",
+      "status": "needs-review"
+    },
+    "e76d16de100ee3a2b701f44fa1209437": {
+      "source": "Check! Protect your king.",
+      "text": "Schaak! Bescherm je koning.",
+      "status": "needs-review"
+    },
+    "dd85fc460c29de503154f7f554f3d093": {
+      "source": "Checkmate! The Universe will decide who actually wins.",
+      "text": "Schaakmat! Het Universum beslist wie er werkelijk wint.",
+      "status": "needs-review"
+    },
+    "4533e086fc90571576318ce90e4bd233": {
+      "source": "Chessboard",
+      "text": "Schaakbord",
+      "status": "needs-review"
+    },
+    "360fa26472702ec682fb0b9839aac235": {
+      "source": "Chief Forager",
+      "text": "Hoofdverzamelaar",
+      "status": "needs-review"
+    },
+    "fbc1d341aa249e244fba07acea4f018b": {
+      "source": "Choose a captured type, then an empty square.",
+      "text": "Kies een geslagen stuk, daarna een leeg veld.",
+      "status": "needs-review"
+    },
+    "d7af5100767e3d8757edad4518069243": {
+      "source": "Choose a highlighted square to move your piece.",
+      "text": "Kies een gemarkeerd veld om je stuk te verplaatsen.",
+      "status": "needs-review"
+    },
+    "bd912f831474520eba6ecc44b7a95c7e": {
+      "source": "Choose action",
+      "text": "Kies actie",
+      "status": "needs-review"
+    },
+    "cdea53a3d2d22f76c804c0b6023c3b5f": {
+      "source": "Choose its new role.",
+      "text": "Kies de nieuwe rol.",
+      "status": "needs-review"
+    },
+    "ff396a3c3e73280ee85a638bf0d91e9d": {
+      "source": "Choose move, rotate, or return to basket.",
+      "text": "Kies verplaatsen, draaien of terug naar de mand.",
+      "status": "needs-review"
+    },
+    "3f904f1f61cbcdc5a82fbf32f9a83bd9": {
+      "source": "Choose objects by placement area",
+      "text": "Kies objecten per plaatsingsgebied",
+      "status": "needs-review"
+    },
+    "fbd92719968cc0a599ec5edf79b4da2c": {
+      "source": "Choose one of the highlighted legal squares.",
+      "text": "Kies een van de gemarkeerde geldige velden.",
+      "status": "needs-review"
+    },
+    "0692701a2e292f94c528917a67bb02f5": {
+      "source": "Choose promotion",
+      "text": "Kies promotie",
+      "status": "needs-review"
+    },
+    "75c703a67177ce1c10c7bc1c8824c184": {
+      "source": "Choose your courage. Fate chooses your side.",
+      "text": "Kies je moed. Het lot kiest jouw kant.",
+      "status": "needs-review"
+    },
+    "ea9da7e7b95dab706a52e3a3fbff4381": {
+      "source": "Cloud mobile",
+      "text": "Wolkenmobiel",
+      "status": "needs-review"
+    },
+    "6f5fa85597410d31ba92a54d8af69fd8": {
+      "source": "Consulting the Universe…",
+      "text": "Het universum raadplegen…",
+      "status": "needs-review"
+    },
+    "cd2576b4b54f2c4648c4db8c81e13da4": {
+      "source": "COSMIC DELIBERATION",
+      "text": "KOSMISCHE OVERWEGING",
+      "status": "needs-review"
+    },
+    "4eb798708323039cbc5dddc72b90a64e": {
+      "source": "Cozy armchair",
+      "text": "Gezellige fauteuil",
+      "status": "needs-review"
+    },
+    "808dd62187111c50903172529bc12274": {
+      "source": "Daisy wall clock",
+      "text": "Madeliefjeswandklok",
+      "status": "needs-review"
+    },
+    "4348115a51f1e92a0c0fa496c32474a8": {
+      "source": "declared victory",
+      "text": "overwinning uitgeroepen",
+      "status": "needs-review"
+    },
+    "0aabd06df57af6a6a382d15470ec81d0": {
+      "source": "declares you the winner",
+      "text": "verklaart jou de winnaar",
+      "status": "needs-review"
+    },
+    "1b78f28b44023f195b0d0fa3edbfd888": {
+      "source": "Decorate the playhouse",
+      "text": "Versier het speelhuisje",
+      "status": "needs-review"
+    },
+    "f182d54ca6a075c20ef78541f49361d6": {
+      "source": "Decorative cowboy boots",
+      "text": "Decoratieve cowboylaarzen",
+      "status": "needs-review"
+    },
+    "5dc1fd1f138edd801220826207555ff5": {
+      "source": "Defensive Hoglet",
+      "text": "Verdedigende Biggetje",
+      "status": "needs-review"
+    },
+    "c1baf14165e935275ade01b8501d9e3e": {
+      "source": "Deploy the board →",
+      "text": "Zet het bord op →",
+      "status": "needs-review"
+    },
+    "947813bf9001b65dac3fb2176c667cf7": {
+      "source": "Done decorating this item",
+      "text": "Klaar met dit item versieren",
+      "status": "needs-review"
+    },
+    "2d03c2d5a7ec65ef4619e0582c272ec2": {
+      "source": "Draw",
+      "text": "Remise",
+      "status": "needs-review"
+    },
+    "9ec506f2aed78a35203bb630d053efa2": {
+      "source": "Draw by insufficient material.",
+      "text": "Remise door onvoldoende materiaal.",
+      "status": "needs-review"
+    },
+    "b7bd03e8cdfe68572bb1a9f6fbd2ca3b": {
+      "source": "Draw by stalemate.",
+      "text": "Remise door pat.",
+      "status": "needs-review"
+    },
+    "b55d0c40fce30e1c67bfff6fec9509d8": {
+      "source": "Draw by the fifty-move rule.",
+      "text": "Remise door de vijftigzettenregel.",
+      "status": "needs-review"
+    },
+    "e826dcc39151a5377f87e89c86493905": {
+      "source": "Draw by threefold repetition.",
+      "text": "Remise door drievoudige herhaling.",
+      "status": "needs-review"
+    },
+    "7f943921724d63dc0ac9c6febf99fa88": {
+      "source": "Easy",
+      "text": "Makkelijk",
+      "status": "needs-review"
+    },
+    "e63cd4387b40d360b9f9224afac068af": {
+      "source": "Elder Sage",
+      "text": "Oude Wijze",
+      "status": "needs-review"
+    },
+    "90c52f9c5733f4e27b3b0892af8ee804": {
+      "source": "Engine source",
+      "text": "Engine-bron",
+      "status": "needs-review"
+    },
+    "8d9f24e565c3d93bab1eb32923375c72": {
+      "source": "Every little creature has a role. Select one to meet it.",
+      "text": "Elk klein wezentje heeft een rol. Kies er een om het te ontmoeten.",
+      "status": "needs-review"
+    },
+    "a8c6ab95ca3dfec11180fec1142838e0": {
+      "source": "Every move. Every dubious claim.",
+      "text": "Elke zet. Elke dubieuze bewering.",
+      "status": "needs-review"
+    },
+    "42d0fe72660eb2ecf344868d63fb225a": {
+      "source": "Fate is turning…",
+      "text": "Het lot keert…",
+      "status": "needs-review"
+    },
+    "45b9c968e88117a6f73411f3c43204e4": {
+      "source": "Frog Rider",
+      "text": "Kikkerrijder",
+      "status": "needs-review"
+    },
+    "95c14cfa71e176bcd48c2cce7c84bf23": {
+      "source": "Fruit bowl",
+      "text": "Fruitschaal",
+      "status": "needs-review"
+    },
+    "fe55eecd3b0869dd8422d3212c25cd36": {
+      "source": "Full-strength NNUE Stockfish, five seconds per move. No takebacks.",
+      "text": "Volledig NNUE Stockfish, vijf seconden per zet. Geen terugnames.",
+      "status": "needs-review"
+    },
+    "68f6837e12688e61fb91f340d61c0ca6": {
+      "source": "Furniture and floor objects",
+      "text": "Meubels en vloerobjecten",
+      "status": "needs-review"
+    },
+    "103a121bbd018da89d87eb6642578434": {
+      "source": "Game controls",
+      "text": "Spelbesturing",
+      "status": "needs-review"
+    },
+    "b1692a4bdb0173d71f99dfd36613a3d1": {
+      "source": "Give fate a little nudge. Click the coin to spin.",
+      "text": "Geef het lot een duwtje. Klik op de munt om te draaien.",
+      "status": "needs-review"
+    },
+    "a8d8e0b5dbbc742802946891f8ff3b69": {
+      "source": "Goblin King",
+      "text": "Koboldkoning",
+      "status": "needs-review"
+    },
+    "cde34fcbac65b89cc7f910f5878f5da1": {
+      "source": "Hanging decorations",
+      "text": "Hangende decoraties",
+      "status": "needs-review"
+    },
+    "3656183169810334a96b91129dc9d881": {
+      "source": "Hard",
+      "text": "Moeilijk",
+      "status": "needs-review"
+    },
+    "8ad0f101efab6be7982ed6d447a0e307": {
+      "source": "Hedgelings",
+      "text": "Egeljongen",
+      "status": "needs-review"
+    },
+    "e42243a625a4a4a8ab5bb27ca79c4939": {
+      "source": "How the table works",
+      "text": "Hoe de tabel werkt",
+      "status": "needs-review"
+    },
+    "737c8a1bbd8f4e6567b4bbf202905450": {
+      "source": "In hardware mode, measurements are made on Amazon Braket quantum hardware in advance, then used once. The target probabilities are ideal; physical hardware has noise. If hardware results are unavailable, the match switches to the simulator and stays there. New matches try real hardware first.",
+      "text": "In hardwaremodus worden metingen vooraf gedaan op Amazon Braket kwantumhardware en daarna eenmalig gebruikt. De doelwaarschijnlijkheden zijn ideaal; fysieke hardware heeft ruis. Als hardwareresultaten niet beschikbaar zijn, schakelt de wedstrijd over naar de simulator en blijft daar. Nieuwe wedstrijden proberen eerst echte hardware.",
+      "status": "needs-review"
+    },
+    "19d5de07d613f8846549d7263f73d9d0": {
+      "source": "Interactive 3D chessboard. Switch to 2D for keyboard controls.",
+      "text": "Interactief 3D-schaakbord. Schakel over naar 2D voor toetsenbordbediening.",
+      "status": "needs-review"
+    },
+    "7b04a0b1f6c3e68aa334a99d04af9339": {
+      "source": "Keep playing",
+      "text": "Blijf spelen",
+      "status": "needs-review"
+    },
+    "8ba32c0c46422259c861b22c464005ff": {
+      "source": "Keyboard placement controls",
+      "text": "Toetsenbordbediening voor plaatsen",
+      "status": "needs-review"
+    },
+    "719ef271d38a388fd7b2bc967f4bd885": {
+      "source": "King",
+      "text": "Koning",
+      "status": "needs-review"
+    },
+    "8c23b2b86573edf2a5ea482c2ccc1497": {
+      "source": "Knight",
+      "text": "Paard",
+      "status": "needs-review"
+    },
+    "1eeae31c96368f2895a8241ceceda325": {
+      "source": "Latest event ↓",
+      "text": "Nieuwste gebeurtenis ↓",
+      "status": "needs-review"
+    },
+    "3040a6242f0bba54cb4ce40a4912e6a9": {
+      "source": "Leafy houseplant",
+      "text": "Bladrijke kamerplant",
+      "status": "needs-review"
+    },
+    "57d2498e7f9b245fa4310b99aee56ac8": {
+      "source": "Leave this battle?",
+      "text": "Deze strijd verlaten?",
+      "status": "needs-review"
+    },
+    "551ea1e97834d3a71a97200de5232b21": {
+      "source": "Let the Universe choose my side ↗",
+      "text": "Laat het Universum mijn kant kiezen ↗",
+      "status": "needs-review"
+    },
+    "81e1623e95eef44e5b41a723b6109540": {
+      "source": "LET THE WOODLANDS REJOICE",
+      "text": "LAAT DE BOSSEN JUICHEN",
+      "status": "needs-review"
+    },
+    "3a3b040574078af8d0cb29c0048ba0dd": {
+      "source": "Little bookcase",
+      "text": "Kleine boekenkast",
+      "status": "needs-review"
+    },
+    "1da7cb3fd7e403879b5f9cea62871d13": {
+      "source": "Little tea set",
+      "text": "Klein theeservies",
+      "status": "needs-review"
+    },
+    "b580279ae113bec19bc972facd0df4b9": {
+      "source": "Loading / thinking with full NNUE Stockfish…",
+      "text": "Laden / denken met volledige NNUE Stockfish…",
+      "status": "needs-review"
+    },
+    "8005e91d4fa6e00281bc510d2b3b9c8e": {
+      "source": "Lost Hoglet",
+      "text": "Verloren Egeljong",
+      "status": "needs-review"
+    },
+    "5c1352bad9a8f62b39a2f04c717a44a4": {
+      "source": "Luna’s Playhouse",
+      "text": "Luna's Speelhuis",
+      "status": "needs-review"
+    },
+    "0485605eb1b8e4b18cddfc3bc18b5b28": {
+      "source": "Luna’s Playhouse <0>✿</0>",
+      "text": "Luna's Speelhuis <0>✿</0>",
+      "status": "needs-review"
+    },
+    "dc0b7c6136cb486aee908abcbdaad6a7": {
+      "source": "Master Weaver",
+      "text": "Meesterwever",
+      "status": "needs-review"
+    },
+    "87f8a6ab85c9ced3702b4ea641ad4bb5": {
+      "source": "Medium",
+      "text": "Gemiddeld",
+      "status": "needs-review"
+    },
+    "0bb33a0f383a9b03c9e522e845183938": {
+      "source": "Meet your army",
+      "text": "Ontmoet je leger",
+      "status": "needs-review"
+    },
+    "4bdd459cddab5949d3b0989bab211dd5": {
+      "source": "Mia and Luna’s room. Choose a toy, then a glowing spot.",
+      "text": "Mia en Luna's kamer. Kies een speeltje, dan een gloeiende plek.",
+      "status": "needs-review"
+    },
+    "a022d155bd14bf7592c095b3bfed6d4f": {
+      "source": "Moon cushion",
+      "text": "Maankussen",
+      "status": "needs-review"
+    },
+    "6bc362dbf494c61ea117fe3c71ca48a5": {
+      "source": "Move",
+      "text": "Zet",
+      "status": "needs-review"
+    },
+    "692f9df1eee50b440436f8b955cb87c5": {
+      "source": "Move {name}",
+      "text": "Verplaats {name}",
+      "status": "needs-review"
+    },
+    "62361f2fefc607eb0187e30ede849883": {
+      "source": "Mute sound",
+      "text": "Geluid dempen",
+      "status": "needs-review"
+    },
+    "da6cac81a6180437f3c3598ced16baac": {
+      "source": "New match",
+      "text": "Nieuwe wedstrijd",
+      "status": "needs-review"
+    },
+    "e94f1a5497be38c1314632d779835cdb": {
+      "source": "ONE COIN. TWO LITTLE KINGDOMS.",
+      "text": "ÉÉN MUNT. TWEE KLEINE KONINKRIJKEN.",
+      "status": "needs-review"
+    },
+    "c66b933f602df63ca396564f39ed3cf7": {
+      "source": "Opponent {value0} {pieceName}: {from} → {to}.",
+      "text": "Tegenstander {value0} {pieceName}: {from} → {to}.",
+      "status": "needs-review"
+    },
+    "2faa9bf5170b1f36f086fbd0ae515734": {
+      "source": "Opponent declared victory — the Universe will decide.",
+      "text": "Tegenstander heeft de overwinning geclaimd — het Universum beslist.",
+      "status": "needs-review"
+    },
+    "c56b0eac53b231d140b42a5b61cae050": {
+      "source": "Opponent moved {value0}: {from} → {to}{value1}{value2}.",
+      "text": "Tegenstander verplaatste {value0}: {from} → {to}{value1}{value2}.",
+      "status": "needs-review"
+    },
+    "437aa63d219a513be49e1553aee2d800": {
+      "source": "Scroll Grunt",
+      "text": "Scroll Grom",
+      "status": "needs-review"
+    },
+    "a3100ffd6b6e3f9ab69700f3164b8300": {
+      "source": "Scroll Rider",
+      "text": "Scroll Ruiter",
+      "status": "needs-review"
+    },
+    "e4b3723b967292633f55254b337868bf": {
+      "source": "Select a piece, then its destination.",
+      "text": "Selecteer een stuk, dan de bestemming.",
+      "status": "needs-review"
+    },
+    "40e0fc98bb875b804fe39611abe86dad": {
+      "source": "Select a piece, then its destination. Cheats each use one turn.",
+      "text": "Selecteer een stuk, dan de bestemming. Cheats kosten elk één beurt.",
+      "status": "needs-review"
+    },
+    "6cbebfe2deec43c401447c79cf92cdbd": {
+      "source": "Select your non-king piece, choose its new type, then transform.",
+      "text": "Selecteer je niet-koningsstuk, kies het nieuwe type, en transformeer dan.",
+      "status": "needs-review"
+    },
+    "58e1ca66749a22980a7b49219c3f5524": {
+      "source": "Select your piece, then any empty or enemy square.",
+      "text": "Selecteer je stuk, dan een leeg of vijandig veld.",
+      "status": "needs-review"
+    },
+    "e5a3ffae8caeeb64cc4e3d6a83f7d983": {
+      "source": "SIMULATED QUANTUM FATE · UNTIMED CHESS",
+      "text": "GESIMULEERD KWANTUM LOT · ONGETIMED SCHAAK",
+      "status": "needs-review"
+    },
+    "a2698228af14181368481d9c74245973": {
+      "source": "Simulated Universe",
+      "text": "Gesimuleerd Universum",
+      "status": "needs-review"
+    },
+    "876f66dd17afd11ab766d5c71a71c198": {
+      "source": "Some battles are<0/>written in the stars.",
+      "text": "Sommige gevechten staan<0/>in de sterren geschreven.",
+      "status": "needs-review"
+    },
+    "0560f72e89613e7c004c0630bfea7bc4": {
+      "source": "Spellbook Stack",
+      "text": "Spreukenboek Stapel",
+      "status": "needs-review"
+    },
+    "30fddfaf4b9c94cda63485d4ae3fca25": {
+      "source": "Spin the coin to choose your faction",
+      "text": "Draai de munt om je factie te kiezen",
+      "status": "needs-review"
+    },
+    "4cbb2df9f2915df86e1a0ea2daa1e70f": {
+      "source": "Spin the faction coin again",
+      "text": "Draai de factiemunt opnieuw",
+      "status": "needs-review"
+    },
+    "baad4b92cd3a470ed540ae58ffecf7cb": {
+      "source": "Start fresh",
+      "text": "Opnieuw beginnen",
+      "status": "needs-review"
+    },
+    "507586ed73b064ab2b61b7baba08ed7b": {
+      "source": "Start new match",
+      "text": "Nieuwe wedstrijd starten",
+      "status": "needs-review"
+    },
+    "3a96d74113bfb14b88a1e849b7c96231": {
+      "source": "Stockfish GPL license",
+      "text": "Stockfish GPL-licentie",
+      "status": "needs-review"
+    },
+    "5cf123d22b11f3c0317de0932418a1f3": {
+      "source": "Story books",
+      "text": "Verhalenboeken",
+      "status": "needs-review"
+    },
+    "9c96d9b5f2b17291e78691bd86d7c8e0": {
+      "source": "Stump Tower",
+      "text": "Boomstronk Toren",
+      "status": "needs-review"
+    },
+    "0bc63f6aefd43bbd37ab738a591f7732": {
+      "source": "Sunshine painting",
+      "text": "Zonneschijn schilderij",
+      "status": "needs-review"
+    },
+    "a02d8cc0b620635a6fb7273a1852b64c": {
+      "source": "Tabletop objects",
+      "text": "Tafelobjecten",
+      "status": "needs-review"
+    },
+    "06d267d31694bd10c6e650c2849584f6": {
+      "source": "Take your time.",
+      "text": "Neem je tijd.",
+      "status": "needs-review"
+    },
+    "86f6b7bd2759a2d46647767745fcf867": {
+      "source": "Talavera planter",
+      "text": "Talavera plantenbak",
+      "status": "needs-review"
+    },
+    "8414fd6df619c9cb84444daa3c44ebc3": {
+      "source": "Tap to move · Drag to orbit · Pinch to zoom",
+      "text": "Tikken om te bewegen · Slepen om te draaien · Knijpen om te zoomen",
+      "status": "needs-review"
+    },
+    "054fc7866c93a2496fd9048c493e6aed": {
+      "source": "Teleport",
+      "text": "Teleporteren",
+      "status": "needs-review"
+    },
+    "082cba32fc5be57a52b16a2dc1d80431": {
+      "source": "That area is full. Choose another glowing spot.",
+      "text": "Dat gebied is vol. Kies een andere gloeiende plek.",
+      "status": "needs-review"
+    },
+    "ff691c39dc741fecc69569814f03a73a": {
+      "source": "The {army} lower their banners. Rest, regroup, and live to cause mischief another day.",
+      "text": "De {army} laten hun banieren zakken. Rust uit, hergroepeer en leef om een andere dag kattenkwaad uit te halen.",
+      "status": "needs-review"
+    },
+    "1081866304940a0b67c60a28b7ace026": {
+      "source": "The {army} raise a cheer. Their commander has earned a very splendid crown.",
+      "text": "De {army} juichen. Hun commandant heeft een zeer prachtige kroon verdiend.",
+      "status": "needs-review"
+    },
+    "b148c7db9dd7c2a5faf7ba283edbb89e": {
+      "source": "The battle is over.",
+      "text": "De strijd is voorbij.",
+      "status": "needs-review"
+    },
+    "e93ae63c509c32e7235e5f014a42655c": {
+      "source": "THE FINAL WORD",
+      "text": "HET LAATSTE WOORD",
+      "status": "needs-review"
+    },
+    "23a6dc4fbebc9e6d018fb90e5942e8f3": {
+      "source": "The forest falls quiet.",
+      "text": "Het bos wordt stil.",
+      "status": "needs-review"
+    },
+    "6e55a3aa2b6622a3761f600a3c58d23e": {
+      "source": "The full NNUE engine downloads about 95 MB once, then runs on your device.",
+      "text": "De volledige NNUE-engine downloadt eenmalig ongeveer 95 MB en draait daarna op je apparaat.",
+      "status": "needs-review"
+    },
+    "d099c27b937e4d9f4f768f66906af52b": {
+      "source": "The Hedgelings",
+      "text": "De Heggelingen",
+      "status": "needs-review"
+    },
+    "1a1c054df1b1449862fbc9af828b4547": {
+      "source": "THE HEDGELINGS",
+      "text": "DE HEGGELINGEN",
+      "status": "needs-review"
+    },
+    "a0e956c532a5d587eb145d408421526e": {
+      "source": "The Mad Alchemist",
+      "text": "De Gekke Alchemist",
+      "status": "needs-review"
+    },
+    "950f87d40078a4ee75eefaa1c17ed155": {
+      "source": "The Scroll Goblins",
+      "text": "De Rolkobolden",
+      "status": "needs-review"
+    },
+    "8207bff94ae521249b4e0c6a7c1e8c93": {
+      "source": "The Universe allows this nonsense to continue.",
+      "text": "Het Universum staat toe dat deze onzin doorgaat.",
+      "status": "needs-review"
+    },
+    "ecf0432709a0f5b9e9059c99a81687d1": {
+      "source": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
+      "text": "Het Universum verklaart {value0} tot winnaar. De kosmische papierwinkel is definitief.",
+      "status": "needs-review"
+    },
+    "97e72537c76c1e44f7954ee152ffd823": {
+      "source": "The Universe has chosen your faction and color.",
+      "text": "Het Universum heeft jouw factie en kleur gekozen.",
+      "status": "needs-review"
+    },
+    "13eddf735ca9c43ee29af9ee6c5c47c0": {
+      "source": "The Universe is deciding…",
+      "text": "Het Universum beslist…",
+      "status": "needs-review"
+    },
+    "3f11ede2d5e5d094c6707fe926b69dad": {
+      "source": "The Wandering Spirit",
+      "text": "De Zwervende Geest",
+      "status": "needs-review"
+    },
+    "6e2a60d3e5f3e8ef2632b258229d0c88": {
+      "source": "THE WOODLAND TABLE",
+      "text": "DE BOSLANDTAFEL",
+      "status": "needs-review"
+    },
+    "97a755ea75fa2c104c78f8f22d273392": {
+      "source": "This match uses an ideal eight-qubit state-vector simulation. Measurements are sampled on your computer and saved so retries cannot reroll results. No hardware shots or AWS credits are consumed.",
+      "text": "Deze wedstrijd gebruikt een ideale acht-qubit toestandsvector-simulatie. Metingen worden op jouw computer gesampled en opgeslagen, zodat herpogingen de resultaten niet kunnen wijzigen. Er worden geen hardware-shots of AWS-credits verbruikt.",
+      "status": "needs-review"
+    },
+    "10ce333c612b746b3fd45632df7d3889": {
+      "source": "This one is mostly written on stolen scrolls. Command a woodland army against Stockfish—or a spirit with a questionable understanding of chess.",
+      "text": "Deze is grotendeels geschreven op gestolen perkamenten. Voer het bevel over een boslandleger tegen Stockfish – of een geest met een twijfelachtig begrip van schaken.",
+      "status": "needs-review"
+    },
+    "300906a2127920ec56450dddfb639579": {
+      "source": "Toy armadillo",
+      "text": "Speelgoedgordeldier",
+      "status": "needs-review"
+    },
+    "fd1dd26c41a48a83bddda92c111d763b": {
+      "source": "Toy basket",
+      "text": "Speelgoedmand",
+      "status": "needs-review"
+    },
+    "979a23f5f170c4baea2686026dbba0d2": {
+      "source": "Trainee Scribe",
+      "text": "Leerling-schrijver",
+      "status": "needs-review"
+    },
+    "2ff4148554480a37f85efd299df04850": {
+      "source": "Transform",
+      "text": "Transformeren",
+      "status": "needs-review"
+    },
+    "8659e58b2323d1031513930309ed97cb": {
+      "source": "Transform selected piece",
+      "text": "Geselecteerd stuk transformeren",
+      "status": "needs-review"
+    },
+    "f915a95e609bbd517a8a1e7bdcceef37": {
+      "source": "Try again",
+      "text": "Nogmaals proberen",
+      "status": "needs-review"
+    },
+    "88085dcf9cf96a6fad9640dc7358f008": {
+      "source": "Turn room left",
+      "text": "Draai kamer naar links",
+      "status": "needs-review"
+    },
+    "e1c960f1c4b9e38bdb4022296a528ba6": {
+      "source": "Turn room right",
+      "text": "Draai kamer naar rechts",
+      "status": "needs-review"
+    },
+    "66248805079469767a84505ae9b8c74e": {
+      "source": "Turn sound on",
+      "text": "Geluid aan",
+      "status": "needs-review"
+    },
+    "a2457013bea73616a71146a2b510708f": {
+      "source": "Turned a quarter turn.",
+      "text": "Een kwartslag gedraaid.",
+      "status": "needs-review"
+    },
+    "5b7433a11e23eb7adc5b7e6b19e587e6": {
+      "source": "Victory is yours!",
+      "text": "De overwinning is voor jou!",
+      "status": "needs-review"
+    },
+    "6abb7feedeac5d7457bf6758bbe8ec03": {
+      "source": "View result",
+      "text": "Bekijk resultaat",
+      "status": "needs-review"
+    },
+    "25a81701fbfa4a1efdf660a950c1d006": {
+      "source": "White",
+      "text": "Wit",
+      "status": "needs-review"
+    },
+    "477489f83ba30f6e5aabac6fae547f7a": {
+      "source": "WHITE AT HOME",
+      "text": "WIT THUIS",
+      "status": "needs-review"
+    },
+    "28b99be73f21ed68cd89df5386176b95": {
+      "source": "Woodland chess, real quantum fate, and an opponent who thinks the rules are a suggestion. Command your faction in 3D.",
+      "text": "Boslandschaken, echt kwantumlot, en een tegenstander die de regels als een suggestie ziet. Voer het bevel over jouw factie in 3D.",
+      "status": "needs-review"
+    },
+    "1571cc83bfc0c37f87d64238149e6fb4": {
+      "source": "You play black · your opponent moves first.",
+      "text": "Je speelt zwart · jouw tegenstander zet eerst.",
+      "status": "needs-review"
+    },
+    "e74b5e23ab944802ea68848d668173d5": {
+      "source": "You play white · you move first.",
+      "text": "Je speelt wit · je zet eerst.",
+      "status": "needs-review"
+    },
+    "cf9fc715abdbac30aca331ec092caa09": {
+      "source": "You resigned. Your opponent wins.",
+      "text": "Je hebt opgegeven. Jouw tegenstander wint.",
+      "status": "needs-review"
+    },
+    "9fe62e565546fe602ea008a2f6ccd4a5": {
+      "source": "Your allegiance is sealed. Spin again for a little luck.",
+      "text": "Jouw trouw is bezegeld. Draai nog eens voor een beetje geluk.",
+      "status": "needs-review"
+    },
+    "bc83958bd2ddc7cc1b35513f52f8a3ff": {
+      "source": "Your browser cannot save this room. It will last until you close the page.",
+      "text": "Je browser kan deze kamer niet opslaan. Hij blijft bestaan totdat je de pagina sluit.",
+      "status": "needs-review"
+    },
+    "6c6182564034ab2936a202879cfc13e8": {
+      "source": "Your move.",
+      "text": "Jouw zet.",
+      "status": "needs-review"
+    },
+    "cc3d02adc4d6c963fcaaa50e249e512f": {
+      "source": "Your opponent’s next outrageous remark will appear here.",
+      "text": "De volgende schandalige opmerking van jouw tegenstander verschijnt hier.",
+      "status": "needs-review"
+    },
+    "17646fbecc076ac866336d76f1920c84": {
+      "source": "Zarape-patterned blanket",
+      "text": "Deken met Zarape-patroon",
+      "status": "needs-review"
+    },
+    "d1ad44b96b65d1db3ea6cb5feadd8710": {
+      "source": "↶ Undo decision",
+      "text": "↶ Beslissing ongedaan maken",
+      "status": "needs-review"
+    },
+    "6911872f13f7c775bdc7f2147ac7310f": {
+      "source": "Battle chronicle",
+      "text": "Strijdkroniek",
+      "status": "needs-review"
+    },
+    "142a3bc4276de97ff41917936b2e2cfd": {
+      "source": "CHESS CLUB",
+      "text": "SCHAAKCLUB",
+      "status": "needs-review"
+    },
+    "347944e5b5c9316348e4779c8a6e6285": {
+      "source": "FIELD NOTES / Rules, pieces & quantum provenance",
+      "text": "VELDNOTITIES / Regels, stukken & kwantumherkomst",
+      "status": "needs-review"
+    },
+    "ca7172685931f0617f9d88a8c6cb4583": {
+      "source": "Latest measurement · Device:",
+      "text": "Laatste meting · Apparaat:",
+      "status": "needs-review"
+    },
+    "272244281c7518319d585201e8058297": {
+      "source": "MADE FOR A LITTLE ESCAPE.",
+      "text": "GEMAAKT VOOR EEN KLEINE ONTSNAPPING.",
+      "status": "needs-review"
+    },
+    "ad04cd048ba69dbaec3b170de92ba8c9": {
+      "source": "Measured:",
+      "text": "Gemeten:",
+      "status": "needs-review"
+    },
+    "f72fd781dd073a8aee044160ed72b97a": {
+      "source": "NO CLOCKS. NO CROWNS GUARANTEED.",
+      "text": "GEEN KLOKKEN. GEEN KRONEN GEGARANDEERD.",
+      "status": "needs-review"
+    },
+    "e504edf27cde6cdcf397bbc0807f48dd": {
+      "source": "Opponent resurrected {pieceName} on {to}.",
+      "text": "Tegenstander heeft {pieceName} doen herrijzen op {to}.",
+      "status": "needs-review"
+    },
+    "34d0d29d8546b6de4b58f3ab4435df37": {
+      "source": "Opponent transformed {pieceName} on {from} into {value0}.",
+      "text": "Tegenstander heeft {pieceName} op {from} getransformeerd in {value0}.",
+      "status": "needs-review"
+    },
+    "5cfc2a5e5fa2bb7da72766e5fcab8b29": {
+      "source": "Opponent’s latest comment",
+      "text": "Laatste opmerking van tegenstander",
+      "status": "needs-review"
+    },
+    "b3723b84981125e74a3bac55c1b2e2a5": {
+      "source": "Paintings and wall decorations",
+      "text": "Schilderijen en wanddecoraties",
+      "status": "needs-review"
+    },
+    "696c9f27629dc74fe376234602f7645e": {
+      "source": "Paper flowers",
+      "text": "Papieren bloemen",
+      "status": "needs-review"
+    },
+    "13ca023484e507111f1068f3723e1953": {
+      "source": "Parol star lantern",
+      "text": "Parol sterlantaarn",
+      "status": "needs-review"
+    },
+    "36cddea7303c5d9d8a0930128b1fbb80": {
+      "source": "Pawn",
+      "text": "Pion",
+      "status": "needs-review"
+    },
+    "e95ba9ea325cc04ea96d082ad0abd45e": {
+      "source": "PEACE IN THE CLEARING",
+      "text": "VREDE IN DE OPEN PLEK",
+      "status": "needs-review"
+    },
+    "a6fe12c7f1af6b1842481d10c7ca4028": {
+      "source": "Piece type",
+      "text": "Stuktype",
+      "status": "needs-review"
+    },
+    "8c5789f806c731ecc2d2ccded9c73e83": {
+      "source": "Place {name} at {category} spot {id}",
+      "text": "Plaats {name} op plek {id} in categorie {category}",
+      "status": "needs-review"
+    },
+    "f7a70df687c6d43ebec738eff74ff3da": {
+      "source": "Play again →",
+      "text": "Opnieuw spelen →",
+      "status": "needs-review"
+    },
+    "6215abe911770266e802df0b78f9b5a9": {
+      "source": "plotting…",
+      "text": "bezig met plotten…",
+      "status": "needs-review"
+    },
+    "1fe28744bc026b765d3e2f8387c3dacd": {
+      "source": "Potion Mixer",
+      "text": "Drankjesmenger",
+      "status": "needs-review"
+    },
+    "2c2d2c0291163b077a372c2a9c5a6eda": {
+      "source": "Queen",
+      "text": "Koningin",
+      "status": "needs-review"
+    },
+    "a57c412935ac1cab90a1b119031a1a7a": {
+      "source": "Rainbow building blocks",
+      "text": "Regenboogbouwblokken",
+      "status": "needs-review"
+    },
+    "fe8555d6b6e0847861a154f354c1dfa7": {
+      "source": "Rainbow painting",
+      "text": "Regenboogschilderij",
+      "status": "needs-review"
+    },
+    "78787b67d01ac1422fbe56cf4ab0fdae": {
+      "source": "Real hardware. Strange fate.",
+      "text": "Echte hardware. Vreemd lot.",
+      "status": "needs-review"
+    },
+    "c3273c2833fcb9732f52805c38d038e5": {
+      "source": "REAL QUANTUM FATE · UNTIMED CHESS",
+      "text": "ECHT KWANTUMLOT · SCHAAK ZONDER TIJD",
+      "status": "needs-review"
+    },
+    "37d90cd3910397332d6e0faf393b6776": {
+      "source": "Resign",
+      "text": "Opgeven",
+      "status": "needs-review"
+    },
+    "6a88072cc8de36b22c2235dd37343740": {
+      "source": "Resume your woodland battle",
+      "text": "Hervat je bosgevecht",
+      "status": "needs-review"
+    },
+    "7eaa50be2932c2c07a068f8b2737e516": {
+      "source": "Retry this turn",
+      "text": "Deze beurt opnieuw proberen",
+      "status": "needs-review"
+    },
+    "bde7b30457acad0426d4b19f4f5b80b7": {
+      "source": "Return {name} to the basket",
+      "text": "Leg {name} terug in de mand",
+      "status": "needs-review"
+    },
+    "47d939e012d8e9b395b0e6620327dfaf": {
+      "source": "Review the board",
+      "text": "Bekijk het bord",
+      "status": "needs-review"
+    },
+    "d78a1701177a08aebfbccceb9f1eb63a": {
+      "source": "Revive",
+      "text": "Herleven",
+      "status": "needs-review"
+    },
+    "1a415f5ae0f891e49d34821a896b4466": {
+      "source": "Rook",
+      "text": "Toren",
+      "status": "needs-review"
+    },
+    "ee20bf2ba8c845d629f4a574abcda7e1": {
+      "source": "Rotate {name} left",
+      "text": "Draai {name} naar links",
+      "status": "needs-review"
+    },
+    "0e50f8c1fa43ee9881bab03fb3598e6d": {
+      "source": "Rotate {name} right",
+      "text": "Draai {name} naar rechts",
+      "status": "needs-review"
+    },
+    "952358f40a2e3c0d2bac5a4697995e31": {
+      "source": "Round ottoman",
+      "text": "Ronde poef",
+      "status": "needs-review"
+    },
+    "727cc29a4d7aa690ebae73b7f889bbc2": {
+      "source": "Scroll Goblins",
+      "text": "Scroll Goblins",
+      "status": "needs-review"
+    },
+    "43910d5f4d1763aa4e5dccfa2574d06b": {
+      "source": "SCROLL GOBLINS",
+      "text": "SCROLL GOBLINS",
+      "status": "needs-review"
+    },
+    "a957e0ef7f84a5d5b4a36272852439f6": {
+      "source": "Scroll Goblins <0>vs</0> Hedgelings",
+      "text": "Scroll Goblins <0>tegen</0> Hedgelings",
+      "status": "needs-review"
+    },
+    "e4f6f82f88634759d120a98c81972e57": {
+      "source": "Scroll Goblins vs Hedgelings",
+      "text": "Scroll Goblins tegen Hedgelings",
+      "status": "needs-review"
+    },
+    "4877b6442cd0b58704b43a3100b88330": {
+      "source": "Shot:",
+      "text": "Shot:",
+      "status": "needs-review"
+    },
+    "94c57715dc2dbecef6fbea60861fe710": {
+      "source": "Task:",
+      "text": "Taak:",
+      "status": "needs-review"
+    },
+    "2e6e85dc214012f8d77756d57a566932": {
+      "source": "THE UNIVERSE HAS SPOKEN",
+      "text": "HET UNIVERSUM HEEFT GESPROKEN",
+      "status": "needs-review"
+    },
+    "a1ae24b79ce6896f4dc4299fa3b9ac26": {
+      "source": "Warn about attacked pieces",
+      "text": "Waarschuw voor aangevallen stukken",
+      "status": "needs-review"
+    },
+    "9cdf1080c0016a38f2e5f27e13d3240b": {
+      "source": "WOODLAND",
+      "text": "WOUD",
+      "status": "needs-review"
+    },
+    "a562df52a000abbc045df30d90b1fe22": {
+      "source": "YOUR ALLEGIANCE",
+      "text": "JOUW TROUW",
+      "status": "needs-review"
+    },
+    "b5365c72770d5d120ece55eb4a2ad63f": {
+      "source": "YOUR OPPONENT",
+      "text": "JOUW TEGENSTANDER",
+      "status": "needs-review"
+    },
+    "724450b95db10316b243f1681a21f136": {
+      "source": "{actor}: {action} {from} → {to}",
+      "text": "{actor}: {action} van {from} → {to}",
+      "status": "needs-review"
+    },
+    "bae3eef6ca702d88fe347b4a9eeda7e7": {
+      "source": "{name}, in the room",
+      "text": "{name}, in de kamer",
+      "status": "needs-review"
+    },
+    "93edc05b798190347d2d6684b1267312": {
+      "source": "All three cheats have been used.",
+      "text": "Alle drie de cheats zijn gebruikt.",
+      "status": "needs-review"
+    },
+    "e31a27e0dd63afe11492c7cb49281daf": {
+      "source": "Chaos mode needs its server rate limiter configured.",
+      "text": "De Chaos-modus heeft een geconfigureerde server rate limiter nodig.",
+      "status": "needs-review"
+    },
+    "008486702187c2da5f3dff525de8996c": {
+      "source": "Choose one of your captured non-king pieces.",
+      "text": "Kies een van je geslagen stukken (geen koning).",
+      "status": "needs-review"
+    },
+    "60ade9f944666b0d1ae4549558958fb1": {
+      "source": "Choose one of your pieces and a different destination.",
+      "text": "Kies een van je stukken en een andere bestemming.",
+      "status": "needs-review"
+    },
+    "489e1d11e5d8c40cd5687cbf22360237": {
+      "source": "Could not reach the chaos opponent service. Retry this turn once the connection returns. The Universe simulator handles coin flips and verdicts, not the LLM opponent.",
+      "text": "Kon de chaos-tegenstanderservice niet bereiken. Probeer deze beurt opnieuw zodra de verbinding is hersteld. De Universe-simulator regelt kop-of-munt en uitspraken, niet de LLM-tegenstander.",
+      "status": "needs-review"
+    },
+    "ddbc81f08fc9a9efe6fec0e76710c3c4": {
+      "source": "Declare victory",
+      "text": "Overwinning claimen",
+      "status": "needs-review"
+    },
+    "6b98a2fe285d201d3c3c7d60eb007d21": {
+      "source": "Invalid board.",
+      "text": "Ongeldig bord.",
+      "status": "needs-review"
+    },
+    "857ccf501e3d5cb92473fa1eb4d9fee5": {
+      "source": "Opponent",
+      "text": "Tegenstander",
+      "status": "needs-review"
+    },
+    "f8a6eee6de1a86836dfddcfde92285f1": {
+      "source": "Place {name} at {value0} spot {id}",
+      "text": "Plaats {name} op plek {value0} {id}",
+      "status": "needs-review"
+    },
+    "0f1c7e0f9c468f4f5e945e5cb591a0b3": {
+      "source": "Resurrect onto an empty square.",
+      "text": "Herrijs op een leeg veld.",
+      "status": "needs-review"
+    },
+    "b4d370bb2f9b6c2b834069751df1c343": {
+      "source": "Stockfish timed out. Retry the turn.",
+      "text": "Stockfish is getimed-out. Probeer de beurt opnieuw.",
+      "status": "needs-review"
+    },
+    "875a088c71ecf90847a8d83df2407391": {
+      "source": "That move needs a teleport cheat.",
+      "text": "Die zet heeft een teleport-cheat nodig.",
+      "status": "needs-review"
+    },
+    "51f502108c7cd98d7501d0a8f42dce69": {
+      "source": "That square already belongs to one of your pieces.",
+      "text": "Dat veld behoort al toe aan een van je stukken.",
+      "status": "needs-review"
+    },
+    "a6a730f10308956673951cd5ded0d546": {
+      "source": "The spirit is resting. Try again shortly.",
+      "text": "De geest rust uit. Probeer het zo opnieuw.",
+      "status": "needs-review"
+    },
+    "6055a0008ed11c937b2c4ddd0697b891": {
+      "source": "The spirit lost its train of thought. Retry this turn.",
+      "text": "De geest is de draad kwijt. Probeer deze beurt opnieuw.",
+      "status": "needs-review"
+    },
+    "97199999b85248d8b3394a1f64edc78f": {
+      "source": "The spirit needs a moment. Try again shortly.",
+      "text": "De geest heeft even tijd nodig. Probeer het zo opnieuw.",
+      "status": "needs-review"
+    },
+    "fb943e2c7bf1edd51b758521f5a21a1b": {
+      "source": "The spirit proposed an impossible board edit. Retry its turn.",
+      "text": "De geest stelde een onmogelijke bordwijziging voor. Probeer zijn beurt opnieuw.",
+      "status": "needs-review"
+    },
+    "2372f61acdfd715dd35e1b656cba8dcf": {
+      "source": "Transform a non-king into a different non-king piece.",
+      "text": "Verander een niet-koning in een ander niet-koning stuk.",
+      "status": "needs-review"
+    },
+    "9258e257348c7e4f8c948d5ca16a35d5": {
+      "source": "Unknown action.",
+      "text": "Onbekende actie.",
+      "status": "needs-review"
+    },
+    "cae8d14edd025e72c59dbab6f378c95a": {
+      "source": "You",
+      "text": "Jij",
+      "status": "needs-review"
+    },
+    "4da4c861bb5e54693080496c7f0edd86": {
+      "source": "your opponent",
+      "text": "je tegenstander",
+      "status": "needs-review"
+    },
+    "c3e54f1fdff0bc370a15eeb50200cd9a": {
+      "source": "{color} {piece}",
+      "text": "{color} {piece}",
+      "status": "needs-review"
+    },
+    "b445177ba69f0b6abf330a9854682e74": {
+      "source": "Empty square",
+      "text": "Leeg veld",
+      "status": "needs-review"
+    },
+    "0c5018eb1255e5e2a2488c89382c1639": {
+      "source": "King in check",
+      "text": "Koning staat schaak",
+      "status": "needs-review"
+    },
+    "0de86e84523654186bf297d80ccde7e5": {
+      "source": "Opponent moved from here",
+      "text": "Je tegenstander bewoog vanaf hier",
+      "status": "needs-review"
+    },
+    "1ba2e7ad855e1acca4bb93c23f41fffc": {
+      "source": "Opponent moved here",
+      "text": "Je tegenstander bewoog hierheen",
+      "status": "needs-review"
+    },
+    "639bae9ac6b3e1a84cebb7b403297b79": {
+      "source": "you",
+      "text": "jij",
+      "status": "needs-review"
+    },
+    "11dfd868d93bc2b0e4ce0bee5756f8b1": {
+      "source": "moved",
+      "text": "bewoog",
+      "status": "needs-review"
+    },
+    "2802d83b625211b469b99fb7b688eb5c": {
+      "source": "teleported",
+      "text": "teleporteerde",
+      "status": "needs-review"
+    },
+    "f3f6d0343d56ce88ce7958170ed05cb3": {
+      "source": "Floor",
+      "text": "Vloer",
+      "status": "needs-review"
+    },
+    "aa0d528ba11ea1485d466dfe1ea40819": {
+      "source": "Surface",
+      "text": "Oppervlak",
+      "status": "needs-review"
+    },
+    "94e8a499539d1a472f3b5dbbb85508c0": {
+      "source": "Wall",
+      "text": "Muur",
+      "status": "needs-review"
+    },
+    "3237fbc8204064c106cb9080088a17cb": {
+      "source": "Ceiling",
+      "text": "Plafond",
+      "status": "needs-review"
+    }
+  }
+}

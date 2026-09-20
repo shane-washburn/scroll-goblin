@@ -1,3 +1,4 @@
+import { t } from '@hedgeling/i18n/runtime';
 import { useEffect, useRef } from 'react';
 import type { Faction } from './game';
 export type Outcome = 'win' | 'loss' | 'draw';
@@ -20,7 +21,7 @@ export default function Ending({ outcome, reason, faction, onReview, onRestart }
       <div className="gc-ending-emblem" aria-hidden="true">{win ? '♛' : loss ? '🥀' : '❧'}</div>
       <h2 id="gc-ending-title">{win ? 'Victory is yours!' : loss ? 'The forest falls quiet.' : 'An honorable draw.'}</h2>
       <p className="gc-ending-story">{win ? `The ${army} raise a cheer. Their commander has earned a very splendid crown.` : loss ? `The ${army} lower their banners. Rest, regroup, and live to cause mischief another day.` : 'Both armies lay down their crowns. Some battles end with a shared cup of tea.'}</p>
-      <p id="gc-ending-reason">{reason}</p>
+      <p id="gc-ending-reason">{t(reason)}</p>
       <div className="gc-ending-actions"><button className="gc-primary" onClick={onRestart}>Play again →</button><button onClick={onReview}>Review the board</button></div>
     </div>
   </dialog>;

@@ -1,0 +1,63 @@
+{
+  "status": "machine-drafts-require-language-and-in-browser-review",
+  "messages": 273,
+  "locales": {
+    "en-GB": {
+      "valid": 273,
+      "total": 273
+    },
+    "en-AU": {
+      "valid": 273,
+      "total": 273
+    },
+    "en-CA": {
+      "valid": 273,
+      "total": 273
+    },
+    "fr-CA": {
+      "valid": 273,
+      "total": 273
+    },
+    "en-IN": {
+      "valid": 273,
+      "total": 273
+    },
+    "hi-IN": {
+      "valid": 273,
+      "total": 273
+    },
+    "nl-NL": {
+      "valid": 273,
+      "total": 273
+    },
+    "sv-SE": {
+      "valid": 273,
+      "total": 273
+    },
+    "pl-PL": {
+      "valid": 273,
+      "total": 273
+    },
+    "uk-UA": {
+      "valid": 273,
+      "total": 273
+    },
+    "ru-RU": {
+      "valid": 273,
+      "total": 273
+    },
+    "es-ES": {
+      "valid": 273,
+      "total": 273
+    },
+    "pt-BR": {
+      "valid": 273,
+      "total": 273
+    },
+    "ar-SA": {
+      "valid": 273,
+      "total": 273
+    }
+  },
+  "failures": []
+}

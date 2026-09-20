@@ -950,7 +950,277 @@
     "Your slug will train harder. Here's a tiny dumbbell.": "c6f1d29ed869f77426fb23a470f706ad",
     "Your song will appear here": "1482d2f60adc0720e052dadfc4076980",
     "Yukon Gold": "6b6a1b8220bfc2890fbeab028a97aab7",
-    "العربية": "26b1b2b0a4193aabcc33455732de89ac"
+    "العربية": "26b1b2b0a4193aabcc33455732de89ac",
+    "· This piece is under attack!": "19d9b4abdfa59e7adbac0a33c3a84fe7",
+    "{count, plural, one {# event} other {# events}}": "73e1f404296bd3a4de2e4c58f0dc2c6e",
+    "{count, plural, one {# undo left} other {# undos left}}": "1252113be7bf97fff1f51e45f7fbbee3",
+    "{name} placed. Mia and Luna are coming to see!": "052ce64d95f3275ada0a7facbcb67858",
+    "{name} selected. Choose a glowing spot.": "e764859a8fcf272fd24e505ecab1a1f8",
+    "{value0} wins by checkmate.": "19eea83c7cc7ffac4eb50856cb9091db",
+    "↶ Undo decision": "d1ad44b96b65d1db3ea6cb5feadd8710",
+    "<0>SIMULATED UNIVERSE</0><1>This match uses simulated quantum measurements. Play continues even when hardware results are unavailable.</1>": "739fc1b45ab56e90da9847969933e96a",
+    "♟ STOCKFISH 19": "984605d8e33822e75d6bbb76dc8171cb",
+    "✦ {count, plural, one {# cheat remaining} other {# cheats remaining}}": "c035fc1b0f57eebb0fca70cc3844f3e4",
+    "✦ RULES ARE OPTIONAL": "8bc5f04830ab5a18804bacc32b4f5683",
+    "🎀 <0>Luna</0>": "93f6526debd524d41c08a47329523dc2",
+    "🤠 <0>Mia</0>": "e8d6a462416ae294b09d993034fb1f2f",
+    "02 / CHOOSE YOUR OPPONENT": "ec6da5223e2386548ead74373c646ffe",
+    "2D / keyboard board": "fac1f3039032413d67fff36fd57f45fa",
+    "3D could not start on this device. Try a browser with WebGL enabled.": "35083de990bf0f0e319171b0a8a63c60",
+    "3D miniatures": "7a5f57981e3c3519fee1df50512cac62",
+    "A cheating LLM, three cheats of your own, and the Universe as referee.": "57b536dd828070f08002b5eec56ec4c3",
+    "A gentle first adventure. Three takebacks and optional danger warnings.": "3b644c39e255153d301edd87dc9810b5",
+    "A grunt earns a promotion.": "215c0a278a815abe0e38c54c44821e6d",
+    "A king has fallen. The Universe will decide who actually wins.": "ef27003c7edbbd144be764e7a1e0d639",
+    "A little cunning. A little mercy. One takeback.": "a76a17de1d727e39c9ea89340449bd8c",
+    "A little patience. Great nonsense takes time.": "06334e1fc828a889739015c26a865946",
+    "A little room, a world of treasures. Decorate and play with Mia and Luna.": "2fb3c2c8405575ec49566d1fbfc6ea10",
+    "A LITTLE ROOM. A WHOLE WORLD.": "cf9daeedbe8973e46a3b81d82eeb3d64",
+    "A MOMENT FOR THE FALLEN": "c99f4ceb3a2881421e77d72e7d00dcca",
+    "A new match replaces your saved game.": "52055bf910eb53134c9e50a3b6d635e2",
+    "A scheme is brewing…": "bab32a3bc14eff00a7fc87be5f67cc63",
+    "A SMALL WAR. A VERY STRANGE UNIVERSE.": "2805af1f11cb373446313a65ee234f88",
+    "A takeback: the previous decision is yours again.": "6694e18cdb57d7a96cef57f0d06d224e",
+    "Acorn Bombardier": "a8ba694623d73d3eb1d148c10fc0de92",
+    "Acoustic guitar": "2b878331b3b280c5245aad71d8d5e01e",
+    "Alebrije wooden creature": "b3f74fdec760db2287ee0a590d860dd5",
+    "All games are untimed. White moves first. Easy gives three takebacks; medium gives one. Each takeback rewinds your move and the reply. Normal chess includes castling, en passant, promotion and draws.": "a1eb70f4d5dc35ab5aae649ef89d08dc",
+    "All objects": "3e6defd685231cdd12065add41996c89",
+    "An honorable draw.": "e0044fb3d8d703c680f4ae5e85df457c",
+    "Another little war →": "a46bb4e0f051ea2607499ed27de65fa7",
+    "AT THE TABLE": "7d08578c27c773dbe54adced0ceb3af9",
+    "Back in the toy basket.": "872d8319b328fe4e50111efd0fb5ba2f",
+    "Banig woven mat": "0370e0e0ac7dd351864560652ecd29ea",
+    "Battle chronicle": "6911872f13f7c775bdc7f2147ac7310f",
+    "Battle history": "05c11ed32b534389b2f14e1c71fd9aae",
+    "Bishop": "3aa4584e547efba20238772d4af5c03d",
+    "Black": "e90dfb84e30edf611e326eeb04d680de",
+    "BLACK AT HOME": "b9907754f0467c20425915ba566ab880",
+    "Bluebonnet window box": "cc61304023345642816ad6e7e9d7a57c",
+    "Both armies lay down their crowns. Some battles end with a shared cup of tea.": "c635cd31fdfe6b4887531458f2756857",
+    "Bunny slippers": "ae7623103cb5665530d1878a3b61486f",
+    "Cancel": "ea4788705e6873b424c65e91c2846b19",
+    "Capiz shell nightlight": "9f3930f3396cf6289eb3c6d65fff5c19",
+    "Carabao plush": "ef1244de30348e17cf2247544d19fe25",
+    "Chaos: check can be ignored, but ordinary checkmate, capturing a king, or an LLM victory declaration calls the Universe. Cheats do not count as checkmate escapes. Castling and en passant are disabled. You get three cheats, each using a turn. After round five, the Universe may end any completed round and choose either side as winner.": "991384f36a13c11e2437292fbbbf8ed8",
+    "Check! Protect your king.": "e76d16de100ee3a2b701f44fa1209437",
+    "Checkmate! The Universe will decide who actually wins.": "dd85fc460c29de503154f7f554f3d093",
+    "CHESS CLUB": "142a3bc4276de97ff41917936b2e2cfd",
+    "Chessboard": "4533e086fc90571576318ce90e4bd233",
+    "Chief Forager": "360fa26472702ec682fb0b9839aac235",
+    "Choose a captured type, then an empty square.": "fbc1d341aa249e244fba07acea4f018b",
+    "Choose a highlighted square to move your piece.": "d7af5100767e3d8757edad4518069243",
+    "Choose action": "bd912f831474520eba6ecc44b7a95c7e",
+    "Choose its new role.": "cdea53a3d2d22f76c804c0b6023c3b5f",
+    "Choose move, rotate, or return to basket.": "ff396a3c3e73280ee85a638bf0d91e9d",
+    "Choose objects by placement area": "3f904f1f61cbcdc5a82fbf32f9a83bd9",
+    "Choose one of the highlighted legal squares.": "fbd92719968cc0a599ec5edf79b4da2c",
+    "Choose promotion": "0692701a2e292f94c528917a67bb02f5",
+    "Choose your courage. Fate chooses your side.": "75c703a67177ce1c10c7bc1c8824c184",
+    "Cloud mobile": "ea9da7e7b95dab706a52e3a3fbff4381",
+    "Consulting the Universe…": "6f5fa85597410d31ba92a54d8af69fd8",
+    "COSMIC DELIBERATION": "cd2576b4b54f2c4648c4db8c81e13da4",
+    "Cozy armchair": "4eb798708323039cbc5dddc72b90a64e",
+    "Daisy wall clock": "808dd62187111c50903172529bc12274",
+    "declared victory": "4348115a51f1e92a0c0fa496c32474a8",
+    "declares you the winner": "0aabd06df57af6a6a382d15470ec81d0",
+    "Decorate the playhouse": "1b78f28b44023f195b0d0fa3edbfd888",
+    "Decorative cowboy boots": "f182d54ca6a075c20ef78541f49361d6",
+    "Defensive Hoglet": "5dc1fd1f138edd801220826207555ff5",
+    "Deploy the board →": "c1baf14165e935275ade01b8501d9e3e",
+    "Done decorating this item": "947813bf9001b65dac3fb2176c667cf7",
+    "Draw": "2d03c2d5a7ec65ef4619e0582c272ec2",
+    "Draw by insufficient material.": "9ec506f2aed78a35203bb630d053efa2",
+    "Draw by stalemate.": "b7bd03e8cdfe68572bb1a9f6fbd2ca3b",
+    "Draw by the fifty-move rule.": "b55d0c40fce30e1c67bfff6fec9509d8",
+    "Draw by threefold repetition.": "e826dcc39151a5377f87e89c86493905",
+    "Easy": "7f943921724d63dc0ac9c6febf99fa88",
+    "Elder Sage": "e63cd4387b40d360b9f9224afac068af",
+    "Engine source": "90c52f9c5733f4e27b3b0892af8ee804",
+    "Every little creature has a role. Select one to meet it.": "8d9f24e565c3d93bab1eb32923375c72",
+    "Every move. Every dubious claim.": "a8c6ab95ca3dfec11180fec1142838e0",
+    "Fate is turning…": "42d0fe72660eb2ecf344868d63fb225a",
+    "FIELD NOTES / Rules, pieces & quantum provenance": "347944e5b5c9316348e4779c8a6e6285",
+    "Frog Rider": "45b9c968e88117a6f73411f3c43204e4",
+    "Fruit bowl": "95c14cfa71e176bcd48c2cce7c84bf23",
+    "Full-strength NNUE Stockfish, five seconds per move. No takebacks.": "fe55eecd3b0869dd8422d3212c25cd36",
+    "Furniture and floor objects": "68f6837e12688e61fb91f340d61c0ca6",
+    "Game controls": "103a121bbd018da89d87eb6642578434",
+    "Give fate a little nudge. Click the coin to spin.": "b1692a4bdb0173d71f99dfd36613a3d1",
+    "Goblin King": "a8d8e0b5dbbc742802946891f8ff3b69",
+    "Hanging decorations": "cde34fcbac65b89cc7f910f5878f5da1",
+    "Hard": "3656183169810334a96b91129dc9d881",
+    "Hedgelings": "8ad0f101efab6be7982ed6d447a0e307",
+    "How the table works": "e42243a625a4a4a8ab5bb27ca79c4939",
+    "In hardware mode, measurements are made on Amazon Braket quantum hardware in advance, then used once. The target probabilities are ideal; physical hardware has noise. If hardware results are unavailable, the match switches to the simulator and stays there. New matches try real hardware first.": "737c8a1bbd8f4e6567b4bbf202905450",
+    "Interactive 3D chessboard. Switch to 2D for keyboard controls.": "19d5de07d613f8846549d7263f73d9d0",
+    "Keep playing": "7b04a0b1f6c3e68aa334a99d04af9339",
+    "Keyboard placement controls": "8ba32c0c46422259c861b22c464005ff",
+    "King": "719ef271d38a388fd7b2bc967f4bd885",
+    "Knight": "8c23b2b86573edf2a5ea482c2ccc1497",
+    "Latest event ↓": "1eeae31c96368f2895a8241ceceda325",
+    "Latest measurement · Device:": "ca7172685931f0617f9d88a8c6cb4583",
+    "Leafy houseplant": "3040a6242f0bba54cb4ce40a4912e6a9",
+    "Leave this battle?": "57d2498e7f9b245fa4310b99aee56ac8",
+    "Let the Universe choose my side ↗": "551ea1e97834d3a71a97200de5232b21",
+    "LET THE WOODLANDS REJOICE": "81e1623e95eef44e5b41a723b6109540",
+    "Little bookcase": "3a3b040574078af8d0cb29c0048ba0dd",
+    "Little tea set": "1da7cb3fd7e403879b5f9cea62871d13",
+    "Loading / thinking with full NNUE Stockfish…": "b580279ae113bec19bc972facd0df4b9",
+    "Lost Hoglet": "8005e91d4fa6e00281bc510d2b3b9c8e",
+    "Luna’s Playhouse": "5c1352bad9a8f62b39a2f04c717a44a4",
+    "Luna’s Playhouse <0>✿</0>": "0485605eb1b8e4b18cddfc3bc18b5b28",
+    "MADE FOR A LITTLE ESCAPE.": "272244281c7518319d585201e8058297",
+    "Master Weaver": "dc0b7c6136cb486aee908abcbdaad6a7",
+    "Measured:": "ad04cd048ba69dbaec3b170de92ba8c9",
+    "Meet your army": "0bb33a0f383a9b03c9e522e845183938",
+    "Mia and Luna’s room. Choose a toy, then a glowing spot.": "4bdd459cddab5949d3b0989bab211dd5",
+    "Moon cushion": "a022d155bd14bf7592c095b3bfed6d4f",
+    "Move": "6bc362dbf494c61ea117fe3c71ca48a5",
+    "Move {name}": "692f9df1eee50b440436f8b955cb87c5",
+    "Mute sound": "62361f2fefc607eb0187e30ede849883",
+    "New match": "da6cac81a6180437f3c3598ced16baac",
+    "NO CLOCKS. NO CROWNS GUARANTEED.": "f72fd781dd073a8aee044160ed72b97a",
+    "ONE COIN. TWO LITTLE KINGDOMS.": "e94f1a5497be38c1314632d779835cdb",
+    "Opponent {value0} {pieceName}: {from} → {to}.": "c66b933f602df63ca396564f39ed3cf7",
+    "Opponent declared victory — the Universe will decide.": "2faa9bf5170b1f36f086fbd0ae515734",
+    "Opponent moved {value0}: {from} → {to}{value1}{value2}.": "c56b0eac53b231d140b42a5b61cae050",
+    "Opponent resurrected {pieceName} on {to}.": "e504edf27cde6cdcf397bbc0807f48dd",
+    "Opponent transformed {pieceName} on {from} into {value0}.": "34d0d29d8546b6de4b58f3ab4435df37",
+    "Opponent’s latest comment": "5cfc2a5e5fa2bb7da72766e5fcab8b29",
+    "Paintings and wall decorations": "b3723b84981125e74a3bac55c1b2e2a5",
+    "Paper flowers": "696c9f27629dc74fe376234602f7645e",
+    "Parol star lantern": "13ca023484e507111f1068f3723e1953",
+    "Pawn": "36cddea7303c5d9d8a0930128b1fbb80",
+    "PEACE IN THE CLEARING": "e95ba9ea325cc04ea96d082ad0abd45e",
+    "Piece type": "a6fe12c7f1af6b1842481d10c7ca4028",
+    "Place {name} at {category} spot {id}": "8c5789f806c731ecc2d2ccded9c73e83",
+    "Play again →": "f7a70df687c6d43ebec738eff74ff3da",
+    "plotting…": "6215abe911770266e802df0b78f9b5a9",
+    "Potion Mixer": "1fe28744bc026b765d3e2f8387c3dacd",
+    "Queen": "2c2d2c0291163b077a372c2a9c5a6eda",
+    "Rainbow building blocks": "a57c412935ac1cab90a1b119031a1a7a",
+    "Rainbow painting": "fe8555d6b6e0847861a154f354c1dfa7",
+    "Real hardware. Strange fate.": "78787b67d01ac1422fbe56cf4ab0fdae",
+    "REAL QUANTUM FATE · UNTIMED CHESS": "c3273c2833fcb9732f52805c38d038e5",
+    "Resign": "37d90cd3910397332d6e0faf393b6776",
+    "Resume your woodland battle": "6a88072cc8de36b22c2235dd37343740",
+    "Retry this turn": "7eaa50be2932c2c07a068f8b2737e516",
+    "Return {name} to the basket": "bde7b30457acad0426d4b19f4f5b80b7",
+    "Review the board": "47d939e012d8e9b395b0e6620327dfaf",
+    "Revive": "d78a1701177a08aebfbccceb9f1eb63a",
+    "Rook": "1a415f5ae0f891e49d34821a896b4466",
+    "Rotate {name} left": "ee20bf2ba8c845d629f4a574abcda7e1",
+    "Rotate {name} right": "0e50f8c1fa43ee9881bab03fb3598e6d",
+    "Round ottoman": "952358f40a2e3c0d2bac5a4697995e31",
+    "Scroll Goblins": "727cc29a4d7aa690ebae73b7f889bbc2",
+    "SCROLL GOBLINS": "43910d5f4d1763aa4e5dccfa2574d06b",
+    "Scroll Goblins <0>vs</0> Hedgelings": "a957e0ef7f84a5d5b4a36272852439f6",
+    "Scroll Goblins vs Hedgelings": "e4f6f82f88634759d120a98c81972e57",
+    "Scroll Grunt": "437aa63d219a513be49e1553aee2d800",
+    "Scroll Rider": "a3100ffd6b6e3f9ab69700f3164b8300",
+    "Select a piece, then its destination.": "e4b3723b967292633f55254b337868bf",
+    "Select a piece, then its destination. Cheats each use one turn.": "40e0fc98bb875b804fe39611abe86dad",
+    "Select your non-king piece, choose its new type, then transform.": "6cbebfe2deec43c401447c79cf92cdbd",
+    "Select your piece, then any empty or enemy square.": "58e1ca66749a22980a7b49219c3f5524",
+    "Shot:": "4877b6442cd0b58704b43a3100b88330",
+    "SIMULATED QUANTUM FATE · UNTIMED CHESS": "e5a3ffae8caeeb64cc4e3d6a83f7d983",
+    "Simulated Universe": "a2698228af14181368481d9c74245973",
+    "Some battles are<0/>written in the stars.": "876f66dd17afd11ab766d5c71a71c198",
+    "Spellbook Stack": "0560f72e89613e7c004c0630bfea7bc4",
+    "Spin the coin to choose your faction": "30fddfaf4b9c94cda63485d4ae3fca25",
+    "Spin the faction coin again": "4cbb2df9f2915df86e1a0ea2daa1e70f",
+    "Start fresh": "baad4b92cd3a470ed540ae58ffecf7cb",
+    "Start new match": "507586ed73b064ab2b61b7baba08ed7b",
+    "Stockfish GPL license": "3a96d74113bfb14b88a1e849b7c96231",
+    "Story books": "5cf123d22b11f3c0317de0932418a1f3",
+    "Stump Tower": "9c96d9b5f2b17291e78691bd86d7c8e0",
+    "Sunshine painting": "0bc63f6aefd43bbd37ab738a591f7732",
+    "Tabletop objects": "a02d8cc0b620635a6fb7273a1852b64c",
+    "Take your time.": "06d267d31694bd10c6e650c2849584f6",
+    "Talavera planter": "86f6b7bd2759a2d46647767745fcf867",
+    "Tap to move · Drag to orbit · Pinch to zoom": "8414fd6df619c9cb84444daa3c44ebc3",
+    "Task:": "94c57715dc2dbecef6fbea60861fe710",
+    "Teleport": "054fc7866c93a2496fd9048c493e6aed",
+    "That area is full. Choose another glowing spot.": "082cba32fc5be57a52b16a2dc1d80431",
+    "The {army} lower their banners. Rest, regroup, and live to cause mischief another day.": "ff691c39dc741fecc69569814f03a73a",
+    "The {army} raise a cheer. Their commander has earned a very splendid crown.": "1081866304940a0b67c60a28b7ace026",
+    "The battle is over.": "b148c7db9dd7c2a5faf7ba283edbb89e",
+    "THE FINAL WORD": "e93ae63c509c32e7235e5f014a42655c",
+    "The forest falls quiet.": "23a6dc4fbebc9e6d018fb90e5942e8f3",
+    "The full NNUE engine downloads about 95 MB once, then runs on your device.": "6e55a3aa2b6622a3761f600a3c58d23e",
+    "The Hedgelings": "d099c27b937e4d9f4f768f66906af52b",
+    "THE HEDGELINGS": "1a1c054df1b1449862fbc9af828b4547",
+    "The Mad Alchemist": "a0e956c532a5d587eb145d408421526e",
+    "The Scroll Goblins": "950f87d40078a4ee75eefaa1c17ed155",
+    "The Universe allows this nonsense to continue.": "8207bff94ae521249b4e0c6a7c1e8c93",
+    "The Universe declares {value0} the winner. Cosmic paperwork is final.": "ecf0432709a0f5b9e9059c99a81687d1",
+    "The Universe has chosen your faction and color.": "97e72537c76c1e44f7954ee152ffd823",
+    "THE UNIVERSE HAS SPOKEN": "2e6e85dc214012f8d77756d57a566932",
+    "The Universe is deciding…": "13eddf735ca9c43ee29af9ee6c5c47c0",
+    "The Wandering Spirit": "3f11ede2d5e5d094c6707fe926b69dad",
+    "THE WOODLAND TABLE": "6e2a60d3e5f3e8ef2632b258229d0c88",
+    "This match uses an ideal eight-qubit state-vector simulation. Measurements are sampled on your computer and saved so retries cannot reroll results. No hardware shots or AWS credits are consumed.": "97a755ea75fa2c104c78f8f22d273392",
+    "This one is mostly written on stolen scrolls. Command a woodland army against Stockfish—or a spirit with a questionable understanding of chess.": "10ce333c612b746b3fd45632df7d3889",
+    "Toy armadillo": "300906a2127920ec56450dddfb639579",
+    "Toy basket": "fd1dd26c41a48a83bddda92c111d763b",
+    "Trainee Scribe": "979a23f5f170c4baea2686026dbba0d2",
+    "Transform": "2ff4148554480a37f85efd299df04850",
+    "Transform selected piece": "8659e58b2323d1031513930309ed97cb",
+    "Turn room left": "88085dcf9cf96a6fad9640dc7358f008",
+    "Turn room right": "e1c960f1c4b9e38bdb4022296a528ba6",
+    "Turn sound on": "66248805079469767a84505ae9b8c74e",
+    "Turned a quarter turn.": "a2457013bea73616a71146a2b510708f",
+    "Victory is yours!": "5b7433a11e23eb7adc5b7e6b19e587e6",
+    "View result": "6abb7feedeac5d7457bf6758bbe8ec03",
+    "Warn about attacked pieces": "a1ae24b79ce6896f4dc4299fa3b9ac26",
+    "White": "25a81701fbfa4a1efdf660a950c1d006",
+    "WHITE AT HOME": "477489f83ba30f6e5aabac6fae547f7a",
+    "WOODLAND": "9cdf1080c0016a38f2e5f27e13d3240b",
+    "Woodland chess, real quantum fate, and an opponent who thinks the rules are a suggestion. Command your faction in 3D.": "28b99be73f21ed68cd89df5386176b95",
+    "You play black · your opponent moves first.": "1571cc83bfc0c37f87d64238149e6fb4",
+    "You play white · you move first.": "e74b5e23ab944802ea68848d668173d5",
+    "You resigned. Your opponent wins.": "cf9fc715abdbac30aca331ec092caa09",
+    "YOUR ALLEGIANCE": "a562df52a000abbc045df30d90b1fe22",
+    "Your allegiance is sealed. Spin again for a little luck.": "9fe62e565546fe602ea008a2f6ccd4a5",
+    "Your browser cannot save this room. It will last until you close the page.": "bc83958bd2ddc7cc1b35513f52f8a3ff",
+    "Your move.": "6c6182564034ab2936a202879cfc13e8",
+    "YOUR OPPONENT": "b5365c72770d5d120ece55eb4a2ad63f",
+    "Your opponent’s next outrageous remark will appear here.": "cc3d02adc4d6c963fcaaa50e249e512f",
+    "Zarape-patterned blanket": "17646fbecc076ac866336d76f1920c84",
+    "{actor}: {action} {from} → {to}": "724450b95db10316b243f1681a21f136",
+    "{color} {piece}": "c3e54f1fdff0bc370a15eeb50200cd9a",
+    "{name}, in the room": "bae3eef6ca702d88fe347b4a9eeda7e7",
+    "All three cheats have been used.": "93edc05b798190347d2d6684b1267312",
+    "Chaos mode needs its server rate limiter configured.": "e31a27e0dd63afe11492c7cb49281daf",
+    "Choose one of your captured non-king pieces.": "008486702187c2da5f3dff525de8996c",
+    "Choose one of your pieces and a different destination.": "60ade9f944666b0d1ae4549558958fb1",
+    "Could not reach the chaos opponent service. Retry this turn once the connection returns. The Universe simulator handles coin flips and verdicts, not the LLM opponent.": "489e1d11e5d8c40cd5687cbf22360237",
+    "Declare victory": "ddbc81f08fc9a9efe6fec0e76710c3c4",
+    "Empty square": "b445177ba69f0b6abf330a9854682e74",
+    "Invalid board.": "6b98a2fe285d201d3c3c7d60eb007d21",
+    "King in check": "0c5018eb1255e5e2a2488c89382c1639",
+    "Opponent moved from here": "0de86e84523654186bf297d80ccde7e5",
+    "Opponent moved here": "1ba2e7ad855e1acca4bb93c23f41fffc",
+    "Place {name} at {value0} spot {id}": "f8a6eee6de1a86836dfddcfde92285f1",
+    "Resurrect onto an empty square.": "0f1c7e0f9c468f4f5e945e5cb591a0b3",
+    "Stockfish timed out. Retry the turn.": "b4d370bb2f9b6c2b834069751df1c343",
+    "That move needs a teleport cheat.": "875a088c71ecf90847a8d83df2407391",
+    "That square already belongs to one of your pieces.": "51f502108c7cd98d7501d0a8f42dce69",
+    "The spirit is resting. Try again shortly.": "a6a730f10308956673951cd5ded0d546",
+    "The spirit lost its train of thought. Retry this turn.": "6055a0008ed11c937b2c4ddd0697b891",
+    "The spirit needs a moment. Try again shortly.": "97199999b85248d8b3394a1f64edc78f",
+    "The spirit proposed an impossible board edit. Retry its turn.": "fb943e2c7bf1edd51b758521f5a21a1b",
+    "Transform a non-king into a different non-king piece.": "2372f61acdfd715dd35e1b656cba8dcf",
+    "Unknown action.": "9258e257348c7e4f8c948d5ca16a35d5",
+    "your opponent": "4da4c861bb5e54693080496c7f0edd86",
+    "you": "639bae9ac6b3e1a84cebb7b403297b79",
+    "moved": "11dfd868d93bc2b0e4ce0bee5756f8b1",
+    "teleported": "2802d83b625211b469b99fb7b688eb5c",
+    "Floor": "f3f6d0343d56ce88ce7958170ed05cb3",
+    "Surface": "aa0d528ba11ea1485d466dfe1ea40819",
+    "Wall": "94e8a499539d1a472f3b5dbbb85508c0",
+    "Ceiling": "3237fbc8204064c106cb9080088a17cb"
   },
   "sources": [
     {
@@ -958,12 +1228,24 @@
       "key": "f4078ba042990272cc8678168e4ed1d0"
     },
     {
+      "source": "· This piece is under attack!",
+      "key": "19d9b4abdfa59e7adbac0a33c3a84fe7"
+    },
+    {
       "source": "(tap a discovered dance to perform it)",
       "key": "3a775becc383bb9a75b3f675e8b82095"
     },
     {
+      "source": "{actor}: {action} {from} → {to}",
+      "key": "724450b95db10316b243f1681a21f136"
+    },
+    {
       "source": "{bits, plural, one {Adds ~# bit of uniqueness} other {Adds ~# bits of uniqueness}}",
       "key": "517e69103e99eb77f7507702052d82ac"
+    },
+    {
+      "source": "{color} {piece}",
+      "key": "c3e54f1fdff0bc370a15eeb50200cd9a"
     },
     {
       "source": "{colorDepth}-bit",
@@ -974,8 +1256,16 @@
       "key": "da963a721187adf5a22f3add2d49dc09"
     },
     {
+      "source": "{count, plural, one {# event} other {# events}}",
+      "key": "73e1f404296bd3a4de2e4c58f0dc2c6e"
+    },
+    {
       "source": "{count, plural, one {# hour ago} other {# hours ago}}",
       "key": "1d4cbb2e5aa03de9aa4b3c48fd7e748b"
+    },
+    {
+      "source": "{count, plural, one {# undo left} other {# undos left}}",
+      "key": "1252113be7bf97fff1f51e45f7fbbee3"
     },
     {
       "source": "{days, plural, one {# day ago} other {# days ago}}",
@@ -1020,6 +1310,18 @@
     {
       "source": "{name} leaves the shelf.",
       "key": "b4c2acfd9dfca17023368cbd3b0d3859"
+    },
+    {
+      "source": "{name} placed. Mia and Luna are coming to see!",
+      "key": "052ce64d95f3275ada0a7facbcb67858"
+    },
+    {
+      "source": "{name} selected. Choose a glowing spot.",
+      "key": "e764859a8fcf272fd24e505ecab1a1f8"
+    },
+    {
+      "source": "{name}, in the room",
+      "key": "bae3eef6ca702d88fe347b4a9eeda7e7"
     },
     {
       "source": "{noteCount, plural, one {# note} other {# notes}}",
@@ -1082,12 +1384,20 @@
       "key": "ccda2ef165bb05b9cf7613b33e2133b2"
     },
     {
+      "source": "{value0} wins by checkmate.",
+      "key": "19eea83c7cc7ffac4eb50856cb9091db"
+    },
+    {
       "source": "{value0}KB",
       "key": "d8fd9583772eec0332f7a769a9788aa2"
     },
     {
       "source": "← Back",
       "key": "fa9309cd5ba2f89ef8590aa88cbc9579"
+    },
+    {
+      "source": "↶ Undo decision",
+      "key": "d1ad44b96b65d1db3ea6cb5feadd8710"
     },
     {
       "source": "+{points} chaos",
@@ -1106,12 +1416,32 @@
       "key": "c77f51043708c6decd788a71b2ad51d7"
     },
     {
+      "source": "<0>SIMULATED UNIVERSE</0><1>This match uses simulated quantum measurements. Play continues even when hardware results are unavailable.</1>",
+      "key": "739fc1b45ab56e90da9847969933e96a"
+    },
+    {
+      "source": "♟ STOCKFISH 19",
+      "key": "984605d8e33822e75d6bbb76dc8171cb"
+    },
+    {
       "source": "✋ Touch",
       "key": "3db700f7aa85f76cc4c27f9731ee7506"
     },
     {
+      "source": "✦ {count, plural, one {# cheat remaining} other {# cheats remaining}}",
+      "key": "c035fc1b0f57eebb0fca70cc3844f3e4"
+    },
+    {
+      "source": "✦ RULES ARE OPTIONAL",
+      "key": "8bc5f04830ab5a18804bacc32b4f5683"
+    },
+    {
       "source": "🌱 Touch Grass",
       "key": "2de696490b0342d13d6f69aa53696e18"
+    },
+    {
+      "source": "🎀 <0>Luna</0>",
+      "key": "93f6526debd524d41c08a47329523dc2"
     },
     {
       "source": "🎈 Balloon Blower",
@@ -1166,6 +1496,10 @@
       "key": "673e2d3eb42f6b255d516a397924bf53"
     },
     {
+      "source": "🤠 <0>Mia</0>",
+      "key": "e8d6a462416ae294b09d993034fb1f2f"
+    },
+    {
       "source": "🥔 Potato Painter",
       "key": "71840e0da89706a8964984711ab765ee"
     },
@@ -1190,12 +1524,28 @@
       "key": "61720bbd8303ba226d0d8b0d5b5fc7e0"
     },
     {
+      "source": "02 / CHOOSE YOUR OPPONENT",
+      "key": "ec6da5223e2386548ead74373c646ffe"
+    },
+    {
       "source": "1 day ago",
       "key": "44ba1391bb5be07bbe3a4737dc1873d5"
     },
     {
       "source": "10 seconds max.",
       "key": "76cb3314bd8e37f21d729b8aeeaadf1e"
+    },
+    {
+      "source": "2D / keyboard board",
+      "key": "fac1f3039032413d67fff36fd57f45fa"
+    },
+    {
+      "source": "3D could not start on this device. Try a browser with WebGL enabled.",
+      "key": "35083de990bf0f0e319171b0a8a63c60"
+    },
+    {
+      "source": "3D miniatures",
+      "key": "7a5f57981e3c3519fee1df50512cac62"
     },
     {
       "source": "404: Goblin not found",
@@ -1214,6 +1564,10 @@
       "key": "88e40c7d0c4873e7dd33eb1eb4955ca9"
     },
     {
+      "source": "A cheating LLM, three cheats of your own, and the Universe as referee.",
+      "key": "57b536dd828070f08002b5eec56ec4c3"
+    },
+    {
       "source": "A cool aura that got TOO much rest. It only knows how to clap.",
       "key": "d18557da6a8d0f5549ccf6a035decbe2"
     },
@@ -1230,6 +1584,10 @@
       "key": "5f4c6bb2e07f80b6de4a7da2cb5e9542"
     },
     {
+      "source": "A gentle first adventure. Three takebacks and optional danger warnings.",
+      "key": "3b644c39e255153d301edd87dc9810b5"
+    },
+    {
       "source": "A gentle squeeze. The chicken tolerates this.",
       "key": "82a3609905983df76554c32145c5c070"
     },
@@ -1242,6 +1600,30 @@
       "key": "f55781d826ae5753bf37832d8b654581"
     },
     {
+      "source": "A grunt earns a promotion.",
+      "key": "215c0a278a815abe0e38c54c44821e6d"
+    },
+    {
+      "source": "A king has fallen. The Universe will decide who actually wins.",
+      "key": "ef27003c7edbbd144be764e7a1e0d639"
+    },
+    {
+      "source": "A little cunning. A little mercy. One takeback.",
+      "key": "a76a17de1d727e39c9ea89340449bd8c"
+    },
+    {
+      "source": "A little patience. Great nonsense takes time.",
+      "key": "06334e1fc828a889739015c26a865946"
+    },
+    {
+      "source": "A little room, a world of treasures. Decorate and play with Mia and Luna.",
+      "key": "2fb3c2c8405575ec49566d1fbfc6ea10"
+    },
+    {
+      "source": "A LITTLE ROOM. A WHOLE WORLD.",
+      "key": "cf9daeedbe8973e46a3b81d82eeb3d64"
+    },
+    {
       "source": "A loudness meter is the least of it. With raw microphone access, a site could work out:",
       "key": "71d988bc611e99372d02ed31dbb1c330"
     },
@@ -1250,8 +1632,16 @@
       "key": "f7a6b369eb1101334eb34a4de82591d5"
     },
     {
+      "source": "A MOMENT FOR THE FALLEN",
+      "key": "c99f4ceb3a2881421e77d72e7d00dcca"
+    },
+    {
       "source": "A new blade has grown back. Nature heals. 🌱",
       "key": "c83c4c37cd0be1f3ad1712a489696171"
+    },
+    {
+      "source": "A new match replaces your saved game.",
+      "key": "52055bf910eb53134c9e50a3b6d635e2"
     },
     {
       "source": "A notification permission is a permanent hook back to you. With it, a site can:",
@@ -1266,6 +1656,10 @@
       "key": "830c7a05fc0d2740e35e3145a5b16ed6"
     },
     {
+      "source": "A scheme is brewing…",
+      "key": "bab32a3bc14eff00a7fc87be5f67cc63"
+    },
+    {
       "source": "A scream heard by every chicken on Earth. Magnificent.",
       "key": "80b662db0e730bde6a5814c301173cf7"
     },
@@ -1274,8 +1668,16 @@
       "key": "84bc2913d3168e55e2f3ddbd99c50091"
     },
     {
+      "source": "A SMALL WAR. A VERY STRANGE UNIVERSE.",
+      "key": "2805af1f11cb373446313a65ee234f88"
+    },
+    {
       "source": "A suite of gloriously pointless browser mini-apps: translate text to emoji, touch virtual grass, squeeze a screaming chicken, commune with god, paint potatoes, fence with slugs, blow up balloons with your voice, and play as a shelf-smashing cat.",
       "key": "9229c3ade270b61248e549f1fbf6b3c7"
+    },
+    {
+      "source": "A takeback: the previous decision is yours again.",
+      "key": "6694e18cdb57d7a96cef57f0d06d224e"
     },
     {
       "source": "A timeless truth echoes through the browser.",
@@ -1308,6 +1710,14 @@
     {
       "source": "ACDEFGHIKLMNPQRSTVWY",
       "key": "638ef73a7502450731f6bfb2c2dd8747"
+    },
+    {
+      "source": "Acorn Bombardier",
+      "key": "a8ba694623d73d3eb1d148c10fc0de92"
+    },
+    {
+      "source": "Acoustic guitar",
+      "key": "2b878331b3b280c5245aad71d8d5e01e"
     },
     {
       "source": "Active",
@@ -1362,6 +1772,22 @@
       "key": "8d416bdbf8bc9ee4184a16232b92ece8"
     },
     {
+      "source": "Alebrije wooden creature",
+      "key": "b3f74fdec760db2287ee0a590d860dd5"
+    },
+    {
+      "source": "All games are untimed. White moves first. Easy gives three takebacks; medium gives one. Each takeback rewinds your move and the reply. Normal chess includes castling, en passant, promotion and draws.",
+      "key": "a1eb70f4d5dc35ab5aae649ef89d08dc"
+    },
+    {
+      "source": "All objects",
+      "key": "3e6defd685231cdd12065add41996c89"
+    },
+    {
+      "source": "All three cheats have been used.",
+      "key": "93edc05b798190347d2d6684b1267312"
+    },
+    {
       "source": "ALPHA MOLLUSK",
       "key": "ad25ef971d10b97f9803c6f2ee9fd3fd"
     },
@@ -1378,6 +1804,10 @@
       "key": "e2f38adc2a190504a610544a73647e7b"
     },
     {
+      "source": "An honorable draw.",
+      "key": "e0044fb3d8d703c680f4ae5e85df457c"
+    },
+    {
       "source": "An octopus lives only once",
       "key": "478f281a6c24812757c880fce66a2476"
     },
@@ -1392,6 +1822,10 @@
     {
       "source": "Ancient Magic Scroll leaves the shelf.",
       "key": "a1b0baa24133f42ef911e9cbe87ae9f0"
+    },
+    {
+      "source": "Another little war →",
+      "key": "a46bb4e0f051ea2607499ed27de65fa7"
     },
     {
       "source": "Antarctica (really?)",
@@ -1454,6 +1888,10 @@
       "key": "7d85c0295320297e7509569bf4dd6581"
     },
     {
+      "source": "AT THE TABLE",
+      "key": "7d08578c27c773dbe54adced0ceb3af9"
+    },
+    {
       "source": "Atlantic region",
       "key": "54b5056ac6ef2c4a912922d35018212d"
     },
@@ -1474,6 +1912,10 @@
       "key": "0557fa923dcee4d0f86b1409f5c2167f"
     },
     {
+      "source": "Back in the toy basket.",
+      "key": "872d8319b328fe4e50111efd0fb5ba2f"
+    },
+    {
       "source": "Back to the apps",
       "key": "3f7b34a69a6b223a15e42b821dfeb692"
     },
@@ -1490,8 +1932,20 @@
       "key": "fbaaf86b1999386305ff5f44f767f6ee"
     },
     {
+      "source": "Banig woven mat",
+      "key": "0370e0e0ac7dd351864560652ecd29ea"
+    },
+    {
       "source": "Base ad impression",
       "key": "79df66e83f356d8e97e8733b4a130e9e"
+    },
+    {
+      "source": "Battle chronicle",
+      "key": "6911872f13f7c775bdc7f2147ac7310f"
+    },
+    {
+      "source": "Battle history",
+      "key": "05c11ed32b534389b2f14e1c71fd9aae"
     },
     {
       "source": "Behavioral Tracking",
@@ -1502,8 +1956,20 @@
       "key": "0b87d66b88c72957dfea8c9605016442"
     },
     {
+      "source": "Bishop",
+      "key": "3aa4584e547efba20238772d4af5c03d"
+    },
+    {
       "source": "BJOUXZ",
       "key": "d2293e9ceaab520853608f18e2c7dfea"
+    },
+    {
+      "source": "Black",
+      "key": "e90dfb84e30edf611e326eeb04d680de"
+    },
+    {
+      "source": "BLACK AT HOME",
+      "key": "b9907754f0467c20425915ba566ab880"
     },
     {
       "source": "Blooming",
@@ -1538,8 +2004,16 @@
       "key": "0fb82d649f6df0ea855c357a447f242d"
     },
     {
+      "source": "Bluebonnet window box",
+      "key": "cc61304023345642816ad6e7e9d7a57c"
+    },
+    {
       "source": "Blues",
       "key": "aca2a3c07f76ae685ae818b312e025c5"
+    },
+    {
+      "source": "Both armies lay down their crowns. Some battles end with a shared cup of tea.",
+      "key": "c635cd31fdfe6b4887531458f2756857"
     },
     {
       "source": "Both slugs ready. Starting…",
@@ -1618,6 +2092,10 @@
       "key": "2dc11367e78bb4ac70e761eda6ddcb66"
     },
     {
+      "source": "Bunny slippers",
+      "key": "ae7623103cb5665530d1878a3b61486f"
+    },
+    {
       "source": "Buttery and smug about it.",
       "key": "c9a8540ab52cf682e757d8d2ab9e7cd9"
     },
@@ -1650,6 +2128,10 @@
       "key": "9bf718fdf1dccbea8907401aa52d54f2"
     },
     {
+      "source": "Cancel",
+      "key": "ea4788705e6873b424c65e91c2846b19"
+    },
+    {
       "source": "Cannot be known here",
       "key": "d63bdb01f50db861c0dc81d87bf6bba5"
     },
@@ -1662,8 +2144,16 @@
       "key": "ba531975e0bf9e1719888b9ff6e6e627"
     },
     {
+      "source": "Capiz shell nightlight",
+      "key": "9f3930f3396cf6289eb3c6d65fff5c19"
+    },
+    {
       "source": "Capture your face and match it to photos of you elsewhere",
       "key": "4a27b435603cd7cc306385a10a926920"
+    },
+    {
+      "source": "Carabao plush",
+      "key": "ef1244de30348e17cf2247544d19fe25"
     },
     {
       "source": "Care shapes color: a music-fed aura overrides its base hue.",
@@ -1684,6 +2174,10 @@
     {
       "source": "Cauldron",
       "key": "452f809d8dc51300087f69573bf9b029"
+    },
+    {
+      "source": "Ceiling",
+      "key": "3237fbc8204064c106cb9080088a17cb"
     },
     {
       "source": "Central Time · North America",
@@ -1718,6 +2212,10 @@
       "key": "7e8214916782021125d0afd9d9d9ee66"
     },
     {
+      "source": "Chaos mode needs its server rate limiter configured.",
+      "key": "e31a27e0dd63afe11492c7cb49281daf"
+    },
+    {
       "source": "Chaos on a COOL aura stays reserved — same energy, less talking.",
       "key": "37440a13d92b7ebf1cea74ff0c1c85b4"
     },
@@ -1738,6 +2236,10 @@
       "key": "5db47947db721dddf68e4e4c55d7a15e"
     },
     {
+      "source": "Chaos: check can be ignored, but ordinary checkmate, capturing a king, or an LLM victory declaration calls the Universe. Cheats do not count as checkmate escapes. Castling and en passant are disabled. You get three cheats, each using a turn. After round five, the Universe may end any completed round and choose either side as winner.",
+      "key": "991384f36a13c11e2437292fbbbf8ed8"
+    },
+    {
       "source": "Chapter {no} · Age {age} months",
       "key": "7129a06b598b697264a5f441a3719d28"
     },
@@ -1746,8 +2248,72 @@
       "key": "dccd6b32cead4677440ff20f66c56310"
     },
     {
+      "source": "Check! Protect your king.",
+      "key": "e76d16de100ee3a2b701f44fa1209437"
+    },
+    {
+      "source": "Checkmate! The Universe will decide who actually wins.",
+      "key": "dd85fc460c29de503154f7f554f3d093"
+    },
+    {
+      "source": "CHESS CLUB",
+      "key": "142a3bc4276de97ff41917936b2e2cfd"
+    },
+    {
+      "source": "Chessboard",
+      "key": "4533e086fc90571576318ce90e4bd233"
+    },
+    {
+      "source": "Chief Forager",
+      "key": "360fa26472702ec682fb0b9839aac235"
+    },
+    {
+      "source": "Choose a captured type, then an empty square.",
+      "key": "fbc1d341aa249e244fba07acea4f018b"
+    },
+    {
+      "source": "Choose a highlighted square to move your piece.",
+      "key": "d7af5100767e3d8757edad4518069243"
+    },
+    {
+      "source": "Choose action",
+      "key": "bd912f831474520eba6ecc44b7a95c7e"
+    },
+    {
+      "source": "Choose its new role.",
+      "key": "cdea53a3d2d22f76c804c0b6023c3b5f"
+    },
+    {
+      "source": "Choose move, rotate, or return to basket.",
+      "key": "ff396a3c3e73280ee85a638bf0d91e9d"
+    },
+    {
+      "source": "Choose objects by placement area",
+      "key": "3f904f1f61cbcdc5a82fbf32f9a83bd9"
+    },
+    {
+      "source": "Choose one of the highlighted legal squares.",
+      "key": "fbd92719968cc0a599ec5edf79b4da2c"
+    },
+    {
+      "source": "Choose one of your captured non-king pieces.",
+      "key": "008486702187c2da5f3dff525de8996c"
+    },
+    {
+      "source": "Choose one of your pieces and a different destination.",
+      "key": "60ade9f944666b0d1ae4549558958fb1"
+    },
+    {
+      "source": "Choose promotion",
+      "key": "0692701a2e292f94c528917a67bb02f5"
+    },
+    {
       "source": "Choose your brainrot spell",
       "key": "03e40907eae80e82bbe536003146ea8a"
+    },
+    {
+      "source": "Choose your courage. Fate chooses your side.",
+      "key": "75c703a67177ce1c10c7bc1c8824c184"
     },
     {
       "source": "Choose your mode",
@@ -1786,6 +2352,10 @@
       "key": "c391a971d5de8ddc9d9a74ba61fcc3a2"
     },
     {
+      "source": "Cloud mobile",
+      "key": "ea9da7e7b95dab706a52e3a3fbff4381"
+    },
+    {
       "source": "Codon",
       "key": "05b6a6f625efb303f1a04d9753988520"
     },
@@ -1816,6 +2386,10 @@
     {
       "source": "Connection",
       "key": "c2cc7082a89c1ad6631a2f66af5f00c0"
+    },
+    {
+      "source": "Consulting the Universe…",
+      "key": "6f5fa85597410d31ba92a54d8af69fd8"
     },
     {
       "source": "Continue →",
@@ -1882,6 +2456,10 @@
       "key": "dd67f4164e112ff62deca0f040abefe2"
     },
     {
+      "source": "COSMIC DELIBERATION",
+      "key": "cd2576b4b54f2c4648c4db8c81e13da4"
+    },
+    {
       "source": "Could not create a match. Try again.",
       "key": "cf1caa71556b25aa2a122e1a127f753c"
     },
@@ -1894,8 +2472,16 @@
       "key": "1dc3f2056a67131b90c295bb87ff7e39"
     },
     {
+      "source": "Could not reach the chaos opponent service. Retry this turn once the connection returns. The Universe simulator handles coin flips and verdicts, not the LLM opponent.",
+      "key": "489e1d11e5d8c40cd5687cbf22360237"
+    },
+    {
       "source": "Could not start recording.",
       "key": "53fbc6c50f575baae2b1515b2771176c"
+    },
+    {
+      "source": "Cozy armchair",
+      "key": "4eb798708323039cbc5dddc72b90a64e"
     },
     {
       "source": "CPU Cores",
@@ -1966,12 +2552,36 @@
       "key": "2041690356042e27ff4e74124f1fb9df"
     },
     {
+      "source": "Daisy wall clock",
+      "key": "808dd62187111c50903172529bc12274"
+    },
+    {
       "source": "Dance Encyclopedia",
       "key": "f29dd0982f418ed1a496e933fd5b7ff2"
     },
     {
       "source": "Data Broker Auction",
       "key": "cc768298713d411a8a832f04ef287fdb"
+    },
+    {
+      "source": "Declare victory",
+      "key": "ddbc81f08fc9a9efe6fec0e76710c3c4"
+    },
+    {
+      "source": "declared victory",
+      "key": "4348115a51f1e92a0c0fa496c32474a8"
+    },
+    {
+      "source": "declares you the winner",
+      "key": "0aabd06df57af6a6a382d15470ec81d0"
+    },
+    {
+      "source": "Decorate the playhouse",
+      "key": "1b78f28b44023f195b0d0fa3edbfd888"
+    },
+    {
+      "source": "Decorative cowboy boots",
+      "key": "f182d54ca6a075c20ef78541f49361d6"
     },
     {
       "source": "Decoupled monorepo / React + TS shell / Hono API / Vercel AI SDK (Gemini)",
@@ -2002,6 +2612,10 @@
       "key": "0990e407953b12574a553cd03a98fd6b"
     },
     {
+      "source": "Defensive Hoglet",
+      "key": "5dc1fd1f138edd801220826207555ff5"
+    },
+    {
       "source": "Delete browser storage",
       "key": "76f4be787f913c40f17bf742f4ede35b"
     },
@@ -2012,6 +2626,10 @@
     {
       "source": "Dens Built",
       "key": "4d0efe56f32f5ff72d0bb04885418773"
+    },
+    {
+      "source": "Deploy the board →",
+      "key": "c1baf14165e935275ade01b8501d9e3e"
     },
     {
       "source": "Desktop / Laptop",
@@ -2070,6 +2688,10 @@
       "key": "3bdc048cd6fdbd058635609182c4a5f4"
     },
     {
+      "source": "Done decorating this item",
+      "key": "947813bf9001b65dac3fb2176c667cf7"
+    },
+    {
       "source": "Dorian",
       "key": "b8dd79e4a88047dee0f3bf56dcb37ca8"
     },
@@ -2080,6 +2702,26 @@
     {
       "source": "Drag a spud from the tray and drop it on the canvas to stamp it. Every potato you use is replaced by a brand-new one — same variety, never the same shape.",
       "key": "3703ce383347a69718ec4e99e7a61f30"
+    },
+    {
+      "source": "Draw",
+      "key": "2d03c2d5a7ec65ef4619e0582c272ec2"
+    },
+    {
+      "source": "Draw by insufficient material.",
+      "key": "9ec506f2aed78a35203bb630d053efa2"
+    },
+    {
+      "source": "Draw by stalemate.",
+      "key": "b7bd03e8cdfe68572bb1a9f6fbd2ca3b"
+    },
+    {
+      "source": "Draw by the fifty-move rule.",
+      "key": "b55d0c40fce30e1c67bfff6fec9509d8"
+    },
+    {
+      "source": "Draw by threefold repetition.",
+      "key": "e826dcc39151a5377f87e89c86493905"
     },
     {
       "source": "Dreamy",
@@ -2122,6 +2764,10 @@
       "key": "d3c77c45ce72724ffb6300c093bcf95b"
     },
     {
+      "source": "Easy",
+      "key": "7f943921724d63dc0ac9c6febf99fa88"
+    },
+    {
       "source": "Eat 6 prey",
       "key": "f3101c135194695bd4521e818a17de3a"
     },
@@ -2150,6 +2796,10 @@
       "key": "117b4de05be2f3ceb3283596d095eec7"
     },
     {
+      "source": "Elder Sage",
+      "key": "e63cd4387b40d360b9f9224afac068af"
+    },
+    {
       "source": "Electric",
       "key": "a74711a0a27d5306d53f17771c2161cb"
     },
@@ -2170,6 +2820,10 @@
       "key": "6e0a095b9d62ae062990d0da9a11242c"
     },
     {
+      "source": "Empty square",
+      "key": "b445177ba69f0b6abf330a9854682e74"
+    },
+    {
       "source": "Enchanted Wand",
       "key": "b66ef86fcdf97877d86ce17682f18479"
     },
@@ -2180,6 +2834,10 @@
     {
       "source": "Engagement: {style}",
       "key": "4cf9d411ea52e31b1b9f6dc9db956f85"
+    },
+    {
+      "source": "Engine source",
+      "key": "90c52f9c5733f4e27b3b0892af8ee804"
     },
     {
       "source": "Environment",
@@ -2218,6 +2876,14 @@
       "key": "086e470245c981c1627373cd981fce6c"
     },
     {
+      "source": "Every little creature has a role. Select one to meet it.",
+      "key": "8d9f24e565c3d93bab1eb32923375c72"
+    },
+    {
+      "source": "Every move. Every dubious claim.",
+      "key": "a8c6ab95ca3dfec11180fec1142838e0"
+    },
+    {
       "source": "Everything runs in your web browser; nothing to download or install.",
       "key": "f6d42d8f9a1af090cabe200b3642179e"
     },
@@ -2242,6 +2908,10 @@
       "key": "0fb2862f3caf2b9023750ff35388e5a1"
     },
     {
+      "source": "Fate is turning…",
+      "key": "42d0fe72660eb2ecf344868d63fb225a"
+    },
+    {
       "source": "Feed",
       "key": "a80425472d94ae02c836da5b6f205b7b"
     },
@@ -2252,6 +2922,10 @@
     {
       "source": "Feral",
       "key": "403122f3e0eeacc0171040d9ac077f3b"
+    },
+    {
+      "source": "FIELD NOTES / Rules, pieces & quantum provenance",
+      "key": "347944e5b5c9316348e4779c8a6e6285"
     },
     {
       "source": "Fill",
@@ -2310,6 +2984,10 @@
       "key": "50c288b279be94b766c1eee991c6a856"
     },
     {
+      "source": "Floor",
+      "key": "f3f6d0343d56ce88ce7958170ed05cb3"
+    },
+    {
       "source": "Fonts",
       "key": "59c4ad3f3cb3d812d68fab7a354d4a63"
     },
@@ -2342,6 +3020,10 @@
       "key": "7cf395303ce3665a9834721d4b748e4b"
     },
     {
+      "source": "Frog Rider",
+      "key": "45b9c968e88117a6f73411f3c43204e4"
+    },
+    {
       "source": "From your language setting — many people use English abroad.",
       "key": "adf87dc20533263805363684b06294ca"
     },
@@ -2350,8 +3032,20 @@
       "key": "e97f9d9920379204857ab2dbe7cdf79c"
     },
     {
+      "source": "Fruit bowl",
+      "key": "95c14cfa71e176bcd48c2cce7c84bf23"
+    },
+    {
+      "source": "Full-strength NNUE Stockfish, five seconds per move. No takebacks.",
+      "key": "fe55eecd3b0869dd8422d3212c25cd36"
+    },
+    {
       "source": "FULL! Tie it off now — keep blowing and it'll explode!",
       "key": "f33966e5d29e26d43dd39b20a68d9eb2"
+    },
+    {
+      "source": "Furniture and floor objects",
+      "key": "68f6837e12688e61fb91f340d61c0ca6"
     },
     {
       "source": "Fwump. Deeply unsatisfying.",
@@ -2362,12 +3056,20 @@
       "key": "0c095cfc02d215118eee995ab679a00f"
     },
     {
+      "source": "Game controls",
+      "key": "103a121bbd018da89d87eb6642578434"
+    },
+    {
       "source": "Gamer Aura",
       "key": "1d52ee6892e33465bb9af5c35c98d790"
     },
     {
       "source": "Garden",
       "key": "ea9f1881279a97a59f479e8d0a8bc695"
+    },
+    {
+      "source": "Give fate a little nudge. Click the coin to spin.",
+      "key": "b1692a4bdb0173d71f99dfd36613a3d1"
     },
     {
       "source": "Global leaderboard of the most-visited and most-poked Scroll Goblin mini-apps.",
@@ -2416,6 +3118,10 @@
     {
       "source": "Goblin Headbang",
       "key": "463e32c04a4b8c708111648886f94973"
+    },
+    {
+      "source": "Goblin King",
+      "key": "a8d8e0b5dbbc742802946891f8ff3b69"
     },
     {
       "source": "Goblin Memory #1",
@@ -2538,6 +3244,14 @@
       "key": "2528d87e51dfe91a1b276b0eba620481"
     },
     {
+      "source": "Hanging decorations",
+      "key": "cde34fcbac65b89cc7f910f5878f5da1"
+    },
+    {
+      "source": "Hard",
+      "key": "3656183169810334a96b91129dc9d881"
+    },
+    {
       "source": "Harmonic Minor",
       "key": "8f627c3b55ef7ba934d81418257e9844"
     },
@@ -2564,6 +3278,10 @@
     {
       "source": "Heavy Crystal Ball leaves the shelf.",
       "key": "bc474e766ca6ed11c1d1fca6323cdfd3"
+    },
+    {
+      "source": "Hedgelings",
+      "key": "8ad0f101efab6be7982ed6d447a0e307"
     },
     {
       "source": "Helix",
@@ -2626,6 +3344,10 @@
       "key": "8105d094b8c4242657a9aeaed4f4e1ab"
     },
     {
+      "source": "How the table works",
+      "key": "e42243a625a4a4a8ab5bb27ca79c4939"
+    },
+    {
       "source": "Hymn",
       "key": "c248070d2882751c181de690458b7037"
     },
@@ -2652,6 +3374,10 @@
     {
       "source": "If your data were sold...",
       "key": "f78df62580b874be1dba5637bbe335ad"
+    },
+    {
+      "source": "In hardware mode, measurements are made on Amazon Braket quantum hardware in advance, then used once. The target probabilities are ideal; physical hardware has noise. If hardware results are unavailable, the match switches to the simulator and stays there. New matches try real hardware first.",
+      "key": "737c8a1bbd8f4e6567b4bbf202905450"
     },
     {
       "source": "Inaudible ultrasonic beacons in ads that link your phone to your TV",
@@ -2690,8 +3416,16 @@
       "key": "ee1532a0110d6e08d330eca2f822a8c1"
     },
     {
+      "source": "Interactive 3D chessboard. Switch to 2D for keyboard controls.",
+      "key": "19d5de07d613f8846549d7263f73d9d0"
+    },
+    {
       "source": "Interesting Specimen",
       "key": "4ffe5af41f75cdece0e84d4d2a6f3b9c"
+    },
+    {
+      "source": "Invalid board.",
+      "key": "6b98a2fe285d201d3c3c7d60eb007d21"
     },
     {
       "source": "Is it time to let go?",
@@ -2714,12 +3448,32 @@
       "key": "58038ee4a4e2d0e2f764aa223fbecfae"
     },
     {
+      "source": "Keep playing",
+      "key": "7b04a0b1f6c3e68aa334a99d04af9339"
+    },
+    {
       "source": "Keep raising it…",
       "key": "edc88385482c9c474da9591cd9cfe174"
     },
     {
+      "source": "Keyboard placement controls",
+      "key": "8ba32c0c46422259c861b22c464005ff"
+    },
+    {
+      "source": "King",
+      "key": "719ef271d38a388fd7b2bc967f4bd885"
+    },
+    {
+      "source": "King in check",
+      "key": "0c5018eb1255e5e2a2488c89382c1639"
+    },
+    {
       "source": "Kitchen Counter",
       "key": "d3154a8160efaee827c753e49f355982"
+    },
+    {
+      "source": "Knight",
+      "key": "8c23b2b86573edf2a5ea482c2ccc1497"
     },
     {
       "source": "Knock it off",
@@ -2750,6 +3504,14 @@
       "key": "669c9fd4a888739a805c00fd02792f8a"
     },
     {
+      "source": "Latest event ↓",
+      "key": "1eeae31c96368f2895a8241ceceda325"
+    },
+    {
+      "source": "Latest measurement · Device:",
+      "key": "ca7172685931f0617f9d88a8c6cb4583"
+    },
+    {
       "source": "Leaderboard",
       "key": "8cc1e4ffb8500ed13fac6d81d246ea25"
     },
@@ -2762,12 +3524,20 @@
       "key": "c99b20a4a5081671400ba0baebc99c7b"
     },
     {
+      "source": "Leafy houseplant",
+      "key": "3040a6242f0bba54cb4ce40a4912e6a9"
+    },
+    {
       "source": "Learn your timezone and daily rhythm from when you open them",
       "key": "32787ddce9035a3b44bd44164fcc2601"
     },
     {
       "source": "Leave Arena",
       "key": "de812a54c381277ead1bb87313cc0107"
+    },
+    {
+      "source": "Leave this battle?",
+      "key": "57d2498e7f9b245fa4310b99aee56ac8"
     },
     {
       "source": "Left",
@@ -2810,6 +3580,14 @@
       "key": "831916bb4f030bcae6edb493ffb19c39"
     },
     {
+      "source": "Let the Universe choose my side ↗",
+      "key": "551ea1e97834d3a71a97200de5232b21"
+    },
+    {
+      "source": "LET THE WOODLANDS REJOICE",
+      "key": "81e1623e95eef44e5b41a723b6109540"
+    },
+    {
       "source": "Leucine",
       "key": "79c0fd5b60886bdb83cdfefb53c84b22"
     },
@@ -2850,6 +3628,14 @@
       "key": "c4825ea1e4276fe98181b5b575a023c0"
     },
     {
+      "source": "Little bookcase",
+      "key": "3a3b040574078af8d0cb29c0048ba0dd"
+    },
+    {
+      "source": "Little tea set",
+      "key": "1da7cb3fd7e403879b5f9cea62871d13"
+    },
+    {
       "source": "Live again →",
       "key": "c1b7b5ed637531e5650e5f0cbb276060"
     },
@@ -2860,6 +3646,10 @@
     {
       "source": "Live mic input level",
       "key": "0f7fbb6f44a9da8796697656f35c81a0"
+    },
+    {
+      "source": "Loading / thinking with full NNUE Stockfish…",
+      "key": "b580279ae113bec19bc972facd0df4b9"
     },
     {
       "source": "Loading...",
@@ -2902,6 +3692,10 @@
       "key": "1c6a5c19e5ddc11a272c0202e00114c7"
     },
     {
+      "source": "Lost Hoglet",
+      "key": "8005e91d4fa6e00281bc510d2b3b9c8e"
+    },
+    {
       "source": "Lots of movement",
       "key": "a136502de1a04926a086c3c20df2731d"
     },
@@ -2920,6 +3714,14 @@
     {
       "source": "Loyal Returning Specimen",
       "key": "fe5879874f135b031dd78786c4536611"
+    },
+    {
+      "source": "Luna’s Playhouse",
+      "key": "5c1352bad9a8f62b39a2f04c717a44a4"
+    },
+    {
+      "source": "Luna’s Playhouse <0>✿</0>",
+      "key": "0485605eb1b8e4b18cddfc3bc18b5b28"
     },
     {
       "source": "Lunar Moonwalk",
@@ -2942,12 +3744,24 @@
       "key": "e46e03c883c2ac9e88acb082014ae610"
     },
     {
+      "source": "MADE FOR A LITTLE ESCAPE.",
+      "key": "272244281c7518319d585201e8058297"
+    },
+    {
       "source": "Major",
       "key": "3b329734e45b57e60f3df64c2cf412a9"
     },
     {
+      "source": "Master Weaver",
+      "key": "dc0b7c6136cb486aee908abcbdaad6a7"
+    },
+    {
       "source": "Matches ~{share} of people",
       "key": "cf11e31fe1749c22ac62e5fdc679288a"
+    },
+    {
+      "source": "Measured:",
+      "key": "ad04cd048ba69dbaec3b170de92ba8c9"
     },
     {
       "source": "Medium",
@@ -2956,6 +3770,10 @@
     {
       "source": "Medium confidence",
       "key": "bb8ec2c93bb8d3e6f22c3219e411c2dc"
+    },
+    {
+      "source": "Meet your army",
+      "key": "0bb33a0f383a9b03c9e522e845183938"
     },
     {
       "source": "Melancholy",
@@ -2968,6 +3786,10 @@
     {
       "source": "Methionine",
       "key": "cdfb2625b9fc606693cea5a34ea61630"
+    },
+    {
+      "source": "Mia and Luna’s room. Choose a toy, then a glowing spot.",
+      "key": "4bdd459cddab5949d3b0989bab211dd5"
     },
     {
       "source": "Mic blocked. Allow microphone access in your browser, then tap Start blowing again.",
@@ -3034,6 +3856,10 @@
       "key": "20227676211ee91ca980534befed120b"
     },
     {
+      "source": "Moon cushion",
+      "key": "a022d155bd14bf7592c095b3bfed6d4f"
+    },
+    {
       "source": "Morning browsing",
       "key": "822bf021d2c387b77641aa3cf20bffee"
     },
@@ -3052,6 +3878,18 @@
     {
       "source": "Mouse Style",
       "key": "7f793606f779e50ada49003ad46e4107"
+    },
+    {
+      "source": "Move",
+      "key": "6bc362dbf494c61ea117fe3c71ca48a5"
+    },
+    {
+      "source": "Move {name}",
+      "key": "692f9df1eee50b440436f8b955cb87c5"
+    },
+    {
+      "source": "moved",
+      "key": "11dfd868d93bc2b0e4ce0bee5756f8b1"
     },
     {
       "source": "Movement",
@@ -3086,6 +3924,10 @@
       "key": "59016373e3e4440ecf76c1d4b6bcd97d"
     },
     {
+      "source": "Mute sound",
+      "key": "62361f2fefc607eb0187e30ede849883"
+    },
+    {
       "source": "Mute sound effects",
       "key": "72840f00dc8e591aa7b57631b0cb42b5"
     },
@@ -3114,6 +3956,10 @@
       "key": "e9bb5320b3890b6747c91b5a71ae5a01"
     },
     {
+      "source": "New match",
+      "key": "da6cac81a6180437f3c3598ced16baac"
+    },
+    {
       "source": "New Match",
       "key": "4e966eb4a1be386621fcb791bd99bab1"
     },
@@ -3128,6 +3974,10 @@
     {
       "source": "No audio was captured. Try again.",
       "key": "28b5b713ef6fdf858be194df7c4d0443"
+    },
+    {
+      "source": "NO CLOCKS. NO CROWNS GUARANTEED.",
+      "key": "f72fd781dd073a8aee044160ed72b97a"
     },
     {
       "source": "No device signal reveals these. Advertisers only 'know' them by buying your cross-site history from data brokers — which this page never has.",
@@ -3190,6 +4040,10 @@
       "key": "cec5eebbc35983d154d706da6f7b9252"
     },
     {
+      "source": "ONE COIN. TWO LITTLE KINGDOMS.",
+      "key": "e94f1a5497be38c1314632d779835cdb"
+    },
+    {
       "source": "Only 1% of octopuses reach adulthood. Can you?",
       "key": "820864a539958babee88b7e31a999778"
     },
@@ -3202,12 +4056,44 @@
       "key": "857ccf501e3d5cb92473fa1eb4d9fee5"
     },
     {
+      "source": "Opponent {value0} {pieceName}: {from} → {to}.",
+      "key": "c66b933f602df63ca396564f39ed3cf7"
+    },
+    {
+      "source": "Opponent declared victory — the Universe will decide.",
+      "key": "2faa9bf5170b1f36f086fbd0ae515734"
+    },
+    {
+      "source": "Opponent moved {value0}: {from} → {to}{value1}{value2}.",
+      "key": "c56b0eac53b231d140b42a5b61cae050"
+    },
+    {
+      "source": "Opponent moved from here",
+      "key": "0de86e84523654186bf297d80ccde7e5"
+    },
+    {
+      "source": "Opponent moved here",
+      "key": "1ba2e7ad855e1acca4bb93c23f41fffc"
+    },
+    {
+      "source": "Opponent resurrected {pieceName} on {to}.",
+      "key": "e504edf27cde6cdcf397bbc0807f48dd"
+    },
+    {
       "source": "Opponent scores!",
       "key": "262716a71556373e56e5ba1d3a644cf8"
     },
     {
+      "source": "Opponent transformed {pieceName} on {from} into {value0}.",
+      "key": "34d0d29d8546b6de4b58f3ab4435df37"
+    },
+    {
       "source": "Opponent wants a rematch!",
       "key": "76e9c0790dd239b2d387beeea817f55c"
+    },
+    {
+      "source": "Opponent’s latest comment",
+      "key": "5cfc2a5e5fa2bb7da72766e5fcab8b29"
     },
     {
       "source": "Orange is a SECONDARY — red mixed with yellow.",
@@ -3246,12 +4132,32 @@
       "key": "7026deec11e651076d5c230535f4d677"
     },
     {
+      "source": "Paintings and wall decorations",
+      "key": "b3723b84981125e74a3bac55c1b2e2a5"
+    },
+    {
+      "source": "Paper flowers",
+      "key": "696c9f27629dc74fe376234602f7645e"
+    },
+    {
+      "source": "Parol star lantern",
+      "key": "13ca023484e507111f1068f3723e1953"
+    },
+    {
       "source": "Paste emoji to interpret... 🎉🍕🚀",
       "key": "72a95bc2824a4ca9feb77f81703e9ee7"
     },
     {
       "source": "Paw power",
       "key": "2f37d21f349ec686da63d92664f791b8"
+    },
+    {
+      "source": "Pawn",
+      "key": "36cddea7303c5d9d8a0930128b1fbb80"
+    },
+    {
+      "source": "PEACE IN THE CLEARING",
+      "key": "e95ba9ea325cc04ea96d082ad0abd45e"
     },
     {
       "source": "Pentatonic Minor",
@@ -3294,12 +4200,24 @@
       "key": "4e2fe1c9ef6d0de07505068b11cf22e3"
     },
     {
+      "source": "Piece type",
+      "key": "a6fe12c7f1af6b1842481d10c7ca4028"
+    },
+    {
       "source": "Pile on enough chaos and the aura forgets which way is up.",
       "key": "1eab10a7bd1c709658b88438b396494d"
     },
     {
       "source": "Ping you any time — even after you close the tab or browser",
       "key": "7f01450c5ab32a1c322d3931caa43838"
+    },
+    {
+      "source": "Place {name} at {category} spot {id}",
+      "key": "8c5789f806c731ecc2d2ccded9c73e83"
+    },
+    {
+      "source": "Place {name} at {value0} spot {id}",
+      "key": "f8a6eee6de1a86836dfddcfde92285f1"
     },
     {
       "source": "Plant",
@@ -3314,6 +4232,10 @@
       "key": "de3c731be5633838089a07179d301d7b"
     },
     {
+      "source": "Play again →",
+      "key": "f7a70df687c6d43ebec738eff74ff3da"
+    },
+    {
       "source": "Play as an orange cat with one goal: shove everything off the shelf. Heavy mugs, magic junk, and squeaky toys all fall differently.",
       "key": "c377d9444d4d449c7504317e71c1993e"
     },
@@ -3324,6 +4246,10 @@
     {
       "source": "Play to: <0>{scoreToWin}</0>",
       "key": "269727d86c7bac0f47c3c7b30995f9bc"
+    },
+    {
+      "source": "plotting…",
+      "key": "6215abe911770266e802df0b78f9b5a9"
     },
     {
       "source": "Plucked",
@@ -3372,6 +4298,10 @@
     {
       "source": "Potion",
       "key": "f7f5d540f521d6d642502a9d459e7b16"
+    },
+    {
+      "source": "Potion Mixer",
+      "key": "1fe28744bc026b765d3e2f8387c3dacd"
     },
     {
       "source": "Potted Mandrake",
@@ -3474,6 +4404,10 @@
       "key": "3ddcf83b498d0c6cf1ba54fde863598f"
     },
     {
+      "source": "Queen",
+      "key": "2c2d2c0291163b077a372c2a9c5a6eda"
+    },
+    {
       "source": "Quiet",
       "key": "098753f8980036f4b936e3d4b6997111"
     },
@@ -3484,6 +4418,14 @@
     {
       "source": "Rainbow Aura",
       "key": "47ef31573e4088b055272baa69a6f734"
+    },
+    {
+      "source": "Rainbow building blocks",
+      "key": "a57c412935ac1cab90a1b119031a1a7a"
+    },
+    {
+      "source": "Rainbow painting",
+      "key": "fe8555d6b6e0847861a154f354c1dfa7"
     },
     {
       "source": "Rainy Sidewalk",
@@ -3540,6 +4482,14 @@
     {
       "source": "Ready to harvest!",
       "key": "8277326ffe23b4bfb7c12510b4b75a07"
+    },
+    {
+      "source": "Real hardware. Strange fate.",
+      "key": "78787b67d01ac1422fbe56cf4ab0fdae"
+    },
+    {
+      "source": "REAL QUANTUM FATE · UNTIMED CHESS",
+      "key": "c3273c2833fcb9732f52805c38d038e5"
     },
     {
       "source": "Record",
@@ -3618,12 +4568,40 @@
       "key": "9183a379b76e6405166dec474875fcd7"
     },
     {
+      "source": "Resign",
+      "key": "37d90cd3910397332d6e0faf393b6776"
+    },
+    {
       "source": "Rest",
       "key": "55276c10d84e1df7713b441e76e141f9"
     },
     {
       "source": "Restart",
       "key": "51cfbcff36da74a9fc47f3a5140f99f2"
+    },
+    {
+      "source": "Resume your woodland battle",
+      "key": "6a88072cc8de36b22c2235dd37343740"
+    },
+    {
+      "source": "Resurrect onto an empty square.",
+      "key": "0f1c7e0f9c468f4f5e945e5cb591a0b3"
+    },
+    {
+      "source": "Retry this turn",
+      "key": "7eaa50be2932c2c07a068f8b2737e516"
+    },
+    {
+      "source": "Return {name} to the basket",
+      "key": "bde7b30457acad0426d4b19f4f5b80b7"
+    },
+    {
+      "source": "Review the board",
+      "key": "47d939e012d8e9b395b0e6620327dfaf"
+    },
+    {
+      "source": "Revive",
+      "key": "d78a1701177a08aebfbccceb9f1eb63a"
     },
     {
       "source": "Right",
@@ -3638,8 +4616,24 @@
       "key": "94f57eacf08bb8bc6f40e40a17a7456c"
     },
     {
+      "source": "Rook",
+      "key": "1a415f5ae0f891e49d34821a896b4466"
+    },
+    {
+      "source": "Rotate {name} left",
+      "key": "ee20bf2ba8c845d629f4a574abcda7e1"
+    },
+    {
+      "source": "Rotate {name} right",
+      "key": "0e50f8c1fa43ee9881bab03fb3598e6d"
+    },
+    {
       "source": "Roughly 1 in {value0} people share a device profile like yours ({value1} bits of entropy).",
       "key": "f82bf9f88605f40882a74f5159bcc9d6"
+    },
+    {
+      "source": "Round ottoman",
+      "key": "952358f40a2e3c0d2bac5a4697995e31"
     },
     {
       "source": "Royalty among tubers.",
@@ -3742,6 +4736,30 @@
       "key": "bf9ece38e172e4bdaf9c31d52da5b9b9"
     },
     {
+      "source": "Scroll Goblins",
+      "key": "727cc29a4d7aa690ebae73b7f889bbc2"
+    },
+    {
+      "source": "SCROLL GOBLINS",
+      "key": "43910d5f4d1763aa4e5dccfa2574d06b"
+    },
+    {
+      "source": "Scroll Goblins <0>vs</0> Hedgelings",
+      "key": "a957e0ef7f84a5d5b4a36272852439f6"
+    },
+    {
+      "source": "Scroll Goblins vs Hedgelings",
+      "key": "e4f6f82f88634759d120a98c81972e57"
+    },
+    {
+      "source": "Scroll Grunt",
+      "key": "437aa63d219a513be49e1553aee2d800"
+    },
+    {
+      "source": "Scroll Rider",
+      "key": "a3100ffd6b6e3f9ab69700f3164b8300"
+    },
+    {
       "source": "Scroll Style",
       "key": "efcace3f1d2676bc00e3f7640fa97015"
     },
@@ -3760,6 +4778,22 @@
     {
       "source": "Seedling",
       "key": "dc690c54f0e087c46f30aea5f7bd0d77"
+    },
+    {
+      "source": "Select a piece, then its destination.",
+      "key": "e4b3723b967292633f55254b337868bf"
+    },
+    {
+      "source": "Select a piece, then its destination. Cheats each use one turn.",
+      "key": "40e0fc98bb875b804fe39611abe86dad"
+    },
+    {
+      "source": "Select your non-king piece, choose its new type, then transform.",
+      "key": "6cbebfe2deec43c401447c79cf92cdbd"
+    },
+    {
+      "source": "Select your piece, then any empty or enemy square.",
+      "key": "58e1ca66749a22980a7b49219c3f5524"
     },
     {
       "source": "Selenocysteine (Sec)",
@@ -3802,6 +4836,10 @@
       "key": "2d0b13c91b5da8e1894e23d8cfc756b1"
     },
     {
+      "source": "Shot:",
+      "key": "4877b6442cd0b58704b43a3100b88330"
+    },
+    {
       "source": "Should I take the leap?",
       "key": "ee110d5442ab2aa985b97a2ba099b289"
     },
@@ -3824,6 +4862,14 @@
     {
       "source": "SIGMA SLUG",
       "key": "844cf4cfd6f217c0734ef8f554c09276"
+    },
+    {
+      "source": "SIMULATED QUANTUM FATE · UNTIMED CHESS",
+      "key": "e5a3ffae8caeeb64cc4e3d6a83f7d983"
+    },
+    {
+      "source": "Simulated Universe",
+      "key": "a2698228af14181368481d9c74245973"
     },
     {
       "source": "Sink down to the seafloor — and survive the open water.",
@@ -3886,6 +4932,10 @@
       "key": "638caa12811deb15f5209535a8a33547"
     },
     {
+      "source": "Some battles are<0/>written in the stars.",
+      "key": "876f66dd17afd11ab766d5c71a71c198"
+    },
+    {
       "source": "Some movement",
       "key": "dc298cbefeb1b9a348923fdc077f9dd0"
     },
@@ -3932,6 +4982,18 @@
     {
       "source": "Speech turned to text: topics, names, even your mood",
       "key": "220a31675ac2d52f54846661d503019e"
+    },
+    {
+      "source": "Spellbook Stack",
+      "key": "0560f72e89613e7c004c0630bfea7bc4"
+    },
+    {
+      "source": "Spin the coin to choose your faction",
+      "key": "30fddfaf4b9c94cda63485d4ae3fca25"
+    },
+    {
+      "source": "Spin the faction coin again",
+      "key": "4cbb2df9f2915df86e1a0ea2daa1e70f"
     },
     {
       "source": "Sprouting",
@@ -3990,8 +5052,16 @@
       "key": "5ad0ab115b56c981dc57d3249796dd9c"
     },
     {
+      "source": "Start fresh",
+      "key": "baad4b92cd3a470ed540ae58ffecf7cb"
+    },
+    {
       "source": "Start Match",
       "key": "32a406a139d52b97daba3dda8136ab61"
+    },
+    {
+      "source": "Start new match",
+      "key": "507586ed73b064ab2b61b7baba08ed7b"
     },
     {
       "source": "Sticky",
@@ -4000,6 +5070,14 @@
     {
       "source": "Still as Stone",
       "key": "76e9936b5e08f27bd30cdebc9ba5afb7"
+    },
+    {
+      "source": "Stockfish GPL license",
+      "key": "3a96d74113bfb14b88a1e849b7c96231"
+    },
+    {
+      "source": "Stockfish timed out. Retry the turn.",
+      "key": "b4d370bb2f9b6c2b834069751df1c343"
     },
     {
       "source": "Stoic Sigma Nod",
@@ -4030,6 +5108,10 @@
       "key": "cbb37401d648375c9a32619279b03418"
     },
     {
+      "source": "Story books",
+      "key": "5cf123d22b11f3c0317de0932418a1f3"
+    },
+    {
       "source": "Storytelling pulled this aura cool and dreamy regardless of mix.",
       "key": "c3e3238bfdce588b8f612451ab173837"
     },
@@ -4046,6 +5128,10 @@
       "key": "29c83a25d0473a48d880acd007f705e3"
     },
     {
+      "source": "Stump Tower",
+      "key": "9c96d9b5f2b17291e78691bd86d7c8e0"
+    },
+    {
       "source": "Summoning a shared custom button...",
       "key": "6ec00c4ed75b0baf68957f74df1c2132"
     },
@@ -4056,6 +5142,14 @@
     {
       "source": "Sunlight",
       "key": "d4b463d3734eeb600987a0dc64f33f05"
+    },
+    {
+      "source": "Sunshine painting",
+      "key": "0bc63f6aefd43bbd37ab738a591f7732"
+    },
+    {
+      "source": "Surface",
+      "key": "aa0d528ba11ea1485d466dfe1ea40819"
     },
     {
       "source": "Surprise me",
@@ -4086,6 +5180,18 @@
       "key": "36384a9ea3ec791e6bd4ab6b36f2ff2a"
     },
     {
+      "source": "Tabletop objects",
+      "key": "a02d8cc0b620635a6fb7273a1852b64c"
+    },
+    {
+      "source": "Take your time.",
+      "key": "06d267d31694bd10c6e650c2849584f6"
+    },
+    {
+      "source": "Talavera planter",
+      "key": "86f6b7bd2759a2d46647767745fcf867"
+    },
+    {
       "source": "Tallying the chaos...",
       "key": "7fe3083aa4ba58f7590674f4ae536c45"
     },
@@ -4106,6 +5212,14 @@
       "key": "bfef4202fb74876f072d8aa0a2690157"
     },
     {
+      "source": "Tap to move · Drag to orbit · Pinch to zoom",
+      "key": "8414fd6df619c9cb84444daa3c44ebc3"
+    },
+    {
+      "source": "Task:",
+      "key": "94c57715dc2dbecef6fbea60861fe710"
+    },
+    {
       "source": "Tax code",
       "key": "14db617d9ae085eff161e57d2f1483f8"
     },
@@ -4118,12 +5232,40 @@
       "key": "e70dda90ab647b5fe12883c62fb6bb94"
     },
     {
+      "source": "Teleport",
+      "key": "054fc7866c93a2496fd9048c493e6aed"
+    },
+    {
+      "source": "teleported",
+      "key": "2802d83b625211b469b99fb7b688eb5c"
+    },
+    {
       "source": "Text → Emoji",
       "key": "25af92bc0b3d5db781117c340bc4b50b"
     },
     {
+      "source": "That area is full. Choose another glowing spot.",
+      "key": "082cba32fc5be57a52b16a2dc1d80431"
+    },
+    {
       "source": "That match link is invalid or full.",
       "key": "5035ef0de04e049d75fbf19294137630"
+    },
+    {
+      "source": "That move needs a teleport cheat.",
+      "key": "875a088c71ecf90847a8d83df2407391"
+    },
+    {
+      "source": "That square already belongs to one of your pieces.",
+      "key": "51f502108c7cd98d7501d0a8f42dce69"
+    },
+    {
+      "source": "The {army} lower their banners. Rest, regroup, and live to cause mischief another day.",
+      "key": "ff691c39dc741fecc69569814f03a73a"
+    },
+    {
+      "source": "The {army} raise a cheer. Their commander has earned a very splendid crown.",
+      "key": "1081866304940a0b67c60a28b7ace026"
     },
     {
       "source": "The AI-powered apps (Emoji Translator, Commune with God) send your input to a language model and return a playful response.",
@@ -4132,6 +5274,10 @@
     {
       "source": "The Americas",
       "key": "546e7182ae553cbf286d60b38df937d8"
+    },
+    {
+      "source": "The battle is over.",
+      "key": "b148c7db9dd7c2a5faf7ba283edbb89e"
     },
     {
       "source": "The chalice rings forever. Beautiful.",
@@ -4174,12 +5320,24 @@
       "key": "4c2d6761f475dc4997dd95188270f7ad"
     },
     {
+      "source": "THE FINAL WORD",
+      "key": "e93ae63c509c32e7235e5f014a42655c"
+    },
+    {
       "source": "The Floor Worm",
       "key": "a6c45013ff1a5b89c2ff71159c0edc48"
     },
     {
       "source": "The Floss",
       "key": "c4a86fc4bfe092e252a8c74b2bd9d455"
+    },
+    {
+      "source": "The forest falls quiet.",
+      "key": "23a6dc4fbebc9e6d018fb90e5942e8f3"
+    },
+    {
+      "source": "The full NNUE engine downloads about 95 MB once, then runs on your device.",
+      "key": "6e55a3aa2b6622a3761f600a3c58d23e"
     },
     {
       "source": "The Goblin can reach you now",
@@ -4250,8 +5408,20 @@
       "key": "e07c1a6e750a13e5ae624552c876ac78"
     },
     {
+      "source": "The Hedgelings",
+      "key": "d099c27b937e4d9f4f768f66906af52b"
+    },
+    {
+      "source": "THE HEDGELINGS",
+      "key": "1a1c054df1b1449862fbc9af828b4547"
+    },
+    {
       "source": "The Hunter",
       "key": "1d964bf03f1b3bc13543c9245fb0dcb9"
+    },
+    {
+      "source": "The Mad Alchemist",
+      "key": "a0e956c532a5d587eb145d408421526e"
     },
     {
       "source": "THE MOIST ONE",
@@ -4274,12 +5444,32 @@
       "key": "eff44baeb4e177399abd84663a0db93f"
     },
     {
+      "source": "The Scroll Goblins",
+      "key": "950f87d40078a4ee75eefaa1c17ed155"
+    },
+    {
       "source": "The Sea Lion",
       "key": "44ae4d04fb49e50ee3b77f3f568592de"
     },
     {
       "source": "The shared custom clip expired, so the default is back.",
       "key": "f09a5085eb3772d614679639dfe7f194"
+    },
+    {
+      "source": "The spirit is resting. Try again shortly.",
+      "key": "a6a730f10308956673951cd5ded0d546"
+    },
+    {
+      "source": "The spirit lost its train of thought. Retry this turn.",
+      "key": "6055a0008ed11c937b2c4ddd0697b891"
+    },
+    {
+      "source": "The spirit needs a moment. Try again shortly.",
+      "key": "97199999b85248d8b3394a1f64edc78f"
+    },
+    {
+      "source": "The spirit proposed an impossible board edit. Retry its turn.",
+      "key": "fb943e2c7bf1edd51b758521f5a21a1b"
     },
     {
       "source": "The stats database isn't connected yet, so everything reads zero. (API is missing its Upstash Redis credentials.)",
@@ -4294,12 +5484,48 @@
       "key": "e0950c152138373c3268194b1aeb80b5"
     },
     {
+      "source": "The Universe allows this nonsense to continue.",
+      "key": "8207bff94ae521249b4e0c6a7c1e8c93"
+    },
+    {
+      "source": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
+      "key": "ecf0432709a0f5b9e9059c99a81687d1"
+    },
+    {
+      "source": "The Universe has chosen your faction and color.",
+      "key": "97e72537c76c1e44f7954ee152ffd823"
+    },
+    {
+      "source": "THE UNIVERSE HAS SPOKEN",
+      "key": "2e6e85dc214012f8d77756d57a566932"
+    },
+    {
+      "source": "The Universe is deciding…",
+      "key": "13eddf735ca9c43ee29af9ee6c5c47c0"
+    },
+    {
+      "source": "The Wandering Spirit",
+      "key": "3f11ede2d5e5d094c6707fe926b69dad"
+    },
+    {
+      "source": "THE WOODLAND TABLE",
+      "key": "6e2a60d3e5f3e8ef2632b258229d0c88"
+    },
+    {
       "source": "These look like gibberish to you — and that's the point. Your GPU, canvas drawing, and installed fonts are exactly what make your device stand out from the crowd.",
       "key": "913686c75668d7bf20030d78a1e2df08"
     },
     {
       "source": "This browser does not support recording.",
       "key": "7c0d3756501fa59c38b4d61a0bc7ffce"
+    },
+    {
+      "source": "This match uses an ideal eight-qubit state-vector simulation. Measurements are sampled on your computer and saved so retries cannot reroll results. No hardware shots or AWS credits are consumed.",
+      "key": "97a755ea75fa2c104c78f8f22d273392"
+    },
+    {
+      "source": "This one is mostly written on stolen scrolls. Command a woodland army against Stockfish—or a spirit with a questionable understanding of chess.",
+      "key": "10ce333c612b746b3fd45632df7d3889"
     },
     {
       "source": "This page doesn't exist. The goblin probably ate it.",
@@ -4386,12 +5612,36 @@
       "key": "7347e516bbd70d2d183e23be6e0b780b"
     },
     {
+      "source": "Toy armadillo",
+      "key": "300906a2127920ec56450dddfb639579"
+    },
+    {
+      "source": "Toy basket",
+      "key": "fd1dd26c41a48a83bddda92c111d763b"
+    },
+    {
       "source": "Track which alerts you click to profile what lures you back",
       "key": "fe2d6a81009a51999ef5792958707bc9"
     },
     {
       "source": "Tracking Resistance",
       "key": "550f8b51424d87934c2ac3e93fd72eed"
+    },
+    {
+      "source": "Trainee Scribe",
+      "key": "979a23f5f170c4baea2686026dbba0d2"
+    },
+    {
+      "source": "Transform",
+      "key": "2ff4148554480a37f85efd299df04850"
+    },
+    {
+      "source": "Transform a non-king into a different non-king piece.",
+      "key": "2372f61acdfd715dd35e1b656cba8dcf"
+    },
+    {
+      "source": "Transform selected piece",
+      "key": "8659e58b2323d1031513930309ed97cb"
     },
     {
       "source": "Translate",
@@ -4442,6 +5692,22 @@
       "key": "a8adf150861f4bfbf783e420da158968"
     },
     {
+      "source": "Turn room left",
+      "key": "88085dcf9cf96a6fad9640dc7358f008"
+    },
+    {
+      "source": "Turn room right",
+      "key": "e1c960f1c4b9e38bdb4022296a528ba6"
+    },
+    {
+      "source": "Turn sound on",
+      "key": "66248805079469767a84505ae9b8c74e"
+    },
+    {
+      "source": "Turned a quarter turn.",
+      "key": "a2457013bea73616a71146a2b510708f"
+    },
+    {
       "source": "TV or music in the background — the media you consume",
       "key": "0ced70828d2ba646158d97078084efd9"
     },
@@ -4468,6 +5734,10 @@
     {
       "source": "Unhinged Gremlin Flail",
       "key": "05bd61ad4f45a10da99965011b394abf"
+    },
+    {
+      "source": "Unknown action.",
+      "key": "9258e257348c7e4f8c948d5ca16a35d5"
     },
     {
       "source": "Unmute sound effects",
@@ -4502,6 +5772,14 @@
       "key": "d5f0e01a49d16749465b587105de70e8"
     },
     {
+      "source": "Victory is yours!",
+      "key": "5b7433a11e23eb7adc5b7e6b19e587e6"
+    },
+    {
+      "source": "View result",
+      "key": "6abb7feedeac5d7457bf6758bbe8ec03"
+    },
+    {
       "source": "Visits",
       "key": "d7e637a6e9ff116de2fa89551240a94d"
     },
@@ -4520,6 +5798,10 @@
     {
       "source": "Waiting for your answer in the browser prompt...",
       "key": "d0bceca52ff16e38e75886c0dc08b49e"
+    },
+    {
+      "source": "Wall",
+      "key": "94e8a499539d1a472f3b5dbbb85508c0"
     },
     {
       "source": "Waltz",
@@ -4544,6 +5826,10 @@
     {
       "source": "Warms it up, grows fastest",
       "key": "3b270cbfbbb3f0fdb0d8326f364e3cdb"
+    },
+    {
+      "source": "Warn about attacked pieces",
+      "key": "a1ae24b79ce6896f4dc4299fa3b9ac26"
     },
     {
       "source": "Water",
@@ -4602,12 +5888,28 @@
       "key": "14685c4b0785f7f7a13d26f94eb92414"
     },
     {
+      "source": "White",
+      "key": "25a81701fbfa4a1efdf660a950c1d006"
+    },
+    {
+      "source": "WHITE AT HOME",
+      "key": "477489f83ba30f6e5aabac6fae547f7a"
+    },
+    {
       "source": "Will things work out for me?",
       "key": "482295d1a42d99b322bfbaf654579396"
     },
     {
       "source": "Wistful",
       "key": "e69422a862d1b3b9a11b140ba0e70fcd"
+    },
+    {
+      "source": "WOODLAND",
+      "key": "9cdf1080c0016a38f2e5f27e13d3240b"
+    },
+    {
+      "source": "Woodland chess, real quantum fate, and an opponent who thinks the rules are a suggestion. Command your faction in 3D.",
+      "key": "28b99be73f21ed68cd89df5386176b95"
     },
     {
       "source": "Xaa — any residue",
@@ -4632,6 +5934,10 @@
     {
       "source": "Yellow joy, no notes. Cannot stop bouncing.",
       "key": "b089b0ed80526adc7841997ec5b8bbd1"
+    },
+    {
+      "source": "you",
+      "key": "639bae9ac6b3e1a84cebb7b403297b79"
     },
     {
       "source": "You",
@@ -4666,8 +5972,20 @@
       "key": "00e9b8b237e3c0987e32016535007e5d"
     },
     {
+      "source": "You play black · your opponent moves first.",
+      "key": "1571cc83bfc0c37f87d64238149e6fb4"
+    },
+    {
+      "source": "You play white · you move first.",
+      "key": "e74b5e23ab944802ea68848d668173d5"
+    },
+    {
       "source": "You plucked a blade! It'll grow back... eventually. 🌿",
       "key": "20f7a2d1002c79b1a30d9c21642295ef"
+    },
+    {
+      "source": "You resigned. Your opponent wins.",
+      "key": "cf9fc715abdbac30aca331ec092caa09"
     },
     {
       "source": "You will hatch. You will hunt. You will hide. You will love. You will die.",
@@ -4690,8 +6008,20 @@
       "key": "ff5afa8cea1dafa4885b6d9dc478ccc0"
     },
     {
+      "source": "YOUR ALLEGIANCE",
+      "key": "a562df52a000abbc045df30d90b1fe22"
+    },
+    {
+      "source": "Your allegiance is sealed. Spin again for a little luck.",
+      "key": "9fe62e565546fe602ea008a2f6ccd4a5"
+    },
+    {
       "source": "Your browser blocked playback. Tap once more.",
       "key": "f526b6037d59646341267761d6ee7707"
+    },
+    {
+      "source": "Your browser cannot save this room. It will last until you close the page.",
+      "key": "bc83958bd2ddc7cc1b35513f52f8a3ff"
     },
     {
       "source": "Your cookies are gone. Your Local Storage is gone. But your device fingerprint remains. Clearing storage doesn't make you anonymous — your device itself is identifying.",
@@ -4710,12 +6040,28 @@
       "key": "53018594fafffefdb1eeec40d6f7e9f6"
     },
     {
+      "source": "Your move.",
+      "key": "6c6182564034ab2936a202879cfc13e8"
+    },
+    {
       "source": "Your name",
       "key": "221e705c06e231636fdbccfdd14f4d5c"
     },
     {
       "source": "Your offspring hatched successfully.",
       "key": "63e601deb43ef336b63c37d1a7afbd71"
+    },
+    {
+      "source": "your opponent",
+      "key": "4da4c861bb5e54693080496c7f0edd86"
+    },
+    {
+      "source": "YOUR OPPONENT",
+      "key": "b5365c72770d5d120ece55eb4a2ad63f"
+    },
+    {
+      "source": "Your opponent’s next outrageous remark will appear here.",
+      "key": "cc3d02adc4d6c963fcaaa50e249e512f"
     },
     {
       "source": "Your passwords or messages",
@@ -4748,6 +6094,10 @@
     {
       "source": "Yukon Gold",
       "key": "6b6a1b8220bfc2890fbeab028a97aab7"
+    },
+    {
+      "source": "Zarape-patterned blanket",
+      "key": "17646fbecc076ac866336d76f1920c84"
     },
     {
       "source": "العربية",

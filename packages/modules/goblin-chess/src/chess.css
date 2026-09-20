@@ -183,3 +183,59 @@
 .gc-ending-draw { background:#f0edff; }
 .gc-board-wrap { --gc-ink:#263b32; --gc-line:#d5d6c5; --gc-gold:#b8924b; font-family:Georgia,'Times New Roman',serif; }
 @media(max-width:700px) { .gc-intro h2 { font-size:36px; }.gc button.gc-tier { padding:15px; }.gc button.gc-tier.active { padding:14px; }.gc-tier h3 { font-size:18px; }.gc-panel h2 { font-size:23px; } }
+
+/* Match layout: dialogue above the board, reachable actions below, history alongside. */
+.gc-play { grid-template-columns:minmax(0,1fr) 310px; align-items:start; }
+.gc-table-column { min-width:0; }
+.gc-banter { display:flex; align-items:flex-start; gap:14px; padding:18px 20px; background:#242c29; color:#fff9e9; border:2px solid #111; border-bottom:0; border-radius:8px 8px 0 0; }
+.gc-banter-avatar { display:grid;place-items:center;flex:0 0 44px;height:44px;border-radius:50%;background:#b388ff;color:#111;font-size:27px; }
+.gc-banter-name { display:flex;flex-wrap:wrap;gap:6px 12px;font:700 12px/1.5 'Space Mono',monospace;margin:0 0 6px;color:#e1c8ff; }
+.gc-banter-name span { font-weight:400;color:#e3e8e2; }
+.gc-banter-quote { font:700 clamp(15px,1.4vw,18px)/1.6 'Space Mono',monospace;margin:0;overflow-wrap:anywhere; }
+.gc-banter + .gc-board-wrap { border-radius:0 0 8px 8px; }
+.gc-command-dock { display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 16px;margin:0; padding:18px; }
+.gc-command-dock>.gc-eyebrow,.gc-command-dock>h2,.gc-command-dock>p,.gc-command-dock>.gc-action-picker,.gc-command-dock>.gc-error,.gc-command-dock>.gc-checkbox { grid-column:1/-1; }
+.gc-command-dock>.gc-eyebrow { margin:0; font-size:10px; }
+.gc-command-dock h2 { margin:0;font-size:22px; }
+.gc-command-dock>p { margin:0; }
+.gc-command-dock>.gc-cheat-count { margin-top:6px; }
+.gc-command-dock button,.gc-command-dock select { min-height:44px; }
+.gc-action-picker { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px; }
+.gc-action-picker button { display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;margin:0; }
+.gc-action-picker button span { float:none;font-size:20px; }
+.gc-action-picker button[aria-pressed=true] { background:#e7d9ff;box-shadow:inset 0 -3px #7045a0; }
+.gc-command-dock .gc-quiet { grid-column:2; width:auto;justify-self:end;padding:8px 14px;box-shadow:none;background:transparent; }
+.gc-last-move:empty { display:none; }.gc-last-move { margin:10px 0; }
+.gc-piece-info { padding:10px 2px;font-size:12px; }
+.gc-sidebar { position:sticky;top:85px;display:block; }
+.gc-journal { padding:16px; }
+.gc-journal summary { cursor:pointer;font-weight:700;font-size:16px;min-height:44px; }
+.gc-journal summary span { display:block;margin:6px 0 0 18px;font-size:11px;color:#444; }
+.gc-journal .gc-journal-intro { font-size:11px;margin:0 0 10px; }
+.gc-journal>div { max-height:min(65dvh,680px);overscroll-behavior:contain; }
+.gc-journal>div p { font-size:13px;line-height:1.7;padding:14px 5px;overflow-wrap:anywhere;flex-shrink:0; }
+.gc-journal>div p small { display:block;color:#555;font-size:10px;margin-bottom:4px; }
+.gc-journal>div p.gc-journal-banter { background:#eee3ff;padding:14px 10px;font-weight:700; }
+.gc-journal .gc-journal-latest { min-height:44px;text-align:center;margin-top:12px;font-size:12px; }
+@media(max-width:1100px){.gc-play{grid-template-columns:minmax(0,1fr) 270px;gap:16px}.gc-action-picker button{flex-direction:column;gap:2px;font-size:11px;padding:8px 4px}}
+@media(max-width:900px){.gc-play{grid-template-columns:minmax(0,1fr)}.gc-sidebar{position:static;display:block}.gc-journal>div{max-height:45dvh}.gc-journal summary span{display:inline;margin-left:10px}.gc-banter{padding:14px;gap:10px}.gc-command-dock{padding:14px}.gc-in-match .gc-header{padding-bottom:12px}.gc-in-match .gc-header h1{font-size:25px}.gc-in-match .gc-header .gc-eyebrow,.gc-in-match .gc-header p:not(.gc-eyebrow),.gc-in-match .gc-seal{display:none}.gc-in-match .gc-matchbar{padding:14px 0;gap:12px 20px}.gc-in-match .gc-simulator{font-size:10px;padding:8px 10px}.gc-in-match .gc-simulator span{display:none}.gc-in-match .gc-canvas{height:clamp(300px,47dvh,430px)}.gc-action-picker button{font-size:12px;min-height:56px}.gc-banter-avatar{flex-basis:34px;height:34px;font-size:22px}.gc-banter-quote{font-size:14px}.gc-command-dock>.gc-fine{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.gc-journal>div{scroll-behavior:auto}}
+
+@media(min-width:901px){.gc-action-picker{grid-template-columns:repeat(2,minmax(0,1fr))}.gc-command-dock{margin-bottom:20px;padding:14px}.gc-command-dock>.gc-eyebrow{display:none}.gc-command-dock h2{font-size:21px}.gc-command-dock>p{font-size:12px}.gc-action-picker button{font-size:12px;padding:8px 4px}.gc-journal>div{max-height:350px}.gc-sidebar{position:static}}
+@media(max-width:900px){.gc-command-dock{margin-bottom:18px}.gc-command-dock>.gc-eyebrow{display:none}.gc-command-dock h2{font-size:20px}.gc-command-dock>h2+p{display:none}.gc-command-dock .gc-quiet{margin:0;min-height:44px}.gc-in-match .gc-matchbar{display:grid;grid-template-columns:1fr auto}.gc-matchbar>div:first-child{grid-column:1}.gc-matchbar>div:nth-child(2){grid-column:1}.gc-matchbar>button{grid-column:2;grid-row:1/3}.gc-in-match .gc-matchbar small{font-size:9px;margin-bottom:2px}.gc-in-match .gc-matchbar strong{font-size:12px}}
+
+/* Board geometry and notation must not mirror when the surrounding UI is RTL. */
+.gc-flat { direction:ltr; }
+.gc-journal p, .gc-last-move { unicode-bidi:plaintext; }
+.gc-header h1, .gc-tier h3, .gc-banter-quote, .gc-matchbar strong { overflow-wrap:anywhere; }
+.gc-proof { overflow-wrap:anywhere; }
+
+/* Translated labels need their own row, not the dock's narrow secondary track. */
+.gc-command-dock > button:not(.gc-quiet) { grid-column:1 / -1; width:100%; }
+.gc-command-dock button,.gc-ending-actions button { min-width:0; white-space:normal; overflow-wrap:anywhere; line-height:1.5; }
+.gc-ending-actions > button { flex:1 1 190px; max-width:100%; }
+.gc-seal { box-sizing:border-box; width:112px; height:112px; padding:14px; }
+.gc-seal small { width:100%; min-width:0; font-size:9px; line-height:1.35; letter-spacing:.025em; overflow-wrap:anywhere; }
+.gc .gc-ending-loss button:not(.gc-primary) { background:#fff; color:#172820; border-color:#a7b5a9; }
+.gc .gc-ending-loss button:not(.gc-primary):hover { background:#ffea00; color:#111; }
+.gc .gc-ending-loss button:focus-visible { outline-color:#ffea00; }

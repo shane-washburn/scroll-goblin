@@ -1,3 +1,4 @@
+import { t } from '@hedgeling/i18n/runtime';
 import { Chess, type Color, type PieceSymbol, type Square } from 'chess.js';
 export type Mode = 'easy' | 'medium' | 'hard' | 'chaos';
 export type Faction = 'goblins' | 'hedgelings';
@@ -77,10 +78,54 @@ export function applyChaos(state: ChaosState, action: ChaosAction, human: boolea
   return next;
 }
 export function normalEnding(chess: Chess): string | null {
-  if (chess.isCheckmate()) return `${chess.turn() === 'w' ? 'Black' : 'White'} wins by checkmate.`;
+  if (chess.isCheckmate()) return t('{value0} wins by checkmate.', { value0: chess.turn() === 'w' ? t('Black') : t('White') });
   if (chess.isStalemate()) return 'Draw by stalemate.';
   if (chess.isThreefoldRepetition()) return 'Draw by threefold repetition.';
   if (chess.isInsufficientMaterial()) return 'Draw by insufficient material.';
   if (chess.isDrawByFiftyMoves()) return 'Draw by the fifty-move rule.';
   return null;
+}
+
+export type ChaosMemory = { human_last_action: string; recent_banter: string[] };
+export function readChaosMemory(value?: Partial<ChaosMemory>): ChaosMemory {
+  return {
+    human_last_action: typeof value?.human_last_action === 'string' ? value.human_last_action.slice(0,400) : 'No human action recorded yet.',
+    recent_banter: Array.isArray(value?.recent_banter) ? value.recent_banter.filter((v):v is string=>typeof v==='string').slice(-4).map(v=>v.slice(0,300)) : [],
+  };
+}
+export function rememberChaos(memory: Partial<ChaosMemory> | undefined, before: ChaosState, action: ChaosAction, human: boolean): ChaosMemory {
+  const next=readChaosMemory(memory);
+  if (!human) return { ...next, recent_banter: action.comment?.trim() ? [...next.recent_banter, action.comment.slice(0,300)].slice(-4) : next.recent_banter };
+  const actor=before.pieces.find(p=>p.square===action.from);
+  const color=before.turn==='w'?'White':'Black';
+  const piece=roles[actor?.type ?? action.piece ?? 'p'];
+  const target=before.pieces.find(p=>p.square===action.to);
+  const detail=action.kind==='transform' ? `transformed ${color} ${piece} on ${action.from} into ${roles[action.piece!]}`
+    : action.kind==='resurrect' ? `resurrected ${color} ${roles[action.piece!]} on ${action.to}`
+    : action.kind==='declare' ? 'declared victory'
+    : `${action.kind==='teleport'?'teleported':'moved'} ${color} ${piece} from ${action.from} to ${action.to}${target?`, capturing ${target.color==='w'?'White':'Black'} ${roles[target.type]}`:''}${actor?.type==='p'&&action.to&&/[18]$/.test(action.to)?`, promoting to ${roles[action.piece&&'qrbn'.includes(action.piece)?action.piece:'q']}`:''}`;
+  return { ...next, human_last_action: `Human ${action.kind!=='move'&&action.kind!=='declare'?'used a cheat: ':''}${detail}.` };
+}
+/** Ordinary checkmate on the current chaos board: no castling/en passant history,
+ * and cheats do not count as escapes. King captures are handled separately. */
+export function chaosCheckmate(state: ChaosState): boolean {
+  const color=state.turn;
+  if (!state.pieces.some(p=>p.type==='k'&&p.color===color)||!state.pieces.some(p=>p.type==='k'&&p.color!==color)) return false;
+  const attacked=(pieces:Piece[])=>{
+    const king=pieces.find(p=>p.type==='k'&&p.color===color)!;
+    return pieces.some(p=>p.color!==color&&canMove({...state,pieces,turn:p.color},p.square,king.square));
+  };
+  if(!attacked(state.pieces))return false;
+  for(const p of state.pieces.filter(p=>p.color===color))for(let i=0;i<64;i++){
+    const to=`${String.fromCharCode(97+i%8)}${1+Math.floor(i/8)}` as Square;
+    if(state.pieces.some(q=>q.square===to&&q.type==='k')||!canMove(state,p.square,to))continue;
+    const pieces=state.pieces.filter(q=>q.square!==to).map(q=>q===p?{...q,square:to}:q);
+    if(!attacked(pieces))return false;
+  }
+  return true;
+}
+export function chaosVerdictRequest(state:ChaosState,action:ChaosAction):{round:number;declaration:boolean}|null {
+  const round=Math.floor(state.ply/2);
+  const forced=action.kind==='declare'||!state.pieces.some(p=>p.type==='k'&&p.color==='w')||!state.pieces.some(p=>p.type==='k'&&p.color==='b')||chaosCheckmate(state);
+  return forced||state.ply%2===0&&round>=6?{round,declaration:forced}:null;
 }

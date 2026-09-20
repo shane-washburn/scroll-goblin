@@ -41,3 +41,33 @@ test('checkmate and stalemate have distinct results', () => {
   assert.equal(normalEnding(c), 'Black wins by checkmate.');
   assert.equal(normalEnding(new Chess('7k/5K2/6Q1/8/8/8/8/8 b - - 0 1')), 'Draw by stalemate.');
 });
+test('chaos checkmate forces a verdict before round six even with cheats remaining', async()=>{
+ const {chaosCheckmate,chaosVerdictRequest,piecesOf}=await import('./game');
+ const c=new Chess();['f3','e5','g4'].forEach(m=>c.move(m));
+ const before={...initialChaos(),pieces:piecesOf(c),turn:'b' as const,ply:3};
+ const action={kind:'move' as const,from:'d8',to:'h4'};
+ const after=applyChaos(before,action,false);
+ assert.equal(chaosCheckmate(after),true);
+ assert.deepEqual(chaosVerdictRequest(after,action),{round:2,declaration:true});
+ assert.equal(after.cheats,3);
+});
+test('ordinary check and stalemate do not force the Universe; either color can be mated',async()=>{
+ const {chaosCheckmate,piecesOf}=await import('./game');
+ for(const [fen,mate] of [
+ ['4k3/8/8/8/8/8/4R3/4K3 b - - 0 1',false],
+ ['7k/5K2/6Q1/8/8/8/8/8 b - - 0 1',false],
+ ['7k/6Q1/5K2/8/8/8/8/8 b - - 0 1',true],
+ ['4k3/8/8/8/8/8/4r3/4K3 w - - 0 1',false],
+ ] as const){const c=new Chess(fen);assert.equal(chaosCheckmate({...initialChaos(),pieces:piecesOf(c),turn:c.turn()}),mate,fen);}
+});
+test('memory records cheats and captures accurately, keeping only four accepted comments',async()=>{
+ const {rememberChaos,readChaosMemory}=await import('./game');
+ const s=initialChaos();let memory=rememberChaos(undefined,s,{kind:'teleport',from:'b1',to:'b8'},true);
+ assert.match(memory.human_last_action,/used a cheat: teleported White Knight from b1 to b8, capturing Black Knight/);
+ for(let i=0;i<6;i++)memory=rememberChaos(memory,s,{kind:'move',from:'a7',to:'a6',comment:`Portal joke ${i}`},false);
+ assert.deepEqual(memory.recent_banter,['Portal joke 2','Portal joke 3','Portal joke 4','Portal joke 5']);
+ assert.match(memory.human_last_action,/teleported/);
+ const saved=readChaosMemory(JSON.parse(JSON.stringify(memory)));assert.deepEqual(saved,memory);
+ const normal=rememberChaos(memory,s,{kind:'move',from:'e2',to:'e4'},true);assert.equal(normal.human_last_action,'Human moved White Pawn from e2 to e4.');
+ assert.deepEqual(readChaosMemory(),{human_last_action:'No human action recorded yet.',recent_banter:[]});
+});

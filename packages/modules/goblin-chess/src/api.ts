@@ -1,6 +1,7 @@
+import { getLocale } from '@hedgeling/i18n/runtime';
 import { hasSimulation, simulateOracle, continueInSimulator } from './simulator';
 import type { Color } from 'chess.js';
-import type { ChaosAction, ChaosState, Faction } from './game';
+import type { ChaosAction, ChaosState, ChaosMemory, Faction } from './game';
 export const simulatorEnabled = import.meta.env.DEV && import.meta.env.VITE_QUANTUM_SIMULATOR === 'true';
 export type Proof = { source?: 'simulator' | 'hardware'; taskArn: string; deviceArn: string; shot: number; measuredAt: string };
 export type Assignment = { session: string; faction: Faction; color: Color; proof: Proof };
@@ -38,9 +39,9 @@ export async function verdict(session: string, seq: number, round: number, decla
     return simulateOracle(request) as Verdict;
   }
 }
-export async function llmMove(state: ChaosState, faction: Faction, lastError?: string) {
+export async function llmMove(state: ChaosState, faction: Faction, lastError?: string, context?: ChaosMemory & { human_cheats_remaining: number }) {
   try {
-    return await post<ChaosAction>(`${import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8787'}/goblin-chess/v1/chaos`, { pieces: state.pieces, captured: state.captured, turn: state.turn, faction, round: Math.floor(state.ply / 2), lastError });
+    return await post<ChaosAction>(`${import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8787'}/goblin-chess/v1/chaos`, { pieces: state.pieces, captured: state.captured, turn: state.turn, faction, round: Math.floor(state.ply / 2), lastError, ...context, locale: getLocale() });
   } catch (error) {
     if (error instanceof HttpError) throw error;
     throw new Error('Could not reach the chaos opponent service. Retry this turn once the connection returns. The Universe simulator handles coin flips and verdicts, not the LLM opponent.');

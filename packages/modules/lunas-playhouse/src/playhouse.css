@@ -12,3 +12,7 @@
 @media(prefers-reduced-motion:reduce){.lp-feedback{animation:none}.lp-feedback>span:first-child{font-size:48px}}
 
 .lp-selection{max-width:calc(100% - 20px);flex-wrap:wrap;justify-content:center}.lp-selection button{font-size:27px}.lp-selection img{flex-shrink:0}@media(max-width:650px){.lp-selection{gap:6px;padding:7px}.lp-selection button{min-width:46px;min-height:48px}.lp-selection img{width:36px;height:36px}}
+
+/* Camera arrows describe world directions, independent of reading direction. */
+.lp-turns { direction:ltr; }
+.lp-header h1 { overflow-wrap:anywhere; }
