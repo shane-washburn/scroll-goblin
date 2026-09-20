@@ -10,7 +10,10 @@
     "dev:api": "pnpm --filter @scroll-goblin/api dev",
     "dev:web": "pnpm --filter @scroll-goblin/web dev",
     "dev": "pnpm build:shared && concurrently -n shared,api,web -c blue,green,magenta \"pnpm dev:shared\" \"pnpm dev:api\" \"pnpm dev:web\"",
-    "build": "pnpm build:shared && pnpm --filter @scroll-goblin/api build && pnpm --filter @scroll-goblin/web build"
+    "build": "pnpm build:shared && pnpm --filter @scroll-goblin/api build && pnpm --filter @scroll-goblin/web build",
+    "i18n:games": "node scripts/translate-games.mjs",
+    "i18n:games:translate": "node scripts/translate-games.mjs --translate",
+    "i18n:games:check": "node scripts/check-game-translations.mjs"
   },
   "devDependencies": {
     "concurrently": "^9.0.1",

@@ -1,0 +1,1207 @@
+{
+  "schemaVersion": 1,
+  "locale": "ar-SA",
+  "status": "machine-draft-needs-review",
+  "translations": {
+    "19d9b4abdfa59e7adbac0a33c3a84fe7": {
+      "source": "· This piece is under attack!",
+      "text": "· هذه القطعة تحت الهجوم!",
+      "status": "needs-review"
+    },
+    "73e1f404296bd3a4de2e4c58f0dc2c6e": {
+      "source": "{count, plural, one {# event} other {# events}}",
+      "text": "{count, plural, zero {لا توجد أحداث} one {حدث واحد} two {حدثان} few {# أحداث} many {# حدثًا} other {# حدث}}",
+      "status": "needs-review"
+    },
+    "1252113be7bf97fff1f51e45f7fbbee3": {
+      "source": "{count, plural, one {# undo left} other {# undos left}}",
+      "text": "{count, plural, zero {لا توجد تراجعات متبقية} one {تراجع واحد متبقٍ} two {تراجعان متبقيان} few {# تراجعات متبقية} many {# تراجعًا متبقيًا} other {# تراجع متبقٍ}}",
+      "status": "needs-review"
+    },
+    "052ce64d95f3275ada0a7facbcb67858": {
+      "source": "{name} placed. Mia and Luna are coming to see!",
+      "text": "تم وضع {name}. ميا ولونا قادمتان لترَيَا!",
+      "status": "needs-review"
+    },
+    "e764859a8fcf272fd24e505ecab1a1f8": {
+      "source": "{name} selected. Choose a glowing spot.",
+      "text": "تم اختيار {name}. اختر بقعة متوهجة.",
+      "status": "needs-review"
+    },
+    "19eea83c7cc7ffac4eb50856cb9091db": {
+      "source": "{value0} wins by checkmate.",
+      "text": "{value0} يفوز بكش ملك.",
+      "status": "needs-review"
+    },
+    "739fc1b45ab56e90da9847969933e96a": {
+      "source": "<0>SIMULATED UNIVERSE</0><1>This match uses simulated quantum measurements. Play continues even when hardware results are unavailable.</1>",
+      "text": "<0>الكون المُحاكى</0><1>تستخدم هذه المباراة قياسات كمومية مُحاكاة. تستمر اللعبة حتى عندما تكون نتائج الأجهزة غير متوفرة.</1>",
+      "status": "needs-review"
+    },
+    "984605d8e33822e75d6bbb76dc8171cb": {
+      "source": "♟ STOCKFISH 19",
+      "text": "♟ STOCKFISH 19",
+      "status": "needs-review"
+    },
+    "c035fc1b0f57eebb0fca70cc3844f3e4": {
+      "source": "✦ {count, plural, one {# cheat remaining} other {# cheats remaining}}",
+      "text": "✦ {count, plural, zero {لا يوجد غش متبقٍ} one {غش واحد متبقٍ} two {غشان متبقيان} few {# غشات متبقية} many {# غشًا متبقيًا} other {# غش متبقٍ}}",
+      "status": "needs-review"
+    },
+    "8bc5f04830ab5a18804bacc32b4f5683": {
+      "source": "✦ RULES ARE OPTIONAL",
+      "text": "✦ القواعد اختيارية",
+      "status": "needs-review"
+    },
+    "93f6526debd524d41c08a47329523dc2": {
+      "source": "🎀 <0>Luna</0>",
+      "text": "🎀 <0>لونا</0>",
+      "status": "needs-review"
+    },
+    "e8d6a462416ae294b09d993034fb1f2f": {
+      "source": "🤠 <0>Mia</0>",
+      "text": "🤠 <0>ميا</0>",
+      "status": "needs-review"
+    },
+    "ec6da5223e2386548ead74373c646ffe": {
+      "source": "02 / CHOOSE YOUR OPPONENT",
+      "text": "02 / اختر خصمك",
+      "status": "needs-review"
+    },
+    "fac1f3039032413d67fff36fd57f45fa": {
+      "source": "2D / keyboard board",
+      "text": "ثنائي الأبعاد / لوحة مفاتيح",
+      "status": "needs-review"
+    },
+    "35083de990bf0f0e319171b0a8a63c60": {
+      "source": "3D could not start on this device. Try a browser with WebGL enabled.",
+      "text": "تعذر بدء تشغيل ثلاثي الأبعاد على هذا الجهاز. جرب متصفحًا يدعم WebGL.",
+      "status": "needs-review"
+    },
+    "7a5f57981e3c3519fee1df50512cac62": {
+      "source": "3D miniatures",
+      "text": "مصغرات ثلاثية الأبعاد",
+      "status": "needs-review"
+    },
+    "57b536dd828070f08002b5eec56ec4c3": {
+      "source": "A cheating LLM, three cheats of your own, and the Universe as referee.",
+      "text": "نموذج لغوي كبير غشاش، ثلاث غشات خاصة بك، والكون حكمًا.",
+      "status": "needs-review"
+    },
+    "3b644c39e255153d301edd87dc9810b5": {
+      "source": "A gentle first adventure. Three takebacks and optional danger warnings.",
+      "text": "مغامرة أولى لطيفة. ثلاث تراجعات وتحذيرات خطر اختيارية.",
+      "status": "needs-review"
+    },
+    "215c0a278a815abe0e38c54c44821e6d": {
+      "source": "A grunt earns a promotion.",
+      "text": "الجندي يكسب ترقية.",
+      "status": "needs-review"
+    },
+    "ef27003c7edbbd144be764e7a1e0d639": {
+      "source": "A king has fallen. The Universe will decide who actually wins.",
+      "text": "سقط ملك. الكون سيقرر من سيفوز بالفعل.",
+      "status": "needs-review"
+    },
+    "a76a17de1d727e39c9ea89340449bd8c": {
+      "source": "A little cunning. A little mercy. One takeback.",
+      "text": "قليل من المكر. قليل من الرحمة. تراجع واحد.",
+      "status": "needs-review"
+    },
+    "06334e1fc828a889739015c26a865946": {
+      "source": "A little patience. Great nonsense takes time.",
+      "text": "قليل من الصبر. الهراء العظيم يستغرق وقتًا.",
+      "status": "needs-review"
+    },
+    "2fb3c2c8405575ec49566d1fbfc6ea10": {
+      "source": "A little room, a world of treasures. Decorate and play with Mia and Luna.",
+      "text": "غرفة صغيرة، عالم من الكنوز. زين والعب مع ميا ولونا.",
+      "status": "needs-review"
+    },
+    "cf9daeedbe8973e46a3b81d82eeb3d64": {
+      "source": "A LITTLE ROOM. A WHOLE WORLD.",
+      "text": "غرفة صغيرة. عالم كامل.",
+      "status": "needs-review"
+    },
+    "c99f4ceb3a2881421e77d72e7d00dcca": {
+      "source": "A MOMENT FOR THE FALLEN",
+      "text": "لحظة للذين سقطوا",
+      "status": "needs-review"
+    },
+    "52055bf910eb53134c9e50a3b6d635e2": {
+      "source": "A new match replaces your saved game.",
+      "text": "مباراة جديدة تحل محل لعبتك المحفوظة.",
+      "status": "needs-review"
+    },
+    "bab32a3bc14eff00a7fc87be5f67cc63": {
+      "source": "A scheme is brewing…",
+      "text": "مكيدة تُحاك…",
+      "status": "needs-review"
+    },
+    "2805af1f11cb373446313a65ee234f88": {
+      "source": "A SMALL WAR. A VERY STRANGE UNIVERSE.",
+      "text": "حرب صغيرة. كون غريب جدًا.",
+      "status": "needs-review"
+    },
+    "6694e18cdb57d7a96cef57f0d06d224e": {
+      "source": "A takeback: the previous decision is yours again.",
+      "text": "تراجع: القرار السابق يعود إليك مرة أخرى.",
+      "status": "needs-review"
+    },
+    "a8ba694623d73d3eb1d148c10fc0de92": {
+      "source": "Acorn Bombardier",
+      "text": "قاذف البلوط",
+      "status": "needs-review"
+    },
+    "2b878331b3b280c5245aad71d8d5e01e": {
+      "source": "Acoustic guitar",
+      "text": "جيتار صوتي",
+      "status": "needs-review"
+    },
+    "b3f74fdec760db2287ee0a590d860dd5": {
+      "source": "Alebrije wooden creature",
+      "text": "مخلوق خشبي أليبريخي",
+      "status": "needs-review"
+    },
+    "a1eb70f4d5dc35ab5aae649ef89d08dc": {
+      "source": "All games are untimed. White moves first. Easy gives three takebacks; medium gives one. Each takeback rewinds your move and the reply. Normal chess includes castling, en passant, promotion and draws.",
+      "text": "جميع الألعاب غير محددة بوقت. الأبيض يتحرك أولاً. المستوى السهل يمنح ثلاث تراجعات؛ المتوسط يمنح واحدة. كل تراجع يعيد حركتك والرد. الشطرنج العادي يشمل التبييت، الأخذ بالتجاوز، الترقية، والتعادلات.",
+      "status": "needs-review"
+    },
+    "3e6defd685231cdd12065add41996c89": {
+      "source": "All objects",
+      "text": "جميع الكائنات",
+      "status": "needs-review"
+    },
+    "e0044fb3d8d703c680f4ae5e85df457c": {
+      "source": "An honorable draw.",
+      "text": "تعادل مشرف.",
+      "status": "needs-review"
+    },
+    "a46bb4e0f051ea2607499ed27de65fa7": {
+      "source": "Another little war →",
+      "text": "حرب صغيرة أخرى ←",
+      "status": "needs-review"
+    },
+    "7d08578c27c773dbe54adced0ceb3af9": {
+      "source": "AT THE TABLE",
+      "text": "على الطاولة",
+      "status": "needs-review"
+    },
+    "872d8319b328fe4e50111efd0fb5ba2f": {
+      "source": "Back in the toy basket.",
+      "text": "عودة إلى سلة الألعاب.",
+      "status": "needs-review"
+    },
+    "0370e0e0ac7dd351864560652ecd29ea": {
+      "source": "Banig woven mat",
+      "text": "حصيرة Banig المنسوجة",
+      "status": "needs-review"
+    },
+    "05c11ed32b534389b2f14e1c71fd9aae": {
+      "source": "Battle history",
+      "text": "سجل المعارك",
+      "status": "needs-review"
+    },
+    "3aa4584e547efba20238772d4af5c03d": {
+      "source": "Bishop",
+      "text": "فيل",
+      "status": "needs-review"
+    },
+    "e90dfb84e30edf611e326eeb04d680de": {
+      "source": "Black",
+      "text": "أسود",
+      "status": "needs-review"
+    },
+    "b9907754f0467c20425915ba566ab880": {
+      "source": "BLACK AT HOME",
+      "text": "الأسود في مكانه",
+      "status": "needs-review"
+    },
+    "cc61304023345642816ad6e7e9d7a57c": {
+      "source": "Bluebonnet window box",
+      "text": "صندوق نافذة بلو بونيت",
+      "status": "needs-review"
+    },
+    "c635cd31fdfe6b4887531458f2756857": {
+      "source": "Both armies lay down their crowns. Some battles end with a shared cup of tea.",
+      "text": "يضع الجيشان تيجانهما. تنتهي بعض المعارك بكوب شاي مشترك.",
+      "status": "needs-review"
+    },
+    "ae7623103cb5665530d1878a3b61486f": {
+      "source": "Bunny slippers",
+      "text": "شباشب الأرانب",
+      "status": "needs-review"
+    },
+    "ea4788705e6873b424c65e91c2846b19": {
+      "source": "Cancel",
+      "text": "إلغاء",
+      "status": "needs-review"
+    },
+    "9f3930f3396cf6289eb3c6d65fff5c19": {
+      "source": "Capiz shell nightlight",
+      "text": "مصباح ليلي من صدف Capiz",
+      "status": "needs-review"
+    },
+    "ef1244de30348e17cf2247544d19fe25": {
+      "source": "Carabao plush",
+      "text": "دمية Carabao قطيفة",
+      "status": "needs-review"
+    },
+    "7e8214916782021125d0afd9d9d9ee66": {
+      "source": "Chaos",
+      "text": "فوضى",
+      "status": "needs-review"
+    },
+    "991384f36a13c11e2437292fbbbf8ed8": {
+      "source": "Chaos: check can be ignored, but ordinary checkmate, capturing a king, or an LLM victory declaration calls the Universe. Cheats do not count as checkmate escapes. Castling and en passant are disabled. You get three cheats, each using a turn. After round five, the Universe may end any completed round and choose either side as winner.",
+      "text": "فوضى: يمكن تجاهل الكش، لكن الكش ملك العادي، أو أسر الملك، أو إعلان فوز LLM يستدعي الكون. الغش لا يُحتسب كهروب من الكش ملك. التبييت والأخذ بالتجاوز معطلان. تحصل على ثلاث غشات، كل منها يستخدم دورًا. بعد الجولة الخامسة، قد ينهي الكون أي جولة مكتملة ويختار أي جانب كفائز.",
+      "status": "needs-review"
+    },
+    "e76d16de100ee3a2b701f44fa1209437": {
+      "source": "Check! Protect your king.",
+      "text": "كش! احمِ ملكك.",
+      "status": "needs-review"
+    },
+    "dd85fc460c29de503154f7f554f3d093": {
+      "source": "Checkmate! The Universe will decide who actually wins.",
+      "text": "كش ملك! الكون سيقرر من الفائز الحقيقي.",
+      "status": "needs-review"
+    },
+    "4533e086fc90571576318ce90e4bd233": {
+      "source": "Chessboard",
+      "text": "رقعة الشطرنج",
+      "status": "needs-review"
+    },
+    "360fa26472702ec682fb0b9839aac235": {
+      "source": "Chief Forager",
+      "text": "كبير جامعي الطعام",
+      "status": "needs-review"
+    },
+    "fbc1d341aa249e244fba07acea4f018b": {
+      "source": "Choose a captured type, then an empty square.",
+      "text": "اختر نوعًا مأسورًا، ثم مربعًا فارغًا.",
+      "status": "needs-review"
+    },
+    "d7af5100767e3d8757edad4518069243": {
+      "source": "Choose a highlighted square to move your piece.",
+      "text": "اختر مربعًا مميزًا لتحريك قطعتك.",
+      "status": "needs-review"
+    },
+    "bd912f831474520eba6ecc44b7a95c7e": {
+      "source": "Choose action",
+      "text": "اختر إجراء",
+      "status": "needs-review"
+    },
+    "cdea53a3d2d22f76c804c0b6023c3b5f": {
+      "source": "Choose its new role.",
+      "text": "اختر دورها الجديد.",
+      "status": "needs-review"
+    },
+    "ff396a3c3e73280ee85a638bf0d91e9d": {
+      "source": "Choose move, rotate, or return to basket.",
+      "text": "اختر التحريك، التدوير، أو العودة إلى السلة.",
+      "status": "needs-review"
+    },
+    "3f904f1f61cbcdc5a82fbf32f9a83bd9": {
+      "source": "Choose objects by placement area",
+      "text": "اختر الكائنات حسب منطقة الوضع",
+      "status": "needs-review"
+    },
+    "fbd92719968cc0a599ec5edf79b4da2c": {
+      "source": "Choose one of the highlighted legal squares.",
+      "text": "اختر أحد المربعات القانونية المميزة.",
+      "status": "needs-review"
+    },
+    "0692701a2e292f94c528917a67bb02f5": {
+      "source": "Choose promotion",
+      "text": "اختر الترقية",
+      "status": "needs-review"
+    },
+    "75c703a67177ce1c10c7bc1c8824c184": {
+      "source": "Choose your courage. Fate chooses your side.",
+      "text": "اختر شجاعتك. القدر يختار جانبك.",
+      "status": "needs-review"
+    },
+    "ea9da7e7b95dab706a52e3a3fbff4381": {
+      "source": "Cloud mobile",
+      "text": "سحابة معلقة",
+      "status": "needs-review"
+    },
+    "6f5fa85597410d31ba92a54d8af69fd8": {
+      "source": "Consulting the Universe…",
+      "text": "نستشير الكون…",
+      "status": "needs-review"
+    },
+    "4eb798708323039cbc5dddc72b90a64e": {
+      "source": "Cozy armchair",
+      "text": "كرسي مريح",
+      "status": "needs-review"
+    },
+    "808dd62187111c50903172529bc12274": {
+      "source": "Daisy wall clock",
+      "text": "ساعة حائط أقحوان",
+      "status": "needs-review"
+    },
+    "4348115a51f1e92a0c0fa496c32474a8": {
+      "source": "declared victory",
+      "text": "أعلن النصر",
+      "status": "needs-review"
+    },
+    "0aabd06df57af6a6a382d15470ec81d0": {
+      "source": "declares you the winner",
+      "text": "يعلنك الفائز",
+      "status": "needs-review"
+    },
+    "1b78f28b44023f195b0d0fa3edbfd888": {
+      "source": "Decorate the playhouse",
+      "text": "زين بيت اللعب",
+      "status": "needs-review"
+    },
+    "f182d54ca6a075c20ef78541f49361d6": {
+      "source": "Decorative cowboy boots",
+      "text": "أحذية رعاة بقر مزخرفة",
+      "status": "needs-review"
+    },
+    "5dc1fd1f138edd801220826207555ff5": {
+      "source": "Defensive Hoglet",
+      "text": "خنزير صغير مدافع",
+      "status": "needs-review"
+    },
+    "c1baf14165e935275ade01b8501d9e3e": {
+      "source": "Deploy the board →",
+      "text": "انشر اللوحة ←",
+      "status": "needs-review"
+    },
+    "947813bf9001b65dac3fb2176c667cf7": {
+      "source": "Done decorating this item",
+      "text": "انتهيت من تزيين هذا العنصر",
+      "status": "needs-review"
+    },
+    "2d03c2d5a7ec65ef4619e0582c272ec2": {
+      "source": "Draw",
+      "text": "تعادل",
+      "status": "needs-review"
+    },
+    "9ec506f2aed78a35203bb630d053efa2": {
+      "source": "Draw by insufficient material.",
+      "text": "تعادل بسبب نقص المواد.",
+      "status": "needs-review"
+    },
+    "b7bd03e8cdfe68572bb1a9f6fbd2ca3b": {
+      "source": "Draw by stalemate.",
+      "text": "تعادل بسبب الجمود.",
+      "status": "needs-review"
+    },
+    "b55d0c40fce30e1c67bfff6fec9509d8": {
+      "source": "Draw by the fifty-move rule.",
+      "text": "تعادل بقاعدة الخمسين نقلة.",
+      "status": "needs-review"
+    },
+    "e826dcc39151a5377f87e89c86493905": {
+      "source": "Draw by threefold repetition.",
+      "text": "تعادل بالتكرار ثلاث مرات.",
+      "status": "needs-review"
+    },
+    "7f943921724d63dc0ac9c6febf99fa88": {
+      "source": "Easy",
+      "text": "سهل",
+      "status": "needs-review"
+    },
+    "e63cd4387b40d360b9f9224afac068af": {
+      "source": "Elder Sage",
+      "text": "حكيم كبير",
+      "status": "needs-review"
+    },
+    "90c52f9c5733f4e27b3b0892af8ee804": {
+      "source": "Engine source",
+      "text": "مصدر المحرك",
+      "status": "needs-review"
+    },
+    "8d9f24e565c3d93bab1eb32923375c72": {
+      "source": "Every little creature has a role. Select one to meet it.",
+      "text": "لكل مخلوق صغير دور. اختر واحدًا لتتعرف عليه.",
+      "status": "needs-review"
+    },
+    "a8c6ab95ca3dfec11180fec1142838e0": {
+      "source": "Every move. Every dubious claim.",
+      "text": "كل حركة. كل ادعاء مشكوك فيه.",
+      "status": "needs-review"
+    },
+    "42d0fe72660eb2ecf344868d63fb225a": {
+      "source": "Fate is turning…",
+      "text": "القدر يتقلب…",
+      "status": "needs-review"
+    },
+    "45b9c968e88117a6f73411f3c43204e4": {
+      "source": "Frog Rider",
+      "text": "فارس الضفدع",
+      "status": "needs-review"
+    },
+    "95c14cfa71e176bcd48c2cce7c84bf23": {
+      "source": "Fruit bowl",
+      "text": "وعاء فواكه",
+      "status": "needs-review"
+    },
+    "fe55eecd3b0869dd8422d3212c25cd36": {
+      "source": "Full-strength NNUE Stockfish, five seconds per move. No takebacks.",
+      "text": "Stockfish NNUE بكامل قوته، خمس ثوانٍ لكل نقلة. لا رجوع.",
+      "status": "needs-review"
+    },
+    "68f6837e12688e61fb91f340d61c0ca6": {
+      "source": "Furniture and floor objects",
+      "text": "أثاث وأشياء أرضية",
+      "status": "needs-review"
+    },
+    "103a121bbd018da89d87eb6642578434": {
+      "source": "Game controls",
+      "text": "عناصر التحكم في اللعبة",
+      "status": "needs-review"
+    },
+    "b1692a4bdb0173d71f99dfd36613a3d1": {
+      "source": "Give fate a little nudge. Click the coin to spin.",
+      "text": "ادفع القدر قليلًا. انقر على العملة لتدويرها.",
+      "status": "needs-review"
+    },
+    "a8d8e0b5dbbc742802946891f8ff3b69": {
+      "source": "Goblin King",
+      "text": "ملك العفاريت",
+      "status": "needs-review"
+    },
+    "cde34fcbac65b89cc7f910f5878f5da1": {
+      "source": "Hanging decorations",
+      "text": "زينة معلقة",
+      "status": "needs-review"
+    },
+    "3656183169810334a96b91129dc9d881": {
+      "source": "Hard",
+      "text": "صعب",
+      "status": "needs-review"
+    },
+    "8ad0f101efab6be7982ed6d447a0e307": {
+      "source": "Hedgelings",
+      "text": "صغار القنافذ",
+      "status": "needs-review"
+    },
+    "e42243a625a4a4a8ab5bb27ca79c4939": {
+      "source": "How the table works",
+      "text": "كيف يعمل الجدول",
+      "status": "needs-review"
+    },
+    "737c8a1bbd8f4e6567b4bbf202905450": {
+      "source": "In hardware mode, measurements are made on Amazon Braket quantum hardware in advance, then used once. The target probabilities are ideal; physical hardware has noise. If hardware results are unavailable, the match switches to the simulator and stays there. New matches try real hardware first.",
+      "text": "في وضع الأجهزة، يتم إجراء القياسات على أجهزة Amazon Braket الكمومية مسبقًا، ثم تُستخدم مرة واحدة. الاحتمالات المستهدفة مثالية؛ فالأجهزة المادية بها ضوضاء. إذا كانت نتائج الأجهزة غير متوفرة، فستتحول المباراة إلى المحاكي وتبقى هناك. تحاول المباريات الجديدة استخدام الأجهزة الحقيقية أولاً.",
+      "status": "needs-review"
+    },
+    "19d5de07d613f8846549d7263f73d9d0": {
+      "source": "Interactive 3D chessboard. Switch to 2D for keyboard controls.",
+      "text": "لوحة شطرنج تفاعلية ثلاثية الأبعاد. انتقل إلى وضع ثنائي الأبعاد للتحكم باستخدام لوحة المفاتيح.",
+      "status": "needs-review"
+    },
+    "7b04a0b1f6c3e68aa334a99d04af9339": {
+      "source": "Keep playing",
+      "text": "استمر في اللعب",
+      "status": "needs-review"
+    },
+    "8ba32c0c46422259c861b22c464005ff": {
+      "source": "Keyboard placement controls",
+      "text": "عناصر التحكم في التنسيب بلوحة المفاتيح",
+      "status": "needs-review"
+    },
+    "719ef271d38a388fd7b2bc967f4bd885": {
+      "source": "King",
+      "text": "الملك",
+      "status": "needs-review"
+    },
+    "8c23b2b86573edf2a5ea482c2ccc1497": {
+      "source": "Knight",
+      "text": "الحصان",
+      "status": "needs-review"
+    },
+    "1eeae31c96368f2895a8241ceceda325": {
+      "source": "Latest event ↓",
+      "text": "أحدث حدث ↓",
+      "status": "needs-review"
+    },
+    "3040a6242f0bba54cb4ce40a4912e6a9": {
+      "source": "Leafy houseplant",
+      "text": "نبتة منزلية مورقة",
+      "status": "needs-review"
+    },
+    "57d2498e7f9b245fa4310b99aee56ac8": {
+      "source": "Leave this battle?",
+      "text": "هل تريد مغادرة هذه المعركة؟",
+      "status": "needs-review"
+    },
+    "551ea1e97834d3a71a97200de5232b21": {
+      "source": "Let the Universe choose my side ↗",
+      "text": "دع الكون يختار جانبي ↗",
+      "status": "needs-review"
+    },
+    "81e1623e95eef44e5b41a723b6109540": {
+      "source": "LET THE WOODLANDS REJOICE",
+      "text": "لِتَفْرَحِ الْغَابَاتُ",
+      "status": "needs-review"
+    },
+    "3a3b040574078af8d0cb29c0048ba0dd": {
+      "source": "Little bookcase",
+      "text": "رف كتب صغير",
+      "status": "needs-review"
+    },
+    "1da7cb3fd7e403879b5f9cea62871d13": {
+      "source": "Little tea set",
+      "text": "طقم شاي صغير",
+      "status": "needs-review"
+    },
+    "b580279ae113bec19bc972facd0df4b9": {
+      "source": "Loading / thinking with full NNUE Stockfish…",
+      "text": "جارٍ التحميل / التفكير باستخدام NNUE Stockfish الكامل…",
+      "status": "needs-review"
+    },
+    "8005e91d4fa6e00281bc510d2b3b9c8e": {
+      "source": "Lost Hoglet",
+      "text": "قنفذ صغير ضائع",
+      "status": "needs-review"
+    },
+    "5c1352bad9a8f62b39a2f04c717a44a4": {
+      "source": "Luna’s Playhouse",
+      "text": "بيت لعب لونا",
+      "status": "needs-review"
+    },
+    "0485605eb1b8e4b18cddfc3bc18b5b28": {
+      "source": "Luna’s Playhouse <0>✿</0>",
+      "text": "بيت لعب لونا <0>✿</0>",
+      "status": "needs-review"
+    },
+    "dc0b7c6136cb486aee908abcbdaad6a7": {
+      "source": "Master Weaver",
+      "text": "نسّاج ماهر",
+      "status": "needs-review"
+    },
+    "87f8a6ab85c9ced3702b4ea641ad4bb5": {
+      "source": "Medium",
+      "text": "متوسط",
+      "status": "needs-review"
+    },
+    "0bb33a0f383a9b03c9e522e845183938": {
+      "source": "Meet your army",
+      "text": "قابل جيشك",
+      "status": "needs-review"
+    },
+    "4bdd459cddab5949d3b0989bab211dd5": {
+      "source": "Mia and Luna’s room. Choose a toy, then a glowing spot.",
+      "text": "غرفة ميا ولونا. اختر لعبة، ثم بقعة متوهجة.",
+      "status": "needs-review"
+    },
+    "a022d155bd14bf7592c095b3bfed6d4f": {
+      "source": "Moon cushion",
+      "text": "وسادة القمر",
+      "status": "needs-review"
+    },
+    "6bc362dbf494c61ea117fe3c71ca48a5": {
+      "source": "Move",
+      "text": "نقلة",
+      "status": "needs-review"
+    },
+    "692f9df1eee50b440436f8b955cb87c5": {
+      "source": "Move {name}",
+      "text": "حرّك {name}",
+      "status": "needs-review"
+    },
+    "62361f2fefc607eb0187e30ede849883": {
+      "source": "Mute sound",
+      "text": "كتم الصوت",
+      "status": "needs-review"
+    },
+    "da6cac81a6180437f3c3598ced16baac": {
+      "source": "New match",
+      "text": "مباراة جديدة",
+      "status": "needs-review"
+    },
+    "e94f1a5497be38c1314632d779835cdb": {
+      "source": "ONE COIN. TWO LITTLE KINGDOMS.",
+      "text": "عملة واحدة. مملكتان صغيرتان.",
+      "status": "needs-review"
+    },
+    "c66b933f602df63ca396564f39ed3cf7": {
+      "source": "Opponent {value0} {pieceName}: {from} → {to}.",
+      "text": "الخصم {value0} {pieceName}: من {from} إلى {to}.",
+      "status": "needs-review"
+    },
+    "2faa9bf5170b1f36f086fbd0ae515734": {
+      "source": "Opponent declared victory — the Universe will decide.",
+      "text": "أعلن الخصم فوزه — الكون سيقرر.",
+      "status": "needs-review"
+    },
+    "c56b0eac53b231d140b42a5b61cae050": {
+      "source": "Opponent moved {value0}: {from} → {to}{value1}{value2}.",
+      "text": "حرّك الخصم {value0}: من {from} إلى {to}{value1}{value2}.",
+      "status": "needs-review"
+    },
+    "e504edf27cde6cdcf397bbc0807f48dd": {
+      "source": "Opponent resurrected {pieceName} on {to}.",
+      "text": "أعاد الخصم إحياء {pieceName} في {to}.",
+      "status": "needs-review"
+    },
+    "34d0d29d8546b6de4b58f3ab4435df37": {
+      "source": "Opponent transformed {pieceName} on {from} into {value0}.",
+      "text": "حوّل الخصم {pieceName} من {from} إلى {value0}.",
+      "status": "needs-review"
+    },
+    "5cfc2a5e5fa2bb7da72766e5fcab8b29": {
+      "source": "Opponent’s latest comment",
+      "text": "آخر تعليق للخصم",
+      "status": "needs-review"
+    },
+    "b3723b84981125e74a3bac55c1b2e2a5": {
+      "source": "Paintings and wall decorations",
+      "text": "لوحات وزينة حائط",
+      "status": "needs-review"
+    },
+    "696c9f27629dc74fe376234602f7645e": {
+      "source": "Paper flowers",
+      "text": "زهور ورقية",
+      "status": "needs-review"
+    },
+    "13ca023484e507111f1068f3723e1953": {
+      "source": "Parol star lantern",
+      "text": "فانوس نجمة Parol",
+      "status": "needs-review"
+    },
+    "36cddea7303c5d9d8a0930128b1fbb80": {
+      "source": "Pawn",
+      "text": "بيدق",
+      "status": "needs-review"
+    },
+    "e95ba9ea325cc04ea96d082ad0abd45e": {
+      "source": "PEACE IN THE CLEARING",
+      "text": "سلام في الساحة",
+      "status": "needs-review"
+    },
+    "a6fe12c7f1af6b1842481d10c7ca4028": {
+      "source": "Piece type",
+      "text": "نوع القطعة",
+      "status": "needs-review"
+    },
+    "8c5789f806c731ecc2d2ccded9c73e83": {
+      "source": "Place {name} at {category} spot {id}",
+      "text": "ضع {name} في بقعة {category} رقم {id}",
+      "status": "needs-review"
+    },
+    "f7a70df687c6d43ebec738eff74ff3da": {
+      "source": "Play again →",
+      "text": "العب مرة أخرى ←",
+      "status": "needs-review"
+    },
+    "6215abe911770266e802df0b78f9b5a9": {
+      "source": "plotting…",
+      "text": "يخطط...",
+      "status": "needs-review"
+    },
+    "1fe28744bc026b765d3e2f8387c3dacd": {
+      "source": "Potion Mixer",
+      "text": "خلاط الجرعات",
+      "status": "needs-review"
+    },
+    "2c2d2c0291163b077a372c2a9c5a6eda": {
+      "source": "Queen",
+      "text": "ملكة",
+      "status": "needs-review"
+    },
+    "a57c412935ac1cab90a1b119031a1a7a": {
+      "source": "Rainbow building blocks",
+      "text": "مكعبات بناء قوس قزح",
+      "status": "needs-review"
+    },
+    "fe8555d6b6e0847861a154f354c1dfa7": {
+      "source": "Rainbow painting",
+      "text": "لوحة قوس قزح",
+      "status": "needs-review"
+    },
+    "78787b67d01ac1422fbe56cf4ab0fdae": {
+      "source": "Real hardware. Strange fate.",
+      "text": "عتاد حقيقي. مصير غريب.",
+      "status": "needs-review"
+    },
+    "c3273c2833fcb9732f52805c38d038e5": {
+      "source": "REAL QUANTUM FATE · UNTIMED CHESS",
+      "text": "مصير كمّي حقيقي · شطرنج غير موقوت",
+      "status": "needs-review"
+    },
+    "37d90cd3910397332d6e0faf393b6776": {
+      "source": "Resign",
+      "text": "استسلم",
+      "status": "needs-review"
+    },
+    "6a88072cc8de36b22c2235dd37343740": {
+      "source": "Resume your woodland battle",
+      "text": "استأنف معركتك في الغابة",
+      "status": "needs-review"
+    },
+    "7eaa50be2932c2c07a068f8b2737e516": {
+      "source": "Retry this turn",
+      "text": "أعد المحاولة في هذه الجولة",
+      "status": "needs-review"
+    },
+    "bde7b30457acad0426d4b19f4f5b80b7": {
+      "source": "Return {name} to the basket",
+      "text": "أعد {name} إلى السلة",
+      "status": "needs-review"
+    },
+    "47d939e012d8e9b395b0e6620327dfaf": {
+      "source": "Review the board",
+      "text": "راجع اللوحة",
+      "status": "needs-review"
+    },
+    "d78a1701177a08aebfbccceb9f1eb63a": {
+      "source": "Revive",
+      "text": "إحياء",
+      "status": "needs-review"
+    },
+    "1a415f5ae0f891e49d34821a896b4466": {
+      "source": "Rook",
+      "text": "رخ",
+      "status": "needs-review"
+    },
+    "ee20bf2ba8c845d629f4a574abcda7e1": {
+      "source": "Rotate {name} left",
+      "text": "أدر {name} إلى اليسار",
+      "status": "needs-review"
+    },
+    "0e50f8c1fa43ee9881bab03fb3598e6d": {
+      "source": "Rotate {name} right",
+      "text": "أدر {name} إلى اليمين",
+      "status": "needs-review"
+    },
+    "952358f40a2e3c0d2bac5a4697995e31": {
+      "source": "Round ottoman",
+      "text": "مسند قدم دائري",
+      "status": "needs-review"
+    },
+    "727cc29a4d7aa690ebae73b7f889bbc2": {
+      "source": "Scroll Goblins",
+      "text": "عفاريت اللفائف",
+      "status": "needs-review"
+    },
+    "43910d5f4d1763aa4e5dccfa2574d06b": {
+      "source": "SCROLL GOBLINS",
+      "text": "عفاريت اللفائف",
+      "status": "needs-review"
+    },
+    "a957e0ef7f84a5d5b4a36272852439f6": {
+      "source": "Scroll Goblins <0>vs</0> Hedgelings",
+      "text": "عفاريت اللفائف <0>ضد</0> هيدجلينغز",
+      "status": "needs-review"
+    },
+    "e4f6f82f88634759d120a98c81972e57": {
+      "source": "Scroll Goblins vs Hedgelings",
+      "text": "عفاريت اللفائف ضد هيدجلينغز",
+      "status": "needs-review"
+    },
+    "437aa63d219a513be49e1553aee2d800": {
+      "source": "Scroll Grunt",
+      "text": "جندي اللفيفة",
+      "status": "needs-review"
+    },
+    "a3100ffd6b6e3f9ab69700f3164b8300": {
+      "source": "Scroll Rider",
+      "text": "فارس اللفيفة",
+      "status": "needs-review"
+    },
+    "e4b3723b967292633f55254b337868bf": {
+      "source": "Select a piece, then its destination.",
+      "text": "اختر قطعة، ثم وجهتها.",
+      "status": "needs-review"
+    },
+    "40e0fc98bb875b804fe39611abe86dad": {
+      "source": "Select a piece, then its destination. Cheats each use one turn.",
+      "text": "اختر قطعة، ثم وجهتها. كل خدعة تستخدم دورًا واحدًا.",
+      "status": "needs-review"
+    },
+    "6cbebfe2deec43c401447c79cf92cdbd": {
+      "source": "Select your non-king piece, choose its new type, then transform.",
+      "text": "اختر قطعتك غير الملك، ثم اختر نوعها الجديد، ثم حوّلها.",
+      "status": "needs-review"
+    },
+    "58e1ca66749a22980a7b49219c3f5524": {
+      "source": "Select your piece, then any empty or enemy square.",
+      "text": "اختر قطعتك، ثم أي مربع فارغ أو للعدو.",
+      "status": "needs-review"
+    },
+    "e5a3ffae8caeeb64cc4e3d6a83f7d983": {
+      "source": "SIMULATED QUANTUM FATE · UNTIMED CHESS",
+      "text": "قدر كمي محاكى · شطرنج بلا توقيت",
+      "status": "needs-review"
+    },
+    "a2698228af14181368481d9c74245973": {
+      "source": "Simulated Universe",
+      "text": "كون محاكى",
+      "status": "needs-review"
+    },
+    "876f66dd17afd11ab766d5c71a71c198": {
+      "source": "Some battles are<0/>written in the stars.",
+      "text": "بعض المعارك<0/>مكتوبة في النجوم.",
+      "status": "needs-review"
+    },
+    "0560f72e89613e7c004c0630bfea7bc4": {
+      "source": "Spellbook Stack",
+      "text": "كومة كتب التعويذات",
+      "status": "needs-review"
+    },
+    "30fddfaf4b9c94cda63485d4ae3fca25": {
+      "source": "Spin the coin to choose your faction",
+      "text": "أدر العملة لاختيار فصيلك.",
+      "status": "needs-review"
+    },
+    "4cbb2df9f2915df86e1a0ea2daa1e70f": {
+      "source": "Spin the faction coin again",
+      "text": "أدر عملة الفصيل مرة أخرى.",
+      "status": "needs-review"
+    },
+    "baad4b92cd3a470ed540ae58ffecf7cb": {
+      "source": "Start fresh",
+      "text": "ابدأ من جديد.",
+      "status": "needs-review"
+    },
+    "507586ed73b064ab2b61b7baba08ed7b": {
+      "source": "Start new match",
+      "text": "ابدأ مباراة جديدة.",
+      "status": "needs-review"
+    },
+    "3a96d74113bfb14b88a1e849b7c96231": {
+      "source": "Stockfish GPL license",
+      "text": "ترخيص Stockfish GPL",
+      "status": "needs-review"
+    },
+    "5cf123d22b11f3c0317de0932418a1f3": {
+      "source": "Story books",
+      "text": "كتب قصص",
+      "status": "needs-review"
+    },
+    "9c96d9b5f2b17291e78691bd86d7c8e0": {
+      "source": "Stump Tower",
+      "text": "برج الجذع",
+      "status": "needs-review"
+    },
+    "0bc63f6aefd43bbd37ab738a591f7732": {
+      "source": "Sunshine painting",
+      "text": "لوحة شمس مشرقة",
+      "status": "needs-review"
+    },
+    "a02d8cc0b620635a6fb7273a1852b64c": {
+      "source": "Tabletop objects",
+      "text": "أشياء على الطاولة",
+      "status": "needs-review"
+    },
+    "06d267d31694bd10c6e650c2849584f6": {
+      "source": "Take your time.",
+      "text": "خذ وقتك.",
+      "status": "needs-review"
+    },
+    "86f6b7bd2759a2d46647767745fcf867": {
+      "source": "Talavera planter",
+      "text": "أصيص Talavera",
+      "status": "needs-review"
+    },
+    "8414fd6df619c9cb84444daa3c44ebc3": {
+      "source": "Tap to move · Drag to orbit · Pinch to zoom",
+      "text": "انقر للتحريك · اسحب للدوران · قرص للتكبير",
+      "status": "needs-review"
+    },
+    "054fc7866c93a2496fd9048c493e6aed": {
+      "source": "Teleport",
+      "text": "انتقال آني",
+      "status": "needs-review"
+    },
+    "082cba32fc5be57a52b16a2dc1d80431": {
+      "source": "That area is full. Choose another glowing spot.",
+      "text": "هذه المنطقة ممتلئة. اختر بقعة متوهجة أخرى.",
+      "status": "needs-review"
+    },
+    "ff691c39dc741fecc69569814f03a73a": {
+      "source": "The {army} lower their banners. Rest, regroup, and live to cause mischief another day.",
+      "text": "يخفض {army} راياتهم. استرح، أعد تنظيم صفوفك، وعش لتسبب المشاكل في يوم آخر.",
+      "status": "needs-review"
+    },
+    "1081866304940a0b67c60a28b7ace026": {
+      "source": "The {army} raise a cheer. Their commander has earned a very splendid crown.",
+      "text": "يرفع {army} هتافًا. لقد كسب قائدهم تاجًا رائعًا جدًا.",
+      "status": "needs-review"
+    },
+    "b148c7db9dd7c2a5faf7ba283edbb89e": {
+      "source": "The battle is over.",
+      "text": "انتهت المعركة.",
+      "status": "needs-review"
+    },
+    "e93ae63c509c32e7235e5f014a42655c": {
+      "source": "THE FINAL WORD",
+      "text": "الكلمة الأخيرة",
+      "status": "needs-review"
+    },
+    "23a6dc4fbebc9e6d018fb90e5942e8f3": {
+      "source": "The forest falls quiet.",
+      "text": "تسكت الغابة.",
+      "status": "needs-review"
+    },
+    "6e55a3aa2b6622a3761f600a3c58d23e": {
+      "source": "The full NNUE engine downloads about 95 MB once, then runs on your device.",
+      "text": "يتم تنزيل محرك NNUE الكامل حوالي 95 ميجابايت مرة واحدة، ثم يعمل على جهازك.",
+      "status": "needs-review"
+    },
+    "d099c27b937e4d9f4f768f66906af52b": {
+      "source": "The Hedgelings",
+      "text": "الهيدجلينغز",
+      "status": "needs-review"
+    },
+    "1a1c054df1b1449862fbc9af828b4547": {
+      "source": "THE HEDGELINGS",
+      "text": "الهيدجلينغز",
+      "status": "needs-review"
+    },
+    "a0e956c532a5d587eb145d408421526e": {
+      "source": "The Mad Alchemist",
+      "text": "الكيميائي المجنون",
+      "status": "needs-review"
+    },
+    "950f87d40078a4ee75eefaa1c17ed155": {
+      "source": "The Scroll Goblins",
+      "text": "عفاريت اللفائف",
+      "status": "needs-review"
+    },
+    "8207bff94ae521249b4e0c6a7c1e8c93": {
+      "source": "The Universe allows this nonsense to continue.",
+      "text": "الكون يسمح لهذا الهراء بالاستمرار.",
+      "status": "needs-review"
+    },
+    "ecf0432709a0f5b9e9059c99a81687d1": {
+      "source": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
+      "text": "الكون يعلن {value0} الفائز. الأوراق الكونية نهائية.",
+      "status": "needs-review"
+    },
+    "97e72537c76c1e44f7954ee152ffd823": {
+      "source": "The Universe has chosen your faction and color.",
+      "text": "لقد اختار الكون فصيلك ولونك.",
+      "status": "needs-review"
+    },
+    "13eddf735ca9c43ee29af9ee6c5c47c0": {
+      "source": "The Universe is deciding…",
+      "text": "الكون يقرر…",
+      "status": "needs-review"
+    },
+    "3f11ede2d5e5d094c6707fe926b69dad": {
+      "source": "The Wandering Spirit",
+      "text": "الروح المتجولة",
+      "status": "needs-review"
+    },
+    "6e2a60d3e5f3e8ef2632b258229d0c88": {
+      "source": "THE WOODLAND TABLE",
+      "text": "طاولة الغابة",
+      "status": "needs-review"
+    },
+    "97a755ea75fa2c104c78f8f22d273392": {
+      "source": "This match uses an ideal eight-qubit state-vector simulation. Measurements are sampled on your computer and saved so retries cannot reroll results. No hardware shots or AWS credits are consumed.",
+      "text": "تستخدم هذه المباراة محاكاة مثالية لمتجه حالة ثماني كيوبت. يتم أخذ العينات على جهاز الكمبيوتر الخاص بك وحفظها بحيث لا يمكن للمحاولات المتكررة تغيير النتائج. لا يتم استهلاك لقطات الأجهزة أو أرصدة AWS.",
+      "status": "needs-review"
+    },
+    "10ce333c612b746b3fd45632df7d3889": {
+      "source": "This one is mostly written on stolen scrolls. Command a woodland army against Stockfish—or a spirit with a questionable understanding of chess.",
+      "text": "هذه مكتوبة في الغالب على لفائف مسروقة. قد جيش الغابة ضد Stockfish — أو روح لديها فهم مشكوك فيه للشطرنج.",
+      "status": "needs-review"
+    },
+    "300906a2127920ec56450dddfb639579": {
+      "source": "Toy armadillo",
+      "text": "أرماديلو لعبة",
+      "status": "needs-review"
+    },
+    "fd1dd26c41a48a83bddda92c111d763b": {
+      "source": "Toy basket",
+      "text": "سلة ألعاب",
+      "status": "needs-review"
+    },
+    "979a23f5f170c4baea2686026dbba0d2": {
+      "source": "Trainee Scribe",
+      "text": "كاتب متدرب",
+      "status": "needs-review"
+    },
+    "2ff4148554480a37f85efd299df04850": {
+      "source": "Transform",
+      "text": "تحويل",
+      "status": "needs-review"
+    },
+    "8659e58b2323d1031513930309ed97cb": {
+      "source": "Transform selected piece",
+      "text": "تحويل القطعة المختارة",
+      "status": "needs-review"
+    },
+    "f915a95e609bbd517a8a1e7bdcceef37": {
+      "source": "Try again",
+      "text": "حاول مرة أخرى",
+      "status": "needs-review"
+    },
+    "88085dcf9cf96a6fad9640dc7358f008": {
+      "source": "Turn room left",
+      "text": "أدر الغرفة لليسار",
+      "status": "needs-review"
+    },
+    "e1c960f1c4b9e38bdb4022296a528ba6": {
+      "source": "Turn room right",
+      "text": "أدر الغرفة لليمين",
+      "status": "needs-review"
+    },
+    "66248805079469767a84505ae9b8c74e": {
+      "source": "Turn sound on",
+      "text": "تشغيل الصوت",
+      "status": "needs-review"
+    },
+    "a2457013bea73616a71146a2b510708f": {
+      "source": "Turned a quarter turn.",
+      "text": "تم تدوير ربع دورة.",
+      "status": "needs-review"
+    },
+    "5b7433a11e23eb7adc5b7e6b19e587e6": {
+      "source": "Victory is yours!",
+      "text": "النصر لك!",
+      "status": "needs-review"
+    },
+    "6abb7feedeac5d7457bf6758bbe8ec03": {
+      "source": "View result",
+      "text": "عرض النتيجة",
+      "status": "needs-review"
+    },
+    "25a81701fbfa4a1efdf660a950c1d006": {
+      "source": "White",
+      "text": "أبيض",
+      "status": "needs-review"
+    },
+    "477489f83ba30f6e5aabac6fae547f7a": {
+      "source": "WHITE AT HOME",
+      "text": "الأبيض في المنزل",
+      "status": "needs-review"
+    },
+    "28b99be73f21ed68cd89df5386176b95": {
+      "source": "Woodland chess, real quantum fate, and an opponent who thinks the rules are a suggestion. Command your faction in 3D.",
+      "text": "شطرنج الغابة، مصير كمي حقيقي، وخصم يرى القواعد مجرد اقتراح. قد فصيلك في 3D.",
+      "status": "needs-review"
+    },
+    "1571cc83bfc0c37f87d64238149e6fb4": {
+      "source": "You play black · your opponent moves first.",
+      "text": "أنت تلعب بالأسود · خصمك يتحرك أولاً.",
+      "status": "needs-review"
+    },
+    "e74b5e23ab944802ea68848d668173d5": {
+      "source": "You play white · you move first.",
+      "text": "أنت تلعب بالأبيض · تتحرك أولاً.",
+      "status": "needs-review"
+    },
+    "cf9fc715abdbac30aca331ec092caa09": {
+      "source": "You resigned. Your opponent wins.",
+      "text": "لقد استسلمت. خصمك يفوز.",
+      "status": "needs-review"
+    },
+    "9fe62e565546fe602ea008a2f6ccd4a5": {
+      "source": "Your allegiance is sealed. Spin again for a little luck.",
+      "text": "ولاؤك مختوم. أدر مرة أخرى للحصول على قليل من الحظ.",
+      "status": "needs-review"
+    },
+    "bc83958bd2ddc7cc1b35513f52f8a3ff": {
+      "source": "Your browser cannot save this room. It will last until you close the page.",
+      "text": "لا يمكن لمتصفحك حفظ هذه الغرفة. ستستمر حتى تغلق الصفحة.",
+      "status": "needs-review"
+    },
+    "6c6182564034ab2936a202879cfc13e8": {
+      "source": "Your move.",
+      "text": "دورك.",
+      "status": "needs-review"
+    },
+    "cc3d02adc4d6c963fcaaa50e249e512f": {
+      "source": "Your opponent’s next outrageous remark will appear here.",
+      "text": "ستظهر ملاحظة خصمك الفاضحة التالية هنا.",
+      "status": "needs-review"
+    },
+    "17646fbecc076ac866336d76f1920c84": {
+      "source": "Zarape-patterned blanket",
+      "text": "بطانية بنمط Zarape",
+      "status": "needs-review"
+    },
+    "d1ad44b96b65d1db3ea6cb5feadd8710": {
+      "source": "↶ Undo decision",
+      "text": "↶ التراجع عن القرار",
+      "status": "needs-review"
+    },
+    "6911872f13f7c775bdc7f2147ac7310f": {
+      "source": "Battle chronicle",
+      "text": "سجل المعارك",
+      "status": "needs-review"
+    },
+    "142a3bc4276de97ff41917936b2e2cfd": {
+      "source": "CHESS CLUB",
+      "text": "نادي الشطرنج",
+      "status": "needs-review"
+    },
+    "cd2576b4b54f2c4648c4db8c81e13da4": {
+      "source": "COSMIC DELIBERATION",
+      "text": "مداولات كونية",
+      "status": "needs-review"
+    },
+    "347944e5b5c9316348e4779c8a6e6285": {
+      "source": "FIELD NOTES / Rules, pieces & quantum provenance",
+      "text": "ملاحظات ميدانية / القواعد، القطع، والأصل الكمومي",
+      "status": "needs-review"
+    },
+    "ca7172685931f0617f9d88a8c6cb4583": {
+      "source": "Latest measurement · Device:",
+      "text": "آخر قياس · الجهاز:",
+      "status": "needs-review"
+    },
+    "272244281c7518319d585201e8058297": {
+      "source": "MADE FOR A LITTLE ESCAPE.",
+      "text": "صُممت لهروب صغير.",
+      "status": "needs-review"
+    },
+    "ad04cd048ba69dbaec3b170de92ba8c9": {
+      "source": "Measured:",
+      "text": "تم القياس:",
+      "status": "needs-review"
+    },
+    "f72fd781dd073a8aee044160ed72b97a": {
+      "source": "NO CLOCKS. NO CROWNS GUARANTEED.",
+      "text": "لا توجد ساعات. لا تيجان مضمونة.",
+      "status": "needs-review"
+    },
+    "4877b6442cd0b58704b43a3100b88330": {
+      "source": "Shot:",
+      "text": "لقطة:",
+      "status": "needs-review"
+    },
+    "94c57715dc2dbecef6fbea60861fe710": {
+      "source": "Task:",
+      "text": "المهمة:",
+      "status": "needs-review"
+    },
+    "2e6e85dc214012f8d77756d57a566932": {
+      "source": "THE UNIVERSE HAS SPOKEN",
+      "text": "الكون قد تكلم",
+      "status": "needs-review"
+    },
+    "a1ae24b79ce6896f4dc4299fa3b9ac26": {
+      "source": "Warn about attacked pieces",
+      "text": "التحذير من القطع المهاجمة",
+      "status": "needs-review"
+    },
+    "9cdf1080c0016a38f2e5f27e13d3240b": {
+      "source": "WOODLAND",
+      "text": "غابة",
+      "status": "needs-review"
+    },
+    "a562df52a000abbc045df30d90b1fe22": {
+      "source": "YOUR ALLEGIANCE",
+      "text": "ولاؤك",
+      "status": "needs-review"
+    },
+    "b5365c72770d5d120ece55eb4a2ad63f": {
+      "source": "YOUR OPPONENT",
+      "text": "خصمك",
+      "status": "needs-review"
+    }
+  }
+}

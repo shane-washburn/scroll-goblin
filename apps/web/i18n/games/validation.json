@@ -1,0 +1,63 @@
+{
+  "status": "machine-drafts-require-language-and-in-browser-review",
+  "messages": 240,
+  "locales": {
+    "en-GB": {
+      "valid": 240,
+      "total": 240
+    },
+    "en-AU": {
+      "valid": 240,
+      "total": 240
+    },
+    "en-CA": {
+      "valid": 240,
+      "total": 240
+    },
+    "fr-CA": {
+      "valid": 240,
+      "total": 240
+    },
+    "en-IN": {
+      "valid": 240,
+      "total": 240
+    },
+    "hi-IN": {
+      "valid": 240,
+      "total": 240
+    },
+    "nl-NL": {
+      "valid": 240,
+      "total": 240
+    },
+    "sv-SE": {
+      "valid": 240,
+      "total": 240
+    },
+    "pl-PL": {
+      "valid": 240,
+      "total": 240
+    },
+    "uk-UA": {
+      "valid": 240,
+      "total": 240
+    },
+    "ru-RU": {
+      "valid": 240,
+      "total": 240
+    },
+    "es-ES": {
+      "valid": 240,
+      "total": 240
+    },
+    "pt-BR": {
+      "valid": 240,
+      "total": 240
+    },
+    "ar-SA": {
+      "valid": 240,
+      "total": 240
+    }
+  },
+  "failures": []
+}
