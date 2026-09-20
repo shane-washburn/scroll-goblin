@@ -183,7 +183,8 @@ export default function Board(props: Props) {
     const sync = () => {
       const w = el.clientWidth, h = el.clientHeight; renderer.setSize(w, h); camera.aspect = w / h; camera.position.setLength(Math.max(14.8, 5.1 / (Math.tan(19 * Math.PI / 180) * camera.aspect))); camera.updateProjectionMatrix(); controls.update(); render();
     };
-    const ro = new ResizeObserver(sync); ro.observe(el); sync(); controls.addEventListener('change', render);
+    const ro = new ResizeObserver(sync); ro.observe(el); sync();
+    const visibility = new IntersectionObserver(entries => { if (entries.some(e => e.isIntersecting)) render(); }); visibility.observe(el); controls.addEventListener('change', render);
     let down = { x: 0, y: 0 };
     const onDown = (e: PointerEvent) => { down = { x: e.clientX, y: e.clientY }; };
     const onUp = (e: PointerEvent) => {
@@ -195,7 +196,7 @@ export default function Board(props: Props) {
     };
     renderer.domElement.addEventListener('pointerdown', onDown); renderer.domElement.addEventListener('pointerup', onUp);
     return () => {
-      ro.disconnect(); controls.dispose(); disposeObjects(scene); squares.forEach(s => (s.material as T.Material).dispose()); renderer.dispose(); renderer.domElement.remove(); state.current = undefined;
+      ro.disconnect(); visibility.disconnect(); controls.dispose(); disposeObjects(scene); squares.forEach(s => (s.material as T.Material).dispose()); renderer.dispose(); renderer.domElement.remove(); state.current = undefined;
     };
   }, [flat, props.player]);
   useEffect(() => {

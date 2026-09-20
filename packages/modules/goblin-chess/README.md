@@ -20,12 +20,19 @@ and role explanations are available to everyone. Games persist in localStorage.
 Chaos uses its own board, because illegal edits invalidate normal chess state.
 The LLM can teleport, resurrect captured non-kings, transform non-kings, capture
 kings, and declare victory. It chooses moves through the existing backend Gemini
-integration. Humans get three cheats (each spends a turn). Normal human moves
+integration. Each request includes the exact last human action, remaining human
+cheats, and the last four accepted opponent comments. This rolling context is
+saved locally with the match; older saves begin with empty memory. Rejected
+actions never enter banter history. The Mad Alchemist and Wandering Spirit have
+distinct chemistry-obsessed and ethereal/passive-aggressive persona prompts.
+Humans get three cheats (each spends a turn). Normal human moves
 obey movement geometry, while check is advisory. Castling and en passant are
 intentionally disabled in chaos. Pawn arrivals on the last rank promote (queen
 by default in chaos). Friendly-square collisions and off-board coordinates are
 rejected; invalid LLM edits get one corrective retry, then a visible retry button.
-King capture or declaration requests a forced quantum ending. Otherwise the
+Ordinary checkmate, king capture, or declaration requests a forced quantum ending
+for either side. Cheats are not counted as checkmate escapes; the Universe can
+choose either winner regardless of who delivered mate. Otherwise the
 Universe checks after each completed round starting with round six. A player
 can still resign voluntarily.
 

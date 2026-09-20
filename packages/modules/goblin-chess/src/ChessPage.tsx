@@ -5,11 +5,11 @@ import Ending, { type Outcome } from './Ending';
 import FactionCoin from './FactionCoin';
 import { Engine } from './stockfish';
 import { assign, verdict, llmMove, simulatorEnabled, type Assignment, type Proof } from './api';
-import { applyChaos, canMove, initialChaos, names, normalEnding, opposite, otherFaction, piecesOf, roles, tiers, glyphs, type ChaosAction, type ChaosState, type Mode } from './game';
+import { rememberChaos, readChaosMemory, chaosVerdictRequest, type ChaosMemory, applyChaos, canMove, initialChaos, names, normalEnding, opposite, otherFaction, piecesOf, roles, tiers, glyphs, type ChaosAction, type ChaosState, type Mode } from './game';
 import './chess.css';
 
 type OpponentMove = { from?: string; to?: string; label: string };
-type Match = { outcome?: Outcome; quantumProof?: Proof; lastOpponent?: OpponentMove; assignment: Assignment; mode: Mode; pgn: string; chaos: ChaosState; undos: number; log: string[]; result: string | null; seq: number; pending: { round: number; declaration: boolean } | null };
+type Match = { memory?: ChaosMemory; outcome?: Outcome; quantumProof?: Proof; lastOpponent?: OpponentMove; assignment: Assignment; mode: Mode; pgn: string; chaos: ChaosState; undos: number; log: string[]; result: string | null; seq: number; pending: { round: number; declaration: boolean } | null };
 const SAVE = 'scroll-goblins-chess-v1';
 function readSave(): Match | null {
   try { const m = JSON.parse(localStorage.getItem(SAVE) || 'null'); if (!m || !tiers[m.mode as Mode] || !m.assignment?.session || !m.chaos?.pieces || !Array.isArray(m.log)) return null; const c = new Chess(); c.loadPgn(m.pgn); return m; } catch { return null; }
@@ -17,10 +17,8 @@ function readSave(): Match | null {
 function chessOf(m: Match) { const c = new Chess(); if (m.pgn) c.loadPgn(m.pgn); return c; }
 function afterChaos(m: Match, action: ChaosAction, human: boolean): Match {
   const chaos = applyChaos(m.chaos, action, human);
-  const kingGone = !chaos.pieces.some(p => p.type === 'k' && p.color === 'w') || !chaos.pieces.some(p => p.type === 'k' && p.color === 'b');
-  const round = Math.floor(chaos.ply / 2);
-  const declaration = action.kind === 'declare' || kingGone;
-  const pending = declaration || (chaos.ply % 2 === 0 && round >= 6) ? { round, declaration } : null;
+  const pending = chaosVerdictRequest(chaos, action);
+  const memory = rememberChaos(m.memory, m.chaos, action, human);
   const text = action.comment || `${human ? 'You' : 'Opponent'}: ${action.kind} ${action.from ?? action.piece ?? ''}${action.to ? ' → ' + action.to : ''}`;
   const actor = action.from ? m.chaos.pieces.find(p => p.square === action.from) : undefined;
   const pieceName = names[otherFaction(m.assignment.faction)][actor?.type ?? action.piece ?? 'p'];
@@ -28,9 +26,11 @@ function afterChaos(m: Match, action: ChaosAction, human: boolean): Match {
     : action.kind === 'transform' ? `Opponent transformed ${pieceName} on ${action.from} into ${roles[action.piece!]}.`
     : action.kind === 'resurrect' ? `Opponent resurrected ${pieceName} on ${action.to}.`
     : `Opponent ${action.kind === 'teleport' ? 'teleported' : 'moved'} ${pieceName}: ${action.from} → ${action.to}.`;
-  return { ...m, lastOpponent: human ? undefined : { from: action.from, to: action.to ?? action.from, label }, chaos, pending, log: [...m.log, text] };
+  return { ...m, memory, lastOpponent: human ? undefined : { from: action.from, to: action.to ?? action.from, label }, chaos, pending, log: [...m.log, text, ...(pending?.declaration && action.kind !== 'declare' ? [chaos.pieces.filter(p=>p.type==='k').length === 2 ? 'Checkmate! The Universe will decide who actually wins.' : 'A king has fallen. The Universe will decide who actually wins.'] : [])] };
 }
 export default function ChessPage() {
+  const journal = useRef<HTMLDivElement>(null), followJournal = useRef(true);
+  const [chronicleOpen, setChronicleOpen] = useState(() => window.matchMedia('(min-width: 901px)').matches);
   const [reviewEnding, setReviewEnding] = useState(false);
   const [saved, setSaved] = useState(readSave);
   const [match, setMatch] = useState<Match | null>(null), [assignment, setAssignment] = useState<Assignment | null>(null);
@@ -90,7 +90,7 @@ export default function ChessPage() {
         } else if (m.mode === 'chaos') {
           let lastError: string | undefined;
           for (let attempt = 0; attempt < 2; attempt++) {
-            const action = await llmMove(m.chaos, otherFaction(m.assignment.faction), lastError);
+            const action = await llmMove(m.chaos, otherFaction(m.assignment.faction), lastError, { ...readChaosMemory(m.memory), human_cheats_remaining: m.chaos.cheats });
             if (cancelled) return;
             try { setMatch(afterChaos(m, action, false)); return; } catch (e) { lastError = (e as Error).message; }
           }
@@ -153,8 +153,10 @@ export default function ChessPage() {
     ? chess.turn() === player ? 'loss' : 'win'
     : match?.result?.startsWith('Draw') ? 'draw'
     : match?.result?.includes('declares you the winner') ? 'win' : 'loss');
+  const latestBanter = match?.mode === 'chaos' ? readChaosMemory(match.memory).recent_banter.at(-1) : undefined;
+  useEffect(() => { if (journal.current && followJournal.current) journal.current.scrollTop = journal.current.scrollHeight; }, [match?.log.length, chronicleOpen]);
   const threatened = match?.mode === 'easy' && danger && selected && selectedPiece?.color === player && chess.isAttacked(selected, opposite(player));
-  return <div className="gc"><div className="gc-shell">
+  return <div className={`gc ${match ? 'gc-in-match' : ''}`}><div className="gc-shell">
     <header className="gc-header"><div><p className="gc-eyebrow">A SMALL WAR. A VERY STRANGE UNIVERSE.</p><h1>Scroll Goblins <span>vs</span> Hedgelings</h1><p>Choose your courage. Fate chooses your side.</p></div><span className="gc-seal">♟<small>WOODLAND<br />CHESS CLUB</small></span></header>
     {simulated && <div className="gc-simulator" role="status"><strong>SIMULATED UNIVERSE</strong><span>This match uses simulated quantum measurements. Play continues even when hardware results are unavailable.</span></div>}
     {!match ? <>
@@ -166,28 +168,31 @@ export default function ChessPage() {
       {error && <p className="gc-error" role="alert">{error} <button disabled={busy} onClick={summon}>Try again</button></p>}
     </> : <>
       <div className="gc-matchbar"><div><small>YOUR ALLEGIANCE</small><strong>{faction === 'goblins' ? 'Scroll Goblins' : 'Hedgelings'} <span> / {player === 'w' ? 'White' : 'Black'}</span></strong></div><div><small>YOUR OPPONENT</small><strong>{tiers[match.mode][otherFaction(faction)]}</strong></div><button onClick={() => setConfirmNew(true)}>New match</button></div>
-      <div className="gc-play"><div><Board checkedKings={checkedKings} lastMove={match.lastOpponent} pieces={pieces} player={player} faction={faction} selected={selected} targets={targets} onSquare={onSquare} disabled={locked || !!promotion} />
+      <div className="gc-play"><div className="gc-table-column">
+      {match.mode === 'chaos' && <section className="gc-banter" aria-label="Opponent’s latest comment"><div className="gc-banter-avatar" aria-hidden="true">{otherFaction(faction)==='goblins'?'⚗':'✧'}</div><div><p className="gc-banter-name">{tiers.chaos[otherFaction(faction)]}<span>{turn!==player && busy ? 'plotting…' : 'says'}</span></p><p className="gc-banter-quote" aria-live="polite">{latestBanter || 'Your opponent’s next outrageous remark will appear here.'}</p></div></section>}
+      <Board checkedKings={checkedKings} lastMove={match.lastOpponent} pieces={pieces} player={player} faction={faction} selected={selected} targets={targets} onSquare={onSquare} disabled={locked || !!promotion} />
       <p className="gc-last-move" role="status">{match.lastOpponent?.label}</p>
       <div className="gc-piece-info">{selectedPiece ? <><strong>{names[selectedPiece.color === player ? faction : otherFaction(faction)][selectedPiece.type]}</strong><span>{roles[selectedPiece.type]} · {selected}{threatened ? ' · This piece is under attack!' : ''}</span></> : <span>Every little creature has a role. Select one to meet it.</span>}</div>
       </div><aside className="gc-sidebar">
-        <section className="gc-panel"><p className="gc-eyebrow">{match.result ? 'THE FINAL WORD' : match.pending ? 'COSMIC DELIBERATION' : 'AT THE TABLE'}</p><h2 aria-live="polite">{match.result ? 'The battle is over.' : match.pending ? 'The Universe is deciding…' : turn === player ? 'Your move.' : 'A scheme is brewing…'}</h2><p>{match.result || (match.mode !== 'chaos' && chess.isCheck() ? 'Check! Protect your king.' : busy ? match.mode === 'hard' ? 'Loading / thinking with full NNUE Stockfish…' : 'A little patience. Great nonsense takes time.' : 'No clock. Take a breath. Move a little legend.')}</p>
+        <section className="gc-panel gc-command-dock" aria-label="Game controls"><p className="gc-eyebrow">{match.result ? 'THE FINAL WORD' : match.pending ? 'COSMIC DELIBERATION' : 'AT THE TABLE'}</p><h2 aria-live="polite">{match.result ? 'The battle is over.' : match.pending ? 'The Universe is deciding…' : turn === player ? 'Your move.' : 'A scheme is brewing…'}</h2><p>{match.result || (match.mode !== 'chaos' && chess.isCheck() ? 'Check! Protect your king.' : busy ? match.mode === 'hard' ? 'Loading / thinking with full NNUE Stockfish…' : 'A little patience. Great nonsense takes time.' : 'Take your time.')}</p>
         {match.mode !== 'chaos' && <button disabled={locked || !match.undos || chess.history().length < (player === 'w' ? 2 : 3)} onClick={undo}>↶ Undo decision <span>{match.undos} left</span></button>}
         {match.mode === 'easy' && <label className="gc-checkbox"><input type="checkbox" checked={danger} onChange={e => setDanger(e.target.checked)} /> Warn about attacked pieces</label>}
-        {match.mode === 'chaos' && !match.result && <><p className="gc-cheat-count">✦ {match.chaos.cheats} cheats remaining</p><select aria-label="Choose action" value={cheat} disabled={locked} onChange={e => { setCheat(e.target.value as typeof cheat); setSelected(null); }}><option value="move">Ordinary move</option><option value="teleport" disabled={!match.chaos.cheats}>Teleport a piece</option><option value="resurrect" disabled={!match.chaos.cheats}>Resurrect a piece</option><option value="transform" disabled={!match.chaos.cheats}>Transform a piece</option></select>
+        {match.mode === 'chaos' && !match.result && <><p className="gc-cheat-count">✦ {match.chaos.cheats} cheats remaining</p><div className="gc-action-picker" role="group" aria-label="Choose action">{([['move','♟','Move'],['teleport','↗','Teleport'],['resurrect','✦','Revive'],['transform','✧','Transform']] as const).map(([id,icon,label])=><button key={id} aria-pressed={cheat===id} disabled={locked || (id!=='move'&&!match.chaos.cheats)} onClick={()=>{setCheat(id);setSelected(null);}}><span aria-hidden="true">{icon}</span>{label}</button>)}</div>
         {(cheat === 'transform' || cheat === 'resurrect') && <select aria-label="Piece type" value={cheatPiece} disabled={locked} onChange={e => setCheatPiece(e.target.value as PieceSymbol)}>{(['q', 'r', 'b', 'n', 'p'] as PieceSymbol[]).map(p => <option key={p} value={p}>{roles[p]}</option>)}</select>}
         {cheat === 'transform' && <button disabled={locked || !selected || !match.chaos.cheats} onClick={() => chaosAction({ kind: 'transform', from: selected!, piece: cheatPiece })}>Transform selected piece</button>}
-        <p className="gc-fine">{cheat === 'resurrect' ? 'Choose a captured type, then an empty square.' : cheat === 'transform' ? 'Select your non-king piece, choose its new type, then transform.' : cheat === 'teleport' ? 'Select your piece, then any empty or enemy square.' : 'The Universe checks after round five. Every later round has a 1-in-8 target chance of a cosmic ending.'}</p></>}
+        <p className="gc-fine">{cheat === 'resurrect' ? 'Choose a captured type, then an empty square.' : cheat === 'transform' ? 'Select your non-king piece, choose its new type, then transform.' : cheat === 'teleport' ? 'Select your piece, then any empty or enemy square.' : selected ? 'Choose a highlighted square to move your piece.' : 'Select a piece, then its destination. Cheats each use one turn.'}</p></>}
         {error && <div className="gc-error" role="alert">{error}{(turn !== player || match.pending) && <button disabled={busy} onClick={() => setRetry(x => x + 1)}>Retry this turn</button>}</div>}
         {!match.result && <button className="gc-quiet" disabled={busy || !!match.pending} onClick={() => { setMatch({ ...match, outcome: 'loss', result: 'You resigned. Your opponent wins.' }); }}>Resign</button>}
         {match.result && <><button className="gc-primary" onClick={reset}>Another little war →</button><button onClick={() => setReviewEnding(false)}>View result</button></>}
         </section>
-        <section className="gc-panel gc-journal"><p className="gc-eyebrow">THE BATTLE CHRONICLE</p><div role="log" aria-live="polite">{match.log.slice(-12).map((line, i) => <p key={`${match.log.length - 12 + i}`}>{line}</p>)}</div></section>
+
+        <details className="gc-panel gc-journal" open={chronicleOpen} onToggle={e=>setChronicleOpen(e.currentTarget.open)}><summary>Battle chronicle <span>{match.log.length} events</span></summary><p className="gc-journal-intro">Every move. Every dubious claim.</p><div ref={journal} role="log" aria-label="Battle history" onScroll={()=>{const el=journal.current!;followJournal.current=el.scrollHeight-el.scrollTop-el.clientHeight<48;}}>{match.log.map((line, i) => <p key={i} className={line===latestBanter?'gc-journal-banter':''}><small>{String(i+1).padStart(2,'0')}</small>{line}</p>)}</div><button className="gc-journal-latest" onClick={()=>{followJournal.current=true;journal.current?.scrollTo({top:journal.current.scrollHeight,behavior:'instant'});}}>Latest event ↓</button></details>
       </aside></div>
       {match.result && !reviewEnding && <Ending outcome={endingOutcome} reason={match.result} faction={faction} onReview={() => setReviewEnding(true)} onRestart={reset} />}
       {promotion && <div className="gc-dialog" role="dialog" aria-modal="true" aria-label="Choose promotion"><div className="gc-panel"><h2>A grunt earns a promotion.</h2><p>Choose its new role.</p>{(['q', 'r', 'b', 'n'] as PieceSymbol[]).map(p => <button key={p} onClick={() => moveNormal(promotion.from, promotion.to, p)}>{glyphs[p]} {roles[p]}</button>)}<button onClick={() => setPromotion(null)}>Cancel</button></div></div>}
       {confirmNew && <div className="gc-dialog" role="dialog" aria-modal="true" aria-label="Start new match"><div className="gc-panel"><h2>Leave this battle?</h2><p>A new match replaces your saved game.</p><button className="gc-primary" onClick={reset}>Start fresh</button><button onClick={() => setConfirmNew(false)}>Keep playing</button></div></div>}
     </>}
-    <details className="gc-rules"><summary>FIELD NOTES / Rules, pieces & quantum provenance</summary><div className="gc-rules-grid"><div><h3>How the table works</h3><p>All games are untimed. White moves first. Easy gives three takebacks; medium gives one. Each takeback rewinds your move and the reply. Normal chess includes castling, en passant, promotion and draws.</p><p>Chaos: check is advisory, castling and en passant are disabled, and capturing a king or an LLM victory declaration calls the Universe. You get three cheats, each using a turn. After round five, the Universe may end any completed round and choose either side as winner.</p></div><div><h3>Meet your army</h3>{(Object.keys(roles) as PieceSymbol[]).map(p => <p key={p}><b>{glyphs[p]} {roles[p]}</b> · {names.goblins[p]} / {names.hedgelings[p]}</p>)}</div><div><h3>{simulated ? "Simulated Universe" : "Real hardware. Strange fate."}</h3>{simulated && <p>This match uses an ideal eight-qubit state-vector simulation. Measurements are sampled on your computer and saved so retries cannot reroll results. No hardware shots or AWS credits are consumed.</p>}<p>In hardware mode, measurements are made on Amazon Braket quantum hardware in advance, then used once. The target probabilities are ideal; physical hardware has noise. If hardware results are unavailable, the match switches to the simulator and stays there. New matches try real hardware first.</p>{quantumProof && <p className="gc-proof">Latest measurement · Device: {quantumProof.deviceArn}<br />Task: {quantumProof.taskArn}<br />Measured: {quantumProof.measuredAt}<br />Shot: {quantumProof.shot}</p>}<a href="/chess/engine/COPYING.txt">Stockfish GPL license</a> · <a href="/chess/stockfish-source.tar.gz">Engine source</a></div></div></details>
+    <details className="gc-rules"><summary>FIELD NOTES / Rules, pieces & quantum provenance</summary><div className="gc-rules-grid"><div><h3>How the table works</h3><p>All games are untimed. White moves first. Easy gives three takebacks; medium gives one. Each takeback rewinds your move and the reply. Normal chess includes castling, en passant, promotion and draws.</p><p>Chaos: check can be ignored, but ordinary checkmate, capturing a king, or an LLM victory declaration calls the Universe. Cheats do not count as checkmate escapes. Castling and en passant are disabled. You get three cheats, each using a turn. After round five, the Universe may end any completed round and choose either side as winner.</p></div><div><h3>Meet your army</h3>{(Object.keys(roles) as PieceSymbol[]).map(p => <p key={p}><b>{glyphs[p]} {roles[p]}</b> · {names.goblins[p]} / {names.hedgelings[p]}</p>)}</div><div><h3>{simulated ? "Simulated Universe" : "Real hardware. Strange fate."}</h3>{simulated && <p>This match uses an ideal eight-qubit state-vector simulation. Measurements are sampled on your computer and saved so retries cannot reroll results. No hardware shots or AWS credits are consumed.</p>}<p>In hardware mode, measurements are made on Amazon Braket quantum hardware in advance, then used once. The target probabilities are ideal; physical hardware has noise. If hardware results are unavailable, the match switches to the simulator and stays there. New matches try real hardware first.</p>{quantumProof && <p className="gc-proof">Latest measurement · Device: {quantumProof.deviceArn}<br />Task: {quantumProof.taskArn}<br />Measured: {quantumProof.measuredAt}<br />Shot: {quantumProof.shot}</p>}<a href="/chess/engine/COPYING.txt">Stockfish GPL license</a> · <a href="/chess/stockfish-source.tar.gz">Engine source</a></div></div></details>
     <footer className="gc-footer">NO CLOCKS. NO CROWNS GUARANTEED. <span>♧</span> MADE FOR A LITTLE ESCAPE.</footer>
   </div></div>;
 }
