@@ -2,5 +2,13 @@
   "installCommand": "pnpm install --no-frozen-lockfile",
   "buildCommand": "pnpm --filter @scroll-goblin/shared build && pnpm --filter @scroll-goblin/web build",
   "outputDirectory": "dist",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "relatedProjects": [
+    "prj_7zhfvMDDbt1FYemf2U5dywXsHq1F"
+  ]
 }
