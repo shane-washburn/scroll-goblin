@@ -1,0 +1,689 @@
+import { GoblinWrapper, JuiceEngine, ProceduralAudio, TelemetryClient } from '@goblin-studio/core';
+
+type Phase = 'title' | 'playing' | 'game_over';
+type Kind = 'siren' | 'dog' | 'phone';
+
+interface Distraction {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  r: number;
+  kind: Kind;
+  seed: number;
+}
+
+interface Ripple {
+  x: number;
+  y: number;
+  radius: number;
+  maxRadius: number;
+  age: number;
+  life: number;
+  angle: number;
+  spread: number;
+  thickness: number;
+}
+
+const RUN_SECONDS = 40;
+const BASE_SPAWN_INTERVAL = 1.05;
+const BASE_SPEED = 66;
+const CENTER_X = 180;
+const CENTER_Y = 360;
+const SNORE_COOLDOWN_SECONDS = 0.5;
+
+export default function mount(container: HTMLElement): () => void {
+  const wrapper = new GoblinWrapper(container, {
+    theme: 'arcade',
+    label: 'The Snore-chestra: Tap to fire directional snore waves from center and clear distractions before they reach the top. Survive 40 seconds.'
+  });
+  const { ctx, width, height } = wrapper;
+  const juice = new JuiceEngine({ maxParticles: 220 });
+  const audio = new ProceduralAudio({ volume: 0.16, muted: wrapper.muted });
+  const telemetry = new TelemetryClient({ gameId: 'the-snore-chestra' });
+
+  let disposed = false;
+  let frame = 0;
+  let lastTime = performance.now();
+  let time = 0;
+
+  let phase: Phase = 'title';
+  let sleepPoints = 0;
+  let inputCount = 0;
+  let activeDuration = 0;
+  let distractionsCleared = 0;
+  let distractionsMissed = 0;
+  let level = 1;
+  let spawnTimer = 0;
+  let hudTimer = 0;
+  let snoreCooldown = 0;
+
+  const distractions: Distraction[] = [];
+  const ripples: Ripple[] = [];
+
+  function clamp(v: number, a: number, b: number): number {
+    return Math.max(a, Math.min(b, v));
+  }
+
+  function angleWrap(a: number): number {
+    let out = a;
+    while (out > Math.PI) out -= Math.PI * 2;
+    while (out < -Math.PI) out += Math.PI * 2;
+    return out;
+  }
+
+  function currentLevel(elapsed: number): number {
+    if (elapsed >= 30) return 3;
+    if (elapsed >= 15) return 2;
+    return 1;
+  }
+
+  function levelPitch(): number {
+    return Math.pow(1.05, level - 1);
+  }
+
+  function speedMultiplier(): number {
+    if (level === 2) return 1.1;
+    if (level === 3) return 1.2;
+    return 1;
+  }
+
+  function spawnInterval(): number {
+    if (level === 2) return BASE_SPAWN_INTERVAL / 1.2;
+    if (level === 3) return BASE_SPAWN_INTERVAL / 1.4;
+    return BASE_SPAWN_INTERVAL;
+  }
+
+  function updateTelemetry(): void {
+    telemetry.updateState({
+      score: sleepPoints,
+      phase,
+      inputCount,
+      activeDuration: Math.round(activeDuration * 100) / 100,
+      distractionsCleared,
+      distractionsMissed,
+      level
+    });
+  }
+
+  function spawnDistraction(): void {
+    const kindRoll = Math.random();
+    const kind: Kind = kindRoll < 0.34 ? 'siren' : kindRoll < 0.67 ? 'dog' : 'phone';
+    const x = 34 + Math.random() * (width - 68);
+    const speed = BASE_SPEED * (0.86 + Math.random() * 0.35);
+    const drift = (Math.random() * 2 - 1) * 22;
+    distractions.push({
+      x,
+      y: height + 24,
+      vx: drift,
+      vy: speed,
+      r: 16 + Math.random() * 5,
+      kind,
+      seed: Math.random() * 1000
+    });
+  }
+
+  function startRun(): void {
+    phase = 'playing';
+    sleepPoints = 100;
+    activeDuration = 0;
+    distractionsCleared = 0;
+    distractionsMissed = 0;
+    level = 1;
+    spawnTimer = 0;
+    hudTimer = 0;
+    snoreCooldown = 0;
+    distractions.length = 0;
+    ripples.length = 0;
+    telemetry.startRun({ targetDuration: RUN_SECONDS });
+    updateTelemetry();
+  }
+
+  function finishRun(): void {
+    if (phase !== 'playing') return;
+    phase = 'game_over';
+    telemetry.endRun(sleepPoints, {
+      activeDuration: Math.round(activeDuration * 100) / 100,
+      distractionsCleared,
+      distractionsMissed,
+      level,
+      inputCount
+    });
+    juice.screenShake(6, 0.18);
+    juice.particles(width / 2, 200, {
+      count: juice.reducedMotion ? 20 : 52,
+      color: sleepPoints > 0 ? '#39FF14' : '#FF003C',
+      speed: 190,
+      lifetime: 0.8
+    });
+    audio.play({
+      frequency: sleepPoints > 0 ? 420 : 180,
+      endFrequency: sleepPoints > 0 ? 820 : 90,
+      type: 'triangle',
+      duration: 0.3,
+      volume: 0.7
+    });
+    updateTelemetry();
+    telemetry.flush();
+  }
+
+  function emitSnoreTapFeedback(angle: number): void {
+    const p = levelPitch();
+    const burstX = CENTER_X + Math.cos(angle) * 36;
+    const burstY = CENTER_Y + Math.sin(angle) * 36;
+    juice.particles(burstX, burstY, {
+      count: juice.reducedMotion ? 8 : 16,
+      color: '#00BFFF',
+      speed: 140,
+      lifetime: 0.42
+    });
+    juice.screenShake(2.2, 0.08);
+    audio.play({
+      frequency: 150 * p,
+      endFrequency: 108 * p,
+      type: 'triangle',
+      duration: 0.17,
+      attack: 0.01,
+      volume: 0.55
+    });
+  }
+
+  function addRipple(angle: number): void {
+    ripples.push({
+      x: CENTER_X,
+      y: CENTER_Y,
+      radius: 6,
+      maxRadius: 196,
+      age: 0,
+      life: 0.46,
+      angle,
+      spread: 0.34,
+      thickness: 18
+    });
+  }
+
+  function tapAngle(x: number, y: number): number {
+    const dx = x - CENTER_X;
+    const dy = y - CENTER_Y;
+    if (Math.abs(dx) + Math.abs(dy) < 0.001) return -Math.PI / 2;
+    return Math.atan2(dy, dx);
+  }
+
+  function tryEmitSnore(x: number, y: number): boolean {
+    if (snoreCooldown > 0) return false;
+    snoreCooldown = SNORE_COOLDOWN_SECONDS;
+    const angle = tapAngle(x, y);
+    emitSnoreTapFeedback(angle);
+    addRipple(angle);
+    return true;
+  }
+
+  const offMute = wrapper.onMute((muted) => {
+    audio.muted = muted;
+    telemetry.updateState({ muted, score: sleepPoints, phase, inputCount });
+  });
+
+  const offPause = wrapper.onPause((paused) => {
+    telemetry.updateState({ paused, score: sleepPoints, phase, inputCount });
+    telemetry.flush();
+  });
+
+  const offTap = wrapper.onTap(({ x, y }) => {
+    inputCount += 1;
+
+    if (phase === 'title') {
+      startRun();
+      tryEmitSnore(x, y);
+      updateTelemetry();
+      telemetry.flush();
+      return;
+    }
+
+    if (phase === 'game_over') {
+      telemetry.replayClicked();
+      phase = 'title';
+      sleepPoints = 0;
+      level = 1;
+      snoreCooldown = 0;
+      distractions.length = 0;
+      ripples.length = 0;
+      tryEmitSnore(x, y);
+      updateTelemetry();
+      telemetry.flush();
+      return;
+    }
+
+    if (phase === 'playing') {
+      if (tryEmitSnore(x, y)) updateTelemetry();
+    }
+  });
+
+  function drawOutlinedCircle(x: number, y: number, r: number, fill: string): void {
+    ctx.fillStyle = fill;
+    ctx.strokeStyle = '#0c0f17';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  function drawSiren(d: Distraction): void {
+    ctx.save();
+    ctx.translate(d.x, d.y);
+    ctx.rotate(Math.sin(time * 3 + d.seed) * 0.15);
+    drawOutlinedCircle(0, 0, d.r, '#f6f8ff');
+    ctx.fillStyle = '#FF003C';
+    ctx.strokeStyle = '#0c0f17';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.roundRect(-d.r * 0.56, -d.r * 0.38, d.r * 1.12, d.r * 0.9, 5);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = '#FFEA00';
+    ctx.beginPath();
+    ctx.arc(0, -d.r * 0.1, d.r * 0.18, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawDog(d: Distraction): void {
+    ctx.save();
+    ctx.translate(d.x, d.y);
+    ctx.rotate(Math.sin(time * 2.6 + d.seed) * 0.12);
+    drawOutlinedCircle(0, 0, d.r, '#f6f8ff');
+    ctx.fillStyle = '#8B4513';
+    ctx.strokeStyle = '#0c0f17';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.arc(-d.r * 0.42, -d.r * 0.3, d.r * 0.33, 0, Math.PI * 2);
+    ctx.arc(d.r * 0.42, -d.r * 0.3, d.r * 0.33, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = '#0c0f17';
+    ctx.beginPath();
+    ctx.arc(-d.r * 0.26, -d.r * 0.05, d.r * 0.12, 0, Math.PI * 2);
+    ctx.arc(d.r * 0.26, -d.r * 0.05, d.r * 0.12, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.roundRect(-d.r * 0.34, d.r * 0.18, d.r * 0.68, d.r * 0.26, 6);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawPhone(d: Distraction): void {
+    ctx.save();
+    ctx.translate(d.x, d.y);
+    ctx.rotate(Math.sin(time * 3.5 + d.seed) * 0.2);
+    drawOutlinedCircle(0, 0, d.r, '#f6f8ff');
+    ctx.fillStyle = '#00BFFF';
+    ctx.strokeStyle = '#0c0f17';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.roundRect(-d.r * 0.48, -d.r * 0.68, d.r * 0.96, d.r * 1.36, 5);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = '#EAEAEA';
+    ctx.beginPath();
+    ctx.roundRect(-d.r * 0.35, -d.r * 0.45, d.r * 0.7, d.r * 0.72, 3);
+    ctx.fill();
+    ctx.fillStyle = '#0c0f17';
+    ctx.beginPath();
+    ctx.arc(0, d.r * 0.42, d.r * 0.08, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawSleeper(): void {
+    const b = juice.breathe(time, 0.025, 3.2, 0);
+    ctx.save();
+    ctx.translate(CENTER_X, CENTER_Y);
+    ctx.scale(b.x, b.y);
+
+    ctx.fillStyle = '#f4f7ff';
+    ctx.strokeStyle = '#11131b';
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.roundRect(-76, -52, 152, 114, 28);
+    ctx.fill();
+    ctx.stroke();
+
+    const quilt = ctx.createLinearGradient(-54, 0, 54, 38);
+    quilt.addColorStop(0, '#6eea89');
+    quilt.addColorStop(1, '#39FF14');
+    ctx.fillStyle = quilt;
+    ctx.beginPath();
+    ctx.roundRect(-54, -16, 108, 56, 24);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = '#11131b';
+    ctx.beginPath();
+    ctx.arc(-24, -12, 6, 0, Math.PI * 2);
+    ctx.arc(24, -12, 6, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.strokeStyle = '#11131b';
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.arc(0, 14, 16, 0.1, Math.PI - 0.1);
+    ctx.stroke();
+
+    ctx.fillStyle = '#00BFFF';
+    ctx.font = '700 13px "Space Mono", "Courier New", monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('Z z', 0, -34);
+
+    ctx.restore();
+  }
+
+  function update(dt: number): void {
+    time += dt;
+    juice.update(dt);
+
+    if (snoreCooldown > 0) snoreCooldown = Math.max(0, snoreCooldown - dt);
+
+    for (let i = ripples.length - 1; i >= 0; i--) {
+      const r = ripples[i];
+      r.age += dt;
+      const t = clamp(r.age / r.life, 0, 1);
+      r.radius = 8 + (r.maxRadius - 8) * t;
+      if (t >= 1) ripples.splice(i, 1);
+    }
+
+    if (phase !== 'playing' || juice.frozen) return;
+
+    activeDuration += dt;
+    const oldLevel = level;
+    level = currentLevel(activeDuration);
+    if (level !== oldLevel) {
+      juice.floatText(level === 2 ? 'LEVEL 2' : 'LEVEL 3', width / 2, 140, '#FF9100');
+      juice.particles(width / 2, 150, {
+        count: juice.reducedMotion ? 10 : 26,
+        color: '#FF9100',
+        speed: 170,
+        lifetime: 0.5
+      });
+      audio.bump(levelPitch());
+      updateTelemetry();
+    }
+
+    spawnTimer += dt;
+    const interval = spawnInterval();
+    while (spawnTimer >= interval) {
+      spawnTimer -= interval;
+      spawnDistraction();
+    }
+
+    const spd = speedMultiplier();
+    for (let i = distractions.length - 1; i >= 0; i--) {
+      const d = distractions[i];
+      d.y -= d.vy * dt * spd;
+      d.x += d.vx * dt;
+      if (d.x < 20 || d.x > width - 20) d.vx *= -1;
+      d.x = clamp(d.x, 18, width - 18);
+      if (d.y < 12) {
+        distractions.splice(i, 1);
+        distractionsMissed += 1;
+        sleepPoints = Math.max(0, sleepPoints - 10);
+        juice.particles(d.x, 22, {
+          count: juice.reducedMotion ? 6 : 14,
+          color: '#FF003C',
+          speed: 120,
+          lifetime: 0.35
+        });
+        audio.play({
+          frequency: 120,
+          endFrequency: 70,
+          type: 'sawtooth',
+          duration: 0.13,
+          volume: 0.5
+        });
+        updateTelemetry();
+      }
+    }
+
+    for (let i = distractions.length - 1; i >= 0; i--) {
+      const d = distractions[i];
+      let hit = false;
+      for (let j = 0; j < ripples.length; j++) {
+        const r = ripples[j];
+        const dx = d.x - r.x;
+        const dy = d.y - r.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 2) continue;
+        const a = Math.atan2(dy, dx);
+        const da = Math.abs(angleWrap(a - r.angle));
+        const spread = r.spread + d.r / Math.max(50, dist);
+        const radialOk = dist >= r.radius - r.thickness && dist <= r.radius + d.r + r.thickness * 0.35;
+        if (da <= spread && radialOk) {
+          hit = true;
+          break;
+        }
+      }
+      if (hit) {
+        distractions.splice(i, 1);
+        distractionsCleared += 1;
+        juice.particles(d.x, d.y, {
+          count: juice.reducedMotion ? 8 : 20,
+          color: '#39FF14',
+          speed: 180,
+          lifetime: 0.46
+        });
+        juice.floatText('shhh', d.x, d.y - 12, '#00BFFF');
+        audio.coin(levelPitch());
+        updateTelemetry();
+      }
+    }
+
+    hudTimer += dt;
+    if (hudTimer >= 0.5) {
+      hudTimer = 0;
+      updateTelemetry();
+    }
+
+    if (sleepPoints <= 0 || activeDuration >= RUN_SECONDS) finishRun();
+  }
+
+  function drawHud(): void {
+    const hudX = 12;
+    const hudY = 56;
+    const hudW = 200;
+    const hudH = 90;
+
+    ctx.fillStyle = '#fefefe';
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.roundRect(hudX, hudY, hudW, hudH, 8);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = '#000000';
+    ctx.textAlign = 'left';
+    ctx.font = '900 14px "Archivo Black", Impact, sans-serif';
+    ctx.fillText('THE SNORE-CHESTRA', hudX + 10, hudY + 23);
+
+    ctx.font = '700 13px "Space Mono", "Courier New", monospace';
+    ctx.fillText(`SLEEP ${String(sleepPoints).padStart(3, '0')}`, hudX + 10, hudY + 45);
+
+    const t = phase === 'playing' ? Math.max(0, Math.ceil(RUN_SECONDS - activeDuration)) : RUN_SECONDS;
+    ctx.fillText(`TIME ${String(t).padStart(2, '0')}s`, hudX + 10, hudY + 63);
+    ctx.fillText(`LV ${level}`, hudX + 145, hudY + 45);
+
+    ctx.fillStyle = '#EAEAEA';
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.roundRect(hudX + 10, hudY + 70, hudW - 20, 12, 5);
+    ctx.fill();
+    ctx.stroke();
+
+    const p = clamp(phase === 'playing' ? activeDuration / RUN_SECONDS : 0, 0, 1);
+    ctx.fillStyle = p < 0.75 ? '#39FF14' : '#FF9100';
+    ctx.beginPath();
+    ctx.roundRect(hudX + 12, hudY + 72, (hudW - 24) * p, 8, 4);
+    ctx.fill();
+  }
+
+  function drawBackground(): void {
+    const sky = ctx.createLinearGradient(0, 0, 0, height);
+    sky.addColorStop(0, '#1d2431');
+    sky.addColorStop(1, '#2b3344');
+    ctx.fillStyle = sky;
+    ctx.fillRect(0, 0, width, height);
+
+    for (let i = 0; i < 24; i++) {
+      const x = (i * 41.7 + 17) % width;
+      const y = 120 + ((i * 59.3) % 500);
+      const tw = 0.1 + (Math.sin(time + i * 0.9) + 1) * 0.08;
+      ctx.fillStyle = `rgba(255,255,255,${tw.toFixed(3)})`;
+      ctx.beginPath();
+      ctx.arc(x, y, 1 + (i % 3) * 0.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    ctx.fillStyle = '#d7dce8';
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.roundRect(12, 112, width - 24, height - 124, 8);
+    ctx.fill();
+    ctx.stroke();
+
+    const floor = ctx.createLinearGradient(0, 470, 0, height);
+    floor.addColorStop(0, '#b9c3d6');
+    floor.addColorStop(1, '#8e9ab0');
+    ctx.fillStyle = floor;
+    ctx.fillRect(16, 470, width - 32, height - 130);
+
+    ctx.fillStyle = '#9eabc1';
+    ctx.globalAlpha = 0.3;
+    for (let i = 0; i < 8; i++) {
+      ctx.fillRect(18 + i * 42, 474, 22, 150);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function drawRipple(r: Ripple): void {
+    const alpha = 1 - r.age / r.life;
+    const start = r.angle - r.spread;
+    const end = r.angle + r.spread;
+    ctx.strokeStyle = `rgba(0,191,255,${alpha.toFixed(3)})`;
+    ctx.lineWidth = 5;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.arc(r.x, r.y, r.radius, start, end);
+    ctx.stroke();
+
+    ctx.strokeStyle = `rgba(57,255,20,${(alpha * 0.55).toFixed(3)})`;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(r.x, r.y, Math.max(0, r.radius - r.thickness * 0.35), start, end);
+    ctx.stroke();
+  }
+
+  function render(): void {
+    drawBackground();
+
+    ctx.save();
+    ctx.translate(juice.shakeOffset.x, juice.shakeOffset.y);
+
+    ctx.fillStyle = 'rgba(0,0,0,0.17)';
+    ctx.beginPath();
+    ctx.ellipse(CENTER_X, CENTER_Y + 68, 100, 20, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    drawSleeper();
+
+    for (const r of ripples) drawRipple(r);
+
+    for (const d of distractions) {
+      if (d.kind === 'siren') drawSiren(d);
+      else if (d.kind === 'dog') drawDog(d);
+      else drawPhone(d);
+    }
+
+    if (phase === 'title') {
+      ctx.fillStyle = '#FFFFFF';
+      ctx.strokeStyle = '#000000';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.roundRect(28, 466, width - 56, 126, 8);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#000000';
+      ctx.font = '900 28px "Archivo Black", Impact, sans-serif';
+      ctx.fillText('TAP TO DOZE', width / 2, 502);
+      ctx.font = '700 13px "Space Mono", "Courier New", monospace';
+      ctx.fillText('Snore wave starts at center, aims at tap.', width / 2, 527);
+      ctx.fillText('Clear sirens, dogs, and phones.', width / 2, 547);
+      ctx.fillText('Misses cost 10 sleep. Survive 40s.', width / 2, 567);
+    } else if (phase === 'game_over') {
+      ctx.fillStyle = '#FFFFFF';
+      ctx.strokeStyle = '#000000';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.roundRect(40, 478, width - 80, 108, 8);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#000000';
+      ctx.font = '900 24px "Archivo Black", Impact, sans-serif';
+      ctx.fillText(sleepPoints > 0 ? 'YOU SLEPT!' : 'WIDE AWAKE!', width / 2, 510);
+      ctx.font = '700 14px "Space Mono", "Courier New", monospace';
+      ctx.fillText(`FINAL SLEEP: ${sleepPoints}`, width / 2, 535);
+      ctx.fillText('Tap to return to title', width / 2, 560);
+    }
+
+    if (wrapper.paused) {
+      ctx.fillStyle = 'rgba(0,0,0,0.45)';
+      ctx.fillRect(0, 0, width, height);
+      ctx.fillStyle = '#FFFFFF';
+      ctx.strokeStyle = '#000000';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.roundRect(88, 290, 184, 66, 8);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = '#000000';
+      ctx.textAlign = 'center';
+      ctx.font = '900 24px "Archivo Black", Impact, sans-serif';
+      ctx.fillText('PAUSED', width / 2, 332);
+    }
+
+    drawHud();
+    juice.draw(ctx);
+    ctx.restore();
+  }
+
+  function tick(now: number): void {
+    if (disposed) return;
+    const dt = Math.min(0.05, Math.max(0, (now - lastTime) / 1000));
+    lastTime = now;
+    if (!wrapper.paused) update(dt);
+    render();
+    frame = requestAnimationFrame(tick);
+  }
+
+  updateTelemetry();
+  render();
+  telemetry.flush();
+  frame = requestAnimationFrame(tick);
+
+  return () => {
+    if (disposed) return;
+    disposed = true;
+    cancelAnimationFrame(frame);
+    offTap();
+    offMute();
+    offPause();
+    juice.dispose();
+    audio.dispose();
+    telemetry.dispose();
+    wrapper.dispose();
+  };
+}

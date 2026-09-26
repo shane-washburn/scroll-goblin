@@ -142,6 +142,7 @@ export type BrainrotButtonShareState = z.infer<
  * `visits` is implicit for every module and tracked by the shell.
  */
 export const STAT_METRICS: Record<string, Record<string, string>> = {
+  "the-snore-chestra-9b8a6249": { runs: "Runs started", completions: "Runs ended", replays: "Replay clicks" },
   "touch-grass": {
     touches: "Grass touches",
     plucks: "Grass plucked",
