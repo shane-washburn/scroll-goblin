@@ -1,0 +1,771 @@
+import { GoblinWrapper, JuiceEngine, ProceduralAudio, TelemetryClient } from '@goblin-studio/core';
+
+type Phase = 'menu' | 'playing' | 'paused' | 'gameOver';
+type Owner = 'player' | 'npc';
+
+interface Fighter {
+  x: number;
+  y: number;
+  vx: number;
+  dir: number;
+  health: number;
+  trapped: boolean;
+  trapTimer: number;
+  charging: boolean;
+  charge: number;
+}
+
+interface Bubble {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  r: number;
+  owner: Owner;
+  life: number;
+  bounces: number;
+}
+
+interface Obstacle {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
+
+const W = 360;
+const H = 640;
+const RUN_SECONDS = 35;
+const MAX_CHARGE = 1.2;
+
+export default function mount(container: HTMLElement): () => void {
+  const wrapper = new GoblinWrapper(container, {
+    theme: 'arcade',
+    label: 'Bubble Blast Brawl. Tap to start. Hold to inflate a bubble, release to launch. Tap left or right to steer movement.'
+  });
+  const ctx = wrapper.ctx;
+  const juice = new JuiceEngine();
+  const audio = new ProceduralAudio({ volume: 0.16, muted: wrapper.muted });
+  const telemetry = new TelemetryClient({ gameId: 'bubble-blast-brawl' });
+
+  let disposed = false;
+  let raf = 0;
+  let nowTime = performance.now();
+
+  let phase: Phase = 'menu';
+  let score = 0;
+  let inputCount = 0;
+  let elapsed = 0;
+  let level = 1;
+  let arenaType = 'basic';
+  let endReason: 'win' | 'loss' | 'timeOut' = 'timeOut';
+  let npcShootCd = 1.1;
+  let statePulse = 999;
+  let arenaSeed = (Math.random() * 1e9) | 0;
+  let holdingPointer = false;
+  let holdSoundPulse = 0;
+
+  const player: Fighter = { x: 92, y: 540, vx: 92, dir: 1, health: 100, trapped: false, trapTimer: 0, charging: false, charge: 0 };
+  const npc: Fighter = { x: 270, y: 220, vx: -82, dir: -1, health: 100, trapped: false, trapTimer: 0, charging: false, charge: 0 };
+  let bubbles: Bubble[] = [];
+  let obstacles: Obstacle[] = [];
+  const dust = Array.from({ length: 36 }, (_, i) => ({
+    x: (i * 47) % W,
+    y: 148 + ((i * 79) % (H - 188)),
+    s: 1 + (i % 3),
+    o: 0.11 + (i % 5) * 0.03
+  }));
+
+  const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
+
+  function rng(seed: number): () => number {
+    let s = (seed ^ 0x9e3779b9) >>> 0;
+    return () => {
+      s = (1664525 * s + 1013904223) >>> 0;
+      return s / 4294967296;
+    };
+  }
+
+  function updateState(force = false): void {
+    if (!force && statePulse <= 0.22) return;
+    statePulse = 0;
+    const livePhase: Phase = wrapper.paused ? 'paused' : phase;
+    telemetry.updateState({
+      score,
+      phase: livePhase,
+      inputCount,
+      gameTime: Math.round(elapsed * 10) / 10,
+      playerHealth: Math.round(player.health),
+      npcHealth: Math.round(npc.health),
+      currentLevel: level
+    });
+  }
+
+  function randomizePositions(seedOffset: number): void {
+    const r = rng(arenaSeed + seedOffset);
+    player.x = 64 + r() * 88;
+    npc.x = W - 64 - r() * 88;
+    player.vx = (86 + r() * 18) * (r() > 0.5 ? 1 : -1);
+    npc.vx = -(78 + r() * 22) * (r() > 0.4 ? 1 : -1);
+    player.dir = player.vx >= 0 ? 1 : -1;
+    npc.dir = npc.vx >= 0 ? 1 : -1;
+  }
+
+  function overlapsAny(a: Obstacle, list: Obstacle[]): boolean {
+    for (const b of list) {
+      if (a.x < b.x + b.w + 10 && a.x + a.w + 10 > b.x && a.y < b.y + b.h + 10 && a.y + a.h + 10 > b.y) return true;
+    }
+    return false;
+  }
+
+  function spawnObstacles(forLevel: number): void {
+    const r = rng(arenaSeed + forLevel * 1337);
+    const out: Obstacle[] = [];
+    const count = forLevel === 1 ? 5 + ((r() * 3) | 0) : forLevel === 2 ? 8 + ((r() * 4) | 0) : 12 + ((r() * 4) | 0);
+    const tries = count * 14;
+
+    for (let i = 0; i < tries && out.length < count; i++) {
+      const w = forLevel === 1 ? 42 + r() * 54 : forLevel === 2 ? 48 + r() * 60 : 54 + r() * 66;
+      const h = 12 + r() * (forLevel === 3 ? 18 : 14);
+      const x = 18 + r() * (W - w - 36);
+      const yMin = forLevel === 1 ? 250 : forLevel === 2 ? 220 : 196;
+      const yMax = forLevel === 1 ? 470 : 492;
+      const y = yMin + r() * (yMax - yMin);
+      const candidate: Obstacle = { x, y, w, h };
+
+      const nearPlayerLane = y > 500 && x < 145;
+      const nearNpcLane = y < 225 && x > 215;
+      if (nearPlayerLane || nearNpcLane) continue;
+      if (overlapsAny(candidate, out)) continue;
+      out.push(candidate);
+    }
+
+    obstacles = out;
+    arenaType = obstacles.length > 0 ? 'obstacles' : 'basic';
+  }
+
+  function resetRun(): void {
+    score = 0;
+    elapsed = 0;
+    level = 1;
+    arenaSeed = (Math.random() * 1e9) | 0;
+    npc.health = 100;
+    player.health = 100;
+    randomizePositions(11);
+    player.trapped = false;
+    npc.trapped = false;
+    player.trapTimer = 0;
+    npc.trapTimer = 0;
+    player.charging = false;
+    npc.charging = false;
+    player.charge = 0;
+    npc.charge = 0;
+    bubbles = [];
+    npcShootCd = 0.9 + Math.random() * 0.5;
+    spawnObstacles(1);
+  }
+
+  function addScore(delta: number, x: number, y: number, color: string, text: string): void {
+    score += delta;
+    juice.floatText(text, x, y, color);
+    if (delta > 0) audio.coin(Math.pow(1.05, level - 1) * (delta >= 10 ? 1.06 : 0.95));
+    else audio.bump(0.82);
+    updateState(true);
+  }
+
+  function tapFeedback(x: number, y: number, good: boolean): void {
+    juice.particles(x, y, {
+      count: good ? 10 : 6,
+      color: good ? '#00BFFF' : '#FF6EC7',
+      speed: good ? 130 : 90,
+      lifetime: 0.4
+    });
+    audio.play({ frequency: good ? 420 : 260, endFrequency: good ? 580 : 220, type: 'triangle', duration: 0.06, volume: 0.38 });
+  }
+
+  function launchBubble(from: Fighter, owner: Owner): void {
+    const p = clamp(from.charge / MAX_CHARGE, 0.15, 1);
+    const r = 10 + p * 26;
+    const speed = owner === 'player' ? 180 : 165 + (level - 1) * 28;
+    const vyAim = owner === 'player' ? -0.65 : 0.68;
+    bubbles.push({
+      x: from.x + from.dir * (18 + r * 0.1),
+      y: from.y - 18,
+      vx: from.dir * speed,
+      vy: speed * vyAim,
+      r,
+      owner,
+      life: 0,
+      bounces: 0
+    });
+    from.charging = false;
+    from.charge = 0;
+    juice.particles(from.x, from.y - 18, { count: 14, color: '#39FF14', speed: 140, lifetime: 0.45 });
+    audio.play({ frequency: 650, endFrequency: 380, type: 'sine', duration: 0.09, volume: 0.5 });
+  }
+
+  function startRun(): void {
+    phase = 'playing';
+    resetRun();
+    telemetry.startRun({ arenaType });
+    updateState(true);
+    telemetry.flush();
+  }
+
+  function acceptTap(x: number, y: number): void {
+    inputCount++;
+    tapFeedback(x, y, true);
+    updateState(true);
+  }
+
+  function onPlayPress(x: number, y: number): void {
+    if (phase !== 'playing' || wrapper.paused) return;
+    acceptTap(x, y);
+    player.dir = x < W * 0.5 ? -1 : 1;
+    player.vx = Math.abs(player.vx) * player.dir;
+    if (!player.trapped) {
+      player.charging = true;
+      player.charge = 0.01;
+      holdSoundPulse = 0;
+      juice.particles(player.x, player.y - 20, { count: 8, color: '#00BFFF', speed: 70, lifetime: 0.35 });
+      audio.play({
+        frequency: 220 * Math.pow(1.05, level - 1),
+        endFrequency: 620 * Math.pow(1.05, level - 1),
+        type: 'triangle',
+        duration: 0.16,
+        volume: 0.42
+      });
+    }
+  }
+
+  function onPlayRelease(): void {
+    if (phase !== 'playing' || wrapper.paused) return;
+    if (player.charging) launchBubble(player, 'player');
+  }
+
+  function onMenuTap(x: number, y: number): void {
+    if (phase === 'menu') {
+      acceptTap(x, y);
+      startRun();
+      return;
+    }
+    if (phase === 'gameOver') {
+      telemetry.replayClicked();
+      acceptTap(x, y);
+      startRun();
+    }
+  }
+
+  function circleRectHit(c: Bubble, o: Obstacle): boolean {
+    const cx = clamp(c.x, o.x, o.x + o.w);
+    const cy = clamp(c.y, o.y, o.y + o.h);
+    const dx = c.x - cx;
+    const dy = c.y - cy;
+    return dx * dx + dy * dy <= c.r * c.r;
+  }
+
+  function popBubble(index: number, color: string): void {
+    const b = bubbles[index];
+    if (!b) return;
+    juice.particles(b.x, b.y, { count: 18, color, speed: 170, lifetime: 0.5 });
+    juice.screenShake(3.5, 0.12);
+    audio.play({ frequency: 240, endFrequency: 80, type: 'square', duration: 0.07, volume: 0.48 });
+    bubbles.splice(index, 1);
+  }
+
+  function registerBounce(index: number): boolean {
+    const b = bubbles[index];
+    if (!b) return true;
+    b.bounces += 1;
+    juice.particles(b.x, b.y, { count: 6, color: b.owner === 'player' ? '#00BFFF' : '#FF6EC7', speed: 85, lifetime: 0.24 });
+    audio.play({ frequency: 210, endFrequency: 170, type: 'triangle', duration: 0.03, volume: 0.2 });
+    if (b.bounces >= 3) {
+      popBubble(index, '#FF9100');
+      return true;
+    }
+    return false;
+  }
+
+  function hitActor(actor: Fighter, amount: number, isPlayer: boolean): void {
+    actor.health = Math.max(0, actor.health - amount);
+    actor.trapped = true;
+    actor.trapTimer = 1.1;
+    if (isPlayer) {
+      addScore(-5, actor.x, actor.y - 30, '#FF003C', '-5');
+      juice.screenShake(6, 0.16);
+      audio.bump(0.74);
+    } else {
+      addScore(5, actor.x, actor.y - 32, '#39FF14', '+5');
+      audio.bump(0.88);
+    }
+  }
+
+  function levelCheck(): void {
+    const next = clamp(Math.floor(elapsed / 15) + 1, 1, 3);
+    if (next === level) return;
+    level = next;
+    spawnObstacles(level);
+    if (level === 2 && npc.health < 120) npc.health = 120;
+    if (level === 3 && npc.health < 150) npc.health = 150;
+    juice.floatText(`LEVEL ${level}!`, W * 0.5, 166, '#FFEA00');
+    juice.particles(W * 0.5, 150, { count: 24, color: '#FFEA00', speed: 150, lifetime: 0.65 });
+    audio.play({
+      frequency: 280 * Math.pow(1.05, level - 1),
+      endFrequency: 520 * Math.pow(1.05, level - 1),
+      type: 'triangle',
+      duration: 0.2,
+      volume: 0.45
+    });
+    updateState(true);
+  }
+
+  function endRun(reason: 'win' | 'loss' | 'timeOut'): void {
+    if (phase === 'gameOver') return;
+    phase = 'gameOver';
+    endReason = reason;
+    holdingPointer = false;
+    player.charging = false;
+    telemetry.endRun(score, { activeDuration: elapsed, winState: reason });
+    updateState(true);
+    telemetry.flush();
+  }
+
+  function steerNpc(dt: number, speedScale: number): void {
+    const baseTarget = player.x + player.vx * 0.18;
+    let target = baseTarget;
+    for (const b of bubbles) {
+      if (b.owner !== 'player') continue;
+      const futureX = b.x + b.vx * 0.32;
+      const futureY = b.y + b.vy * 0.32;
+      const danger = Math.hypot(futureX - npc.x, futureY - npc.y);
+      if (danger < 130 + b.r * 0.5 && futureY > 150 && futureY < 520) {
+        target += (npc.x - futureX >= 0 ? 1 : -1) * (58 + b.r * 0.6);
+      }
+    }
+    for (const o of obstacles) {
+      if (npc.y > o.y - 42 && npc.y < o.y + o.h + 42 && npc.x > o.x - 8 && npc.x < o.x + o.w + 8) {
+        target += npc.x < o.x + o.w * 0.5 ? -70 : 70;
+      }
+    }
+    target = clamp(target, 28, W - 28);
+    const desiredDir = target < npc.x ? -1 : 1;
+    npc.dir = desiredDir;
+    const desiredV = (78 + (level - 1) * 22) * speedScale * desiredDir;
+    npc.vx += (desiredV - npc.vx) * clamp(dt * 4.8, 0, 1);
+  }
+
+  function update(dt: number): void {
+    juice.update(dt);
+    statePulse += dt;
+    if (phase !== 'playing' || juice.frozen) return;
+
+    elapsed = Math.min(RUN_SECONDS, elapsed + dt);
+    levelCheck();
+
+    const pSpeed = 1 + (level - 1) * 0.08;
+    const nSpeed = 1 + (level - 1) * 0.15;
+    const nShot = 1 + (level - 1) * 0.2;
+
+    if (player.charging) {
+      player.charge = Math.min(MAX_CHARGE, player.charge + dt);
+      holdSoundPulse -= dt;
+      if (holdSoundPulse <= 0) {
+        holdSoundPulse = 0.14;
+        const p = player.charge / MAX_CHARGE;
+        audio.play({
+          frequency: (240 + p * 220) * Math.pow(1.05, level - 1),
+          endFrequency: 280 + p * 260,
+          type: 'triangle',
+          duration: 0.05,
+          volume: 0.16
+        });
+      }
+    }
+
+    if (!player.trapped) player.x += player.vx * pSpeed * dt;
+
+    if (!npc.trapped) {
+      steerNpc(dt, nSpeed);
+      npc.x += npc.vx * dt;
+    }
+
+    if (player.x < 24 || player.x > W - 24) {
+      player.x = clamp(player.x, 24, W - 24);
+      player.vx *= -1;
+      player.dir *= -1;
+    }
+    if (npc.x < 24 || npc.x > W - 24) {
+      npc.x = clamp(npc.x, 24, W - 24);
+      npc.vx *= -1;
+      npc.dir *= -1;
+    }
+
+    if (player.trapped) {
+      player.trapTimer -= dt;
+      if (player.trapTimer <= 0) player.trapped = false;
+    }
+    if (npc.trapped) {
+      npc.trapTimer -= dt;
+      if (npc.trapTimer <= 0) npc.trapped = false;
+    }
+
+    npcShootCd -= dt * nShot;
+    if (!npc.trapped && npcShootCd <= 0) {
+      const leadX = player.x + player.vx * 0.25;
+      npc.dir = leadX < npc.x ? -1 : 1;
+      npc.charge = 0.4 + Math.random() * 0.75;
+      launchBubble(npc, 'npc');
+      npcShootCd = 1.28 - (level - 1) * 0.19 + Math.random() * 0.42;
+    }
+
+    for (let i = bubbles.length - 1; i >= 0; i--) {
+      const b = bubbles[i];
+      if (!b) continue;
+      b.life += dt;
+      b.x += b.vx * dt;
+      b.y += b.vy * dt;
+
+      let bounced = false;
+      if (b.x < b.r || b.x > W - b.r) {
+        b.x = clamp(b.x, b.r, W - b.r);
+        b.vx *= -1;
+        bounced = true;
+      }
+      if (b.y < 150 + b.r || b.y > H - 28 - b.r) {
+        b.y = clamp(b.y, 150 + b.r, H - 28 - b.r);
+        b.vy *= -1;
+        bounced = true;
+      }
+
+      for (const o of obstacles) {
+        if (circleRectHit(b, o)) {
+          const cx = o.x + o.w * 0.5;
+          const cy = o.y + o.h * 0.5;
+          const dx = b.x - cx;
+          const dy = b.y - cy;
+          if (Math.abs(dx / o.w) > Math.abs(dy / o.h)) b.vx *= -1;
+          else b.vy *= -1;
+          b.x += b.vx * dt * 1.4;
+          b.y += b.vy * dt * 1.4;
+          bounced = true;
+          break;
+        }
+      }
+
+      if (bounced && registerBounce(i)) continue;
+      if (b.life > 6.2) bubbles.splice(i, 1);
+    }
+
+    for (let i = bubbles.length - 1; i >= 0; i--) {
+      const b = bubbles[i];
+      if (!b) continue;
+      if (b.owner === 'player') {
+        const dn = Math.hypot(b.x - npc.x, b.y - npc.y);
+        if (dn < b.r + 18) {
+          if (!npc.trapped) {
+            npc.trapped = true;
+            npc.trapTimer = 1 + b.r * 0.05;
+            addScore(5, npc.x, npc.y - 30, '#39FF14', '+5');
+            audio.bump(0.9);
+          } else {
+            npc.health = Math.max(0, npc.health - 25);
+            addScore(10, npc.x, npc.y - 48, '#00BFFF', '+10');
+            juice.hitstop(0.03);
+            juice.screenShake(7, 0.16);
+            if (npc.health <= 0) addScore(50, npc.x, npc.y - 66, '#FFEA00', '+50');
+          }
+          popBubble(i, '#00BFFF');
+          continue;
+        }
+      } else {
+        const dp = Math.hypot(b.x - player.x, b.y - player.y);
+        if (dp < b.r + 18) {
+          hitActor(player, 20, true);
+          popBubble(i, '#FF003C');
+          continue;
+        }
+      }
+    }
+
+    for (let i = bubbles.length - 1; i >= 0; i--) {
+      const a = bubbles[i];
+      if (!a) continue;
+      for (let j = i - 1; j >= 0; j--) {
+        const b = bubbles[j];
+        if (!b || a.owner === b.owner) continue;
+        if (Math.hypot(a.x - b.x, a.y - b.y) < a.r + b.r) {
+          const hi = i > j ? i : j;
+          const lo = i > j ? j : i;
+          popBubble(hi, '#FF6EC7');
+          popBubble(lo, '#FF6EC7');
+          break;
+        }
+      }
+    }
+
+    if (score >= 90 || npc.health <= 0) endRun('win');
+    else if (player.health <= 0) endRun('loss');
+    else if (elapsed >= RUN_SECONDS) endRun('timeOut');
+
+    updateState();
+  }
+
+  function drawChar(f: Fighter, body: string, accent: string, t: number, isNpc: boolean): void {
+    const b = juice.breathe(t, 0.04, 4, f.x * 0.01);
+    ctx.save();
+    ctx.translate(f.x, f.y);
+    ctx.scale(b.x, b.y);
+
+    ctx.fillStyle = '#0000001f';
+    ctx.beginPath();
+    ctx.ellipse(0, 24, 20, 6, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = body;
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(-18, -24);
+    ctx.quadraticCurveTo(-24, -4, -18, 16);
+    ctx.quadraticCurveTo(0, 28, 18, 16);
+    ctx.quadraticCurveTo(24, -4, 18, -24);
+    ctx.quadraticCurveTo(0, -34, -18, -24);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = '#fff';
+    ctx.beginPath();
+    ctx.ellipse(-7, -9, 7, 8, 0, 0, Math.PI * 2);
+    ctx.ellipse(8, -10, 7, 8, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = '#000';
+    ctx.beginPath();
+    ctx.arc(-7 + f.dir * 2, -9, 2.2, 0, Math.PI * 2);
+    ctx.arc(8 + f.dir * 2, -10, 2.2, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = accent;
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.roundRect(-11, 2, 22, 9, 4);
+    ctx.fill();
+    ctx.stroke();
+
+    if (isNpc) {
+      ctx.fillStyle = '#FF003C';
+      ctx.beginPath();
+      ctx.moveTo(-11, -25);
+      ctx.lineTo(-2, -34);
+      ctx.lineTo(3, -24);
+      ctx.fill();
+    } else {
+      ctx.fillStyle = '#00BFFF';
+      ctx.beginPath();
+      ctx.moveTo(11, -24);
+      ctx.lineTo(18, -32);
+      ctx.lineTo(21, -20);
+      ctx.fill();
+    }
+
+    if (f.charging) {
+      ctx.strokeStyle = '#00BFFF';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(0, -6, 20 + (f.charge / MAX_CHARGE) * 14, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    if (f.trapped) {
+      ctx.strokeStyle = '#00BFFF';
+      ctx.fillStyle = 'rgba(0,191,255,0.16)';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(0, -6, 30, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+    }
+
+    ctx.restore();
+  }
+
+  function drawPanel(x: number, y: number, w: number, h: number, fill: string): void {
+    ctx.fillStyle = fill;
+    ctx.fillRect(x + 4, y + 4, w, h);
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 3;
+    ctx.fillStyle = fill;
+    ctx.fillRect(x, y, w, h);
+    ctx.strokeRect(x, y, w, h);
+  }
+
+  function drawBackground(): void {
+    ctx.fillStyle = '#f6f6f6';
+    ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 74, W, 4);
+    ctx.fillRect(0, 146, W, 4);
+    ctx.fillStyle = '#e9e9e9';
+    ctx.fillRect(0, 150, W, H - 150);
+    for (const d of dust) {
+      ctx.fillStyle = `rgba(0,0,0,${d.o})`;
+      ctx.fillRect(d.x, d.y, d.s, d.s);
+    }
+  }
+
+  function draw(): void {
+    drawBackground();
+
+    ctx.save();
+    ctx.translate(juice.shakeOffset.x, juice.shakeOffset.y);
+
+    drawPanel(12, 152, W - 24, H - 176, '#efefef');
+
+    drawPanel(18, 18, 126, 48, '#ffffff');
+    ctx.fillStyle = '#000';
+    ctx.font = '900 18px "Archivo Black", Impact, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText(String(score).padStart(3, '0'), 28, 49);
+    ctx.font = '700 10px "Space Mono", "Courier New", monospace';
+    ctx.fillText('SCORE', 92, 49);
+
+    drawPanel(150, 18, 86, 48, '#ffffff');
+    ctx.fillStyle = '#000';
+    ctx.font = '900 20px "Archivo Black", Impact, sans-serif';
+    ctx.fillText(`${Math.max(0, Math.ceil(RUN_SECONDS - elapsed))}s`, 160, 49);
+
+    drawPanel(242, 18, 100, 48, '#ffffff');
+    ctx.fillStyle = '#000';
+    ctx.font = '900 16px "Archivo Black", Impact, sans-serif';
+    ctx.fillText(`L${level}`, 250, 49);
+    ctx.font = '700 10px "Space Mono", "Courier New", monospace';
+    ctx.fillText(`P${Math.round(player.health)} N${Math.round(npc.health)}`, 272, 49);
+
+    for (const o of obstacles) {
+      drawPanel(o.x, o.y, o.w, o.h, '#ffffff');
+      ctx.fillStyle = '#39FF14';
+      ctx.fillRect(o.x + 5, o.y + 5, Math.max(8, o.w - 10), 4);
+    }
+
+    for (const b of bubbles) {
+      ctx.fillStyle = b.owner === 'player' ? 'rgba(0,191,255,0.24)' : 'rgba(255,110,199,0.24)';
+      ctx.strokeStyle = '#000';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = '#fff';
+      ctx.beginPath();
+      ctx.arc(b.x - b.r * 0.35, b.y - b.r * 0.35, Math.max(2, b.r * 0.18), 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#000';
+      ctx.font = '700 9px "Space Mono", "Courier New", monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(String(Math.max(0, 3 - b.bounces)), b.x, b.y + 3);
+    }
+
+    drawChar(npc, '#FF6EC7', '#FF003C', elapsed, true);
+    drawChar(player, '#39FF14', '#00BFFF', elapsed, false);
+
+    if (phase === 'menu') {
+      drawPanel(30, 210, W - 60, 238, '#ffffff');
+      ctx.fillStyle = '#000';
+      ctx.textAlign = 'center';
+      ctx.font = '900 28px "Archivo Black", Impact, sans-serif';
+      ctx.fillText('BUBBLE BLAST', W / 2, 255);
+      ctx.fillText('BRAWL', W / 2, 289);
+      ctx.font = '700 13px "Space Mono", "Courier New", monospace';
+      ctx.fillText('Hold to inflate. Release to launch.', W / 2, 332);
+      ctx.fillText('Tap left/right to steer movement.', W / 2, 354);
+      ctx.fillText('Bubbles pop after 3 bounces.', W / 2, 376);
+      ctx.fillText('Random terrain every round.', W / 2, 398);
+      drawPanel(74, 413, W - 148, 24, '#39FF14');
+      ctx.fillStyle = '#000';
+      ctx.font = '900 14px "Archivo Black", Impact, sans-serif';
+      ctx.fillText('TAP TO START', W / 2, 430);
+    }
+
+    if (phase === 'gameOver') {
+      drawPanel(42, 238, W - 84, 168, '#ffffff');
+      ctx.fillStyle = endReason === 'win' ? '#39FF14' : '#FF003C';
+      ctx.font = '900 26px "Archivo Black", Impact, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(endReason === 'win' ? 'YOU WIN!' : endReason === 'loss' ? 'YOU LOSE' : 'TIME UP', W / 2, 282);
+      ctx.fillStyle = '#000';
+      ctx.font = '900 16px "Archivo Black", Impact, sans-serif';
+      ctx.fillText(`SCORE ${score}`, W / 2, 318);
+      ctx.font = '700 13px "Space Mono", "Courier New", monospace';
+      ctx.fillText('Tap to replay', W / 2, 350);
+    }
+
+    juice.draw(ctx);
+    ctx.restore();
+  }
+
+  const offTap = wrapper.onTap(({ x, y }) => onMenuTap(x, y));
+  const offMute = wrapper.onMute((muted) => {
+    audio.muted = muted;
+    telemetry.updateState({ score, phase: wrapper.paused ? 'paused' : phase, inputCount });
+  });
+  const offPause = wrapper.onPause((paused) => {
+    telemetry.updateState({ score, phase: paused ? 'paused' : phase, inputCount });
+    telemetry.flush();
+  });
+
+  function pointerDown(ev: PointerEvent): void {
+    if (phase !== 'playing' || wrapper.paused) return;
+    holdingPointer = true;
+    const rect = wrapper.canvas.getBoundingClientRect();
+    const x = ((ev.clientX - rect.left) / rect.width) * W;
+    const y = ((ev.clientY - rect.top) / rect.height) * H;
+    onPlayPress(x, y);
+  }
+
+  function pointerUp(): void {
+    if (!holdingPointer) return;
+    holdingPointer = false;
+    onPlayRelease();
+  }
+
+  wrapper.canvas.addEventListener('pointerdown', pointerDown);
+  wrapper.canvas.addEventListener('pointerup', pointerUp);
+  wrapper.canvas.addEventListener('pointercancel', pointerUp);
+  wrapper.canvas.addEventListener('pointerleave', pointerUp);
+  window.addEventListener('pointerup', pointerUp);
+
+  function tick(t: number): void {
+    if (disposed) return;
+    const dt = Math.min(0.05, Math.max(0, (t - nowTime) / 1000));
+    nowTime = t;
+    if (!wrapper.paused) update(dt);
+    else juice.update(dt);
+    draw();
+    raf = requestAnimationFrame(tick);
+  }
+
+  spawnObstacles(1);
+  updateState(true);
+  draw();
+  telemetry.flush();
+  raf = requestAnimationFrame(tick);
+
+  return () => {
+    if (disposed) return;
+    disposed = true;
+    cancelAnimationFrame(raf);
+    wrapper.canvas.removeEventListener('pointerdown', pointerDown);
+    wrapper.canvas.removeEventListener('pointerup', pointerUp);
+    wrapper.canvas.removeEventListener('pointercancel', pointerUp);
+    wrapper.canvas.removeEventListener('pointerleave', pointerUp);
+    window.removeEventListener('pointerup', pointerUp);
+    offTap();
+    offMute();
+    offPause();
+    telemetry.dispose();
+    juice.dispose();
+    audio.dispose();
+    wrapper.dispose();
+  };
+}

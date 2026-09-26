@@ -1,3 +1,4 @@
+import { manifest as studioBubbleBlastBrawl0d321662 } from "@scroll-goblin/module-bubble-blast-brawl-0d321662";
 import { manifest as lunasPlayhouse } from "@scroll-goblin/module-lunas-playhouse";
 import { manifest as goblinChess } from "@scroll-goblin/module-goblin-chess";
 import type { ModuleManifest } from "@scroll-goblin/ui";
@@ -23,6 +24,7 @@ import { manifest as goblinMirror } from "@scroll-goblin/module-goblin-mirror";
  * automatically — no other shell changes required.
  */
 export const MODULES: ModuleManifest[] = [
+  studioBubbleBlastBrawl0d321662,
   lunasPlayhouse,
   goblinChess,
   emojiTranslator,

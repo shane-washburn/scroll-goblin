@@ -1,3 +1,4 @@
+import { studioPreviewCors } from "./studio-preview-origin.js";
 import { goblinChessRouter } from "./modules/goblin-chess.js";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
@@ -23,7 +24,7 @@ const corsOrigins = (process.env.CORS_ORIGIN ?? "http://localhost:5173")
   .split(",")
   .map((s) => s.trim());
 
-app.use("*", cors({ origin: corsOrigins }));
+app.use("*", cors({ origin: studioPreviewCors(corsOrigins) }));
 
 app.get("/health", (c) => c.json({ ok: true, model: getModelId() }));
 

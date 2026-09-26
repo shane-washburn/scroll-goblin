@@ -1,3 +1,4 @@
+import { studioPreviewApiConfig } from "./studio-preview-api";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig, type PluginOption } from "vite";
@@ -18,6 +19,7 @@ function includeForI18n(id: string): boolean {
 }
 
 export default defineConfig({
+  ...studioPreviewApiConfig(),
   plugins: [
     // enforce: "pre" -> auto-wraps JSX text/attributes with __hlT(...), emits
     // <Trans/> for inline markup, and wraps canvas text in .ts draw files BEFORE
