@@ -34,7 +34,8 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
     "@scroll-goblin/module-goblin-chess": "workspace:*",
-    "@scroll-goblin/module-lunas-playhouse": "workspace:*"
+    "@scroll-goblin/module-lunas-playhouse": "workspace:*",
+    "@scroll-goblin/module-bubble-blast-brawl-0d321662": "workspace:*"
   },
   "devDependencies": {
     "@hedgeling/i18n": "1.2.0",
