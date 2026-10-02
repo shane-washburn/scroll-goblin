@@ -59,7 +59,7 @@
     "severity": "potential",
     "text": "Choose one of the highlighted legal squares.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 129,
+    "line": 132,
     "kind": "value-literal:call",
     "reason": "Passed as a function argument -- may be rendered text or a logic/config value.",
     "hint": "If the callee renders it to the DOM it is translated automatically. If it is painted to <canvas>, transformed, or used as a key/flag, wrap it with t().",
@@ -71,7 +71,7 @@
     "severity": "potential",
     "text": "declares you the winner",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 155,
+    "line": 158,
     "kind": "value-literal:call",
     "reason": "Passed as a function argument -- may be rendered text or a logic/config value.",
     "hint": "If the callee renders it to the DOM it is translated automatically. If it is painted to <canvas>, transformed, or used as a key/flag, wrap it with t().",
@@ -259,15 +259,6 @@
   },
   {
     "severity": "safe",
-    "text": "Opponent declared victory — the Universe will decide.",
-    "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 28,
-    "kind": "value-literal",
-    "reason": "Plain value position (array/object value, return, variable, or inline segment).",
-    "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
-  },
-  {
-    "severity": "safe",
     "text": "A king has fallen. The Universe will decide who actually wins.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
     "line": 32,
@@ -286,18 +277,9 @@
   },
   {
     "severity": "safe",
-    "text": "The Universe allows this nonsense to continue.",
-    "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 91,
-    "kind": "value-literal",
-    "reason": "Plain value position (array/object value, return, variable, or inline segment).",
-    "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
-  },
-  {
-    "severity": "safe",
     "text": "The Universe has chosen your faction and color.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 121,
+    "line": 124,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -306,7 +288,7 @@
     "severity": "safe",
     "text": "A takeback: the previous decision is yours again.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 149,
+    "line": 152,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -315,7 +297,7 @@
     "severity": "safe",
     "text": "REAL QUANTUM FATE · UNTIMED CHESS",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 163,
+    "line": 166,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -324,7 +306,7 @@
     "severity": "safe",
     "text": "SIMULATED QUANTUM FATE · UNTIMED CHESS",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 163,
+    "line": 166,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -333,7 +315,7 @@
     "severity": "safe",
     "text": "Consulting the Universe…",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 164,
+    "line": 167,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -342,7 +324,7 @@
     "severity": "safe",
     "text": "Let the Universe choose my side ↗",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 164,
+    "line": 167,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -351,7 +333,7 @@
     "severity": "safe",
     "text": "The Hedgelings",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 164,
+    "line": 167,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -360,7 +342,7 @@
     "severity": "safe",
     "text": "The Scroll Goblins",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 164,
+    "line": 167,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -369,7 +351,7 @@
     "severity": "safe",
     "text": "You play black · your opponent moves first.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 164,
+    "line": 167,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -378,7 +360,7 @@
     "severity": "safe",
     "text": "You play white · you move first.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 164,
+    "line": 167,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -387,7 +369,7 @@
     "severity": "safe",
     "text": "♟ STOCKFISH 19",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 167,
+    "line": 170,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -396,7 +378,7 @@
     "severity": "safe",
     "text": "✦ RULES ARE OPTIONAL",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 167,
+    "line": 170,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -405,7 +387,7 @@
     "severity": "safe",
     "text": "Black",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 170,
+    "line": 173,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -414,7 +396,7 @@
     "severity": "safe",
     "text": "Hedgelings",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 170,
+    "line": 173,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -423,7 +405,7 @@
     "severity": "safe",
     "text": "Scroll Goblins",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 170,
+    "line": 173,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -432,7 +414,7 @@
     "severity": "safe",
     "text": "White",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 170,
+    "line": 173,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -441,7 +423,7 @@
     "severity": "safe",
     "text": "Opponent’s latest comment",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 172,
+    "line": 175,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -450,7 +432,7 @@
     "severity": "safe",
     "text": "plotting…",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 172,
+    "line": 175,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -459,7 +441,7 @@
     "severity": "safe",
     "text": "Your opponent’s next outrageous remark will appear here.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 172,
+    "line": 175,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -468,7 +450,7 @@
     "severity": "safe",
     "text": "· This piece is under attack!",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 175,
+    "line": 178,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -477,7 +459,7 @@
     "severity": "safe",
     "text": "A little patience. Great nonsense takes time.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -486,7 +468,7 @@
     "severity": "safe",
     "text": "A scheme is brewing…",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -495,7 +477,7 @@
     "severity": "safe",
     "text": "AT THE TABLE",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -504,7 +486,7 @@
     "severity": "safe",
     "text": "Check! Protect your king.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -513,7 +495,7 @@
     "severity": "safe",
     "text": "COSMIC DELIBERATION",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -522,7 +504,7 @@
     "severity": "safe",
     "text": "Game controls",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -531,7 +513,7 @@
     "severity": "safe",
     "text": "Loading / thinking with full NNUE Stockfish…",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -540,7 +522,7 @@
     "severity": "safe",
     "text": "Take your time.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -549,7 +531,7 @@
     "severity": "safe",
     "text": "The battle is over.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -558,7 +540,7 @@
     "severity": "safe",
     "text": "THE FINAL WORD",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -567,7 +549,7 @@
     "severity": "safe",
     "text": "The Universe is deciding…",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -576,7 +558,7 @@
     "severity": "safe",
     "text": "Your move.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 177,
+    "line": 180,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -585,7 +567,7 @@
     "severity": "safe",
     "text": "Choose action",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 180,
+    "line": 183,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -594,7 +576,7 @@
     "severity": "safe",
     "text": "Move",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 180,
+    "line": 183,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -603,7 +585,7 @@
     "severity": "safe",
     "text": "Revive",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 180,
+    "line": 183,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -612,7 +594,7 @@
     "severity": "safe",
     "text": "Teleport",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 180,
+    "line": 183,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -621,7 +603,7 @@
     "severity": "safe",
     "text": "Transform",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 180,
+    "line": 183,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -630,7 +612,7 @@
     "severity": "safe",
     "text": "Piece type",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 181,
+    "line": 184,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -639,7 +621,7 @@
     "severity": "safe",
     "text": "Choose a captured type, then an empty square.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 183,
+    "line": 186,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -648,7 +630,7 @@
     "severity": "safe",
     "text": "Choose a highlighted square to move your piece.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 183,
+    "line": 186,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -657,7 +639,7 @@
     "severity": "safe",
     "text": "Select a piece, then its destination. Cheats each use one turn.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 183,
+    "line": 186,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -666,7 +648,7 @@
     "severity": "safe",
     "text": "Select your non-king piece, choose its new type, then transform.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 183,
+    "line": 186,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -675,7 +657,7 @@
     "severity": "safe",
     "text": "Select your piece, then any empty or enemy square.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 183,
+    "line": 186,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -684,7 +666,7 @@
     "severity": "safe",
     "text": "You resigned. Your opponent wins.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 185,
+    "line": 188,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display.",
@@ -696,7 +678,7 @@
     "severity": "safe",
     "text": "Battle history",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 189,
+    "line": 192,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -705,7 +687,7 @@
     "severity": "safe",
     "text": "Choose promotion",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 192,
+    "line": 195,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -714,7 +696,7 @@
     "severity": "safe",
     "text": "Start new match",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 193,
+    "line": 196,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -723,7 +705,7 @@
     "severity": "safe",
     "text": "Real hardware. Strange fate.",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 195,
+    "line": 198,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -732,7 +714,7 @@
     "severity": "safe",
     "text": "Simulated Universe",
     "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-    "line": 195,
+    "line": 198,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."
@@ -1524,7 +1506,7 @@
     "severity": "safe",
     "text": "The portal got tangled. Try this same experiment again.",
     "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-    "line": 92,
+    "line": 91,
     "kind": "value-literal",
     "reason": "Plain value position (array/object value, return, variable, or inline segment).",
     "hint": "Most likely rendered as DOM text and translated automatically by the injector. No action needed unless it is drawn to <canvas> or transformed before display."

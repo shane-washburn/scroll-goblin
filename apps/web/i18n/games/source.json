@@ -29,7 +29,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 175,
+              "line": 178,
               "kind": "value-literal"
             }
           ]
@@ -83,7 +83,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 189,
+              "line": 192,
               "kind": "translation-call"
             }
           ]
@@ -101,7 +101,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 178,
+              "line": 181,
               "kind": "translation-call"
             }
           ]
@@ -191,7 +191,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 178,
+              "line": 181,
               "kind": "translation-call"
             }
           ]
@@ -209,7 +209,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 161,
+              "line": 164,
               "kind": "div-text-rich"
             }
           ]
@@ -227,7 +227,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 167,
+              "line": 170,
               "kind": "value-literal"
             }
           ]
@@ -245,7 +245,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 180,
+              "line": 183,
               "kind": "translation-call"
             }
           ]
@@ -263,7 +263,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 167,
+              "line": 170,
               "kind": "value-literal"
             }
           ]
@@ -317,7 +317,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 167,
+              "line": 170,
               "kind": "paragraph-text"
             }
           ]
@@ -425,7 +425,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 192,
+              "line": 195,
               "kind": "heading-text"
             }
           ]
@@ -479,7 +479,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -551,7 +551,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 193,
+              "line": 196,
               "kind": "paragraph-text"
             }
           ]
@@ -569,7 +569,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -587,7 +587,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 160,
+              "line": 163,
               "kind": "paragraph-text"
             }
           ]
@@ -605,7 +605,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 149,
+              "line": 152,
               "kind": "value-literal"
             }
           ]
@@ -682,7 +682,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "paragraph-text"
             }
           ]
@@ -754,7 +754,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 186,
+              "line": 189,
               "kind": "button-text"
             }
           ]
@@ -772,7 +772,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -826,7 +826,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 189,
+              "line": 192,
               "kind": "translation-call"
             }
           ]
@@ -844,7 +844,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 189,
+              "line": 192,
               "kind": "aria-label"
             }
           ]
@@ -856,7 +856,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 189,
+              "line": 192,
               "kind": "value-literal"
             }
           ]
@@ -909,7 +909,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 170,
+              "line": 173,
               "kind": "value-literal"
             },
             {
@@ -1004,7 +1004,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 192,
+              "line": 195,
               "kind": "button-text"
             }
           ]
@@ -1094,7 +1094,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "paragraph-text"
             }
           ]
@@ -1112,7 +1112,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -1148,7 +1148,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 160,
+              "line": 163,
               "kind": "translation-call"
             }
           ]
@@ -1214,7 +1214,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 183,
+              "line": 186,
               "kind": "value-literal"
             }
           ]
@@ -1232,7 +1232,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 183,
+              "line": 186,
               "kind": "value-literal"
             }
           ]
@@ -1250,7 +1250,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 180,
+              "line": 183,
               "kind": "aria-label"
             }
           ]
@@ -1262,7 +1262,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 180,
+              "line": 183,
               "kind": "value-literal"
             }
           ]
@@ -1280,7 +1280,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 192,
+              "line": 195,
               "kind": "paragraph-text"
             }
           ]
@@ -1346,7 +1346,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 129,
+              "line": 132,
               "kind": "value-literal:call"
             }
           ]
@@ -1400,7 +1400,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 192,
+              "line": 195,
               "kind": "aria-label"
             }
           ]
@@ -1412,7 +1412,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 192,
+              "line": 195,
               "kind": "value-literal"
             }
           ]
@@ -1430,7 +1430,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 160,
+              "line": 163,
               "kind": "paragraph-text"
             }
           ]
@@ -1466,7 +1466,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 164,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -1484,7 +1484,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -1592,7 +1592,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 155,
+              "line": 158,
               "kind": "value-literal:call"
             }
           ]
@@ -1676,7 +1676,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 167,
+              "line": 170,
               "kind": "button-text"
             }
           ]
@@ -1855,7 +1855,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "link-text"
             }
           ]
@@ -1873,7 +1873,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 175,
+              "line": 178,
               "kind": "span-text"
             }
           ]
@@ -1891,7 +1891,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 189,
+              "line": 192,
               "kind": "paragraph-text"
             }
           ]
@@ -1927,7 +1927,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "translation-call"
             }
           ]
@@ -2017,7 +2017,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "aria-label"
             }
           ]
@@ -2029,7 +2029,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -2124,7 +2124,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 170,
+              "line": 173,
               "kind": "value-literal"
             },
             {
@@ -2147,7 +2147,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "heading-text"
             }
           ]
@@ -2165,7 +2165,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "paragraph-text"
             }
           ]
@@ -2231,7 +2231,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 193,
+              "line": 196,
               "kind": "button-text"
             }
           ]
@@ -2333,7 +2333,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 189,
+              "line": 192,
               "kind": "button-text"
             }
           ]
@@ -2351,7 +2351,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "translation-call"
             }
           ]
@@ -2387,7 +2387,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 193,
+              "line": 196,
               "kind": "heading-text"
             }
           ]
@@ -2405,7 +2405,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 164,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -2477,7 +2477,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -2549,7 +2549,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 196,
+              "line": 199,
               "kind": "translation-call"
             }
           ]
@@ -2585,7 +2585,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "translation-call"
             }
           ]
@@ -2621,7 +2621,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "heading-text"
             }
           ]
@@ -2692,7 +2692,7 @@
             },
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 180,
+              "line": 183,
               "kind": "value-literal"
             }
           ]
@@ -2746,7 +2746,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 170,
+              "line": 173,
               "kind": "button-text"
             }
           ]
@@ -2764,7 +2764,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 196,
+              "line": 199,
               "kind": "translation-call"
             }
           ]
@@ -2813,13 +2813,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
               "line": 31,
-              "kind": "value-interpolated"
+              "kind": "translation-call"
             }
           ]
         }
@@ -2831,13 +2831,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "UI text in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
               "line": 28,
-              "kind": "value-literal"
+              "kind": "translation-call"
             }
           ]
         }
@@ -2849,13 +2849,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 103,
-              "kind": "value-interpolated"
+              "line": 106,
+              "kind": "translation-call"
             }
           ]
         }
@@ -2903,13 +2903,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
               "line": 30,
-              "kind": "value-interpolated"
+              "kind": "translation-call"
             }
           ]
         }
@@ -2921,13 +2921,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
               "line": 29,
-              "kind": "value-interpolated"
+              "kind": "translation-call"
             }
           ]
         }
@@ -2944,7 +2944,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 172,
+              "line": 175,
               "kind": "aria-label"
             }
           ]
@@ -2956,7 +2956,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 172,
+              "line": 175,
               "kind": "value-literal"
             }
           ]
@@ -3064,7 +3064,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 181,
+              "line": 184,
               "kind": "aria-label"
             }
           ]
@@ -3076,7 +3076,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 181,
+              "line": 184,
               "kind": "value-literal"
             }
           ]
@@ -3130,7 +3130,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 172,
+              "line": 175,
               "kind": "value-literal"
             }
           ]
@@ -3155,6 +3155,24 @@
               "file": "packages/modules/goblin-chess/src/game.ts",
               "line": 16,
               "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "8eda52e3fbf8523945940fc7553375e3",
+      "source": "promoted to {value0}",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
+              "line": 106,
+              "kind": "translation-call"
             }
           ]
         }
@@ -3225,7 +3243,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "value-literal"
             }
           ]
@@ -3243,7 +3261,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 163,
+              "line": 166,
               "kind": "value-literal"
             }
           ]
@@ -3261,7 +3279,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 185,
+              "line": 188,
               "kind": "button-text"
             }
           ]
@@ -3279,7 +3297,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 165,
+              "line": 168,
               "kind": "button-text"
             }
           ]
@@ -3315,7 +3333,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 184,
+              "line": 187,
               "kind": "button-text"
             }
           ]
@@ -3374,7 +3392,7 @@
             },
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 180,
+              "line": 183,
               "kind": "value-literal"
             }
           ]
@@ -3464,7 +3482,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 170,
+              "line": 173,
               "kind": "value-literal"
             },
             {
@@ -3505,7 +3523,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 160,
+              "line": 163,
               "kind": "heading-text-rich"
             }
           ]
@@ -3595,7 +3613,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 183,
+              "line": 186,
               "kind": "value-literal"
             }
           ]
@@ -3613,7 +3631,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 183,
+              "line": 186,
               "kind": "value-literal"
             }
           ]
@@ -3631,7 +3649,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 183,
+              "line": 186,
               "kind": "value-literal"
             }
           ]
@@ -3649,7 +3667,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "translation-call"
             }
           ]
@@ -3667,7 +3685,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 163,
+              "line": 166,
               "kind": "value-literal"
             }
           ]
@@ -3685,7 +3703,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "value-literal"
             }
           ]
@@ -3703,7 +3721,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 163,
+              "line": 166,
               "kind": "heading-text-rich"
             }
           ]
@@ -3775,7 +3793,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 193,
+              "line": 196,
               "kind": "button-text"
             }
           ]
@@ -3793,7 +3811,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 193,
+              "line": 196,
               "kind": "aria-label"
             }
           ]
@@ -3805,7 +3823,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 193,
+              "line": 196,
               "kind": "value-literal"
             }
           ]
@@ -3823,7 +3841,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "link-text"
             }
           ]
@@ -3931,7 +3949,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -3985,7 +4003,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "translation-call"
             }
           ]
@@ -4008,7 +4026,7 @@
             },
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 180,
+              "line": 183,
               "kind": "value-literal"
             }
           ]
@@ -4116,7 +4134,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -4134,7 +4152,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -4170,7 +4188,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 167,
+              "line": 170,
               "kind": "paragraph-text"
             }
           ]
@@ -4188,7 +4206,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 164,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -4242,7 +4260,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 164,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -4327,31 +4345,49 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "UI text in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 91,
-              "kind": "value-literal"
+              "line": 92,
+              "kind": "translation-call"
             }
           ]
         }
       ]
     },
     {
-      "key": "ecf0432709a0f5b9e9059c99a81687d1",
-      "source": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
+      "key": "55fcc0b63696a83213dfb5a311e09edd",
+      "source": "The Universe declares you the winner. Cosmic paperwork is final.",
       "contexts": [
         {
           "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 91,
-              "kind": "value-interpolated"
+              "line": 93,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "e0c7a3b0895671de4baaeb6df979b08f",
+      "source": "The Universe declares your opponent the winner. Cosmic paperwork is final.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
+              "line": 94,
+              "kind": "translation-call"
             }
           ]
         }
@@ -4368,7 +4404,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 121,
+              "line": 124,
               "kind": "value-literal"
             }
           ]
@@ -4386,7 +4422,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 164,
+              "line": 167,
               "kind": "translation-call"
             }
           ]
@@ -4404,7 +4440,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -4458,7 +4494,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 198,
               "kind": "paragraph-text"
             }
           ]
@@ -4476,7 +4512,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 163,
+              "line": 166,
               "kind": "paragraph-text"
             }
           ]
@@ -4565,7 +4601,7 @@
             },
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 180,
+              "line": 183,
               "kind": "value-literal"
             }
           ]
@@ -4601,7 +4637,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 182,
+              "line": 185,
               "kind": "button-text"
             }
           ]
@@ -4619,7 +4655,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 168,
+              "line": 171,
               "kind": "button-text"
             }
           ]
@@ -4769,7 +4805,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 186,
+              "line": 189,
               "kind": "button-text"
             }
           ]
@@ -4787,7 +4823,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 182,
               "kind": "translation-call"
             }
           ]
@@ -4822,7 +4858,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 170,
+              "line": 173,
               "kind": "value-literal"
             },
             {
@@ -4863,7 +4899,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 160,
+              "line": 163,
               "kind": "translation-call"
             }
           ]
@@ -4917,7 +4953,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 164,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -4935,7 +4971,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 164,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -4953,7 +4989,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 185,
+              "line": 188,
               "kind": "value-literal"
             }
           ]
@@ -4971,7 +5007,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 170,
+              "line": 173,
               "kind": "translation-call"
             }
           ]
@@ -5037,26 +5073,8 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 180,
               "kind": "value-literal"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "key": "4da4c861bb5e54693080496c7f0edd86",
-      "source": "your opponent",
-      "contexts": [
-        {
-          "shape": "body",
-          "purpose": "source string passed to the runtime translation helper",
-          "visualContext": "",
-          "locations": [
-            {
-              "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 91,
-              "kind": "translation-call"
             }
           ]
         }
@@ -5073,7 +5091,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 170,
+              "line": 173,
               "kind": "translation-call"
             }
           ]
@@ -5091,7 +5109,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 172,
+              "line": 175,
               "kind": "value-literal"
             }
           ]
@@ -5127,7 +5145,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 120,
+              "line": 119,
               "kind": "paragraph-text-rich"
             }
           ]
@@ -5145,7 +5163,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 153,
+              "line": 152,
               "kind": "div-text-rich"
             }
           ]
@@ -5163,7 +5181,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 153,
+              "line": 152,
               "kind": "div-text-rich"
             }
           ]
@@ -5181,7 +5199,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 153,
+              "line": 152,
               "kind": "div-text-rich"
             }
           ]
@@ -5253,7 +5271,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 135,
+              "line": 134,
               "kind": "span-text"
             }
           ]
@@ -5319,7 +5337,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 137,
+              "line": 136,
               "kind": "translation-call"
             }
           ]
@@ -5373,7 +5391,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 154,
+              "line": 153,
               "kind": "paragraph-text"
             }
           ]
@@ -5499,7 +5517,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 142,
+              "line": 141,
               "kind": "span-text"
             }
           ]
@@ -5661,7 +5679,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 145,
+              "line": 144,
               "kind": "translation-call"
             }
           ]
@@ -5769,7 +5787,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 146,
+              "line": 145,
               "kind": "button-text"
             }
           ]
@@ -5805,7 +5823,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 124,
+              "line": 123,
               "kind": "translation-call"
             }
           ]
@@ -5895,7 +5913,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 145,
+              "line": 144,
               "kind": "translation-call"
             }
           ]
@@ -6195,7 +6213,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 138,
+              "line": 137,
               "kind": "translation-call"
             }
           ]
@@ -6213,7 +6231,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 138,
+              "line": 137,
               "kind": "translation-call"
             }
           ]
@@ -6555,7 +6573,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 130,
+              "line": 129,
               "kind": "paragraph-text-rich"
             }
           ]
@@ -6627,7 +6645,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 142,
+              "line": 141,
               "kind": "heading-text"
             }
           ]
@@ -6645,7 +6663,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 122,
+              "line": 121,
               "kind": "heading-text-rich"
             }
           ]
@@ -6711,7 +6729,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 137,
+              "line": 136,
               "kind": "translation-call"
             }
           ]
@@ -6849,7 +6867,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 92,
+              "line": 91,
               "kind": "value-literal"
             }
           ]
@@ -6957,7 +6975,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 150,
+              "line": 149,
               "kind": "paragraph-text"
             }
           ]
@@ -7047,7 +7065,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 123,
+              "line": 122,
               "kind": "paragraph-text"
             }
           ]
@@ -7227,7 +7245,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 140,
+              "line": 139,
               "kind": "paragraph-text"
             }
           ]
@@ -7245,7 +7263,7 @@
           "locations": [
             {
               "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
-              "line": 144,
+              "line": 143,
               "kind": "paragraph-text"
             }
           ]
@@ -7337,18 +7355,6 @@
       ]
     },
     {
-      "key": "639bae9ac6b3e1a84cebb7b403297b79",
-      "source": "you",
-      "contexts": [
-        {
-          "shape": "label",
-          "purpose": "Translated dynamic value in a game message",
-          "visualContext": "",
-          "locations": []
-        }
-      ]
-    },
-    {
       "key": "11dfd868d93bc2b0e4ce0bee5756f8b1",
       "source": "moved",
       "contexts": [
@@ -7363,6 +7369,18 @@
     {
       "key": "2802d83b625211b469b99fb7b688eb5c",
       "source": "teleported",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "Translated dynamic value in a game message",
+          "visualContext": "",
+          "locations": []
+        }
+      ]
+    },
+    {
+      "key": "945d87fdfbf4104dfea9c83825759006",
+      "source": "castling",
       "contexts": [
         {
           "shape": "label",

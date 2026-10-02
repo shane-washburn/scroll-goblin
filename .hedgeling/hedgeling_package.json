@@ -204904,112 +204904,6 @@
             }
           }
         },
-        "2d03c2d5a7ec65ef4619e0582c272ec2": {
-          "sourceText": "Draw",
-          "shape": "body",
-          "purpose": "UI text in a value position",
-          "limit": 8,
-          "translations": {
-            "en-GB": {
-              "text": "Draw",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "en-AU": {
-              "text": "Draw",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "en-CA": {
-              "text": "Draw",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "fr-CA": {
-              "text": "Nulle",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "en-IN": {
-              "text": "Draw",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "hi-IN": {
-              "text": "ड्रॉ",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "nl-NL": {
-              "text": "Remise",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "sv-SE": {
-              "text": "Remi",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "pl-PL": {
-              "text": "Remis",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "uk-UA": {
-              "text": "Нічия",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "ru-RU": {
-              "text": "Ничья",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "es-ES": {
-              "text": "Tablas",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "pt-BR": {
-              "text": "Empate",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            },
-            "ar-SA": {
-              "text": "تعادل",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.521Z"
-            }
-          }
-        },
         "9ec506f2aed78a35203bb630d053efa2": {
           "sourceText": "Draw by insufficient material.",
           "shape": "body",
@@ -211794,112 +211688,6 @@
             }
           }
         },
-        "8c5789f806c731ecc2d2ccded9c73e83": {
-          "sourceText": "Place {name} at {category} spot {id}",
-          "shape": "label",
-          "purpose": "accessibility label for an interactive or visual element",
-          "limit": 65,
-          "translations": {
-            "en-GB": {
-              "text": "Place {name} at {category} spot {id}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "en-AU": {
-              "text": "Place {name} at {category} spot {id}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "en-CA": {
-              "text": "Place {name} at {category} spot {id}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "fr-CA": {
-              "text": "Mets {name} à l'emplacement {id} de la catégorie {category}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "en-IN": {
-              "text": "Place {name} at {category} spot {id}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "hi-IN": {
-              "text": "{category} जगह {id} पर {name} रखो",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "nl-NL": {
-              "text": "Plaats {name} op plek {id} in categorie {category}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "sv-SE": {
-              "text": "Placera {name} på {category} plats {id}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "pl-PL": {
-              "text": "Umieść {name} w miejscu {category} numer {id}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "uk-UA": {
-              "text": "Помісти {name} на місце {category} {id}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "ru-RU": {
-              "text": "Помести {name} на место {category} {id}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "es-ES": {
-              "text": "Coloca {name} en el lugar {id} de {category}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "pt-BR": {
-              "text": "Coloque {name} no lugar {category} {id}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            },
-            "ar-SA": {
-              "text": "ضع {name} في بقعة {category} رقم {id}",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.522Z"
-            }
-          }
-        },
         "f7a70df687c6d43ebec738eff74ff3da": {
           "sourceText": "Play again →",
           "shape": "button",
@@ -218154,112 +217942,6 @@
             }
           }
         },
-        "ecf0432709a0f5b9e9059c99a81687d1": {
-          "sourceText": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
-          "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
-          "limit": 125,
-          "translations": {
-            "en-GB": {
-              "text": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "en-AU": {
-              "text": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "en-CA": {
-              "text": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "fr-CA": {
-              "text": "L'Univers déclare {value0} le gagnant. La paperasse cosmique est finale.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "en-IN": {
-              "text": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "hi-IN": {
-              "text": "ब्रह्मांड {value0} को विजेता घोषित करता है। ब्रह्मांडीय कागजी कार्रवाई अंतिम है।",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "nl-NL": {
-              "text": "Het Universum verklaart {value0} tot winnaar. De kosmische papierwinkel is definitief.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "sv-SE": {
-              "text": "Universum förklarar {value0} som vinnare. Kosmiska papper är slutgiltiga.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "pl-PL": {
-              "text": "Wszechświat ogłasza {value0} zwycięzcą. Kosmiczna biurokracja jest ostateczna.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "uk-UA": {
-              "text": "Всесвіт оголошує {value0} переможцем. Космічна документація остаточна.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "ru-RU": {
-              "text": "Вселенная объявляет {value0} победителем. Космическая бюрократия окончательна.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "es-ES": {
-              "text": "El Universo declara a {value0} ganador. El papeleo cósmico es definitivo.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "pt-BR": {
-              "text": "O Universo declara {value0} o vencedor. A papelada cósmica é final.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            },
-            "ar-SA": {
-              "text": "الكون يعلن {value0} الفائز. الأوراق الكونية نهائية.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:00:57.524Z"
-            }
-          }
-        },
         "97e72537c76c1e44f7954ee152ffd823": {
           "sourceText": "The Universe has chosen your faction and color.",
           "shape": "body",
@@ -224401,218 +224083,6 @@
             },
             "ar-SA": {
               "text": "إجراء غير معروف.",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            }
-          }
-        },
-        "4da4c861bb5e54693080496c7f0edd86": {
-          "sourceText": "your opponent",
-          "shape": "body",
-          "purpose": "source string passed to the runtime translation helper",
-          "limit": 24,
-          "translations": {
-            "en-GB": {
-              "text": "your opponent",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "en-AU": {
-              "text": "your opponent",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "en-CA": {
-              "text": "your opponent",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "fr-CA": {
-              "text": "ton adversaire",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "en-IN": {
-              "text": "your opponent",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "hi-IN": {
-              "text": "आपका प्रतिद्वंद्वी",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "nl-NL": {
-              "text": "je tegenstander",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "sv-SE": {
-              "text": "din motståndare",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "pl-PL": {
-              "text": "twój przeciwnik",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "uk-UA": {
-              "text": "твій опонент",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "ru-RU": {
-              "text": "твоего оппонента",
-              "source": "human",
-              "mtStatus": "ready",
-              "humanStatus": "verified",
-              "updatedAt": "2026-09-20T21:13:34.593Z"
-            },
-            "es-ES": {
-              "text": "tu oponente",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "pt-BR": {
-              "text": "seu oponente",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "ar-SA": {
-              "text": "خصمك",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            }
-          }
-        },
-        "639bae9ac6b3e1a84cebb7b403297b79": {
-          "sourceText": "you",
-          "shape": "label",
-          "purpose": "Translated dynamic value in a game message",
-          "limit": 6,
-          "translations": {
-            "en-GB": {
-              "text": "you",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "en-AU": {
-              "text": "you",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "en-CA": {
-              "text": "you",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "fr-CA": {
-              "text": "tu",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "en-IN": {
-              "text": "you",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "hi-IN": {
-              "text": "तुम",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "nl-NL": {
-              "text": "jij",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "sv-SE": {
-              "text": "du",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "pl-PL": {
-              "text": "ty",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "uk-UA": {
-              "text": "ти",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "ru-RU": {
-              "text": "тебя",
-              "source": "human",
-              "mtStatus": "ready",
-              "humanStatus": "verified",
-              "updatedAt": "2026-09-20T21:13:34.594Z"
-            },
-            "es-ES": {
-              "text": "tú",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "pt-BR": {
-              "text": "você",
-              "source": "gemini",
-              "mtStatus": "ready",
-              "humanStatus": "pending",
-              "updatedAt": "2026-09-20T18:06:42.471Z"
-            },
-            "ar-SA": {
-              "text": "أنت",
               "source": "gemini",
               "mtStatus": "ready",
               "humanStatus": "pending",
@@ -237763,6 +237233,430 @@
               "updatedAt": "2026-10-02T02:56:30.173Z"
             }
           }
+        },
+        "8eda52e3fbf8523945940fc7553375e3": {
+          "sourceText": "promoted to {value0}",
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "limit": 36,
+          "translations": {
+            "en-GB": {
+              "text": "promoted to {value0}",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.458Z"
+            },
+            "en-AU": {
+              "text": "Stoked! Promo to {value0}!",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "en-CA": {
+              "text": "promoted to {value0}",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "fr-CA": {
+              "text": "promu en {value0}",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "en-IN": {
+              "text": "Promoted to {value0}, bhai!",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "hi-IN": {
+              "text": "बढ़कर {value0} बन गया",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "nl-NL": {
+              "text": "gepromoveerd naar {value0}",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "sv-SE": {
+              "text": "promotad till {value0}",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "pl-PL": {
+              "text": "Wbiłeś {value0}",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "uk-UA": {
+              "text": "промоутнуто до {value0}",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "ru-RU": {
+              "text": "промоутнут до {value0}",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "es-ES": {
+              "text": "¡Promoción a {value0}!",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "pt-BR": {
+              "text": "UPADO pra {value0}",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            },
+            "ar-SA": {
+              "text": "ترقى إلى {value0}",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.459Z"
+            }
+          }
+        },
+        "945d87fdfbf4104dfea9c83825759006": {
+          "sourceText": "castling",
+          "shape": "label",
+          "purpose": "Translated dynamic value in a game message",
+          "limit": 15,
+          "translations": {
+            "en-GB": {
+              "text": "castling",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "en-AU": {
+              "text": "castling",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "en-CA": {
+              "text": "castling",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "fr-CA": {
+              "text": "Roque",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "en-IN": {
+              "text": "Castling, bhai!",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "hi-IN": {
+              "text": "कासलिंग",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "nl-NL": {
+              "text": "rokade",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "sv-SE": {
+              "text": "rockad",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "pl-PL": {
+              "text": "Roszada",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "uk-UA": {
+              "text": "рокіровка",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "ru-RU": {
+              "text": "рокировка",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "es-ES": {
+              "text": "Enroque",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "pt-BR": {
+              "text": "Roque",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            },
+            "ar-SA": {
+              "text": "التبييت",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:22:27.460Z"
+            }
+          }
+        },
+        "55fcc0b63696a83213dfb5a311e09edd": {
+          "sourceText": "The Universe declares you the winner. Cosmic paperwork is final.",
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "limit": 116,
+          "translations": {
+            "en-GB": {
+              "text": "The Universe declares you the winner. Cosmic paperwork is final.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.454Z"
+            },
+            "en-AU": {
+              "text": "The Universe declares you the winner. Cosmic paperwork is final.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "en-CA": {
+              "text": "The Universe declares you the winner. Cosmic paperwork is final.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "fr-CA": {
+              "text": "L'Univers vous déclare vainqueur. Le verdict cosmique est sans appel.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "en-IN": {
+              "text": "The Universe declares you the winner. Cosmic paperwork is final.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "hi-IN": {
+              "text": "ब्रह्मांड आपको विजेता घोषित करता है। यह निर्णय अंतिम है।",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "nl-NL": {
+              "text": "De Kosmos verklaart jou de winnaar. Kosmisch papierwerk is definitief.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "sv-SE": {
+              "text": "Universum förklarar dig som vinnare. Det kosmiska pappersarbetet är slutgiltigt.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "pl-PL": {
+              "text": "Wszechświat ogłasza cię zwycięzcą. Kosmiczna biurokracja jest ostateczna.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "uk-UA": {
+              "text": "Всесвіт оголошує вас переможцем. Вердикт Всесвіту остаточний.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "ru-RU": {
+              "text": "Вселенная объявляет тебя победителем. Космическая бюрократия окончательна.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "es-ES": {
+              "text": "El Universo te declara ganador. El papeleo cósmico es definitivo.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "pt-BR": {
+              "text": "O Universo te declara o vencedor. O veredito cósmico é final.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "ar-SA": {
+              "text": "يعلن الكون أنك الفائز. الحكم الكوني نهائي.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            }
+          }
+        },
+        "e0c7a3b0895671de4baaeb6df979b08f": {
+          "sourceText": "The Universe declares your opponent the winner. Cosmic paperwork is final.",
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "limit": 134,
+          "translations": {
+            "en-GB": {
+              "text": "The Universe declares your opponent the winner. Cosmic paperwork is final.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "en-AU": {
+              "text": "The Universe declares your opponent the winner. Cosmic paperwork is final.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "en-CA": {
+              "text": "The Universe declares your opponent the winner. Cosmic paperwork is final.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "fr-CA": {
+              "text": "L'Univers déclare votre adversaire vainqueur. Le verdict cosmique est sans appel.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "en-IN": {
+              "text": "The Universe declares your opponent the winner. Cosmic paperwork is final.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "hi-IN": {
+              "text": "ब्रह्मांड आपके प्रतिद्वंद्वी को विजेता घोषित करता है। यह निर्णय अंतिम है।",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "nl-NL": {
+              "text": "De Kosmos verklaart je tegenstander de winnaar. Kosmisch papierwerk is definitief.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "sv-SE": {
+              "text": "Universum förklarar din motståndare som vinnare. Det kosmiska pappersarbetet är slutgiltigt.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "pl-PL": {
+              "text": "Wszechświat ogłasza twojego przeciwnika zwycięzcą. Kosmiczna biurokracja jest ostateczna.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "uk-UA": {
+              "text": "Всесвіт оголошує вашого опонента переможцем. Вердикт Всесвіту остаточний.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "ru-RU": {
+              "text": "Вселенная объявляет твоего оппонента победителем. Космическая бюрократия окончательна.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "es-ES": {
+              "text": "El Universo declara a tu oponente ganador. El papeleo cósmico es definitivo.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "pt-BR": {
+              "text": "O Universo declara seu oponente o vencedor. O veredito cósmico é final.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            },
+            "ar-SA": {
+              "text": "يعلن الكون أن خصمك هو الفائز. الحكم الكوني نهائي.",
+              "source": "gemini",
+              "mtStatus": "ready",
+              "humanStatus": "pending",
+              "updatedAt": "2026-10-02T05:46:20.455Z"
+            }
+          }
         }
       },
       "sourceIndex": {
@@ -238156,11 +238050,6 @@
           "shape": "label",
           "purpose": "accessibility label for an interactive or visual element"
         },
-        "2d03c2d5a7ec65ef4619e0582c272ec2": {
-          "key": "2d03c2d5a7ec65ef4619e0582c272ec2",
-          "shape": "body",
-          "purpose": "UI text in a value position"
-        },
         "9ec506f2aed78a35203bb630d053efa2": {
           "key": "9ec506f2aed78a35203bb630d053efa2",
           "shape": "body",
@@ -238481,11 +238370,6 @@
           "shape": "label",
           "purpose": "accessibility label for an interactive or visual element"
         },
-        "8c5789f806c731ecc2d2ccded9c73e83": {
-          "key": "8c5789f806c731ecc2d2ccded9c73e83",
-          "shape": "label",
-          "purpose": "accessibility label for an interactive or visual element"
-        },
         "f7a70df687c6d43ebec738eff74ff3da": {
           "key": "f7a70df687c6d43ebec738eff74ff3da",
           "shape": "button",
@@ -238781,11 +238665,6 @@
           "shape": "body",
           "purpose": "UI text in a value position"
         },
-        "ecf0432709a0f5b9e9059c99a81687d1": {
-          "key": "ecf0432709a0f5b9e9059c99a81687d1",
-          "shape": "body",
-          "purpose": "interpolated UI text built in a value position"
-        },
         "97e72537c76c1e44f7954ee152ffd823": {
           "key": "97e72537c76c1e44f7954ee152ffd823",
           "shape": "body",
@@ -239075,16 +238954,6 @@
           "key": "9258e257348c7e4f8c948d5ca16a35d5",
           "shape": "body",
           "purpose": "source string passed to the runtime translation helper"
-        },
-        "4da4c861bb5e54693080496c7f0edd86": {
-          "key": "4da4c861bb5e54693080496c7f0edd86",
-          "shape": "body",
-          "purpose": "source string passed to the runtime translation helper"
-        },
-        "639bae9ac6b3e1a84cebb7b403297b79": {
-          "key": "639bae9ac6b3e1a84cebb7b403297b79",
-          "shape": "label",
-          "purpose": "Translated dynamic value in a game message"
         },
         "11dfd868d93bc2b0e4ce0bee5756f8b1": {
           "key": "11dfd868d93bc2b0e4ce0bee5756f8b1",
@@ -239705,6 +239574,26 @@
           "key": "ae4253d59033525e9a7096abd210a9bd",
           "shape": "label",
           "purpose": "Translated dynamic value in a game message"
+        },
+        "8eda52e3fbf8523945940fc7553375e3": {
+          "key": "8eda52e3fbf8523945940fc7553375e3",
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper"
+        },
+        "945d87fdfbf4104dfea9c83825759006": {
+          "key": "945d87fdfbf4104dfea9c83825759006",
+          "shape": "label",
+          "purpose": "Translated dynamic value in a game message"
+        },
+        "55fcc0b63696a83213dfb5a311e09edd": {
+          "key": "55fcc0b63696a83213dfb5a311e09edd",
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper"
+        },
+        "e0c7a3b0895671de4baaeb6df979b08f": {
+          "key": "e0c7a3b0895671de4baaeb6df979b08f",
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper"
         }
       },
       "updatedAt": "2026-09-20T18:00:57.504Z"

@@ -6,12 +6,11 @@ import DilemmaForm from './DilemmaForm';
 import SuperpositionAnimation from './SuperpositionAnimation';
 import ChewedParchment from './ChewedParchment';
 import { DecisionError, forgetDecision, measureDecision, narrateDecision, readDecision, saveDecision } from './decision';
+import { narrationUrl, quantumUrl } from './config';
 import type { ScenePhase } from './PercyScene';
 import './possum.css';
 
 const blank: Dilemma = { question: '', optionA: '', optionB: '', tone: 'feral' };
-const quantumUrl = import.meta.env.VITE_QUANTUM_API_URL || 'https://5o1vmqmw04.execute-api.eu-north-1.amazonaws.com/oracle';
-const narrationUrl = `${(import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8787').replace(/\/+$/, '')}/schrodingers-possum/v1/narrate`;
 function readSaved() { try { return readDecision(localStorage); } catch { return null; } }
 function wait(ms: number, signal: AbortSignal) {
   return new Promise<void>((resolve, reject) => {

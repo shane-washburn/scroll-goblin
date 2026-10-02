@@ -296,6 +296,9 @@ importers:
         specifier: 0.186.0
         version: 0.186.0
     devDependencies:
+      '@types/node':
+        specifier: ^22.10.2
+        version: 22.19.21
       '@types/react':
         specifier: ^18.3.11
         version: 18.3.31
@@ -353,6 +356,9 @@ importers:
         specifier: 0.186.0
         version: 0.186.0
     devDependencies:
+      '@types/node':
+        specifier: ^22.10.2
+        version: 22.19.21
       '@types/react':
         specifier: ^18.3.11
         version: 18.3.31
@@ -429,6 +435,9 @@ importers:
         specifier: 0.186.0
         version: 0.186.0
     devDependencies:
+      '@types/node':
+        specifier: ^22.10.2
+        version: 22.19.21
       '@types/react':
         specifier: ^18.3.11
         version: 18.3.31

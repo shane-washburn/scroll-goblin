@@ -368,11 +368,6 @@
       "text": "Закончил украшать этот предмет",
       "status": "needs-review"
     },
-    "2d03c2d5a7ec65ef4619e0582c272ec2": {
-      "source": "Draw",
-      "text": "Ничья",
-      "status": "needs-review"
-    },
     "9ec506f2aed78a35203bb630d053efa2": {
       "source": "Draw by insufficient material.",
       "text": "Ничья из-за недостатка материала.",
@@ -673,11 +668,6 @@
       "text": "Тип фигуры",
       "status": "needs-review"
     },
-    "8c5789f806c731ecc2d2ccded9c73e83": {
-      "source": "Place {name} at {category} spot {id}",
-      "text": "Помести {name} на место {category} {id}",
-      "status": "needs-review"
-    },
     "f7a70df687c6d43ebec738eff74ff3da": {
       "source": "Play again →",
       "text": "Сыграть ещё раз →",
@@ -961,11 +951,6 @@
     "8207bff94ae521249b4e0c6a7c1e8c93": {
       "source": "The Universe allows this nonsense to continue.",
       "text": "Вселенная позволяет этому безумию продолжаться.",
-      "status": "needs-review"
-    },
-    "ecf0432709a0f5b9e9059c99a81687d1": {
-      "source": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
-      "text": "Вселенная объявляет {value0} победителем. Космическая бюрократия окончательна.",
       "status": "needs-review"
     },
     "97e72537c76c1e44f7954ee152ffd823": {
@@ -1313,11 +1298,6 @@
       "text": "Ты",
       "status": "needs-review"
     },
-    "4da4c861bb5e54693080496c7f0edd86": {
-      "source": "your opponent",
-      "text": "твоего оппонента",
-      "status": "reviewed"
-    },
     "b445177ba69f0b6abf330a9854682e74": {
       "source": "Empty square",
       "text": "Пустая клетка",
@@ -1337,11 +1317,6 @@
       "source": "Opponent moved here",
       "text": "Противник ходил сюда",
       "status": "needs-review"
-    },
-    "639bae9ac6b3e1a84cebb7b403297b79": {
-      "source": "you",
-      "text": "тебя",
-      "status": "reviewed"
     },
     "11dfd868d93bc2b0e4ce0bee5756f8b1": {
       "source": "moved",
@@ -1972,6 +1947,26 @@
       "source": "Schrödinger’s Possum",
       "text": "Поссум Шрёдингера",
       "status": "needs-review"
+    },
+    "8eda52e3fbf8523945940fc7553375e3": {
+      "source": "promoted to {value0}",
+      "text": "промоутнут до {value0}",
+      "status": "needs-review"
+    },
+    "945d87fdfbf4104dfea9c83825759006": {
+      "source": "castling",
+      "text": "рокировка",
+      "status": "needs-review"
+    },
+    "55fcc0b63696a83213dfb5a311e09edd": {
+      "source": "The Universe declares you the winner. Cosmic paperwork is final.",
+      "text": "Вселенная объявляет тебя победителем. Космическая бюрократия окончательна.",
+      "status": "reviewed"
+    },
+    "e0c7a3b0895671de4baaeb6df979b08f": {
+      "source": "The Universe declares your opponent the winner. Cosmic paperwork is final.",
+      "text": "Вселенная объявляет твоего оппонента победителем. Космическая бюрократия окончательна.",
+      "status": "reviewed"
     }
   }
 }

@@ -378,11 +378,6 @@
       "text": "Terminado de decorar este objeto",
       "status": "needs-review"
     },
-    "2d03c2d5a7ec65ef4619e0582c272ec2": {
-      "source": "Draw",
-      "text": "Tablas",
-      "status": "needs-review"
-    },
     "9ec506f2aed78a35203bb630d053efa2": {
       "source": "Draw by insufficient material.",
       "text": "Tablas por material insuficiente.",
@@ -678,11 +673,6 @@
       "text": "Tipo de pieza",
       "status": "needs-review"
     },
-    "8c5789f806c731ecc2d2ccded9c73e83": {
-      "source": "Place {name} at {category} spot {id}",
-      "text": "Coloca {name} en el lugar {id} de {category}",
-      "status": "needs-review"
-    },
     "f7a70df687c6d43ebec738eff74ff3da": {
       "source": "Play again →",
       "text": "Jugar de nuevo →",
@@ -966,11 +956,6 @@
     "8207bff94ae521249b4e0c6a7c1e8c93": {
       "source": "The Universe allows this nonsense to continue.",
       "text": "El Universo permite que esta tontería continúe.",
-      "status": "needs-review"
-    },
-    "ecf0432709a0f5b9e9059c99a81687d1": {
-      "source": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
-      "text": "El Universo declara a {value0} ganador. El papeleo cósmico es definitivo.",
       "status": "needs-review"
     },
     "97e72537c76c1e44f7954ee152ffd823": {
@@ -1313,11 +1298,6 @@
       "text": "Tú",
       "status": "needs-review"
     },
-    "4da4c861bb5e54693080496c7f0edd86": {
-      "source": "your opponent",
-      "text": "tu oponente",
-      "status": "needs-review"
-    },
     "c3e54f1fdff0bc370a15eeb50200cd9a": {
       "source": "{color} {piece}",
       "text": "{color} {piece}",
@@ -1341,11 +1321,6 @@
     "1ba2e7ad855e1acca4bb93c23f41fffc": {
       "source": "Opponent moved here",
       "text": "Tu oponente se movió aquí",
-      "status": "needs-review"
-    },
-    "639bae9ac6b3e1a84cebb7b403297b79": {
-      "source": "you",
-      "text": "tú",
       "status": "needs-review"
     },
     "11dfd868d93bc2b0e4ce0bee5756f8b1": {
@@ -1971,6 +1946,26 @@
     "ae4253d59033525e9a7096abd210a9bd": {
       "source": "Timelines collapsed",
       "text": "¡Colapso de líneas temporales!",
+      "status": "needs-review"
+    },
+    "8eda52e3fbf8523945940fc7553375e3": {
+      "source": "promoted to {value0}",
+      "text": "¡Promoción a {value0}!",
+      "status": "needs-review"
+    },
+    "945d87fdfbf4104dfea9c83825759006": {
+      "source": "castling",
+      "text": "Enroque",
+      "status": "needs-review"
+    },
+    "55fcc0b63696a83213dfb5a311e09edd": {
+      "source": "The Universe declares you the winner. Cosmic paperwork is final.",
+      "text": "El Universo te declara ganador. El papeleo cósmico es definitivo.",
+      "status": "needs-review"
+    },
+    "e0c7a3b0895671de4baaeb6df979b08f": {
+      "source": "The Universe declares your opponent the winner. Cosmic paperwork is final.",
+      "text": "El Universo declara a tu oponente ganador. El papeleo cósmico es definitivo.",
       "status": "needs-review"
     }
   }

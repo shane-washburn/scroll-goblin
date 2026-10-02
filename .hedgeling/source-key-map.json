@@ -1029,7 +1029,6 @@
     "Defensive Hoglet": "5dc1fd1f138edd801220826207555ff5",
     "Deploy the board →": "c1baf14165e935275ade01b8501d9e3e",
     "Done decorating this item": "947813bf9001b65dac3fb2176c667cf7",
-    "Draw": "2d03c2d5a7ec65ef4619e0582c272ec2",
     "Draw by insufficient material.": "9ec506f2aed78a35203bb630d053efa2",
     "Draw by stalemate.": "b7bd03e8cdfe68572bb1a9f6fbd2ca3b",
     "Draw by the fifty-move rule.": "b55d0c40fce30e1c67bfff6fec9509d8",
@@ -1094,7 +1093,6 @@
     "Pawn": "36cddea7303c5d9d8a0930128b1fbb80",
     "PEACE IN THE CLEARING": "e95ba9ea325cc04ea96d082ad0abd45e",
     "Piece type": "a6fe12c7f1af6b1842481d10c7ca4028",
-    "Place {name} at {category} spot {id}": "8c5789f806c731ecc2d2ccded9c73e83",
     "Play again →": "f7a70df687c6d43ebec738eff74ff3da",
     "plotting…": "6215abe911770266e802df0b78f9b5a9",
     "Potion Mixer": "1fe28744bc026b765d3e2f8387c3dacd",
@@ -1154,7 +1152,6 @@
     "The Mad Alchemist": "a0e956c532a5d587eb145d408421526e",
     "The Scroll Goblins": "950f87d40078a4ee75eefaa1c17ed155",
     "The Universe allows this nonsense to continue.": "8207bff94ae521249b4e0c6a7c1e8c93",
-    "The Universe declares {value0} the winner. Cosmic paperwork is final.": "ecf0432709a0f5b9e9059c99a81687d1",
     "The Universe has chosen your faction and color.": "97e72537c76c1e44f7954ee152ffd823",
     "THE UNIVERSE HAS SPOKEN": "2e6e85dc214012f8d77756d57a566932",
     "The Universe is deciding…": "13eddf735ca9c43ee29af9ee6c5c47c0",
@@ -1213,8 +1210,6 @@
     "The spirit proposed an impossible board edit. Retry its turn.": "fb943e2c7bf1edd51b758521f5a21a1b",
     "Transform a non-king into a different non-king piece.": "2372f61acdfd715dd35e1b656cba8dcf",
     "Unknown action.": "9258e257348c7e4f8c948d5ca16a35d5",
-    "your opponent": "4da4c861bb5e54693080496c7f0edd86",
-    "you": "639bae9ac6b3e1a84cebb7b403297b79",
     "moved": "11dfd868d93bc2b0e4ce0bee5756f8b1",
     "teleported": "2802d83b625211b469b99fb7b688eb5c",
     "Floor": "f3f6d0343d56ce88ce7958170ed05cb3",
@@ -1338,7 +1333,11 @@
     "Your receipt appears after the portals choose.": "5ce6fb73058c348263e7734267d4ff7c",
     "Your result is ready to paste.": "161d155bc81698428286e606bbce5d60",
     "Ψ<0>PERCY’S LAB</0>": "095521bbd448ff35a9fe4f29d9dd6eaa",
-    "Timelines collapsed": "ae4253d59033525e9a7096abd210a9bd"
+    "Timelines collapsed": "ae4253d59033525e9a7096abd210a9bd",
+    "promoted to {value0}": "8eda52e3fbf8523945940fc7553375e3",
+    "castling": "945d87fdfbf4104dfea9c83825759006",
+    "The Universe declares you the winner. Cosmic paperwork is final.": "55fcc0b63696a83213dfb5a311e09edd",
+    "The Universe declares your opponent the winner. Cosmic paperwork is final.": "e0c7a3b0895671de4baaeb6df979b08f"
   },
   "sources": [
     {
@@ -2382,6 +2381,10 @@
       "key": "7a142025b625c75e8f59c3dc40ef75a9"
     },
     {
+      "source": "castling",
+      "key": "945d87fdfbf4104dfea9c83825759006"
+    },
+    {
       "source": "Catch documents, screens, or reflections in view",
       "key": "4cd277945e3ea6e0e378b04896b60fe0"
     },
@@ -2960,10 +2963,6 @@
     {
       "source": "Drag a spud from the tray and drop it on the canvas to stamp it. Every potato you use is replaced by a brand-new one — same variety, never the same shape.",
       "key": "3703ce383347a69718ec4e99e7a61f30"
-    },
-    {
-      "source": "Draw",
-      "key": "2d03c2d5a7ec65ef4619e0582c272ec2"
     },
     {
       "source": "Draw by insufficient material.",
@@ -4606,10 +4605,6 @@
       "key": "7f01450c5ab32a1c322d3931caa43838"
     },
     {
-      "source": "Place {name} at {category} spot {id}",
-      "key": "8c5789f806c731ecc2d2ccded9c73e83"
-    },
-    {
       "source": "Place {name} at {value0} spot {id}",
       "key": "f8a6eee6de1a86836dfddcfde92285f1"
     },
@@ -4760,6 +4755,10 @@
     {
       "source": "Proline",
       "key": "cc95db87122eff66ff88bb5c6b537518"
+    },
+    {
+      "source": "promoted to {value0}",
+      "key": "8eda52e3fbf8523945940fc7553375e3"
     },
     {
       "source": "Proof of Chaos",
@@ -5986,8 +5985,12 @@
       "key": "8207bff94ae521249b4e0c6a7c1e8c93"
     },
     {
-      "source": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
-      "key": "ecf0432709a0f5b9e9059c99a81687d1"
+      "source": "The Universe declares you the winner. Cosmic paperwork is final.",
+      "key": "55fcc0b63696a83213dfb5a311e09edd"
+    },
+    {
+      "source": "The Universe declares your opponent the winner. Cosmic paperwork is final.",
+      "key": "e0c7a3b0895671de4baaeb6df979b08f"
     },
     {
       "source": "The Universe has chosen your faction and color.",
@@ -6502,10 +6505,6 @@
       "key": "b089b0ed80526adc7841997ec5b8bbd1"
     },
     {
-      "source": "you",
-      "key": "639bae9ac6b3e1a84cebb7b403297b79"
-    },
-    {
       "source": "You",
       "key": "cae8d14edd025e72c59dbab6f378c95a"
     },
@@ -6628,10 +6627,6 @@
     {
       "source": "Your offspring hatched successfully.",
       "key": "63e601deb43ef336b63c37d1a7afbd71"
-    },
-    {
-      "source": "your opponent",
-      "key": "4da4c861bb5e54693080496c7f0edd86"
     },
     {
       "source": "YOUR OPPONENT",
