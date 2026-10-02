@@ -13,6 +13,7 @@
     "prepare:chess": "node ../../scripts/prepare-chess.mjs"
   },
   "dependencies": {
+    "@scroll-goblin/module-schrodingers-possum": "workspace:*",
     "@scroll-goblin/module-aura-farm": "workspace:*",
     "@scroll-goblin/module-balloon-blower": "workspace:*",
     "@scroll-goblin/module-brainrot-button": "workspace:*",

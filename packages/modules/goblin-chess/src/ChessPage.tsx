@@ -25,10 +25,10 @@ function afterChaos(m: Match, action: ChaosAction, human: boolean): Match {
   const text = action.comment || t('{actor}: {action} {from} → {to}', { actor: human ? t('You') : t('Opponent'), action: t(({ move: 'Move', teleport: 'Teleport', resurrect: 'Revive', transform: 'Transform', declare: 'Declare victory' })[action.kind]), from: action.from ?? (action.piece ? t(roles[action.piece]) : ''), to: action.to ?? '' });
   const actor = action.from ? m.chaos.pieces.find(p => p.square === action.from) : undefined;
   const pieceName = t(names[otherFaction(m.assignment.faction)][actor?.type ?? action.piece ?? 'p']);
-  const label = action.kind === 'declare' ? 'Opponent declared victory — the Universe will decide.'
-    : action.kind === 'transform' ? `Opponent transformed ${pieceName} on ${action.from} into ${t(roles[action.piece!])}.`
-    : action.kind === 'resurrect' ? `Opponent resurrected ${pieceName} on ${action.to}.`
-    : `Opponent ${action.kind === 'teleport' ? t('teleported') : t('moved')} ${pieceName}: ${action.from} → ${action.to}.`;
+  const label = action.kind === 'declare' ? t('Opponent declared victory — the Universe will decide.')
+    : action.kind === 'transform' ? t('Opponent transformed {pieceName} on {from} into {value0}.', { pieceName, from: action.from!, value0: t(roles[action.piece!]) })
+    : action.kind === 'resurrect' ? t('Opponent resurrected {pieceName} on {to}.', { pieceName, to: action.to! })
+    : t('Opponent {value0} {pieceName}: {from} → {to}.', { value0: action.kind === 'teleport' ? t('teleported') : t('moved'), pieceName, from: action.from!, to: action.to! });
   return { ...m, memory, lastOpponent: human ? undefined : { from: action.from, to: action.to ?? action.from, label }, chaos, pending, log: [...m.log, text, ...(pending?.declaration && action.kind !== 'declare' ? [chaos.pieces.filter(p=>p.type==='k').length === 2 ? 'Checkmate! The Universe will decide who actually wins.' : 'A king has fallen. The Universe will decide who actually wins.'] : [])] };
 }
 export default function ChessPage() {
@@ -88,7 +88,10 @@ export default function ChessPage() {
         if (m.pending) {
           const result = await verdict(m.assignment.session, m.seq + 1, m.pending.round, m.pending.declaration, (m.quantumProof ?? m.assignment.proof).source);
           if (cancelled) return;
-          const outcome = result.ended ? `The Universe declares ${result.winner === player ? t('you') : t('your opponent')} the winner. Cosmic paperwork is final.` : 'The Universe allows this nonsense to continue.';
+          // Full-sentence branches so every language can inflect freely (e.g. Russian case).
+          const outcome = !result.ended ? t('The Universe allows this nonsense to continue.')
+            : result.winner === player ? t('The Universe declares you the winner. Cosmic paperwork is final.')
+            : t('The Universe declares your opponent the winner. Cosmic paperwork is final.');
           setMatch({ ...m, quantumProof: result.proof, seq: m.seq + 1, pending: null, result: result.ended ? outcome : null, outcome: result.ended ? result.winner === player ? 'win' : 'loss' : undefined, log: [...m.log, outcome] });
         } else if (m.mode === 'chaos') {
           const action = await recoverChaosTurn(m.chaos,
@@ -100,7 +103,7 @@ export default function ChessPage() {
           const uci = await engine.current.move(chessOf(m).fen());
           if (cancelled) return;
           const c = chessOf(m); const move = c.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] });
-          setMatch({ ...m, lastOpponent: { from: move.from, to: move.to, label: `Opponent moved ${t(names[otherFaction(m.assignment.faction)][move.piece])}: ${move.from} → ${move.to}${move.san.includes('O-O') ? ' (castling)' : ''}${move.promotion ? ` · promoted to ${roles[move.promotion]}` : ''}.` }, pgn: c.pgn(), result: normalEnding(c), log: [...m.log, `${move.color === 'w' ? 'White' : 'Black'} · ${move.san}`] });
+          setMatch({ ...m, lastOpponent: { from: move.from, to: move.to, label: t('Opponent moved {value0}: {from} → {to}{value1}{value2}.', { value0: t(names[otherFaction(m.assignment.faction)][move.piece]), from: move.from, to: move.to, value1: move.san.includes('O-O') ? ` (${t('castling')})` : '', value2: move.promotion ? ` · ${t('promoted to {value0}', { value0: t(roles[move.promotion]) })}` : '' }) }, pgn: c.pgn(), result: normalEnding(c), log: [...m.log, `${move.color === 'w' ? 'White' : 'Black'} · ${move.san}`] });
         }
       } catch (e) { if (!cancelled) { setError((e as Error).message); engine.current?.dispose(); engine.current = null; } }
       finally { if (!cancelled) setBusy(false); }

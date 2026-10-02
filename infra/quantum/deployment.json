@@ -10,5 +10,15 @@
   "firstTaskStatusAtHandoff": "QUEUED",
   "firstTaskQueuePositionAtHandoff": "2",
   "automaticPaidReplenishment": false,
-  "websitePublished": false
+  "websitePublished": false,
+  "possumFlipEndpoint": {
+    "enabled": true,
+    "deployedOn": "2026-10-01",
+    "handlerSha256": "b51c324fb3dfbd73cca880c800b8563233219a191533dc9d2381cbb38aedd309",
+    "sharesChessPool": true,
+    "submitsPaidJobs": false,
+    "verifiedAt": "2026-10-02T01:29:48.596Z",
+    "liveHardwareVerified": true,
+    "idempotentRetryVerified": true
+  }
 }
