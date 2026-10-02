@@ -1377,6 +1377,601 @@
       "source": "{color} {piece}",
       "text": "{piece} {color}",
       "status": "needs-review"
+    },
+    "6460d1ee222a1aea9307579e3668f389": {
+      "source": "<0>✳</0> THE DEPARTMENT OF QUESTIONABLE DECISIONS",
+      "text": "<0>✳</0> LE DÉPARTEMENT DES DÉCISIONS DOUTEUSES",
+      "status": "needs-review"
+    },
+    "df47ade9b9119213dae15d3935ecd4a0": {
+      "source": "<0>01</0><1>Offer two possibilities.</1>",
+      "text": "<0>01</0><1>Offre deux possibilités.</1>",
+      "status": "needs-review"
+    },
+    "daef852020c5da2f1c7e512b95e66609": {
+      "source": "<0>02</0><1>Let a tiny bit of fate decide.</1>",
+      "text": "<0>02</0><1>Laisse un p'tit bout de destin décider.</1>",
+      "status": "needs-review"
+    },
+    "d0540d8a4077c9e37d998a586db84719": {
+      "source": "<0>03</0><1>Meet the timeline you kept.</1>",
+      "text": "<0>03</0><1>Rencontre la timeline que t'as gardée.</1>",
+      "status": "needs-review"
+    },
+    "5c52dd419fd56be8602d4d34bbca34a9": {
+      "source": "<0>A</0> The blue portal",
+      "text": "<0>A</0> Le portail bleu",
+      "status": "needs-review"
+    },
+    "595bbfc9816afd1c1d5c386ccbbfd174": {
+      "source": "<0>B</0> The red portal",
+      "text": "<0>B</0> Le portail rouge",
+      "status": "needs-review"
+    },
+    "8edef476e37ef286ecf3b7dfcbc9a31a": {
+      "source": "01 / THE DILEMMA",
+      "text": "01 / LE DILEMME",
+      "status": "needs-review"
+    },
+    "6efd14b64329c6b4b878b7a1c7213b7e": {
+      "source": "02 / PLEASE HOLD REALITY",
+      "text": "02 / TIENS LA RÉALITÉ, S.T.P.",
+      "status": "needs-review"
+    },
+    "af822df38cc79a2ce71798bd97b947f9": {
+      "source": "03 / THE COLLAPSE",
+      "text": "03 / L'EFFONDREMENT",
+      "status": "needs-review"
+    },
+    "16faf058d68e4b96a86726661eb4ecd1": {
+      "source": "A big evening? A small adventure?",
+      "text": "Une grosse soirée? Une p'tite aventure?",
+      "status": "needs-review"
+    },
+    "14f6b5e0c07a163a9edb07db02fe9267": {
+      "source": "A choice has escaped.",
+      "text": "Un choix s'est échappé.",
+      "status": "needs-review"
+    },
+    "60babaa845a182cc98e59f5474d3057a": {
+      "source": "A literal subatomic particle was forced to collapse its state just because you couldn't make up your mind. Here is the receipt.",
+      "text": "Une particule subatomique littérale a été forcée de collapser son état juste parce que tu pouvais pas te décider. Voici la preuve de chaos.",
+      "status": "needs-review"
+    },
+    "2520f76aff5de255d04f15f253375926": {
+      "source": "A little indecisive?",
+      "text": "Un peu indécis, toi?",
+      "status": "needs-review"
+    },
+    "5e24f2965e2ee5c791a36c3c2f25e29b": {
+      "source": "A little nudge, not a prophecy. The final say is always yours.",
+      "text": "Un p'tit coup de pouce, pas une prophétie. Le dernier mot, c'est toujours toi qui l'as.",
+      "status": "needs-review"
+    },
+    "c67dbf4efc76bd783e703b29d6e79beb": {
+      "source": "A possibility",
+      "text": "Une possibilité",
+      "status": "needs-review"
+    },
+    "d86ce426e5d10c108d4918b3f5278089": {
+      "source": "A small possum. An unreasonable amount of responsibility.",
+      "text": "Un p'tit possum. Une quantité déraisonnable de responsabilités.",
+      "status": "needs-review"
+    },
+    "85c8f5dbd76f248482df57d81d793096": {
+      "source": "Add option A.",
+      "text": "Ajouter l'option A.",
+      "status": "needs-review"
+    },
+    "a21cd615f935045854372c0a01c3d8e5": {
+      "source": "Add option B.",
+      "text": "Ajouter l'option B.",
+      "status": "needs-review"
+    },
+    "9d4dcfbad02a2b97cc52ba869a586bfc": {
+      "source": "Aligning qubits…",
+      "text": "Alignement des qubits…",
+      "status": "needs-review"
+    },
+    "408ea60b382d8e968a11eab91e2f1f20": {
+      "source": "An aggressively early bedtime",
+      "text": "Un dodo agressif en avance",
+      "status": "needs-review"
+    },
+    "5dd790cd08cb3d585c68de25bcfe0c67": {
+      "source": "AN UNFINISHED EXPERIMENT",
+      "text": "UNE EXPÉRIENCE INACHEVÉE",
+      "status": "needs-review"
+    },
+    "cd4eef9e9f685068215af187facef110": {
+      "source": "Another dilemma <0>↗</0>",
+      "text": "Un autre dilemme <0>↗</0>",
+      "status": "needs-review"
+    },
+    "423077573c87e14c5b4d07ae23e07c4e": {
+      "source": "Another possibility",
+      "text": "Une autre possibilité",
+      "status": "needs-review"
+    },
+    "d87c81cc888c15727ba7ee0964a49520": {
+      "source": "Beyond the other portal, the moon has misplaced its reflection. A very small possum is helping it look.",
+      "text": "Au-delà de l'autre portail, la lune a égaré son reflet. Un tout p'tit possum l'aide à le chercher.",
+      "status": "needs-review"
+    },
+    "171ba6651890bcd7f04654b09fe2a2dc": {
+      "source": "BOTH POSSIBLE. EQUALLY SUSPICIOUS.",
+      "text": "LES DEUX POSSIBLES. ÉGALEMENT SUSPECTS.",
+      "status": "needs-review"
+    },
+    "60e50628b896cafa9fa29ede0d95b692": {
+      "source": "Classical randomness",
+      "text": "Aléatoire classique",
+      "status": "needs-review"
+    },
+    "c7215639c4e3c1a349090b4d16a29ff4": {
+      "source": "Classical randomness · quantum pool unavailable",
+      "text": "Aléatoire classique · pool quantique non dispo",
+      "status": "needs-review"
+    },
+    "839e4281ad2172ecff905f025dee32ca": {
+      "source": "Close Proof of Chaos",
+      "text": "Fermer la Preuve de Chaos",
+      "status": "needs-review"
+    },
+    "fa8b86f9f160a8a8184074529d1c64c1": {
+      "source": "Consulting the multiverse…",
+      "text": "Consultation du multivers…",
+      "status": "needs-review"
+    },
+    "a6221f688d0584bf4f161b86c9caebe1": {
+      "source": "Continue this dilemma",
+      "text": "Continuer ce dilemme",
+      "status": "needs-review"
+    },
+    "18ea3d06e0909e74f4bae9f973b33512": {
+      "source": "Copied ✓",
+      "text": "Copié ✓",
+      "status": "needs-review"
+    },
+    "76cfa6f1b17191043ed2498b31952993": {
+      "source": "Copy result",
+      "text": "Copier le résultat",
+      "status": "needs-review"
+    },
+    "566317e27cd1ed5310f27a67008ca792": {
+      "source": "Could not copy. You can select and copy the note above.",
+      "text": "Pas pu copier. Tu peux sélectionner et copier la note en haut.",
+      "status": "needs-review"
+    },
+    "5ce3d41d8a61e147d572b6b2fb21156e": {
+      "source": "Decision provenance",
+      "text": "Provenance de la décision",
+      "status": "needs-review"
+    },
+    "6c85159da00eb7fb0ce1a179e1e8b16b": {
+      "source": "Dodging traffic in Timeline B…",
+      "text": "On dodge le trafic dans la Timeline B…",
+      "status": "needs-review"
+    },
+    "f6b0e79a388f463f99c4aa7aabae728d": {
+      "source": "Edit the dilemma",
+      "text": "Éditer le dilemme",
+      "status": "needs-review"
+    },
+    "1dce3b9134abd95d7d415c0bf1dfb294": {
+      "source": "EST. IN ANOTHER TIMELINE",
+      "text": "ÉTABLI DANS UNE AUTRE TIMELINE",
+      "status": "needs-review"
+    },
+    "ff468dbe8538fb6a1e80550e67d897a9": {
+      "source": "FATE HAS LITTLE HANDS",
+      "text": "LE DESTIN A DE PETITES MAINS",
+      "status": "needs-review"
+    },
+    "17f245ab15ffb124c560236905bfc7bb": {
+      "source": "Fate has picked. I have chewed the paperwork. Between us, that is basically a plan.",
+      "text": "Le destin a pické. J'ai mâché la paperasse. Entre nous, c'est pas mal un plan, ça.",
+      "status": "needs-review"
+    },
+    "403122f3e0eeacc0171040d9ac077f3b": {
+      "source": "Feral",
+      "text": "Féral",
+      "status": "needs-review"
+    },
+    "256befaf7f83f3eea1116b4edf958b3d": {
+      "source": "Fetching his story…",
+      "text": "On va chercher son histoire…",
+      "status": "needs-review"
+    },
+    "80ade84854ffab8e4475131df4f1558f": {
+      "source": "FILED UNDER: QUESTIONABLE",
+      "text": "CLASSÉ SOUS : QUESTIONNABLE",
+      "status": "needs-review"
+    },
+    "b93f2321b0188631f74cdb54a08bf9cc": {
+      "source": "Finish the note",
+      "text": "Finir la note",
+      "status": "needs-review"
+    },
+    "9c33f750c88a65ec677bea6c5cc46349": {
+      "source": "Give Percy a dilemma.",
+      "text": "Donne un dilemme à Percy.",
+      "status": "needs-review"
+    },
+    "3549e46df2933000954f90cbfe0870e2": {
+      "source": "Give the two timelines different options.",
+      "text": "Donne des options différentes aux deux timelines.",
+      "status": "needs-review"
+    },
+    "c41f08c29801ad59723bfe8e28dbf039": {
+      "source": "Here is a little nudge, not a promise. Notice how this choice feels; the next step is still yours.",
+      "text": "C'est un petit nudge, pas une promesse. Check comment ce choix te fait sentir; la prochaine étape, c'est encore à toi.",
+      "status": "needs-review"
+    },
+    "d21ad1cecdccce1d49332e0bfa00bd59": {
+      "source": "How should I spend my Saturday?",
+      "text": "Comment je devrais passer mon samedi?",
+      "status": "needs-review"
+    },
+    "3765b6f487a8b2146478300fd6206e19": {
+      "source": "Locating the least chewed paperwork…",
+      "text": "On localise la paperasse la moins mâchée…",
+      "status": "needs-review"
+    },
+    "6076b1a27803f9adb0777039ab135e9d": {
+      "source": "Make my home extra cozy",
+      "text": "Rendre ma maison super cozy",
+      "status": "needs-review"
+    },
+    "e2e792937fae4654c8821957a026f127": {
+      "source": "MEANWHILE, IN THE OTHER TIMELINE…",
+      "text": "PENDANT CE TEMPS, DANS L'AUTRE TIMELINE…",
+      "status": "needs-review"
+    },
+    "086a82933a31610bf6c58f98b78ff48c": {
+      "source": "Mystical",
+      "text": "Mystique",
+      "status": "needs-review"
+    },
+    "e5f16ea3a53871e037d4f527f58900af": {
+      "source": "One door opens; a thousand stars politely pretend this was their idea. Take a small step through.",
+      "text": "Une porte s'ouvre; mille étoiles font semblant poliment que c'était leur idée. Fais un petit pas.",
+      "status": "needs-review"
+    },
+    "22c255aa1fa99695674fe833fffd9dbe": {
+      "source": "One more side quest",
+      "text": "Une autre side quest",
+      "status": "needs-review"
+    },
+    "a5e979a33ab04c9d07c1c66ffb6c66d6": {
+      "source": "One possibility…",
+      "text": "Une possibilité…",
+      "status": "needs-review"
+    },
+    "660dc573e8aef747bbc762f03ca7ca18": {
+      "source": "ONE TIMELINE. FRESHLY CHEWED.",
+      "text": "UNE TIMELINE. FRAÎCHEMENT MÂCHÉE.",
+      "status": "needs-review"
+    },
+    "2bae82ce4ac899e4d7e47701d8faec1c": {
+      "source": "Open the portals <0>↗</0>",
+      "text": "Ouvre les portails <0>↗</0>",
+      "status": "needs-review"
+    },
+    "63071afe0e1ab03e848e7273dadca1a1": {
+      "source": "Over there, a council of raccoons has called an emergency meeting. You are somehow responsible for the minutes.",
+      "text": "Là-bas, un conseil de ratons laveurs a callé une réunion d'urgence. Tu es en quelque sorte responsable des minutes.",
+      "status": "needs-review"
+    },
+    "4ea1fa02a580ac56de4af2c3f2bb25ae": {
+      "source": "Percy gnawed on the data stream, but we managed to salvage the raw telemetry of your existential crisis.",
+      "text": "Percy a gnawé sur le data stream, mais on a réussi à salvager la télémétrie brute de ta crise existentielle.",
+      "status": "needs-review"
+    },
+    "f4a6b59956768aa83d2a10bd351edf0c": {
+      "source": "Percy is bringing you the paperwork.",
+      "text": "Percy t'apporte la paperasse.",
+      "status": "needs-review"
+    },
+    "9f564fcafb9cac60b56da4fb724a2dcc": {
+      "source": "Percy is considering both possibilities with absolutely no qualifications.",
+      "text": "Percy considère les deux possibilités avec absolument aucune qualification.",
+      "status": "needs-review"
+    },
+    "93f674a5bcaf82ecd3d82e94177c653e": {
+      "source": "Percy is making an entrance…",
+      "text": "Percy fait son entrée…",
+      "status": "needs-review"
+    },
+    "a482391d497148a6546cfd844e5e0e96": {
+      "source": "Percy needs a breather. Try again in a little while.",
+      "text": "Percy a besoin d'un breather. Essaie encore dans pas longtemps.",
+      "status": "needs-review"
+    },
+    "f4be49336c6632cd5c08010639598bf4": {
+      "source": "Percy, a wide-eyed possum in a ragged lab coat, stands between blue and red portals.",
+      "text": "Percy, un possum aux grands yeux dans un sarrau déchiré, se tient entre des portails bleus et rouges.",
+      "status": "needs-review"
+    },
+    "27dadae030b37d634386e59fddcded43": {
+      "source": "PERCY’S QUANTUM LAB",
+      "text": "LABO QUANTIQUE DE PERCY",
+      "status": "needs-review"
+    },
+    "2cfc856b44dc05b6b79be5e93bd30249": {
+      "source": "PERCY’S QUANTUM LAB / EVIDENCE DEPARTMENT",
+      "text": "LABO QUANTIQUE DE PERCY / DÉPARTEMENT DES PREUVES",
+      "status": "needs-review"
+    },
+    "4cd5c887b51a87b2c8df820518a4bb64": {
+      "source": "Percy’s quantum laboratory",
+      "text": "Labo quantique de Percy",
+      "status": "needs-review"
+    },
+    "990aa0f6b99e141d45eaa4138ceea686": {
+      "source": "Percy’s storyteller is resting. This is a note from his emergency stash.",
+      "text": "Le conteur de Percy se repose. C'est une note de sa réserve d'urgence.",
+      "status": "needs-review"
+    },
+    "8f053cb3ca241e4f6e9506ac0485a36d": {
+      "source": "Percy’s vibe",
+      "text": "Le vibe de Percy",
+      "status": "needs-review"
+    },
+    "bf3b194f466bee91084ef109478ad1f7": {
+      "source": "PERCY<0/>APPROVED",
+      "text": "PERCY<0/>APPROUVÉ",
+      "status": "needs-review"
+    },
+    "2deecbc4f724d0eb1f694f2fc12e090b": {
+      "source": "Physical hardware can have measurement bias; equal odds are the ideal target.",
+      "text": "Le matériel physique peut avoir un biais de mesure; des chances égales sont la cible idéale.",
+      "status": "needs-review"
+    },
+    "714a5b9886dee9d983e606cd847b03fd": {
+      "source": "PORTAL A HAS SPOKEN",
+      "text": "LE PORTAIL A A PARLÉ",
+      "status": "needs-review"
+    },
+    "cbbdfc432f02f86f0aa48c5b5cfddcb1": {
+      "source": "PORTAL B HAS SPOKEN",
+      "text": "LE PORTAIL B A PARLÉ",
+      "status": "needs-review"
+    },
+    "b01a68e3f0bd7a71df565a7519953880": {
+      "source": "Proof of Chaos",
+      "text": "Preuve de Chaos",
+      "status": "needs-review"
+    },
+    "edc86e4a858e366c9933a5f4e5169723": {
+      "source": "Put it in the paws of a professional.<0/>He is not a professional.",
+      "text": "Mets ça dans les pattes d'un pro.<0/>C'est pas un pro.",
+      "status": "needs-review"
+    },
+    "b212a1d47d42d065a85e433b9d10577c": {
+      "source": "Quantum measurement",
+      "text": "Mesure quantique",
+      "status": "needs-review"
+    },
+    "2f2d1bcd963f154db7a7365cd669ab3a": {
+      "source": "Quantum measurement · Amazon Braket",
+      "text": "Mesure quantique · Amazon Braket",
+      "status": "needs-review"
+    },
+    "2b04edf7088c82e48e3bc4b0cacd1614": {
+      "source": "Real quantum measurements when available.<0/>A clearly labeled classical coin flip when the universe is busy.",
+      "text": "Des vraies mesures quantiques quand c'est dispo.<0/>Un pile ou face classique bien indiqué quand l'univers est occupé.",
+      "status": "needs-review"
+    },
+    "94205b56638fbc990ee0ecda2b23227e": {
+      "source": "REALITY IS SETTLING",
+      "text": "LA RÉALITÉ SE STABILISE",
+      "status": "needs-review"
+    },
+    "63bb77f09d31e6fd9b8b24bbfe105852": {
+      "source": "Retry the story · keep this choice",
+      "text": "Retente l'histoire · garde ce choix",
+      "status": "needs-review"
+    },
+    "c0ef49019687d7ea390f8bb020890b15": {
+      "source": "Rewrite the note · keep this choice",
+      "text": "Réécris la note · garde ce choix",
+      "status": "needs-review"
+    },
+    "71b26e3323fcd24c0a2419783831d364": {
+      "source": "Right where you left Percy.",
+      "text": "Là où t'as laissé Percy.",
+      "status": "needs-review"
+    },
+    "883c9d1ed7f587b5fc14886164f83e8b": {
+      "source": "Schrödinger’s <0>Possum.</0>",
+      "text": "Le <0>Possum</0> de Schrödinger.",
+      "status": "needs-review"
+    },
+    "fb457a107a6b6dc4ed6b586dd912112f": {
+      "source": "Schrödinger’s Possum",
+      "text": "Le Possum de Schrödinger",
+      "status": "needs-review"
+    },
+    "3cdf992ed0e16560035273859e22f6b7": {
+      "source": "Sincere",
+      "text": "Sincère",
+      "status": "needs-review"
+    },
+    "cf9562b74980b74108479c223899b10e": {
+      "source": "Somewhere, something is happening.",
+      "text": "Quelque part, y'a de quoi qui se passe.",
+      "status": "needs-review"
+    },
+    "7887f800debbd1641aa0b4816750e4e4": {
+      "source": "SUPERPOSITION IN PROGRESS",
+      "text": "SUPERPOSITION EN COURS",
+      "status": "needs-review"
+    },
+    "5a3a4ce2531a21b14ebc8ae8ea48cfd9": {
+      "source": "The little lab is in low-power mode. Your portals still work.",
+      "text": "Le petit labo est en mode basse consommation. Tes portails fonctionnent encore.",
+      "status": "needs-review"
+    },
+    "29a4931a610b1a4299b5c63b3065d403": {
+      "source": "The other path holds a different ordinary day, with its own small surprises. You do not need to live both to move forward.",
+      "text": "L'autre chemin mène à une autre journée ordinaire, avec ses propres petites surprises. Tu n'as pas besoin de vivre les deux pour avancer.",
+      "status": "needs-review"
+    },
+    "e245b3a7e6207c7f646b32aa4ccb5e72": {
+      "source": "The other possibility…",
+      "text": "L'autre possibilité…",
+      "status": "needs-review"
+    },
+    "315c7ec92ae281fe3484bdb5ffc348a1": {
+      "source": "The other timeline",
+      "text": "L'autre ligne temporelle",
+      "status": "needs-review"
+    },
+    "75ebc22de284c9c8f2a5ed406ebe0681": {
+      "source": "The portal could not accept this request. Please try again.",
+      "text": "Le portail a pas pu accepter ta demande. Réessaie, s'il te plaît.",
+      "status": "needs-review"
+    },
+    "7dd69038c6b690e6b4e2a09815585c80": {
+      "source": "The portal got tangled. Try this same experiment again.",
+      "text": "Le portail s'est emmêlé. Réessaie la même expérience.",
+      "status": "needs-review"
+    },
+    "de8a9b52c7417809ad4da6eddeb48456": {
+      "source": "The portal returned an unreadable receipt. Please try again.",
+      "text": "Le portail a retourné un reçu illisible. Réessaie, s'il te plaît.",
+      "status": "needs-review"
+    },
+    "ea3df0bf5d4302a56636130fa652d5e1": {
+      "source": "The quantum computer was unavailable, so Percy borrowed your browser’s cryptographic coin. Same indecision. Different paperwork.",
+      "text": "L'ordi quantique était pas dispo, alors Percy a emprunté la pièce cryptographique de ton navigateur. Même indécision. Papiers différents.",
+      "status": "needs-review"
+    },
+    "1f90421ec9596c0109a3b9362fab105a": {
+      "source": "The quantum pool is resting.",
+      "text": "Le pool quantique se repose.",
+      "status": "needs-review"
+    },
+    "25de6c2a5d6c9397edc68768a30fb8a2": {
+      "source": "The quantum service was unavailable, so this decision used your browser’s cryptographic random generator. No quantum measurement is claimed.",
+      "text": "Le service quantique était pas dispo, alors cette décision a utilisé le générateur aléatoire cryptographique de ton navigateur. Aucune mesure quantique n'est revendiquée.",
+      "status": "needs-review"
+    },
+    "e37d31d26c99caa4108c4e03ad436666": {
+      "source": "The universe has spoken. Percy has added footnotes.",
+      "text": "L'univers a parlé. Percy a drop des footnotes.",
+      "status": "needs-review"
+    },
+    "ac9194c4073858dbc5c547dd50198947": {
+      "source": "This browser cannot save your result. Keep this tab open to preserve it.",
+      "text": "Ton browser peut pas save ton résultat. Garde ce tab ouvert pour le préserver.",
+      "status": "needs-review"
+    },
+    "bbe96e2d988f549b593b76b66f2eb5ad": {
+      "source": "This decision was pulled from a real quantum computer by a possum with zero safety training. No refunds.",
+      "text": "Cette décision a été pull d'un vrai ordi quantique par un possum zéro sécurité. Pas de refunds.",
+      "status": "needs-review"
+    },
+    "9148084e22bdb565a2f9ceea40ef001c": {
+      "source": "This decision was pulled from your browser’s random generator by a possum with zero safety training. No refunds.",
+      "text": "Cette décision a été pull du générateur random de ton browser par un possum zéro sécurité. Pas de refunds.",
+      "status": "needs-review"
+    },
+    "8a7d013513d0c9bc24ea70e70ebc4e89": {
+      "source": "Try a new recipe",
+      "text": "Essaie une nouvelle recette",
+      "status": "needs-review"
+    },
+    "40616a1265123804475aab057a35e560": {
+      "source": "Try an example ↗",
+      "text": "Essaie un exemple ↗",
+      "status": "needs-review"
+    },
+    "ef87aee7c200e544ed8beed37086335f": {
+      "source": "Two choices. One deeply unqualified possum.",
+      "text": "Deux choix. Un possum pas qualifié pantoute.",
+      "status": "needs-review"
+    },
+    "36c7532a012d98e308e5f4e59aec994d": {
+      "source": "Two choices. One deeply unqualified possum. Let quantum fate pick a path, then peek into the timeline you left behind.",
+      "text": "Deux choix. Un possum pas qualifié pantoute. Laisse le destin quantique pick un chemin, pis check la timeline que t'as laissée derrière.",
+      "status": "needs-review"
+    },
+    "6382e71019071b61ac3236de5375c06a": {
+      "source": "Two possibilities. One very questionable lab coat.",
+      "text": "Deux possibilités. Une sarrau ben douteuse.",
+      "status": "needs-review"
+    },
+    "4f6db2c6080c9ec9593b4d126498a78d": {
+      "source": "Untangling a very theoretical tail…",
+      "text": "Démêler une queue ben théorique…",
+      "status": "needs-review"
+    },
+    "0234838260343e0a3ccc8ae2683f28aa": {
+      "source": "Visit the little bookshop",
+      "text": "Visite la p'tite librairie",
+      "status": "needs-review"
+    },
+    "6ba239bb8ca1785cc07ae1ecc7fe0104": {
+      "source": "Wander somewhere new",
+      "text": "Va te promener ailleurs",
+      "status": "needs-review"
+    },
+    "be89a3e8d2a372dccc02e62f1bdffbed": {
+      "source": "What does my evening need?",
+      "text": "De quoi mon soir a besoin?",
+      "status": "needs-review"
+    },
+    "40cc9a3d8b4c06556faafbae48557dbf": {
+      "source": "What should I do?",
+      "text": "Qu'est-ce que je devrais faire?",
+      "status": "needs-review"
+    },
+    "2b3060be13cd52283d0ccaa118d7e134": {
+      "source": "Which tiny adventure should I choose?",
+      "text": "Quelle p'tite aventure je devrais choisir?",
+      "status": "needs-review"
+    },
+    "9e3fa9b012b0d78e5bed16793b01309e": {
+      "source": "With questionable certainty,<0/><1>Percy</1><2>✹</2>",
+      "text": "Avec une certitude douteuse,<0/><1>Percy</1><2>✹</2>",
+      "status": "needs-review"
+    },
+    "29b59cad614a698e8ec9fd20edae027f": {
+      "source": "You may experience a brief sense of cosmic indecision.",
+      "text": "Tu pourrais avoir un p'tit feeling d'indécision cosmique.",
+      "status": "needs-review"
+    },
+    "55f32f45915a2daed98cb3d8bcc6b7bc": {
+      "source": "Your choice is saved. Percy just needs to finish the note.",
+      "text": "Ton choix est save. Percy a juste besoin de finir la note.",
+      "status": "needs-review"
+    },
+    "d82a1813c0f1d3b244f3f40185f74a5b": {
+      "source": "Your decision",
+      "text": "Ta décision",
+      "status": "needs-review"
+    },
+    "5ce6fb73058c348263e7734267d4ff7c": {
+      "source": "Your receipt appears after the portals choose.",
+      "text": "Ton reçu apparaît après que les portails ont choisi.",
+      "status": "needs-review"
+    },
+    "161d155bc81698428286e606bbce5d60": {
+      "source": "Your result is ready to paste.",
+      "text": "Ton résultat est prêt à paste.",
+      "status": "needs-review"
+    },
+    "095521bbd448ff35a9fe4f29d9dd6eaa": {
+      "source": "Ψ<0>PERCY’S LAB</0>",
+      "text": "Ψ<0>LAB DE PERCY</0>",
+      "status": "needs-review"
+    },
+    "ae4253d59033525e9a7096abd210a9bd": {
+      "source": "Timelines collapsed",
+      "text": "Les timelines ont crashé",
+      "status": "needs-review"
     }
   }
 }

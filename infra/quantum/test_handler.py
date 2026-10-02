@@ -93,6 +93,64 @@ class QuantumTests(unittest.TestCase):
         for _ in range(20): self.assertTrue(self.h.rate_limit('ip', 'start'))
         self.assertFalse(self.h.rate_limit('ip', 'start'))
 
+    def test_possum_flip_is_idempotent_and_only_exposes_one_bit(self):
+        self.shot(0, '10000000'); self.shot(1)
+        request = {'action': 'flip', 'decision': self.session}
+        first = self.h.flip(request)
+        self.assertEqual(first['statusCode'], 200)
+        self.assertEqual(first, self.h.flip(request))
+        result = json.loads(first['body'])
+        self.assertEqual(result['result'], 1)
+        self.assertEqual(result['source'], 'hardware')
+        self.assertEqual(result['shot'], 0)
+        self.assertEqual(result['bitIndex'], 0)
+        self.assertEqual(result['circuitQubits'], 8)
+        self.assertNotIn('bits', result)
+        self.assertNotIn('batchShots', result)  # Older pool entries are supported honestly.
+        self.assertEqual(self.h.table.query(KeyConditionExpression='pk = :p', ExpressionAttributeValues={':p': 'POOL'})['Count'], 1)
+
+    def test_possum_and_chess_share_pool_but_not_session_state(self):
+        self.shot(0); self.shot(1, '10000000')
+        chess = self.start()
+        flip = self.h.flip({'action': 'flip', 'decision': self.session})
+        self.assertEqual(json.loads(chess['body'])['proof']['shot'], 0)
+        self.assertEqual(json.loads(flip['body'])['shot'], 1)
+        self.assertEqual(self.start(), chess)
+        self.assertEqual(self.h.read('SESSION#' + self.session)['seq'], 0)
+        self.assertEqual(self.h.flip({'action': 'flip', 'decision': str(uuid.uuid4())})['statusCode'], 503)
+
+    def test_possum_empty_pool_then_retry_uses_newly_imported_shot(self):
+        request = {'action': 'flip', 'decision': self.session}
+        self.assertEqual(self.h.flip(request)['statusCode'], 503)
+        self.assertIsNone(self.h.read('POSSUM#' + self.session))
+        self.shot(0, '01010101')
+        self.assertEqual(json.loads(self.h.flip(request)['body'])['result'], 0)
+
+    def test_public_possum_flip_and_limits(self):
+        self.shot(0)
+        event = {'requestContext': {'http': {'sourceIp': 'possum'}},
+                 'body': json.dumps({'action': 'flip', 'decision': self.session})}
+        with patch.object(self.h, 'replenish') as submit:
+            for _ in range(20): self.assertEqual(self.h.handler(event, None)['statusCode'], 200)
+            self.assertEqual(self.h.handler(event, None)['statusCode'], 429)
+            submit.assert_not_called()
+        event['body'] = json.dumps({'action': 'flip', 'decision': 'not-a-uuid'})
+        event['requestContext']['http']['sourceIp'] = 'invalid'
+        self.assertEqual(self.h.handler(event, None)['statusCode'], 400)
+
+    def test_possum_transaction_conflict_retries_without_reusing_a_shot(self):
+        self.shot(0); self.shot(1, '10000000')
+        original = self.h.client.transact_write_items
+        def competing_consumer(**kwargs):
+            # Chess wins the race for the oldest shot between query and commit.
+            self.h.table.delete_item(Key={'pk': 'POOL', 'sk': '0'})
+            self.h.client.transact_write_items = original
+            return original(**kwargs)
+        self.h.client.transact_write_items = competing_consumer
+        result = json.loads(self.h.flip({'action': 'flip', 'decision': self.session})['body'])
+        self.assertEqual(result['shot'], 1)
+        self.assertEqual(result['result'], 1)
+
     def test_import_retry_never_restores_used_shots(self):
         self.h.s3.create_bucket(Bucket=os.environ['BUCKET'], CreateBucketConfiguration={'LocationConstraint': 'eu-north-1'})
         self.h.s3.put_object(Bucket=os.environ['BUCKET'], Key='result/results.json', Body=json.dumps({'measurements': [[0]*8, [1]*8]}))
@@ -100,6 +158,8 @@ class QuantumTests(unittest.TestCase):
         with patch.object(self.h, 'braket') as b:
             b.get_quantum_task.return_value = {'status': 'COMPLETED', 'outputS3Bucket': os.environ['BUCKET'], 'outputS3Directory': 'result', 'endedAt': datetime.now(timezone.utc)}
             self.h.poll()
+            first = self.h.table.get_item(Key={'pk': 'POOL', 'sk': 'TASK#test#00000'})['Item']
+            self.assertEqual(first['batchShots'], 2)
             self.assertEqual(self.start()['statusCode'], 200)
             # Simulate a crash after import/consumption but before marking task done.
             self.h.table.update_item(Key={'pk': 'TASK#test', 'sk': 'STATE'}, UpdateExpression='SET imported = :f', ExpressionAttributeValues={':f': False})
