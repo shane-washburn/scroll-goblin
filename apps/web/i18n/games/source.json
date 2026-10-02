@@ -29,7 +29,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 178,
               "kind": "value-literal"
             }
           ]
@@ -47,7 +47,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 24,
+              "line": 25,
               "kind": "translation-call"
             }
           ]
@@ -83,7 +83,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 191,
+              "line": 192,
               "kind": "translation-call"
             }
           ]
@@ -101,7 +101,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 180,
+              "line": 181,
               "kind": "translation-call"
             }
           ]
@@ -168,13 +168,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 80,
-              "kind": "value-interpolated"
+              "line": 81,
+              "kind": "translation-call"
             }
           ]
         }
@@ -191,7 +191,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 180,
+              "line": 181,
               "kind": "translation-call"
             }
           ]
@@ -209,7 +209,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 163,
+              "line": 164,
               "kind": "div-text-rich"
             }
           ]
@@ -227,7 +227,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 169,
+              "line": 170,
               "kind": "value-literal"
             }
           ]
@@ -245,7 +245,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 182,
+              "line": 183,
               "kind": "translation-call"
             }
           ]
@@ -263,7 +263,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 169,
+              "line": 170,
               "kind": "value-literal"
             }
           ]
@@ -317,7 +317,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 169,
+              "line": 170,
               "kind": "paragraph-text"
             }
           ]
@@ -389,7 +389,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 17,
+              "line": 18,
               "kind": "data-field:description"
             }
           ]
@@ -407,7 +407,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 14,
+              "line": 15,
               "kind": "data-field:description"
             }
           ]
@@ -425,7 +425,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 194,
+              "line": 195,
               "kind": "heading-text"
             }
           ]
@@ -443,7 +443,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 31,
+              "line": 32,
               "kind": "value-literal"
             }
           ]
@@ -461,7 +461,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 15,
+              "line": 16,
               "kind": "data-field:description"
             }
           ]
@@ -479,7 +479,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -533,7 +533,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 19,
+              "line": 20,
               "kind": "value-literal"
             }
           ]
@@ -551,7 +551,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 196,
               "kind": "paragraph-text"
             }
           ]
@@ -569,7 +569,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -587,7 +587,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 162,
+              "line": 163,
               "kind": "paragraph-text"
             }
           ]
@@ -605,7 +605,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 151,
+              "line": 152,
               "kind": "value-literal"
             }
           ]
@@ -623,12 +623,12 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 9,
+              "line": 10,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 15,
+              "line": 16,
               "kind": "value-literal"
             }
           ]
@@ -682,7 +682,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "paragraph-text"
             }
           ]
@@ -736,7 +736,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 21,
+              "line": 22,
               "kind": "value-literal"
             }
           ]
@@ -754,7 +754,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 188,
+              "line": 189,
               "kind": "button-text"
             }
           ]
@@ -772,7 +772,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -826,7 +826,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 191,
+              "line": 192,
               "kind": "translation-call"
             }
           ]
@@ -844,7 +844,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 191,
+              "line": 192,
               "kind": "aria-label"
             }
           ]
@@ -856,7 +856,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 191,
+              "line": 192,
               "kind": "value-literal"
             }
           ]
@@ -874,7 +874,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 11,
+              "line": 12,
               "kind": "value-literal"
             }
           ]
@@ -894,6 +894,11 @@
               "file": "packages/modules/goblin-chess/src/Board.tsx",
               "line": 237,
               "kind": "translation-call"
+            },
+            {
+              "file": "packages/modules/goblin-chess/src/game.ts",
+              "line": 81,
+              "kind": "translation-call"
             }
           ]
         },
@@ -904,12 +909,12 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 172,
+              "line": 173,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 99,
+              "line": 100,
               "kind": "value-literal"
             }
           ]
@@ -963,7 +968,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 22,
+              "line": 23,
               "kind": "value-literal"
             }
           ]
@@ -999,7 +1004,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 194,
+              "line": 195,
               "kind": "button-text"
             }
           ]
@@ -1053,7 +1058,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 17,
+              "line": 18,
               "kind": "data-field:label"
             }
           ]
@@ -1089,7 +1094,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "paragraph-text"
             }
           ]
@@ -1107,7 +1112,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -1125,7 +1130,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 31,
+              "line": 32,
               "kind": "value-literal"
             }
           ]
@@ -1143,7 +1148,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 162,
+              "line": 163,
               "kind": "translation-call"
             }
           ]
@@ -1191,7 +1196,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 9,
+              "line": 10,
               "kind": "value-literal"
             }
           ]
@@ -1209,7 +1214,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 185,
+              "line": 186,
               "kind": "value-literal"
             }
           ]
@@ -1227,7 +1232,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 185,
+              "line": 186,
               "kind": "value-literal"
             }
           ]
@@ -1245,7 +1250,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 182,
+              "line": 183,
               "kind": "aria-label"
             }
           ]
@@ -1257,7 +1262,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 182,
+              "line": 183,
               "kind": "value-literal"
             }
           ]
@@ -1275,7 +1280,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 194,
+              "line": 195,
               "kind": "paragraph-text"
             }
           ]
@@ -1341,7 +1346,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 131,
+              "line": 132,
               "kind": "value-literal:call"
             }
           ]
@@ -1395,7 +1400,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 194,
+              "line": 195,
               "kind": "aria-label"
             }
           ]
@@ -1407,7 +1412,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 194,
+              "line": 195,
               "kind": "value-literal"
             }
           ]
@@ -1425,7 +1430,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 162,
+              "line": 163,
               "kind": "paragraph-text"
             }
           ]
@@ -1461,7 +1466,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 166,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -1479,7 +1484,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -1551,7 +1556,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 24,
+              "line": 25,
               "kind": "value-literal"
             }
           ]
@@ -1569,7 +1574,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 104,
+              "line": 105,
               "kind": "value-literal"
             }
           ]
@@ -1587,7 +1592,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 157,
+              "line": 158,
               "kind": "value-literal:call"
             }
           ]
@@ -1653,7 +1658,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 9,
+              "line": 10,
               "kind": "value-literal"
             }
           ]
@@ -1671,7 +1676,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 169,
+              "line": 170,
               "kind": "button-text"
             }
           ]
@@ -1719,7 +1724,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 83,
+              "line": 84,
               "kind": "value-literal"
             }
           ]
@@ -1737,7 +1742,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 81,
+              "line": 82,
               "kind": "value-literal"
             }
           ]
@@ -1755,7 +1760,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 84,
+              "line": 85,
               "kind": "value-literal"
             }
           ]
@@ -1773,7 +1778,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 82,
+              "line": 83,
               "kind": "value-literal"
             }
           ]
@@ -1791,7 +1796,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 14,
+              "line": 15,
               "kind": "data-field:label"
             }
           ]
@@ -1809,12 +1814,12 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 9,
+              "line": 10,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 16,
+              "line": 17,
               "kind": "value-literal"
             }
           ]
@@ -1850,7 +1855,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "link-text"
             }
           ]
@@ -1868,7 +1873,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 177,
+              "line": 178,
               "kind": "span-text"
             }
           ]
@@ -1886,7 +1891,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 191,
+              "line": 192,
               "kind": "paragraph-text"
             }
           ]
@@ -1922,7 +1927,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "translation-call"
             }
           ]
@@ -1940,7 +1945,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 9,
+              "line": 10,
               "kind": "value-literal"
             }
           ]
@@ -1976,7 +1981,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 16,
+              "line": 17,
               "kind": "data-field:description"
             }
           ]
@@ -2012,7 +2017,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "aria-label"
             }
           ]
@@ -2024,7 +2029,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -2060,12 +2065,12 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 8,
+              "line": 9,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 16,
+              "line": 17,
               "kind": "value-literal"
             }
           ]
@@ -2101,7 +2106,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 16,
+              "line": 17,
               "kind": "data-field:label"
             }
           ]
@@ -2119,12 +2124,12 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 172,
+              "line": 173,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 14,
+              "line": 15,
               "kind": "value-literal"
             }
           ]
@@ -2142,7 +2147,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "heading-text"
             }
           ]
@@ -2160,7 +2165,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "paragraph-text"
             }
           ]
@@ -2226,7 +2231,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 196,
               "kind": "button-text"
             }
           ]
@@ -2274,7 +2279,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 11,
+              "line": 12,
               "kind": "value-literal"
             }
           ]
@@ -2310,7 +2315,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 11,
+              "line": 12,
               "kind": "value-literal"
             }
           ]
@@ -2328,7 +2333,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 191,
+              "line": 192,
               "kind": "button-text"
             }
           ]
@@ -2346,7 +2351,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "translation-call"
             }
           ]
@@ -2382,7 +2387,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 196,
               "kind": "heading-text"
             }
           ]
@@ -2400,7 +2405,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 166,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -2418,7 +2423,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 19,
+              "line": 20,
               "kind": "value-literal"
             }
           ]
@@ -2472,7 +2477,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -2490,7 +2495,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 14,
+              "line": 15,
               "kind": "value-literal"
             }
           ]
@@ -2544,7 +2549,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 198,
+              "line": 199,
               "kind": "translation-call"
             }
           ]
@@ -2562,7 +2567,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 8,
+              "line": 9,
               "kind": "value-literal"
             }
           ]
@@ -2580,7 +2585,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "translation-call"
             }
           ]
@@ -2598,7 +2603,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 15,
+              "line": 16,
               "kind": "data-field:label"
             }
           ]
@@ -2616,7 +2621,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "heading-text"
             }
           ]
@@ -2682,12 +2687,12 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 24,
+              "line": 25,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 182,
+              "line": 183,
               "kind": "value-literal"
             }
           ]
@@ -2741,7 +2746,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 172,
+              "line": 173,
               "kind": "button-text"
             }
           ]
@@ -2759,7 +2764,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 198,
+              "line": 199,
               "kind": "translation-call"
             }
           ]
@@ -2795,7 +2800,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 24,
+              "line": 25,
               "kind": "translation-call"
             }
           ]
@@ -2808,13 +2813,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 30,
-              "kind": "value-interpolated"
+              "line": 31,
+              "kind": "translation-call"
             }
           ]
         }
@@ -2826,13 +2831,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "UI text in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 27,
-              "kind": "value-literal"
+              "line": 28,
+              "kind": "translation-call"
             }
           ]
         }
@@ -2844,13 +2849,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 105,
-              "kind": "value-interpolated"
+              "line": 106,
+              "kind": "translation-call"
             }
           ]
         }
@@ -2898,13 +2903,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 29,
-              "kind": "value-interpolated"
+              "line": 30,
+              "kind": "translation-call"
             }
           ]
         }
@@ -2916,13 +2921,13 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 28,
-              "kind": "value-interpolated"
+              "line": 29,
+              "kind": "translation-call"
             }
           ]
         }
@@ -2939,7 +2944,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 174,
+              "line": 175,
               "kind": "aria-label"
             }
           ]
@@ -2951,7 +2956,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 174,
+              "line": 175,
               "kind": "value-literal"
             }
           ]
@@ -3023,7 +3028,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 11,
+              "line": 12,
               "kind": "value-literal"
             }
           ]
@@ -3041,7 +3046,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 19,
+              "line": 20,
               "kind": "value-literal"
             }
           ]
@@ -3059,7 +3064,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 183,
+              "line": 184,
               "kind": "aria-label"
             }
           ]
@@ -3071,7 +3076,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 183,
+              "line": 184,
               "kind": "value-literal"
             }
           ]
@@ -3107,7 +3112,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 24,
+              "line": 25,
               "kind": "button-text"
             }
           ]
@@ -3125,7 +3130,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 174,
+              "line": 175,
               "kind": "value-literal"
             }
           ]
@@ -3143,13 +3148,31 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 8,
+              "line": 9,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 15,
+              "line": 16,
               "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "8eda52e3fbf8523945940fc7553375e3",
+      "source": "promoted to {value0}",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
+              "line": 106,
+              "kind": "translation-call"
             }
           ]
         }
@@ -3166,7 +3189,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 11,
+              "line": 12,
               "kind": "value-literal"
             }
           ]
@@ -3220,7 +3243,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "value-literal"
             }
           ]
@@ -3238,7 +3261,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 165,
+              "line": 166,
               "kind": "value-literal"
             }
           ]
@@ -3256,7 +3279,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 187,
+              "line": 188,
               "kind": "button-text"
             }
           ]
@@ -3274,7 +3297,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 167,
+              "line": 168,
               "kind": "button-text"
             }
           ]
@@ -3310,7 +3333,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 186,
+              "line": 187,
               "kind": "button-text"
             }
           ]
@@ -3346,7 +3369,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 24,
+              "line": 25,
               "kind": "button-text"
             }
           ]
@@ -3364,12 +3387,12 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 24,
+              "line": 25,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 182,
+              "line": 183,
               "kind": "value-literal"
             }
           ]
@@ -3387,7 +3410,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 11,
+              "line": 12,
               "kind": "value-literal"
             }
           ]
@@ -3459,12 +3482,12 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 172,
+              "line": 173,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 14,
+              "line": 15,
               "kind": "value-literal"
             }
           ]
@@ -3500,7 +3523,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 162,
+              "line": 163,
               "kind": "heading-text-rich"
             }
           ]
@@ -3536,7 +3559,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 8,
+              "line": 9,
               "kind": "value-literal"
             }
           ]
@@ -3554,7 +3577,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 8,
+              "line": 9,
               "kind": "value-literal"
             }
           ]
@@ -3590,7 +3613,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 185,
+              "line": 186,
               "kind": "value-literal"
             }
           ]
@@ -3608,7 +3631,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 185,
+              "line": 186,
               "kind": "value-literal"
             }
           ]
@@ -3626,7 +3649,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 185,
+              "line": 186,
               "kind": "value-literal"
             }
           ]
@@ -3644,7 +3667,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "translation-call"
             }
           ]
@@ -3662,7 +3685,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 165,
+              "line": 166,
               "kind": "value-literal"
             }
           ]
@@ -3680,7 +3703,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "value-literal"
             }
           ]
@@ -3698,7 +3721,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 165,
+              "line": 166,
               "kind": "heading-text-rich"
             }
           ]
@@ -3716,7 +3739,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 8,
+              "line": 9,
               "kind": "value-literal"
             }
           ]
@@ -3770,7 +3793,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 196,
               "kind": "button-text"
             }
           ]
@@ -3788,7 +3811,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 196,
               "kind": "aria-label"
             }
           ]
@@ -3800,7 +3823,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 195,
+              "line": 196,
               "kind": "value-literal"
             }
           ]
@@ -3818,7 +3841,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "link-text"
             }
           ]
@@ -3872,7 +3895,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 9,
+              "line": 10,
               "kind": "value-literal"
             }
           ]
@@ -3926,7 +3949,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -3980,7 +4003,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "translation-call"
             }
           ]
@@ -3998,12 +4021,12 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 24,
+              "line": 25,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 182,
+              "line": 183,
               "kind": "value-literal"
             }
           ]
@@ -4075,7 +4098,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 22,
+              "line": 23,
               "kind": "value-interpolated"
             }
           ]
@@ -4093,7 +4116,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 22,
+              "line": 23,
               "kind": "value-interpolated"
             }
           ]
@@ -4111,7 +4134,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -4129,7 +4152,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -4147,7 +4170,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 21,
+              "line": 22,
               "kind": "value-literal"
             }
           ]
@@ -4165,7 +4188,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 169,
+              "line": 170,
               "kind": "paragraph-text"
             }
           ]
@@ -4183,7 +4206,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 166,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -4219,7 +4242,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 17,
+              "line": 18,
               "kind": "value-literal"
             }
           ]
@@ -4237,7 +4260,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 166,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -4322,31 +4345,49 @@
       "contexts": [
         {
           "shape": "body",
-          "purpose": "UI text in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 90,
-              "kind": "value-literal"
+              "line": 92,
+              "kind": "translation-call"
             }
           ]
         }
       ]
     },
     {
-      "key": "ecf0432709a0f5b9e9059c99a81687d1",
-      "source": "The Universe declares {value0} the winner. Cosmic paperwork is final.",
+      "key": "55fcc0b63696a83213dfb5a311e09edd",
+      "source": "The Universe declares you the winner. Cosmic paperwork is final.",
       "contexts": [
         {
           "shape": "body",
-          "purpose": "interpolated UI text built in a value position",
+          "purpose": "source string passed to the runtime translation helper",
           "visualContext": "",
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 90,
-              "kind": "value-interpolated"
+              "line": 93,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "e0c7a3b0895671de4baaeb6df979b08f",
+      "source": "The Universe declares your opponent the winner. Cosmic paperwork is final.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
+              "line": 94,
+              "kind": "translation-call"
             }
           ]
         }
@@ -4363,7 +4404,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 123,
+              "line": 124,
               "kind": "value-literal"
             }
           ]
@@ -4381,7 +4422,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 166,
+              "line": 167,
               "kind": "translation-call"
             }
           ]
@@ -4399,7 +4440,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
             }
           ]
@@ -4417,7 +4458,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 17,
+              "line": 18,
               "kind": "value-literal"
             }
           ]
@@ -4453,7 +4494,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 197,
+              "line": 198,
               "kind": "paragraph-text"
             }
           ]
@@ -4471,7 +4512,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 165,
+              "line": 166,
               "kind": "paragraph-text"
             }
           ]
@@ -4537,7 +4578,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 14,
+              "line": 15,
               "kind": "value-literal"
             }
           ]
@@ -4555,12 +4596,12 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 24,
+              "line": 25,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 182,
+              "line": 183,
               "kind": "value-literal"
             }
           ]
@@ -4596,7 +4637,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 184,
+              "line": 185,
               "kind": "button-text"
             }
           ]
@@ -4614,7 +4655,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 170,
+              "line": 171,
               "kind": "button-text"
             }
           ]
@@ -4746,7 +4787,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/Ending.tsx",
-              "line": 21,
+              "line": 22,
               "kind": "value-literal"
             }
           ]
@@ -4764,7 +4805,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 188,
+              "line": 189,
               "kind": "button-text"
             }
           ]
@@ -4782,7 +4823,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 181,
+              "line": 182,
               "kind": "translation-call"
             }
           ]
@@ -4802,6 +4843,11 @@
               "file": "packages/modules/goblin-chess/src/Board.tsx",
               "line": 237,
               "kind": "translation-call"
+            },
+            {
+              "file": "packages/modules/goblin-chess/src/game.ts",
+              "line": 81,
+              "kind": "translation-call"
             }
           ]
         },
@@ -4812,12 +4858,12 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 172,
+              "line": 173,
               "kind": "value-literal"
             },
             {
               "file": "packages/modules/goblin-chess/src/game.ts",
-              "line": 99,
+              "line": 100,
               "kind": "value-literal"
             }
           ]
@@ -4853,7 +4899,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 162,
+              "line": 163,
               "kind": "translation-call"
             }
           ]
@@ -4889,7 +4935,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 24,
+              "line": 25,
               "kind": "translation-call"
             }
           ]
@@ -4907,7 +4953,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 166,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -4925,7 +4971,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 166,
+              "line": 167,
               "kind": "value-literal"
             }
           ]
@@ -4943,7 +4989,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 187,
+              "line": 188,
               "kind": "value-literal"
             }
           ]
@@ -4961,7 +5007,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 172,
+              "line": 173,
               "kind": "translation-call"
             }
           ]
@@ -5027,26 +5073,8 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 179,
+              "line": 180,
               "kind": "value-literal"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "key": "4da4c861bb5e54693080496c7f0edd86",
-      "source": "your opponent",
-      "contexts": [
-        {
-          "shape": "body",
-          "purpose": "source string passed to the runtime translation helper",
-          "visualContext": "",
-          "locations": [
-            {
-              "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 90,
-              "kind": "translation-call"
             }
           ]
         }
@@ -5063,7 +5091,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 172,
+              "line": 173,
               "kind": "translation-call"
             }
           ]
@@ -5081,7 +5109,7 @@
           "locations": [
             {
               "file": "packages/modules/goblin-chess/src/ChessPage.tsx",
-              "line": 174,
+              "line": 175,
               "kind": "value-literal"
             }
           ]
@@ -5107,14 +5135,2222 @@
       ]
     },
     {
-      "key": "639bae9ac6b3e1a84cebb7b403297b79",
-      "source": "you",
+      "key": "6460d1ee222a1aea9307579e3668f389",
+      "source": "<0>✳</0> THE DEPARTMENT OF QUESTIONABLE DECISIONS",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 119,
+              "kind": "paragraph-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "df47ade9b9119213dae15d3935ecd4a0",
+      "source": "<0>01</0><1>Offer two possibilities.</1>",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 152,
+              "kind": "div-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "daef852020c5da2f1c7e512b95e66609",
+      "source": "<0>02</0><1>Let a tiny bit of fate decide.</1>",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 152,
+              "kind": "div-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "d0540d8a4077c9e37d998a586db84719",
+      "source": "<0>03</0><1>Meet the timeline you kept.</1>",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 152,
+              "kind": "div-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5c52dd419fd56be8602d4d34bbca34a9",
+      "source": "<0>A</0> The blue portal",
       "contexts": [
         {
           "shape": "label",
-          "purpose": "Translated dynamic value in a game message",
+          "purpose": "label for a form control or UI value",
           "visualContext": "",
-          "locations": []
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 55,
+              "kind": "label-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "595bbfc9816afd1c1d5c386ccbbfd174",
+      "source": "<0>B</0> The red portal",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "label for a form control or UI value",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 61,
+              "kind": "label-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "8edef476e37ef286ecf3b7dfcbc9a31a",
+      "source": "01 / THE DILEMMA",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 41,
+              "kind": "span-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "6efd14b64329c6b4b878b7a1c7213b7e",
+      "source": "02 / PLEASE HOLD REALITY",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 134,
+              "kind": "span-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "af822df38cc79a2ce71798bd97b947f9",
+      "source": "03 / THE COLLAPSE",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 28,
+              "kind": "span-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "16faf058d68e4b96a86726661eb4ecd1",
+      "source": "A big evening? A small adventure?",
+      "contexts": [
+        {
+          "shape": "placeholder",
+          "purpose": "placeholder text shown inside an input before the user enters content",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 51,
+              "kind": "placeholder"
+            }
+          ]
+        },
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 51,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "14f6b5e0c07a163a9edb07db02fe9267",
+      "source": "A choice has escaped.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 136,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "60babaa845a182cc98e59f5474d3057a",
+      "source": "A literal subatomic particle was forced to collapse its state just because you couldn't make up your mind. Here is the receipt.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 6,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2520f76aff5de255d04f15f253375926",
+      "source": "A little indecisive?",
+      "contexts": [
+        {
+          "shape": "header",
+          "purpose": "heading text for a page or UI section",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 47,
+              "kind": "heading-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5e24f2965e2ee5c791a36c3c2f25e29b",
+      "source": "A little nudge, not a prophecy. The final say is always yours.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 153,
+              "kind": "paragraph-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "c67dbf4efc76bd783e703b29d6e79beb",
+      "source": "A possibility",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 23,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "d86ce426e5d10c108d4918b3f5278089",
+      "source": "A small possum. An unreasonable amount of responsibility.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 27,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "85c8f5dbd76f248482df57d81d793096",
+      "source": "Add option A.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/possum.ts",
+              "line": 6,
+              "kind": "value-literal:call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "a21cd615f935045854372c0a01c3d8e5",
+      "source": "Add option B.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/possum.ts",
+              "line": 7,
+              "kind": "value-literal:call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "9d4dcfbad02a2b97cc52ba869a586bfc",
+      "source": "Aligning qubits…",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 7,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "408ea60b382d8e968a11eab91e2f1f20",
+      "source": "An aggressively early bedtime",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 6,
+              "kind": "data-field:optionB"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5dd790cd08cb3d585c68de25bcfe0c67",
+      "source": "AN UNFINISHED EXPERIMENT",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 141,
+              "kind": "span-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "cd4eef9e9f685068215af187facef110",
+      "source": "Another dilemma <0>↗</0>",
+      "contexts": [
+        {
+          "shape": "button",
+          "purpose": "button text for an action the user can take",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 43,
+              "kind": "button-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "423077573c87e14c5b4d07ae23e07c4e",
+      "source": "Another possibility",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 24,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "d87c81cc888c15727ba7ee0964a49520",
+      "source": "Beyond the other portal, the moon has misplaced its reflection. A very small possum is helping it look.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/possum.ts",
+              "line": 59,
+              "kind": "data-field:alternate_timeline"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "171ba6651890bcd7f04654b09fe2a2dc",
+      "source": "BOTH POSSIBLE. EQUALLY SUSPICIOUS.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 26,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "60e50628b896cafa9fa29ede0d95b692",
+      "source": "Classical randomness",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 22,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "c7215639c4e3c1a349090b4d16a29ff4",
+      "source": "Classical randomness · quantum pool unavailable",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 19,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "839e4281ad2172ecff905f025dee32ca",
+      "source": "Close Proof of Chaos",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 90,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fa8b86f9f160a8a8184074529d1c64c1",
+      "source": "Consulting the multiverse…",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 7,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "a6221f688d0584bf4f161b86c9caebe1",
+      "source": "Continue this dilemma",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 144,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "18ea3d06e0909e74f4bae9f973b33512",
+      "source": "Copied ✓",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 44,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "76cfa6f1b17191043ed2498b31952993",
+      "source": "Copy result",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 44,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "566317e27cd1ed5310f27a67008ca792",
+      "source": "Could not copy. You can select and copy the note above.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 45,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5ce3d41d8a61e147d572b6b2fb21156e",
+      "source": "Decision provenance",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 49,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "6c85159da00eb7fb0ce1a179e1e8b16b",
+      "source": "Dodging traffic in Timeline B…",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 7,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "f6b0e79a388f463f99c4aa7aabae728d",
+      "source": "Edit the dilemma",
+      "contexts": [
+        {
+          "shape": "button",
+          "purpose": "button text for an action the user can take",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 145,
+              "kind": "button-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "1dce3b9134abd95d7d415c0bf1dfb294",
+      "source": "EST. IN ANOTHER TIMELINE",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 20,
+              "kind": "span-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ff468dbe8538fb6a1e80550e67d897a9",
+      "source": "FATE HAS LITTLE HANDS",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 123,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "17f245ab15ffb124c560236905bfc7bb",
+      "source": "Fate has picked. I have chewed the paperwork. Between us, that is basically a plan.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/possum.ts",
+              "line": 54,
+              "kind": "data-field:wisdom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "403122f3e0eeacc0171040d9ac077f3b",
+      "source": "Feral",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 11,
+              "kind": "data-field:label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "256befaf7f83f3eea1116b4edf958b3d",
+      "source": "Fetching his story…",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 39,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "80ade84854ffab8e4475131df4f1558f",
+      "source": "FILED UNDER: QUESTIONABLE",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 99,
+              "kind": "div-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "b93f2321b0188631f74cdb54a08bf9cc",
+      "source": "Finish the note",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 144,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "9c33f750c88a65ec677bea6c5cc46349",
+      "source": "Give Percy a dilemma.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/possum.ts",
+              "line": 5,
+              "kind": "value-literal:call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "3549e46df2933000954f90cbfe0870e2",
+      "source": "Give the two timelines different options.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/possum.ts",
+              "line": 10,
+              "kind": "data-field:message"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "c41f08c29801ad59723bfe8e28dbf039",
+      "source": "Here is a little nudge, not a promise. Notice how this choice feels; the next step is still yours.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/possum.ts",
+              "line": 62,
+              "kind": "data-field:wisdom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "d21ad1cecdccce1d49332e0bfa00bd59",
+      "source": "How should I spend my Saturday?",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 7,
+              "kind": "data-field:question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "3765b6f487a8b2146478300fd6206e19",
+      "source": "Locating the least chewed paperwork…",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 7,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "6076b1a27803f9adb0777039ab135e9d",
+      "source": "Make my home extra cozy",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 7,
+              "kind": "data-field:optionB"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "e2e792937fae4654c8821957a026f127",
+      "source": "MEANWHILE, IN THE OTHER TIMELINE…",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 33,
+              "kind": "span-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "086a82933a31610bf6c58f98b78ff48c",
+      "source": "Mystical",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 12,
+              "kind": "data-field:label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "e5f16ea3a53871e037d4f527f58900af",
+      "source": "One door opens; a thousand stars politely pretend this was their idea. Take a small step through.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/possum.ts",
+              "line": 58,
+              "kind": "data-field:wisdom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "22c255aa1fa99695674fe833fffd9dbe",
+      "source": "One more side quest",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 6,
+              "kind": "data-field:optionA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "a5e979a33ab04c9d07c1c66ffb6c66d6",
+      "source": "One possibility…",
+      "contexts": [
+        {
+          "shape": "placeholder",
+          "purpose": "placeholder text shown inside an input before the user enters content",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 56,
+              "kind": "placeholder"
+            }
+          ]
+        },
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 56,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "660dc573e8aef747bbc762f03ca7ca18",
+      "source": "ONE TIMELINE. FRESHLY CHEWED.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 26,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2bae82ce4ac899e4d7e47701d8faec1c",
+      "source": "Open the portals <0>↗</0>",
+      "contexts": [
+        {
+          "shape": "button",
+          "purpose": "button text for an action the user can take",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 73,
+              "kind": "button-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "63071afe0e1ab03e848e7273dadca1a1",
+      "source": "Over there, a council of raccoons has called an emergency meeting. You are somehow responsible for the minutes.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/possum.ts",
+              "line": 55,
+              "kind": "data-field:alternate_timeline"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "4ea1fa02a580ac56de4af2c3f2bb25ae",
+      "source": "Percy gnawed on the data stream, but we managed to salvage the raw telemetry of your existential crisis.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 8,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "f4a6b59956768aa83d2a10bd351edf0c",
+      "source": "Percy is bringing you the paperwork.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 137,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "9f564fcafb9cac60b56da4fb724a2dcc",
+      "source": "Percy is considering both possibilities with absolutely no qualifications.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 137,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "93f674a5bcaf82ecd3d82e94177c653e",
+      "source": "Percy is making an entrance…",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 27,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "a482391d497148a6546cfd844e5e0e96",
+      "source": "Percy needs a breather. Try again in a little while.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/decision.ts",
+              "line": 35,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "f4be49336c6632cd5c08010639598bf4",
+      "source": "Percy, a wide-eyed possum in a ragged lab coat, stands between blue and red portals.",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "accessibility label for an interactive or visual element",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PercyScene.tsx",
+              "line": 202,
+              "kind": "aria-label"
+            }
+          ]
+        },
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PercyScene.tsx",
+              "line": 202,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "27dadae030b37d634386e59fddcded43",
+      "source": "PERCY’S QUANTUM LAB",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 20,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2cfc856b44dc05b6b79be5e93bd30249",
+      "source": "PERCY’S QUANTUM LAB / EVIDENCE DEPARTMENT",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 94,
+              "kind": "paragraph-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "4cd5c887b51a87b2c8df820518a4bb64",
+      "source": "Percy’s quantum laboratory",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "accessibility label for an interactive or visual element",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 19,
+              "kind": "aria-label"
+            }
+          ]
+        },
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 19,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "990aa0f6b99e141d45eaa4138ceea686",
+      "source": "Percy’s storyteller is resting. This is a note from his emergency stash.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 38,
+              "kind": "paragraph-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "8f053cb3ca241e4f6e9506ac0485a36d",
+      "source": "Percy’s vibe",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 67,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "bf3b194f466bee91084ef109478ad1f7",
+      "source": "PERCY<0/>APPROVED",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 28,
+              "kind": "span-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2deecbc4f724d0eb1f694f2fc12e090b",
+      "source": "Physical hardware can have measurement bias; equal odds are the ideal target.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 101,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "714a5b9886dee9d983e606cd847b03fd",
+      "source": "PORTAL A HAS SPOKEN",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 30,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "cbbdfc432f02f86f0aa48c5b5cfddcb1",
+      "source": "PORTAL B HAS SPOKEN",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 30,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "b01a68e3f0bd7a71df565a7519953880",
+      "source": "Proof of Chaos",
+      "contexts": [
+        {
+          "shape": "header",
+          "purpose": "heading text for a page or UI section",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 95,
+              "kind": "heading-text"
+            }
+          ]
+        },
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 81,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "edc86e4a858e366c9933a5f4e5169723",
+      "source": "Put it in the paws of a professional.<0/>He is not a professional.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 48,
+              "kind": "paragraph-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "b212a1d47d42d065a85e433b9d10577c",
+      "source": "Quantum measurement",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 22,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2f2d1bcd963f154db7a7365cd669ab3a",
+      "source": "Quantum measurement · Amazon Braket",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 19,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2b04edf7088c82e48e3bc4b0cacd1614",
+      "source": "Real quantum measurements when available.<0/>A clearly labeled classical coin flip when the universe is busy.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 129,
+              "kind": "paragraph-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "94205b56638fbc990ee0ecda2b23227e",
+      "source": "REALITY IS SETTLING",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 26,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "63bb77f09d31e6fd9b8b24bbfe105852",
+      "source": "Retry the story · keep this choice",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 40,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "c0ef49019687d7ea390f8bb020890b15",
+      "source": "Rewrite the note · keep this choice",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 40,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "71b26e3323fcd24c0a2419783831d364",
+      "source": "Right where you left Percy.",
+      "contexts": [
+        {
+          "shape": "header",
+          "purpose": "heading text for a page or UI section",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 141,
+              "kind": "heading-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "883c9d1ed7f587b5fc14886164f83e8b",
+      "source": "Schrödinger’s <0>Possum.</0>",
+      "contexts": [
+        {
+          "shape": "header",
+          "purpose": "heading text for a page or UI section",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 121,
+              "kind": "heading-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fb457a107a6b6dc4ed6b586dd912112f",
+      "source": "Schrödinger’s Possum",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 22,
+              "kind": "translation-call"
+            }
+          ]
+        },
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/manifest.ts",
+              "line": 4,
+              "kind": "data-field:title"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "3cdf992ed0e16560035273859e22f6b7",
+      "source": "Sincere",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 13,
+              "kind": "data-field:label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "cf9562b74980b74108479c223899b10e",
+      "source": "Somewhere, something is happening.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 136,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "7887f800debbd1641aa0b4816750e4e4",
+      "source": "SUPERPOSITION IN PROGRESS",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 26,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5a3a4ce2531a21b14ebc8ae8ea48cfd9",
+      "source": "The little lab is in low-power mode. Your portals still work.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PercyScene.tsx",
+              "line": 203,
+              "kind": "paragraph-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "29a4931a610b1a4299b5c63b3065d403",
+      "source": "The other path holds a different ordinary day, with its own small surprises. You do not need to live both to move forward.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/shared/src/possum.ts",
+              "line": 63,
+              "kind": "data-field:alternate_timeline"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "e245b3a7e6207c7f646b32aa4ccb5e72",
+      "source": "The other possibility…",
+      "contexts": [
+        {
+          "shape": "placeholder",
+          "purpose": "placeholder text shown inside an input before the user enters content",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 62,
+              "kind": "placeholder"
+            }
+          ]
+        },
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 62,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "315c7ec92ae281fe3484bdb5ffc348a1",
+      "source": "The other timeline",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 22,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "75ebc22de284c9c8f2a5ed406ebe0681",
+      "source": "The portal could not accept this request. Please try again.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/decision.ts",
+              "line": 36,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "7dd69038c6b690e6b4e2a09815585c80",
+      "source": "The portal got tangled. Try this same experiment again.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 91,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "de8a9b52c7417809ad4da6eddeb48456",
+      "source": "The portal returned an unreadable receipt. Please try again.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/decision.ts",
+              "line": 50,
+              "kind": "value-literal:call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ea3df0bf5d4302a56636130fa652d5e1",
+      "source": "The quantum computer was unavailable, so Percy borrowed your browser’s cryptographic coin. Same indecision. Different paperwork.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 11,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "1f90421ec9596c0109a3b9362fab105a",
+      "source": "The quantum pool is resting.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/decision.ts",
+              "line": 37,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "25de6c2a5d6c9397edc68768a30fb8a2",
+      "source": "The quantum service was unavailable, so this decision used your browser’s cryptographic random generator. No quantum measurement is claimed.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 102,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "e37d31d26c99caa4108c4e03ad436666",
+      "source": "The universe has spoken. Percy has added footnotes.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 27,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ac9194c4073858dbc5c547dd50198947",
+      "source": "This browser cannot save your result. Keep this tab open to preserve it.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 149,
+              "kind": "paragraph-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "bbe96e2d988f549b593b76b66f2eb5ad",
+      "source": "This decision was pulled from a real quantum computer by a possum with zero safety training. No refunds.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 7,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "9148084e22bdb565a2f9ceea40ef001c",
+      "source": "This decision was pulled from your browser’s random generator by a possum with zero safety training. No refunds.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 12,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "8a7d013513d0c9bc24ea70e70ebc4e89",
+      "source": "Try a new recipe",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 8,
+              "kind": "data-field:optionA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "40616a1265123804475aab057a35e560",
+      "source": "Try an example ↗",
+      "contexts": [
+        {
+          "shape": "button",
+          "purpose": "button text for an action the user can take",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 42,
+              "kind": "button-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ef87aee7c200e544ed8beed37086335f",
+      "source": "Two choices. One deeply unqualified possum.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 122,
+              "kind": "paragraph-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "36c7532a012d98e308e5f4e59aec994d",
+      "source": "Two choices. One deeply unqualified possum. Let quantum fate pick a path, then peek into the timeline you left behind.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/manifest.ts",
+              "line": 5,
+              "kind": "data-field:description"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "6382e71019071b61ac3236de5375c06a",
+      "source": "Two possibilities. One very questionable lab coat.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 74,
+              "kind": "paragraph-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "4f6db2c6080c9ec9593b4d126498a78d",
+      "source": "Untangling a very theoretical tail…",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/SuperpositionAnimation.tsx",
+              "line": 7,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "0234838260343e0a3ccc8ae2683f28aa",
+      "source": "Visit the little bookshop",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 8,
+              "kind": "data-field:optionB"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "6ba239bb8ca1785cc07ae1ecc7fe0104",
+      "source": "Wander somewhere new",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 7,
+              "kind": "data-field:optionA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "be89a3e8d2a372dccc02e62f1bdffbed",
+      "source": "What does my evening need?",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 6,
+              "kind": "data-field:question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "40cc9a3d8b4c06556faafbae48557dbf",
+      "source": "What should I do?",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "label for a form control or UI value",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 49,
+              "kind": "label-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2b3060be13cd52283d0ccaa118d7e134",
+      "source": "Which tiny adventure should I choose?",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "data-driven UI text rendered dynamically from app data",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/DilemmaForm.tsx",
+              "line": 8,
+              "kind": "data-field:question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "9e3fa9b012b0d78e5bed16793b01309e",
+      "source": "With questionable certainty,<0/><1>Percy</1><2>✹</2>",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 35,
+              "kind": "paragraph-text-rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "29b59cad614a698e8ec9fd20edae027f",
+      "source": "You may experience a brief sense of cosmic indecision.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 139,
+              "kind": "paragraph-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "55f32f45915a2daed98cb3d8bcc6b7bc",
+      "source": "Your choice is saved. Percy just needs to finish the note.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PossumPage.tsx",
+              "line": 143,
+              "kind": "paragraph-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "d82a1813c0f1d3b244f3f40185f74a5b",
+      "source": "Your decision",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "accessibility label for an interactive or visual element",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 26,
+              "kind": "aria-label"
+            }
+          ]
+        },
+        {
+          "shape": "body",
+          "purpose": "UI text in a value position",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 26,
+              "kind": "value-literal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5ce6fb73058c348263e7734267d4ff7c",
+      "source": "Your receipt appears after the portals choose.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/QuantumReceipt.tsx",
+              "line": 77,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "161d155bc81698428286e606bbce5d60",
+      "source": "Your result is ready to paste.",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "source string passed to the runtime translation helper",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/ChewedParchment.tsx",
+              "line": 45,
+              "kind": "translation-call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "095521bbd448ff35a9fe4f29d9dd6eaa",
+      "source": "Ψ<0>PERCY’S LAB</0>",
+      "contexts": [
+        {
+          "shape": "body",
+          "purpose": "body copy shown in the user interface",
+          "visualContext": "",
+          "locations": [
+            {
+              "file": "packages/modules/schrodingers-possum/src/PercyScene.tsx",
+              "line": 203,
+              "kind": "div-text-rich"
+            }
+          ]
         }
       ]
     },
@@ -5133,6 +7369,18 @@
     {
       "key": "2802d83b625211b469b99fb7b688eb5c",
       "source": "teleported",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "Translated dynamic value in a game message",
+          "visualContext": "",
+          "locations": []
+        }
+      ]
+    },
+    {
+      "key": "945d87fdfbf4104dfea9c83825759006",
+      "source": "castling",
       "contexts": [
         {
           "shape": "label",
@@ -5181,6 +7429,18 @@
     {
       "key": "3237fbc8204064c106cb9080088a17cb",
       "source": "Ceiling",
+      "contexts": [
+        {
+          "shape": "label",
+          "purpose": "Translated dynamic value in a game message",
+          "visualContext": "",
+          "locations": []
+        }
+      ]
+    },
+    {
+      "key": "ae4253d59033525e9a7096abd210a9bd",
+      "source": "Timelines collapsed",
       "contexts": [
         {
           "shape": "label",

@@ -1,4 +1,5 @@
 import { goblinChessRouter } from "./modules/goblin-chess.js";
+import { possumRouter } from "./modules/schrodingers-possum.js";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { getModelId } from "./ai.js";
@@ -33,6 +34,7 @@ app.get("/health", (c) => c.json({ ok: true, model: getModelId() }));
  * `/<module-id>/...` (`/api/<module-id>/...` in production).
  */
 const moduleRouters: Record<string, Hono> = {
+  "schrodingers-possum": possumRouter,
   "goblin-chess": goblinChessRouter,
   "emoji-translator": emojiTranslatorRouter,
   "commune-with-god": communeWithGodRouter,

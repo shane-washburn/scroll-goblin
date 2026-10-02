@@ -1,4 +1,5 @@
 import { z } from "zod";
+export * from './possum.js';
 
 /**
  * The contract shared between every frontend and backend.
@@ -142,6 +143,9 @@ export type BrainrotButtonShareState = z.infer<
  * `visits` is implicit for every module and tracked by the shell.
  */
 export const STAT_METRICS: Record<string, Record<string, string>> = {
+  "schrodingers-possum": {
+    decisions: "Timelines collapsed",
+  },
   "touch-grass": {
     touches: "Grass touches",
     plucks: "Grass plucked",

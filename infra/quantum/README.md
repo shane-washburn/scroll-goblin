@@ -4,7 +4,11 @@ Deployed stack: `scroll-goblins-quantum`, region `eu-north-1` (Stockholm).
 
 API: `https://5o1vmqmw04.execute-api.eu-north-1.amazonaws.com/oracle`
 
-This service runs eight independent Hadamard gates and measures all eight qubits
+The Possum `flip` action was deployed October 1, 2026 and verified from the local
+preview using a real pool measurement. A repeated request returned the same
+receipt. No paid job was submitted during deployment or verification.
+
+Shared by Goblin Chess and Schrödinger’s Possum. This service runs eight independent Hadamard gates and measures all eight qubits
 on IQM Garnet through Amazon Braket. There is **no simulator fallback**. Each
 shot is consumed once; unused bits within that shot are discarded. Hardware
 noise can bias measurements, so 50/50 and 1/8 are ideal target probabilities,
@@ -67,6 +71,13 @@ The importer will populate the pool once the task completes. Manual import uses
   Increments sequence once per result. After round five, the first three bits
   being `000` ends the game. The fourth bit picks white or black. A declaration
   always ends the game using the fourth bit for its winner.
+- Possum flip: `{"action":"flip","decision":"<random UUID>"}`. Atomically
+  consumes one shot from the shared pool and returns `source: "hardware"`,
+  `result: 0 | 1`, `taskArn`, `deviceArn`, `shot`, `bitIndex: 0`,
+  `circuitQubits: 8`, `measuredAt`, and `batchShots` when recorded. Zero selects
+  option A, one selects B; other bits are discarded. Retries return the same
+  result for seven days. Possum records use a separate namespace and cannot
+  alter chess sessions. Flips are limited to 20/IP/hour and cannot submit jobs.
 
 Keep a session UUID private; it is a capability for a casual, unranked match.
 Retries use the **same session and sequence** and receive the same response.

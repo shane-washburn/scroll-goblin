@@ -17,12 +17,27 @@ config.scanRoots = [
   ...['Playhouse.tsx', 'Room.tsx', 'model.ts', 'manifest.ts'].map(f => `packages/modules/lunas-playhouse/src/${f}`),
 ];
 const extraction = extractFromWorkspace(root, config);
+const possumConfig = { ...config,
+  scanRoots: ['packages/modules/schrodingers-possum/src', 'packages/shared/src/possum.ts'],
+  objectFields: [...config.objectFields, 'optionA', 'optionB', 'wisdom', 'alternate_timeline'],
+  // Protocol data, shader source, element IDs and model schema instructions are not UI copy.
+  excludePatterns: [...config.excludePatterns, '^sp-option[AB](-error)?$', '^NFKC$', '^varying vec2',
+    '^The current world:', '^A separate world where', '^Amazon Braket QPU$',
+    '^Classical randomness · Web Crypto$', '^Not recorded in this older batch$'],
+};
+const possumExtraction = extractFromWorkspace(root, possumConfig);
+for (const entry of possumExtraction.entries) {
+  const existing = extraction.entries.find(e => e.key === entry.key);
+  if (existing) existing.contexts.push(...entry.contexts);
+  else extraction.entries.push(entry);
+}
+extraction.diagnostics.push(...possumExtraction.diagnostics);
 // These are structured English context sent to the opponent, not UI messages.
 const protocol = /^(Human |No human action recorded yet\.|resurrected \{color\}|transformed \{color\}|\{value0\} \{color\} \{piece\})/;
 const entries = extraction.entries.filter(e => !protocol.test(e.source));
 // Short dynamic fragments are intentionally skipped by the generic extractor.
 // They are visible interpolation values, not game-state identifiers.
-for (const source of ['you', 'moved', 'teleported', 'Floor', 'Surface', 'Wall', 'Ceiling']) {
+for (const source of ['moved', 'teleported', 'castling', 'Floor', 'Surface', 'Wall', 'Ceiling', 'Timelines collapsed']) {
   if (!entries.some(entry => entry.source === source)) entries.push({ key: keyFor(source), source, contexts: [{ shape: 'label', purpose: 'Translated dynamic value in a game message', visualContext: '', locations: [] }] });
 }
 const catalog = { schemaVersion: 1, sourceLocale: config.sourceLocale, locales: config.locales, entries };
@@ -43,7 +58,9 @@ if (process.env.GOOGLE_GENERATIVE_AI_API_KEY) process.env.GEMINI_API_KEY ??= pro
 if (!process.env.GEMINI_API_KEY && !process.env.HEDGELING_GEMINI_API_KEY) throw new Error('Set GEMINI_API_KEY in .hedgeling/local.env before translating.');
 process.env.HEDGELING_GEMINI_MODEL ??= 'gemini-2.5-flash';
 process.env.HEDGELING_GEMINI_CACHE_DIR ??= path.join(root, '.hedgeling/gemini-cache');
-const brief = 'Use natural, clear language appropriate for the locale. All text must be family-friendly. Luna’s Playhouse is for age 4: simple, warm instructions, never sarcasm, profanity, frightening language, or slang. Chess can be playfully theatrical but controls must stay clear. Preserve Mia and Luna as names. Preserve cultural names Banig, Capiz, Carabao, Parol, Talavera, Alebrije and Zarape (transliteration is allowed in non-Latin scripts); translate their descriptive nouns. Preserve placeholders, ICU plural syntax, numbered markup tags, chess coordinates, and technical product names. Do not invent game mechanics. English regional variants should stay close to source unless local spelling or phrasing warrants a change.\n';
+const brief = 'The Universe’s verdicts, game-state announcements, control labels and error messages keep a plain, neutral register in every locale; reserve persona slang, memes and exclamations for character banter and clearly comedic flavor text. Use natural, clear language appropriate for the locale. All text must be family-friendly. Luna’s Playhouse is for age 4: simple, warm instructions, never sarcasm, profanity, frightening language, or slang. Chess can be playfully theatrical but controls must stay clear. Preserve Mia and Luna as names. Preserve cultural names Banig, Capiz, Carabao, Parol, Talavera, Alebrije and Zarape (transliteration is allowed in non-Latin scripts); translate their descriptive nouns. Preserve placeholders, ICU plural syntax, numbered markup tags, chess coordinates, and technical product names. Do not invent game mechanics. English regional variants should stay close to source unless local spelling or phrasing warrants a change.\n';
+const possumBrief = 'Schrödinger’s Possum is a playful quantum decision maker, not a shooter. Percy is a possum in a battered lab coat; preserve his name (natural local-script transliteration is allowed). Use the familiar local spelling of Schrödinger. Keep portal letters A and B unchanged. Preserve the distinction between actual quantum hardware and browser-generated classical randomness. Proof of Chaos is a playful receipt on a clipboard, not a scientific proof. Feral/Snarky is mischievous and harmless; Mystical is poetic; Sincere is warm and reassuring. Controls, errors, accessibility labels and provenance explanations must be clear. Keep short UI labels compact, including the title. Use the project locale persona for humor where it fits this source; do not inject unrelated gaming slang into technical instructions or sincere fallback stories.\n';
+const glossary = JSON.parse(await fs.readFile(path.join(root, '.hedgeling/glossary.json'), 'utf8'));
 const localeArg = process.argv.find(arg => arg.startsWith('--locales='));
 const locales = localeArg ? localeArg.slice('--locales='.length).split(',') : [...config.locales];
 if (locales.some(locale => !config.locales.includes(locale))) throw new Error('Unknown target locale.');
@@ -52,6 +69,9 @@ async function worker() {
   while (locales.length) {
     const locale = locales.shift();
     const filename = path.join(out, `${locale}.json`);
+    let persona;
+    try { persona = JSON.parse(await fs.readFile(path.join(root, '.hedgeling/personas', `${locale}.json`), 'utf8')); }
+    catch (error) { if (error.code !== 'ENOENT') throw error; }
     let draft = { schemaVersion: 1, locale, status: 'machine-draft-needs-review', translations: {} };
     try { draft = JSON.parse(await fs.readFile(filename, 'utf8')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
     const missing = entries.filter(e => draft.translations[e.key]?.source !== e.source || !draft.translations[e.key]?.text);
@@ -59,9 +79,15 @@ async function worker() {
       const batch = missing.slice(i, i + 32);
       try {
         const result = await geminiTranslateBatch({
-          locales: [locale], localeInstructions, personaInstructions: brief,
-          glossaryInstructions: brief,
-          items: batch.map((e, index) => ({ id: `message-${index}`, sourceText: e.source, shape: e.contexts[0]?.shape || 'body', purpose: e.contexts.map(c => c.purpose).join('; '), visualContext: e.contexts.flatMap(c => c.locations.map(l => l.file)).join(', '), limit: Math.max(40, Math.ceil(e.source.length * 1.8)) })),
+          locales: [locale], localeInstructions: target => persona
+            ? `Translate into ${target}. Follow the supplied project locale persona, with clear, concise UI controls.`
+            : localeInstructions(target),
+          personaInstructions: brief + possumBrief + (persona ? `Project locale persona: ${JSON.stringify(persona)}\n` : ''),
+          glossaryInstructions: `Project glossary: ${JSON.stringify(glossary)}\n` + brief + possumBrief,
+          items: batch.map((e, index) => ({ id: `message-${index}`, sourceText: e.source, shape: e.contexts[0]?.shape || 'body',
+            purpose: e.contexts.map(c => c.purpose).join('; ') + (e.source.startsWith('Schrödinger’s')
+              ? ' App title: a pun on the standard local name for Schrödinger’s cat, with cat replaced by a North American opossum (colloquially possum). Use natural local grammar and word order, not English possessive order. The rich and plain titles must use the same wording. In the rich title, <0> highlights the ANIMAL noun, not Schrödinger: move this tag pair with the noun as needed; final punctuation may move outside it.' : ''),
+            visualContext: e.contexts.flatMap(c => c.locations.map(l => l.file)).join(', '), limit: Math.max(40, Math.ceil(e.source.length * 1.8)) })),
         });
         for (const [index, entry] of batch.entries()) {
           const text = result.translations[`message-${index}`]?.[locale];
@@ -70,7 +96,7 @@ async function worker() {
         }
         await fs.writeFile(filename + '.tmp', JSON.stringify(draft, null, 2) + '\n');
         await fs.rename(filename + '.tmp', filename);
-        console.log(`${locale}: ${Object.keys(draft.translations).length}/${entries.length} drafted`);
+        console.log(`${locale}: ${entries.filter(e => draft.translations[e.key]?.source === e.source && draft.translations[e.key]?.text).length}/${entries.length} drafted`);
       } catch {
         // Provider error bodies may include request URLs: never log credentials.
         failures += batch.length;

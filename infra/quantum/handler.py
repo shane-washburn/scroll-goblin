@@ -89,7 +89,7 @@ def poll():
             for i, bits in enumerate(measurements[start:start + 50], start):
                 item = {**key('POOL', record['pk'] + '#%05d' % i), 'bits': ''.join(map(str, bits)),
                         'taskArn': record['arn'], 'deviceArn': DEVICE, 'shot': i,
-                        'measuredAt': task['endedAt'].isoformat()}
+                        'measuredAt': task['endedAt'].isoformat(), 'batchShots': len(measurements)}
                 writes.append({'Put': {'TableName': TABLE, 'Item': pack(item)}})
             try:
                 client.transact_write_items(TransactItems=writes)
@@ -105,7 +105,45 @@ def rate_limit(ip, action):
     item_key = key('RATE#' + hashlib.sha256(ip.encode()).hexdigest()[:24], str(window) + action)
     item = table.update_item(Key=item_key, UpdateExpression='SET expires = :ttl ADD requests :one',
                              ExpressionAttributeValues={':ttl': (window + 2) * 3600, ':one': 1}, ReturnValues='ALL_NEW')['Attributes']
-    return item['requests'] <= (20 if action == 'start' else 300)
+    return item['requests'] <= (20 if action in ('start', 'flip') else 300)
+
+
+def flip(body):
+    """One possum decision consumes one whole shot from the shared chess pool.
+
+    A separate key space prevents a possum UUID from reading or mutating a chess
+    session. Deleting the shot and recording its answer is a single transaction.
+    Only bit zero is returned; other bits in that shot are discarded.
+    """
+    decision = str(uuid.UUID(body['decision']))
+    pk = 'POSSUM#' + decision
+    for _ in range(8):
+        saved = read(pk)
+        if saved:
+            return response(200, json.loads(saved['response']))
+        pool = table.query(KeyConditionExpression='pk = :p', ExpressionAttributeValues={':p': 'POOL'},
+                           Limit=1, ConsistentRead=True)['Items']
+        if not pool:
+            return response(503, {'error': 'The Universe is recharging. Please try again soon.'})
+        shot = pool[0]
+        answer = {k: shot[k] for k in ('taskArn', 'deviceArn', 'measuredAt')}
+        answer.update(source='hardware', result=int(shot['bits'][0]), shot=int(shot['shot']),
+                      bitIndex=0, circuitQubits=8)
+        if 'batchShots' in shot:
+            answer['batchShots'] = int(shot['batchShots'])
+        try:
+            client.transact_write_items(TransactItems=[
+                {'Delete': {'TableName': TABLE, 'Key': pack(key('POOL', shot['sk'])),
+                            'ConditionExpression': 'attribute_exists(pk)'}},
+                {'Put': {'TableName': TABLE, 'Item': pack({**key(pk), 'response': json.dumps(answer),
+                          'expires': int(time.time()) + 86400 * 7}), 'ConditionExpression': 'attribute_not_exists(pk)'}}])
+            return response(200, answer)
+        except client.exceptions.TransactionCanceledException:
+            pass
+    saved = read(pk)
+    if saved:
+        return response(200, json.loads(saved['response']))
+    return response(503, {'error': 'The Universe is busy. Retry this same decision.'})
 
 
 def consume(body):
@@ -186,11 +224,11 @@ def handler(event, context):
         if not isinstance(body, dict):
             return response(400, {'error': 'Invalid request'})
         ip = event['requestContext'].get('http', {}).get('sourceIp', 'unknown')
-        if body.get('action') not in ('start', 'verdict'):
+        if body.get('action') not in ('start', 'verdict', 'flip'):
             return response(400, {'error': 'Unknown action'})
         if not rate_limit(ip, body['action']):
             return response(429, {'error': 'The Universe needs a breather. Try again later.'})
-        return consume(body)
+        return flip(body) if body['action'] == 'flip' else consume(body)
     except (ValueError, KeyError, TypeError):
         return response(400, {'error': 'Invalid request'})
     except ClientError:
