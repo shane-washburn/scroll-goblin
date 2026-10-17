@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { LESSONS, validateCurriculum } from './curriculum';
-import { SAVE_KEY, canEquip, currentStreak, dayDistance, dayKey, earnedStars, freshProgress, isCorrect,
-  readProgress, recordActivity, refreshDay, starsTotal, transition, unlocked, xpTotal } from './engine';
+import { CAST_SECONDS, SAVE_KEY, canEquip, currentStreak, dayDistance, dayKey, earnedStars, freshProgress, isCorrect,
+  latestCompletion, nextCampaignLesson, readProgress, recordActivity, refreshDay, starsTotal, transition, unlocked, xpTotal } from './engine';
 import type { Answer, Challenge, Progress } from './types';
 
 const now = new Date(2026, 9, 17, 12);
@@ -50,6 +50,42 @@ test('sequence matching preserves indentation, duplicates and token identity; ty
   assert.equal(isCorrect(word, [0, -1, 1]), false);
   const micro = LESSONS[0].challenges[3];
   assert.ok(isCorrect(micro, ' True ')); assert.equal(isCorrect(micro, 'true'), false);
+});
+test('authoring rejects unreachable token counts and unmatchable typing answers', () => {
+  const word = LESSONS[0].challenges.find(c => c.type === 'word_bank')!;
+  const micro = LESSONS[0].challenges.find(c => c.type === 'micro_caster')!;
+  const validate = (challenge: Challenge) => validateCurriculum([{ ...LESSONS[0], challenges: [challenge] }]);
+  for (const sequence of [word.correctSequence.slice(1), [...word.correctSequence, word.tokens[0]]]) {
+    assert.throws(() => validate({ ...word, acceptedSequences: [sequence] }), /answer slots/);
+  }
+  assert.doesNotThrow(() => validate({ ...word, acceptedSequences: [[...word.correctSequence].reverse()] }));
+  for (const answer of ['', ' ', ' True', 'True ', '\nTrue\t']) {
+    assert.throws(() => validate({ ...micro, answer }), /outer whitespace/);
+    assert.throws(() => validate({ ...micro, acceptedAnswers: [answer] }), /outer whitespace/);
+  }
+  assert.doesNotThrow(() => validate({ ...micro, answer: 'x + y', acceptedAnswers: ['x+y'] }));
+});
+test('the next campaign path reaches the Nether from either completed language and ends at the certificate', () => {
+  for (const first of ['python', 'java'] as const) {
+    let p: Progress = { ...freshProgress(now), selectedTrack: first };
+    assert.equal(nextCampaignLesson(p, LESSONS)?.trackId, first);
+    for (const lesson of LESSONS.filter(l => l.trackId === first)) p = finish(p, lesson.nodeId);
+    assert.equal(nextCampaignLesson(p, LESSONS)?.trackId, first === 'python' ? 'java' : 'python');
+    for (const lesson of LESSONS.filter(l => l.trackId !== first && l.trackId !== 'nether')) p = finish(p, lesson.nodeId);
+    p.selectedTrack = first;
+    assert.equal(nextCampaignLesson(p, LESSONS)?.nodeId, LESSONS.find(l => l.trackId === 'nether')?.nodeId);
+    for (const lesson of LESSONS.filter(l => l.trackId === 'nether')) p = finish(p, lesson.nodeId);
+    assert.equal(nextCampaignLesson(p, LESSONS), undefined);
+  }
+});
+test('certificate completion dates follow the catalog even after a node is renamed or reordered', () => {
+  const nether = LESSONS.filter(l => l.trackId === 'nether').map(l => ({ ...l, nodeId: `renamed-${l.nodeId}` })).reverse();
+  const p = freshProgress(now);
+  assert.equal(latestCompletion(p, nether), null);
+  for (const lesson of nether) p.completed[lesson.nodeId] = { stars: 3, completedAt: '2026-10-17T18:00:00Z' };
+  p.completed[nether[2].nodeId].completedAt = '2026-10-19T18:00:00Z';
+  p.completed[LESSONS[0].nodeId] = { stars: 3, completedAt: '2026-10-20T18:00:00Z' };
+  assert.equal(latestCompletion(p, nether), '2026-10-19T18:00:00Z');
 });
 test('both independent tracks start open; prerequisites and the joint Nether gate are enforced', () => {
   let p = freshProgress(now);
@@ -99,6 +135,25 @@ test('the typing clock waits for readiness, survives a reload, and expires once 
   p = transition(p, { type: 'retry' }, LESSONS, now);
   assert.equal(p.run?.deadline, null);
 });
+test('restored clocks are bounded to a cast and are only active on a timed typing challenge', () => {
+  const p = transition(freshProgress(now), { type: 'start', nodeId: LESSONS[0].nodeId, practice: false }, LESSONS, now);
+  const run = { ...p.run!, phase: 'challenge' as const, index: 3, deadline: Number.MAX_VALUE };
+  const restored = readProgress(JSON.stringify({ ...p, run }), LESSONS, now);
+  assert.ok(restored.recovered);
+  assert.equal(restored.progress.run?.deadline, now.getTime() + CAST_SECONDS * 1000);
+  const expired = transition(restored.progress, { type: 'timeout' }, LESSONS, new Date(now.getTime() + CAST_SECONDS * 1000));
+  assert.equal(expired.hearts, 4);
+  for (const changes of [{ phase: 'story' }, { feedback: 'correct' }, { index: 0 }, { timed: false }, { practice: true }]) {
+    const loaded = readProgress(JSON.stringify({ ...p, run: { ...run, ...changes } }), LESSONS, now);
+    assert.ok(loaded.recovered); assert.equal(loaded.progress.run?.deadline, null);
+    if ('practice' in changes) assert.equal(loaded.progress.run?.timed, false);
+  }
+  const tomorrow = new Date(now.getTime() + 86400000);
+  const loaded = readProgress(JSON.stringify({ ...p, run: { ...run, deadline: now.getTime() + 30000 } }), LESSONS, tomorrow).progress;
+  const timedOut = transition(loaded, { type: 'timeout' }, LESSONS, tomorrow);
+  assert.equal(timedOut.run?.feedback, 'timeout'); assert.equal(timedOut.hearts, 4);
+  assert.deepEqual(transition(timedOut, { type: 'timeout' }, LESSONS, tomorrow), timedOut);
+});
 test('daily hearts use local calendar days and cannot be farmed by a backwards clock', () => {
   const p = { ...freshProgress(now), hearts: 0 };
   assert.equal(refreshDay(p, new Date(2026, 9, 17, 23, 59)).hearts, 0);
@@ -118,6 +173,27 @@ test('seven actual consecutive days brew a potion, one missed day consumes it, b
   assert.equal(currentStreak(p, new Date(2026, 9, 28)), 0);
   p = recordActivity(p, new Date(2026, 9, 28));
   assert.equal(p.streak, 1); assert.equal(p.brewDays, 1);
+});
+test('a backwards clock hides the streak without changing recorded activity', () => {
+  const p = recordActivity(freshProgress(now), now);
+  const yesterday = new Date(2026, 9, 16);
+  assert.equal(currentStreak(p, yesterday), 0);
+  assert.deepEqual(recordActivity(p, yesterday), p);
+  assert.equal(currentStreak(p, now), 1);
+});
+test('a finished brew waits at capacity, survives reload and gaps, then fills a used potion slot', () => {
+  let p = freshProgress(now);
+  for (let i = 0; i < 28; i++) p = recordActivity(p, new Date(2026, 9, 17 + i));
+  assert.equal(p.freezes, 3); assert.equal(p.brewDays, 7);
+  const loaded = readProgress(JSON.stringify(p), LESSONS, now);
+  assert.equal(loaded.recovered, false); assert.equal(loaded.progress.brewDays, 7);
+  p = recordActivity(loaded.progress, new Date(2026, 9, 45));
+  assert.equal(p.freezes, 3); assert.equal(p.brewDays, 7);
+  const afterGap = recordActivity(p, new Date(2026, 9, 49));
+  assert.equal(afterGap.streak, 1); assert.equal(afterGap.brewDays, 7);
+  p = recordActivity(p, new Date(2026, 9, 47));
+  assert.equal(p.streak, 30); assert.equal(p.freezes, 3); assert.equal(p.brewDays, 0);
+  assert.deepEqual(recordActivity(p, new Date(2026, 9, 47)), p);
 });
 test('corrupt and incompatible saves recover; invalid prerequisites cannot unlock rewards', () => {
   assert.equal(SAVE_KEY, 'scroll-goblin-code-goblin-v1');

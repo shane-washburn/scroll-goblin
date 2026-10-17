@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Check, Globe2 } from "lucide-react";
 import { canReadLocaleStorage } from "./localeStorage";
 
@@ -39,6 +39,8 @@ function currentLocale(): string {
 export function LanguageSelector() {
   const [selected] = useState(currentLocale);
   const [storageAvailable] = useState(canReadLocaleStorage);
+  const [storageError, setStorageError] = useState(storageAvailable ? "" : "Language selection needs browser storage. Showing English.");
+  const storageHintId = useId();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const current = LANGUAGES.find((language) => language.code === selected) ?? LANGUAGES[0];
@@ -63,7 +65,10 @@ export function LanguageSelector() {
     setIsOpen(false);
     if (code === selected) return;
     try { window.localStorage.setItem(STORAGE_KEY, code); }
-    catch { return; }
+    catch {
+      setStorageError(`Could not save your language. Still showing ${current.label}. Allow browser storage and try again.`);
+      return;
+    }
     document.documentElement.lang = code;
     window.location.reload();
   };
@@ -73,15 +78,16 @@ export function LanguageSelector() {
       <button
         type="button"
         aria-label={`Language: ${current.label}`}
-        disabled={!storageAvailable}
-        title={!storageAvailable ? "Language selection needs browser storage. Showing English." : undefined}
+        aria-disabled={!storageAvailable}
+        aria-describedby={storageError && !isOpen ? storageHintId : undefined}
         aria-expanded={isOpen}
         aria-haspopup="menu"
         className="inline-flex h-8 w-8 items-center justify-center rounded-neobrutal border-thin border-brand-border bg-brand-secondary text-brand-text shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"
-        onClick={() => setIsOpen((open) => !open)}
+        onClick={() => { if (storageAvailable) setIsOpen((open) => !open); }}
       >
         <Globe2 className="h-4 w-4" />
       </button>
+      {storageError && !isOpen ? <p id={storageHintId} role="status" className="absolute end-0 top-full mt-2 w-56 rounded-neobrutal border-thin border-brand-border bg-brand-surface p-3 text-xs text-brand-text shadow-neo">{storageError}</p> : null}
       {isOpen ? (
         <div
           role="menu"

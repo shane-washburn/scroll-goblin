@@ -3,9 +3,11 @@
  */
 import assert from 'node:assert/strict';
 import { readFile, mkdir } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const base = process.env.CODE_GOBLIN_BASE_URL || 'http://127.0.0.1:5174';
-const output = process.env.CODE_GOBLIN_SCREENSHOTS || '/private/tmp/code-goblin-checks';
+const output = process.env.CODE_GOBLIN_SCREENSHOTS || join(tmpdir(), 'code-goblin-checks');
 const lessons = JSON.parse(await readFile(new URL('../packages/modules/code-goblin/src/lessons.json', import.meta.url), 'utf8'));
 const key = 'scroll-goblin-code-goblin-v1';
 await mkdir(output, { recursive: true });
@@ -70,6 +72,25 @@ try {
   await page.keyboard.press('Escape');
   assert.equal(await settings.evaluate(el => el === document.activeElement), true);
   assert.equal((await saved()).timed, false);
+  // The hero must leave completed language tracks and eventually open the diploma.
+  const completed = nodes => Object.fromEntries(nodes.map(l => [l.nodeId, { stars: 3, completedAt: new Date().toISOString() }]));
+  const languageLessons = lessons.filter(l => l.trackId !== 'nether');
+  for (const selectedTrack of ['python', 'java']) {
+    await put({ ...fresh, selectedTrack, completed: completed(lessons.filter(l => l.trackId === selectedTrack)) });
+    await page.getByRole('button', { name: 'Explore the next path' }).click();
+    assert.equal((await saved()).selectedTrack, selectedTrack === 'python' ? 'java' : 'python');
+    await put({ ...fresh, selectedTrack, completed: completed(languageLessons) });
+    await page.getByRole('button', { name: 'Explore the next path' }).click();
+    assert.equal((await saved()).selectedTrack, 'nether');
+    await page.getByRole('button', { name: 'Continue the adventure' }).click();
+    assert.equal((await saved()).run.nodeId, lessons.find(l => l.trackId === 'nether').nodeId);
+  }
+  for (const selectedTrack of ['python', 'java', 'nether']) {
+    await put({ ...fresh, selectedTrack, completed: completed(lessons) });
+    await page.getByRole('button', { name: 'Your certificate awaits' }).click();
+    await page.locator('.cg-certificate').waitFor();
+  }
+  console.log('PASS hero routes both completed languages to the Nether and all completed paths to the certificate');
   await put(fresh);
   if (!process.argv.includes('--edges-only')) {
   // Play the entire campaign through the UI; this also verifies every JSON answer.
@@ -90,7 +111,7 @@ try {
     console.log(`PASS ${lesson.nodeId}`);
   }
   const complete = await saved();
-  assert.equal(Object.keys(complete.completed).length, 33);
+  assert.equal(Object.keys(complete.completed).length, lessons.length);
   assert.equal(complete.hearts, 5);
   await page.getByRole('button', { name: 'Claim your certificate' }).click();
   await page.getByLabel('Name on your certificate').fill('Pip <the Great> & Friends');
@@ -99,7 +120,7 @@ try {
   const download = await downloadEvent;
   const svg = await readFile(await download.path(), 'utf8');
   assert.match(svg, /Pip &lt;the Great&gt; &amp; Friends/);
-  assert.match(svg, /99 stars earned/);
+  assert.ok(svg.includes(`${lessons.length * 3} stars earned`));
   await page.screenshot({ path: `${output}/certificate.png`, fullPage: true });
   await page.getByRole('button', { name: 'Pip’s satchel', exact: true }).click();
   await page.locator('.cg-trinket').filter({ hasText: 'The Indentation Scarf' }).getByRole('button').click();
@@ -134,6 +155,28 @@ try {
   assert.equal((await saved()).hearts, 3);
   await reload(); assert.equal((await saved()).hearts, 3);
   console.log('PASS wrong answer, single heart deduction, reload, saved code chips, real drag/drop, expired-clock recovery');
+  // Keystrokes coalesce; pagehide and explicit navigation flush an unfinished draft.
+  await put({ ...timed, run: { ...timed.run, answer: null, deadline: null, timed: false } });
+  await page.getByRole('button', { name: 'Continue your lesson' }).click();
+  await page.evaluate(key => {
+    const original = Storage.prototype.setItem;
+    window.codeGoblinWrites = 0;
+    Storage.prototype.setItem = function (name, value) {
+      if (name === key) window.codeGoblinWrites++;
+      return original.call(this, name, value);
+    };
+  }, key);
+  await page.getByLabel('Your missing fragment').pressSequentially('True', { delay: 20 });
+  assert.equal(await page.evaluate(() => window.codeGoblinWrites), 0);
+  await page.waitForFunction(() => window.codeGoblinWrites === 1);
+  assert.equal((await saved()).run.answer, 'True');
+  await page.getByLabel('Your missing fragment').fill('False');
+  await reload(); await page.getByRole('button', { name: 'Continue your lesson' }).click();
+  assert.equal(await page.getByLabel('Your missing fragment').inputValue(), 'False');
+  await page.getByLabel('Your missing fragment').fill('True');
+  await page.getByRole('button', { name: 'Save & return to map' }).click();
+  assert.equal((await saved()).run.answer, 'True');
+  console.log('PASS debounced typing and draft preservation on reload/navigation');
   await put({ ...fresh, hearts: 0 });
   await page.getByRole('button', { name: 'Practice a spell' }).click();
   await page.getByRole('button', { name: 'Let’s cast' }).click();
@@ -157,14 +200,38 @@ try {
   await blocked.addInitScript(() => { Object.defineProperty(window, 'localStorage', { get() { throw new DOMException('Blocked', 'SecurityError'); } }); });
   await blocked.route('**/stats/**', route => route.fulfill({ json: { ok: true } }));
   const blockedPage = await blocked.newPage();
+  blockedPage.on('pageerror', error => errors.push(error.message));
   await blockedPage.goto(`${base}/apps/code-goblin`);
   await blockedPage.locator('.cg-notice').waitFor();
+  const languageButton = blockedPage.getByRole('button', { name: 'Language: English', exact: true });
+  assert.equal(await languageButton.getAttribute('aria-disabled'), 'true');
+  await languageButton.focus();
+  assert.equal(await languageButton.evaluate(el => el === document.activeElement), true);
+  await blockedPage.getByText('Language selection needs browser storage. Showing English.', { exact: true }).waitFor();
   await blockedPage.getByRole('button', { name: 'Begin your adventure' }).click();
   await blockedPage.getByRole('button', { name: 'Let’s cast' }).click();
   await blockedPage.locator('.cg-word-bank').waitFor();
   await blocked.close();
+  const writeBlocked = await browser.newContext();
+  await writeBlocked.addInitScript(() => {
+    const original = Storage.prototype.setItem;
+    Storage.prototype.setItem = function (name, value) {
+      if (name === 'hedgeling.locale') throw new DOMException('Storage full', 'QuotaExceededError');
+      return original.call(this, name, value);
+    };
+  });
+  await writeBlocked.route('**/stats/**', route => route.fulfill({ json: { ok: true } }));
+  const writeBlockedPage = await writeBlocked.newPage();
+  writeBlockedPage.on('pageerror', error => errors.push(error.message));
+  await writeBlockedPage.goto(`${base}/apps/code-goblin`);
+  await writeBlockedPage.locator('.cg-hero').waitFor();
+  await writeBlockedPage.getByRole('button', { name: 'Language: English', exact: true }).click();
+  await writeBlockedPage.getByRole('menuitemradio', { name: 'Español', exact: true }).click();
+  await writeBlockedPage.getByText('Could not save your language. Still showing English. Allow browser storage and try again.', { exact: true }).waitFor();
+  assert.equal(await writeBlockedPage.evaluate(() => document.documentElement.lang), 'en-US');
+  await writeBlocked.close();
   assert.deepEqual(errors, []);
-  console.log('PASS corrupt-save recovery, denied storage, no browser errors');
+  console.log('PASS corrupt-save recovery, denied storage, accessible language hints, visible write failures, no browser errors');
 } catch (error) {
   console.error('Failed UI state:', await saved(), await page.locator('.cg-app').innerText());
   await page.screenshot({ path: `${output}/failure.png`, fullPage: true });

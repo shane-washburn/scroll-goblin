@@ -23,18 +23,21 @@ export function refreshDay(progress: Progress, now = new Date()): Progress {
 export function currentStreak(progress: Progress, now = new Date()): number {
   if (!progress.lastActiveDay) return 0;
   const gap = dayDistance(progress.lastActiveDay, dayKey(now));
-  return gap <= 1 || (gap === 2 && progress.freezes > 0) ? progress.streak : 0;
+  return (gap >= 0 && gap <= 1) || (gap === 2 && progress.freezes > 0) ? progress.streak : 0;
 }
 export function recordActivity(progress: Progress, now: Date): Progress {
   const today = dayKey(now);
   if (progress.lastActiveDay && today <= progress.lastActiveDay) return progress;
   const gap = progress.lastActiveDay ? dayDistance(progress.lastActiveDay, today) : Infinity;
   const useFreeze = gap === 2 && progress.freezes > 0;
-  const brewDays = gap === 1 ? progress.brewDays + 1 : 1;
+  // A finished brew waits in the cauldron until there is room in the satchel.
+  const brewDays = progress.brewDays === 7 ? 7 : gap === 1 ? progress.brewDays + 1 : 1;
+  const freezes = progress.freezes - Number(useFreeze);
+  const collectBrew = brewDays === 7 && freezes < 3;
   return { ...progress, lastActiveDay: today,
     streak: gap === 1 || useFreeze ? progress.streak + 1 : 1,
-    brewDays: brewDays >= 7 ? 0 : brewDays,
-    freezes: Math.min(3, progress.freezes - Number(useFreeze) + Number(brewDays >= 7)) };
+    brewDays: collectBrew ? 0 : brewDays,
+    freezes: freezes + Number(collectBrew) };
 }
 export function starsTotal(progress: Progress): number {
   return Object.values(progress.completed).reduce((sum, node) => sum + node.stars, 0);
@@ -45,6 +48,17 @@ export function xpTotal(progress: Progress): number {
 export function earnedStars(mistakes: number): number { return mistakes === 0 ? 3 : mistakes <= 2 ? 2 : 1; }
 export function unlocked(lesson: Lesson, progress: Progress): boolean {
   return lesson.prerequisites.every(id => Boolean(progress.completed[id]));
+}
+/** Prefer the selected path, then the next playable lesson elsewhere in the catalog. */
+export function nextCampaignLesson(progress: Progress, lessons: Lesson[]): Lesson | undefined {
+  const available = lessons.filter(l => !progress.completed[l.nodeId] && unlocked(l, progress));
+  return available.find(l => l.trackId === progress.selectedTrack) ?? available[0];
+}
+export function latestCompletion(progress: Progress, lessons: Lesson[]): string | null {
+  return lessons.reduce<string | null>((latest, lesson) => {
+    const date = progress.completed[lesson.nodeId]?.completedAt;
+    return date && (!latest || Date.parse(date) > Date.parse(latest)) ? date : latest;
+  }, null);
 }
 export function canEquip(trinket: Trinket, progress: Progress, lessons: Lesson[]): boolean {
   if (trinket === 'none') return true;
@@ -148,7 +162,7 @@ export function readProgress(raw: string | null, lessons: Lesson[], now = new Da
     const value = JSON.parse(raw) as Progress;
     if (!value || value.version !== 1 || !value.completed || typeof value.completed !== 'object' || Array.isArray(value.completed) ||
       !integer(value.hearts, 0, 5) || !validDay(value.heartDay) || !integer(value.streak, 0, 100000) ||
-      !integer(value.brewDays, 0, 6) || !integer(value.freezes, 0, 3) ||
+      !integer(value.brewDays, 0, 7) || !integer(value.freezes, 0, 3) ||
       !(value.lastActiveDay === null || validDay(value.lastActiveDay)) ||
       !['python', 'java', 'nether'].includes(value.selectedTrack) || !['none', 'scarf', 'hammer', 'tail'].includes(value.equipped) ||
       typeof value.timed !== 'boolean' || typeof value.sound !== 'boolean') throw new Error('Invalid save');
@@ -176,8 +190,14 @@ export function readProgress(raw: string | null, lessons: Lesson[], now = new Da
         integer(run.mistakes, 0, 100000) && [null, 'correct', 'incorrect', 'timeout'].includes(run.feedback) &&
         typeof run.hintUsed === 'boolean' && typeof run.timed === 'boolean' && answerValid &&
         (run.deadline === null || typeof run.deadline === 'number' && Number.isFinite(run.deadline) && run.deadline > 0)) {
+        const timed = run.timed && !run.practice;
+        const clockCanRun = timed && run.phase === 'challenge' && run.feedback === null && lesson.challenges[run.index].type === 'micro_caster';
+        // Keep elapsed deadlines so leaving the tab never resets a running cast.
+        // Future deadlines get at most one cast, including after a clock rollback.
+        const deadline = clockCanRun && run.deadline !== null ? Math.min(run.deadline, now.getTime() + CAST_SECONDS * 1000) : null;
+        if (deadline !== run.deadline || timed !== run.timed) recovered = true;
         progress.run = { nodeId: run.nodeId, practice: run.practice, phase: run.phase, index: run.index, mistakes: run.mistakes,
-          answer: run.answer, feedback: run.feedback, hintUsed: run.hintUsed, deadline: run.deadline, timed: run.timed };
+          answer: run.answer, feedback: run.feedback, hintUsed: run.hintUsed, deadline, timed };
       } else recovered = true;
     }
     return { progress: refreshDay(progress, now), recovered };

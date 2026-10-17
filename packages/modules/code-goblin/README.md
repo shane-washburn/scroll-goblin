@@ -27,6 +27,10 @@ The four mechanics are token assembly (click, keyboard or drag), selecting a
 faulty line, cross-language multiple choice, and typing a missing fragment.
 The typing clock starts explicitly, has a 30-second deadline that survives
 reload/backgrounding, and can be disabled in settings before the next run.
+Once started, leaving or closing the tab does not pause the clock: returning
+after expiry costs one heart, once. This is explained before starting a cast.
+Restored future deadlines are capped at 30 seconds from load, so a modified save
+or clock rollback cannot create an unbounded timer.
 Practice is always untimed. Code and user-typed fragments are excluded from DOM
 translation and maintain left-to-right direction.
 
@@ -42,11 +46,15 @@ The versioned browser save is `scroll-goblin-code-goblin-v1`. It includes the
 active lesson, partially assembled/typed answer, feedback, deadline, hearts,
 stars, streak, potions, selected track, equipped keepsake and settings. Reload
 offers to resume. Starting another unfinished lesson requires an in-app choice.
+Typing drafts save after 300 ms of inactivity and flush on navigation, hiding or
+closing the page. Scoring, timer starts and other progress changes save immediately.
 Invalid saves recover valid completed nodes when possible; denied storage is
 reported while in-memory play remains available. Saves are local to this browser,
 are not an authentication/anti-cheat system, and do not sync between devices.
 The shell falls back to source-English rendering when locale storage cannot be
 read, because the current Hedgeling provider otherwise throws before modules mount.
+The language control remains focusable with a visible storage explanation;
+failed locale writes display an error without reloading or changing language.
 
 - Five hearts reset at local midnight. Incorrect campaign submissions and
   expired typing clocks cost one heart. A feedback screen cannot charge twice.
@@ -57,6 +65,8 @@ read, because the current Hedgeling provider otherwise throws before modules mou
   plus 10 per best star, so repeating a perfect lesson cannot farm XP.
 - A completed campaign/practice lesson counts as activity for the local day.
   Seven actual consecutive active days brew a freeze potion (maximum three).
+  At capacity, one finished brew waits in the cauldron across reloads and gaps;
+  it fills the next slot freed by an automatically consumed potion.
   Returning after exactly one missed day automatically consumes one potion and
   continues the streak. Longer gaps reset it. Day calculations handle DST.
 - Nine stars unlock Pip's scarf; 24 unlock his hammer. Finishing the Nether
@@ -81,8 +91,12 @@ Keep prerequisite lessons earlier in the array. Use stable node IDs to preserve
 existing saves. Give every challenge a unique ID and a meaningful hint and
 explanation. Word-bank answers must be constructible with the supplied tokens,
 including duplicate tokens and significant whitespace. Explicit
-`acceptedSequences` / `acceptedAnswers` can allow equivalent solutions. Never
-execute lesson content with eval or dynamically generated functions.
+`acceptedSequences` / `acceptedAnswers` can allow equivalent solutions. All
+accepted token sequences must have the same length as `correctSequence`, matching
+the rendered slots. All authored Micro-Caster answers must be nonempty with no
+outer whitespace; the player's input is trimmed before matching. Displayed lesson
+and challenge counts and the certificate date are derived from the curriculum.
+Never execute lesson content with eval or dynamically generated functions.
 
 `engine.ts` owns all score/life/clock transitions as pure functions. The renderer
 does not award progress directly. Completed runs cannot award twice. Curriculum
@@ -110,14 +124,17 @@ node scripts/check-code-goblin.mjs
 
 `PLAYWRIGHT_MODULE` can point to an existing Playwright `index.mjs` installation.
 `CODE_GOBLIN_BASE_URL` changes the local target and `CODE_GOBLIN_SCREENSHOTS`
-changes the screenshot directory. `--edges-only` skips the complete campaign
-walkthrough when only persistence/accessibility/failure checks need rerunning.
+changes the screenshot directory (default: `code-goblin-checks` in the OS temporary
+directory). `--edges-only` skips the complete campaign walkthrough when only
+persistence/accessibility/failure checks need rerunning.
 Browser checks mock shared statistics and never call a learning/model provider.
 
 Verification covers all 100 challenge answers through the browser, 320/390px
 layouts, actual chip drag/drop, reload/resume, timer expiry, practice restoration,
 reward gates, certificate download/escaping, dialog focus, invalid saves and
-storage denial. Nine engine tests cover the complete curriculum, score integrity,
-dates, streaks, freezes and save recovery. Teaching examples in the Python and
-Nether tracks also pass Python's syntax parser; this is not runtime execution of
+storage denial, hero progression across completed paths, debounced draft saving
+and language storage errors. Engine tests cover the complete curriculum, authoring
+validation, score integrity, dates, streaks, banked brews and save recovery.
+Teaching examples in the Python and Nether tracks also pass Python's syntax parser;
+this is not runtime execution of
 Java, NumPy or Qiskit examples.

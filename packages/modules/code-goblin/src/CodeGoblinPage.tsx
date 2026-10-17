@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, Award, BookOpen, Check, ChevronRight, Clock3, Code2, Download, Flame,
   FlaskConical, Heart, Leaf, Lightbulb, LockKeyhole, Map, RotateCcw, Settings2, ShieldCheck,
   Sparkles, Star, Volume2, VolumeX, WandSparkles, X } from 'lucide-react';
 import { getAudioBus } from '@scroll-goblin/ui';
-import { CHALLENGE_NAMES, CHAMBERS, LESSONS, TIER_NAMES, TRACKS, lessonsFor } from './curriculum';
+import { CHALLENGE_COUNT, CHALLENGE_NAMES, CHAMBERS, LESSONS, TIER_NAMES, TRACKS, lessonsFor } from './curriculum';
 import { CAST_SECONDS, MAX_HEARTS, SAVE_KEY, canEquip, correctAnswer, currentStreak, earnedStars,
-  freshProgress, readProgress, starsTotal, transition, unlocked, xpTotal, type Action } from './engine';
+  freshProgress, latestCompletion, nextCampaignLesson, readProgress, starsTotal, transition, unlocked, xpTotal, type Action } from './engine';
 import type { Answer, Challenge, Character, Lesson, Progress, Run, TrackId, Trinket } from './types';
 import worldArt from './assets/world.jpg';
 import './code-goblin.css';
@@ -16,7 +16,7 @@ const TRINKETS: { id: Trinket; title: string; description: string; requirement: 
   { id: 'none', title: 'The trusty satchel', description: 'Everything an apprentice needs. Mostly sticky notes.', requirement: 'Yours from the beginning', icon: '✉' },
   { id: 'scarf', title: 'The Indentation Scarf', description: 'Four stitches. Always four stitches.', requirement: 'Earn 9 stars', icon: '≋' },
   { id: 'hammer', title: 'The Byte-Forged Hammer', description: 'For particularly stubborn semicolons.', requirement: 'Earn 24 stars', icon: '⚒' },
-  { id: 'tail', title: 'Percy’s Cosmic Possum Tail', description: 'A little stardust for a very long journey.', requirement: 'Complete all 9 Nether lessons', icon: '☄' },
+  { id: 'tail', title: 'Percy’s Cosmic Possum Tail', description: 'A little stardust for a very long journey.', requirement: `Complete all ${lessonsFor('nether').length} Nether lessons`, icon: '☄' },
 ];
 
 function Portrait({ character = 'pip', mood = 'neutral', equipped = 'none', className = '' }: {
@@ -89,12 +89,15 @@ export default function CodeGoblinPage() {
   const [pending, setPending] = useState<{ lesson: Lesson; practice: boolean } | null>(null);
   const focusTarget = useRef<HTMLDivElement>(null);
   const progressRef = useRef(progress);
+  const lastSaved = useRef<string | null>(null);
+  const lastCheckpoint = useRef<string | null>(null);
   const [clock, setClock] = useState(Date.now());
   const run = progress.run;
   const currentLesson = LESSONS.find(l => l.nodeId === run?.nodeId);
   const track = TRACKS[progress.selectedTrack];
   const trackLessons = lessonsFor(progress.selectedTrack);
   const nextLesson = trackLessons.find(l => !progress.completed[l.nodeId] && unlocked(l, progress));
+  const nextPathLesson = nextCampaignLesson(progress, LESSONS);
   const netherComplete = lessonsFor('nether').every(l => Boolean(progress.completed[l.nodeId]));
   const stars = starsTotal(progress);
   const dispatch = (action: Action) => {
@@ -105,10 +108,27 @@ export default function CodeGoblinPage() {
     setProgress(after);
     if (after.sound && !before.run?.feedback && after.run?.feedback) chime(after.run.feedback === 'correct');
   };
-  useEffect(() => {
-    try { localStorage.setItem(SAVE_KEY, JSON.stringify(progress)); }
+  const persist = useCallback(() => {
+    const serialized = JSON.stringify(progressRef.current);
+    if (serialized === lastSaved.current) return;
+    try { localStorage.setItem(SAVE_KEY, serialized); lastSaved.current = serialized; }
     catch { setSaveWarning('Progress could not be saved. Keep this tab open to continue this session.'); }
-  }, [progress]);
+  }, []);
+  useEffect(() => {
+    // Only typing drafts are delayed. Scores, clocks and other choices save immediately.
+    const checkpoint = JSON.stringify({ ...progress, run: progress.run && typeof progress.run.answer === 'string'
+      ? { ...progress.run, answer: null } : progress.run });
+    if (checkpoint !== lastCheckpoint.current) { lastCheckpoint.current = checkpoint; persist(); return; }
+    const timer = window.setTimeout(persist, 300);
+    return () => window.clearTimeout(timer);
+  }, [progress, persist]);
+  useEffect(() => { persist(); }, [view, persist]);
+  useEffect(() => {
+    const onHide = () => { if (document.visibilityState === 'hidden') persist(); };
+    window.addEventListener('pagehide', persist);
+    document.addEventListener('visibilitychange', onHide);
+    return () => { persist(); window.removeEventListener('pagehide', persist); document.removeEventListener('visibilitychange', onHide); };
+  }, [persist]);
   useEffect(() => {
     const tick = () => {
       const now = Date.now();
@@ -138,8 +158,9 @@ export default function CodeGoblinPage() {
   const topAction = () => {
     if (resume) setView('lesson');
     else if (nextLesson) begin(nextLesson, progress.hearts === 0);
-    else if (progress.selectedTrack !== 'nether') dispatch({ type: 'track', track: progress.selectedTrack === 'python' ? 'java' : 'python' });
-    else setView(netherComplete ? 'certificate' : 'guide');
+    else if (netherComplete) setView('certificate');
+    else if (nextPathLesson) dispatch({ type: 'track', track: nextPathLesson.trackId });
+    else setView('guide');
   };
   return <div className="cg-app" lang="en" data-track={progress.selectedTrack}>
     <div className="cg-shell">
@@ -191,7 +212,7 @@ export default function CodeGoblinPage() {
         </div>
         <div className="cg-adventure-grid">
           <section className="cg-roadmap" aria-label={`${track.title} lessons`}>
-            {progress.selectedTrack === 'nether' && !unlocked(trackLessons[0], progress) && <div className="cg-notice"><LockKeyhole size={18} /><span>The Nether opens after all 12 Python and all 12 Java lessons. Your two crafts meet here.</span></div>}
+            {progress.selectedTrack === 'nether' && !unlocked(trackLessons[0], progress) && <div className="cg-notice"><LockKeyhole size={18} /><span>The Nether opens after all {lessonsFor('python').length} Python and all {lessonsFor('java').length} Java lessons. Your two crafts meet here.</span></div>}
             {[1, 2, 3].map(tier => <section className="cg-tier" key={tier}>
               <div className="cg-tier-title"><span className="cg-tier-number">0{tier}</span><div><p className="cg-eyebrow">{progress.selectedTrack === 'nether' ? 'CHAMBER' : 'TIER'} {tier}</p><h3>{progress.selectedTrack === 'nether' ? CHAMBERS[tier - 1] : TIER_NAMES[tier - 1]}</h3></div><span className="cg-tier-rule" /><span className="cg-small">{trackLessons.filter(l => l.tier === tier && progress.completed[l.nodeId]).length} / {trackLessons.filter(l => l.tier === tier).length}</span></div>
               <div className="cg-nodes">{trackLessons.filter(l => l.tier === tier).map(lesson => {
@@ -257,11 +278,11 @@ export default function CodeGoblinPage() {
       {view === 'loot' && <section className="cg-loot"><div className="cg-section-heading"><div><p className="cg-eyebrow">LITTLE TREASURES, WELL EARNED</p><h1>Pip’s satchel</h1></div><span className="cg-star-total"><Star fill="currentColor" size={21} />{stars} stars</span></div>
         <div className="cg-loot-intro"><Portrait equipped={progress.equipped} /><div><h2>A little magic to wear.</h2><p>Stars unlock keepsakes for your companion. Replaying a lesson can improve your best score; practice restores hearts.</p></div></div>
         <div className="cg-trinkets">{TRINKETS.map(item => { const available = canEquip(item.id, progress, LESSONS); return <article key={item.id} className="cg-trinket"><span className="cg-trinket-icon" aria-hidden="true">{item.icon}</span><h3>{item.title}</h3><p>{item.description}</p><small>{item.requirement}</small><button className="cg-button cg-secondary" disabled={!available || progress.equipped === item.id} onClick={() => dispatch({ type: 'equip', trinket: item.id })}>{progress.equipped === item.id ? <><Check size={15} />Equipped</> : available ? 'Equip keepsake' : <><LockKeyhole size={14} />Still a little way to go</>}</button></article>; })}</div>
-        <div className="cg-potion"><FlaskConical size={34} /><div><h3>Streak-freeze potions <span>× {progress.freezes}</span></h3><p>Finish a lesson or practice drill on 7 consecutive days to brew a potion. It automatically protects one missed day when you return the following day. Store up to 3.</p><span className="cg-small">{progress.brewDays} / 7 consecutive practice days toward the next brew</span></div></div>
+        <div className="cg-potion"><FlaskConical size={34} /><div><h3>Streak-freeze potions <span>× {progress.freezes}</span></h3><p>Finish a lesson or practice drill on 7 consecutive days to brew a potion. It automatically protects one missed day when you return the following day. Store up to 3; a finished brew waits until there’s room.</p><span className="cg-small">{progress.brewDays === 7 ? 'Brew ready! Safely waiting in the cauldron.' : `${progress.brewDays} / 7 consecutive practice days toward the next brew`}</span></div></div>
         <div className="cg-certificate-callout"><Award size={32} /><div><h3>Certificate of Wizardry</h3><p>Complete both language paths and all three Nether chambers to earn your commemorative diploma.</p></div><button className="cg-button cg-secondary" disabled={!netherComplete} onClick={() => setView('certificate')}>{netherComplete ? 'Open certificate' : 'Awaiting your final spell'}<LockKeyhole size={15} /></button></div>
       </section>}
       {view === 'certificate' && netherComplete && <Certificate progress={progress} />}
-      <footer className="cg-footer"><span><Leaf size={14} />Grown by Scroll Goblin. Learned by you.</span><span>33 lessons · 100 challenges · A whole lot of possibility.</span></footer>
+      <footer className="cg-footer"><span><Leaf size={14} />Grown by Scroll Goblin. Learned by you.</span><span>{LESSONS.length} lessons · {CHALLENGE_COUNT} challenges · A whole lot of possibility.</span></footer>
     </div>
     {settings && <Modal title="Make room for your kind of learning" close={() => setSettings(false)}>
       <label className="cg-setting"><span><strong>30-second Micro-Caster</strong><small>Turn off for untimed campaign typing. Applies to your next lesson; practice is always untimed.</small></span><input type="checkbox" checked={progress.timed} onChange={e => dispatch({ type: 'setting', name: 'timed', value: e.target.checked })} /></label>
@@ -309,7 +330,7 @@ function ChallengeView({ challenge, run, dispatch, clock, hearts }: { challenge:
       {challenge.options.map((option, i) => <button key={option} className={`cg-option ${run.answer === i ? 'cg-selected' : ''}`} aria-pressed={run.answer === i} disabled={locked} onClick={() => answer(i)}><span className="cg-option-letter">{String.fromCharCode(65 + i)}</span><Code>{option}</Code></button>)}
     </div></>}
     {challenge.type === 'micro_caster' && <>
-      <p className="cg-instruction">Type the missing fragment. Capitalization matters. {run.timed ? 'Read the snippet first; the timer starts when you are ready.' : 'Take your time. This cast has no timer.'}</p>
+      <p className="cg-instruction">Type the missing fragment. Capitalization matters. {run.timed ? 'Read the snippet first; start when ready. Once started, the clock keeps running if you leave or reload. Expiry costs one heart.' : 'Take your time. This cast has no timer.'}</p>
       <Code>{challenge.before}<mark className="cg-code-blank">{typeof run.answer === 'string' && run.answer ? run.answer : '???'}</mark>{challenge.after}</Code>
       {waitingClock ? <button className="cg-button cg-secondary" disabled={locked} onClick={() => dispatch({ type: 'start_clock' })}><Clock3 size={16} />Start 30-second cast</button> : <form onSubmit={e => { e.preventDefault(); if (!locked && ready) dispatch({ type: 'submit' }); }}>
         <label className="cg-answer-label" htmlFor="cg-typed-answer">Your missing fragment</label><input id="cg-typed-answer" ref={input} className="cg-typing" value={typeof run.answer === 'string' ? run.answer : ''} disabled={locked}
@@ -330,7 +351,7 @@ function FieldGuide({ progress, onPractice }: { progress: Progress; onPractice: 
       ['Rune Weaver', 'Build a spell from code chips. Tap to place or remove them, or drag them into the answer area. Whitespace and indentation are part of the code.'],
       ['The Linter Trap', 'Read each line and find the one responsible for the problem. Some traps fail to compile or run; others produce the wrong behavior. Read the prompt carefully.'],
       ['Rosetta Altar', 'Read a spell in one language and choose its equivalent in the other. Pay attention to types, loop bounds, equality, and collection methods.'],
-      ['Micro-Caster', 'Supply the missing fragment without autocomplete. The 30-second clock starts only when you choose to begin. You can disable it in Learning settings before starting a lesson.'],
+      ['Micro-Caster', 'Supply the missing fragment without autocomplete. The 30-second clock starts only when you choose to begin and keeps running after leaving or reloading. Expiry costs one heart. You can disable it in Learning settings before starting a lesson.'],
     ].map(([title, text], i) => <article key={title}><span className="cg-guide-number">0{i + 1}</span><h2>{title}</h2><p>{text}</p></article>)}</div>
     <div className="cg-guide-rules"><h2>The rules of this little realm</h2><ul><li>Campaign mistakes cost one heart. Five hearts refresh at local midnight; completing practice restores one, up to five.</li><li>Stars reward each completed campaign lesson: 3 for no mistakes, 2 for one or two, and 1 after that. Your best score is kept.</li><li>XP equals 30 per learned lesson, plus 10 per best star. Repeats improve rewards only when they improve your best score.</li><li>Finish a lesson or practice drill to count today toward your streak. Hints are free, and practice never costs hearts.</li><li>Lessons teach and check specific snippets. They do not run arbitrary Python or Java. Quantum exercises describe ideal simulation; no hardware is contacted.</li></ul><button className="cg-button cg-secondary" onClick={onPractice}>Try a practice spell<ArrowRight size={16} /></button></div>
     <h2 className="cg-cast-title">A few familiar faces</h2><div className="cg-cast">{(['pip', 'pythia', 'brak', 'imp', 'percy'] as Character[]).map(character => <article key={character}><Portrait character={character} equipped={progress.equipped} /><h3>{CHARACTER_NAMES[character]}</h3><p>{({ pip: 'Your companion, one sticky note at a time.', pythia: 'Python’s patient keeper of forest runes.', brak: 'Java’s exacting master of the forge.', imp: 'A collector of very educational mistakes.', percy: 'Guardian of the Quantum Nether.' })[character]}</p></article>)}</div>
@@ -340,16 +361,17 @@ function FieldGuide({ progress, onPractice }: { progress: Progress; onPractice: 
 
 function Certificate({ progress }: { progress: Progress }) {
   const [name, setName] = useState('A very determined apprentice');
-  const date = new Date(progress.completed['net-09-measurement'].completedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const completedAt = latestCompletion(progress, lessonsFor('nether'));
+  const date = completedAt ? new Date(completedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Date unavailable';
   const download = () => {
     const escape = (value: string) => value.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' })[c]!);
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000"><rect width="1400" height="1000" fill="#f6f0df"/><rect x="35" y="35" width="1330" height="930" rx="8" fill="none" stroke="#294c3b" stroke-width="5"/><rect x="50" y="50" width="1300" height="900" fill="none" stroke="#b49351" stroke-width="2"/><g fill="#294c3b" text-anchor="middle" font-family="Georgia,serif"><text x="700" y="155" font-size="22" letter-spacing="6">THE SCROLL GOBLIN GUILD</text><text x="700" y="270" font-size="68">Certificate of Wizardry</text><text x="700" y="360" font-size="26">Let it be known that</text><text x="700" y="460" font-size="42">${escape(name || 'A very determined apprentice')}</text><text x="700" y="550" font-size="25">has completed the Code Goblin adventure</text><text x="700" y="610" font-size="24">Forest Runes · Dungeon Forging · The Quantum Nether</text><text x="700" y="685" font-size="22">33 lessons · 100 challenges · ${starsTotal(progress)} stars earned</text><text x="700" y="770" font-size="24">${escape(date)}</text><text x="700" y="850" font-size="22" font-style="italic">Pip, Pythia, Brak &amp; a probably-present Percy</text><text x="700" y="910" font-size="16">Commemorative completion of self-guided syntax practice · Not an accredited qualification</text></g></svg>`;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000"><rect width="1400" height="1000" fill="#f6f0df"/><rect x="35" y="35" width="1330" height="930" rx="8" fill="none" stroke="#294c3b" stroke-width="5"/><rect x="50" y="50" width="1300" height="900" fill="none" stroke="#b49351" stroke-width="2"/><g fill="#294c3b" text-anchor="middle" font-family="Georgia,serif"><text x="700" y="155" font-size="22" letter-spacing="6">THE SCROLL GOBLIN GUILD</text><text x="700" y="270" font-size="68">Certificate of Wizardry</text><text x="700" y="360" font-size="26">Let it be known that</text><text x="700" y="460" font-size="42">${escape(name || 'A very determined apprentice')}</text><text x="700" y="550" font-size="25">has completed the Code Goblin adventure</text><text x="700" y="610" font-size="24">Forest Runes · Dungeon Forging · The Quantum Nether</text><text x="700" y="685" font-size="22">${LESSONS.length} lessons · ${CHALLENGE_COUNT} challenges · ${starsTotal(progress)} stars earned</text><text x="700" y="770" font-size="24">${escape(date)}</text><text x="700" y="850" font-size="22" font-style="italic">Pip, Pythia, Brak &amp; a probably-present Percy</text><text x="700" y="910" font-size="16">Commemorative completion of self-guided syntax practice · Not an accredited qualification</text></g></svg>`;
     const url = URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }));
     const a = document.createElement('a'); a.href = url; a.download = 'code-goblin-certificate.svg'; a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
   return <section className="cg-certificate-section"><div className="cg-section-heading"><div><p className="cg-eyebrow">YOU MADE IT THROUGH THE PORTAL</p><h1>A story worth keeping</h1></div><Award size={36} /></div>
     <div className="cg-certificate-controls"><label htmlFor="cg-certificate-name">Name on your certificate<input id="cg-certificate-name" value={name} onChange={e => setName(e.target.value)} maxLength={48} autoComplete="name" /></label><button className="cg-button cg-primary" onClick={download}><Download size={17} />Download diploma</button><button className="cg-button cg-secondary" onClick={() => window.print()}>Print / save PDF</button></div>
-    <div className="cg-certificate"><span className="cg-eyebrow">THE SCROLL GOBLIN GUILD</span><Award size={50} /><h2>Certificate of Wizardry</h2><p>Let it be known that</p><strong className="cg-certificate-name" translate="no">{name || 'A very determined apprentice'}</strong><p>has completed the Code Goblin adventure</p><div className="cg-certificate-paths">Forest Runes · Dungeon Forging · The Quantum Nether</div><p>33 lessons · 100 challenges · {starsTotal(progress)} stars earned</p><time>{date}</time><p className="cg-signature">Pip, Pythia, Brak & a probably-present Percy</p><small>Commemorative completion of self-guided syntax practice. Not an accredited qualification.</small></div>
+    <div className="cg-certificate"><span className="cg-eyebrow">THE SCROLL GOBLIN GUILD</span><Award size={50} /><h2>Certificate of Wizardry</h2><p>Let it be known that</p><strong className="cg-certificate-name" translate="no">{name || 'A very determined apprentice'}</strong><p>has completed the Code Goblin adventure</p><div className="cg-certificate-paths">Forest Runes · Dungeon Forging · The Quantum Nether</div><p>{LESSONS.length} lessons · {CHALLENGE_COUNT} challenges · {starsTotal(progress)} stars earned</p><time>{date}</time><p className="cg-signature">Pip, Pythia, Brak & a probably-present Percy</p><small>Commemorative completion of self-guided syntax practice. Not an accredited qualification.</small></div>
   </section>;
 }

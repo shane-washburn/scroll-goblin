@@ -42,8 +42,10 @@ export function validateCurriculum(input: unknown): Lesson[] {
       switch (c.type) {
         case 'word_bank': {
           requireThat(Array.isArray(c.tokens) && c.tokens.length > 0 && c.tokens.every(t => typeof t === 'string' && t.length > 0), 'tokens');
+          requireThat(Array.isArray(c.correctSequence) && c.correctSequence.length > 0, 'sequence');
+          requireThat(c.acceptedSequences === undefined || Array.isArray(c.acceptedSequences), 'accepted sequences');
           for (const sequence of [c.correctSequence, ...(c.acceptedSequences ?? [])]) {
-            requireThat(Array.isArray(sequence) && sequence.length > 0, 'sequence');
+            requireThat(Array.isArray(sequence) && sequence.length === c.correctSequence.length, 'accepted sequences must match the number of answer slots');
             const available = [...c.tokens];
             for (const token of sequence) {
               const index = available.indexOf(token);
@@ -62,8 +64,10 @@ export function validateCurriculum(input: unknown): Lesson[] {
             new Set(c.options).size === c.options.length && Number.isInteger(c.correctOptionIndex) &&
             c.correctOptionIndex >= 0 && c.correctOptionIndex < c.options.length, 'rosetta options'); break;
         case 'micro_caster':
-          requireThat(typeof c.before === 'string' && typeof c.after === 'string' && typeof c.answer === 'string' && c.answer.trim().length > 0 &&
-            (!c.acceptedAnswers || Array.isArray(c.acceptedAnswers) && c.acceptedAnswers.every(a => typeof a === 'string')), 'micro answer'); break;
+          requireThat(typeof c.before === 'string' && typeof c.after === 'string', 'micro snippet');
+          requireThat(c.acceptedAnswers === undefined || Array.isArray(c.acceptedAnswers), 'accepted micro answers');
+          requireThat([c.answer, ...(c.acceptedAnswers ?? [])].every(a => typeof a === 'string' && a.length > 0 && a === a.trim()),
+            'micro answers must be nonempty and have no outer whitespace'); break;
         default: throw new Error('Unknown Code Goblin challenge type');
       }
     }
@@ -73,3 +77,4 @@ export function validateCurriculum(input: unknown): Lesson[] {
 }
 export const LESSONS = validateCurriculum(data);
 export const lessonsFor = (track: TrackId) => LESSONS.filter(l => l.trackId === track);
+export const CHALLENGE_COUNT = LESSONS.reduce((sum, lesson) => sum + lesson.challenges.length, 0);
