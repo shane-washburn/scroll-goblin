@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { HedgelingProvider } from "@hedgeling/i18n/runtime";
 import App from "./App";
+import { canReadLocaleStorage } from "./localeStorage";
 import "./index.css";
 
 const SUPPORTED_LOCALES = [
@@ -23,8 +24,11 @@ const SUPPORTED_LOCALES = [
   "ar-SA",
 ];
 
+const application = <BrowserRouter><App /></BrowserRouter>;
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    {canReadLocaleStorage() ? (
     <HedgelingProvider
       sourceLocale="en-US"
       supportedLocales={SUPPORTED_LOCALES}
@@ -32,9 +36,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       bundleUrl="/hedgeling-bundle.json"
       sourceKeyMapUrl="/hedgeling-source-key-map.json"
     >
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      {application}
     </HedgelingProvider>
+    ) : application}
   </React.StrictMode>
 );

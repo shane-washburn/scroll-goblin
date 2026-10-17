@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Check, Globe2 } from "lucide-react";
+import { canReadLocaleStorage } from "./localeStorage";
 
 /**
  * Language switcher for the Hedgeling content-match injector. Picking a locale
@@ -28,11 +29,16 @@ const STORAGE_KEY = "hedgeling.locale";
 
 function currentLocale(): string {
   if (typeof window === "undefined") return "en-US";
-  return window.localStorage.getItem(STORAGE_KEY) || document.documentElement.lang || "en-US";
+  try {
+    return window.localStorage.getItem(STORAGE_KEY) || document.documentElement.lang || "en-US";
+  } catch {
+    return "en-US";
+  }
 }
 
 export function LanguageSelector() {
   const [selected] = useState(currentLocale);
+  const [storageAvailable] = useState(canReadLocaleStorage);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const current = LANGUAGES.find((language) => language.code === selected) ?? LANGUAGES[0];
@@ -56,7 +62,8 @@ export function LanguageSelector() {
   const choose = (code: string) => {
     setIsOpen(false);
     if (code === selected) return;
-    window.localStorage.setItem(STORAGE_KEY, code);
+    try { window.localStorage.setItem(STORAGE_KEY, code); }
+    catch { return; }
     document.documentElement.lang = code;
     window.location.reload();
   };
@@ -66,6 +73,8 @@ export function LanguageSelector() {
       <button
         type="button"
         aria-label={`Language: ${current.label}`}
+        disabled={!storageAvailable}
+        title={!storageAvailable ? "Language selection needs browser storage. Showing English." : undefined}
         aria-expanded={isOpen}
         aria-haspopup="menu"
         className="inline-flex h-8 w-8 items-center justify-center rounded-neobrutal border-thin border-brand-border bg-brand-secondary text-brand-text shadow-neo-sm transition-[transform,box-shadow] duration-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-neo-pressed"

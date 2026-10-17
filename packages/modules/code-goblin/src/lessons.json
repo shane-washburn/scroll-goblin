@@ -1,0 +1,2373 @@
+[
+  {
+    "trackId": "python",
+    "tier": 1,
+    "nodeId": "py-01-variables",
+    "title": "A Name for a Little Magic",
+    "subtitle": "Variables · values · primitive types",
+    "storyIntro": "Pip has labeled every jar in the forest. Unfortunately, half of the labels say “probably soup.” Pythia coils around a branch. “A name should help you remember what it points to.”",
+    "mentor": "pythia",
+    "minutes": 4,
+    "concepts": [
+      "A variable is a name bound to an object. Use = to bind a name; == compares two values.",
+      "Python infers types from values: 7 is an int, 2.5 a float, \"Pip\" a str, and True a bool.",
+      "Numbers and strings are immutable. Reassigning a name points it to a new value; it does not change the old object."
+    ],
+    "example": "mana = 7\nname = \"Pip\"\nawake = True\nmana = mana + 1\nprint(mana)  # 8",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Give the name mana the integer value 7.",
+        "tokens": [
+          "7",
+          " = ",
+          "\"7\"",
+          "mana",
+          " == "
+        ],
+        "correctSequence": [
+          "mana",
+          " = ",
+          "7"
+        ],
+        "hint": "Assignment uses a single equals sign.",
+        "explanation": "mana = 7 binds mana to the integer 7. Quotes would make it a string.",
+        "id": "py-01-variables-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line tries to add a string to an integer?",
+        "codeSnippet": [
+          "mana = 7",
+          "name = \"Pip\"",
+          "mana = mana + name",
+          "print(mana)"
+        ],
+        "correctLineIndex": 2,
+        "hint": "Look at the types on each side of +.",
+        "explanation": "Python cannot add an int to a str. Use numbers for arithmetic, or str(mana) when building text.",
+        "id": "py-01-variables-c2"
+      },
+      {
+        "type": "rosetta",
+        "prompt": "Brak wants the same integer in Java. Choose its declaration.",
+        "sourceLanguage": "Python",
+        "targetLanguage": "Java",
+        "codeSnippet": "mana = 7",
+        "options": [
+          "boolean mana = true;",
+          "String mana = \"7\";",
+          "int mana = 7;"
+        ],
+        "correctOptionIndex": 2,
+        "hint": "Java declares the type before the name.",
+        "explanation": "Java uses int for this whole number, followed by the variable name and a semicolon.",
+        "id": "py-01-variables-c3"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type Python’s Boolean value for “yes.”",
+        "before": "awake = ",
+        "answer": "True",
+        "after": "",
+        "hint": "Python capitalizes its two Boolean literals.",
+        "explanation": "True and False are Python Boolean literals; true is Java’s spelling.",
+        "id": "py-01-variables-c4"
+      }
+    ],
+    "prerequisites": [],
+    "reference": {
+      "label": "Python tutorial",
+      "url": "https://docs.python.org/3/tutorial/"
+    }
+  },
+  {
+    "trackId": "python",
+    "tier": 1,
+    "nodeId": "py-02-tuples",
+    "title": "The Sealed Tuples of Pythia",
+    "subtitle": "Lists · tuples · immutability",
+    "storyIntro": "Pythia offers a flexible mushroom sack and a sealed coordinate lockbox. Pip immediately tries to rearrange the lockbox. Something inside hisses.",
+    "mentor": "pythia",
+    "minutes": 4,
+    "concepts": [
+      "Lists use square brackets and let you replace, add, or remove items. Indexing starts at 0.",
+      "Tuples keep the same item references after creation. A comma makes a tuple; (3, 7) is the familiar notation.",
+      "Tuple immutability is shallow: a list held inside a tuple can still change. A one-item tuple needs a comma: (3,)."
+    ],
+    "example": "bag = [3, 7]\nbag[0] = 4\ncoordinates = (3, 7)\nprint(coordinates[0])  # 3",
+    "challenges": [
+      {
+        "type": "linter_trap",
+        "prompt": "Find the line that tries to replace an item in a tuple.",
+        "codeSnippet": [
+          "coordinates = (4, 9)",
+          "coordinates[0] = 5",
+          "print(coordinates)"
+        ],
+        "correctLineIndex": 1,
+        "hint": "A sealed lockbox cannot swap its item references.",
+        "explanation": "Tuple item assignment raises TypeError. Construct a new tuple if you need different coordinates.",
+        "id": "py-02-tuples-c1"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Assemble the tuple (3, 7).",
+        "tokens": [
+          "[",
+          ", ",
+          "7",
+          ")",
+          "]",
+          "3",
+          "("
+        ],
+        "correctSequence": [
+          "(",
+          "3",
+          ", ",
+          "7",
+          ")"
+        ],
+        "hint": "Use parentheses around these comma-separated values.",
+        "explanation": "The comma separates the two tuple elements; square brackets would create a list.",
+        "id": "py-02-tuples-c2"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type the list method that adds one item at the end.",
+        "before": "bag.",
+        "answer": "append",
+        "after": "(9)",
+        "hint": "It means “attach to the end.”",
+        "explanation": "list.append(value) changes the existing list and returns None.",
+        "id": "py-02-tuples-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-01-variables"
+    ],
+    "reference": {
+      "label": "Python tutorial",
+      "url": "https://docs.python.org/3/tutorial/"
+    }
+  },
+  {
+    "trackId": "python",
+    "tier": 1,
+    "nodeId": "py-03-strings",
+    "title": "Messages in the Moss",
+    "subtitle": "Strings · slicing · f-strings",
+    "storyIntro": "A moss-covered sign reads GOBLIN. Pythia wants only the first three letters. Pip has brought scissors. You bring a slice.",
+    "mentor": "pythia",
+    "minutes": 4,
+    "concepts": [
+      "A string is an immutable sequence of characters. A slice [start:stop] includes start and excludes stop.",
+      "Negative indices count from the end; text[-1] is the final character. A step of -1 reverses a string.",
+      "Prefix a quoted string with f to interpolate expressions inside braces. len(text) counts its characters."
+    ],
+    "example": "name = \"GOBLIN\"\nprint(name[:3])   # GOB\nprint(name[-1])   # N\nprint(f\"Hello, {name}!\")",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Slice the first three letters of name.",
+        "tokens": [
+          "name",
+          "[",
+          "4",
+          "3",
+          ":",
+          "]",
+          "("
+        ],
+        "correctSequence": [
+          "name",
+          "[",
+          ":",
+          "3",
+          "]"
+        ],
+        "hint": "The stop index is excluded.",
+        "explanation": "name[:3] takes indices 0, 1 and 2.",
+        "id": "py-03-strings-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line attempts to mutate a string?",
+        "codeSnippet": [
+          "name = \"Pip\"",
+          "name[0] = \"B\"",
+          "print(name)"
+        ],
+        "correctLineIndex": 1,
+        "hint": "Strings cannot have their characters replaced in place.",
+        "explanation": "Strings are immutable. Build a new string, such as \"B\" + name[1:].",
+        "id": "py-03-strings-c2"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type the prefix that makes this an interpolated string.",
+        "before": "greeting = ",
+        "answer": "f",
+        "after": "\"Hello, {name}!\"",
+        "hint": "It is one lowercase letter.",
+        "explanation": "An f-string evaluates the expressions inside braces.",
+        "id": "py-03-strings-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-02-tuples"
+    ],
+    "reference": {
+      "label": "Python tutorial",
+      "url": "https://docs.python.org/3/tutorial/"
+    }
+  },
+  {
+    "trackId": "python",
+    "tier": 1,
+    "nodeId": "py-04-loops",
+    "title": "The Repeating Grove",
+    "subtitle": "Conditionals · for · while · indentation",
+    "storyIntro": "The forest gate opens only when three lanterns are lit. “No need to write the same spell three times,” says Pythia. Pip is already on lantern seventeen.",
+    "mentor": "pythia",
+    "minutes": 4,
+    "concepts": [
+      "if, elif and else choose branches. Conditions end with a colon; their blocks are indented consistently.",
+      "for iterates over a sequence. range(3) produces 0, 1, 2, stopping before 3.",
+      "while repeats while a condition is true. Update the condition’s inputs so the loop can finish."
+    ],
+    "example": "mana = 3\nif mana > 0:\n    print(\"Ready\")\nelse:\n    print(\"Rest\")\nfor lantern in range(3):\n    print(lantern)\nwhile mana > 0:\n    mana -= 1",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Build a two-line loop that prints 0, 1, 2.",
+        "tokens": [
+          "\n    ",
+          "range(3)",
+          "for i in ",
+          "print(i)",
+          ":",
+          "\n",
+          "range(4)"
+        ],
+        "correctSequence": [
+          "for i in ",
+          "range(3)",
+          ":",
+          "\n    ",
+          "print(i)"
+        ],
+        "hint": "The body needs indentation after the colon.",
+        "explanation": "Indentation is syntax in Python. range(3) stops before 3.",
+        "id": "py-04-loops-c1"
+      },
+      {
+        "type": "rosetta",
+        "prompt": "Choose the Java loop with the same output.",
+        "sourceLanguage": "Python",
+        "targetLanguage": "Java",
+        "codeSnippet": "for i in range(3):\n    print(i)",
+        "options": [
+          "for (int i = 1; i < 3; i++) {\n    System.out.println(i);\n}",
+          "for (int i = 0; i < 3; i++) {\n    System.out.println(i);\n}",
+          "for (int i = 0; i <= 3; i++) {\n    System.out.println(i);\n}"
+        ],
+        "correctOptionIndex": 1,
+        "hint": "Compare the starting value and exclusive upper bound.",
+        "explanation": "Both loops begin at 0 and stop before 3. <= would print an extra value.",
+        "id": "py-04-loops-c2"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which update prevents this countdown from ever ending?",
+        "codeSnippet": [
+          "mana = 3",
+          "while mana > 0:",
+          "    mana += 1",
+          "print(\"Rest\")"
+        ],
+        "correctLineIndex": 2,
+        "hint": "To reach zero, mana must decrease.",
+        "explanation": "Use mana -= 1. Increasing a positive value never makes mana > 0 false.",
+        "id": "py-04-loops-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-03-strings"
+    ],
+    "reference": {
+      "label": "Python tutorial",
+      "url": "https://docs.python.org/3/tutorial/"
+    }
+  },
+  {
+    "trackId": "python",
+    "tier": 2,
+    "nodeId": "py-05-maps",
+    "title": "The Mushroom Index",
+    "subtitle": "Dictionaries · sets · lookups",
+    "storyIntro": "The Glitch Imp has filed mushrooms by smell. Pythia proposes a dictionary. Pip proposes eating the evidence.",
+    "mentor": "pythia",
+    "minutes": 6,
+    "concepts": [
+      "A dict maps unique hashable keys to values. d[key] raises KeyError if absent; d.get(key, default) provides a fallback.",
+      "A set stores unique hashable values. Use in for membership; dict and set lookups are typically O(1) on average.",
+      "{} is an empty dictionary. Use set() for an empty set. Lists cannot be dict keys because they are unhashable."
+    ],
+    "example": "stock = {\"moss\": 3, \"cap\": 7}\nprint(stock.get(\"root\", 0))\nseen = {\"moss\", \"moss\", \"cap\"}\nprint(\"cap\" in seen)  # True",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Read the missing root count with a default of zero.",
+        "tokens": [
+          ", ",
+          "\"root\"",
+          "]",
+          ")",
+          "[",
+          "stock",
+          "0",
+          ".get("
+        ],
+        "correctSequence": [
+          "stock",
+          ".get(",
+          "\"root\"",
+          ", ",
+          "0",
+          ")"
+        ],
+        "hint": "get takes a key and an optional default.",
+        "explanation": "get returns 0 for an absent root key instead of raising KeyError.",
+        "id": "py-05-maps-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line uses an unhashable dictionary key?",
+        "codeSnippet": [
+          "stock = {}",
+          "stock[[1, 2]] = \"moss\"",
+          "print(stock)"
+        ],
+        "correctLineIndex": 1,
+        "hint": "A list can change, so it cannot serve as a dictionary key.",
+        "explanation": "Use a hashable key such as (1, 2), whose elements are also hashable.",
+        "id": "py-05-maps-c2"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Create an empty set. Type the constructor.",
+        "before": "seen = ",
+        "answer": "set",
+        "after": "()",
+        "hint": "Empty braces create a dict, so use the named constructor.",
+        "explanation": "set() creates an empty set; {} creates an empty dict.",
+        "id": "py-05-maps-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-04-loops"
+    ],
+    "reference": {
+      "label": "Python tutorial",
+      "url": "https://docs.python.org/3/tutorial/"
+    }
+  },
+  {
+    "trackId": "python",
+    "tier": 2,
+    "nodeId": "py-06-comprehensions",
+    "title": "One-Line Gardens",
+    "subtitle": "List · dict · set comprehensions",
+    "storyIntro": "Pythia grows an entire garden from a single line. “Compact is lovely,” she says, “provided you can still read the spell.”",
+    "mentor": "pythia",
+    "minutes": 6,
+    "concepts": [
+      "A comprehension combines an expression, an iteration and an optional filter: [x * 2 for x in values if x > 0].",
+      "Square brackets create lists. Braces with key: value create dicts; braces with only an expression create sets.",
+      "The optional if filters inputs. Keep complex branching in ordinary loops when that is clearer."
+    ],
+    "example": "values = [1, 2, 2, 3]\nsquares = [x * x for x in values]\nunique = {x for x in values}\nlookup = {x: x * x for x in values}",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Make a list of squares from values.",
+        "tokens": [
+          "values",
+          "]",
+          "x * x",
+          "}",
+          " for x in ",
+          "{",
+          "["
+        ],
+        "correctSequence": [
+          "[",
+          "x * x",
+          " for x in ",
+          "values",
+          "]"
+        ],
+        "hint": "Use square brackets for a list.",
+        "explanation": "The expression x * x runs once per value, preserving input order and duplicates.",
+        "id": "py-06-comprehensions-c1"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type the keyword that keeps only positive values.",
+        "before": "positive = [x for x in values ",
+        "answer": "if",
+        "after": " x > 0]",
+        "hint": "The same keyword starts a conditional.",
+        "explanation": "The trailing if filters values before they are included.",
+        "id": "py-06-comprehensions-c2"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which comprehension tries to put mutable lists in a set?",
+        "codeSnippet": [
+          "values = [1, 2]",
+          "squares = [x * x for x in values]",
+          "bad = {[x] for x in values}",
+          "print(squares)"
+        ],
+        "correctLineIndex": 2,
+        "hint": "A set element must be hashable.",
+        "explanation": "{[x] for x in values} tries to add lists to a set and raises TypeError. Use tuples or a list of lists.",
+        "id": "py-06-comprehensions-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-05-maps"
+    ],
+    "reference": {
+      "label": "Python tutorial",
+      "url": "https://docs.python.org/3/tutorial/"
+    }
+  },
+  {
+    "trackId": "python",
+    "tier": 2,
+    "nodeId": "py-07-functions",
+    "title": "The Ever-Filling Satchel",
+    "subtitle": "Functions · scope · args · safe defaults",
+    "storyIntro": "Every apprentice receives the same mysteriously overfilled satchel. The Glitch Imp has hidden a mutable default in the workshop.",
+    "mentor": "pythia",
+    "minutes": 6,
+    "concepts": [
+      "def creates a function. Parameters and assignments inside it are normally local; return sends a value back.",
+      "*args collects extra positional arguments into a tuple. **kwargs collects extra keyword arguments into a dictionary.",
+      "Default arguments are evaluated once when the function is defined. Use None and create a fresh list inside the call to avoid shared mutable defaults."
+    ],
+    "example": "def pack(item, bag=None):\n    if bag is None:\n        bag = []\n    bag.append(item)\n    return bag\n\ndef count(*args, **kwargs):\n    return len(args) + len(kwargs)",
+    "challenges": [
+      {
+        "type": "linter_trap",
+        "prompt": "Which line causes separate pack calls to share one default bag?",
+        "codeSnippet": [
+          "def pack(item, bag=[]):",
+          "    bag.append(item)",
+          "    return bag",
+          "print(pack(\"moss\"))"
+        ],
+        "correctLineIndex": 0,
+        "hint": "Look where the list is created, not where it is filled.",
+        "explanation": "The default [] is created once. Use bag=None, then initialize a fresh [] when bag is None.",
+        "id": "py-07-functions-c1"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type the sentinel for an omitted bag.",
+        "before": "def pack(item, bag=",
+        "answer": "None",
+        "after": "):\n    if bag is None:\n        bag = []\n    return bag",
+        "hint": "Python’s absence-of-value singleton is capitalized.",
+        "explanation": "None lets each call allocate its own list.",
+        "id": "py-07-functions-c2"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Declare a function accepting both kinds of extra arguments.",
+        "tokens": [
+          ", ",
+          "\n    return len(args) + len(kwargs)",
+          "def count(",
+          "):",
+          "**args",
+          "*kwargs",
+          "**kwargs",
+          "*args"
+        ],
+        "correctSequence": [
+          "def count(",
+          "*args",
+          ", ",
+          "**kwargs",
+          "):",
+          "\n    return len(args) + len(kwargs)"
+        ],
+        "hint": "One star collects positional arguments; two collect keywords.",
+        "explanation": "args is a tuple; kwargs is a dictionary. Their names are conventional; the stars define the behavior.",
+        "id": "py-07-functions-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-06-comprehensions"
+    ],
+    "reference": {
+      "label": "Python tutorial",
+      "url": "https://docs.python.org/3/tutorial/"
+    }
+  },
+  {
+    "trackId": "python",
+    "tier": 2,
+    "nodeId": "py-08-context",
+    "title": "Close the Spellbook",
+    "subtitle": "File I/O · context managers",
+    "storyIntro": "Pip keeps leaving enchanted books open. The pages have started wandering. Pythia introduces a spell that tidies up even when something goes wrong.",
+    "mentor": "pythia",
+    "minutes": 6,
+    "concepts": [
+      "with manages a resource’s lifetime. with open(...) as f closes the file when the block exits, including on exceptions.",
+      "read() returns file contents; write() writes text. Mode \"r\" reads, \"w\" truncates then writes, and \"a\" appends.",
+      "Custom context managers define __enter__ and __exit__. Returning True from __exit__ suppresses an exception; returning False lets it propagate."
+    ],
+    "example": "with open(\"notes.txt\", \"r\", encoding=\"utf-8\") as notes:\n    text = notes.read()\n\nclass Spellbook:\n    def __enter__(self):\n        return self\n    def __exit__(self, exc_type, exc, traceback):\n        return False",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Open notes.txt for reading with automatic closing.",
+        "tokens": [
+          " as notes:",
+          "for ",
+          "\n    text = notes.read()",
+          "with ",
+          "open(\"notes.txt\", \"r\", encoding=\"utf-8\")",
+          " in notes:"
+        ],
+        "correctSequence": [
+          "with ",
+          "open(\"notes.txt\", \"r\", encoding=\"utf-8\")",
+          " as notes:",
+          "\n    text = notes.read()"
+        ],
+        "hint": "A with statement names the managed resource with as.",
+        "explanation": "The context manager closes notes after the block, even if reading raises an exception.",
+        "id": "py-08-context-c1"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type the method called when a custom context exits.",
+        "before": "def ",
+        "answer": "__exit__",
+        "after": "(self, exc_type, exc, traceback):\n    return False",
+        "hint": "It is a double-underscore method named for leaving.",
+        "explanation": "__exit__ receives exception information and performs cleanup.",
+        "id": "py-08-context-c2"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Assume notes.txt exists. Which line tries to write through a read-only handle?",
+        "codeSnippet": [
+          "with open(\"notes.txt\", \"r\", encoding=\"utf-8\") as notes:",
+          "    text = notes.read()",
+          "    notes.write(\"new spell\")"
+        ],
+        "correctLineIndex": 2,
+        "hint": "Check the file’s mode.",
+        "explanation": "Mode r permits reading, not writing. Use a for appending or w when intentionally replacing contents.",
+        "id": "py-08-context-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-07-functions"
+    ],
+    "reference": {
+      "label": "Python tutorial",
+      "url": "https://docs.python.org/3/tutorial/"
+    }
+  },
+  {
+    "trackId": "python",
+    "tier": 3,
+    "nodeId": "py-09-objects",
+    "title": "A Rune with an Identity",
+    "subtitle": "Classes · dunder methods · equality",
+    "storyIntro": "Two runes look identical, but the archive insists they are different. Pythia teaches the objects how to introduce themselves.",
+    "mentor": "pythia",
+    "minutes": 6,
+    "concepts": [
+      "__init__ initializes an instance. __repr__ supplies a useful developer-facing representation.",
+      "__eq__ defines value equality. Return NotImplemented for unsupported operand types.",
+      "Equal objects must have equal hashes. A hash key’s equality-relevant data must not change while stored in a dict or set. Overriding __eq__ alone makes a class unhashable by default."
+    ],
+    "example": "class Rune:\n    def __init__(self, name):\n        self.name = name\n    def __repr__(self):\n        return f\"Rune({self.name!r})\"\n    def __eq__(self, other):\n        if not isinstance(other, Rune):\n            return NotImplemented\n        return self.name == other.name\n    def __hash__(self):\n        return hash(self.name)\n# Treat name as immutable when using Rune as a key.",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Type the instance initialization method.",
+        "before": "def ",
+        "answer": "__init__",
+        "after": "(self, name):\n    self.name = name",
+        "hint": "It begins and ends with two underscores.",
+        "explanation": "__init__ initializes the newly created instance.",
+        "id": "py-09-objects-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which return violates the equality/hash contract when runes have equal names?",
+        "codeSnippet": [
+          "def __eq__(self, other):",
+          "    return isinstance(other, Rune) and self.name == other.name",
+          "def __hash__(self):",
+          "    return id(self)"
+        ],
+        "correctLineIndex": 3,
+        "hint": "Equal values need equal hashes, even for separate objects.",
+        "explanation": "id(self) depends on identity. Hash the same stable value used by equality, such as self.name.",
+        "id": "py-09-objects-c2"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Build a useful representation from the rune’s name.",
+        "tokens": [
+          "print(self.name)",
+          "\n    return ",
+          "f\"Rune({self.name!r})\"",
+          "def __repr__(self):"
+        ],
+        "correctSequence": [
+          "def __repr__(self):",
+          "\n    return ",
+          "f\"Rune({self.name!r})\""
+        ],
+        "hint": "A representation method returns a string.",
+        "explanation": "!r includes the name’s repr, including quotes, making the result useful when debugging.",
+        "id": "py-09-objects-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-08-context"
+    ],
+    "reference": {
+      "label": "Python tutorial",
+      "url": "https://docs.python.org/3/tutorial/"
+    }
+  },
+  {
+    "trackId": "python",
+    "tier": 3,
+    "nodeId": "py-10-contracts",
+    "title": "The Council of Spellcasters",
+    "subtitle": "Inheritance · abstract classes · typing",
+    "storyIntro": "The forest council accepts many kinds of spellcaster, but each must know how to cast. Pythia writes a small contract in the bark.",
+    "mentor": "pythia",
+    "minutes": 6,
+    "concepts": [
+      "A subclass inherits behavior from its base class and may override methods.",
+      "ABC and @abstractmethod declare abstract methods. A subclass must implement them before it can be instantiated.",
+      "Type hints document contracts for tools such as mypy. Python does not automatically enforce annotations at runtime."
+    ],
+    "example": "from abc import ABC, abstractmethod\n\nclass Caster(ABC):\n    @abstractmethod\n    def cast(self, mana: int) -> str:\n        pass\n\nclass Witch(Caster):\n    def cast(self, mana: int) -> str:\n        return \"spark\" if mana > 0 else \"rest\"",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Type the decorator marking a required implementation.",
+        "before": "@",
+        "answer": "abstractmethod",
+        "after": "\ndef cast(self, mana: int) -> str:\n    pass",
+        "hint": "It names a method that the base class leaves abstract.",
+        "explanation": "@abstractmethod participates in ABC’s instantiation checks.",
+        "id": "py-10-contracts-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line cannot instantiate this abstract class?",
+        "codeSnippet": [
+          "from abc import ABC, abstractmethod",
+          "class Caster(ABC):",
+          "    @abstractmethod",
+          "    def cast(self): pass",
+          "caster = Caster()"
+        ],
+        "correctLineIndex": 4,
+        "hint": "The abstract cast method has no concrete implementation.",
+        "explanation": "Instantiating Caster raises TypeError until every abstract method is implemented in a concrete subclass.",
+        "id": "py-10-contracts-c2"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Annotate mana as int and the return value as str.",
+        "tokens": [
+          ")",
+          ":",
+          "def cast(mana",
+          ": int",
+          ": str",
+          " -> str",
+          " -> int",
+          "\n    return str(mana)"
+        ],
+        "correctSequence": [
+          "def cast(mana",
+          ": int",
+          ")",
+          " -> str",
+          ":",
+          "\n    return str(mana)"
+        ],
+        "hint": "Parameters use a colon; return annotations use an arrow.",
+        "explanation": "Annotations support static checking, but they do not themselves convert or reject runtime arguments.",
+        "id": "py-10-contracts-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-09-objects"
+    ],
+    "reference": {
+      "label": "Python tutorial",
+      "url": "https://docs.python.org/3/tutorial/"
+    }
+  },
+  {
+    "trackId": "python",
+    "tier": 3,
+    "nodeId": "py-11-generators",
+    "title": "One Firefly at a Time",
+    "subtitle": "Generators · iterators · yield",
+    "storyIntro": "Pip wants to carry a million fireflies. Pythia suggests meeting them one at a time. His satchel is relieved.",
+    "mentor": "pythia",
+    "minutes": 6,
+    "concepts": [
+      "A function containing yield creates a generator. It suspends after each yielded value and resumes on the next request.",
+      "iter() obtains an iterator; next() requests one item. Exhaustion raises StopIteration unless next has a default.",
+      "Generators avoid building a full result list, but are consumed as they run. A generator expression uses parentheses."
+    ],
+    "example": "def fireflies(limit):\n    for i in range(limit):\n        yield i * i\n\nlights = fireflies(3)\nprint(next(lights))  # 0\nprint(list(lights))  # [1, 4]",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Emit a value without ending the generator.",
+        "before": "for i in range(limit):\n    ",
+        "answer": "yield",
+        "after": " i * i",
+        "hint": "It pauses execution and hands one value to the caller.",
+        "explanation": "yield preserves the function’s state; return would end the generator.",
+        "id": "py-11-generators-c1"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Create a lazy generator expression for squares.",
+        "tokens": [
+          ")",
+          "]",
+          "x * x",
+          "(",
+          " for x in ",
+          "[",
+          "range(1000000)"
+        ],
+        "correctSequence": [
+          "(",
+          "x * x",
+          " for x in ",
+          "range(1000000)",
+          ")"
+        ],
+        "hint": "Parentheses create a generator expression here.",
+        "explanation": "The generator computes each square when requested instead of allocating a million-item list.",
+        "id": "py-11-generators-c2"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line requests an item from an already exhausted iterator?",
+        "codeSnippet": [
+          "it = iter([7])",
+          "first = next(it)",
+          "second = next(it)",
+          "print(first)"
+        ],
+        "correctLineIndex": 2,
+        "hint": "There was only one item.",
+        "explanation": "The second next(it) raises StopIteration. next(it, None) would return a default instead.",
+        "id": "py-11-generators-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-10-contracts"
+    ],
+    "reference": {
+      "label": "Python tutorial",
+      "url": "https://docs.python.org/3/tutorial/"
+    }
+  },
+  {
+    "trackId": "python",
+    "tier": 3,
+    "nodeId": "py-12-numpy",
+    "title": "The Matrix Canopy",
+    "subtitle": "Arrays · broadcasting · vectorization",
+    "storyIntro": "The canopy holds a grid of glowing leaves. Rather than touching each leaf, Pythia casts one array operation across the whole forest.",
+    "mentor": "pythia",
+    "minutes": 6,
+    "concepts": [
+      "NumPy arrays have a shape and a dtype. For a 2D array, shape is (rows, columns).",
+      "Vectorized operations act on arrays without an explicit Python loop. * is elementwise; @ is matrix multiplication.",
+      "Broadcasting compares dimensions from the right: each pair must match or include a 1. A (2, 3) array can add a (3,) vector."
+    ],
+    "example": "import numpy as np\nleaves = np.array([[1, 2, 3], [4, 5, 6]])\nprint(leaves.shape)  # (2, 3)\nprint(leaves + np.array([10, 20, 30]))\nprint(leaves * 2)",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Double every value in leaves with one array operation.",
+        "tokens": [
+          "2",
+          " @ ",
+          "[2]",
+          " * ",
+          "leaves"
+        ],
+        "correctSequence": [
+          "leaves",
+          " * ",
+          "2"
+        ],
+        "hint": "Use elementwise multiplication by a scalar.",
+        "explanation": "NumPy broadcasts the scalar across the array and multiplies each element.",
+        "id": "py-12-numpy-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which addition cannot broadcast these shapes?",
+        "codeSnippet": [
+          "import numpy as np",
+          "a = np.ones((2, 3))",
+          "b = np.ones((2,))",
+          "c = a + b"
+        ],
+        "correctLineIndex": 3,
+        "hint": "Compare the trailing dimensions: 3 and 2.",
+        "explanation": "Neither trailing dimension is 1 and they differ, so (2, 3) and (2,) cannot broadcast.",
+        "id": "py-12-numpy-c2"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type the array attribute that reports its dimensions.",
+        "before": "dimensions = leaves.",
+        "answer": "shape",
+        "after": "",
+        "hint": "It describes the array’s row and column counts.",
+        "explanation": "shape is a tuple of axis lengths; it is an attribute, not a method.",
+        "id": "py-12-numpy-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-11-generators"
+    ],
+    "reference": {
+      "label": "NumPy fundamentals",
+      "url": "https://numpy.org/doc/stable/user/basics.html"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 1,
+    "nodeId": "ja-01-jvm",
+    "title": "Welcome to the Forge",
+    "subtitle": "Compilation · JVM · stack and heap",
+    "storyIntro": "Brak hands Pip a blueprint, then refuses to light the furnace. “Source first. Bytecode second. Sparks after that.”",
+    "mentor": "brak",
+    "minutes": 4,
+    "concepts": [
+      "javac compiles .java source files into .class bytecode. The java launcher runs a class on the JVM.",
+      "A method call has a stack frame holding local variables and execution state. Objects and arrays live in the JVM heap model.",
+      "A local reference can point to a heap object. Copying the reference does not clone the object. These are language/runtime models; JVM optimizations may avoid physical allocations."
+    ],
+    "example": "// Save as Forge.java\nclass Forge {\n    public static void main(String[] args) {\n        int mana = 7;\n        System.out.println(mana);\n    }\n}\n// Terminal: javac Forge.java\n// Then:     java Forge",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Type the command that compiles a Java source file.",
+        "before": "",
+        "answer": "javac",
+        "after": " Forge.java",
+        "hint": "The compiler command ends in c.",
+        "explanation": "javac produces bytecode. java launches the compiled class.",
+        "id": "ja-01-jvm-c1"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Build a Java statement that prints mana.",
+        "tokens": [
+          ";",
+          "(",
+          "System.out.println",
+          "[",
+          "print",
+          ")",
+          "mana"
+        ],
+        "correctSequence": [
+          "System.out.println",
+          "(",
+          "mana",
+          ")",
+          ";"
+        ],
+        "hint": "Use Java’s standard output method and end the statement.",
+        "explanation": "System.out.println(mana); prints the value followed by a newline.",
+        "id": "ja-01-jvm-c2"
+      },
+      {
+        "type": "rosetta",
+        "prompt": "Translate this Python assignment into a Java local variable.",
+        "sourceLanguage": "Python",
+        "targetLanguage": "Java",
+        "codeSnippet": "mana = 7",
+        "options": [
+          "int mana == 7;",
+          "int mana = 7;",
+          "mana: int = 7"
+        ],
+        "correctOptionIndex": 1,
+        "hint": "The type precedes the name; assignment uses =.",
+        "explanation": "int declares the type. = assigns the value. Java statements end in a semicolon.",
+        "id": "ja-01-jvm-c3"
+      }
+    ],
+    "prerequisites": [],
+    "reference": {
+      "label": "Java learning resources",
+      "url": "https://dev.java/learn/"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 1,
+    "nodeId": "ja-02-types",
+    "title": "The Type-Safe Anvil",
+    "subtitle": "Primitives · references · null",
+    "storyIntro": "The Glitch Imp slips a mushroom into the molten-iron mold. Brak checks the type before anything reaches the furnace.",
+    "mentor": "brak",
+    "minutes": 4,
+    "concepts": [
+      "int, double, boolean and char are primitive types. String, arrays and class instances are reference types.",
+      "A char literal uses single quotes; a String literal uses double quotes. Java Boolean literals are true and false.",
+      "null can be a reference value. Calling an instance method through null throws NullPointerException; primitives cannot be null."
+    ],
+    "example": "int ore = 7;\ndouble heat = 2.5;\nboolean ready = true;\nchar grade = 'A';\nString label = \"iron\";",
+    "challenges": [
+      {
+        "type": "linter_trap",
+        "prompt": "Which declaration assigns a String to an int?",
+        "codeSnippet": [
+          "int ore = 7;",
+          "double heat = 2.5;",
+          "int label = \"iron\";",
+          "boolean ready = true;"
+        ],
+        "correctLineIndex": 2,
+        "hint": "Quoted text is not a whole number.",
+        "explanation": "Use String label = \"iron\"; Java rejects assigning this String to int at compile time.",
+        "id": "ja-02-types-c1"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type Java’s primitive Boolean type.",
+        "before": "",
+        "answer": "boolean",
+        "after": " ready = true;",
+        "hint": "Python calls the type bool; Java uses a longer name.",
+        "explanation": "boolean stores true or false. Boolean with a capital B is the wrapper reference type.",
+        "id": "ja-02-types-c2"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Declare a char named grade with the value A.",
+        "tokens": [
+          " = ",
+          "\"A\"",
+          "grade",
+          ";",
+          "String ",
+          "'A'",
+          "char "
+        ],
+        "correctSequence": [
+          "char ",
+          "grade",
+          " = ",
+          "'A'",
+          ";"
+        ],
+        "hint": "Single quotes hold a character.",
+        "explanation": "char grade = 'A'; uses a primitive char. \"A\" is a String.",
+        "id": "ja-02-types-c3"
+      }
+    ],
+    "prerequisites": [
+      "ja-01-jvm"
+    ],
+    "reference": {
+      "label": "Java learning resources",
+      "url": "https://dev.java/learn/"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 1,
+    "nodeId": "ja-03-casting",
+    "title": "Measure Twice, Cast Once",
+    "subtitle": "Arithmetic · division · explicit casts",
+    "storyIntro": "Brak divides five ingots between two apprentices. Pip is concerned about the missing half. “Integer division,” Brak grumbles.",
+    "mentor": "brak",
+    "minutes": 4,
+    "concepts": [
+      "Dividing two ints performs integer division: 5 / 2 is 2, truncating toward zero.",
+      "If an operand is double, floating-point division is used: 5.0 / 2 is 2.5.",
+      "Widening int to double is allowed automatically. Narrowing double to int needs a cast and may lose information. Cast before division when you need a fractional result."
+    ],
+    "example": "int ore = 5;\nint workers = 2;\ndouble share = (double) ore / workers; // 2.5\nint whole = (int) 2.9;               // 2",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Compute a fractional share from int ore and int workers.",
+        "tokens": [
+          "ore",
+          "workers",
+          "(int) ",
+          "(double) ",
+          " / "
+        ],
+        "correctSequence": [
+          "(double) ",
+          "ore",
+          " / ",
+          "workers"
+        ],
+        "hint": "Promote an operand before performing division.",
+        "explanation": "(double) ore / workers uses floating-point division. Casting the already-truncated result would be too late.",
+        "id": "ja-03-casting-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line fails to compile because narrowing requires a cast?",
+        "codeSnippet": [
+          "double heat = 2.9;",
+          "int whole = heat;",
+          "System.out.println(whole);"
+        ],
+        "correctLineIndex": 1,
+        "hint": "A double may have a fractional part.",
+        "explanation": "int whole = (int) heat; explicitly permits the narrowing conversion.",
+        "id": "ja-03-casting-c2"
+      },
+      {
+        "type": "rosetta",
+        "prompt": "Match Python’s division result using these Java literals.",
+        "sourceLanguage": "Python",
+        "targetLanguage": "Java",
+        "codeSnippet": "share = 5 / 2",
+        "options": [
+          "int share = 5 / 2;",
+          "double share = 5 / 2;",
+          "double share = 5.0 / 2;"
+        ],
+        "correctOptionIndex": 2,
+        "hint": "Python / returns a floating-point result; Java depends on the operands.",
+        "explanation": "Java 5.0 / 2 yields 2.5. Assigning Java 5 / 2 to double still starts with integer division.",
+        "id": "ja-03-casting-c3"
+      }
+    ],
+    "prerequisites": [
+      "ja-02-types"
+    ],
+    "reference": {
+      "label": "Java learning resources",
+      "url": "https://dev.java/learn/"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 1,
+    "nodeId": "ja-04-arrays",
+    "title": "March of the Iron Runes",
+    "subtitle": "Fixed arrays · loops · methods",
+    "storyIntro": "Four iron runes stand in a row. The Imp insists there is a fifth. Brak trusts the array length more than the Imp.",
+    "mentor": "brak",
+    "minutes": 4,
+    "concepts": [
+      "An array has a fixed length. int[] runes = {3, 7}; creates two elements at indices 0 and 1.",
+      "Use array.length, without parentheses, for its size. A loop over indices usually continues while i < array.length.",
+      "A method declares a return type and typed parameters. void means it returns no value. A static method belongs to the class."
+    ],
+    "example": "static int total(int[] runes) {\n    int sum = 0;\n    for (int i = 0; i < runes.length; i++) {\n        sum += runes[i];\n    }\n    return sum;\n}",
+    "challenges": [
+      {
+        "type": "linter_trap",
+        "prompt": "Which loop condition allows an out-of-bounds index?",
+        "codeSnippet": [
+          "int[] runes = {3, 7};",
+          "for (int i = 0; i <= runes.length; i++) {",
+          "    System.out.println(runes[i]);",
+          "}"
+        ],
+        "correctLineIndex": 1,
+        "hint": "The final valid index is length minus one.",
+        "explanation": "Replace <= with <. When i equals length, array access throws ArrayIndexOutOfBoundsException.",
+        "id": "ja-04-arrays-c1"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type the return type for a method returning a whole-number sum.",
+        "before": "static ",
+        "answer": "int",
+        "after": " add(int a, int b) {\n    return a + b;\n}",
+        "hint": "Match the return expression’s integer type.",
+        "explanation": "The return type appears before the method name.",
+        "id": "ja-04-arrays-c2"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Declare an integer array containing 3 and 7.",
+        "tokens": [
+          "int[] ",
+          "{3, 7}",
+          " = ",
+          ";",
+          "runes",
+          "[3, 7]",
+          "int "
+        ],
+        "correctSequence": [
+          "int[] ",
+          "runes",
+          " = ",
+          "{3, 7}",
+          ";"
+        ],
+        "hint": "Use [] in the type and braces for this initializer.",
+        "explanation": "Java arrays have a fixed length after creation.",
+        "id": "ja-04-arrays-c3"
+      }
+    ],
+    "prerequisites": [
+      "ja-03-casting"
+    ],
+    "reference": {
+      "label": "Java learning resources",
+      "url": "https://dev.java/learn/"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 2,
+    "nodeId": "ja-05-encapsulation",
+    "title": "A Vault with a Door",
+    "subtitle": "Constructors · access · encapsulation",
+    "storyIntro": "Brak keeps his ore behind a proper door. The Imp prefers public fields. You can see where this is going.",
+    "mentor": "brak",
+    "minutes": 6,
+    "concepts": [
+      "private limits access to the declaring class; public exposes a member wherever the class is accessible. protected also permits access in the package and, with rules, subclasses.",
+      "A constructor has the same name as its class and no return type. this refers to the current instance.",
+      "Getters expose values; methods or setters can enforce rules when changing state. Encapsulation keeps those rules in one place."
+    ],
+    "example": "class Vault {\n    private int ore;\n    public Vault(int ore) { this.ore = ore; }\n    public int getOre() { return ore; }\n    public void setOre(int ore) {\n        if (ore < 0) throw new IllegalArgumentException();\n        this.ore = ore;\n    }\n}",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Restrict the ore field to its declaring class.",
+        "before": "",
+        "answer": "private",
+        "after": " int ore;",
+        "hint": "This access modifier is the most restrictive of the three shown.",
+        "explanation": "private prevents ordinary external code from directly reading or writing the field.",
+        "id": "ja-05-encapsulation-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "In a separate unrelated class, which line illegally accesses a private field?",
+        "codeSnippet": [
+          "Vault vault = new Vault(7);",
+          "int count = vault.getOre();",
+          "vault.ore = -3;",
+          "System.out.println(count);"
+        ],
+        "correctLineIndex": 2,
+        "hint": "Use the class’s public interface.",
+        "explanation": "Private ore is inaccessible here. setOre can validate the change before accepting it.",
+        "id": "ja-05-encapsulation-c2"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Initialize the instance field from a constructor parameter.",
+        "tokens": [
+          " = ",
+          "ore",
+          " == ",
+          ";",
+          "ore.",
+          "this.ore"
+        ],
+        "correctSequence": [
+          "this.ore",
+          " = ",
+          "ore",
+          ";"
+        ],
+        "hint": "this.ore names the field; ore names the parameter.",
+        "explanation": "Without this, ore = ore would only assign the parameter to itself.",
+        "id": "ja-05-encapsulation-c3"
+      }
+    ],
+    "prerequisites": [
+      "ja-04-arrays"
+    ],
+    "reference": {
+      "label": "Java learning resources",
+      "url": "https://dev.java/learn/"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 2,
+    "nodeId": "ja-06-strings",
+    "title": "The Unbroken Inscription",
+    "subtitle": "String · StringBuilder · equality",
+    "storyIntro": "Pip is engraving a very long name. Brak offers a StringBuilder before the anvil fills with discarded inscriptions.",
+    "mentor": "brak",
+    "minutes": 6,
+    "concepts": [
+      "String values are immutable. Methods such as toUpperCase return a new String; they do not modify the original.",
+      "StringBuilder is mutable and useful for repeated construction. append adds content, and toString produces a String.",
+      "Use .equals for String content equality. == compares reference identity, which may differ for equal text."
+    ],
+    "example": "StringBuilder inscription = new StringBuilder();\ninscription.append(\"Byte\").append(\" Forge\");\nString name = inscription.toString();\nboolean same = name.equals(\"Byte Forge\");",
+    "challenges": [
+      {
+        "type": "rosetta",
+        "prompt": "Compare the content of Java Strings a and b as Python does here.",
+        "sourceLanguage": "Python",
+        "targetLanguage": "Java",
+        "codeSnippet": "same = a == b",
+        "options": [
+          "boolean same = a == b;",
+          "boolean same = a = b;",
+          "boolean same = a.equals(b);"
+        ],
+        "correctOptionIndex": 2,
+        "hint": "Assume a and b are non-null Strings.",
+        "explanation": "Python compares string values with ==; Java String.equals compares content.",
+        "id": "ja-06-strings-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line wrongly assumes String is mutable and leaves name unchanged?",
+        "codeSnippet": [
+          "String name = \"pip\";",
+          "name.toUpperCase();",
+          "System.out.println(name);"
+        ],
+        "correctLineIndex": 1,
+        "hint": "The returned String must be used.",
+        "explanation": "Assign name = name.toUpperCase(); if you want name to refer to the uppercase result.",
+        "id": "ja-06-strings-c2"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type the mutable text builder class.",
+        "before": "",
+        "answer": "StringBuilder",
+        "after": " text = new StringBuilder();",
+        "hint": "It starts with String and describes construction.",
+        "explanation": "StringBuilder accumulates text with append before toString creates the final String.",
+        "id": "ja-06-strings-c3"
+      }
+    ],
+    "prerequisites": [
+      "ja-05-encapsulation"
+    ],
+    "reference": {
+      "label": "Java learning resources",
+      "url": "https://dev.java/learn/"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 2,
+    "nodeId": "ja-07-exceptions",
+    "title": "Catch the Falling Anvil",
+    "subtitle": "Checked · unchecked · try/catch/finally",
+    "storyIntro": "An anvil falls through the floor. Brak has prepared an exception handler. Pip has prepared a helmet.",
+    "mentor": "brak",
+    "minutes": 6,
+    "concepts": [
+      "try encloses risky work; catch handles a matching exception. finally normally runs on exit, including when an exception occurs.",
+      "Checked exceptions must be caught or declared with throws. RuntimeException subclasses are unchecked.",
+      "Specific catch handlers must come before more general ones. Otherwise a later handler may be unreachable."
+    ],
+    "example": "try {\n    int ore = Integer.parseInt(\"seven\");\n    System.out.println(ore);\n} catch (NumberFormatException error) {\n    System.out.println(\"Use digits\");\n} finally {\n    System.out.println(\"Furnace checked\");\n}",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Type the keyword for the cleanup block.",
+        "before": "try { forge(); } catch (Exception e) { report(e); } ",
+        "answer": "finally",
+        "after": " { clean(); }",
+        "hint": "This block normally runs regardless of success or failure.",
+        "explanation": "finally is used for cleanup; try-with-resources is preferred for AutoCloseable resources.",
+        "id": "ja-07-exceptions-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which handler is unreachable because Exception already caught it?",
+        "codeSnippet": [
+          "try { Integer.parseInt(\"x\"); }",
+          "catch (Exception e) { System.out.println(\"failed\"); }",
+          "catch (NumberFormatException e) { System.out.println(\"digits\"); }"
+        ],
+        "correctLineIndex": 2,
+        "hint": "NumberFormatException is a subtype of Exception.",
+        "explanation": "Put the more specific NumberFormatException handler first.",
+        "id": "ja-07-exceptions-c2"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Declare that read may propagate a checked IOException.",
+        "tokens": [
+          "void read()",
+          " throws IOException",
+          "\n    throw new IOException();",
+          "\n}",
+          " catch IOException",
+          " {"
+        ],
+        "correctSequence": [
+          "void read()",
+          " throws IOException",
+          " {",
+          "\n    throw new IOException();",
+          "\n}"
+        ],
+        "hint": "The signature declares exceptions with throws.",
+        "explanation": "throws declares possible propagation; throw actually raises an exception. IOException must be imported.",
+        "id": "ja-07-exceptions-c3"
+      }
+    ],
+    "prerequisites": [
+      "ja-06-strings"
+    ],
+    "reference": {
+      "label": "Java learning resources",
+      "url": "https://dev.java/learn/"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 2,
+    "nodeId": "ja-08-collections",
+    "title": "An Expandable Treasury",
+    "subtitle": "ArrayList · HashMap · wrapper types",
+    "storyIntro": "The treasury has outgrown its fixed shelves. Brak reluctantly admits that an ArrayList is a useful kind of flexibility.",
+    "mentor": "brak",
+    "minutes": 6,
+    "concepts": [
+      "ArrayList<E> grows as needed. add appends, get reads by index, and size() reports the count.",
+      "HashMap<K, V> maps keys to values. put stores entries; getOrDefault supplies a value for missing keys.",
+      "Generic type arguments must be reference types. Use Integer rather than int; autoboxing converts between them in common contexts."
+    ],
+    "example": "import java.util.ArrayList;\nimport java.util.HashMap;\n\n// Inside a method:\nArrayList<Integer> ore = new ArrayList<>();\nore.add(7);\nHashMap<String, Integer> stock = new HashMap<>();\nstock.put(\"iron\", 3);\nint gold = stock.getOrDefault(\"gold\", 0);",
+    "challenges": [
+      {
+        "type": "rosetta",
+        "prompt": "Translate the missing-key fallback. Assume stock is a HashMap<String, Integer>.",
+        "sourceLanguage": "Python",
+        "targetLanguage": "Java",
+        "codeSnippet": "gold = stock.get(\"gold\", 0)",
+        "options": [
+          "int gold = stock[\"gold\"];",
+          "int gold = stock.get(\"gold\", 0);",
+          "int gold = stock.getOrDefault(\"gold\", 0);"
+        ],
+        "correctOptionIndex": 2,
+        "hint": "Java’s method name makes the fallback explicit.",
+        "explanation": "getOrDefault matches this Python dict.get use.",
+        "id": "ja-08-collections-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Assume ArrayList is imported. Which declaration uses a primitive where a type argument must be a reference?",
+        "codeSnippet": [
+          "ArrayList<int> ore = new ArrayList<>();",
+          "ore.add(7);",
+          "System.out.println(ore.size());"
+        ],
+        "correctLineIndex": 0,
+        "hint": "The wrapper for int is Integer.",
+        "explanation": "Use ArrayList<Integer>. Java generics do not accept primitive type arguments.",
+        "id": "ja-08-collections-c2"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type the method that reports an ArrayList’s item count.",
+        "before": "int count = ore.",
+        "answer": "size",
+        "after": "();",
+        "hint": "Arrays have length; collections have a count method.",
+        "explanation": "size() reports collection size. length is an array field and length() is a String method.",
+        "id": "ja-08-collections-c3"
+      }
+    ],
+    "prerequisites": [
+      "ja-07-exceptions"
+    ],
+    "reference": {
+      "label": "Java learning resources",
+      "url": "https://dev.java/learn/"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 3,
+    "nodeId": "ja-09-polymorphism",
+    "title": "One Contract, Many Spells",
+    "subtitle": "Interfaces · abstract classes · overriding",
+    "storyIntro": "Every forge makes a different spark. Brak wants one common way to ask for it. The interface is stamped in iron.",
+    "mentor": "brak",
+    "minutes": 6,
+    "concepts": [
+      "An interface describes a contract a class implements. An abstract class can hold shared state, constructors and both concrete and abstract methods.",
+      "A class can implement multiple interfaces but extend only one class. An abstract class cannot be directly instantiated.",
+      "Polymorphism lets an interface reference call an implementation’s overridden method. @Override asks the compiler to check that you really are overriding."
+    ],
+    "example": "interface Caster { String cast(); }\nclass Smith implements Caster {\n    @Override\n    public String cast() { return \"spark\"; }\n}\n// Inside a method:\nCaster caster = new Smith();\nSystem.out.println(caster.cast());",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Connect Smith to the Caster interface.",
+        "before": "class Smith ",
+        "answer": "implements",
+        "after": " Caster { /* methods */ }",
+        "hint": "Classes extend a class but use this keyword for interfaces.",
+        "explanation": "implements declares that Smith fulfills the Caster interface contract.",
+        "id": "ja-09-polymorphism-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which method fails to implement the interface because its name differs?",
+        "codeSnippet": [
+          "interface Caster { String cast(); }",
+          "class Smith implements Caster {",
+          "    public String casts() { return \"spark\"; }",
+          "}"
+        ],
+        "correctLineIndex": 2,
+        "hint": "The signature must match cast(), not a similar word.",
+        "explanation": "Rename casts to cast and add @Override to catch this mistake early.",
+        "id": "ja-09-polymorphism-c2"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Declare a reference by its interface and create a Smith.",
+        "tokens": [
+          "new Caster()",
+          "new Smith()",
+          "caster",
+          ";",
+          " = ",
+          "implements ",
+          "Caster "
+        ],
+        "correctSequence": [
+          "Caster ",
+          "caster",
+          " = ",
+          "new Smith()",
+          ";"
+        ],
+        "hint": "Instantiate the concrete implementation.",
+        "explanation": "The reference type is Caster; dynamic dispatch calls Smith’s cast implementation.",
+        "id": "ja-09-polymorphism-c3"
+      }
+    ],
+    "prerequisites": [
+      "ja-08-collections"
+    ],
+    "reference": {
+      "label": "Java learning resources",
+      "url": "https://dev.java/learn/"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 3,
+    "nodeId": "ja-10-equality",
+    "title": "The Object Oath",
+    "subtitle": "equals · hashCode · stable keys",
+    "storyIntro": "Two identical keys open different bins in the treasury. Brak calls this a broken oath. The Imp calls it interior design.",
+    "mentor": "brak",
+    "minutes": 6,
+    "concepts": [
+      "equals must be reflexive, symmetric, transitive, consistent, and false for null. Its Object override signature accepts Object.",
+      "If a.equals(b), then a.hashCode() must equal b.hashCode(). Unequal objects are allowed to share a hash code.",
+      "Override both methods using the same stable fields. Mutating equality-relevant fields while an object is a map key can break lookups."
+    ],
+    "example": "final class Rune {\n    private final int id;\n    Rune(int id) { this.id = id; }\n    @Override public boolean equals(Object other) {\n        return other instanceof Rune && id == ((Rune) other).id;\n    }\n    @Override public int hashCode() {\n        return Integer.hashCode(id);\n    }\n}",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Type the method paired with equals in the hashing contract.",
+        "before": "@Override public int ",
+        "answer": "hashCode",
+        "after": "() { return Integer.hashCode(id); }",
+        "hint": "Java uses camelCase for this method.",
+        "explanation": "Hash-based collections need equal objects to produce equal hash codes.",
+        "id": "ja-10-equality-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which return can produce different hashes for objects equal by id?",
+        "codeSnippet": [
+          "@Override public boolean equals(Object other) {",
+          "    return other instanceof Rune && id == ((Rune) other).id;",
+          "}",
+          "@Override public int hashCode() {",
+          "    return System.identityHashCode(this);",
+          "}"
+        ],
+        "correctLineIndex": 4,
+        "hint": "Object identity can differ even when ids are equal.",
+        "explanation": "Use Integer.hashCode(id), matching the stable equality field.",
+        "id": "ja-10-equality-c2"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Write the signature that overrides Object.equals.",
+        "tokens": [
+          "\n    return this == other;",
+          "(Rune other)",
+          "public int ",
+          "\n}",
+          "equals",
+          "(Object other)",
+          " {",
+          "public boolean "
+        ],
+        "correctSequence": [
+          "public boolean ",
+          "equals",
+          "(Object other)",
+          " {",
+          "\n    return this == other;",
+          "\n}"
+        ],
+        "hint": "The parameter type must be Object.",
+        "explanation": "equals(Rune other) would overload rather than override Object.equals. This body demonstrates identity equality only.",
+        "id": "ja-10-equality-c3"
+      }
+    ],
+    "prerequisites": [
+      "ja-09-polymorphism"
+    ],
+    "reference": {
+      "label": "Java learning resources",
+      "url": "https://dev.java/learn/"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 3,
+    "nodeId": "ja-11-generics",
+    "title": "The Shape of a Spell",
+    "subtitle": "Type parameters · bounded wildcards",
+    "storyIntro": "Brak wants one box blueprint for many kinds of ore. Pythia calls this practical. He pretends not to hear.",
+    "mentor": "brak",
+    "minutes": 6,
+    "concepts": [
+      "A type parameter such as <T> lets a class or method work with a specified reference type while preserving static type checks.",
+      "? extends Number accepts lists of Number subtypes as producers. You can read a Number but cannot safely add an arbitrary Number.",
+      "? super Integer can consume Integers; reading gives Object. Remember PECS: producer extends, consumer super."
+    ],
+    "example": "class Box<T> {\n    private T value;\n    void set(T value) { this.value = value; }\n    T get() { return value; }\n}\n// With java.util.List imported:\nstatic double first(List<? extends Number> values) {\n    return values.get(0).doubleValue();\n}",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Allow a list producing any subtype of Number.",
+        "before": "List<? ",
+        "answer": "extends",
+        "after": " Number> values",
+        "hint": "This is the producer side of PECS.",
+        "explanation": "? extends Number allows reading elements as Number from lists such as List<Integer>.",
+        "id": "ja-11-generics-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line cannot safely add an Integer to an unknown Number subtype list?",
+        "codeSnippet": [
+          "List<? extends Number> values = new ArrayList<Double>();",
+          "Number value = values.isEmpty() ? 0 : values.get(0);",
+          "values.add(7);"
+        ],
+        "correctLineIndex": 2,
+        "hint": "The actual list may hold Double, as it does here.",
+        "explanation": "An extends wildcard permits reading Numbers but not inserting an arbitrary Number subtype.",
+        "id": "ja-11-generics-c2"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Declare a list parameter that can consume Integers.",
+        "tokens": [
+          "> ",
+          "List<",
+          "int",
+          "? extends Integer",
+          "destination",
+          "? super Integer"
+        ],
+        "correctSequence": [
+          "List<",
+          "? super Integer",
+          "> ",
+          "destination"
+        ],
+        "hint": "Consumers use super.",
+        "explanation": "List<? super Integer> can refer to List<Integer>, List<Number>, or List<Object>, and accepts Integer values.",
+        "id": "ja-11-generics-c3"
+      }
+    ],
+    "prerequisites": [
+      "ja-10-equality"
+    ],
+    "reference": {
+      "label": "Java learning resources",
+      "url": "https://dev.java/learn/"
+    }
+  },
+  {
+    "trackId": "java",
+    "tier": 3,
+    "nodeId": "ja-12-tests",
+    "title": "Trial by Assertion",
+    "subtitle": "JUnit 5 · fixtures · parameterized tests",
+    "storyIntro": "Brak refuses to ship a spell because it worked once. Pip volunteers to press the button a second time. Brak writes a test instead.",
+    "mentor": "brak",
+    "minutes": 6,
+    "concepts": [
+      "JUnit Jupiter uses @Test to identify tests. Assertions compare expected and actual results and fail when the contract is broken.",
+      "@BeforeEach runs before each test invocation and can reset fixture state so tests do not depend on one another.",
+      "@ParameterizedTest with a source such as @ValueSource runs the same test for multiple inputs. JUnit 5 requires its dependencies and imports."
+    ],
+    "example": "import org.junit.jupiter.api.Test;\nimport org.junit.jupiter.api.BeforeEach;\nimport org.junit.jupiter.params.ParameterizedTest;\nimport org.junit.jupiter.params.provider.ValueSource;\nimport static org.junit.jupiter.api.Assertions.*;\n\nclass ForgeTest {\n    int ore;\n    @BeforeEach void reset() { ore = 0; }\n    @Test void startsEmpty() { assertEquals(0, ore); }\n    @ParameterizedTest\n    @ValueSource(ints = {1, 2, 3})\n    void doubles(int x) { assertEquals(x * 2, x + x); }\n}",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Mark a method as a standard Jupiter test.",
+        "before": "@",
+        "answer": "Test",
+        "after": "\nvoid adds() { assertEquals(4, 2 + 2); }",
+        "hint": "The annotation begins with a capital T.",
+        "explanation": "@Test lets Jupiter discover and execute the test method.",
+        "id": "ja-12-tests-c1"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Assert that adding two and two gives four.",
+        "tokens": [
+          "2 + 2",
+          "assertEquals",
+          "4",
+          ")",
+          "(",
+          ", ",
+          "5",
+          " == ",
+          ";"
+        ],
+        "correctSequence": [
+          "assertEquals",
+          "(",
+          "4",
+          ", ",
+          "2 + 2",
+          ")",
+          ";"
+        ],
+        "hint": "Expected value comes first, actual value second.",
+        "explanation": "assertEquals(4, 2 + 2); expresses a check that fails if the values differ.",
+        "id": "ja-12-tests-c2"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which assertion fails for the input 3?",
+        "codeSnippet": [
+          "@ParameterizedTest",
+          "@ValueSource(ints = {2, 3})",
+          "void even(int x) {",
+          "    assertEquals(0, x % 2);",
+          "}"
+        ],
+        "correctLineIndex": 3,
+        "hint": "3 divided by 2 has a remainder of 1.",
+        "explanation": "The assertion expects every input to be even, but 3 is odd. Correct the test data or the intended property.",
+        "id": "ja-12-tests-c3"
+      }
+    ],
+    "prerequisites": [
+      "ja-11-generics"
+    ],
+    "reference": {
+      "label": "JUnit 5 user guide",
+      "url": "https://docs.junit.org/5.10.3/user-guide/"
+    }
+  },
+  {
+    "trackId": "nether",
+    "tier": 1,
+    "nodeId": "net-01-structures",
+    "title": "The Last In, First Out Door",
+    "subtitle": "Nodes · stacks · queues",
+    "storyIntro": "Percy floats beside a door that opens only for the last visitor to arrive. “It is a stack,” he whispers. “The other door has a queue. Much more polite.”",
+    "mentor": "percy",
+    "minutes": 4,
+    "concepts": [
+      "A stack is last in, first out (LIFO). A queue is first in, first out (FIFO). Implementations need explicit empty-state handling.",
+      "A linked node contains a value and a reference to the next node. Pushing a node at the head makes a simple O(1) stack.",
+      "A linked queue keeps head and tail references for O(1) enqueue and dequeue. When the last item leaves, reset both references."
+    ],
+    "example": "class Node:\n    def __init__(self, value, next=None):\n        self.value, self.next = value, next\n\nclass Stack:\n    def __init__(self): self.head = None\n    def push(self, value):\n        self.head = Node(value, self.head)\n    def pop(self):\n        if self.head is None: raise IndexError(\"empty\")\n        value = self.head.value\n        self.head = self.head.next\n        return value\n\nclass Queue:\n    def __init__(self): self.head = self.tail = None\n    def put(self, value):\n        node = Node(value)\n        if self.tail is None: self.head = node\n        else: self.tail.next = node\n        self.tail = node\n    def get(self):\n        if self.head is None: raise IndexError(\"empty\")\n        value = self.head.value\n        self.head = self.head.next\n        if self.head is None: self.tail = None\n        return value",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Move the linked stack head to its next node.",
+        "before": "self.head = self.head.",
+        "answer": "next",
+        "after": "",
+        "hint": "The link is stored under the same name as the constructor parameter.",
+        "explanation": "Removing the head advances to its next reference; the old head can be collected when unreferenced.",
+        "id": "net-01-structures-c1"
+      },
+      {
+        "type": "rosetta",
+        "prompt": "Translate this Node constructor. Assume Java Node has int value and Node next fields.",
+        "sourceLanguage": "Python",
+        "targetLanguage": "Java",
+        "codeSnippet": "def __init__(self, value, next=None):\n    self.value = value\n    self.next = next",
+        "options": [
+          "Node(int value, Node next) {\n    this.value = value;\n    this.next = next;\n}",
+          "Node(int value, int next) {\n    this.value = value;\n    this.next = next;\n}",
+          "void Node(int value, Node next) {\n    this.value = value;\n    this.next = next;\n}"
+        ],
+        "correctOptionIndex": 0,
+        "hint": "A constructor has no return type, and the link is a Node reference.",
+        "explanation": "Java constructors share the class name. next is a reference to another Node, not an integer.",
+        "id": "net-01-structures-c2"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "For an initially empty queue, which line dereferences None?",
+        "codeSnippet": [
+          "def put(self, value):",
+          "    node = Node(value)",
+          "    self.tail.next = node",
+          "    self.tail = node"
+        ],
+        "correctLineIndex": 2,
+        "hint": "An empty queue has no tail yet.",
+        "explanation": "Handle the empty case by setting head to node before setting tail. Otherwise self.tail.next raises AttributeError.",
+        "id": "net-01-structures-c3"
+      }
+    ],
+    "prerequisites": [
+      "py-12-numpy",
+      "ja-12-tests"
+    ],
+    "reference": {
+      "label": "Princeton algorithms",
+      "url": "https://algs4.cs.princeton.edu/40graphs/"
+    }
+  },
+  {
+    "trackId": "nether",
+    "tier": 1,
+    "nodeId": "net-02-bfs",
+    "title": "Lanterns, One Ring at a Time",
+    "subtitle": "Breadth-first search · shortest paths",
+    "storyIntro": "The catacombs branch into darkness. Percy lights every nearby room before walking farther. Somewhere, the Imp has made the corridors loop.",
+    "mentor": "percy",
+    "minutes": 4,
+    "concepts": [
+      "BFS explores in layers using a queue. On an unweighted graph it finds shortest paths by edge count.",
+      "Mark nodes seen when enqueuing them. This prevents cycles and duplicate queued work.",
+      "A list plus an advancing head index can serve as a simple queue without external libraries. Avoid pop(0), which shifts remaining elements."
+    ],
+    "example": "def bfs(graph, start):\n    queue, head, seen = [start], 0, {start}\n    while head < len(queue):\n        node = queue[head]\n        head += 1\n        for neighbor in graph[node]:\n            if neighbor not in seen:\n                seen.add(neighbor)\n                queue.append(neighbor)\n    return queue",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Guard against visiting a neighbor twice.",
+        "tokens": [
+          "while ",
+          ":",
+          "neighbor",
+          " in ",
+          "if ",
+          " not in ",
+          "seen"
+        ],
+        "correctSequence": [
+          "if ",
+          "neighbor",
+          " not in ",
+          "seen",
+          ":"
+        ],
+        "hint": "Only unseen neighbors should enter the queue.",
+        "explanation": "Checking seen prevents revisiting cycles and repeated queue entries.",
+        "id": "net-02-bfs-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line turns the queue-based traversal into a last-in-first-out search?",
+        "codeSnippet": [
+          "frontier = [start]",
+          "seen = {start}",
+          "while frontier:",
+          "    node = frontier.pop()",
+          "    for neighbor in graph[node]:",
+          "        if neighbor not in seen:",
+          "            seen.add(neighbor)",
+          "            frontier.append(neighbor)"
+        ],
+        "correctLineIndex": 3,
+        "hint": "pop() removes from the end of a list.",
+        "explanation": "Popping the newest item gives stack behavior. BFS needs the oldest queued item, as with a head index.",
+        "id": "net-02-bfs-c2"
+      },
+      {
+        "type": "rosetta",
+        "prompt": "Translate the queue lookup. Java queue is an ArrayList<Integer> and head is an int.",
+        "sourceLanguage": "Python",
+        "targetLanguage": "Java",
+        "codeSnippet": "node = queue[head]",
+        "options": [
+          "int node = queue[head];",
+          "int node = queue.remove(queue.size() - 1);",
+          "int node = queue.get(head);"
+        ],
+        "correctOptionIndex": 2,
+        "hint": "ArrayList uses get for indexed reads.",
+        "explanation": "get(head) reads the queue item; advance head separately to consume it.",
+        "id": "net-02-bfs-c3"
+      }
+    ],
+    "prerequisites": [
+      "net-01-structures"
+    ],
+    "reference": {
+      "label": "Princeton algorithms",
+      "url": "https://algs4.cs.princeton.edu/40graphs/"
+    }
+  },
+  {
+    "trackId": "nether",
+    "tier": 1,
+    "nodeId": "net-03-dfs",
+    "title": "Down the Rabbit Tunnel",
+    "subtitle": "Depth-first search · cycles · recursion",
+    "storyIntro": "Percy follows one corridor until it ends, then retraces his steps. Pip trails a string behind them. It is an excellent metaphor and a terrible scarf.",
+    "mentor": "percy",
+    "minutes": 4,
+    "concepts": [
+      "DFS follows a branch deeply before backtracking. A call stack or explicit stack stores the frontier.",
+      "A seen set prevents infinite recursion on cyclic graphs. Mark the node before descending to its neighbors.",
+      "DFS does not generally find shortest paths. Both DFS and BFS take O(V + E) time with adjacency lists and appropriate data structures. Deep recursion may exceed the language’s stack limit."
+    ],
+    "example": "def dfs(graph, node, seen=None):\n    if seen is None: seen = set()\n    if node in seen: return seen\n    seen.add(node)\n    for neighbor in graph[node]:\n        dfs(graph, neighbor, seen)\n    return seen",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Type the statement that stops an already-seen branch.",
+        "before": "if node in seen:\n    ",
+        "answer": "return",
+        "after": " seen",
+        "hint": "The branch must stop before exploring its neighbors again.",
+        "explanation": "Returning early prevents repeat traversal of a node.",
+        "id": "net-03-dfs-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line forgets the shared visited set in recursive calls?",
+        "codeSnippet": [
+          "def dfs(graph, node, seen):",
+          "    if node in seen: return",
+          "    seen.add(node)",
+          "    for neighbor in graph[node]:",
+          "        dfs(graph, neighbor, set())"
+        ],
+        "correctLineIndex": 4,
+        "hint": "Each call needs the same set of visited nodes.",
+        "explanation": "Passing a fresh set loses earlier visits, so cycles can recurse indefinitely. Pass seen.",
+        "id": "net-03-dfs-c2"
+      },
+      {
+        "type": "rosetta",
+        "prompt": "Translate the recursive traversal call. Assume matching Java types and method.",
+        "sourceLanguage": "Python",
+        "targetLanguage": "Java",
+        "codeSnippet": "for neighbor in graph[node]:\n    dfs(graph, neighbor, seen)",
+        "options": [
+          "for (int neighbor : graph.get(node)) {\n    dfs(graph, node, seen);\n}",
+          "for (int neighbor : graph.get(node)) {\n    dfs(graph, neighbor, new HashSet<Integer>());\n}",
+          "for (int neighbor : graph.get(node)) {\n    dfs(graph, neighbor, seen);\n}"
+        ],
+        "correctOptionIndex": 2,
+        "hint": "Descend to neighbor while retaining the shared seen set.",
+        "explanation": "The recursive call advances to each neighbor and shares visited-state information.",
+        "id": "net-03-dfs-c3"
+      }
+    ],
+    "prerequisites": [
+      "net-02-bfs"
+    ],
+    "reference": {
+      "label": "Princeton algorithms",
+      "url": "https://algs4.cs.princeton.edu/40graphs/"
+    }
+  },
+  {
+    "trackId": "nether",
+    "tier": 2,
+    "nodeId": "net-04-layer",
+    "title": "A Thought Made of Matrices",
+    "subtitle": "Dot products · dense layers · activation",
+    "storyIntro": "A floating forge hums with tiny artificial neurons. Percy hands you a matrix. “No prophecy involved. Mostly multiplication.”",
+    "mentor": "percy",
+    "minutes": 6,
+    "concepts": [
+      "A dense layer computes Z = X @ W + b. If X has shape (batch, inputs), W has shape (inputs, outputs).",
+      "A bias vector of shape (outputs,) broadcasts across the batch. Matrix multiplication combines weighted inputs.",
+      "An activation such as ReLU, maximum(0, Z), introduces nonlinearity. A perceptron instead can threshold a weighted sum to classify."
+    ],
+    "example": "import numpy as np\nX = np.array([[1., 2., 3.], [0., 1., 0.]])\nW = np.ones((3, 2))\nb = np.array([0.5, -0.5])\nZ = X @ W + b       # shape (2, 2)\nA = np.maximum(0, Z)\nprediction = (Z >= 0).astype(int)",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Compute a dense layer’s pre-activation values.",
+        "tokens": [
+          " @ ",
+          " + ",
+          "b",
+          " * ",
+          " - ",
+          "X",
+          "W"
+        ],
+        "correctSequence": [
+          "X",
+          " @ ",
+          "W",
+          " + ",
+          "b"
+        ],
+        "hint": "Use matrix multiplication, then add bias.",
+        "explanation": "X @ W combines input features for each output; b broadcasts over the batch.",
+        "id": "net-04-layer-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which multiplication has mismatched inner dimensions?",
+        "codeSnippet": [
+          "X = np.ones((4, 3))",
+          "W = np.ones((2, 5))",
+          "Z = X @ W"
+        ],
+        "correctLineIndex": 2,
+        "hint": "Matrix shapes (4, 3) and (2, 5) have inner sizes 3 and 2.",
+        "explanation": "W needs 3 input rows to multiply with this X, for example shape (3, 5).",
+        "id": "net-04-layer-c2"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type NumPy’s elementwise function for ReLU.",
+        "before": "A = np.",
+        "answer": "maximum",
+        "after": "(0, Z)",
+        "hint": "Select the greater of zero and each value.",
+        "explanation": "np.maximum(0, Z) clips negative values to zero without a Python loop.",
+        "id": "net-04-layer-c3"
+      }
+    ],
+    "prerequisites": [
+      "net-03-dfs"
+    ],
+    "reference": {
+      "label": "NumPy fundamentals",
+      "url": "https://numpy.org/doc/stable/user/basics.html"
+    }
+  },
+  {
+    "trackId": "nether",
+    "tier": 2,
+    "nodeId": "net-05-distance",
+    "title": "How Far to the Other Star?",
+    "subtitle": "Euclidean distance · norms · axes",
+    "storyIntro": "Two stars occupy different coordinates in Percy’s notebook. Pip measures the page with a ruler. You measure the vectors.",
+    "mentor": "percy",
+    "minutes": 6,
+    "concepts": [
+      "Euclidean distance is the square root of the sum of squared coordinate differences.",
+      "np.linalg.norm(a - b) computes this distance for one-dimensional vectors. Both vectors must describe the same coordinate space.",
+      "For a batch of row vectors, axis=1 computes one norm per row. Omitting the axis computes a single overall norm for a matrix by default."
+    ],
+    "example": "import numpy as np\na = np.array([0., 0.])\nb = np.array([3., 4.])\ndistance = np.linalg.norm(a - b)  # 5.0\npoints = np.array([[3., 4.], [0., 2.]])\ndistances = np.linalg.norm(points, axis=1)",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Compute the distance between vectors a and b.",
+        "tokens": [
+          "np.linalg.norm",
+          " - ",
+          " + ",
+          "b",
+          "(",
+          ")",
+          "np.sum",
+          "a"
+        ],
+        "correctSequence": [
+          "np.linalg.norm",
+          "(",
+          "a",
+          " - ",
+          "b",
+          ")"
+        ],
+        "hint": "Take the norm of their difference.",
+        "explanation": "The norm measures the length of the displacement a - b.",
+        "id": "net-05-distance-c1"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Choose the axis to collapse columns into one norm per row.",
+        "before": "distances = np.linalg.norm(points, axis=",
+        "answer": "1",
+        "after": ")",
+        "hint": "Axis 0 runs down rows; axis 1 runs across columns.",
+        "explanation": "Reducing axis 1 leaves one distance for each row vector.",
+        "id": "net-05-distance-c2"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line computes squared distance rather than Euclidean distance?",
+        "codeSnippet": [
+          "delta = a - b",
+          "squared = np.sum(delta ** 2)",
+          "distance = squared",
+          "print(distance)"
+        ],
+        "correctLineIndex": 2,
+        "hint": "The squared differences still need a square root.",
+        "explanation": "Use np.sqrt(squared), or np.linalg.norm(delta), for Euclidean distance.",
+        "id": "net-05-distance-c3"
+      }
+    ],
+    "prerequisites": [
+      "net-04-layer"
+    ],
+    "reference": {
+      "label": "NumPy fundamentals",
+      "url": "https://numpy.org/doc/stable/user/basics.html"
+    }
+  },
+  {
+    "trackId": "nether",
+    "tier": 2,
+    "nodeId": "net-06-cosine",
+    "title": "When Two Spells Point Alike",
+    "subtitle": "Cosine similarity · embeddings · zero norms",
+    "storyIntro": "Two spell embeddings have different lengths but point in the same direction. “Related?” asks Pip. “By this measure,” says Percy. “Always inspect what your embedding represents.”",
+    "mentor": "percy",
+    "minutes": 6,
+    "concepts": [
+      "Cosine similarity is dot(a, b) divided by norm(a) * norm(b). For real nonzero vectors it ranges from -1 to 1.",
+      "It measures direction, not magnitude. Positive rescaling does not change cosine similarity.",
+      "A zero vector has no direction; the formula is undefined. Handle zero norms explicitly rather than pretending the score is meaningful."
+    ],
+    "example": "def cosine(a, b):\n    denominator = np.linalg.norm(a) * np.linalg.norm(b)\n    if denominator == 0:\n        raise ValueError(\"zero vector has no direction\")\n    return np.dot(a, b) / denominator",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Normalize the dot product into cosine similarity.",
+        "tokens": [
+          " / ",
+          "(np.linalg.norm(a) * np.linalg.norm(b))",
+          "np.linalg.norm(a - b)",
+          " + ",
+          "np.dot(a, b)"
+        ],
+        "correctSequence": [
+          "np.dot(a, b)",
+          " / ",
+          "(np.linalg.norm(a) * np.linalg.norm(b))"
+        ],
+        "hint": "Divide by both vector lengths.",
+        "explanation": "Normalizing removes magnitude and leaves a directional comparison.",
+        "id": "net-06-cosine-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which line can divide by zero when either input is a zero vector?",
+        "codeSnippet": [
+          "numerator = np.dot(a, b)",
+          "denominator = np.linalg.norm(a) * np.linalg.norm(b)",
+          "score = numerator / denominator"
+        ],
+        "correctLineIndex": 2,
+        "hint": "The denominator can be zero.",
+        "explanation": "Check the denominator first. NumPy may produce NaN with a warning instead of a useful similarity score.",
+        "id": "net-06-cosine-c2"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type the NumPy function for a vector dot product.",
+        "before": "numerator = np.",
+        "answer": "dot",
+        "after": "(a, b)",
+        "hint": "It sums coordinate-wise products for 1D vectors.",
+        "explanation": "np.dot(a, b) gives the dot product of two one-dimensional vectors.",
+        "id": "net-06-cosine-c3"
+      }
+    ],
+    "prerequisites": [
+      "net-05-distance"
+    ],
+    "reference": {
+      "label": "NumPy fundamentals",
+      "url": "https://numpy.org/doc/stable/user/basics.html"
+    }
+  },
+  {
+    "trackId": "nether",
+    "tier": 3,
+    "nodeId": "net-07-qubits",
+    "title": "Percy Is Probably Here",
+    "subtitle": "State vectors · Bloch sphere · X and H",
+    "storyIntro": "Percy appears beside two doors, then admits the illustration is a metaphor. “A qubit is not a tiny possum secretly choosing a door. Let us use amplitudes.”",
+    "mentor": "percy",
+    "minutes": 6,
+    "concepts": [
+      "A pure qubit state is α|0⟩ + β|1⟩ with |α|² + |β|² = 1. Computational-basis measurements yield 0 or 1 with those squared-magnitude probabilities.",
+      "The Bloch sphere represents pure one-qubit states on its surface. |0⟩ and |1⟩ are opposite poles; relative phase affects interference.",
+      "X swaps |0⟩ and |1⟩. H sends |0⟩ to |+⟩ = (|0⟩ + |1⟩)/√2. Applying H twice returns the original state. Superposition is not simply an unknown classical bit."
+    ],
+    "example": "from qiskit import QuantumCircuit\nqc = QuantumCircuit(1)\nqc.x(0)   # |0⟩ becomes |1⟩\nqc.x(0)   # back to |0⟩\nqc.h(0)   # |+⟩\nqc.h(0)   # back to |0⟩",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Type the gate method that creates |+⟩ from |0⟩.",
+        "before": "qc.",
+        "answer": "h",
+        "after": "(0)",
+        "hint": "The Hadamard gate uses a single lowercase letter.",
+        "explanation": "H prepares equal measurement probabilities from |0⟩. Its phase behavior also enables interference.",
+        "id": "net-07-qubits-c1"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Apply the Pauli-X gate to qubit zero.",
+        "tokens": [
+          "1",
+          "0",
+          ".h",
+          ")",
+          "(",
+          ".x",
+          "qc"
+        ],
+        "correctSequence": [
+          "qc",
+          ".x",
+          "(",
+          "0",
+          ")"
+        ],
+        "hint": "Use x and the zero-based qubit index.",
+        "explanation": "X maps |0⟩ to |1⟩ and |1⟩ to |0⟩.",
+        "id": "net-07-qubits-c2"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "A one-qubit circuit has only qubit 0. Which call uses an invalid index?",
+        "codeSnippet": [
+          "qc = QuantumCircuit(1)",
+          "qc.h(0)",
+          "qc.x(1)"
+        ],
+        "correctLineIndex": 2,
+        "hint": "Qubit indices begin at zero.",
+        "explanation": "A circuit with one qubit has no qubit 1; use qc.x(0).",
+        "id": "net-07-qubits-c3"
+      }
+    ],
+    "prerequisites": [
+      "net-06-cosine"
+    ],
+    "reference": {
+      "label": "IBM Quantum learning",
+      "url": "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+    }
+  },
+  {
+    "trackId": "nether",
+    "tier": 3,
+    "nodeId": "net-08-entanglement",
+    "title": "Two Doors, One Bell",
+    "subtitle": "CNOT · entanglement · correlations",
+    "storyIntro": "Percy’s two doors now share a state that cannot be split into independent qubit states. Pip asks about instant messaging. Percy firmly puts the mailbox away.",
+    "mentor": "percy",
+    "minutes": 6,
+    "concepts": [
+      "Starting in |00⟩, H on qubit 0 followed by CX(0, 1) prepares the Bell state (|00⟩ + |11⟩)/√2.",
+      "CX uses its first qubit as control and second as target. It flips the target when the control’s computational-basis value is 1.",
+      "Ideal computational-basis measurements of this Bell state give only 00 or 11, each with probability 1/2. Neither local outcome is controllable; entanglement does not enable faster-than-light signaling."
+    ],
+    "example": "from qiskit import QuantumCircuit\nqc = QuantumCircuit(2)\nqc.h(0)\nqc.cx(0, 1)\nqc.measure_all()\n# Ideal outcomes: 00 or 11\n# Finite samples need not be split exactly in half.",
+    "challenges": [
+      {
+        "type": "word_bank",
+        "prompt": "Entangle target qubit 1 with control qubit 0 after H(0).",
+        "tokens": [
+          "1",
+          "0",
+          "2",
+          ", ",
+          "(",
+          ".x",
+          "qc",
+          ")",
+          ".cx"
+        ],
+        "correctSequence": [
+          "qc",
+          ".cx",
+          "(",
+          "0",
+          ", ",
+          "1",
+          ")"
+        ],
+        "hint": "The control is the first argument.",
+        "explanation": "qc.cx(0, 1) correlates the target with the superposed control.",
+        "id": "net-08-entanglement-c1"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Starting from |00⟩, which line must change to prepare the intended Bell state?",
+        "codeSnippet": [
+          "qc = QuantumCircuit(2)",
+          "qc.h(0)",
+          "qc.x(1)",
+          "qc.measure_all()"
+        ],
+        "correctLineIndex": 2,
+        "hint": "An independent X gate cannot entangle these qubits.",
+        "explanation": "Replace qc.x(1) with qc.cx(0, 1). A controlled operation creates the required correlation here.",
+        "id": "net-08-entanglement-c2"
+      },
+      {
+        "type": "micro_caster",
+        "prompt": "Type Qiskit’s controlled-NOT method name.",
+        "before": "qc.",
+        "answer": "cx",
+        "after": "(0, 1)",
+        "hint": "It abbreviates controlled X.",
+        "explanation": "cx applies a controlled Pauli-X operation.",
+        "id": "net-08-entanglement-c3"
+      }
+    ],
+    "prerequisites": [
+      "net-07-qubits"
+    ],
+    "reference": {
+      "label": "IBM Quantum learning",
+      "url": "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+    }
+  },
+  {
+    "trackId": "nether",
+    "tier": 3,
+    "nodeId": "net-09-measurement",
+    "title": "The Last Spell Is a Question",
+    "subtitle": "Measurement · sampling · honest uncertainty",
+    "storyIntro": "The portal opens. Percy offers one final challenge: write the experiment, read the counts, and resist pretending that randomness guarantees a tidy result.",
+    "mentor": "percy",
+    "minutes": 6,
+    "concepts": [
+      "measure_all adds classical storage and measurement operations. Qiskit’s displayed bit strings place higher-index bits to the left.",
+      "StatevectorSampler simulates ideal circuit measurements on a classical computer. This lesson does not contact quantum hardware.",
+      "Run the measured circuit, collect its result, then inspect data.meas.get_counts(). Counts sum to the shot count; a finite sample is not guaranteed to be exactly 50/50."
+    ],
+    "example": "from qiskit import QuantumCircuit\nfrom qiskit.primitives import StatevectorSampler\n\nqc = QuantumCircuit(2)\nqc.h(0)\nqc.cx(0, 1)\nqc.measure_all()\nsampler = StatevectorSampler(seed=7)\nresult = sampler.run([qc], shots=128).result()[0]\ncounts = result.data.meas.get_counts()\nassert sum(counts.values()) == 128\nassert set(counts) <= {\"00\", \"11\"}",
+    "challenges": [
+      {
+        "type": "micro_caster",
+        "prompt": "Add measurement operations and default classical storage for all qubits.",
+        "before": "qc.",
+        "answer": "measure_all",
+        "after": "()",
+        "hint": "The method name says which qubits it measures.",
+        "explanation": "measure_all creates the default meas classical register used by this example.",
+        "id": "net-09-measurement-c1"
+      },
+      {
+        "type": "word_bank",
+        "prompt": "Read the outcome frequency dictionary from the result.",
+        "tokens": [
+          "(",
+          ".get_statevector",
+          ".count",
+          ")",
+          ".data",
+          ".meas",
+          ".get_counts",
+          "result"
+        ],
+        "correctSequence": [
+          "result",
+          ".data",
+          ".meas",
+          ".get_counts",
+          "(",
+          ")"
+        ],
+        "hint": "The default measurement register is named meas.",
+        "explanation": "get_counts() returns a dictionary mapping measured bit strings to their observed counts.",
+        "id": "net-09-measurement-c2"
+      },
+      {
+        "type": "linter_trap",
+        "prompt": "Which assertion is unjustified even for an ideal Bell-state simulation?",
+        "codeSnippet": [
+          "counts = result.data.meas.get_counts()",
+          "assert sum(counts.values()) == 128",
+          "assert set(counts) <= {\"00\", \"11\"}",
+          "assert counts.get(\"00\", 0) == 64"
+        ],
+        "correctLineIndex": 3,
+        "hint": "A probability of one half does not force exactly half the shots.",
+        "explanation": "The number of 00 outcomes fluctuates. The shot total and allowed ideal outcomes are reliable checks; an exact 64/64 split is not.",
+        "id": "net-09-measurement-c3"
+      }
+    ],
+    "prerequisites": [
+      "net-08-entanglement"
+    ],
+    "reference": {
+      "label": "Qiskit StatevectorSampler",
+      "url": "https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.primitives.StatevectorSampler"
+    }
+  }
+]

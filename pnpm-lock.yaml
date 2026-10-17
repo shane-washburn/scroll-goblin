@@ -70,6 +70,9 @@ importers:
       '@scroll-goblin/module-brainrot-button':
         specifier: workspace:*
         version: link:../../packages/modules/brainrot-button
+      '@scroll-goblin/module-code-goblin':
+        specifier: workspace:*
+        version: link:../../packages/modules/code-goblin
       '@scroll-goblin/module-commune-with-god':
         specifier: workspace:*
         version: link:../../packages/modules/commune-with-god
@@ -230,6 +233,28 @@ importers:
       vite:
         specifier: ^5.4.8
         version: 5.4.21(@types/node@22.19.21)
+
+  packages/modules/code-goblin:
+    dependencies:
+      '@scroll-goblin/ui':
+        specifier: workspace:*
+        version: link:../../ui
+      lucide-react:
+        specifier: ^0.451.0
+        version: 0.451.0(react@18.3.1)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/node':
+        specifier: ^22.10.2
+        version: 22.19.21
+      '@types/react':
+        specifier: ^18.3.11
+        version: 18.3.31
+      typescript:
+        specifier: ^5.6.3
+        version: 5.9.3
 
   packages/modules/commune-with-god:
     dependencies:

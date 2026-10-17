@@ -11,6 +11,7 @@ Current modules:
 
 | Module | What it does |
 |--------|--------------|
+| 📜 **Code Goblin** _(beta)_ | Learn Python and Java through 33 illustrated spellcraft lessons and 100 challenges, with practice, local progress, and a Quantum Nether capstone. [App notes](packages/modules/code-goblin/README.md). |
 | 🏡 **Luna’s Playhouse** _(beta)_ | A local-save 3D decorating room with Mia, Luna, 26 unique objects, and tap-to-place play. [Game notes](packages/modules/lunas-playhouse/README.md). |
 | 🌀 **Schrödinger’s Possum** _(beta)_ | Percy’s 3D quantum lab picks between two choices, delivers Gemini wisdom, and imagines the other timeline. Shares Chess’s quantum pool, with labeled classical fallback. [App notes](packages/modules/schrodingers-possum/README.md). |
 | ♟️ **Scroll Goblins vs Hedgelings** _(beta)_ | 3D woodland chess with three browser Stockfish tiers, an experimental cheating LLM, and real Braket hardware measurements for faction assignment and cosmic endings. [Game notes](packages/modules/goblin-chess/README.md) · [Quantum service](infra/quantum/README.md).
