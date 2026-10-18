@@ -1,0 +1,13 @@
+{
+  "name": "@scroll-goblin/module-code-goblin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "typecheck": "tsc --noEmit" },
+  "dependencies": { "@scroll-goblin/ui": "workspace:*", "lucide-react": "^0.451.0" },
+  "peerDependencies": { "react": "^18.3.1" },
+  "devDependencies": { "@types/node": "^22.10.2", "@types/react": "^18.3.11", "typescript": "^5.6.3" }
+}
