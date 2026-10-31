@@ -1337,7 +1337,199 @@
     "promoted to {value0}": "8eda52e3fbf8523945940fc7553375e3",
     "castling": "945d87fdfbf4104dfea9c83825759006",
     "The Universe declares you the winner. Cosmic paperwork is final.": "55fcc0b63696a83213dfb5a311e09edd",
-    "The Universe declares your opponent the winner. Cosmic paperwork is final.": "e0c7a3b0895671de4baaeb6df979b08f"
+    "The Universe declares your opponent the winner. Cosmic paperwork is final.": "e0c7a3b0895671de4baaeb6df979b08f",
+    "Line {value0}: {line}": "da040509db8fc65e0712dad0c9f4ca0a",
+    "Your companion, one sticky note at a time.": "53341b20161049fd4962c4e2a61bd501",
+    "Awaiting your final spell": "9d3168d1acf76d6ed5775c0426ebc977",
+    "The trusty satchel": "908a10123a47362a8941b1be5cae8946",
+    "Browser storage is unavailable. Progress will last for this tab only.": "973414ccbadf820de07e8f9a8ba21b13",
+    "Continue your lesson": "b73b685e7f88999fb113099406778804",
+    "answer must be constructible from bank": "6ce9c5e733f13a4e7fef346e2b01b0ee",
+    "TIER": "cd24a010cb41bea942abfd758cb802db",
+    "Pip, Pythia, Brak & a probably-present Percy": "eae6db5bd2af0b24e9470ce3198ff8a6",
+    "Guardian of the Quantum Nether.": "b54a8c6369165ec5d6a62ffc5f949b33",
+    "Apprentice": "0a664616e1506d0c24a61bd1cca7d70e",
+    "Finish the lesson": "819f2e9a3f1d8cb6c6d0d39f9bd298c9",
+    "Remove chip {value0}: {value1}": "44b4b2e12a939b56ebd27fb6cf22c670",
+    "Stars reward each completed campaign lesson: 3 for no mistakes, 2 for one or two, and 1 after that. Your best score is kept.": "8f1b9318acc070654f5ee3d65fe3dcde",
+    "THE SPELL TO REMEMBER": "51b2675f1c8af6e8eb4c621d5df44957",
+    "Start a different spell?": "a81570bde53679b37d60199445f054c0",
+    "Java": "d52387880e1ea22817a72d3759213819",
+    "Progress could not be saved. Keep this tab open to continue this session.": "2de8fc931a88dd31ad6aadafd290c883",
+    "An enchanted forest and an iron forge, joined by a winding path toward a distant cosmic portal": "74920477112d0721aed74277623df5e8",
+    "A little magic to wear.": "72154e08fec40c154a43baa038447d5e",
+    "Yours from the beginning": "0376c0df67083fdfd1756542759f371c",
+    "Read each line and find the one responsible for the problem. Some traps fail to compile or run; others produce the wrong behavior. Read the prompt carefully.": "58c2000cc9b5b16a13e1af6ece3854ff",
+    "NOTES FOR THE ROAD": "eaf45e20a119f9443a4546bcc987b066",
+    "Campaign mistakes cost one heart. Five hearts refresh at local midnight; completing practice restores one, up to five.": "a629914d2fa2cb9449883a09eb19dd90",
+    "Read the snippet first; start when ready. Once started, the clock keeps running if you leave or reload. Expiry costs one heart.": "22d6651b6c5a856e2879e9f694fb2693",
+    "Complete both language paths and all three Nether chambers to earn your commemorative diploma.": "01213b27335e8743ac6d459cb67d2d74",
+    "LOCKED": "aeff3f3f2731681b2ed6a27786a56203",
+    "A heart, restored.": "79db8ef68413d95e64b2894687aa504d",
+    "Your progress": "cbf27dae958d15ccf988119de19fdf78",
+    "Begin your adventure": "946b6fe8c426feb69baa408b23739d38",
+    "has completed the Code Goblin adventure": "766144b9bcdded91f4d286010bfd38be",
+    "{seconds} seconds remaining": "3758ae953ad0e2d5f39291feae195fbf",
+    "For particularly stubborn semicolons.": "a083131c006323c8802c90218e0c6a5a",
+    "Next challenge": "0cc1ce109474b8e965d413d5cfb3c3c5",
+    "Code Goblin\u0004label": "6787be7790d7ec726ace3daffbda9dd7",
+    "Let it be known that": "49f969ad0d2938f4f25417392be4797f",
+    "A few minutes. One spell at a time.": "2f6ea9ca1f9f3c2e6bafa86eb8f36d51",
+    "Commemorative completion of self-guided syntax practice. Not an accredited qualification.": "b9c29034d96a265db84e4af3694ae85b",
+    "Code Goblin\u0004body": "278063ad54ed3a41b920b993229d9e16",
+    "Master": "f03bde11d261f185cbacfa32c1c6538c",
+    "Code Goblin<0>✦</0>": "00cdade8c763aefcbb62e18de6a586bb",
+    "teaching notes": "6460a0c3aaa3290a44b3bd9762be5478",
+    "The rules of this little realm": "acbb1bab5ca6624c34cf368953711b91",
+    "Rune Weaver": "352c8561305860f0ee1bb82c1adea969",
+    "That’s the spell!": "baab410e8d7b60ad99deeff897272b4e",
+    "Your certificate awaits": "9252180b2edf93d9527face9d74d7791",
+    "Five hearts each day. Complete practice to recover one.": "f5353349fc7c6e95822f36101f87369d",
+    "The Traversal Catacombs": "7a40bb54f2e8991a3c511dc57fa40f26",
+    "Your field guide": "19d9a0676aaebac9ef6465c22a212cbf",
+    "Your drill is complete. One heart restored, up to five. Practice also counts toward your daily streak.": "3250ed6f256dc054f04e769bc1282a4c",
+    "Spell learned!": "5fc6ba97705fad5ab8e0084cad0eb530",
+    "Make room for your kind of learning": "12b57bf618e099262e821bfe2414efc3",
+    "A NOTE FROM YOUR COMPANION": "03f785929c8f376d0e5a52fdec9292fc",
+    "micro answers must be nonempty and have no outer whitespace": "ed02db49689d082e8f6775459df0c4de",
+    "XP equals 30 per learned lesson, plus 10 per best star. Repeats improve rewards only when they improve your best score.": "711080d64a6d59df59d13830e36288b9",
+    "Python": "a7f5f35426b927411fc9231b56382173",
+    "I knew you had that one in you. Writing it yourself makes it stick.": "8ba4ecf2c88734eb6de1dae9fcf615b2",
+    "You don’t need to know all the spells. Just the next one. I’ll be right here.": "2551965ab0777be5f0515faf5c232891",
+    "Your unfinished lesson will restart. Completed lessons, stars, and remaining hearts stay saved.": "52fc2764922792db8c6344848c2b6902",
+    "Turn sound off": "3cf621fb5bb2cb12ccc1bafb8f409bc3",
+    "Your missing fragment": "c537c5d88af06ea4af597046e15cdfbc",
+    "READY TO EXPLORE": "ab1d48342208b6cf20cacb78922673fd",
+    "Equivalent code options": "fdae2e430631eea34b14645c7a44b0c1",
+    "<0>✧</0> THE REALMS OF CODE <1>✧</1>": "afefe1bd7c988d36c31c57f7f169fbdf",
+    "Every great spell needs a sound blueprint.": "7353b4d8838cd41e452bf93ea5d172ab",
+    "A few familiar faces": "3b5399096dfb2e54ed7e0a4a05330f1d",
+    "Rosetta Altar": "d3e99b996ee1bf5cd09909038c910211",
+    "Learn a little. Try it yourself. Keep the useful mistakes.": "2931a503849ebc2fe90222898c82a308",
+    "Java’s exacting master of the forge.": "120c6f6b2b8804c97db054e3ca281227",
+    "A LITTLE PRACTICE GOES A LONG WAY": "9ea3e6140499f1e144328fb9447a6ed5",
+    "Small spells.<0/>Extraordinary<1/><2>possibilities.</2>": "81629ce6a540c4eea305d634d2269170",
+    "{count} of 3 stars": "e56b3774658df0bfa054ac36999cf33d",
+    "Schrödinger’s Percy": "347657b575528f0e10340ac1c0ec5d13",
+    "Learn Python and Java as ancient spellcraft. Catch bugs, weave code, and journey with Pip into the Quantum Nether.": "f6cec31ea373c18c77b33bef069e7d5f",
+    "{hearts} of {MAX_HEARTS} hearts": "c19196854151ab61e60ce6140397dd83",
+    "The Vectorized AI Forge": "8a465b642f397e17c1ed6b3262503363",
+    "Date unavailable": "5a22cffbf4a5e2fc32e98fdd25609ada",
+    "Complete {value0} first": "a05a4f85ccf0158877a609a4182b7c32",
+    "Forest Runes": "1560cba507142edaebe06674742adea8",
+    "Follow the roots. Find your flow.": "8bde6935430cb2a7a0f1ef203382f9e8",
+    "rosetta options": "bfc26edaed0774d450c783f6839d3c61",
+    "Everything an apprentice needs. Mostly sticky notes.": "b97706e74f9da2752545508dcfcdc596",
+    "Even great spellcasters need a breather. Let’s practice together and get a heart back.": "b9b7c18c72883a16fb560472f01da7e6",
+    "CS + Quantum": "a4eb0b733c857358de6577542bfd08ff",
+    "Adventure map": "4cf18b43d87175d1498244a5718030f1",
+    "Start this lesson as an untimed practice drill to recover one heart. Campaign progress for this lesson will restart. Your completed spells stay saved.": "37743f7d2160d22cfd1b46da34d05f69",
+    "Continue the adventure": "0118a76cde5ba8bdd844586099ce4cb6",
+    "A story worth keeping": "bb4d258cb57a12d90521e820236cb1bc",
+    "Finish a lesson or practice drill to count today toward your streak. Hints are free, and practice never costs hearts.": "246087bd16e06f2a78bc5e292b1777fd",
+    "accepted sequences": "d467ae3e9d503e9133fee8ab381ee491",
+    "prerequisites must precede lesson": "2b6298bc1c811d87d79203635059cf61",
+    "The Quantum Crucible": "9daeaebf43de7eb44beb1a6d2cb84b34",
+    "YOU MADE IT THROUGH THE PORTAL": "926c5a0a83b0d770126567a85651020c",
+    "Iron-Smith Brak": "b39836f6a3d265acb77923141a59d13d",
+    "track and tier": "d75a769ff3a30be9e806076c171a170d",
+    "Beyond syntax, a stranger world awaits.": "a7601e5be016d730f83259e355f07d7d",
+    "The Byte-Forged Hammer": "99ee4a94c1877be59b23d5149a506bbf",
+    "expected a nonempty lesson array": "8a92bb44292b46d5e3c9e501bc5f5a6a",
+    "Open certificate": "21935f031d1ea2c34494650652d8cc95",
+    "Learning settings": "38bce37967d40d6924f96d631627b2dd",
+    "Take your time. Read the spell. A hint is just a sticky note from a friend.": "a531dab240506c7edb63a4c2dd3eee9f",
+    "SPELL LEARNED": "1caec3b3d1f08d11a95327043e0aa57e",
+    "Python’s patient keeper of forest runes.": "954252dee13de740fd4bb2262d121b8b",
+    "unique node ID": "08fe8c43be3981e9cc6010062eaa7cf8",
+    "Equip keepsake": "b6cdb866daff0c3be2503d545878b54c",
+    "Some saved data was unreadable. Valid progress was recovered where possible.": "765fa1ce3446defa12d559a7c1f16a29",
+    "ANOTHER PAGE IN YOUR SPELLBOOK": "666eb831a113e99137b31ff7afe22a18",
+    "accepted micro answers": "cb734ab8b0c77f96475b7fed1f04135d",
+    "A playful foundation in syntax, algorithms, vectors, and quantum concepts. This is independent practice, not an accredited course or a guarantee of graduate-program readiness. Examples link to their technical references.": "169525bea47389f4473f90648df621a2",
+    "Adept": "647acfc77eba36776fb2c61bce27d3db",
+    "unique challenge ID": "e07547847b33c1816b63dc492bf2f678",
+    "Back to the map": "0f4b135ca6e02177c550d0f38cedc4bc",
+    "Available code chips": "cace320b15ebcc11f4b9a3caa174151f",
+    "Dungeon Forging": "3fec720c43f63257c0f360ace1789183",
+    "A useful little mistake.": "c01812e0b6d1b635df2921c9b08c675e",
+    "Stars unlock keepsakes for your companion. Replaying a lesson can improve your best score; practice restores hearts.": "3884986e385709862f5e7ef84d522223",
+    "Code lines": "8940426550853680d9965c9b7028d8d5",
+    "Keeper of notes. Believer in you.": "6833ca391820e3aafc568cd61700ec63",
+    "Keep this lesson": "d5e727ede873f7fec0afc5505314d616",
+    "<0>Little victory sounds</0><1>Soft notes after answers. Respects Scroll Goblin’s shared mute setting.</1>": "60f4d1be5ff27ab8390d95188d4f4efd",
+    "accepted sequences must match the number of answer slots": "b53e895518d83247f6a7a23cfb71cdc0",
+    "Type from memory. Press Enter or check your spell below.": "c846668b16ce9d228bf3f5870a171f1a",
+    "The Indentation Scarf": "0e252cfb179f9b357f98de153db3dd83",
+    "A very determined apprentice": "639a0c72158c5291428a144cee0b0c04",
+    "Your hearts need a little care.": "0d9407c1d1f9ab8b16af94b5cd22a13f",
+    "Field guide": "5ba497b92c7215b173ba2a8a5f07f77d",
+    "YOUR NEXT SPELL": "50f75905d5eafc537f85b0ad00f8c85f",
+    "Supply the missing fragment without autocomplete. The 30-second clock starts only when you choose to begin and keeps running after leaving or reloading. Expiry costs one heart. You can disable it in Learning settings before starting a lesson.": "28c362e114c72014dccadaf205c30829",
+    "Five hearts refresh at local midnight. Practice restores one heart per completed drill. Progress is stored in this browser; clearing browser data clears it.": "34a1e4b533961be877c4dc712479f045",
+    "THE SCROLL GOBLIN GUILD": "3bd40c0c566ad1ec59144224269b0113",
+    "Pip the Byte-Goblin": "dca1c1ebea9fae5734efeb03e98c9c0f",
+    "Lessons teach and check specific snippets. They do not run arbitrary Python or Java. Quantum exercises describe ideal simulation; no hardware is contacted.": "31ec61b72b2af547f0ed3873d12edc49",
+    "Read a spell in one language and choose its equivalent in the other. Pay attention to types, loop bounds, equality, and collection methods.": "4c567056e8412ae93c92b04924785306",
+    "Choose a curriculum track": "66a6cdeba874b9d35950fafdaa4b402b",
+    "Print / save PDF": "82708e904a4eb38197cf20668eecb2b6",
+    "Micro-Caster": "9fb5d7d9e8a24c56153f885e6bddb65c",
+    "The Quantum Nether": "bab1b8d95f33c0e54a7de8511c096d85",
+    "Tap or drag chips into the spell. Tap a placed chip to remove it. Each chip includes its displayed spacing.": "f099f3a06e1efd12e564de47404250c1",
+    "LITTLE TREASURES, WELL EARNED": "63a20d1c3cdb6dd6cc102d919c83d2cb",
+    "Your assembled spell": "1c394b37438501cfb07c9a279cb0469f",
+    "Brew ready! Safely waiting in the cauldron.": "3e6eb5d069e4dbb589b648b8dd27419f",
+    "Certificate of Wizardry": "7297805e9a480598013c80485b1dd408",
+    "Finish a lesson or practice drill on 7 consecutive days to brew a potion. It automatically protects one missed day when you return the following day. Store up to 3; a finished brew waits until there’s room.": "6bd88061ddd9c9f52cde6a67be9c5a0c",
+    "Total XP": "a43252ed6117f70db37fc4720cd97746",
+    "Learn to code in a world worth getting<0/> a little lost in. Pip saved you a place.": "945e263e6a4cc0f03502ca280c05583a",
+    "CHAMBER": "3117244c6012ec23109b8121b2e5cc09",
+    "Forest Runes · Dungeon Forging · The Quantum Nether": "6d489b0ac95cb12781aced462dc412ef",
+    "Line {value0}: {value1}": "ba8312672d21822d9f0b972b8d7522a5",
+    "{title} lessons": "c42d987f4652f7c72fd39e46cdef6dce",
+    "micro snippet": "5ad2edcd6d7f8938eee8eb5a94c28ad3",
+    "Pip’s satchel\u0004body": "96833c8bb67423ded6b18dbd7491ebe0",
+    "Saved in this browser.<0/>Your progress stays on this device.": "8fbad9ce82456e29966b9128c698f8b6",
+    "Keep it clean. Keep it indented.": "70ef0c79c9f2b727c176cab5f04e6391",
+    "PRACTICE · NO HEART LOSS": "4fb2a53edcd8ac2cc0c912c447430609",
+    "Take your time. This cast has no timer.": "cf9779baba20e38ac6b73b97f6c02b6f",
+    "Close dialog": "3c62b9dcfe365792b2fbb6e15dc82c80",
+    "{brewDays} / 7 consecutive practice days toward the next brew": "112e6b6fa1616e754a5b9e9c4088330b",
+    "YOUR MENTOR": "bcff0ba6174d0addfd134ea3a56b15d7",
+    "Slot {value0}": "6f325cfa06ac02a844a9f2b656923c49",
+    "Earn 9 stars": "ee0d658a0a5eff45a67bc90a6b2f069d",
+    "expected lesson object": "ca7d12d06870a930113678e176a2a156",
+    "Complete both language paths to enter": "a4ff416e96d23d975149444d235fb952",
+    "The clock ran out. The learning doesn’t.": "18ad8a3a55a7c12f5b3e94e558088524",
+    "A safe place to stumble": "0db738ac580e95e185a8762a79641034",
+    "linter index": "ebe87fb77abbef17a1bb3e525ce60546",
+    "You found my little trick! Read the explanation, then show me you’ve got it.": "e3b255f4c67ec711315eeb90b6ea42df",
+    "Day streak": "ea0ec9888625c8e1dbb29b481b7c8628",
+    "Earn 24 stars": "0936ca326f3d6a82b2c156fa4ed1d598",
+    "Look at you, collecting spells! One small step today is still a step into the extraordinary.": "216009cac608938cd344f3655520c744",
+    "Pip’s satchel\u0004header": "1cdfb5859bab372c37105c79a508854c",
+    "Practice any unlocked lesson. No heart loss, no timer. Finish a drill to restore one heart.": "6f9074f7bb3f94c540fedb1b9ae8ac80",
+    "Explore the next path": "f94458b4598c46fd6b544071bf745255",
+    "TWO PATHS. ONE GRAND ADVENTURE.": "a220de85b237396f1353b1abdb3431b3",
+    "Choose the one line described by the question.": "7654aa40612058e7b851e2f0c8514875",
+    "Code Goblin adventure map": "cd9c72ed2f76949f166706bcb8bd9aa9",
+    "Choose your craft": "8444048e727fcf92d2dd7a19e3b2896c",
+    "Four stitches. Always four stitches.": "f95469f8875fbf27cb56d024fb073966",
+    "A little stardust for a very long journey.": "1136e58f32b1aefbc771388f0cee2dd8",
+    "Percy’s Cosmic Possum Tail": "2e94ab73dc36ac69e3c57c690ce38d2e",
+    "Be curious. And always check your assumptions.": "ed46da5cac6e317fbed95051e432809b",
+    "Build a spell from code chips. Tap to place or remove them, or drag them into the answer area. Whitespace and indentation are part of the code.": "b2b5f25ba1c3065df24293063e7e15a9",
+    "The Glitch Imp": "fb749fa5e6f40a8b68da5ce5ec00eb86",
+    "The Linter Trap": "ea72cce5805fb9d4c5865532d7055f94",
+    "Untimed": "c8114ca8f0d7d88d17e939ecdb7ca656",
+    "A collector of very educational mistakes.": "d4c18a3e56c25ea3b9eb978572790294",
+    "A strong spell starts with a blueprint.": "76682ef9ba71e593eb99e46233b6b20d",
+    "<0>30-second Micro-Caster</0><1>Turn off for untimed campaign typing. Applies to your next lesson; practice is always untimed.</1>": "1d6ecaa87cd78465a252260c610d812e",
+    "Arch-Mage Pythia": "a58b35b0db74d790710d87a9521cff36",
+    "Daily hearts": "0484c775607e20e6deb1f22aa7942f41",
+    "{done} of {length} spells learned": "4902a8542cde5bc4d30edf171762e02e",
+    "Code Goblin": "278063ad54ed3a41b920b993229d9e16",
+    "Pip’s satchel": "96833c8bb67423ded6b18dbd7491ebe0"
   },
   "sources": [
     {
@@ -6687,6 +6879,774 @@
     {
       "source": "العربية",
       "key": "26b1b2b0a4193aabcc33455732de89ac"
+    },
+    {
+      "source": "Line {value0}: {line}",
+      "key": "da040509db8fc65e0712dad0c9f4ca0a"
+    },
+    {
+      "source": "Your companion, one sticky note at a time.",
+      "key": "53341b20161049fd4962c4e2a61bd501"
+    },
+    {
+      "source": "Awaiting your final spell",
+      "key": "9d3168d1acf76d6ed5775c0426ebc977"
+    },
+    {
+      "source": "The trusty satchel",
+      "key": "908a10123a47362a8941b1be5cae8946"
+    },
+    {
+      "source": "Browser storage is unavailable. Progress will last for this tab only.",
+      "key": "973414ccbadf820de07e8f9a8ba21b13"
+    },
+    {
+      "source": "Continue your lesson",
+      "key": "b73b685e7f88999fb113099406778804"
+    },
+    {
+      "source": "answer must be constructible from bank",
+      "key": "6ce9c5e733f13a4e7fef346e2b01b0ee"
+    },
+    {
+      "source": "TIER",
+      "key": "cd24a010cb41bea942abfd758cb802db"
+    },
+    {
+      "source": "Pip, Pythia, Brak & a probably-present Percy",
+      "key": "eae6db5bd2af0b24e9470ce3198ff8a6"
+    },
+    {
+      "source": "Guardian of the Quantum Nether.",
+      "key": "b54a8c6369165ec5d6a62ffc5f949b33"
+    },
+    {
+      "source": "Apprentice",
+      "key": "0a664616e1506d0c24a61bd1cca7d70e"
+    },
+    {
+      "source": "Finish the lesson",
+      "key": "819f2e9a3f1d8cb6c6d0d39f9bd298c9"
+    },
+    {
+      "source": "Remove chip {value0}: {value1}",
+      "key": "44b4b2e12a939b56ebd27fb6cf22c670"
+    },
+    {
+      "source": "Stars reward each completed campaign lesson: 3 for no mistakes, 2 for one or two, and 1 after that. Your best score is kept.",
+      "key": "8f1b9318acc070654f5ee3d65fe3dcde"
+    },
+    {
+      "source": "THE SPELL TO REMEMBER",
+      "key": "51b2675f1c8af6e8eb4c621d5df44957"
+    },
+    {
+      "source": "Start a different spell?",
+      "key": "a81570bde53679b37d60199445f054c0"
+    },
+    {
+      "source": "Java",
+      "key": "d52387880e1ea22817a72d3759213819"
+    },
+    {
+      "source": "Progress could not be saved. Keep this tab open to continue this session.",
+      "key": "2de8fc931a88dd31ad6aadafd290c883"
+    },
+    {
+      "source": "An enchanted forest and an iron forge, joined by a winding path toward a distant cosmic portal",
+      "key": "74920477112d0721aed74277623df5e8"
+    },
+    {
+      "source": "A little magic to wear.",
+      "key": "72154e08fec40c154a43baa038447d5e"
+    },
+    {
+      "source": "Yours from the beginning",
+      "key": "0376c0df67083fdfd1756542759f371c"
+    },
+    {
+      "source": "Read each line and find the one responsible for the problem. Some traps fail to compile or run; others produce the wrong behavior. Read the prompt carefully.",
+      "key": "58c2000cc9b5b16a13e1af6ece3854ff"
+    },
+    {
+      "source": "NOTES FOR THE ROAD",
+      "key": "eaf45e20a119f9443a4546bcc987b066"
+    },
+    {
+      "source": "Campaign mistakes cost one heart. Five hearts refresh at local midnight; completing practice restores one, up to five.",
+      "key": "a629914d2fa2cb9449883a09eb19dd90"
+    },
+    {
+      "source": "Read the snippet first; start when ready. Once started, the clock keeps running if you leave or reload. Expiry costs one heart.",
+      "key": "22d6651b6c5a856e2879e9f694fb2693"
+    },
+    {
+      "source": "Complete both language paths and all three Nether chambers to earn your commemorative diploma.",
+      "key": "01213b27335e8743ac6d459cb67d2d74"
+    },
+    {
+      "source": "LOCKED",
+      "key": "aeff3f3f2731681b2ed6a27786a56203"
+    },
+    {
+      "source": "A heart, restored.",
+      "key": "79db8ef68413d95e64b2894687aa504d"
+    },
+    {
+      "source": "Your progress",
+      "key": "cbf27dae958d15ccf988119de19fdf78"
+    },
+    {
+      "source": "Begin your adventure",
+      "key": "946b6fe8c426feb69baa408b23739d38"
+    },
+    {
+      "source": "has completed the Code Goblin adventure",
+      "key": "766144b9bcdded91f4d286010bfd38be"
+    },
+    {
+      "source": "{seconds} seconds remaining",
+      "key": "3758ae953ad0e2d5f39291feae195fbf"
+    },
+    {
+      "source": "For particularly stubborn semicolons.",
+      "key": "a083131c006323c8802c90218e0c6a5a"
+    },
+    {
+      "source": "Next challenge",
+      "key": "0cc1ce109474b8e965d413d5cfb3c3c5"
+    },
+    {
+      "source": "Code Goblin\u0004label",
+      "key": "6787be7790d7ec726ace3daffbda9dd7"
+    },
+    {
+      "source": "Let it be known that",
+      "key": "49f969ad0d2938f4f25417392be4797f"
+    },
+    {
+      "source": "A few minutes. One spell at a time.",
+      "key": "2f6ea9ca1f9f3c2e6bafa86eb8f36d51"
+    },
+    {
+      "source": "Commemorative completion of self-guided syntax practice. Not an accredited qualification.",
+      "key": "b9c29034d96a265db84e4af3694ae85b"
+    },
+    {
+      "source": "Code Goblin\u0004body",
+      "key": "278063ad54ed3a41b920b993229d9e16"
+    },
+    {
+      "source": "Master",
+      "key": "f03bde11d261f185cbacfa32c1c6538c"
+    },
+    {
+      "source": "Code Goblin<0>✦</0>",
+      "key": "00cdade8c763aefcbb62e18de6a586bb"
+    },
+    {
+      "source": "teaching notes",
+      "key": "6460a0c3aaa3290a44b3bd9762be5478"
+    },
+    {
+      "source": "The rules of this little realm",
+      "key": "acbb1bab5ca6624c34cf368953711b91"
+    },
+    {
+      "source": "Rune Weaver",
+      "key": "352c8561305860f0ee1bb82c1adea969"
+    },
+    {
+      "source": "That’s the spell!",
+      "key": "baab410e8d7b60ad99deeff897272b4e"
+    },
+    {
+      "source": "Your certificate awaits",
+      "key": "9252180b2edf93d9527face9d74d7791"
+    },
+    {
+      "source": "Five hearts each day. Complete practice to recover one.",
+      "key": "f5353349fc7c6e95822f36101f87369d"
+    },
+    {
+      "source": "The Traversal Catacombs",
+      "key": "7a40bb54f2e8991a3c511dc57fa40f26"
+    },
+    {
+      "source": "Your field guide",
+      "key": "19d9a0676aaebac9ef6465c22a212cbf"
+    },
+    {
+      "source": "Your drill is complete. One heart restored, up to five. Practice also counts toward your daily streak.",
+      "key": "3250ed6f256dc054f04e769bc1282a4c"
+    },
+    {
+      "source": "Spell learned!",
+      "key": "5fc6ba97705fad5ab8e0084cad0eb530"
+    },
+    {
+      "source": "Make room for your kind of learning",
+      "key": "12b57bf618e099262e821bfe2414efc3"
+    },
+    {
+      "source": "A NOTE FROM YOUR COMPANION",
+      "key": "03f785929c8f376d0e5a52fdec9292fc"
+    },
+    {
+      "source": "micro answers must be nonempty and have no outer whitespace",
+      "key": "ed02db49689d082e8f6775459df0c4de"
+    },
+    {
+      "source": "XP equals 30 per learned lesson, plus 10 per best star. Repeats improve rewards only when they improve your best score.",
+      "key": "711080d64a6d59df59d13830e36288b9"
+    },
+    {
+      "source": "Python",
+      "key": "a7f5f35426b927411fc9231b56382173"
+    },
+    {
+      "source": "I knew you had that one in you. Writing it yourself makes it stick.",
+      "key": "8ba4ecf2c88734eb6de1dae9fcf615b2"
+    },
+    {
+      "source": "You don’t need to know all the spells. Just the next one. I’ll be right here.",
+      "key": "2551965ab0777be5f0515faf5c232891"
+    },
+    {
+      "source": "Your unfinished lesson will restart. Completed lessons, stars, and remaining hearts stay saved.",
+      "key": "52fc2764922792db8c6344848c2b6902"
+    },
+    {
+      "source": "Turn sound off",
+      "key": "3cf621fb5bb2cb12ccc1bafb8f409bc3"
+    },
+    {
+      "source": "Your missing fragment",
+      "key": "c537c5d88af06ea4af597046e15cdfbc"
+    },
+    {
+      "source": "READY TO EXPLORE",
+      "key": "ab1d48342208b6cf20cacb78922673fd"
+    },
+    {
+      "source": "Equivalent code options",
+      "key": "fdae2e430631eea34b14645c7a44b0c1"
+    },
+    {
+      "source": "<0>✧</0> THE REALMS OF CODE <1>✧</1>",
+      "key": "afefe1bd7c988d36c31c57f7f169fbdf"
+    },
+    {
+      "source": "Every great spell needs a sound blueprint.",
+      "key": "7353b4d8838cd41e452bf93ea5d172ab"
+    },
+    {
+      "source": "A few familiar faces",
+      "key": "3b5399096dfb2e54ed7e0a4a05330f1d"
+    },
+    {
+      "source": "Rosetta Altar",
+      "key": "d3e99b996ee1bf5cd09909038c910211"
+    },
+    {
+      "source": "Learn a little. Try it yourself. Keep the useful mistakes.",
+      "key": "2931a503849ebc2fe90222898c82a308"
+    },
+    {
+      "source": "Java’s exacting master of the forge.",
+      "key": "120c6f6b2b8804c97db054e3ca281227"
+    },
+    {
+      "source": "A LITTLE PRACTICE GOES A LONG WAY",
+      "key": "9ea3e6140499f1e144328fb9447a6ed5"
+    },
+    {
+      "source": "Small spells.<0/>Extraordinary<1/><2>possibilities.</2>",
+      "key": "81629ce6a540c4eea305d634d2269170"
+    },
+    {
+      "source": "{count} of 3 stars",
+      "key": "e56b3774658df0bfa054ac36999cf33d"
+    },
+    {
+      "source": "Schrödinger’s Percy",
+      "key": "347657b575528f0e10340ac1c0ec5d13"
+    },
+    {
+      "source": "Learn Python and Java as ancient spellcraft. Catch bugs, weave code, and journey with Pip into the Quantum Nether.",
+      "key": "f6cec31ea373c18c77b33bef069e7d5f"
+    },
+    {
+      "source": "{hearts} of {MAX_HEARTS} hearts",
+      "key": "c19196854151ab61e60ce6140397dd83"
+    },
+    {
+      "source": "The Vectorized AI Forge",
+      "key": "8a465b642f397e17c1ed6b3262503363"
+    },
+    {
+      "source": "Date unavailable",
+      "key": "5a22cffbf4a5e2fc32e98fdd25609ada"
+    },
+    {
+      "source": "Complete {value0} first",
+      "key": "a05a4f85ccf0158877a609a4182b7c32"
+    },
+    {
+      "source": "Forest Runes",
+      "key": "1560cba507142edaebe06674742adea8"
+    },
+    {
+      "source": "Follow the roots. Find your flow.",
+      "key": "8bde6935430cb2a7a0f1ef203382f9e8"
+    },
+    {
+      "source": "rosetta options",
+      "key": "bfc26edaed0774d450c783f6839d3c61"
+    },
+    {
+      "source": "Everything an apprentice needs. Mostly sticky notes.",
+      "key": "b97706e74f9da2752545508dcfcdc596"
+    },
+    {
+      "source": "Even great spellcasters need a breather. Let’s practice together and get a heart back.",
+      "key": "b9b7c18c72883a16fb560472f01da7e6"
+    },
+    {
+      "source": "CS + Quantum",
+      "key": "a4eb0b733c857358de6577542bfd08ff"
+    },
+    {
+      "source": "Adventure map",
+      "key": "4cf18b43d87175d1498244a5718030f1"
+    },
+    {
+      "source": "Start this lesson as an untimed practice drill to recover one heart. Campaign progress for this lesson will restart. Your completed spells stay saved.",
+      "key": "37743f7d2160d22cfd1b46da34d05f69"
+    },
+    {
+      "source": "Continue the adventure",
+      "key": "0118a76cde5ba8bdd844586099ce4cb6"
+    },
+    {
+      "source": "A story worth keeping",
+      "key": "bb4d258cb57a12d90521e820236cb1bc"
+    },
+    {
+      "source": "Finish a lesson or practice drill to count today toward your streak. Hints are free, and practice never costs hearts.",
+      "key": "246087bd16e06f2a78bc5e292b1777fd"
+    },
+    {
+      "source": "accepted sequences",
+      "key": "d467ae3e9d503e9133fee8ab381ee491"
+    },
+    {
+      "source": "prerequisites must precede lesson",
+      "key": "2b6298bc1c811d87d79203635059cf61"
+    },
+    {
+      "source": "The Quantum Crucible",
+      "key": "9daeaebf43de7eb44beb1a6d2cb84b34"
+    },
+    {
+      "source": "YOU MADE IT THROUGH THE PORTAL",
+      "key": "926c5a0a83b0d770126567a85651020c"
+    },
+    {
+      "source": "Iron-Smith Brak",
+      "key": "b39836f6a3d265acb77923141a59d13d"
+    },
+    {
+      "source": "track and tier",
+      "key": "d75a769ff3a30be9e806076c171a170d"
+    },
+    {
+      "source": "Beyond syntax, a stranger world awaits.",
+      "key": "a7601e5be016d730f83259e355f07d7d"
+    },
+    {
+      "source": "The Byte-Forged Hammer",
+      "key": "99ee4a94c1877be59b23d5149a506bbf"
+    },
+    {
+      "source": "expected a nonempty lesson array",
+      "key": "8a92bb44292b46d5e3c9e501bc5f5a6a"
+    },
+    {
+      "source": "Open certificate",
+      "key": "21935f031d1ea2c34494650652d8cc95"
+    },
+    {
+      "source": "Learning settings",
+      "key": "38bce37967d40d6924f96d631627b2dd"
+    },
+    {
+      "source": "Take your time. Read the spell. A hint is just a sticky note from a friend.",
+      "key": "a531dab240506c7edb63a4c2dd3eee9f"
+    },
+    {
+      "source": "SPELL LEARNED",
+      "key": "1caec3b3d1f08d11a95327043e0aa57e"
+    },
+    {
+      "source": "Python’s patient keeper of forest runes.",
+      "key": "954252dee13de740fd4bb2262d121b8b"
+    },
+    {
+      "source": "unique node ID",
+      "key": "08fe8c43be3981e9cc6010062eaa7cf8"
+    },
+    {
+      "source": "Equip keepsake",
+      "key": "b6cdb866daff0c3be2503d545878b54c"
+    },
+    {
+      "source": "Some saved data was unreadable. Valid progress was recovered where possible.",
+      "key": "765fa1ce3446defa12d559a7c1f16a29"
+    },
+    {
+      "source": "ANOTHER PAGE IN YOUR SPELLBOOK",
+      "key": "666eb831a113e99137b31ff7afe22a18"
+    },
+    {
+      "source": "accepted micro answers",
+      "key": "cb734ab8b0c77f96475b7fed1f04135d"
+    },
+    {
+      "source": "A playful foundation in syntax, algorithms, vectors, and quantum concepts. This is independent practice, not an accredited course or a guarantee of graduate-program readiness. Examples link to their technical references.",
+      "key": "169525bea47389f4473f90648df621a2"
+    },
+    {
+      "source": "Adept",
+      "key": "647acfc77eba36776fb2c61bce27d3db"
+    },
+    {
+      "source": "unique challenge ID",
+      "key": "e07547847b33c1816b63dc492bf2f678"
+    },
+    {
+      "source": "Back to the map",
+      "key": "0f4b135ca6e02177c550d0f38cedc4bc"
+    },
+    {
+      "source": "Available code chips",
+      "key": "cace320b15ebcc11f4b9a3caa174151f"
+    },
+    {
+      "source": "Dungeon Forging",
+      "key": "3fec720c43f63257c0f360ace1789183"
+    },
+    {
+      "source": "A useful little mistake.",
+      "key": "c01812e0b6d1b635df2921c9b08c675e"
+    },
+    {
+      "source": "Stars unlock keepsakes for your companion. Replaying a lesson can improve your best score; practice restores hearts.",
+      "key": "3884986e385709862f5e7ef84d522223"
+    },
+    {
+      "source": "Code lines",
+      "key": "8940426550853680d9965c9b7028d8d5"
+    },
+    {
+      "source": "Keeper of notes. Believer in you.",
+      "key": "6833ca391820e3aafc568cd61700ec63"
+    },
+    {
+      "source": "Keep this lesson",
+      "key": "d5e727ede873f7fec0afc5505314d616"
+    },
+    {
+      "source": "<0>Little victory sounds</0><1>Soft notes after answers. Respects Scroll Goblin’s shared mute setting.</1>",
+      "key": "60f4d1be5ff27ab8390d95188d4f4efd"
+    },
+    {
+      "source": "accepted sequences must match the number of answer slots",
+      "key": "b53e895518d83247f6a7a23cfb71cdc0"
+    },
+    {
+      "source": "Type from memory. Press Enter or check your spell below.",
+      "key": "c846668b16ce9d228bf3f5870a171f1a"
+    },
+    {
+      "source": "The Indentation Scarf",
+      "key": "0e252cfb179f9b357f98de153db3dd83"
+    },
+    {
+      "source": "A very determined apprentice",
+      "key": "639a0c72158c5291428a144cee0b0c04"
+    },
+    {
+      "source": "Your hearts need a little care.",
+      "key": "0d9407c1d1f9ab8b16af94b5cd22a13f"
+    },
+    {
+      "source": "Field guide",
+      "key": "5ba497b92c7215b173ba2a8a5f07f77d"
+    },
+    {
+      "source": "YOUR NEXT SPELL",
+      "key": "50f75905d5eafc537f85b0ad00f8c85f"
+    },
+    {
+      "source": "Supply the missing fragment without autocomplete. The 30-second clock starts only when you choose to begin and keeps running after leaving or reloading. Expiry costs one heart. You can disable it in Learning settings before starting a lesson.",
+      "key": "28c362e114c72014dccadaf205c30829"
+    },
+    {
+      "source": "Five hearts refresh at local midnight. Practice restores one heart per completed drill. Progress is stored in this browser; clearing browser data clears it.",
+      "key": "34a1e4b533961be877c4dc712479f045"
+    },
+    {
+      "source": "THE SCROLL GOBLIN GUILD",
+      "key": "3bd40c0c566ad1ec59144224269b0113"
+    },
+    {
+      "source": "Pip the Byte-Goblin",
+      "key": "dca1c1ebea9fae5734efeb03e98c9c0f"
+    },
+    {
+      "source": "Lessons teach and check specific snippets. They do not run arbitrary Python or Java. Quantum exercises describe ideal simulation; no hardware is contacted.",
+      "key": "31ec61b72b2af547f0ed3873d12edc49"
+    },
+    {
+      "source": "Read a spell in one language and choose its equivalent in the other. Pay attention to types, loop bounds, equality, and collection methods.",
+      "key": "4c567056e8412ae93c92b04924785306"
+    },
+    {
+      "source": "Choose a curriculum track",
+      "key": "66a6cdeba874b9d35950fafdaa4b402b"
+    },
+    {
+      "source": "Print / save PDF",
+      "key": "82708e904a4eb38197cf20668eecb2b6"
+    },
+    {
+      "source": "Micro-Caster",
+      "key": "9fb5d7d9e8a24c56153f885e6bddb65c"
+    },
+    {
+      "source": "The Quantum Nether",
+      "key": "bab1b8d95f33c0e54a7de8511c096d85"
+    },
+    {
+      "source": "Tap or drag chips into the spell. Tap a placed chip to remove it. Each chip includes its displayed spacing.",
+      "key": "f099f3a06e1efd12e564de47404250c1"
+    },
+    {
+      "source": "LITTLE TREASURES, WELL EARNED",
+      "key": "63a20d1c3cdb6dd6cc102d919c83d2cb"
+    },
+    {
+      "source": "Your assembled spell",
+      "key": "1c394b37438501cfb07c9a279cb0469f"
+    },
+    {
+      "source": "Brew ready! Safely waiting in the cauldron.",
+      "key": "3e6eb5d069e4dbb589b648b8dd27419f"
+    },
+    {
+      "source": "Certificate of Wizardry",
+      "key": "7297805e9a480598013c80485b1dd408"
+    },
+    {
+      "source": "Finish a lesson or practice drill on 7 consecutive days to brew a potion. It automatically protects one missed day when you return the following day. Store up to 3; a finished brew waits until there’s room.",
+      "key": "6bd88061ddd9c9f52cde6a67be9c5a0c"
+    },
+    {
+      "source": "Total XP",
+      "key": "a43252ed6117f70db37fc4720cd97746"
+    },
+    {
+      "source": "Learn to code in a world worth getting<0/> a little lost in. Pip saved you a place.",
+      "key": "945e263e6a4cc0f03502ca280c05583a"
+    },
+    {
+      "source": "CHAMBER",
+      "key": "3117244c6012ec23109b8121b2e5cc09"
+    },
+    {
+      "source": "Forest Runes · Dungeon Forging · The Quantum Nether",
+      "key": "6d489b0ac95cb12781aced462dc412ef"
+    },
+    {
+      "source": "Line {value0}: {value1}",
+      "key": "ba8312672d21822d9f0b972b8d7522a5"
+    },
+    {
+      "source": "{title} lessons",
+      "key": "c42d987f4652f7c72fd39e46cdef6dce"
+    },
+    {
+      "source": "micro snippet",
+      "key": "5ad2edcd6d7f8938eee8eb5a94c28ad3"
+    },
+    {
+      "source": "Pip’s satchel\u0004body",
+      "key": "96833c8bb67423ded6b18dbd7491ebe0"
+    },
+    {
+      "source": "Saved in this browser.<0/>Your progress stays on this device.",
+      "key": "8fbad9ce82456e29966b9128c698f8b6"
+    },
+    {
+      "source": "Keep it clean. Keep it indented.",
+      "key": "70ef0c79c9f2b727c176cab5f04e6391"
+    },
+    {
+      "source": "PRACTICE · NO HEART LOSS",
+      "key": "4fb2a53edcd8ac2cc0c912c447430609"
+    },
+    {
+      "source": "Take your time. This cast has no timer.",
+      "key": "cf9779baba20e38ac6b73b97f6c02b6f"
+    },
+    {
+      "source": "Close dialog",
+      "key": "3c62b9dcfe365792b2fbb6e15dc82c80"
+    },
+    {
+      "source": "{brewDays} / 7 consecutive practice days toward the next brew",
+      "key": "112e6b6fa1616e754a5b9e9c4088330b"
+    },
+    {
+      "source": "YOUR MENTOR",
+      "key": "bcff0ba6174d0addfd134ea3a56b15d7"
+    },
+    {
+      "source": "Slot {value0}",
+      "key": "6f325cfa06ac02a844a9f2b656923c49"
+    },
+    {
+      "source": "Earn 9 stars",
+      "key": "ee0d658a0a5eff45a67bc90a6b2f069d"
+    },
+    {
+      "source": "expected lesson object",
+      "key": "ca7d12d06870a930113678e176a2a156"
+    },
+    {
+      "source": "Complete both language paths to enter",
+      "key": "a4ff416e96d23d975149444d235fb952"
+    },
+    {
+      "source": "The clock ran out. The learning doesn’t.",
+      "key": "18ad8a3a55a7c12f5b3e94e558088524"
+    },
+    {
+      "source": "A safe place to stumble",
+      "key": "0db738ac580e95e185a8762a79641034"
+    },
+    {
+      "source": "linter index",
+      "key": "ebe87fb77abbef17a1bb3e525ce60546"
+    },
+    {
+      "source": "You found my little trick! Read the explanation, then show me you’ve got it.",
+      "key": "e3b255f4c67ec711315eeb90b6ea42df"
+    },
+    {
+      "source": "Day streak",
+      "key": "ea0ec9888625c8e1dbb29b481b7c8628"
+    },
+    {
+      "source": "Earn 24 stars",
+      "key": "0936ca326f3d6a82b2c156fa4ed1d598"
+    },
+    {
+      "source": "Look at you, collecting spells! One small step today is still a step into the extraordinary.",
+      "key": "216009cac608938cd344f3655520c744"
+    },
+    {
+      "source": "Pip’s satchel\u0004header",
+      "key": "1cdfb5859bab372c37105c79a508854c"
+    },
+    {
+      "source": "Practice any unlocked lesson. No heart loss, no timer. Finish a drill to restore one heart.",
+      "key": "6f9074f7bb3f94c540fedb1b9ae8ac80"
+    },
+    {
+      "source": "Explore the next path",
+      "key": "f94458b4598c46fd6b544071bf745255"
+    },
+    {
+      "source": "TWO PATHS. ONE GRAND ADVENTURE.",
+      "key": "a220de85b237396f1353b1abdb3431b3"
+    },
+    {
+      "source": "Choose the one line described by the question.",
+      "key": "7654aa40612058e7b851e2f0c8514875"
+    },
+    {
+      "source": "Code Goblin adventure map",
+      "key": "cd9c72ed2f76949f166706bcb8bd9aa9"
+    },
+    {
+      "source": "Choose your craft",
+      "key": "8444048e727fcf92d2dd7a19e3b2896c"
+    },
+    {
+      "source": "Four stitches. Always four stitches.",
+      "key": "f95469f8875fbf27cb56d024fb073966"
+    },
+    {
+      "source": "A little stardust for a very long journey.",
+      "key": "1136e58f32b1aefbc771388f0cee2dd8"
+    },
+    {
+      "source": "Percy’s Cosmic Possum Tail",
+      "key": "2e94ab73dc36ac69e3c57c690ce38d2e"
+    },
+    {
+      "source": "Be curious. And always check your assumptions.",
+      "key": "ed46da5cac6e317fbed95051e432809b"
+    },
+    {
+      "source": "Build a spell from code chips. Tap to place or remove them, or drag them into the answer area. Whitespace and indentation are part of the code.",
+      "key": "b2b5f25ba1c3065df24293063e7e15a9"
+    },
+    {
+      "source": "The Glitch Imp",
+      "key": "fb749fa5e6f40a8b68da5ce5ec00eb86"
+    },
+    {
+      "source": "The Linter Trap",
+      "key": "ea72cce5805fb9d4c5865532d7055f94"
+    },
+    {
+      "source": "Untimed",
+      "key": "c8114ca8f0d7d88d17e939ecdb7ca656"
+    },
+    {
+      "source": "A collector of very educational mistakes.",
+      "key": "d4c18a3e56c25ea3b9eb978572790294"
+    },
+    {
+      "source": "A strong spell starts with a blueprint.",
+      "key": "76682ef9ba71e593eb99e46233b6b20d"
+    },
+    {
+      "source": "<0>30-second Micro-Caster</0><1>Turn off for untimed campaign typing. Applies to your next lesson; practice is always untimed.</1>",
+      "key": "1d6ecaa87cd78465a252260c610d812e"
+    },
+    {
+      "source": "Arch-Mage Pythia",
+      "key": "a58b35b0db74d790710d87a9521cff36"
+    },
+    {
+      "source": "Daily hearts",
+      "key": "0484c775607e20e6deb1f22aa7942f41"
+    },
+    {
+      "source": "{done} of {length} spells learned",
+      "key": "4902a8542cde5bc4d30edf171762e02e"
+    },
+    {
+      "source": "Code Goblin",
+      "key": "278063ad54ed3a41b920b993229d9e16"
+    },
+    {
+      "source": "Pip’s satchel",
+      "key": "96833c8bb67423ded6b18dbd7491ebe0"
     }
   ]
 }
