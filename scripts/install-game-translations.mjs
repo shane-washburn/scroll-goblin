@@ -5,6 +5,9 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { readState, writeState, compileBundle, compileSourceKeyMap } from '@hedgeling/i18n/translate';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+// Builds fill missing runtime entries while preserving translations delivered
+// by the console. Explicit i18n:games:install still refreshes game drafts.
+const preserveExisting = process.argv.includes('--preserve-existing');
 execFileSync(process.execPath, [path.join(root, 'scripts/check-game-translations.mjs')], { stdio: 'inherit' });
 const read = async p => JSON.parse(await fs.readFile(path.join(root, p), 'utf8'));
 const catalog = await read('apps/web/i18n/games/source.json');
@@ -30,12 +33,12 @@ const bundle = await read('apps/web/public/hedgeling-bundle.json');
 const compiled = compileBundle(state);
 for (const locale of catalog.locales) {
   bundle[locale] ??= {};
-  for (const item of catalog.entries) if (compiled[locale]?.[item.key]) bundle[locale][item.key] = compiled[locale][item.key];
+  for (const item of catalog.entries) if (compiled[locale]?.[item.key] && (!preserveExisting || !Object.hasOwn(bundle[locale], item.key))) bundle[locale][item.key] = compiled[locale][item.key];
 }
 const oldMap = await read('apps/web/public/hedgeling-source-key-map.json');
 const bySource = { ...oldMap.bySource };
 const compiledMap = compileSourceKeyMap(state).bySource;
-for (const item of catalog.entries) if (compiledMap[item.source]) bySource[item.source] = compiledMap[item.source];
+for (const item of catalog.entries) if (compiledMap[item.source] && (!preserveExisting || !Object.hasOwn(bySource, item.source))) bySource[item.source] = compiledMap[item.source];
 const map = { ...oldMap, bySource, sources: Object.entries(bySource).sort(([a], [b]) => a.localeCompare(b)).map(([source, key]) => ({ source, key })) };
 await writeState(root, state);
 for (const p of ['hedgeling-bundle.json', 'apps/web/public/hedgeling-bundle.json']) await fs.writeFile(path.join(root,p), JSON.stringify(bundle,null,2)+'\n');
