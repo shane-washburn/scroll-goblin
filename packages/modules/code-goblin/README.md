@@ -138,3 +138,38 @@ validation, score integrity, dates, streaks, banked brews and save recovery.
 Teaching examples in the Python and Nether tracks also pass Python's syntax parser;
 this is not runtime execution of
 Java, NumPy or Qiskit examples.
+
+## Localization coverage
+
+For the Code Goblin project, extract `packages/modules/code-goblin/src` from the
+current repository commit. That includes the React screens, curriculum metadata,
+and `lessons.json`. The extraction service must support the JSON content adapter;
+adding a scan folder alone does not make older extractors read JSON prose.
+
+Translate lesson titles, subtitles, introductions, concepts, prompts, hints,
+explanations, and reference labels. Keep examples, code snippets, answer tokens,
+accepted answers, IDs, and URLs unchanged. These code fields remain excluded from
+extraction and their rendered code stays marked `translate="no"`.
+
+Dynamic UI messages use complete translation templates with named values. Static
+text beside icon components has its own element so the build plugin can find it.
+Certificate downloads translate their labels explicitly and escape both translated
+text and the player's name. Existing translation bundles remain in place until a
+new translation delivery adds the newly extracted messages.
+
+Verify an exported fresh catalog (or an engine extraction artifact) against the
+running app before translating or delivering it:
+
+```sh
+CODE_GOBLIN_CATALOG=/path/to/extracted-catalog.json \
+CODE_GOBLIN_BASE_URL=http://127.0.0.1:5174 \
+node scripts/check-code-goblin-localization.mjs
+```
+
+The check requires Playwright Test; `PLAYWRIGHT_MODULE` may point to an installed
+`@playwright/test/index.mjs`, and `PLAYWRIGHT_EXECUTABLE_PATH` may select a local
+browser. It checks every lesson prose field against the catalog, rejects code
+extraction and required diagnostics, then uses temporary synthetic translations
+to exercise all stories, challenge types, confirmation labels, dynamic counts,
+and certificate download. It makes no translation requests and does not change
+saved translations. Synthetic copy tests delivery, not translation quality.
