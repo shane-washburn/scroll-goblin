@@ -11,7 +11,7 @@ const output = process.env.CODE_GOBLIN_SCREENSHOTS || join(tmpdir(), 'code-gobli
 const lessons = JSON.parse(await readFile(new URL('../packages/modules/code-goblin/src/lessons.json', import.meta.url), 'utf8'));
 const key = 'scroll-goblin-code-goblin-v1';
 await mkdir(output, { recursive: true });
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_EXECUTABLE_PATH ? { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH } : {}) });
 const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
 await context.route('**/stats/**', route => route.fulfill({ json: { ok: true } }));
 const errors = [];
@@ -188,11 +188,15 @@ try {
   // English curriculum code stays byte-for-byte intact under the site's locale switch.
   await put(fresh);
   await page.evaluate(() => localStorage.setItem('hedgeling.locale', 'ru-RU'));
-  await reload(); await start(lessons[0]);
+  await reload();
+  // Navigation labels are translated now; use stable structure in this locale.
+  await page.locator('.cg-node').first().click();
+  await page.locator('.cg-story-action .cg-primary').click();
   assert.equal(await page.locator('.cg-word-bank button').first().innerText(), first.tokens[0]);
   assert.equal(await page.locator('.cg-word-bank button').first().getAttribute('translate'), 'no');
   assert.equal(await page.locator('.cg-word-bank button').first().getAttribute('data-hedgeling-ignore'), 'true');
   console.log('PASS code chips excluded from DOM translation');
+  await page.evaluate(() => localStorage.setItem('hedgeling.locale', 'en-US'));
   await page.evaluate(key => localStorage.setItem(key, '{invalid'), key); await reload();
   await page.locator('.cg-notice').filter({ hasText: 'unreadable' }).waitFor();
   assert.equal((await saved()).hearts, 5);
