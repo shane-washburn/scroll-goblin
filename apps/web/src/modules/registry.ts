@@ -1,4 +1,5 @@
 import { manifest as codeGoblin } from "@scroll-goblin/module-code-goblin";
+import { manifest as hotdogOrNot } from "@scroll-goblin/module-hotdog-or-not";
 import { manifest as lunasPlayhouse } from "@scroll-goblin/module-lunas-playhouse";
 import { manifest as schrodingersPossum } from "@scroll-goblin/module-schrodingers-possum";
 import { manifest as goblinChess } from "@scroll-goblin/module-goblin-chess";
@@ -25,6 +26,7 @@ import { manifest as goblinMirror } from "@scroll-goblin/module-goblin-mirror";
  * automatically — no other shell changes required.
  */
 export const MODULES: ModuleManifest[] = [
+  hotdogOrNot,
   codeGoblin,
   schrodingersPossum,
   lunasPlayhouse,
