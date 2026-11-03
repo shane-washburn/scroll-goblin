@@ -73,12 +73,12 @@ export default function HotdogPage() {
     {view === 'results' ? <section className="hd-results">
       <p className="hd-rank-label">{t('Final rank')}</p>
       <h2>{t(rankFor(game.score))}</h2>
-      <p className="hd-total">{t('{score} points', { score: game.score })}</p>
+      <p className="hd-total">{t('{score, plural, one {# point} other {# points}}', { score: game.score })}</p>
       <ol className="hd-breakdown">
         {game.rounds.map((r, i) => <li key={i} className={r.correct ? 'hd-good' : 'hd-bad'}>
           <span>{r.correct ? '✓' : '✗'}</span>
-          <span>{t('{count} tiles peeked', { count: r.revealed.length })}</span>
-          <strong>{t('{points} pts', { points: r.points })}</strong>
+          <span>{t('{count, plural, one {# tile peeked} other {# tiles peeked}}', { count: r.revealed.length })}</span>
+          <strong>{t('{points, plural, one {# pt} other {# pts}}', { points: r.points })}</strong>
         </li>)}
       </ol>
       <button type="button" className="hd-button hd-primary" onClick={restart}>{t('Play again')}</button>
@@ -96,13 +96,13 @@ export default function HotdogPage() {
       {guessed ? <div className={`hd-verdict ${round.correct ? 'hd-good' : 'hd-bad'}`} role="status">
         <strong>{round.correct ? t('Correct!') : t('Wrong!')}</strong>
         <span>{round.kind === 'hotdog' ? t('It was a hot dog all along.') : t('That was never a hot dog.')} {t(quip.text)}</span>
-        <strong>{t('+{points} pts', { points: round.points })}</strong>
+        <strong>{t('{points, plural, one {+# pt} other {+# pts}}', { points: round.points })}</strong>
         <button type="button" className="hd-button hd-primary" onClick={() => (isFinished(game) ? setView('results') : setGame(nextRound))}>
           {isFinished(game) ? t('See results') : t('Next round')}
         </button>
       </div> : <div className="hd-controls">
         <p className="hd-worth" aria-live="polite">
-          {peeked === 0 ? t('Peek a tile to unlock your guess.') : t('Guess now for {points} pts', { points: worth })}
+          {peeked === 0 ? t('Peek a tile to unlock your guess.') : t('{points, plural, one {Guess now for # pt} other {Guess now for # pts}}', { points: worth })}
         </p>
         <div className="hd-guesses">
           <button type="button" className="hd-button hd-primary" disabled={!canGuess(game)} onClick={() => setGame(g => makeGuess(g, 'hotdog'))}>
